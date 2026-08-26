@@ -30,7 +30,13 @@ export const stageDetails: readonly Stage[] = [
     tagline: 'A gentle beginning, before your child arrives.',
     summary:
       'A calm space for expecting parents: time to slow down, connect with other families, and begin the Narelo journey before your child is born.',
-    image: '/images/membership-hero.webp',
+    /*
+     * Pexels 7155527 (free license, no attribution required), cropped below
+     * the face per Rui: pregnant woman on a woven beige mat, cream and tan.
+     * Original archived: assets-source/stage-photo-bloom-pexels-7155527.jpg
+     * Source: https://www.pexels.com/photo/pregnant-woman-doing-excercise-7155527/
+     */
+    image: '/images/stage-photo-bloom.webp',
   },
   {
     name: 'Nurture',
