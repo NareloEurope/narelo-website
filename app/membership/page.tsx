@@ -29,8 +29,8 @@ export const metadata = {
 const CHAPTERS = [
   { id: 'what', label: 'What Narelo is' },
   { id: 'experience', label: 'The experiences' },
-  { id: 'practice', label: 'In practice' },
   { id: 'ages', label: 'Age groups' },
+  { id: 'practice', label: 'In practice' },
   { id: 'how', label: 'How it works' },
   { id: 'included', label: 'What’s included' },
   { id: 'join', label: 'How to join' },
@@ -158,8 +158,25 @@ export default function MembershipPage() {
         </div>
       </section>
 
-      {/* ---------- 3. In practice ---------- */}
-      <Section id="practice">
+      {/* ---------- 3. Which age group? ---------- */}
+      <Section id="ages">
+        <div className="mb-16 max-w-2xl fade" data-reveal>
+          <p className="eyebrow mb-8 text-olive">{ageGroups.eyebrow}</p>
+          <h2 className="display display-lg mb-8">{ageGroups.heading}</h2>
+          <p className="lede text-ink-soft">{ageGroups.body}</p>
+        </div>
+
+        <div className="fade" data-reveal>
+          <StageAccordion items={stageDetails} />
+        </div>
+
+        <p className="body-copy mt-12 max-w-xl text-ink-soft fade" data-reveal>
+          {ageGroups.note}
+        </p>
+      </Section>
+
+      {/* ---------- 4. In practice ---------- */}
+      <Section id="practice" bg="bg-shell">
         <div className="grid gap-16 md:grid-cols-[0.85fr_1.15fr] md:gap-24">
           <div className="fade md:sticky md:top-40 md:self-start" data-reveal>
             <p className="eyebrow mb-8 text-olive">{practice.eyebrow}</p>
@@ -181,23 +198,6 @@ export default function MembershipPage() {
             ))}
           </ul>
         </div>
-      </Section>
-
-      {/* ---------- 4. Which age group? ---------- */}
-      <Section id="ages">
-        <div className="mb-16 max-w-2xl fade" data-reveal>
-          <p className="eyebrow mb-8 text-olive">{ageGroups.eyebrow}</p>
-          <h2 className="display display-lg mb-8">{ageGroups.heading}</h2>
-          <p className="lede text-ink-soft">{ageGroups.body}</p>
-        </div>
-
-        <div className="fade" data-reveal>
-          <StageAccordion items={stageDetails} />
-        </div>
-
-        <p className="body-copy mt-12 max-w-xl text-ink-soft fade" data-reveal>
-          {ageGroups.note}
-        </p>
       </Section>
 
       {/* ---------- 5. How does membership work? ---------- */}

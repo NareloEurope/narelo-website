@@ -55,7 +55,8 @@ export default function Header() {
   const light = overDarkHero && !scrolled && !open;
 
   return (
-    <header
+    <>
+      <header
       className={`fixed inset-x-0 top-0 z-50 transition-[background-color,border-color,padding,color] duration-700 ${
         scrolled || open
           ? 'border-b border-ink/10 bg-linen/92 py-3 text-ink backdrop-blur-md'
@@ -129,11 +130,20 @@ export default function Header() {
         </button>
       </div>
 
-      {/* Mobile drawer */}
+      </header>
+
+      {/*
+       * Rendered as a sibling of <header>, not inside it: the header carries
+       * backdrop-blur when open, and a backdrop-filter makes an element a
+       * containing block for fixed descendants, which collapsed this drawer
+       * to the header's own height. z-45 sits above the page's sticky chapter
+       * nav (z-40) but under the header bar (z-50), so the logo and close button
+       * stay on top.
+       */}
       <div
         id="mobile-nav"
         hidden={!open}
-        className="fixed inset-0 top-0 z-0 flex flex-col justify-center bg-linen px-6 lg:hidden"
+        className="fixed inset-0 z-[45] flex flex-col justify-center bg-linen px-6 lg:hidden"
       >
         <nav aria-label="Mobile" className="flex flex-col">
           {nav.map((item, i) => (
@@ -151,6 +161,6 @@ export default function Header() {
           {headerCta.label}
         </a>
       </div>
-    </header>
+    </>
   );
 }

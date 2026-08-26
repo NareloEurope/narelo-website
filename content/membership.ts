@@ -64,6 +64,8 @@ export const childExperience = {
   facts: [
     { value: '90 min', label: 'each experience' },
     { value: '~8', label: 'children per group' },
+    /* business-plan.md: Autumn/Winter/Spring/Summer, 10-12 weeks, 1 a week. */
+    { value: '12', label: 'experiences a season' },
   ],
   note: 'Experiences happen in our Marbella home and well beyond it: beach, forest and real-world places. Younger groups may include a parent; older children come on their own.',
 } as const;

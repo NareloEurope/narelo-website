@@ -26,19 +26,26 @@ export default function StageAccordion({ items }: { items: readonly Stage[] }) {
               type="button"
               aria-expanded={isOpen}
               onClick={() => setOpen(isOpen ? -1 : i)}
-              className="group grid w-full items-baseline gap-2 py-7 text-left md:grid-cols-[1.2fr_7rem_1.6fr_auto] md:gap-8 md:py-9"
+              className="group grid w-full grid-cols-[1fr_auto] items-baseline gap-x-4 gap-y-2 py-7 text-left md:grid-cols-[1.2fr_7rem_1.6fr_auto] md:gap-8 md:py-9"
             >
               <h3
-                className={`display display-md transition-transform duration-700 ${
+                className={`display display-md col-start-1 transition-transform duration-700 ${
                   isOpen ? 'md:translate-x-2' : 'md:group-hover:translate-x-2'
                 }`}
               >
                 {stage.name}
               </h3>
-              <span className="eyebrow text-olive">{stage.age}</span>
-              <p className="body-copy max-w-md text-ink-soft">{stage.tagline}</p>
-              {/* Plus that becomes a minus */}
-              <span className="relative hidden h-4 w-4 shrink-0 self-center md:block" aria-hidden="true">
+              <span className="eyebrow col-start-1 text-olive md:col-start-2">{stage.age}</span>
+              <p className="body-copy col-start-1 max-w-md text-ink-soft md:col-start-3">{stage.tagline}</p>
+              {/*
+               * Plus that becomes a minus. Visible at every width: on mobile it
+               * shares the top row with the name, since without it nothing said
+               * the row could be opened.
+               */}
+              <span
+                className="relative col-start-2 row-start-1 h-4 w-4 shrink-0 self-center md:col-start-4"
+                aria-hidden="true"
+              >
                 <span className="absolute left-0 top-1/2 h-px w-full -translate-y-1/2 bg-ink" />
                 <span
                   className={`absolute left-1/2 top-0 h-full w-px -translate-x-1/2 bg-ink transition-transform duration-500 ${
