@@ -1,114 +1,267 @@
 @import 'tailwindcss';
 
 /*
- * Design tokens sampled from computed styles on the live Wix site.
- * See MIGRATION-AUDIT.md §3.
+ * NARELO DESIGN SYSTEM
+ *
+ * Palette derives from brand/colour-guidelines.md — cream base, deep warm
+ * brown "ink", olive/sage signature accent, sand support. Deliberately NOT the
+ * black-and-gold luxury cliché those guidelines rule out.
+ *
+ * Every text pair below is verified against WCAG AA (4.5:1 body):
+ *   ink on linen 14.36 · ink-soft on linen 5.82 · olive on linen 5.21
+ *   linen on forest 9.48 · ink on sand 8.48
+ * `sand` is a surface colour only — cream on sand is 1.69 and must never be used.
  */
 @theme {
-  --color-cream: #f7f4ee;
-  --color-cream-alt: #f6f2e8;
-  --color-sage: #59614b;
-  --color-rust: #5f2815;
-  --color-warm-grey: #6f6a63;
-  --color-forest: #3b4e2b;
-  --color-tan: #a27855;
-  --color-sage-light: #a8b29a;
-  --color-cream-light: #fffdf8;
+  --color-linen: #f7f3ec;
+  --color-shell: #ede7dc;
+  --color-ink: #2b2018;
+  --color-ink-soft: #6a5c50;
+  --color-olive: #62694c;
+  --color-forest: #3a4230;
+  --color-sand: #cdbba0;
 
   --font-display: var(--font-cormorant), 'Cormorant Garamond', Georgia, serif;
-  --font-body: var(--font-nunito), 'Nunito Sans', 'Avenir Next', system-ui, sans-serif;
-  --font-accent: var(--font-fraunces), 'Fraunces', Georgia, serif;
+  --font-sans: var(--font-jost), 'Jost', 'Futura', system-ui, sans-serif;
+
+  /* Spacious scale — this is an editorial brand, not a dashboard. */
+  --spacing-section: clamp(5rem, 3rem + 9vw, 11rem);
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out-quint: cubic-bezier(0.83, 0, 0.17, 1);
 }
 
 @layer base {
   html {
     scroll-behavior: smooth;
-    /* Sticky header is 88–129px; keep anchor targets clear of it. */
-    scroll-padding-top: 7rem;
+    scroll-padding-top: 6rem;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
   }
 
   body {
-    background-color: var(--color-cream);
-    color: var(--color-sage);
-    font-family: var(--font-body);
-    -webkit-font-smoothing: antialiased;
+    background-color: var(--color-linen);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-weight: 300;
   }
 
   ::selection {
-    background-color: color-mix(in srgb, var(--color-tan) 30%, transparent);
+    background-color: color-mix(in srgb, var(--color-olive) 22%, transparent);
   }
 
   :focus-visible {
     outline: 2px solid var(--color-forest);
-    outline-offset: 3px;
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    html {
-      scroll-behavior: auto;
-    }
-    *,
-    *::before,
-    *::after {
-      animation-duration: 0.01ms !important;
-      animation-iteration-count: 1 !important;
-      transition-duration: 0.01ms !important;
-    }
+    outline-offset: 4px;
+    border-radius: 2px;
   }
 }
 
 @layer components {
-  /*
-   * Wix set display type in Cormorant Garamond Light with roughly -5% tracking.
-   * Sizes below track the source at 1440px and scale down fluidly.
-   */
+  /* ---------- Type ---------- */
+
   .display {
     font-family: var(--font-display);
     font-weight: 300;
-    letter-spacing: -0.05em;
-    line-height: 1.08;
+    line-height: 1.04;
+    letter-spacing: -0.02em;
   }
 
-  /* Small uppercase labels: Avenir Light at +5% tracking on the source. */
+  /* Optical sizing: the bigger it gets, the tighter it tracks. */
+  .display-xl {
+    font-size: clamp(2.75rem, 1.6rem + 5vw, 7rem);
+    letter-spacing: -0.035em;
+  }
+  .display-lg {
+    font-size: clamp(2.25rem, 1.5rem + 3.4vw, 4.5rem);
+    letter-spacing: -0.028em;
+  }
+  .display-md {
+    font-size: clamp(1.75rem, 1.3rem + 2.1vw, 3rem);
+    letter-spacing: -0.022em;
+  }
+
   .eyebrow {
-    font-family: var(--font-body);
-    font-weight: 300;
+    font-family: var(--font-sans);
+    font-weight: 400;
     text-transform: uppercase;
-    letter-spacing: 0.18em;
-    font-size: clamp(0.625rem, 0.55rem + 0.3vw, 0.75rem);
-    line-height: 1.6;
+    letter-spacing: 0.22em;
+    font-size: clamp(0.625rem, 0.58rem + 0.2vw, 0.72rem);
+    line-height: 1.5;
+  }
+
+  .lede {
+    font-size: clamp(1.05rem, 0.98rem + 0.4vw, 1.3rem);
+    line-height: 1.65;
+    font-weight: 300;
   }
 
   .body-copy {
-    font-family: var(--font-body);
-    font-weight: 300;
-    letter-spacing: 0.05em;
+    font-size: clamp(0.95rem, 0.92rem + 0.15vw, 1.05rem);
     line-height: 1.75;
+    font-weight: 300;
   }
+
+  /* A hairline that draws itself when its section arrives. */
+  .rule {
+    height: 1px;
+    background-color: color-mix(in srgb, var(--color-ink) 15%, transparent);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 1.4s var(--ease-out-expo);
+  }
+  .is-in .rule,
+  .rule.is-in {
+    transform: scaleX(1);
+  }
+
+  /* ---------- Motion ---------- */
 
   /*
-   * Organic "leaf" crop used on the Experiences stage cards.
-   * The source sets border-radius: 136.6px 0 on a 128x192 box; expressed as
-   * percentages so it holds at any size while the 2:3 ratio is kept.
+   * Every animated element starts from its final layout position and only
+   * transforms/fades, so nothing here can shift layout (CLS stays 0).
    */
-  .leaf {
-    border-radius: 107% 0 107% 0 / 71% 0 71% 0;
-  }
-
-  /* Reveal-on-scroll, matching the source's gentle fade-up. */
-  .reveal {
+  .reveal > * {
     opacity: 0;
-    transform: translateY(18px);
-    transition: opacity 0.9s ease, transform 0.9s ease;
+    transform: translateY(24px);
+    transition:
+      opacity 1s var(--ease-out-expo),
+      transform 1.15s var(--ease-out-expo);
+    transition-delay: calc(var(--i, 0) * 90ms);
   }
-  .reveal.is-visible {
+  .reveal.is-in > * {
     opacity: 1;
     transform: none;
   }
-  @media (prefers-reduced-motion: reduce) {
-    .reveal {
-      opacity: 1;
-      transform: none;
-    }
+
+  .fade {
+    opacity: 0;
+    transform: translateY(20px);
+    transition:
+      opacity 1s var(--ease-out-expo),
+      transform 1.15s var(--ease-out-expo);
+  }
+  .fade.is-in {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* Headline lines rise out from behind a mask. */
+  .mask-line {
+    display: block;
+    overflow: hidden;
+  }
+  .mask-line > span {
+    display: block;
+    transform: translateY(105%);
+    transition: transform 1.25s var(--ease-out-expo);
+    transition-delay: calc(var(--i, 0) * 110ms);
+  }
+  .is-in .mask-line > span {
+    transform: none;
+  }
+
+  /* Images settle from a slight scale — expensive-feeling, cheap to run. */
+  .img-settle {
+    overflow: hidden;
+  }
+  .img-settle img {
+    transform: scale(1.12);
+    transition: transform 1.8s var(--ease-out-expo);
+    will-change: transform;
+  }
+  .is-in.img-settle img,
+  .is-in .img-settle img {
+    transform: scale(1);
+  }
+
+  /* Parallax drift, driven by a rAF-throttled scroll handler. */
+  .parallax {
+    will-change: transform;
+  }
+
+  /* Underline that grows from the left on hover. */
+  .link-line {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 3px;
+  }
+  .link-line::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background-color: currentColor;
+    transform: scaleX(var(--line, 1));
+    transform-origin: right;
+    transition: transform 0.6s var(--ease-out-expo);
+  }
+  .link-line:hover::after {
+    transform: scaleX(0);
+    transform-origin: right;
+  }
+
+  .btn {
+    font-family: var(--font-sans);
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    font-size: 0.72rem;
+    font-weight: 400;
+    padding: 1.1rem 2.4rem;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    /* 44px minimum touch target */
+    min-height: 44px;
+    cursor: pointer;
+    transition:
+      background-color 0.5s var(--ease-out-expo),
+      color 0.5s var(--ease-out-expo),
+      opacity 0.4s ease;
+  }
+  .btn-solid {
+    background-color: var(--color-forest);
+    color: var(--color-linen);
+  }
+  .btn-solid:hover {
+    background-color: var(--color-ink);
+  }
+  .btn-ghost {
+    border: 1px solid color-mix(in srgb, currentColor 40%, transparent);
+  }
+  .btn-ghost:hover {
+    background-color: var(--color-ink);
+    color: var(--color-linen);
+    border-color: var(--color-ink);
+  }
+}
+
+/*
+ * Reduced motion: show every final state immediately. Nothing below is
+ * decorative-only — these elements carry the page's actual content.
+ */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .reveal > *,
+  .fade,
+  .mask-line > span,
+  .img-settle img,
+  .rule {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }

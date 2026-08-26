@@ -1,140 +1,290 @@
+import Link from 'next/link';
 import Section from '@/components/Section';
-import VideoBand from '@/components/VideoBand';
-import { hero, eyebrowBand, becomes, statement, benefits, tiers, beachBand, closing } from '@/content/membership';
+import LazyVideo from '@/components/LazyVideo';
+import { contact } from '@/content/site';
+import {
+  hero,
+  whatItIs,
+  childExperience,
+  ageGroups,
+  howItWorks,
+  included,
+  cost,
+  joining,
+  closing,
+} from '@/content/membership';
 
 export const metadata = {
   title: 'Membership',
-  description: hero.sub,
-  openGraph: { title: 'Membership | Narelo', description: hero.sub, images: ['/images/membership-hero.webp'] },
+  description: hero.lede,
+  openGraph: { title: 'Membership | Narelo', description: hero.lede, images: [hero.image] },
 };
 
-/**
- * The source staggers these four as a checkerboard: columns 1 and 3 lead with
- * text, columns 2 and 4 lead with the image.
- */
-const ZIGZAG = [
-  { item: 0, image: 0, textFirst: true },
-  { item: 1, image: 1, textFirst: false },
-  { item: 2, image: 2, textFirst: true },
-  { item: 3, image: 3, textFirst: false },
+/** Anchors for the sticky in-page nav — one per question the flyer answers. */
+const CHAPTERS = [
+  { id: 'what', label: 'What Narelo is' },
+  { id: 'experience', label: 'The experiences' },
+  { id: 'ages', label: 'Age groups' },
+  { id: 'how', label: 'How it works' },
+  { id: 'included', label: 'What’s included' },
+  { id: 'cost', label: 'Cost' },
+  { id: 'join', label: 'How to join' },
 ];
 
 export default function MembershipPage() {
   return (
     <>
-      {/* Hero — full-bleed image, copy set right and right-aligned in dark type. */}
-      <section className="relative isolate flex min-h-[560px] items-center overflow-hidden md:min-h-[706px]">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={hero.image} alt="" width={1672} height={941} className="absolute inset-0 -z-10 h-full w-full object-cover" />
-        <div className="mx-auto w-full max-w-[1400px] px-6 md:px-12">
-          <div className="ml-auto max-w-md text-right">
-            <h1 className="display mb-6 text-[clamp(2rem,1.4rem+2.6vw,3.25rem)] text-sage">{hero.heading}</h1>
-            <p className="body-copy ml-auto max-w-xs text-warm-grey">{hero.sub}</p>
-          </div>
+      {/* ---------- Hero ---------- */}
+      <section className="relative isolate flex min-h-[92svh] items-end overflow-hidden" data-hero-dark>
+        <div className="absolute inset-0 -z-10 overflow-hidden">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={hero.image} alt="" width={1672} height={941} className="h-full w-full object-cover" />
+        </div>
+        <div className="absolute inset-0 -z-10 bg-gradient-to-t from-ink/85 via-ink/45 to-ink/25" aria-hidden="true" />
+        <div className="absolute inset-0 -z-10 bg-gradient-to-r from-ink/45 to-transparent" aria-hidden="true" />
+
+        <div className="is-in mx-auto w-full max-w-[1560px] px-6 pb-20 pt-40 md:px-10 md:pb-28">
+          <p className="eyebrow mb-8 text-linen/75">{hero.eyebrow}</p>
+          <h1 className="display display-xl max-w-4xl text-linen">
+            {hero.headingLines.map((line, i) => (
+              <span className="mask-line" key={line}>
+                <span className={i === 1 ? 'italic' : ''}>{line}</span>
+              </span>
+            ))}
+          </h1>
+          <p className="lede mt-10 max-w-xl text-linen/85">{hero.lede}</p>
+          <a href={contact.whatsapp} target="_blank" rel="noreferrer noopener" className="btn btn-solid mt-10">
+            {closing.ctaLabel}
+          </a>
         </div>
       </section>
 
-      {/* Eyebrow band */}
-      <Section className="text-center">
-        <div className="reveal">
-          <h2 className="display mb-5 text-[clamp(1.5rem,1rem+2vw,2.5rem)] uppercase">{eyebrowBand.heading}</h2>
-          <p className="eyebrow text-warm-grey">{eyebrowBand.line}</p>
+      {/* ---------- Sticky chapter nav ---------- */}
+      <nav
+        aria-label="On this page"
+        className="sticky top-[68px] z-40 border-y border-ink/10 bg-linen/92 backdrop-blur-md"
+      >
+        <ul className="mx-auto flex max-w-[1560px] gap-7 overflow-x-auto px-6 py-4 md:px-10 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+          {CHAPTERS.map((c) => (
+            <li key={c.id} className="shrink-0">
+              <a
+                href={`#${c.id}`}
+                className="eyebrow whitespace-nowrap text-ink-soft transition-colors hover:text-ink"
+              >
+                {c.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+
+      {/* ---------- 1. What is Narelo? ---------- */}
+      <Section id="what">
+        <div className="grid gap-14 md:grid-cols-2 md:gap-20">
+          <div className="fade" data-reveal>
+            <p className="eyebrow mb-8 text-olive">{whatItIs.eyebrow}</p>
+            <h2 className="display display-lg mb-8">{whatItIs.heading}</h2>
+            <p className="lede mb-10 text-ink-soft">{whatItIs.body}</p>
+            <p className="display display-md italic text-olive">{whatItIs.pull}</p>
+          </div>
+          <div className="img-settle overflow-hidden rounded-[2px]" data-reveal>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={whatItIs.image}
+              alt=""
+              width={1536}
+              height={2048}
+              loading="lazy"
+              className="aspect-[4/5] w-full object-cover"
+            />
+          </div>
         </div>
       </Section>
 
-      {/* Four "becomes" — 4-column zigzag of text and image cells */}
-      <Section>
-        <ul className="grid grid-cols-1 gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
-          {ZIGZAG.map(({ item, image, textFirst }) => (
-            <li key={becomes.items[item].name} className="reveal flex flex-col gap-6">
-              {!textFirst && (
-                /* eslint-disable-next-line @next/next/no-img-element */
-                <img
-                  src={becomes.images[image]}
-                  alt=""
-                  width={1200}
-                  height={1600}
-                  loading="lazy"
-                  className="order-1 w-full rounded-sm object-cover lg:order-none"
-                  style={{ aspectRatio: '4 / 3' }}
-                />
-              )}
-              <div>
-                <h3 className="display mb-3 text-lg leading-snug md:text-xl">{becomes.items[item].name}</h3>
-                <span className="mb-4 block h-px w-10 bg-sage/30" aria-hidden="true" />
-                <p className="body-copy text-sm text-warm-grey">{becomes.items[item].body}</p>
+      {/* ---------- 2. What does my child experience? ---------- */}
+      <section id="experience" className="bg-forest px-6 py-[var(--spacing-section)] text-linen md:px-10">
+        <div className="mx-auto max-w-[1280px]">
+          <div className="mb-16 max-w-2xl fade" data-reveal>
+            <p className="eyebrow mb-8 text-linen/60">{childExperience.eyebrow}</p>
+            <h2 className="display display-lg mb-8">{childExperience.heading}</h2>
+            <p className="lede text-linen/75">{childExperience.body}</p>
+          </div>
+
+          <ul className="reveal mb-16" data-reveal>
+            {childExperience.worlds.map((w, i) => (
+              <li
+                key={w.name}
+                className="group grid gap-3 border-t border-linen/15 py-7 md:grid-cols-[5rem_1fr_1.2fr] md:items-baseline md:gap-8"
+              >
+                <span className="eyebrow text-linen/60">{String(i + 1).padStart(2, '0')}</span>
+                <h3 className="display display-md transition-transform duration-700 md:group-hover:translate-x-2">
+                  {w.name}
+                </h3>
+                <p className="body-copy text-linen/70">{w.body}</p>
+              </li>
+            ))}
+          </ul>
+
+          <ul className="reveal grid grid-cols-3 gap-6 border-t border-linen/15 pt-12" data-reveal>
+            {childExperience.facts.map((f) => (
+              <li key={f.label}>
+                <p className="display text-[clamp(1.75rem,1.2rem+2.4vw,3.25rem)] leading-none">{f.value}</p>
+                <p className="eyebrow mt-3 text-linen/60">{f.label}</p>
+              </li>
+            ))}
+          </ul>
+
+          <p className="body-copy mt-12 max-w-2xl text-linen/70 fade" data-reveal>
+            {childExperience.note}
+          </p>
+        </div>
+      </section>
+
+      {/* ---------- 3. Which age group? ---------- */}
+      <Section id="ages">
+        <div className="mb-16 max-w-2xl fade" data-reveal>
+          <p className="eyebrow mb-8 text-olive">{ageGroups.eyebrow}</p>
+          <h2 className="display display-lg mb-8">{ageGroups.heading}</h2>
+          <p className="lede text-ink-soft">{ageGroups.body}</p>
+        </div>
+
+        <ul className="reveal grid gap-x-10 gap-y-8 sm:grid-cols-2 lg:grid-cols-3" data-reveal>
+          {ageGroups.groups.map((g) => (
+            <li key={g.name} className="border-t border-ink/12 pt-6">
+              <div className="flex items-baseline justify-between gap-4">
+                <h3 className="display display-md">{g.name}</h3>
+                <span className="eyebrow shrink-0 text-olive">{g.age}</span>
               </div>
-              {textFirst && (
-                /* eslint-disable-next-line @next/next/no-img-element */
-                <img
-                  src={becomes.images[image]}
-                  alt=""
-                  width={1200}
-                  height={1600}
-                  loading="lazy"
-                  className="w-full rounded-sm object-cover"
-                  style={{ aspectRatio: '4 / 3' }}
-                />
-              )}
+              <p className="body-copy mt-3 text-ink-soft">{g.body}</p>
+            </li>
+          ))}
+        </ul>
+
+        <p className="body-copy mt-12 max-w-xl text-ink-soft fade" data-reveal>
+          {ageGroups.note}
+        </p>
+      </Section>
+
+      {/* ---------- 4. How does membership work? ---------- */}
+      <Section id="how" bg="bg-shell">
+        <div className="grid gap-16 md:grid-cols-[0.85fr_1.15fr] md:gap-24">
+          <div className="fade md:sticky md:top-40 md:self-start" data-reveal>
+            <p className="eyebrow mb-8 text-olive">{howItWorks.eyebrow}</p>
+            <h2 className="display display-lg mb-8">{howItWorks.heading}</h2>
+            <p className="body-copy max-w-sm text-ink-soft">{howItWorks.note}</p>
+          </div>
+
+          <ul className="reveal" data-reveal>
+            {howItWorks.items.map((item) => (
+              <li
+                key={item.n}
+                className="grid gap-4 border-t border-ink/12 py-8 first:border-t-0 first:pt-0 md:grid-cols-[4rem_1fr] md:gap-8"
+              >
+                <span className="eyebrow text-olive">{item.n}</span>
+                <div>
+                  <h3 className="display display-md mb-3">{item.title}</h3>
+                  <p className="body-copy max-w-lg text-ink-soft">{item.body}</p>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </Section>
+
+      {/* ---------- 5. What is included? ---------- */}
+      <Section id="included">
+        <div className="mb-16 max-w-2xl fade" data-reveal>
+          <p className="eyebrow mb-8 text-olive">{included.eyebrow}</p>
+          <h2 className="display display-lg">{included.heading}</h2>
+        </div>
+
+        <ul className="reveal grid gap-x-12 gap-y-10 sm:grid-cols-2 lg:grid-cols-4" data-reveal>
+          {included.items.map((item) => (
+            <li key={item.title}>
+              <div className="mb-5 h-px w-full bg-ink/15" aria-hidden="true" />
+              <h3 className="display text-xl leading-snug">{item.title}</h3>
+              <p className="body-copy mt-3 text-ink-soft">{item.body}</p>
             </li>
           ))}
         </ul>
       </Section>
 
-      {/* Solid sage band (no content on the source) */}
-      <div className="h-[240px] bg-sage-light md:h-[450px]" aria-hidden="true" />
+      {/* ---------- 6. What does it cost? ---------- */}
+      <Section id="cost" bg="bg-shell">
+        <div className="grid gap-14 md:grid-cols-[1fr_1fr] md:gap-24">
+          <div className="fade" data-reveal>
+            <p className="eyebrow mb-8 text-olive">{cost.eyebrow}</p>
+            <h2 className="display display-lg mb-8">{cost.heading}</h2>
+            <p className="lede text-ink-soft">{cost.body}</p>
+          </div>
 
-      {/* Benefits — heading, italic statement, then six divided columns */}
-      <Section>
-        <div className="reveal mb-16 text-center">
-          <h2 className="display mb-6 text-[clamp(1.75rem,1.2rem+2.2vw,2.6rem)]">{benefits.heading}</h2>
-          <p className="body-copy mx-auto max-w-md text-sm italic text-warm-grey">{statement.heading}</p>
+          <div className="fade" data-reveal>
+            <ul className="mb-12">
+              {cost.points.map((point) => (
+                <li key={point} className="body-copy border-t border-ink/12 py-5 text-ink-soft">
+                  {point}
+                </li>
+              ))}
+            </ul>
+
+            <div className="border border-ink/15 p-8">
+              <h3 className="display display-md mb-4">{cost.founding.title}</h3>
+              <p className="body-copy mb-8 text-ink-soft">{cost.founding.body}</p>
+              <a href={contact.whatsapp} target="_blank" rel="noreferrer noopener" className="btn btn-solid">
+                Ask about membership
+              </a>
+            </div>
+          </div>
         </div>
-
-        <ul className="reveal grid grid-cols-2 gap-y-10 sm:grid-cols-3 lg:grid-cols-6">
-          {benefits.items.map((item, i) => (
-            <li
-              key={item.name}
-              className={`px-4 text-center md:px-6 ${i > 0 ? 'border-l border-sage/15' : ''} ${
-                i % 2 === 0 ? 'max-sm:border-l-0' : ''
-              }`}
-            >
-              <h3 className="display mb-4 text-base leading-snug md:text-lg">{item.name}</h3>
-              <p className="body-copy text-xs text-warm-grey md:text-sm">{item.body}</p>
-            </li>
-          ))}
-        </ul>
       </Section>
 
-      {/* Standalone beach image band */}
-      <div className="h-[180px] overflow-hidden md:h-[274px]">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={beachBand} alt="" width={1855} height={848} loading="lazy" className="h-full w-full object-cover" />
-      </div>
-
-      {/* Tiers — four plain columns on the lighter cream */}
-      <Section bg="bg-cream-light">
-        <div className="reveal mb-16 text-center">
-          <h2 className="display mb-5 text-[clamp(1.5rem,1.1rem+1.7vw,2.25rem)]">{tiers.heading}</h2>
-          <p className="body-copy mx-auto max-w-sm text-sm italic text-warm-grey">{tiers.intro}</p>
+      {/* ---------- 7. How do we join? ---------- */}
+      <Section id="join">
+        <div className="mb-16 max-w-2xl fade" data-reveal>
+          <p className="eyebrow mb-8 text-olive">{joining.eyebrow}</p>
+          <h2 className="display display-lg">{joining.heading}</h2>
         </div>
-        {/* The source shows no prices and attaches no links here — see audit §7E #21. */}
-        <ul className="reveal grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
-          {tiers.items.map((tier) => (
-            <li key={tier.name}>
-              <h3 className="display mb-4 text-lg tracking-[0.02em]">{tier.name}</h3>
-              <p className="body-copy max-w-[14rem] text-sm text-warm-grey">{tier.body}</p>
+
+        <ol className="reveal grid gap-10 md:grid-cols-4 md:gap-8" data-reveal>
+          {joining.steps.map((step) => (
+            <li key={step.n}>
+              <div className="mb-5 h-px w-full bg-ink/15" aria-hidden="true" />
+              <span className="eyebrow text-olive">{step.n}</span>
+              <h3 className="display display-md mt-3">{step.title}</h3>
+              <p className="body-copy mt-3 text-ink-soft">{step.body}</p>
             </li>
           ))}
-        </ul>
+        </ol>
+
+        <p className="lede mt-16 max-w-2xl text-ink-soft fade" data-reveal>
+          {joining.reassurance}
+        </p>
       </Section>
 
-      {/* Closing */}
-      <VideoBand src={closing.video} poster={closing.poster} minHeight="min-h-[420px] md:min-h-[502px]" overlay="bg-black/25">
-        <div className="mx-auto w-full max-w-[1400px] px-6 py-24 text-center md:px-12">
-          <h2 className="display text-[clamp(2rem,1.4rem+2.6vw,3.25rem)] text-cream">{closing.heading}</h2>
+      {/* ---------- Closing ---------- */}
+      <section className="relative isolate flex min-h-[75svh] items-center overflow-hidden">
+        <LazyVideo src={closing.video} poster={closing.poster} className="absolute inset-0 -z-10 h-full w-full object-cover" />
+        <div className="absolute inset-0 -z-10 bg-ink/70" aria-hidden="true" />
+
+        <div className="is-in mx-auto w-full max-w-[1280px] px-6 py-24 text-center md:px-10" data-reveal>
+          <h2 className="display display-xl mb-10 text-linen">
+            {closing.headingLines.map((line, i) => (
+              <span className="mask-line" key={line}>
+                <span className={i === 1 ? 'italic' : ''}>{line}</span>
+              </span>
+            ))}
+          </h2>
+          <p className="lede mx-auto mb-12 max-w-lg text-linen/85">{closing.body}</p>
+          <div className="flex flex-col items-center justify-center gap-5 sm:flex-row">
+            <a href={contact.whatsapp} target="_blank" rel="noreferrer noopener" className="btn btn-solid">
+              {closing.ctaLabel}
+            </a>
+            <Link href="/contact" className="btn btn-ghost text-linen">
+              {closing.secondaryLabel}
+            </Link>
+          </div>
         </div>
-      </VideoBand>
+      </section>
     </>
   );
 }

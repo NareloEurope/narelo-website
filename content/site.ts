@@ -1,23 +1,24 @@
 /**
- * Global site content: navigation, header, footer, contact details.
+ * Global site content.
  *
- * All copy is transcribed from the live Wix site
- * (https://mercedescgalera.wixsite.com/narelo, crawled 2026-08-26).
- * Deviations from the source are marked `MIGRATION FIX` and logged in
- * MIGRATION-AUDIT.md §11.
+ * Copy follows brand/brand-essence.md §6 Tone of Voice: warm not childish,
+ * intelligent not academic, aspirational NOT elitist, clear not promotional.
+ *
+ * Note on the Soho House reference: the visual restraint is the model, not the
+ * social language. framework/mission-vision-promise.md is explicit that Narelo's
+ * curated community "is NOT status-based exclusivity" — selection exists to
+ * protect the environment and community. No copy here implies otherwise.
  */
 
 export const site = {
   name: 'Narelo',
-  /** Wix served every page as lang="es" despite 100% English copy. */
+  tagline: 'A private childhood membership',
   locale: 'en',
   location: 'Marbella, Spain',
-  /** MIGRATION FIX (audit §7B #8): Wix footer read "Todos los derechos reservados." */
   copyright: '© 2026 Narelo. All rights reserved.',
 } as const;
 
 export const nav = [
-  { label: 'Home', href: '/' },
   { label: 'Experiences', href: '/experiences' },
   { label: 'Membership', href: '/membership' },
   { label: 'Community', href: '/community' },
@@ -25,36 +26,33 @@ export const nav = [
   { label: 'Contact', href: '/contact' },
 ] as const;
 
-export const headerCta = {
-  label: 'BECOME A MEMBER',
-  /** MIGRATION FIX (audit §7E #20): inert <button> on Wix. Approved to point at /contact. */
-  href: '/contact',
-} as const;
+export const headerCta = { label: 'Become a member', href: '/membership' } as const;
 
 export const contact = {
-  visitLabel: 'Visit Us',
+  visitLabel: 'Visit',
   visitName: 'Narelo, Marbella',
-  visitNote: 'By appointment only. We’d love to welcome you.',
-  emailLabel: 'Email us',
+  visitNote: 'By appointment only. We would love to welcome you.',
+  emailLabel: 'Email',
   email: 'hello@narelo.es',
-  phoneLabel: 'call or whatsapp',
-  phone: '+34 655 366 888',
-  /** Wix rendered these as plain text. Linked here so mobile can act on them. */
-  phoneHref: 'tel:+34655366888',
   emailHref: 'mailto:hello@narelo.es',
+  phoneLabel: 'Call or WhatsApp',
+  phone: '+34 655 366 888',
+  phoneHref: 'tel:+34655366888',
+  /**
+   * The funnel's primary CTA (Strategy/sales-funnel.md step 2 → 3). The first
+   * question Narelo asks back is "How old is your child?", so the prefilled
+   * message opens on exactly that.
+   */
+  whatsapp: 'https://wa.me/34655366888?text=Hello%20Narelo%2C%20I%27d%20like%20to%20find%20out%20about%20membership%20for%20my%20family.',
 } as const;
 
 /**
- * Footer social icons, in source order, rendered ~55px on the live site.
- *
- * ⚠️ On Wix these are plain images with NO links (verified — every one has a
- * null href), so all four are dead. Reproduced unlinked to match the source;
- * see MIGRATION-AUDIT.md §7E #29. Supply the real profile URLs and set `href`
- * to make them work — Narelo's Instagram is @narelo.eu.
+ * ⚠️ On the Wix site these four icons were dead links, and @narelo.eu appeared
+ * nowhere. Instagram is set from CLAUDE.md; the rest need real URLs before launch.
  */
 export const socialIcons = [
-  { src: '/images/social-whatsapp.webp', label: 'WhatsApp', href: null },
-  { src: '/images/social-instagram.webp', label: 'Instagram', href: null },
+  { src: '/images/social-instagram.webp', label: 'Instagram', href: 'https://instagram.com/narelo.eu' },
+  { src: '/images/social-whatsapp.webp', label: 'WhatsApp', href: contact.whatsapp },
   { src: '/images/social-tiktok.webp', label: 'TikTok', href: null },
   { src: '/images/social-facebook.webp', label: 'Facebook', href: null },
 ] as const;

@@ -15,7 +15,7 @@ export default function Testimonials({ items }: { items: readonly Testimonial[] 
           <blockquote className="display mb-3 text-[clamp(1.05rem,0.95rem+0.5vw,1.4rem)] italic leading-snug">
             {item.quote}
           </blockquote>
-          <p className="eyebrow text-warm-grey">{item.attribution}</p>
+          <p className="eyebrow text-ink-soft">{item.attribution}</p>
         </li>
       ))}
     </ul>

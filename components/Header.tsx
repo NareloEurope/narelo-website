@@ -5,14 +5,27 @@ import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { nav, headerCta, site } from '@/content/site';
 
+/**
+ * Sits transparently over a page's hero and resolves into a solid bar once you
+ * scroll past it. A page with a dark photographic hero marks it `data-hero-dark`,
+ * which flips this to light type for as long as it sits over that hero.
+ */
 export default function Header() {
   const pathname = usePathname();
+  const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  /**
+   * Pages whose hero is a dark image render `data-hero-dark`, which flips the
+   * header to light type while it sits over that hero. Without this the nav is
+   * unreadable on a bright photograph.
+   */
+  const [overDarkHero, setOverDarkHero] = useState(false);
 
-  // Close the mobile drawer whenever the route changes.
-  useEffect(() => setOpen(false), [pathname]);
+  useEffect(() => {
+    setOpen(false);
+    setOverDarkHero(Boolean(document.querySelector('[data-hero-dark]')));
+  }, [pathname]);
 
-  // Lock body scroll while the drawer is open.
   useEffect(() => {
     document.body.style.overflow = open ? 'hidden' : '';
     return () => {
@@ -20,50 +33,97 @@ export default function Header() {
     };
   }, [open]);
 
-  const isActive = (href: string) => (href === '/' ? pathname === '/' : pathname.startsWith(href));
+  useEffect(() => {
+    let frame = 0;
+    const onScroll = () => {
+      if (frame) return;
+      frame = requestAnimationFrame(() => {
+        frame = 0;
+        setScrolled(window.scrollY > 40);
+      });
+    };
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      if (frame) cancelAnimationFrame(frame);
+    };
+  }, []);
+
+  const isActive = (href: string) => pathname.startsWith(href);
+  // Light type only while transparent over a dark hero and not in the drawer.
+  const light = overDarkHero && !scrolled && !open;
 
   return (
-    <header className="sticky top-0 z-50 border-b border-sage/10 bg-cream/95 backdrop-blur-sm">
-      <div className="mx-auto flex h-20 max-w-[1400px] items-center justify-between px-6 md:h-[129px] md:px-12">
-        <Link href="/" aria-label={`${site.name} — home`} className="shrink-0">
+    <header
+      className={`fixed inset-x-0 top-0 z-50 transition-[background-color,border-color,padding,color] duration-700 ${
+        scrolled || open
+          ? 'border-b border-ink/10 bg-linen/92 py-3 text-ink backdrop-blur-md'
+          : 'border-b border-transparent py-6'
+      } ${light ? 'text-linen' : 'text-ink'}`}
+    >
+      {/* Scrim so the bar always has something to sit on over a photograph. */}
+      {light && (
+        <div
+          className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-32 bg-gradient-to-b from-ink/55 to-transparent"
+          aria-hidden="true"
+        />
+      )}
+      <div className="mx-auto flex max-w-[1560px] items-center justify-between px-6 md:px-10">
+        <Link href="/" aria-label={`${site.name} — home`} className="relative z-10 shrink-0">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/images/narelo-logo.webp" alt={site.name} width={796} height={341} className="h-8 w-auto md:h-10" />
+          <img
+            src="/images/narelo-logo.webp"
+            alt={site.name}
+            width={796}
+            height={341}
+            className={`h-7 w-auto transition-[filter] duration-700 md:h-8 ${
+              light ? '[filter:invert(1)_brightness(2)]' : ''
+            }`}
+          />
         </Link>
 
-        {/* Desktop nav */}
-        <nav aria-label="Main" className="hidden items-center gap-8 lg:flex">
+        <nav aria-label="Main" className="hidden items-center gap-10 lg:flex">
           {nav.map((item) => (
             <Link
               key={item.href}
               href={item.href}
               aria-current={isActive(item.href) ? 'page' : undefined}
-              className={`font-accent text-[15px] tracking-[0.035em] text-sage transition-colors hover:text-rust ${
-                isActive(item.href) ? 'underline decoration-1 underline-offset-[6px]' : ''
-              }`}
+              className="group relative text-[0.82rem] font-light tracking-[0.06em] transition-opacity hover:opacity-70"
             >
               {item.label}
+              <span
+                className={`absolute -bottom-1.5 left-0 h-px w-full origin-left bg-current transition-transform duration-500 ${
+                  isActive(item.href) ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
+                }`}
+                style={{ transitionTimingFunction: 'cubic-bezier(0.16,1,0.3,1)' }}
+                aria-hidden="true"
+              />
             </Link>
           ))}
           <Link
             href={headerCta.href}
-            className="eyebrow rounded-full bg-forest px-7 py-3.5 !tracking-[0.12em] text-cream transition-opacity hover:opacity-90"
+            className={`btn !px-7 !py-3 !text-[0.68rem] ${light ? 'btn-ghost text-linen' : 'btn-solid'}`}
           >
             {headerCta.label}
           </Link>
         </nav>
 
-        {/* Mobile toggle */}
         <button
           type="button"
           onClick={() => setOpen((v) => !v)}
           aria-expanded={open}
           aria-controls="mobile-nav"
           aria-label={open ? 'Close menu' : 'Open menu'}
-          className="relative z-50 flex h-10 w-10 flex-col items-center justify-center gap-[5px] lg:hidden"
+          className="relative z-10 -mr-2 flex h-11 w-11 flex-col items-center justify-center gap-[6px] lg:hidden"
         >
-          <span className={`block h-px w-6 bg-sage transition-transform ${open ? 'translate-y-[6px] rotate-45' : ''}`} />
-          <span className={`block h-px w-6 bg-sage transition-opacity ${open ? 'opacity-0' : ''}`} />
-          <span className={`block h-px w-6 bg-sage transition-transform ${open ? '-translate-y-[6px] -rotate-45' : ''}`} />
+          <span
+            className={`block h-px w-6 bg-current transition-transform duration-500 ${open ? 'translate-y-[7px] rotate-45' : ''}`}
+          />
+          <span className={`block h-px w-6 bg-current transition-opacity duration-300 ${open ? 'opacity-0' : ''}`} />
+          <span
+            className={`block h-px w-6 bg-current transition-transform duration-500 ${open ? '-translate-y-[7px] -rotate-45' : ''}`}
+          />
         </button>
       </div>
 
@@ -71,24 +131,21 @@ export default function Header() {
       <div
         id="mobile-nav"
         hidden={!open}
-        className="fixed inset-0 top-20 z-40 flex flex-col gap-2 bg-cream px-6 pt-8 lg:hidden"
+        className="fixed inset-0 top-0 z-0 flex flex-col justify-center bg-linen px-6 lg:hidden"
       >
-        <nav aria-label="Mobile" className="flex flex-col gap-1">
-          {nav.map((item) => (
+        <nav aria-label="Mobile" className="flex flex-col">
+          {nav.map((item, i) => (
             <Link
               key={item.href}
               href={item.href}
-              aria-current={isActive(item.href) ? 'page' : undefined}
-              className={`display border-b border-sage/10 py-4 text-2xl text-sage ${isActive(item.href) ? 'text-rust' : ''}`}
+              className="display display-md border-b border-ink/10 py-5 text-ink"
+              style={{ transitionDelay: `${i * 40}ms` }}
             >
               {item.label}
             </Link>
           ))}
         </nav>
-        <Link
-          href={headerCta.href}
-          className="eyebrow mt-6 rounded-full bg-forest px-7 py-4 text-center !tracking-[0.12em] text-cream"
-        >
+        <Link href={headerCta.href} className="btn btn-solid mt-10 w-full">
           {headerCta.label}
         </Link>
       </div>

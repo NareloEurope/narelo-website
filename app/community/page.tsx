@@ -20,7 +20,7 @@ export default function CommunityPage() {
         <img src={hero.image} alt="" width={1200} height={1600} className="absolute inset-0 -z-10 h-full w-full object-cover" />
         <div className="absolute inset-0 -z-10 bg-black/15" aria-hidden="true" />
         <div className="mx-auto w-full max-w-[1400px] px-6 md:px-12">
-          <h1 className="display text-[clamp(1.9rem,1.3rem+2.4vw,3rem)] leading-tight text-cream">
+          <h1 className="display text-[clamp(1.9rem,1.3rem+2.4vw,3rem)] leading-tight text-linen">
             {hero.headingLine1}
             <span className="block italic">{hero.headingLine2}</span>
           </h1>
@@ -38,7 +38,7 @@ export default function CommunityPage() {
       </Section>
 
       {/* A place to belong */}
-      <Section bg="bg-cream-alt" className="text-center">
+      <Section bg="bg-shell" className="text-center">
         <div className="reveal mx-auto max-w-xl">
           {/* Small branch ornament above the heading, as on the source. */}
           <svg
@@ -55,7 +55,7 @@ export default function CommunityPage() {
             <path d="M38 8 C 40 4, 44 2, 48 2 C 46 6, 42 8, 38 8 Z" fill="currentColor" stroke="none" />
           </svg>
           <h2 className="display mb-5 text-[clamp(1.5rem,1.1rem+1.7vw,2.25rem)]">{belong.heading}</h2>
-          <p className="body-copy mx-auto max-w-sm text-sm italic text-warm-grey">{belong.body}</p>
+          <p className="body-copy mx-auto max-w-sm text-sm italic text-ink-soft">{belong.body}</p>
         </div>
       </Section>
 
@@ -63,27 +63,27 @@ export default function CommunityPage() {
       <Section>
         <div className="reveal max-w-md">
           <h2 className="display mb-5 text-[clamp(1.6rem,1.2rem+1.8vw,2.4rem)]">{events.heading}</h2>
-          <p className="body-copy mb-8 text-sm italic text-warm-grey">{events.body}</p>
-          <Link href={events.ctaHref} className="eyebrow border-b border-sage/40 pb-1 text-sage transition-colors hover:text-rust">
+          <p className="body-copy mb-8 text-sm italic text-ink-soft">{events.body}</p>
+          <Link href={events.ctaHref} className="eyebrow border-b border-ink/40 pb-1 text-ink transition-colors hover:text-olive">
             {events.ctaLabel}
           </Link>
         </div>
         {/* No events are published on the source site; same empty state, in English. */}
-        <div className="reveal mt-14 bg-cream-alt px-6 py-8 text-center">
-          <p className="body-copy text-sm font-semibold text-sage">{events.emptyState}</p>
+        <div className="reveal mt-14 bg-shell px-6 py-8 text-center">
+          <p className="body-copy text-sm font-semibold text-ink">{events.emptyState}</p>
         </div>
       </Section>
 
       {/* Journal teaser — video left, copy right */}
-      <section className="grid items-stretch bg-cream-alt md:grid-cols-[1fr_1.2fr]">
+      <section className="grid items-stretch bg-shell md:grid-cols-[1fr_1.2fr]">
         <LazyVideo src={events.video} poster={events.poster} className="h-[260px] w-full object-cover md:h-full md:min-h-[400px]" />
         <div className="flex items-center px-6 py-16 md:px-12">
           <div className="max-w-sm">
             <h2 className="display mb-5 text-[clamp(1.6rem,1.2rem+1.8vw,2.4rem)]">{journalTeaser.heading}</h2>
-            <p className="body-copy mb-8 text-sm italic text-warm-grey">{journalTeaser.body}</p>
+            <p className="body-copy mb-8 text-sm italic text-ink-soft">{journalTeaser.body}</p>
             <Link
               href={journalTeaser.ctaHref}
-              className="eyebrow inline-block rounded-full border border-sage/40 px-8 py-3.5 !tracking-[0.12em] text-sage transition-colors hover:bg-sage hover:text-cream"
+              className="eyebrow inline-block rounded-full border border-ink/40 px-8 py-3.5 !tracking-[0.12em] text-ink transition-colors hover:bg-ink hover:text-linen"
             >
               {journalTeaser.ctaLabel}
             </Link>

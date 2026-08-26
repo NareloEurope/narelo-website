@@ -17,7 +17,7 @@ export default function EventsPage() {
     <Section className="min-h-[60vh]">
       <h1 className="sr-only">{eventsPage.title}</h1>
       <div className="py-20 text-center md:py-28">
-        <p className="body-copy text-lg font-semibold text-sage">{eventsPage.emptyHeading}</p>
+        <p className="body-copy text-lg font-semibold text-ink">{eventsPage.emptyHeading}</p>
       </div>
     </Section>
   );

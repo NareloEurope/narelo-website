@@ -18,8 +18,8 @@ export default function ContactPage() {
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src={contactPage.image} alt="" width={1536} height={1024} className="absolute inset-0 -z-10 h-full w-full object-cover" />
         <div className="mx-auto w-full max-w-[1400px] px-6 md:px-12">
-          <h1 className="display mb-6 max-w-lg text-[clamp(1.8rem,1.3rem+2.2vw,2.9rem)] text-sage">{contactPage.heading}</h1>
-          <p className="body-copy max-w-md text-sm text-warm-grey">{contactPage.sub}</p>
+          <h1 className="display mb-6 max-w-lg text-[clamp(1.8rem,1.3rem+2.2vw,2.9rem)] text-ink">{contactPage.heading}</h1>
+          <p className="body-copy max-w-md text-sm text-ink-soft">{contactPage.sub}</p>
         </div>
       </section>
 
@@ -27,22 +27,22 @@ export default function ContactPage() {
       <Section>
         <ul className="grid gap-12 text-center sm:grid-cols-3">
           <li className="reveal">
-            <h2 className="eyebrow mb-5 text-sage">{contact.visitLabel}</h2>
+            <h2 className="eyebrow mb-5 text-ink">{contact.visitLabel}</h2>
             <p className="display text-lg leading-relaxed">
               {contact.visitName}
               <span className="block">{contact.visitNote}</span>
             </p>
           </li>
           <li className="reveal">
-            <h2 className="eyebrow mb-5 text-sage">{contact.emailLabel}</h2>
+            <h2 className="eyebrow mb-5 text-ink">{contact.emailLabel}</h2>
             {/* Plain text on the source; linked here so it is actionable. */}
-            <a href={contact.emailHref} className="display text-lg transition-colors hover:text-rust">
+            <a href={contact.emailHref} className="display text-lg transition-colors hover:text-olive">
               {contact.email}
             </a>
           </li>
           <li className="reveal">
-            <h2 className="eyebrow mb-5 text-sage">{contact.phoneLabel}</h2>
-            <a href={contact.phoneHref} className="display text-lg transition-colors hover:text-rust">
+            <h2 className="eyebrow mb-5 text-ink">{contact.phoneLabel}</h2>
+            <a href={contact.phoneHref} className="display text-lg transition-colors hover:text-olive">
               {contact.phone}
             </a>
           </li>
