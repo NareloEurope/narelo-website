@@ -3,7 +3,8 @@
 **Source:** https://mercedescgalera.wixsite.com/narelo (Wix, "Wix Harmony" template)
 **Crawled:** 2026-08-26 · site `lastmod` in sitemap: 2026-08-25
 **Purpose:** complete inventory of the live Wix site before rebuilding it 1:1 in Next.js.
-**Status:** AUDIT COMPLETE — awaiting review before build.
+**Status:** MIGRATED. Audit corrected against findings made during the rebuild —
+corrections are marked *(corrected during build)*. See §11 for what changed and §12 for verification.
 
 All pages returned HTTP 200. Nothing was unreachable. Every line of copy below is
 transcribed verbatim from the live site, including typos (see §7).
@@ -46,7 +47,7 @@ link configured — it does nothing when clicked, on every page. See §7.
 
 ### Footer (identical on all 7 pages)
 - Wordmark image (links to `/`)
-- Four square image tiles (1254×1254 each)
+- Four social icons — WhatsApp, Instagram, TikTok, Facebook (1254×1254 sources, rendered ~55px). **None are links.**
 - `Marbella, Spain`
 - `© 2026 Narelo. Todos los derechos reservados.` ← **Spanish**, see §7
 - `Start Now` link → `#SCROLL_TO_TOP` (scrolls up; it is not a real CTA)
@@ -58,8 +59,14 @@ link configured — it does nothing when clicked, on every page. See §7.
 - Floating scroll-to-top button
 
 ### Not present anywhere on the site
-No Instagram embed · no Google Maps embed · no YouTube/Vimeo · no social icons ·
-no cookie banner · no newsletter signup · no favicon set · no `robots.txt` directives.
+No Instagram embed · no Google Maps embed · no YouTube/Vimeo · no cookie banner ·
+no newsletter signup · no favicon · no `robots.txt` directives.
+
+**Correction *(corrected during build)*:** the footer **does** carry four social
+icons — WhatsApp, Instagram, TikTok, Facebook — rendered at ~55px. My first pass
+mis-read them as decorative image tiles because they are `<img>` elements, not
+icon fonts, and carry no links. **All four are dead:** every one has a null href
+(verified). See §7E #29.
 
 **@narelo.eu does not appear anywhere on the site.** Per CLAUDE.md this is the brand's
 Instagram handle — flagged in §7 as a gap, not added.
@@ -91,7 +98,9 @@ Sampled from computed styles on the live site:
 | `rust` | `#5F2815` | 95,40,21 | Accent headings, eyebrow labels |
 | `warm-grey` | `#6F6A63` | 111,106,99 | Secondary/supporting text |
 | `forest` | `#3B4E2B` | 59,78,43 | `BECOME A MEMBER` button fill |
-| `tan` | `#A27855` | 162,120,85 | Card/section accents |
+| `tan` | `#A27855` | 162,120,85 | Two full-width solid bands on Home *(corrected during build — these are solid colour, not images)* |
+| `sage-light` | `#A8B29A` | 168,178,154 | Solid band on Membership |
+| `cream-light` | `#FFFDF8` | 255,253,248 | Membership tiers section |
 
 This sits inside the four families described in `brand/colour-guidelines.md`
 (cream base, olive/sage accent, sand, warm brown) — **with one discrepancy**: the
@@ -448,6 +457,7 @@ fixing Home before launch** — this is a factual claim families will act on.
 | 23 | `hello@narelo.es` and `+34 655 366 888` are not clickable | Friction on mobile especially |
 | 24 | Footer `Start Now` links to `#SCROLL_TO_TOP` | Looks like a CTA, only scrolls up |
 | 25 | Journal and Events are linked from the nav/Community but are **empty** | Two of seven pages show a Spanish "nothing here" message |
+| 29 | **All four footer social icons are dead** *(found during build)* — WhatsApp, Instagram, TikTok and Facebook are plain `<img>`s with no link | Every social path off the site is a dead end. `@narelo.eu` is never linked or named |
 
 **#20 is the most commercially serious finding in this audit.** Every page pushes
 `BECOME A MEMBER` and the button is inert.
@@ -466,7 +476,7 @@ fixing Home before launch** — this is a factual claim families will act on.
 
 Full machine-readable manifest: [`scripts/assets.json`](scripts/assets.json).
 
-**32 unique images** + **5 videos**. All originals confirmed downloadable at full
+**33 unique images** + **5 videos**. All originals confirmed downloadable at full
 resolution (verified: a 1080×1350 PNG returned 1.58 MB, and the 720p hero video 2.97 MB).
 
 ### Images by page
@@ -512,43 +522,179 @@ like-for-like build in the meantime.
 
 ---
 
-## 10. Proposed build plan (for approval)
+## 10. What was built
 
-**Stack:** Next.js 15 App Router · `output: 'export'` (fully static) · Tailwind CSS v4 ·
-zero CMS, zero DB, zero auth.
+**Stack:** Next.js 16 (App Router) · `output: 'export'` (fully static, no server) ·
+Tailwind CSS v4 · no CMS, no database, no auth.
 
 ```
 applications/website/
-├── app/
-│   ├── layout.tsx          fonts, metadata defaults, Header + Footer
-│   ├── page.tsx            Home
-│   ├── experiences/page.tsx
-│   ├── membership/page.tsx
-│   ├── community/page.tsx
-│   ├── journal/page.tsx
-│   ├── events/page.tsx
-│   └── contact/page.tsx
-├── components/             Header, Footer, StageCard, ExperienceCard,
-│                           TestimonialCarousel, Gallery, ContactForm, VideoBand
-├── content/                all copy as typed data — one edit point per string
-├── public/images/ · public/video/
-├── MIGRATION-AUDIT.md
-└── README.md
+├── app/                    one folder per route + layout, globals.css, not-found
+├── components/             Header, Footer, Section, VideoBand, LazyVideo,
+│                           Gallery, Testimonials, ContactForm, Reveal
+├── content/                ALL copy as typed data — site, home, experiences,
+│                           membership, community, pages
+├── assets-source/          33 pristine Wix originals (31MB) — archive of record
+├── public/images/          33 optimised .webp derivatives (2.5MB)
+├── public/video/           5 videos
+├── scripts/                assets.json manifest, fetch-assets, optimize-assets
+├── MIGRATION-AUDIT.md      this file
+└── README.md               how to run, deploy, and edit copy
 ```
 
-Copy lives in `content/` as typed objects rather than inline JSX, so Natalie can fix
-the seven typos in §7A in one place without touching components.
+Every string lives in `content/` rather than inline in JSX, so copy can be edited
+in one place without touching components. Each deviation from the source is marked
+`MIGRATION FIX` in a code comment next to the string it affects.
 
-### Open questions before I build
+### Decisions taken (your answers, 2026-08-26)
 
-1. **Routes** — clean `/experiences`, `/membership`, `/community` (recommended), or keep `/blank`, `/blank-1`, `/blank-2`?
-2. **Typos (§7A)** — clone verbatim (default, per your brief), or fix as we migrate?
-3. **Spanish footer (§7B #8)** — keep `Todos los derechos reservados.` or translate?
-4. **Age ranges (§7C)** — clone the Home/Experiences contradiction, or make Home match the framework?
-5. **`BECOME A MEMBER` (§7E #20)** — leave inert to match Wix, or point it at `/contact`?
-6. **Avenir substitute** — Nunito Sans acceptable?
-7. **Meta descriptions / og:images (§6)** — absent on Wix. Ship without, or will you supply copy?
+| Question | Decision |
+|---|---|
+| Routes | Clean: `/experiences`, `/membership`, `/community`, `/journal`, `/events` |
+| Typos, Spanish footer, Home age ranges | **Fix as we migrate** (not clone-verbatim) |
+| `BECOME A MEMBER` | Point at `/contact` |
+| Avenir substitute | Nunito Sans |
 
-**My recommendation on 2/3/4:** clone verbatim for this phase so the diff is provably
-faithful, then fix all of §7 as a single reviewed commit straight after. That keeps
-"is it a faithful clone?" and "is the copy right?" as two separate, checkable questions.
+---
+
+## 11. Changes applied (deviations from the source)
+
+Everything below is a deliberate change. Nothing else in the copy was touched —
+no wording was "improved", no marketing copy was written.
+
+### 11.1 Typos corrected (§7A)
+
+| Page | Was | Now |
+|---|---|---|
+| Home | `Moments od curiosity.` | `Moments of curiosity.` |
+| Home | `LITTLE BEGGININGS` | `LITTLE BEGINNINGS` |
+| Home | `Childhood is not to be rushed. Is to be lived.` | `…It is to be lived.` |
+| Experiences | `Curated Holiday Experince` | `Curated Holiday Experience` |
+| Experiences | `A gentle beginning full of wonder` | `…wonder.` (full stop) |
+| Experiences | `Building confidence through discovery` | `…discovery.` (full stop) |
+| Community | `Moments to conect and grow together` | `Moments to connect and grow together` |
+
+### 11.2 Spanish translated (§7B)
+
+| Where | Was | Now |
+|---|---|---|
+| Footer, all pages | `© 2026 Narelo. Todos los derechos reservados.` | `© 2026 Narelo. All rights reserved.` |
+| Journal empty state | `Vuelve pronto` / `Una vez que se publiquen entradas, las verás aquí.` | `Check back soon` / `Once posts are published, you'll see them here.` |
+| Events empty state | `No hay eventos en este momento` | `There are no events at this time` |
+| Contact phone field | `aria-label="Phone number. Teléfono"` | `Phone number` |
+| `<html lang>` | `es` | `en` |
+
+### 11.3 Age ranges aligned to the framework (§7C)
+
+Home showed Builders I `3-4`, Builders II `4-5`, Navigators `+5`, contradicting
+both the Experiences page and `framework/age-groups.md`. Home now reads
+`3 - 5`, `5 - 6`, `6 - 8`. Experiences was already correct and is unchanged.
+
+⚠️ Still open: the framework calls the third group **`The Nest`**; both pages say
+`Nest`. Left as the site had it — renaming a canonical group is your call.
+
+### 11.4 Dead interactions made live
+
+| What | Now |
+|---|---|
+| `BECOME A MEMBER` (all pages) | Links to `/contact` |
+| `hello@narelo.es` | `mailto:` link |
+| `+34 655 366 888` | `tel:` link |
+| Footer `Start Now` → `#SCROLL_TO_TOP` | Removed (it was not a real CTA) |
+| Four social icons | **Still dead** — reproduced unlinked. Add URLs in `content/site.ts` |
+
+### 11.5 Structure and accessibility
+
+- **Heading hierarchy rebuilt.** Home had ~30 `<h1>`s; every page now has exactly
+  one `<h1>` and a correct outline. **No visible text changed** — only the tags.
+- Journal and Events get a screen-reader-only `<h1>`, because the source shows no
+  visible page heading and the pages would otherwise have none.
+- Decorative images carry empty `alt`; the source exposed filenames like
+  `POST - NARELO - 5.PNG` and `ChatGPT Image 18 ago 2026…` as alt text.
+- Added a skip-to-content link and visible focus styles.
+- Background videos are `aria-hidden` and removed from the tab order.
+- `prefers-reduced-motion` disables the fade-up reveals and video autoplay.
+
+### 11.6 Mobile — the source is broken, this clone is not
+
+Captured at 390px against the live site. **The brief permits fixing responsiveness
+where the Wix design is clearly broken; these are those cases.**
+
+| Page | What the source does at 390px | This clone |
+|---|---|---|
+| Home | Hero collapses to ~100px and **the `<h1>` does not render at all** | Full-height hero, heading visible |
+| Home | Journey timeline renders as **seven bare dots with no names or ages** | 2-column grid, all names and ages legible |
+| Home | "Childhood is not to be rushed" sets text over a bright image, unreadable | Dark overlay added for contrast |
+| All | No horizontal overflow at 390px | Verified clean (§12) |
+
+### 11.7 Performance
+
+The source's own media is served at full original resolution, which made first
+drafts of this clone 10–22MB per page. Wix serves resized AVIF/WebP derivatives,
+so optimising is *closer* to the visitor's real experience, not further from it.
+
+- Originals archived untouched in `assets-source/` (31MB, 33 files).
+- `public/images/` holds `.webp` derivatives sized to their rendered dimensions:
+  **31.1MB → 2.5MB (92% smaller)**. Regenerate with `npm run optimize-assets`.
+- Background videos now load only when scrolled near (`components/LazyVideo.tsx`),
+  instead of all downloading up front.
+
+| Page | Images before | Images after |
+|---|---|---|
+| Home | 7.8MB | 0.4MB |
+| Experiences | 14.9MB | 0.5MB |
+| Membership | 6.5MB | 0.8MB |
+| Community | 3.7MB | 0.8MB |
+| Contact | 3.5MB | 0.2MB |
+
+⚠️ **Videos are untouched and are now the bulk of the weight** — the Membership
+closing clip alone is 11.2MB at 720p. Re-encoding needs `ffmpeg`, which is not
+installed here. Wix offers the same clip at 480p for 4.6MB (60% smaller) if you
+accept the quality drop. Your call — I have not changed it.
+
+---
+
+## 12. Verification
+
+Automated check across **7 routes × 2 viewports (1440px and 390px)**, run against
+the running site (`scripts` in the session scratchpad; results reproducible):
+
+| Check | Result |
+|---|---|
+| Horizontal overflow | ✅ none on any page at either width |
+| Broken images / videos | ✅ none — every asset returns HTTP 200 |
+| Dead internal links | ✅ none — every `/…` href resolves |
+| Exactly one `<h1>` per page | ✅ all 7 |
+| `meta description` present | ✅ all 7 |
+| `og:title` present | ✅ all 7 · `og:image` on the 5 content pages |
+| `<html lang>` | ✅ `en` everywhere |
+| Lorem ipsum / placeholder / leftover Spanish | ✅ none found |
+| Console errors | ✅ none except `/favicon.ico` 404 (see below) |
+| Production build | ✅ `next build` clean, 9 static HTML files, 0 warnings |
+| `npm audit` | ✅ 0 vulnerabilities |
+
+Side-by-side screenshots were taken of every page against the live Wix page at
+both widths and compared; discrepancies found this way drove the rebuilds logged
+in §11 and the corrections marked *(corrected during build)*.
+
+**One known 404: `/favicon.ico`.** The Wix site has no favicon either, so there is
+nothing to migrate. Choosing one is a brand decision — drop an `icon.png` into
+`app/` when the visual identity lands.
+
+---
+
+## 13. Still open — needs a decision from you
+
+| # | Item | Why it needs you |
+|---|---|---|
+| 1 | Four dead social icons | Need the real WhatsApp / Instagram / TikTok / Facebook URLs. Instagram is `@narelo.eu` per CLAUDE.md but is nowhere on the site |
+| 2 | Form backend | UI is rebuilt 1:1 and posts to a stub with `// TODO: connect to form backend`. Static export has no server, so this needs an external endpoint |
+| 3 | Form confirmation copy | Not captured — would have required submitting to the live Wix inbox. Ask Natalie/Vivien for the current wording |
+| 4 | Export existing form submissions | They live in Wix and are lost if the site is cancelled |
+| 5 | `The Nest` vs `Nest` | Canonical framework name differs from the site (§11.3) |
+| 6 | Meta descriptions / og:images | Absent on Wix. Currently reusing each page's own opening line rather than inventing copy |
+| 7 | Favicon | None exists |
+| 8 | Membership video weight | 11.2MB; 480p available at 4.6MB (§11.7) |
+| 9 | Three Wix stock assets | `stage-bloom`, the Experiences closing video and the Membership closing video are Wix library media. That licence may not travel off Wix — replace before launch |
+| 10 | Positioning conflicts with CLAUDE.md (§7D) | "A PRIVATE MEMBERSHIP" in the hero, subscription-style tier names, and no "first Narelo home" framing. **Untouched — outside the approved fixes** |
+| 11 | Domain | `metadataBase` defaults to `https://narelo.es`; set `NEXT_PUBLIC_SITE_URL` for the real one |
