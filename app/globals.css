@@ -34,7 +34,8 @@
 @layer base {
   html {
     scroll-behavior: smooth;
-    scroll-padding-top: 6rem;
+    /* Clears the sticky header plus the membership page's chapter nav. */
+    scroll-padding-top: 8.5rem;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
   }

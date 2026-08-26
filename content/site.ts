@@ -23,8 +23,15 @@ export const site = {
  * until they are ready (Rui, 2026-08-26). Re-add them here when they are.
  */
 export const nav = [
-  { label: 'Experiences', href: '/experiences' },
-  { label: 'Membership', href: '/membership' },
+  /*
+   * Relative, not the absolute vercel.app URL: this has to keep working on
+   * localhost and on the real domain later, and a same-origin link scrolls
+   * instead of triggering a full page load. Trailing slash matches
+   * next.config trailingSlash: true, so the anchor resolves without a redirect.
+   */
+  { label: 'What is Narelo', href: '/membership/#what' },
+  { label: 'Experiences', href: '/experiences/' },
+  { label: 'Membership', href: '/membership/' },
 ] as const;
 
 /** The primary CTA opens a WhatsApp conversation directly (funnel step 3). */

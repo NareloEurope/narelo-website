@@ -115,7 +115,7 @@ export const journey = {
   ],
   note: 'Five-year-olds are placed between Builders I and Builders II depending on readiness, not birthday.',
   linkLabel: 'Explore the age groups',
-  linkHref: '/experiences#journey',
+  linkHref: '/experiences/#journey',
 } as const;
 
 /** framework/mission-vision-promise.md — The Narelo Promise. */

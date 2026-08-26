@@ -50,7 +50,10 @@ export default function Header() {
     };
   }, []);
 
-  const isActive = (href: string) => pathname.startsWith(href);
+  // Anchor links never take the active underline: they point into a page
+  // rather than at one, and would otherwise double up with that page's item.
+  const isActive = (href: string) =>
+    !href.includes('#') && pathname.startsWith(href.replace(/\/$/, ''));
   // Light type only while transparent over a dark hero and not in the drawer.
   const light = overDarkHero && !scrolled && !open;
 
