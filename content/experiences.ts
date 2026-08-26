@@ -45,7 +45,7 @@ export const worlds = {
       body: 'Woodland, hills, trails and open landscape. Children encounter nature on its own terms: exploring it physically, observing it closely and gradually understanding their place within it.',
     },
     {
-      name: 'The World Around Us',
+      name: 'World Around Us',
       body: 'Much of everyday life happens behind doors children rarely get to open. This world opens them: craftsmanship, professions, food, culture and local traditions, with children participating rather than only observing.',
     },
     {
@@ -53,7 +53,7 @@ export const worlds = {
       body: 'Where children interpret, transform and respond to what they encounter. Art, music, storytelling, construction and design, with no expectation of twenty identical finished products.',
     },
     {
-      name: 'The Future',
+      name: 'Future',
       body: 'Invention, experimentation and emerging possibilities, including thoughtful encounters with technology. Technology is a tool, not the thinker.',
     },
   ],

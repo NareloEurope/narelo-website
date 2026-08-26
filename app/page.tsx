@@ -140,28 +140,20 @@ export default function HomePage() {
           <p className="lede text-ink-soft">{journey.body}</p>
         </div>
 
-        <ol className="reveal border-t border-ink/12" data-reveal>
-          {journey.stages.map((stage) => (
-            <li key={stage.name}>
-              <Link
-                href={journey.linkHref}
-                className="group grid items-baseline gap-2 border-b border-ink/12 py-7 transition-colors duration-500 hover:bg-shell md:grid-cols-[1.2fr_6rem_1.6fr_auto] md:gap-8 md:px-4 md:py-9"
-              >
-                <h3 className="display display-md transition-transform duration-700 md:group-hover:translate-x-2">
-                  {stage.name}
-                </h3>
-                <span className="eyebrow text-olive">{stage.age}</span>
-                <p className="body-copy max-w-md text-ink-soft">{stage.body}</p>
-                <span
-                  className="eyebrow hidden text-ink opacity-0 transition-[opacity,transform] duration-500 md:block md:-translate-x-2 md:group-hover:translate-x-0 md:group-hover:opacity-100"
-                  aria-hidden="true"
-                >
-                  Explore →
-                </span>
-              </Link>
-            </li>
-          ))}
-        </ol>
+        {/* Horizontal timeline: a hairline with seven stops. Scrolls sideways
+            on small screens rather than cramming seven columns. */}
+        <div className="fade overflow-x-auto pb-4" data-reveal>
+          <ol className="relative flex min-w-[880px]">
+            <div className="absolute left-0 right-0 top-[5px] h-px bg-ink/15" aria-hidden="true" />
+            {journey.stages.map((stage) => (
+              <li key={stage.name} className="flex flex-1 flex-col items-center px-2 text-center">
+                <span className="h-[11px] w-[11px] rounded-full border border-olive bg-linen" aria-hidden="true" />
+                <h3 className="display mt-6 text-lg leading-tight md:text-xl">{stage.name}</h3>
+                <p className="eyebrow mt-2 text-olive">{stage.age}</p>
+              </li>
+            ))}
+          </ol>
+        </div>
 
         <div className="mt-14 flex flex-col gap-6 fade md:flex-row md:items-center md:justify-between" data-reveal>
           <p className="body-copy max-w-md text-ink-soft">{journey.note}</p>

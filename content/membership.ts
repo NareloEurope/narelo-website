@@ -32,9 +32,21 @@ export const hero = {
 export const whatItIs = {
   eyebrow: 'What Narelo is',
   heading: 'A members’ community built around extraordinary experiences',
-  body: 'Not a class, a nursery or a play centre. Narelo is an ongoing membership: small groups of children exploring the real world with the same educators and the same friends, week after week, for years rather than terms.',
+  body: 'Narelo is an ongoing membership: small groups of children exploring the real world with the same educators and the same friends, week after week.',
   pull: 'Children join for the experiences. Families stay for the community.',
   image: '/images/img-1667.webp',
+} as const;
+
+/**
+ * What Narelo is NOT, given its own moment (Rui, 2026-08-26: the negation was
+ * buried in body copy). Grounded in positioning.md: "Deliberately not
+ * positioned as another children's activity, class, nursery, play centre, or
+ * collection of disconnected sessions."
+ */
+export const isNot = {
+  eyebrow: 'And what it is not',
+  items: ['A class', 'A nursery', 'A play centre', 'Another activity'],
+  line: 'Narelo is a membership your family belongs to.',
 } as const;
 
 /** Q2 — What does my child experience? Five Worlds + the session shape. */
@@ -45,9 +57,9 @@ export const childExperience = {
   worlds: [
     { name: 'Ocean', body: 'The sea as a living place, met with senses and body.' },
     { name: 'Mountain', body: 'Woodland, hills and trails, on nature’s own terms.' },
-    { name: 'The World Around Us', body: 'The people and craft behind everyday life.' },
+    { name: 'World Around Us', body: 'The people and craft behind everyday life.' },
     { name: 'Expression', body: 'Art, making and giving form to their own ideas.' },
-    { name: 'The Future', body: 'Invention, experimentation and what might be possible.' },
+    { name: 'Future', body: 'Invention, experimentation and what might be possible.' },
   ],
   facts: [
     { value: '90 min', label: 'each experience' },
@@ -56,11 +68,43 @@ export const childExperience = {
   note: 'Experiences happen in our Marbella home and well beyond it: beach, forest and real-world places. Younger groups may include a parent; older children come on their own.',
 } as const;
 
+/**
+ * The membership in practice — adapted from Rui's brief (2026-08-26): weekly
+ * cadence, experiences not activities, worlds blending, real places and real
+ * feelings, Signature Saturdays twice a month (paid, no pricing on site).
+ */
+export const practice = {
+  eyebrow: 'In practice',
+  heading: 'What actually happens',
+  items: [
+    {
+      n: '01',
+      title: 'One experience a week',
+      body: 'Your child’s group meets once a week, four times a month. We call them experiences rather than activities or lessons, because that is what we are building: time your child feels, not content they sit through.',
+    },
+    {
+      n: '02',
+      title: 'Out in the real world',
+      body: 'An experience might take the group to the beach, where water, sand and weather bring discovery all on their own. Or into the forest. Or to the people and craft behind everyday life. The five worlds often blend into one another, exactly as the real world does.',
+    },
+    {
+      n: '03',
+      title: 'Not between four walls',
+      body: 'This is what makes Narelo different. We are not filling an hour indoors. Children remember how an experience felt years after any lesson fades, so feelings are what we design for.',
+    },
+    {
+      n: '04',
+      title: 'Signature Saturdays',
+      body: 'Twice a month we create something bigger: an experience for the children, and a slow morning for the parents to be together. Saturdays sit alongside the weekly rhythm and are bookable at member rates.',
+    },
+  ],
+} as const;
+
 /** Q3 — Which age group is relevant? framework/age-groups.md, canonical. */
 export const ageGroups = {
-  eyebrow: 'Which group is right',
-  heading: 'Find your child’s stage',
-  body: 'Every child belongs to a named group that moves with them as they grow.',
+  eyebrow: 'From the very beginning',
+  heading: 'A place that grows with your child',
+  body: 'Every child belongs to a named group that moves with them as they grow. Families can join at any point, and many begin before their child is born.',
   groups: [
     { name: 'Bloom', age: 'Pregnancy', body: 'A gentle beginning, before your child arrives.' },
     { name: 'Nurture', age: '0–1 year', body: 'Sensing, discovering and connecting.' },
@@ -88,8 +132,8 @@ export const howItWorks = {
 
 /** Q5 — What is included? Drawn from the current site's stated member benefits. */
 export const included = {
-  eyebrow: 'What’s included',
-  heading: 'Everything a membership carries',
+  eyebrow: 'Membership',
+  heading: 'What comes with membership',
   items: [
     { title: 'Weekly experiences', body: 'Your child’s regular place in their age group, every week of term.' },
     { title: 'Signature Saturdays', body: 'Slow Saturdays built for discovery, creativity and time together as a family, bookable at member rates.' },

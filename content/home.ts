@@ -51,8 +51,9 @@ export const shape = {
 
 /**
  * framework/the-narelo-framework.md Part IV — canonical names and summaries.
- * Movement and Stillness flow through all five rather than being a sixth.
- * Rendered on the home page as the interactive WorldsExplorer.
+ * Display names drop the leading "The" (Rui, 2026-08-26): World Around Us,
+ * Future. Movement and Stillness flow through all five rather than being a
+ * sixth. Rendered on the home page as the scroll-driven WorldsExplorer.
  */
 export const worlds = {
   eyebrow: 'The Five Worlds',
@@ -72,7 +73,7 @@ export const worlds = {
       image: '/images/world-mountain.webp',
     },
     {
-      name: 'The World Around Us',
+      name: 'World Around Us',
       short: 'Doors children rarely get to open',
       body: 'The people, knowledge and craft behind everyday life: where things come from, how they are made, and who makes them possible. Children take part, not just watch.',
       image: '/images/home-world-built-around-childhood.webp',
@@ -84,7 +85,7 @@ export const worlds = {
       image: '/images/gallery-02.webp',
     },
     {
-      name: 'The Future',
+      name: 'Future',
       short: 'Curiosity about what is changing',
       body: 'Invention, experimentation and thoughtful encounters with new tools and ideas, so children meet change with curiosity and confidence.',
       image: '/images/contact-hero.webp',
@@ -142,7 +143,7 @@ export const home = {
 export const founders = {
   eyebrow: 'The founders',
   heading: 'Natalie and Vivien',
-  body: 'Natalie leads Narelo’s direction and the community around it. Vivien, our Educational Leader, designs what actually happens with the children: a special needs teacher, speech therapist and movement specialist who has worked with children since 2019.',
+  body: 'Natalie leads Narelo’s direction and the community around it. She is a mother herself, and Narelo is the kind of childhood she wanted for her own son and could never find. Vivien, our Educational Leader, designs what actually happens with the children: a special needs teacher, speech therapist and movement specialist.',
 } as const;
 
 export const closing = {

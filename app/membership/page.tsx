@@ -3,10 +3,13 @@ import Section from '@/components/Section';
 import LazyVideo from '@/components/LazyVideo';
 import { contact } from '@/content/site';
 import WhatsAppIcon from '@/components/WhatsAppIcon';
+import IncludedAccordion from '@/components/IncludedAccordion';
 import {
   hero,
   whatItIs,
+  isNot,
   childExperience,
+  practice,
   ageGroups,
   howItWorks,
   included,
@@ -24,6 +27,7 @@ export const metadata = {
 const CHAPTERS = [
   { id: 'what', label: 'What Narelo is' },
   { id: 'experience', label: 'The experiences' },
+  { id: 'practice', label: 'In practice' },
   { id: 'ages', label: 'Age groups' },
   { id: 'how', label: 'How it works' },
   { id: 'included', label: 'What’s included' },
@@ -98,6 +102,19 @@ export default function MembershipPage() {
             />
           </div>
         </div>
+
+        {/* What Narelo is NOT, struck through one by one, then what it is. */}
+        <div className="mt-24 border-t border-ink/12 pt-14 fade" data-reveal>
+          <p className="eyebrow mb-8 text-olive">{isNot.eyebrow}</p>
+          <ul className="flex flex-wrap items-baseline gap-x-10 gap-y-4">
+            {isNot.items.map((item) => (
+              <li key={item} className="display display-md text-ink-soft line-through decoration-olive/60 decoration-1">
+                {item}
+              </li>
+            ))}
+          </ul>
+          <p className="display display-md mt-10 italic text-ink">{isNot.line}</p>
+        </div>
       </Section>
 
       {/* ---------- 2. What does my child experience? ---------- */}
@@ -139,7 +156,32 @@ export default function MembershipPage() {
         </div>
       </section>
 
-      {/* ---------- 3. Which age group? ---------- */}
+      {/* ---------- 3. In practice ---------- */}
+      <Section id="practice">
+        <div className="grid gap-16 md:grid-cols-[0.85fr_1.15fr] md:gap-24">
+          <div className="fade md:sticky md:top-40 md:self-start" data-reveal>
+            <p className="eyebrow mb-8 text-olive">{practice.eyebrow}</p>
+            <h2 className="display display-lg">{practice.heading}</h2>
+          </div>
+
+          <ul className="reveal" data-reveal>
+            {practice.items.map((item) => (
+              <li
+                key={item.n}
+                className="grid gap-4 border-t border-ink/12 py-8 first:border-t-0 first:pt-0 md:grid-cols-[4rem_1fr] md:gap-8"
+              >
+                <span className="eyebrow text-olive">{item.n}</span>
+                <div>
+                  <h3 className="display display-md mb-3">{item.title}</h3>
+                  <p className="body-copy max-w-lg text-ink-soft">{item.body}</p>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </Section>
+
+      {/* ---------- 4. Which age group? ---------- */}
       <Section id="ages">
         <div className="mb-16 max-w-2xl fade" data-reveal>
           <p className="eyebrow mb-8 text-olive">{ageGroups.eyebrow}</p>
@@ -147,24 +189,25 @@ export default function MembershipPage() {
           <p className="lede text-ink-soft">{ageGroups.body}</p>
         </div>
 
-        <ul className="reveal grid gap-x-10 gap-y-8 sm:grid-cols-2 lg:grid-cols-3" data-reveal>
+        <ol className="reveal border-t border-ink/12" data-reveal>
           {ageGroups.groups.map((g) => (
-            <li key={g.name} className="border-t border-ink/12 pt-6">
-              <div className="flex items-baseline justify-between gap-4">
-                <h3 className="display display-md">{g.name}</h3>
-                <span className="eyebrow shrink-0 text-olive">{g.age}</span>
-              </div>
-              <p className="body-copy mt-3 text-ink-soft">{g.body}</p>
+            <li
+              key={g.name}
+              className="grid items-baseline gap-2 border-b border-ink/12 py-7 md:grid-cols-[1.2fr_7rem_1.6fr] md:gap-8 md:py-9"
+            >
+              <h3 className="display display-md">{g.name}</h3>
+              <span className="eyebrow text-olive">{g.age}</span>
+              <p className="body-copy max-w-md text-ink-soft">{g.body}</p>
             </li>
           ))}
-        </ul>
+        </ol>
 
         <p className="body-copy mt-12 max-w-xl text-ink-soft fade" data-reveal>
           {ageGroups.note}
         </p>
       </Section>
 
-      {/* ---------- 4. How does membership work? ---------- */}
+      {/* ---------- 5. How does membership work? ---------- */}
       <Section id="how" bg="bg-shell">
         <div className="grid gap-16 md:grid-cols-[0.85fr_1.15fr] md:gap-24">
           <div className="fade md:sticky md:top-40 md:self-start" data-reveal>
@@ -190,25 +233,20 @@ export default function MembershipPage() {
         </div>
       </Section>
 
-      {/* ---------- 5. What is included? ---------- */}
+      {/* ---------- 6. What is included? ---------- */}
       <Section id="included">
-        <div className="mb-16 max-w-2xl fade" data-reveal>
-          <p className="eyebrow mb-8 text-olive">{included.eyebrow}</p>
-          <h2 className="display display-lg">{included.heading}</h2>
+        <div className="grid gap-14 md:grid-cols-[0.8fr_1.2fr] md:gap-24">
+          <div className="fade md:sticky md:top-40 md:self-start" data-reveal>
+            <p className="eyebrow mb-8 text-olive">{included.eyebrow}</p>
+            <h2 className="display display-lg">{included.heading}</h2>
+          </div>
+          <div className="fade" data-reveal>
+            <IncludedAccordion items={included.items} />
+          </div>
         </div>
-
-        <ul className="reveal grid gap-x-12 gap-y-10 sm:grid-cols-2 lg:grid-cols-4" data-reveal>
-          {included.items.map((item) => (
-            <li key={item.title}>
-              <div className="mb-5 h-px w-full bg-ink/15" aria-hidden="true" />
-              <h3 className="display text-xl leading-snug">{item.title}</h3>
-              <p className="body-copy mt-3 text-ink-soft">{item.body}</p>
-            </li>
-          ))}
-        </ul>
       </Section>
 
-      {/* ---------- 6. How do we join? ---------- */}
+      {/* ---------- 7. How do we join? ---------- */}
       <Section id="join">
         <div className="mb-16 max-w-2xl fade" data-reveal>
           <p className="eyebrow mb-8 text-olive">{joining.eyebrow}</p>
