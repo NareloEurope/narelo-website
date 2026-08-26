@@ -1,51 +1,440 @@
 {
   "_comment": "Source manifest for the Wix migration. uri = Wix media id (fetch original at https://static.wixstatic.com/media/<uri>). local = target filename under public/images/. Videos fetch from https://video.wixstatic.com/video/<id>/<quality>/mp4/file.mp4",
   "images": [
-    { "uri": "8eceb8_77bd1100ab4f49108423a3f3fe9ada5f~mv2.png", "w": 796,  "h": 341,  "local": "narelo-logo.png",                    "pages": ["all"],          "role": "Header + footer wordmark", "alt": "Narelo-logo" },
-
-    { "uri": "8eceb8_90c4a7758517479680ca1b925bd70973f000.jpg", "w": 1280, "h": 720, "local": "home-hero-poster.jpg",         "pages": ["home"],         "role": "Hero background-video poster frame", "alt": "Kids running" },
-    { "uri": "8eceb8_1d2781d65cfd48e49a19569703325493~mv2.png", "w": 1080, "h": 1350, "local": "home-moment-to-pause.png",    "pages": ["home"],         "role": "'A moment to pause' section image", "alt": "" },
-    { "uri": "8eceb8_fe7b9f51e8ac456dbc034b1edee0f921~mv2.png", "w": 1080, "h": 1350, "local": "home-not-to-be-rushed.png",   "pages": ["home"],         "role": "'Childhood is not to be rushed' section image", "alt": "POST - NARELO - 5.PNG" },
-    { "uri": "8eceb8_240e4cdf57334865859366ba4c84c4e9~mv2.png", "w": 1080, "h": 604,  "local": "home-world-built-around-childhood.png", "pages": ["home"], "role": "'A world built around childhood' band", "alt": "POST - NARELO - 9.PNG" },
-    { "uri": "8eceb8_b86e85706f3d449bb249d402202f0b93~mv2.png", "w": 1536, "h": 1024, "local": "home-familiar-faces.png",     "pages": ["home"],         "role": "'Familiar faces' closing section image", "alt": "ca828e1b-2e1e-48b8-b488-cc5fd082f851.png" },
-
-    { "uri": "8eceb8_c290273215204b6eb89f2dd3fa281dd0~mv2.jpg", "w": 2048, "h": 1152, "local": "experiences-hero.jpg",        "pages": ["experiences"],  "role": "Page hero", "alt": "ai-generated-IMAGE.jpg" },
-    { "uri": "11062b_2f97b87dcea2446fa48e9ad9c5457ae1~mv2.jpg", "w": 3000, "h": 2000, "local": "experiences-abstract-waves.jpg", "pages": ["experiences"], "role": "Decorative band (Wix stock)", "alt": "Ondas rosas abstractas", "stock": true },
-    { "uri": "8eceb8_554f7765b4344804af239ad56a31772e~mv2.png", "w": 1024, "h": 1536, "local": "stage-bloom.png",             "pages": ["experiences"],  "role": "Stage card — Bloom", "alt": "" },
-    { "uri": "8eceb8_8a912d06383a401f873a03fd2a94c37b~mv2.png", "w": 1023, "h": 1537, "local": "stage-nest.png",              "pages": ["experiences"],  "role": "Stage card — Nest", "alt": "NEST.png" },
-    { "uri": "8eceb8_bdc1f0d81fd44534b61a194aee988cf7~mv2.png", "w": 1024, "h": 1536, "local": "stage-little-beginnings.png",  "pages": ["experiences"],  "role": "Stage card — Little Beginnings", "alt": "little beginnings.png" },
-    { "uri": "8eceb8_4a6a028250ee447aaa16443a0bdae228~mv2.png", "w": 1537, "h": 1023, "local": "stage-builders.png",          "pages": ["experiences"],  "role": "Stage card — Builders", "alt": "BUILDERS.png" },
-    { "uri": "8eceb8_de5ac1ec874a4c9b8e4632b7f627168a~mv2.png", "w": 1536, "h": 1024, "local": "stage-navigators.png",        "pages": ["experiences"],  "role": "Stage card — Navigators", "alt": "NAVIGATORS.png" },
-    { "uri": "8eceb8_3a73b3ff020746ea9549f649bfa7e360~mv2.jpg", "w": 1536, "h": 2048, "local": "img-1667.jpg",                "pages": ["experiences", "membership"], "role": "Shared photo (IMG_1667)", "alt": "IMG_1667.JPG" },
-    { "uri": "11062b_c7a807bb1cd448218730b176c28c6ccef000.jpg", "w": 1920, "h": 1080, "local": "experiences-video-poster.jpg", "pages": ["experiences"], "role": "Closing background-video poster (Wix stock)", "alt": "", "stock": true },
-
-    { "uri": "8eceb8_1516ba07cdf84145adbf176e52e44c82~mv2.jpg", "w": 1672, "h": 941,  "local": "membership-hero.jpg",         "pages": ["membership"],   "role": "Page hero", "alt": "" },
-    { "uri": "8eceb8_a3de1feca34449d1a8a9f83f9478d5e0~mv2.jpeg","w": 1200, "h": 1600, "local": "family-whatsapp-091957.jpeg", "pages": ["membership", "community"], "role": "Section photo + gallery slide 03", "alt": "WhatsApp Image 2026-08-14 at 09.19.57 (2).jpeg" },
-    { "uri": "8eceb8_74858e52e5124e5aa3aa15170b804290~mv2.jpg", "w": 1536, "h": 2048, "local": "img-5208.jpg",                "pages": ["membership", "community"], "role": "Section photo + gallery slide 06", "alt": "IMG_5208.JPG" },
-    { "uri": "8eceb8_6f6acb61bcd14e32bf9b78d1c5ad8dd6~mv2.jpg", "w": 1536, "h": 2048, "local": "img-5211.jpg",                "pages": ["membership"],   "role": "Section photo", "alt": "IMG_5211.JPG" },
-    { "uri": "8eceb8_aa0a3c695aae413b8254731f1543b33a~mv2.png", "w": 1855, "h": 848,  "local": "membership-beach-background.png", "pages": ["membership"], "role": "'Choose how you belong' background", "alt": "playa fondo.png" },
-    { "uri": "8eceb8_93bad040786b48348cf2e3c8c334d801f000.jpg", "w": 1280, "h": 720,  "local": "membership-video-poster.jpg",  "pages": ["membership"],  "role": "'Ready to belong?' background-video poster", "alt": "" },
-
-    { "uri": "8eceb8_70e9184dfb00412f9f22f6c007e5b190~mv2.jpeg","w": 1200, "h": 1600, "local": "community-hero.jpeg",         "pages": ["community"],    "role": "Page hero", "alt": "WhatsApp Image 2026-08-14 at 09.19.56.jpeg" },
-    { "uri": "8eceb8_504efafee3cd415a9e02dba275e372f9~mv2.jpg", "w": 1536, "h": 2048, "local": "gallery-01.jpg",              "pages": ["community"],    "role": "Gallery slide 01", "alt": "" },
-    { "uri": "8eceb8_7e8a0a828e5d4e88b8592e84cbd5eb8b~mv2.jpg", "w": 1536, "h": 2048, "local": "gallery-02.jpg",              "pages": ["community"],    "role": "Gallery slide 02", "alt": "" },
-    { "uri": "8eceb8_52510bd0f752495d8a6bb8a5c633116a~mv2.jpg", "w": 1536, "h": 2048, "local": "gallery-04.jpg",              "pages": ["community"],    "role": "Gallery slide 04", "alt": "" },
-    { "uri": "8eceb8_3485ddf6976747cb803151373bc75f9a~mv2.jpg", "w": 1536, "h": 2048, "local": "gallery-05.jpg",              "pages": ["community"],    "role": "Gallery slide 05", "alt": "" },
-    { "uri": "8eceb8_16ace0e4c7c04cb7a7247be0f3ceefd4f000.jpg", "w": 1920, "h": 1080, "local": "community-video-poster.jpg",   "pages": ["community"],   "role": "Background-video poster", "alt": "" },
-
-    { "uri": "8eceb8_b4c2d9bdddff48ddaefb6f6481fc5753~mv2.png", "w": 1536, "h": 1024, "local": "contact-hero.png",            "pages": ["contact"],      "role": "Page hero", "alt": "FONDO 5" },
-    { "uri": "8eceb8_b57a8a7537934258ac972d406f40b3bbf000.jpg", "w": 1280, "h": 720,  "local": "contact-video-poster.jpg",     "pages": ["contact"],     "role": "Background-video poster", "alt": "" },
-
-    { "uri": "8eceb8_9e280bd14fd044d5b0672f204c208226~mv2.png", "w": 1254, "h": 1254, "local": "footer-tile-1.png",           "pages": ["all"],          "role": "Footer image tile 1", "alt": "" },
-    { "uri": "8eceb8_d21f274ce4e6417da4dc3b7eecfbf00a~mv2.png", "w": 1254, "h": 1254, "local": "footer-tile-2.png",           "pages": ["all"],          "role": "Footer image tile 2", "alt": "ChatGPT Image 18 ago 2026, 15_41_37.png" },
-    { "uri": "8eceb8_cbd96bfbb9c14d21b53c559a4decd804~mv2.png", "w": 1254, "h": 1254, "local": "footer-tile-3.png",           "pages": ["all"],          "role": "Footer image tile 3", "alt": "" },
-    { "uri": "8eceb8_7b9ae6b51a3a48e7bc798f48d99c188f~mv2.png", "w": 1254, "h": 1254, "local": "footer-tile-4.png",           "pages": ["all"],          "role": "Footer image tile 4", "alt": "" }
+    {
+      "uri": "8eceb8_77bd1100ab4f49108423a3f3fe9ada5f~mv2.png",
+      "w": 796,
+      "h": 341,
+      "local": "narelo-logo.png",
+      "pages": [
+        "all"
+      ],
+      "role": "Header + footer wordmark",
+      "alt": "Narelo-logo"
+    },
+    {
+      "uri": "8eceb8_90c4a7758517479680ca1b925bd70973f000.jpg",
+      "w": 1280,
+      "h": 720,
+      "local": "home-hero-poster.jpg",
+      "pages": [
+        "home"
+      ],
+      "role": "Hero background-video poster frame",
+      "alt": "Kids running"
+    },
+    {
+      "uri": "8eceb8_1d2781d65cfd48e49a19569703325493~mv2.png",
+      "w": 1080,
+      "h": 1350,
+      "local": "home-moment-to-pause.png",
+      "pages": [
+        "home"
+      ],
+      "role": "'A moment to pause' section image",
+      "alt": ""
+    },
+    {
+      "uri": "8eceb8_fe7b9f51e8ac456dbc034b1edee0f921~mv2.png",
+      "w": 1080,
+      "h": 1350,
+      "local": "home-not-to-be-rushed.png",
+      "pages": [
+        "home"
+      ],
+      "role": "'Childhood is not to be rushed' section image",
+      "alt": "POST - NARELO - 5.PNG"
+    },
+    {
+      "uri": "8eceb8_240e4cdf57334865859366ba4c84c4e9~mv2.png",
+      "w": 1080,
+      "h": 604,
+      "local": "home-world-built-around-childhood.png",
+      "pages": [
+        "home"
+      ],
+      "role": "'A world built around childhood' band",
+      "alt": "POST - NARELO - 9.PNG"
+    },
+    {
+      "uri": "8eceb8_b86e85706f3d449bb249d402202f0b93~mv2.png",
+      "w": 1536,
+      "h": 1024,
+      "local": "home-discovery.png",
+      "pages": [
+        "home"
+      ],
+      "role": "'A world of discovery' full-bleed background",
+      "alt": "ca828e1b-2e1e-48b8-b488-cc5fd082f851.png"
+    },
+    {
+      "uri": "8eceb8_c290273215204b6eb89f2dd3fa281dd0~mv2.jpg",
+      "w": 2048,
+      "h": 1152,
+      "local": "experiences-hero.jpg",
+      "pages": [
+        "experiences"
+      ],
+      "role": "Page hero",
+      "alt": "ai-generated-IMAGE.jpg"
+    },
+    {
+      "uri": "11062b_2f97b87dcea2446fa48e9ad9c5457ae1~mv2.jpg",
+      "w": 3000,
+      "h": 2000,
+      "local": "stage-bloom.jpg",
+      "pages": [
+        "experiences"
+      ],
+      "role": "Stage card — Bloom (Wix stock image)",
+      "alt": "Ondas rosas abstractas",
+      "stock": true
+    },
+    {
+      "uri": "8eceb8_554f7765b4344804af239ad56a31772e~mv2.png",
+      "w": 1024,
+      "h": 1536,
+      "local": "stage-nurture.png",
+      "pages": [
+        "experiences"
+      ],
+      "role": "Stage card — Nurture",
+      "alt": ""
+    },
+    {
+      "uri": "8eceb8_8a912d06383a401f873a03fd2a94c37b~mv2.png",
+      "w": 1023,
+      "h": 1537,
+      "local": "stage-nest.png",
+      "pages": [
+        "experiences"
+      ],
+      "role": "Stage card — Nest",
+      "alt": "NEST.png"
+    },
+    {
+      "uri": "8eceb8_bdc1f0d81fd44534b61a194aee988cf7~mv2.png",
+      "w": 1024,
+      "h": 1536,
+      "local": "stage-little-beginnings.png",
+      "pages": [
+        "experiences"
+      ],
+      "role": "Stage card — Little Beginnings",
+      "alt": "little beginnings.png"
+    },
+    {
+      "uri": "8eceb8_4a6a028250ee447aaa16443a0bdae228~mv2.png",
+      "w": 1537,
+      "h": 1023,
+      "local": "stage-builders.png",
+      "pages": [
+        "experiences"
+      ],
+      "role": "Stage card — Builders I",
+      "alt": "BUILDERS.png"
+    },
+    {
+      "uri": "8eceb8_de5ac1ec874a4c9b8e4632b7f627168a~mv2.png",
+      "w": 1536,
+      "h": 1024,
+      "local": "stage-navigators.png",
+      "pages": [
+        "experiences"
+      ],
+      "role": "Stage card — Builders II AND Navigators (same image used twice)",
+      "alt": "NAVIGATORS.png"
+    },
+    {
+      "uri": "8eceb8_3a73b3ff020746ea9549f649bfa7e360~mv2.jpg",
+      "w": 1536,
+      "h": 2048,
+      "local": "img-1667.jpg",
+      "pages": [
+        "experiences",
+        "membership"
+      ],
+      "role": "Experiences decorative band + Membership section photo",
+      "alt": "IMG_1667.JPG"
+    },
+    {
+      "uri": "11062b_c7a807bb1cd448218730b176c28c6ccef000.jpg",
+      "w": 1920,
+      "h": 1080,
+      "local": "experiences-video-poster.jpg",
+      "pages": [
+        "experiences"
+      ],
+      "role": "Closing background-video poster (Wix stock)",
+      "alt": "",
+      "stock": true
+    },
+    {
+      "uri": "8eceb8_1516ba07cdf84145adbf176e52e44c82~mv2.jpg",
+      "w": 1672,
+      "h": 941,
+      "local": "membership-hero.jpg",
+      "pages": [
+        "membership"
+      ],
+      "role": "Page hero",
+      "alt": ""
+    },
+    {
+      "uri": "8eceb8_a3de1feca34449d1a8a9f83f9478d5e0~mv2.jpeg",
+      "w": 1200,
+      "h": 1600,
+      "local": "family-whatsapp-091957.jpeg",
+      "pages": [
+        "membership",
+        "community"
+      ],
+      "role": "Section photo + gallery slide 03",
+      "alt": "WhatsApp Image 2026-08-14 at 09.19.57 (2).jpeg"
+    },
+    {
+      "uri": "8eceb8_74858e52e5124e5aa3aa15170b804290~mv2.jpg",
+      "w": 1536,
+      "h": 2048,
+      "local": "img-5208.jpg",
+      "pages": [
+        "membership",
+        "community"
+      ],
+      "role": "Section photo + gallery slide 06",
+      "alt": "IMG_5208.JPG"
+    },
+    {
+      "uri": "8eceb8_6f6acb61bcd14e32bf9b78d1c5ad8dd6~mv2.jpg",
+      "w": 1536,
+      "h": 2048,
+      "local": "img-5211.jpg",
+      "pages": [
+        "membership"
+      ],
+      "role": "Section photo",
+      "alt": "IMG_5211.JPG"
+    },
+    {
+      "uri": "8eceb8_aa0a3c695aae413b8254731f1543b33a~mv2.png",
+      "w": 1855,
+      "h": 848,
+      "local": "membership-beach-background.png",
+      "pages": [
+        "membership"
+      ],
+      "role": "'Choose how you belong' background",
+      "alt": "playa fondo.png"
+    },
+    {
+      "uri": "8eceb8_93bad040786b48348cf2e3c8c334d801f000.jpg",
+      "w": 1280,
+      "h": 720,
+      "local": "membership-video-poster.jpg",
+      "pages": [
+        "membership"
+      ],
+      "role": "'Ready to belong?' background-video poster",
+      "alt": ""
+    },
+    {
+      "uri": "8eceb8_70e9184dfb00412f9f22f6c007e5b190~mv2.jpeg",
+      "w": 1200,
+      "h": 1600,
+      "local": "community-hero.jpeg",
+      "pages": [
+        "community"
+      ],
+      "role": "Page hero",
+      "alt": "WhatsApp Image 2026-08-14 at 09.19.56.jpeg"
+    },
+    {
+      "uri": "8eceb8_504efafee3cd415a9e02dba275e372f9~mv2.jpg",
+      "w": 1536,
+      "h": 2048,
+      "local": "gallery-01.jpg",
+      "pages": [
+        "community"
+      ],
+      "role": "Gallery slide 01",
+      "alt": ""
+    },
+    {
+      "uri": "8eceb8_7e8a0a828e5d4e88b8592e84cbd5eb8b~mv2.jpg",
+      "w": 1536,
+      "h": 2048,
+      "local": "gallery-02.jpg",
+      "pages": [
+        "community"
+      ],
+      "role": "Gallery slide 02",
+      "alt": ""
+    },
+    {
+      "uri": "8eceb8_52510bd0f752495d8a6bb8a5c633116a~mv2.jpg",
+      "w": 1536,
+      "h": 2048,
+      "local": "gallery-04.jpg",
+      "pages": [
+        "community"
+      ],
+      "role": "Gallery slide 04",
+      "alt": ""
+    },
+    {
+      "uri": "8eceb8_3485ddf6976747cb803151373bc75f9a~mv2.jpg",
+      "w": 1536,
+      "h": 2048,
+      "local": "gallery-05.jpg",
+      "pages": [
+        "community"
+      ],
+      "role": "Gallery slide 05",
+      "alt": ""
+    },
+    {
+      "uri": "8eceb8_16ace0e4c7c04cb7a7247be0f3ceefd4f000.jpg",
+      "w": 1920,
+      "h": 1080,
+      "local": "community-video-poster.jpg",
+      "pages": [
+        "community"
+      ],
+      "role": "Background-video poster",
+      "alt": ""
+    },
+    {
+      "uri": "8eceb8_b4c2d9bdddff48ddaefb6f6481fc5753~mv2.png",
+      "w": 1536,
+      "h": 1024,
+      "local": "contact-hero.png",
+      "pages": [
+        "contact"
+      ],
+      "role": "Page hero",
+      "alt": "FONDO 5"
+    },
+    {
+      "uri": "8eceb8_b57a8a7537934258ac972d406f40b3bbf000.jpg",
+      "w": 1280,
+      "h": 720,
+      "local": "contact-video-poster.jpg",
+      "pages": [
+        "contact"
+      ],
+      "role": "Background-video poster",
+      "alt": ""
+    },
+    {
+      "uri": "8eceb8_9e280bd14fd044d5b0672f204c208226~mv2.png",
+      "w": 1254,
+      "h": 1254,
+      "local": "social-whatsapp.png",
+      "pages": [
+        "all"
+      ],
+      "role": "Footer social icon (whatsapp) — rendered ~55px, NOT linked on the source",
+      "alt": "Whatsapp"
+    },
+    {
+      "uri": "8eceb8_d21f274ce4e6417da4dc3b7eecfbf00a~mv2.png",
+      "w": 1254,
+      "h": 1254,
+      "local": "social-instagram.png",
+      "pages": [
+        "all"
+      ],
+      "role": "Footer social icon (instagram) — rendered ~55px, NOT linked on the source",
+      "alt": "Instagram"
+    },
+    {
+      "uri": "8eceb8_cbd96bfbb9c14d21b53c559a4decd804~mv2.png",
+      "w": 1254,
+      "h": 1254,
+      "local": "social-tiktok.png",
+      "pages": [
+        "all"
+      ],
+      "role": "Footer social icon (tiktok) — rendered ~55px, NOT linked on the source",
+      "alt": "Tiktok"
+    },
+    {
+      "uri": "8eceb8_7b9ae6b51a3a48e7bc798f48d99c188f~mv2.png",
+      "w": 1254,
+      "h": 1254,
+      "local": "social-facebook.png",
+      "pages": [
+        "all"
+      ],
+      "role": "Footer social icon (facebook) — rendered ~55px, NOT linked on the source",
+      "alt": "Facebook"
+    }
   ],
   "videos": [
-    { "id": "8eceb8_90c4a7758517479680ca1b925bd70973", "best": "720p", "qualities": ["360p", "480p", "720p"],           "local": "home-hero.mp4",        "page": "home",        "role": "Hero background video", "label": "Kids running" },
-    { "id": "11062b_c7a807bb1cd448218730b176c28c6cce", "best": "1080p", "qualities": ["480p", "720p", "1080p"],         "local": "experiences-closing.mp4", "page": "experiences", "role": "'Some experiences stay with you' background video", "stock": true },
-    { "id": "8eceb8_93bad040786b48348cf2e3c8c334d801", "best": "720p", "qualities": ["360p", "480p", "720p"],           "local": "membership-closing.mp4", "page": "membership",  "role": "'Ready to belong?' background video", "label": "24216-340670744_medium.mp4", "stock": true },
-    { "id": "8eceb8_16ace0e4c7c04cb7a7247be0f3ceefd4", "best": "1080p", "qualities": ["360p", "480p", "720p", "1080p"], "local": "community-band.mp4",   "page": "community",   "role": "Background video" },
-    { "id": "8eceb8_b57a8a7537934258ac972d406f40b3bb", "best": "720p", "qualities": ["360p", "480p", "720p"],           "local": "contact-band.mp4",     "page": "contact",     "role": "Background video" }
+    {
+      "id": "8eceb8_90c4a7758517479680ca1b925bd70973",
+      "best": "720p",
+      "qualities": [
+        "360p",
+        "480p",
+        "720p"
+      ],
+      "local": "home-hero.mp4",
+      "page": "home",
+      "role": "Hero background video",
+      "label": "Kids running"
+    },
+    {
+      "id": "11062b_c7a807bb1cd448218730b176c28c6cce",
+      "best": "1080p",
+      "qualities": [
+        "480p",
+        "720p",
+        "1080p"
+      ],
+      "local": "experiences-closing.mp4",
+      "page": "experiences",
+      "role": "'Some experiences stay with you' background video",
+      "stock": true
+    },
+    {
+      "id": "8eceb8_93bad040786b48348cf2e3c8c334d801",
+      "best": "720p",
+      "qualities": [
+        "360p",
+        "480p",
+        "720p"
+      ],
+      "local": "membership-closing.mp4",
+      "page": "membership",
+      "role": "'Ready to belong?' background video",
+      "label": "24216-340670744_medium.mp4",
+      "stock": true
+    },
+    {
+      "id": "8eceb8_16ace0e4c7c04cb7a7247be0f3ceefd4",
+      "best": "1080p",
+      "qualities": [
+        "360p",
+        "480p",
+        "720p",
+        "1080p"
+      ],
+      "local": "community-band.mp4",
+      "page": "community",
+      "role": "Background video"
+    },
+    {
+      "id": "8eceb8_b57a8a7537934258ac972d406f40b3bb",
+      "best": "720p",
+      "qualities": [
+        "360p",
+        "480p",
+        "720p"
+      ],
+      "local": "contact-band.mp4",
+      "page": "contact",
+      "role": "Background video"
+    }
   ]
 }
