@@ -56,24 +56,30 @@ export default function StageAccordion({ items }: { items: readonly Stage[] }) {
               }}
             >
               <div className="overflow-hidden">
-                <div className="grid gap-8 pb-10 md:grid-cols-[minmax(0,340px)_1fr] md:gap-12">
-                  <div className="overflow-hidden rounded-[2px]">
+                {/*
+                 * The open state is one composed panel rather than a floating
+                 * photo: shell ground, copy on the left, the stage photo
+                 * filling the panel's full right edge.
+                 */}
+                <div className="mb-10 grid overflow-hidden rounded-[2px] bg-shell md:grid-cols-[1fr_minmax(0,380px)]">
+                  <div className="flex flex-col justify-center p-8 md:p-12">
+                    <span className="eyebrow mb-6 text-olive">{stage.age}</span>
+                    {stage.motto && <p className="display display-md mb-5 italic text-olive">{stage.motto}</p>}
+                    <p className="body-copy max-w-md text-ink-soft">{stage.summary}</p>
+                  </div>
+                  <div className="relative order-first min-h-[260px] md:order-none md:min-h-[320px]">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
                       src={stage.image}
                       alt=""
-                      width={800}
-                      height={600}
+                      width={900}
+                      height={1200}
                       loading="lazy"
-                      className={`w-full object-cover transition-transform duration-1000 ${
+                      className={`absolute inset-0 h-full w-full object-cover transition-transform duration-1000 ${
                         isOpen ? 'scale-100' : 'scale-110'
                       }`}
-                      style={{ aspectRatio: '4 / 3', transitionTimingFunction: 'var(--ease-out-expo)' }}
+                      style={{ transitionTimingFunction: 'var(--ease-out-expo)' }}
                     />
-                  </div>
-                  <div className="max-w-lg self-center">
-                    {stage.motto && <p className="display display-md mb-4 italic text-olive">{stage.motto}</p>}
-                    <p className="body-copy text-ink-soft">{stage.summary}</p>
                   </div>
                 </div>
               </div>

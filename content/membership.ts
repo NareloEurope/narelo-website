@@ -137,7 +137,7 @@ export const included = {
       label: 'Included in your membership',
       items: [
         { title: 'Weekly experiences', body: 'Your child’s regular place in their age group, every week of term.' },
-        { title: 'Expert insights', body: 'Sessions with specialists on childhood, development and family life.' },
+        { title: 'Personalised guidance', body: 'One-to-one support and personal guidance on your child’s development, from educators who know them well.' },
         { title: 'Priority booking', body: 'First access to experiences, events and limited places before they open more widely.' },
       ],
     },
@@ -145,6 +145,7 @@ export const included = {
       label: 'For members, at member rates',
       items: [
         { title: 'Signature Saturdays', body: 'Slow Saturdays built for discovery, creativity and time together as a family, twice a month.' },
+        { title: 'Expert insights', body: 'Sessions with specialists on childhood, development and family life.' },
         { title: 'Holiday experiences', body: 'School holidays turned into adventure rather than logistics.' },
         { title: 'Community mornings', body: 'Unhurried mornings to meet the other families and settle into the community.' },
         { title: 'The wider Narelo world', body: 'Birthday experiences, private sessions and family days, created around your family.' },

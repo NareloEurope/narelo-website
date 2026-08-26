@@ -56,7 +56,7 @@ export const stageDetails: readonly Stage[] = [
     tagline: 'Building confidence through discovery.',
     summary:
       'Gentle, discovery-led sessions where two-year-olds grow confident with materials, movement and first friendships, with a parent or caregiver close by.',
-    image: '/images/home-moment-to-pause.webp',
+    image: '/images/stage-photo-little-beginnings.webp',
   },
   {
     name: 'Builders I',
