@@ -66,6 +66,20 @@ export default function StageAccordion({ items }: { items: readonly Stage[] }) {
                     <span className="eyebrow mb-6 text-olive">{stage.age}</span>
                     {stage.motto && <p className="display display-md mb-5 italic text-olive">{stage.motto}</p>}
                     <p className="body-copy max-w-md text-ink-soft">{stage.summary}</p>
+
+                    {stage.whatToExpect && (
+                      <div className="mt-8 border-t border-ink/12 pt-7">
+                        <p className="eyebrow mb-4 text-ink">What to expect</p>
+                        <ul className="flex flex-col gap-2.5">
+                          {stage.whatToExpect.map((point) => (
+                            <li key={point} className="body-copy flex gap-3 text-ink-soft">
+                              <span className="mt-[0.7em] h-1 w-1 shrink-0 rounded-full bg-olive" aria-hidden="true" />
+                              <span>{point}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
                   </div>
                   <div className="relative order-first min-h-[260px] md:order-none md:min-h-[320px]">
                     {/* eslint-disable-next-line @next/next/no-img-element */}

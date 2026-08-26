@@ -6,10 +6,13 @@
  * summaries for Nurture and The Nest are transcribed from Rui's stage briefs
  * (assets-source/stage-briefs/, 2026-08-26), which also supplied their photos.
  *
- * TODO: the other five stages have no briefs yet. Their summaries below are
- * provisional: modest expansions of the approved one-line descriptions, with
- * no session-level claims. Replace them (and add mottos) as each stage brief
- * arrives, the way Nurture and The Nest were done.
+ * Little Beginnings, Builders I, Builders II and Navigators come from the
+ * four-groups chart (assets-source/stage-briefs/four-groups-chart.jpeg,
+ * 2026-08-27): mottos, summaries and "what to expect" lists transcribed
+ * verbatim. Photos are unchanged, per Rui.
+ *
+ * TODO: Bloom is the only stage still without a brief. Its summary is
+ * provisional and it carries no motto or list.
  *
  * House style: no em dashes in published copy.
  */
@@ -20,6 +23,8 @@ export type Stage = {
   tagline: string;
   motto?: string;
   summary: string;
+  /** "What to expect" bullets from the stage brief, where one exists. */
+  whatToExpect?: readonly string[];
   image: string;
 };
 
@@ -60,32 +65,64 @@ export const stageDetails: readonly Stage[] = [
     name: 'Little Beginnings',
     age: '2–3 years',
     tagline: 'Building confidence through discovery.',
+    motto: 'I discover.',
     summary:
-      'Gentle, discovery-led sessions where two-year-olds grow confident with materials, movement and first friendships, with a parent or caregiver close by.',
+      'First adventures in the Five Worlds. Sensory, playful experiences that spark curiosity, build confidence and create joyful memories.',
+    whatToExpect: [
+      'Sensory exploration in nature and real environments',
+      'Play-based learning through movement and discovery',
+      'Simple creative experiences and music',
+      'Meeting animals, exploring textures and materials',
+      'Building early independence and social connections',
+    ],
     image: '/images/stage-photo-little-beginnings.webp',
   },
   {
     name: 'Builders I',
     age: '3–5 years',
     tagline: 'Creating, exploring and making sense of the world.',
+    motto: 'I explore and create.',
     summary:
-      'From around three, children step into the Five Worlds: making, exploring and asking bigger questions in a small group that knows them well.',
+      'Hands-on experiences in the Five Worlds that encourage exploration, creativity, questioning and the joy of making.',
+    whatToExpect: [
+      'Nature exploration and outdoor adventures',
+      'Creative projects with natural and recycled materials',
+      'Movement, yoga and body awareness',
+      'Music, stories, drama and imaginative play',
+      'Group challenges, teamwork and problem solving',
+    ],
     image: '/images/gallery-02.webp',
   },
   {
     name: 'Builders II',
     age: '5–6 years',
     tagline: 'Questioning, creating and building ideas.',
+    motto: 'I investigate and build.',
     summary:
-      'Deeper projects and bigger ideas. Children question, create and build, taking on gentle challenge with growing independence.',
+      'Deeper investigations and real-world experiences that develop thinking, collaboration and growing independence.',
+    whatToExpect: [
+      'In-depth nature and place-based investigations',
+      'Small projects, experiments and creations',
+      'Challenging movement and outdoor activities',
+      'Meeting experts, visiting inspiring places',
+      'Planning, reflecting and sharing ideas',
+    ],
     image: '/images/home-not-to-be-rushed.webp',
   },
   {
     name: 'Navigators',
     age: '6–8 years',
     tagline: 'Growing independence and finding their way.',
+    motto: 'I go deeper and find my way.',
     summary:
-      'Real adventures and real responsibility. Older children explore further, lead more, and find their own way through the worlds.',
+      'Meaningful experiences that inspire curiosity, resilience and purpose as children grow into confident, capable young people.',
+    whatToExpect: [
+      'Real-world adventures and longer explorations',
+      'Research, projects and creative expression',
+      'Leadership, collaboration and community impact',
+      'Physical challenges and skill-building',
+      'Reflection, goal setting and personal growth',
+    ],
     image: '/images/world-mountain.webp',
   },
 ] as const;
