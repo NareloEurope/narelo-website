@@ -63,13 +63,13 @@ export default function Gallery({ items }: { items: readonly Slide[] }) {
       </ul>
 
       <div className="mt-8 flex items-center justify-center gap-8">
-        <button type="button" onClick={() => slide(-1)} aria-label="Previous images" className="eyebrow text-sage transition-colors hover:text-rust">
+        <button type="button" onClick={() => slide(-1)} aria-label="Previous images" className="eyebrow text-ink transition-colors hover:text-olive">
           Previous
         </button>
-        <span className="eyebrow text-warm-grey" aria-live="polite">
+        <span className="eyebrow text-ink-soft" aria-live="polite">
           {items[start].n} / {String(items.length).padStart(2, '0')}
         </span>
-        <button type="button" onClick={() => slide(1)} aria-label="Next images" className="eyebrow text-sage transition-colors hover:text-rust">
+        <button type="button" onClick={() => slide(1)} aria-label="Next images" className="eyebrow text-ink transition-colors hover:text-olive">
           Next
         </button>
       </div>
@@ -84,17 +84,17 @@ export default function Gallery({ items }: { items: readonly Slide[] }) {
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src={items[open].src} alt="" className="max-h-[80vh] max-w-full object-contain" onClick={(e) => e.stopPropagation()} />
-          <p className="eyebrow mt-6 text-cream/80">
+          <p className="eyebrow mt-6 text-linen/80">
             {items[open].n} / {String(items.length).padStart(2, '0')}
           </p>
-          <button type="button" onClick={close} aria-label="Close" className="eyebrow absolute right-5 top-5 text-cream transition-opacity hover:opacity-70">
+          <button type="button" onClick={close} aria-label="Close" className="eyebrow absolute right-5 top-5 text-linen transition-opacity hover:opacity-70">
             Close
           </button>
           <button
             type="button"
             onClick={(e) => { e.stopPropagation(); step(-1); }}
             aria-label="Previous image"
-            className="eyebrow absolute left-4 top-1/2 -translate-y-1/2 p-4 text-cream transition-opacity hover:opacity-70"
+            className="eyebrow absolute left-4 top-1/2 -translate-y-1/2 p-4 text-linen transition-opacity hover:opacity-70"
           >
             Previous
           </button>
@@ -102,7 +102,7 @@ export default function Gallery({ items }: { items: readonly Slide[] }) {
             type="button"
             onClick={(e) => { e.stopPropagation(); step(1); }}
             aria-label="Next image"
-            className="eyebrow absolute right-4 top-1/2 -translate-y-1/2 p-4 text-cream transition-opacity hover:opacity-70"
+            className="eyebrow absolute right-4 top-1/2 -translate-y-1/2 p-4 text-linen transition-opacity hover:opacity-70"
           >
             Next
           </button>

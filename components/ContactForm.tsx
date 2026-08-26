@@ -37,15 +37,15 @@ export default function ContactForm() {
 
   if (status === 'success') {
     return (
-      <div role="status" className="border-t border-sage/15 pt-10 text-center">
+      <div role="status" className="border-t border-ink/15 pt-10 text-center">
         {/*
           The live Wix confirmation message could not be captured without
           submitting to the real inbox — see MIGRATION-AUDIT.md §9.
           TODO: replace with Narelo's actual confirmation copy.
         */}
         <p className="display mb-3 text-2xl">Thank you.</p>
-        <p className="body-copy text-warm-grey">We’ll be in touch shortly.</p>
-        <button type="button" onClick={() => setStatus('idle')} className="eyebrow mt-8 border-b border-sage/40 pb-1 text-sage">
+        <p className="body-copy text-ink-soft">We’ll be in touch shortly.</p>
+        <button type="button" onClick={() => setStatus('idle')} className="eyebrow mt-8 border-b border-ink/40 pb-1 text-ink">
           Send another message
         </button>
       </div>
@@ -60,10 +60,10 @@ export default function ContactForm() {
         const span = field.name === 'name' || field.name === 'email' ? '' : 'sm:col-span-2';
         return (
           <div key={field.name} className={`flex flex-col gap-2 ${span}`}>
-            <label htmlFor={id} className="body-copy text-sm text-warm-grey">
+            <label htmlFor={id} className="body-copy text-sm text-ink-soft">
               {field.label}
               {field.required && (
-                <span aria-hidden="true" className="text-rust">
+                <span aria-hidden="true" className="text-olive">
                   {' '}
                   *
                 </span>
@@ -77,7 +77,7 @@ export default function ContactForm() {
                 required={field.required}
                 rows={5}
                 autoComplete={field.autoComplete}
-                className="body-copy resize-y border-b border-sage/30 bg-transparent pb-3 text-sage outline-none transition-colors focus:border-forest"
+                className="body-copy resize-y border-b border-ink/30 bg-transparent pb-3 text-ink outline-none transition-colors focus:border-forest"
               />
             ) : (
               <input
@@ -86,7 +86,7 @@ export default function ContactForm() {
                 type={field.type}
                 required={field.required}
                 autoComplete={field.autoComplete}
-                className="body-copy border-b border-sage/30 bg-transparent pb-3 text-sage outline-none transition-colors focus:border-forest"
+                className="body-copy border-b border-ink/30 bg-transparent pb-3 text-ink outline-none transition-colors focus:border-forest"
               />
             )}
           </div>
@@ -96,13 +96,13 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={status === 'submitting'}
-        className="eyebrow mt-4 w-full bg-forest px-10 py-4 !tracking-[0.14em] text-cream transition-opacity hover:opacity-90 disabled:opacity-60 sm:col-span-2 sm:w-auto sm:justify-self-center sm:px-20"
+        className="eyebrow mt-4 w-full bg-forest px-10 py-4 !tracking-[0.14em] text-linen transition-opacity hover:opacity-90 disabled:opacity-60 sm:col-span-2 sm:w-auto sm:justify-self-center sm:px-20"
       >
         {status === 'submitting' ? 'Sending…' : contactPage.submitLabel}
       </button>
 
       {status === 'error' && (
-        <p role="alert" className="body-copy text-sm text-rust">
+        <p role="alert" className="body-copy text-sm text-olive">
           Something went wrong. Please email {`hello@narelo.es`} instead.
         </p>
       )}

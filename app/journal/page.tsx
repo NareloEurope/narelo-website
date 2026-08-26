@@ -19,11 +19,11 @@ export default function JournalPage() {
     <Section className="min-h-[60vh]">
       <h1 className="sr-only">{journalPage.title}</h1>
 
-      <p className="eyebrow mb-16 inline-block border-b border-sage/30 pb-2 text-sage">{journalPage.tabLabel}</p>
+      <p className="eyebrow mb-16 inline-block border-b border-ink/30 pb-2 text-ink">{journalPage.tabLabel}</p>
 
       <div className="py-16 text-center md:py-24">
-        <p className="body-copy mb-3 text-lg font-semibold text-sage">{journalPage.emptyHeading}</p>
-        <p className="body-copy text-sm text-warm-grey">{journalPage.emptyBody}</p>
+        <p className="body-copy mb-3 text-lg font-semibold text-ink">{journalPage.emptyHeading}</p>
+        <p className="body-copy text-sm text-ink-soft">{journalPage.emptyBody}</p>
       </div>
     </Section>
   );

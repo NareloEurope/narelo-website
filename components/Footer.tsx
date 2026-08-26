@@ -1,40 +1,102 @@
 import Link from 'next/link';
-import { site, socialIcons } from '@/content/site';
+import { site, nav, contact, socialIcons } from '@/content/site';
 
 export default function Footer() {
   return (
-    <footer className="border-t border-sage/10 bg-cream">
-      <div className="mx-auto max-w-[1400px] px-6 py-14 md:px-12">
-        {/* Source layout: wordmark left, social icons right, then the two text lines. */}
-        <div className="flex flex-col items-center gap-8 md:flex-row md:justify-between">
-          <Link href="/" aria-label={`${site.name} — home`}>
+    <footer className="bg-forest text-linen">
+      <div className="mx-auto max-w-[1560px] px-6 py-24 md:px-10 md:py-32">
+        <div className="fade" data-reveal>
+          <p className="display display-lg max-w-3xl">
+            Our first Narelo home opens in Marbella this autumn.
+          </p>
+          <a href={contact.whatsapp} target="_blank" rel="noreferrer noopener" className="btn btn-ghost mt-10 text-linen">
+            Become a member
+          </a>
+        </div>
+
+        <div className="mt-24 grid gap-12 border-t border-linen/15 pt-14 md:grid-cols-[1.4fr_1fr_1fr]">
+          <div>
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/images/narelo-logo.webp" alt={site.name} width={796} height={341} loading="lazy" className="h-9 w-auto" />
-          </Link>
+            <img
+              src="/images/narelo-logo.webp"
+              alt={site.name}
+              width={796}
+              height={341}
+              loading="lazy"
+              className="h-8 w-auto opacity-90 [filter:invert(1)_brightness(2)]"
+            />
+            <p className="body-copy mt-6 max-w-xs text-linen/70">{site.tagline}</p>
+          </div>
 
-          {/* Four social icons, ~55px, as on the source. None are linked there. */}
-          <ul className="flex items-center gap-5 md:gap-6">
-          {socialIcons.map((icon) => (
-            <li key={icon.label}>
-              {icon.href ? (
-                <a href={icon.href} target="_blank" rel="noreferrer noopener" aria-label={icon.label}>
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={icon.src} alt={icon.label} width={1254} height={1254} loading="lazy" className="h-9 w-9 transition-opacity hover:opacity-70 md:h-10 md:w-10" />
+          <nav aria-label="Footer">
+            <h2 className="eyebrow mb-5 text-linen/70">Explore</h2>
+            <ul className="flex flex-col gap-3">
+              {nav.map((item) => (
+                <li key={item.href}>
+                  <Link href={item.href} className="body-copy text-linen/85 transition-opacity hover:opacity-60">
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+
+          <div>
+            <h2 className="eyebrow mb-5 text-linen/70">Contact</h2>
+            <ul className="flex flex-col gap-3">
+              <li>
+                <a href={contact.emailHref} className="body-copy text-linen/85 transition-opacity hover:opacity-60">
+                  {contact.email}
                 </a>
-              ) : (
-                // TODO: no destination on the source site — add href in content/site.ts.
-                /* eslint-disable-next-line @next/next/no-img-element */
-                <img src={icon.src} alt={icon.label} width={1254} height={1254} loading="lazy" className="h-9 w-9 md:h-10 md:w-10" />
-              )}
               </li>
-            ))}
-          </ul>
+              <li>
+                <a href={contact.phoneHref} className="body-copy text-linen/85 transition-opacity hover:opacity-60">
+                  {contact.phone}
+                </a>
+              </li>
+              <li className="body-copy text-linen/60">{site.location}</li>
+            </ul>
+
+            <ul className="mt-8 flex items-center gap-4">
+              {socialIcons.map((icon) => (
+                <li key={icon.label}>
+                  {icon.href ? (
+                    <a
+                      href={icon.href}
+                      target="_blank"
+                      rel="noreferrer noopener"
+                      aria-label={icon.label}
+                      className="block transition-opacity hover:opacity-60"
+                    >
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src={icon.src}
+                        alt=""
+                        width={1254}
+                        height={1254}
+                        loading="lazy"
+                        className="h-8 w-8 [filter:invert(1)_brightness(2)]"
+                      />
+                    </a>
+                  ) : (
+                    // TODO: no URL yet — add one in content/site.ts to make this live.
+                    /* eslint-disable-next-line @next/next/no-img-element */
+                    <img
+                      src={icon.src}
+                      alt={icon.label}
+                      width={1254}
+                      height={1254}
+                      loading="lazy"
+                      className="h-8 w-8 opacity-40 [filter:invert(1)_brightness(2)]"
+                    />
+                  )}
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
 
-        <div className="body-copy mt-10 flex flex-col items-center gap-2 text-sm text-warm-grey md:mt-14 md:flex-row md:justify-between">
-          <span>{site.location}</span>
-          <span>{site.copyright}</span>
-        </div>
+        <p className="body-copy mt-16 text-xs text-linen/65">{site.copyright}</p>
       </div>
     </footer>
   );
