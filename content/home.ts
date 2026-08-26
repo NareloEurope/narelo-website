@@ -69,7 +69,7 @@ export const worlds = {
       name: 'Mountain',
       short: 'Nature on its own terms',
       body: 'Woodland, hills and trails. Uneven ground, changing seasons and natural challenge, met physically and observed closely.',
-      image: '/images/stage-navigators.webp',
+      image: '/images/world-mountain.webp',
     },
     {
       name: 'The World Around Us',
