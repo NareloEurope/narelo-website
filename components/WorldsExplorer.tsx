@@ -68,10 +68,14 @@ export default function WorldsExplorer({ items }: { items: readonly World[] }) {
             return (
               <li
                 key={world.name}
-                className="relative isolate overflow-hidden rounded-[2px] md:transition-[flex-grow]"
+                /*
+                 * flex-grow/basis apply on md+ only, via a CSS variable: inline
+                 * flexBasis:0 in the auto-height mobile stack computes every
+                 * panel to zero height and the whole section vanishes.
+                 */
+                className="relative isolate overflow-hidden rounded-[2px] md:transition-[flex-grow] md:[flex-basis:0] md:[flex-grow:var(--grow)]"
                 style={{
-                  flexGrow: isActive ? 4 : 1,
-                  flexBasis: 0,
+                  ['--grow' as string]: isActive ? 4 : 1,
                   transitionDuration: '1s',
                   transitionTimingFunction: 'var(--ease-in-out-quint)',
                 }}
@@ -110,9 +114,9 @@ export default function WorldsExplorer({ items }: { items: readonly World[] }) {
                       isActive ? 'pointer-events-none opacity-0' : 'opacity-100'
                     }`}
                   >
-                    <span className="flex w-full items-center justify-between md:justify-center">
+                    <span className="flex w-full items-center justify-between gap-4 md:justify-center">
                       <span className="display text-xl text-linen md:hidden">{world.name}</span>
-                      <span className="eyebrow text-linen/80 md:hidden">{world.short}</span>
+                      <span className="eyebrow text-right text-linen/80 md:hidden">{world.short}</span>
                       <span className="display hidden whitespace-nowrap text-2xl text-linen md:block md:[writing-mode:vertical-rl] md:rotate-180">
                         {world.name}
                       </span>

@@ -105,15 +105,7 @@ export const ageGroups = {
   eyebrow: 'From the very beginning',
   heading: 'A place that grows with your child',
   body: 'Every child belongs to a named group that moves with them as they grow. Families can join at any point, and many begin before their child is born.',
-  groups: [
-    { name: 'Bloom', age: 'Pregnancy', body: 'A gentle beginning, before your child arrives.' },
-    { name: 'Nurture', age: '0–1 year', body: 'Sensing, discovering and connecting.' },
-    { name: 'The Nest', age: '1–2 years', body: 'Exploring the world through movement.' },
-    { name: 'Little Beginnings', age: '2–3 years', body: 'Building confidence through discovery.' },
-    { name: 'Builders I', age: '3–5 years', body: 'Creating, exploring and making sense of things.' },
-    { name: 'Builders II', age: '5–6 years', body: 'Questioning, creating and building ideas.' },
-    { name: 'Navigators', age: '6–8 years', body: 'Growing independence and finding their way.' },
-  ],
+  /** Rows come from content/stages.ts, rendered by StageAccordion. */
   note: 'Five-year-olds are placed between Builders I and Builders II depending on readiness, not their birthday.',
 } as const;
 
@@ -130,19 +122,34 @@ export const howItWorks = {
   note: 'Places are limited by design. Groups stay small, so each age group only ever holds a small number of families.',
 } as const;
 
-/** Q5 — What is included? Drawn from the current site's stated member benefits. */
+/**
+ * Q5 — What is included? Split honestly (Rui, 2026-08-26): the weekly place
+ * and member benefits come with membership; Signature Saturdays, holiday
+ * experiences, community mornings and the wider Narelo world are available to
+ * members at member rates but are not included in it. The group labels carry
+ * that distinction; "Member pricing" is no longer listed as an inclusion.
+ */
 export const included = {
   eyebrow: 'Membership',
   heading: 'What comes with membership',
-  items: [
-    { title: 'Weekly experiences', body: 'Your child’s regular place in their age group, every week of term.' },
-    { title: 'Signature Saturdays', body: 'Slow Saturdays built for discovery, creativity and time together as a family, bookable at member rates.' },
-    { title: 'Holiday experiences', body: 'School holidays turned into adventure rather than logistics.' },
-    { title: 'Community mornings', body: 'Unhurried mornings to meet the other families and settle into the community.' },
-    { title: 'Expert insights', body: 'Sessions with specialists on childhood, development and family life.' },
-    { title: 'Priority booking', body: 'First access to experiences, events and limited places before they open more widely.' },
-    { title: 'Member pricing', body: 'Preferred rates across experiences, events and celebrations.' },
-    { title: 'The wider Narelo world', body: 'Birthday experiences, private sessions and family days, available to members first.' },
+  groups: [
+    {
+      label: 'Included in your membership',
+      items: [
+        { title: 'Weekly experiences', body: 'Your child’s regular place in their age group, every week of term.' },
+        { title: 'Expert insights', body: 'Sessions with specialists on childhood, development and family life.' },
+        { title: 'Priority booking', body: 'First access to experiences, events and limited places before they open more widely.' },
+      ],
+    },
+    {
+      label: 'For members, at member rates',
+      items: [
+        { title: 'Signature Saturdays', body: 'Slow Saturdays built for discovery, creativity and time together as a family, twice a month.' },
+        { title: 'Holiday experiences', body: 'School holidays turned into adventure rather than logistics.' },
+        { title: 'Community mornings', body: 'Unhurried mornings to meet the other families and settle into the community.' },
+        { title: 'The wider Narelo world', body: 'Birthday experiences, private sessions and family days, created around your family.' },
+      ],
+    },
   ],
 } as const;
 
@@ -153,7 +160,7 @@ export const joining = {
   steps: [
     { n: '01', title: 'Message us', body: 'Send us a WhatsApp and we’ll take it from there.', whatsapp: true },
     { n: '02', title: 'We find the fit', body: 'We match your child to the right age group and check what places are open.' },
-    { n: '03', title: 'A short conversation', body: 'Fifteen to twenty minutes with us: who your family is, what you’re hoping for, and everything you want to ask.' },
+    { n: '03', title: 'A short conversation', body: 'A live conversation with us: who your family is, what you’re hoping for, and everything you want to ask.' },
     { n: '04', title: 'An invitation', body: 'If it’s right on both sides, we send a personal invitation, the membership agreement and a start date.' },
   ],
   reassurance: 'We keep the community small and choose carefully. Not to be exclusive, but because small groups and a settled community are the whole point.',

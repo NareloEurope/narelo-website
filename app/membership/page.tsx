@@ -4,6 +4,8 @@ import LazyVideo from '@/components/LazyVideo';
 import { contact } from '@/content/site';
 import WhatsAppIcon from '@/components/WhatsAppIcon';
 import IncludedAccordion from '@/components/IncludedAccordion';
+import StageAccordion from '@/components/StageAccordion';
+import { stageDetails } from '@/content/stages';
 import {
   hero,
   whatItIs,
@@ -189,18 +191,9 @@ export default function MembershipPage() {
           <p className="lede text-ink-soft">{ageGroups.body}</p>
         </div>
 
-        <ol className="reveal border-t border-ink/12" data-reveal>
-          {ageGroups.groups.map((g) => (
-            <li
-              key={g.name}
-              className="grid items-baseline gap-2 border-b border-ink/12 py-7 md:grid-cols-[1.2fr_7rem_1.6fr] md:gap-8 md:py-9"
-            >
-              <h3 className="display display-md">{g.name}</h3>
-              <span className="eyebrow text-olive">{g.age}</span>
-              <p className="body-copy max-w-md text-ink-soft">{g.body}</p>
-            </li>
-          ))}
-        </ol>
+        <div className="fade" data-reveal>
+          <StageAccordion items={stageDetails} />
+        </div>
 
         <p className="body-copy mt-12 max-w-xl text-ink-soft fade" data-reveal>
           {ageGroups.note}
@@ -241,7 +234,7 @@ export default function MembershipPage() {
             <h2 className="display display-lg">{included.heading}</h2>
           </div>
           <div className="fade" data-reveal>
-            <IncludedAccordion items={included.items} />
+            <IncludedAccordion groups={included.groups} />
           </div>
         </div>
       </Section>

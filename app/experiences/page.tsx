@@ -1,6 +1,8 @@
 import Section from '@/components/Section';
 import LazyVideo from '@/components/LazyVideo';
 import { contact } from '@/content/site';
+import StageAccordion from '@/components/StageAccordion';
+import { stageDetails } from '@/content/stages';
 import { hero, format, worlds, stages, regular, personalised, closing } from '@/content/experiences';
 
 export const metadata = {
@@ -95,25 +97,16 @@ export default function ExperiencesPage() {
       </section>
 
       {/* ---------- The journey ---------- */}
-      <Section>
+      <Section id="journey">
         <div className="mb-16 max-w-2xl fade" data-reveal>
           <p className="eyebrow mb-8 text-olive">{stages.eyebrow}</p>
           <h2 className="display display-lg mb-8">{stages.heading}</h2>
           <p className="lede text-ink-soft">{stages.body}</p>
         </div>
 
-        <ol className="reveal border-t border-ink/12" data-reveal>
-          {stages.items.map((stage) => (
-            <li
-              key={stage.name}
-              className="grid items-baseline gap-2 border-b border-ink/12 py-7 md:grid-cols-[1.2fr_7rem_1.6fr] md:gap-8 md:py-9"
-            >
-              <h3 className="display display-md">{stage.name}</h3>
-              <span className="eyebrow text-olive">{stage.age}</span>
-              <p className="body-copy max-w-md text-ink-soft">{stage.body}</p>
-            </li>
-          ))}
-        </ol>
+        <div className="fade" data-reveal>
+          <StageAccordion items={stageDetails} />
+        </div>
 
         <p className="body-copy mt-10 max-w-xl text-ink-soft fade" data-reveal>
           {stages.note}
