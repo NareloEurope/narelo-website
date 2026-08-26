@@ -53,7 +53,7 @@ export const childExperience = {
     { value: '90 min', label: 'each experience' },
     { value: '~8', label: 'children per group' },
   ],
-  note: 'Experiences happen in our Marbella home and well beyond it: beach, forest and real-world places. Younger groups often include a parent; older children come on their own.',
+  note: 'Experiences happen in our Marbella home and well beyond it: beach, forest and real-world places. Younger groups may include a parent; older children come on their own.',
 } as const;
 
 /** Q3 — Which age group is relevant? framework/age-groups.md, canonical. */
@@ -83,7 +83,7 @@ export const howItWorks = {
     { n: '03', title: 'It grows with them', body: 'As your child moves into the next age group, their membership moves with them. Nothing restarts.' },
     { n: '04', title: 'Families are members too', body: 'Community mornings, expert sessions and events are for the parents as much as the children.' },
   ],
-  note: 'When a term is full we keep a waitlist and contact you personally as soon as a place opens in your child’s group.',
+  note: 'Places are limited by design. Groups stay small, so each age group only ever holds a small number of families.',
 } as const;
 
 /** Q5 — What is included? Drawn from the current site's stated member benefits. */

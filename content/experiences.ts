@@ -13,7 +13,7 @@
 export const hero = {
   eyebrow: 'Experiences',
   headingLines: ['Experiences that', 'grow with your child'],
-  lede: 'Thoughtfully created experiences that invite curiosity, creativity and connection, from the first year to the edge of independence.',
+  lede: 'Thoughtfully created experiences that invite curiosity, creativity and connection, from before your child is born to around the age of eight.',
   image: '/images/experiences-hero.webp',
 } as const;
 
@@ -24,9 +24,9 @@ export const format = {
   body: 'Experiences happen in our Marbella home and well beyond it: the beach, the forest, and the places where everyday life actually happens. Nothing is rushed and nothing is filler.',
   facts: [
     { value: '90', label: 'minutes together', note: 'Long enough to settle, explore properly and come back to yourself.' },
-    { value: '8', label: 'children in a group', note: 'Small enough that every child is known by name, not managed as a crowd.' },
+    { value: '~8', label: 'children in a group', note: 'Small enough that every child is known by name, not managed as a crowd.' },
   ],
-  note: 'Younger groups often include a parent. Older children come on their own.',
+  note: 'Younger groups may include a parent. Older children come on their own.',
   image: '/images/img-5211.webp',
 } as const;
 

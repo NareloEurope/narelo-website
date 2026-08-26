@@ -43,7 +43,7 @@ export const shape = {
   heading: 'Small groups. Real places. Nobody rushed.',
   body: 'Every experience is built to the same shape, whether it happens in our home, on the beach or in the hills behind town.',
   facts: [
-    { value: '8', label: 'children in a group', note: 'Small enough that every child is known by name, not managed as a crowd.' },
+    { value: '~8', label: 'children in a group', note: 'Small enough that every child is known by name, not managed as a crowd.' },
     { value: '90', label: 'minutes together', note: 'Long enough to settle, explore properly and come back to yourself.' },
   ],
   image: '/images/home-not-to-be-rushed.webp',
@@ -141,7 +141,7 @@ export const home = {
 /** company/team.md — Natalie and Vivien only. Christian is never a public face. */
 export const founders = {
   eyebrow: 'The founders',
-  heading: 'Built by two people who kept looking for this and never found it',
+  heading: 'Natalie and Vivien',
   body: 'Natalie leads Narelo’s direction and the community around it. Vivien, our Educational Leader, designs what actually happens with the children: a special needs teacher, speech therapist and movement specialist who has worked with children since 2019.',
 } as const;
 
