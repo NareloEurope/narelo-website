@@ -92,7 +92,7 @@ export const included = {
   heading: 'Everything a membership carries',
   items: [
     { title: 'Weekly experiences', body: 'Your child’s regular place in their age group, every week of term.' },
-    { title: 'Signature Saturdays', body: 'Slow Saturdays built for discovery, creativity and time together as a family.' },
+    { title: 'Signature Saturdays', body: 'Slow Saturdays built for discovery, creativity and time together as a family, bookable at member rates.' },
     { title: 'Holiday experiences', body: 'School holidays turned into adventure rather than logistics.' },
     { title: 'Community mornings', body: 'Unhurried mornings to meet the other families and settle into the community.' },
     { title: 'Expert insights', body: 'Sessions with specialists on childhood, development and family life.' },
