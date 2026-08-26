@@ -17,7 +17,11 @@ export const hero = {
   image: '/images/experiences-hero.webp',
 } as const;
 
-/** framework/experience-rhythm-and-format.md — the working format. */
+/**
+ * framework/experience-rhythm-and-format.md — the working format (90 minutes,
+ * ~8 children). The season figure comes from company/business-plan.md:
+ * "Autumn · Winter · Spring · Summer. 10–12 weeks, 1 session per week."
+ */
 export const format = {
   eyebrow: 'The shape of an experience',
   heading: 'Ninety minutes, a small circle, and somewhere real',
@@ -25,6 +29,7 @@ export const format = {
   facts: [
     { value: '90', label: 'minutes together', note: 'Long enough to settle, explore properly and come back to yourself.' },
     { value: '~8', label: 'children in a group', note: 'Small enough that every child is known by name, not managed as a crowd.' },
+    { value: '12', label: 'experiences a season', note: 'One a week through the term, so the year builds instead of restarting.' },
   ],
   note: 'Younger groups may include a parent. Older children come on their own.',
   image: '/images/img-5211.webp',

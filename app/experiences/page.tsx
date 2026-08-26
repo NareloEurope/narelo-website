@@ -42,18 +42,7 @@ export default function ExperiencesPage() {
             <p className="eyebrow mb-8 text-olive">{format.eyebrow}</p>
             <h2 className="display display-lg mb-8">{format.heading}</h2>
             <p className="lede mb-12 max-w-md text-ink-soft">{format.body}</p>
-
-            <ul className="grid grid-cols-2 gap-8">
-              {format.facts.map((fact) => (
-                <li key={fact.label}>
-                  <div className="mb-4 h-px w-full bg-ink/15" aria-hidden="true" />
-                  <p className="display text-[clamp(2.5rem,1.8rem+3vw,4rem)] leading-none text-olive">{fact.value}</p>
-                  <p className="eyebrow mt-3 text-ink">{fact.label}</p>
-                  <p className="body-copy mt-3 text-ink-soft">{fact.note}</p>
-                </li>
-              ))}
-            </ul>
-            <p className="body-copy mt-10 text-ink-soft">{format.note}</p>
+            <p className="body-copy text-ink-soft">{format.note}</p>
           </div>
 
           <div className="img-settle overflow-hidden rounded-[2px]" data-reveal>
@@ -68,6 +57,18 @@ export default function ExperiencesPage() {
             />
           </div>
         </div>
+
+        {/* Facts span the full width so three tiles each get room to breathe. */}
+        <ul className="reveal mt-20 grid gap-10 sm:grid-cols-3 md:gap-14" data-reveal>
+          {format.facts.map((fact) => (
+            <li key={fact.label}>
+              <div className="mb-5 h-px w-full bg-ink/15" aria-hidden="true" />
+              <p className="display text-[clamp(2.75rem,2rem+3vw,4.25rem)] leading-none text-olive">{fact.value}</p>
+              <p className="eyebrow mt-4 text-ink">{fact.label}</p>
+              <p className="body-copy mt-3 max-w-xs text-ink-soft">{fact.note}</p>
+            </li>
+          ))}
+        </ul>
       </Section>
 
       {/* ---------- The Five Worlds ---------- */}
