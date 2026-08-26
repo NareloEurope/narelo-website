@@ -30,6 +30,16 @@ export const metadata: Metadata = {
   applicationName: site.name,
   openGraph: { siteName: site.name, type: 'website', locale: 'en_GB' },
   twitter: { card: 'summary_large_image' },
+  /*
+   * Search engines are kept out by default so the pre-launch preview cannot
+   * be indexed on its vercel.app URL and compete with the real domain later.
+   * At launch, set NEXT_PUBLIC_ALLOW_INDEXING=true in the host's environment
+   * (no code change needed).
+   */
+  robots:
+    process.env.NEXT_PUBLIC_ALLOW_INDEXING === 'true'
+      ? { index: true, follow: true }
+      : { index: false, follow: false },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
