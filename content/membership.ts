@@ -8,8 +8,14 @@
  *   3. Which age group is relevant?   → ageGroups
  *   4. How does the membership work?  → howItWorks
  *   5. What is included?              → included
- *   6. What does it cost?             → cost   ⚠️ see the note there
- *   7. How do we join?                → joining
+ *   6. How do we join?                → joining
+ *
+ * "What does it cost?" is deliberately absent for now (Rui, 2026-08-26):
+ * pricing is undefined in the repo (founding-family-presale.md) and the
+ * section was removed rather than shown without figures. Restore it once
+ * pricing is agreed.
+ *
+ * House style: no em dashes in published copy (Rui, 2026-08-26).
  *
  * Designed to be readable in 60–90 seconds on a phone, per the same document.
  * Primary CTA throughout is WhatsApp, which is the funnel's step 3.
@@ -37,18 +43,17 @@ export const childExperience = {
   heading: 'Real places, small groups, and the time to go deep',
   body: 'From around age three, the year moves through five worlds. Younger children begin with movement, senses and connection, and grow into them.',
   worlds: [
-    { name: 'Ocean', body: 'Water, tides and everything living in them.' },
-    { name: 'Mountain', body: 'Trails, weather, height and distance.' },
-    { name: 'Body', body: 'Movement, yoga and physical confidence.' },
-    { name: 'Expression', body: 'Art, making and ideas through the hands.' },
-    { name: 'Connection to the Future', body: 'The questions shaping the world they’ll inherit.' },
+    { name: 'Ocean', body: 'The sea as a living place, met with senses and body.' },
+    { name: 'Mountain', body: 'Woodland, hills and trails, on nature’s own terms.' },
+    { name: 'The World Around Us', body: 'The people and craft behind everyday life.' },
+    { name: 'Expression', body: 'Art, making and giving form to their own ideas.' },
+    { name: 'The Future', body: 'Invention, experimentation and what might be possible.' },
   ],
   facts: [
     { value: '90 min', label: 'each experience' },
     { value: '~8', label: 'children per group' },
-    { value: '2', label: 'educators' },
   ],
-  note: 'Experiences happen in our Marbella home and well beyond it — beach, forest and real-world places. Younger groups often include a parent; older children come on their own.',
+  note: 'Experiences happen in our Marbella home and well beyond it: beach, forest and real-world places. Younger groups often include a parent; older children come on their own.',
 } as const;
 
 /** Q3 — Which age group is relevant? framework/age-groups.md, canonical. */
@@ -97,54 +102,22 @@ export const included = {
   ],
 } as const;
 
-/**
- * Q6 — What does it cost?
- *
- * ⚠️ GAP — offers/membership/Sales/founding-family-presale.md states plainly:
- * "presale offer mechanics not yet defined — pricing, membership tiers, what
- * Founding Families get, capacity limits, deposit/commitment structure, timeline."
- *
- * No figures are invented here. The section explains how pricing is structured
- * and routes to the conversation, which is what the funnel does anyway (step 5,
- * "Explain the relevant membership"). Soho House's own membership page takes the
- * same approach — it carries no prices and links to a calculator instead.
- *
- * TODO: once pricing is agreed, add the figures here and revisit this section's
- * design — it is built to accept a price table without restructuring the page.
- */
-export const cost = {
-  eyebrow: 'What it costs',
-  heading: 'Priced by age group and how often you come',
-  body: 'Membership is a monthly commitment rather than a per-session fee, because the value is in continuity. What you pay depends on your child’s age group and how often they come.',
-  points: [
-    'We talk you through the exact figures on a short call, before any commitment.',
-    'No application fee, and nothing to pay to have the conversation.',
-    'Members pay preferred rates on everything beyond their weekly place.',
-  ],
-  founding: {
-    title: 'Founding families',
-    body: 'We are opening membership in small numbers ahead of the first home. Founding families join at the beginning and help shape how Narelo grows.',
-    // TODO: Founding Family benefits, capacity and deposit structure are undefined
-    // in the repo (see founding-family-presale.md). Nothing specific is claimed here.
-  },
-} as const;
-
-/** Q7 — How do we join? sales-funnel.md steps 3–6, exactly as documented. */
+/** Q6 — How do we join? sales-funnel.md steps 3–6, exactly as documented. */
 export const joining = {
   eyebrow: 'How to join',
   heading: 'Four steps, and a conversation before anything else',
   steps: [
-    { n: '01', title: 'Message us', body: 'Send us a WhatsApp. The first thing we’ll ask is how old your child is.' },
+    { n: '01', title: 'Message us', body: 'Send us a WhatsApp and we’ll take it from there.', whatsapp: true },
     { n: '02', title: 'We find the fit', body: 'We match your child to the right age group and check what places are open.' },
-    { n: '03', title: 'A short conversation', body: 'Fifteen to twenty minutes with us — who your family is, what you’re hoping for, and everything you want to ask. There is no application to fill in first.' },
+    { n: '03', title: 'A short conversation', body: 'Fifteen to twenty minutes with us: who your family is, what you’re hoping for, and everything you want to ask.' },
     { n: '04', title: 'An invitation', body: 'If it’s right on both sides, we send a personal invitation, the membership agreement and a start date.' },
   ],
-  reassurance: 'We keep the community small and choose carefully — not to be exclusive, but because small groups and a settled community are the whole point.',
+  reassurance: 'We keep the community small and choose carefully. Not to be exclusive, but because small groups and a settled community are the whole point.',
 } as const;
 
 export const closing = {
   headingLines: ['Come and see', 'if it fits.'],
-  body: 'Start with a message. No forms, no commitment — just a conversation about your family.',
+  body: 'Start with a message, no commitment. Just a conversation about your family.',
   ctaLabel: 'Talk to us on WhatsApp',
   secondaryLabel: 'Or email us',
   video: '/video/membership-closing.mp4',

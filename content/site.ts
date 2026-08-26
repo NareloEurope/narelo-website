@@ -18,15 +18,17 @@ export const site = {
   copyright: '© 2026 Narelo. All rights reserved.',
 } as const;
 
+/**
+ * Community, Journal and Contact exist as routes but are hidden from the menu
+ * until they are ready (Rui, 2026-08-26). Re-add them here when they are.
+ */
 export const nav = [
   { label: 'Experiences', href: '/experiences' },
   { label: 'Membership', href: '/membership' },
-  { label: 'Community', href: '/community' },
-  { label: 'Journal', href: '/journal' },
-  { label: 'Contact', href: '/contact' },
 ] as const;
 
-export const headerCta = { label: 'Become a member', href: '/membership' } as const;
+/** The primary CTA opens a WhatsApp conversation directly (funnel step 3). */
+export const headerCta = { label: 'Become a member', external: true } as const;
 
 export const contact = {
   visitLabel: 'Visit',

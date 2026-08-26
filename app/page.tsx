@@ -1,12 +1,14 @@
 import Link from 'next/link';
 import Section from '@/components/Section';
 import LazyVideo from '@/components/LazyVideo';
+import WorldsExplorer from '@/components/WorldsExplorer';
+import { contact } from '@/content/site';
 import { hero, belief, statement, shape, worlds, journey, promise, home, founders, closing } from '@/content/home';
 
 export const metadata = {
-  title: 'Narelo — A private childhood membership',
+  title: 'Narelo · A private childhood membership',
   description: hero.lede,
-  openGraph: { title: 'Narelo — A private childhood membership', description: hero.lede, images: [hero.poster] },
+  openGraph: { title: 'Narelo · A private childhood membership', description: hero.lede, images: [hero.poster] },
 };
 
 export default function HomePage() {
@@ -97,7 +99,7 @@ export default function HomePage() {
           />
         </div>
 
-        <ul className="reveal grid gap-12 md:grid-cols-3 md:gap-16" data-reveal>
+        <ul className="reveal grid gap-12 md:grid-cols-2 md:gap-16" data-reveal>
           {shape.facts.map((fact) => (
             <li key={fact.label}>
               <div className="mb-5 h-px w-full bg-ink/15" aria-hidden="true" />
@@ -118,20 +120,9 @@ export default function HomePage() {
             <p className="lede text-linen/75">{worlds.body}</p>
           </div>
 
-          <ul className="reveal" data-reveal>
-            {worlds.items.map((world, i) => (
-              <li
-                key={world.name}
-                className="group grid gap-4 border-t border-linen/15 py-8 md:grid-cols-[6rem_1fr_1.1fr] md:items-baseline md:gap-10 md:py-10"
-              >
-                <span className="eyebrow text-linen/60">{String(i + 1).padStart(2, '0')}</span>
-                <h3 className="display display-md transition-transform duration-700 md:group-hover:translate-x-2">
-                  {world.name}
-                </h3>
-                <p className="body-copy max-w-md text-linen/70">{world.body}</p>
-              </li>
-            ))}
-          </ul>
+          <div className="fade" data-reveal>
+            <WorldsExplorer items={worlds.items} />
+          </div>
 
           <div className="mt-14 border-t border-linen/15 pt-10 fade" data-reveal>
             <Link href={worlds.linkHref} className="link-line eyebrow text-linen">
@@ -149,12 +140,25 @@ export default function HomePage() {
           <p className="lede text-ink-soft">{journey.body}</p>
         </div>
 
-        <ol className="reveal grid grid-cols-2 gap-x-8 gap-y-10 sm:grid-cols-4 lg:grid-cols-7" data-reveal>
+        <ol className="reveal border-t border-ink/12" data-reveal>
           {journey.stages.map((stage) => (
             <li key={stage.name}>
-              <div className="mb-4 h-px w-full bg-ink/15" aria-hidden="true" />
-              <h3 className="display text-lg leading-tight md:text-xl">{stage.name}</h3>
-              <p className="eyebrow mt-2 text-ink-soft">{stage.age}</p>
+              <Link
+                href={journey.linkHref}
+                className="group grid items-baseline gap-2 border-b border-ink/12 py-7 transition-colors duration-500 hover:bg-shell md:grid-cols-[1.2fr_6rem_1.6fr_auto] md:gap-8 md:px-4 md:py-9"
+              >
+                <h3 className="display display-md transition-transform duration-700 md:group-hover:translate-x-2">
+                  {stage.name}
+                </h3>
+                <span className="eyebrow text-olive">{stage.age}</span>
+                <p className="body-copy max-w-md text-ink-soft">{stage.body}</p>
+                <span
+                  className="eyebrow hidden text-ink opacity-0 transition-[opacity,transform] duration-500 md:block md:-translate-x-2 md:group-hover:translate-x-0 md:group-hover:opacity-100"
+                  aria-hidden="true"
+                >
+                  Explore →
+                </span>
+              </Link>
             </li>
           ))}
         </ol>
@@ -207,9 +211,9 @@ export default function HomePage() {
             <p className="eyebrow mb-8 text-linen/70">{home.eyebrow}</p>
             <h2 className="display display-lg mb-8 text-linen">{home.heading}</h2>
             <p className="lede mb-10 text-linen/85">{home.body}</p>
-            <Link href={home.ctaHref} className="btn btn-ghost text-linen">
+            <a href={contact.whatsapp} target="_blank" rel="noreferrer noopener" className="btn btn-ghost text-linen">
               {home.ctaLabel}
-            </Link>
+            </a>
           </div>
         </div>
       </section>
@@ -238,9 +242,9 @@ export default function HomePage() {
             ))}
           </h2>
           <p className="lede mx-auto mb-12 max-w-xl text-ink-soft">{closing.body}</p>
-          <Link href={closing.ctaHref} className="btn btn-solid">
+          <a href={contact.whatsapp} target="_blank" rel="noreferrer noopener" className="btn btn-solid">
             {closing.ctaLabel}
-          </Link>
+          </a>
         </div>
       </Section>
     </>

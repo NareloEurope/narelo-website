@@ -9,9 +9,9 @@ export default function Footer() {
           <p className="display display-lg max-w-3xl">
             Our first Narelo home opens in Marbella this autumn.
           </p>
-          <Link href="/membership" className="btn btn-ghost mt-10 text-linen">
+          <a href={contact.whatsapp} target="_blank" rel="noreferrer noopener" className="btn btn-ghost mt-10 text-linen">
             Become a member
-          </Link>
+          </a>
         </div>
 
         <div className="mt-24 grid gap-12 border-t border-linen/15 pt-14 md:grid-cols-[1.4fr_1fr_1fr]">

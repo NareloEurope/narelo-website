@@ -18,7 +18,9 @@ export default function Motion() {
 
   useEffect(() => {
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const revealEls = Array.from(document.querySelectorAll<HTMLElement>('[data-reveal]'));
+    const revealEls = Array.from(
+      new Set(document.querySelectorAll<HTMLElement>('[data-reveal], .reveal, .fade'))
+    );
 
     if (reduced) {
       revealEls.forEach((el) => el.classList.add('is-in'));

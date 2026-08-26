@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
-import { nav, headerCta, site } from '@/content/site';
+import { nav, headerCta, site, contact } from '@/content/site';
 
 /**
  * Sits transparently over a page's hero and resolves into a solid bar once you
@@ -70,7 +70,7 @@ export default function Header() {
         />
       )}
       <div className="mx-auto flex max-w-[1560px] items-center justify-between px-6 md:px-10">
-        <Link href="/" aria-label={`${site.name} — home`} className="relative z-10 shrink-0">
+        <Link href="/" aria-label={`${site.name}, home`} className="relative z-10 shrink-0">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/images/narelo-logo.webp"
@@ -101,12 +101,14 @@ export default function Header() {
               />
             </Link>
           ))}
-          <Link
-            href={headerCta.href}
+          <a
+            href={contact.whatsapp}
+            target="_blank"
+            rel="noreferrer noopener"
             className={`btn !px-7 !py-3 !text-[0.68rem] ${light ? 'btn-ghost text-linen' : 'btn-solid'}`}
           >
             {headerCta.label}
-          </Link>
+          </a>
         </nav>
 
         <button
@@ -145,9 +147,9 @@ export default function Header() {
             </Link>
           ))}
         </nav>
-        <Link href={headerCta.href} className="btn btn-solid mt-10 w-full">
+        <a href={contact.whatsapp} target="_blank" rel="noreferrer noopener" className="btn btn-solid mt-10 w-full">
           {headerCta.label}
-        </Link>
+        </a>
       </div>
     </header>
   );

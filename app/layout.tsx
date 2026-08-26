@@ -26,7 +26,7 @@ const jost = Jost({
 export const metadata: Metadata = {
   // TODO: set NEXT_PUBLIC_SITE_URL to the production domain once chosen.
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? 'https://narelo.es'),
-  title: { default: `${site.name} — ${site.tagline}`, template: `%s | ${site.name}` },
+  title: { default: `${site.name} · ${site.tagline}`, template: `%s | ${site.name}` },
   applicationName: site.name,
   openGraph: { siteName: site.name, type: 'website', locale: 'en_GB' },
   twitter: { card: 'summary_large_image' },

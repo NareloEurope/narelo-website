@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Section from '@/components/Section';
 import LazyVideo from '@/components/LazyVideo';
 import { contact } from '@/content/site';
+import WhatsAppIcon from '@/components/WhatsAppIcon';
 import {
   hero,
   whatItIs,
@@ -9,7 +10,6 @@ import {
   ageGroups,
   howItWorks,
   included,
-  cost,
   joining,
   closing,
 } from '@/content/membership';
@@ -27,7 +27,6 @@ const CHAPTERS = [
   { id: 'ages', label: 'Age groups' },
   { id: 'how', label: 'How it works' },
   { id: 'included', label: 'What’s included' },
-  { id: 'cost', label: 'Cost' },
   { id: 'join', label: 'How to join' },
 ];
 
@@ -209,36 +208,7 @@ export default function MembershipPage() {
         </ul>
       </Section>
 
-      {/* ---------- 6. What does it cost? ---------- */}
-      <Section id="cost" bg="bg-shell">
-        <div className="grid gap-14 md:grid-cols-[1fr_1fr] md:gap-24">
-          <div className="fade" data-reveal>
-            <p className="eyebrow mb-8 text-olive">{cost.eyebrow}</p>
-            <h2 className="display display-lg mb-8">{cost.heading}</h2>
-            <p className="lede text-ink-soft">{cost.body}</p>
-          </div>
-
-          <div className="fade" data-reveal>
-            <ul className="mb-12">
-              {cost.points.map((point) => (
-                <li key={point} className="body-copy border-t border-ink/12 py-5 text-ink-soft">
-                  {point}
-                </li>
-              ))}
-            </ul>
-
-            <div className="border border-ink/15 p-8">
-              <h3 className="display display-md mb-4">{cost.founding.title}</h3>
-              <p className="body-copy mb-8 text-ink-soft">{cost.founding.body}</p>
-              <a href={contact.whatsapp} target="_blank" rel="noreferrer noopener" className="btn btn-solid">
-                Ask about membership
-              </a>
-            </div>
-          </div>
-        </div>
-      </Section>
-
-      {/* ---------- 7. How do we join? ---------- */}
+      {/* ---------- 6. How do we join? ---------- */}
       <Section id="join">
         <div className="mb-16 max-w-2xl fade" data-reveal>
           <p className="eyebrow mb-8 text-olive">{joining.eyebrow}</p>
@@ -252,6 +222,17 @@ export default function MembershipPage() {
               <span className="eyebrow text-olive">{step.n}</span>
               <h3 className="display display-md mt-3">{step.title}</h3>
               <p className="body-copy mt-3 text-ink-soft">{step.body}</p>
+              {'whatsapp' in step && step.whatsapp && (
+                <a
+                  href={contact.whatsapp}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  className="link-line eyebrow mt-5 inline-flex items-center gap-2.5 text-forest"
+                >
+                  <WhatsAppIcon className="h-5 w-5" />
+                  Start on WhatsApp
+                </a>
+              )}
             </li>
           ))}
         </ol>
