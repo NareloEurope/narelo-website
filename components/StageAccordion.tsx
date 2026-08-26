@@ -76,7 +76,7 @@ export default function StageAccordion({ items }: { items: readonly Stage[] }) {
 
                     {stage.whatToExpect && (
                       <div className="mt-8 border-t border-ink/12 pt-7">
-                        <p className="eyebrow mb-4 text-ink">What to expect</p>
+                        <p className="eyebrow mb-4 text-olive">What to expect</p>
                         <ul className="flex flex-col gap-2.5">
                           {stage.whatToExpect.map((point) => (
                             <li key={point} className="body-copy flex gap-3 text-ink-soft">

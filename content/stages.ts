@@ -6,6 +6,9 @@
  * summaries for Nurture and The Nest are transcribed from Rui's stage briefs
  * (assets-source/stage-briefs/, 2026-08-26), which also supplied their photos.
  *
+ * Nurture and The Nest use their own stage briefs, including the session
+ * steps under "How a session looks" as their what-to-expect list.
+ *
  * Little Beginnings, Builders I, Builders II and Navigators come from the
  * four-groups chart (assets-source/stage-briefs/four-groups-chart.jpeg,
  * 2026-08-27): mottos, summaries and "what to expect" lists transcribed
@@ -50,6 +53,12 @@ export const stageDetails: readonly Stage[] = [
     motto: 'I sense and discover.',
     summary:
       'A safe, loving space where babies explore with their senses, move their bodies and build the foundation for connection, curiosity and confidence, together with their parent.',
+    whatToExpect: [
+      'Welcome and settle: arrival, greeting, free exploration and settling in the space',
+      'Parent and baby connection: songs, baby massage, gentle movement and playful bonding',
+      'Sensory theme experience: a prepared environment babies explore at their own pace',
+      'Calm and reflect: a moment to slow down together, quiet sensory play and connection',
+    ],
     image: '/images/stage-photo-nurture.webp',
   },
   {
@@ -59,6 +68,13 @@ export const stageDetails: readonly Stage[] = [
     motto: 'I move and explore.',
     summary:
       'An active, joyful space where toddlers build strength, balance and confidence through movement, play and discovery, indoors and out in the world.',
+    whatToExpect: [
+      'Welcome and warm up: songs, movement and a hello ritual together',
+      'Movement circuit: climb, crawl, balance, push, pull and jump through a prepared space',
+      'Theme exploration: sensory play, materials and open-ended invitations',
+      'Group connection: games, music and stories that build social skills and confidence',
+      'Calm and reflect: breathing, a quiet moment or a gentle stretch to close',
+    ],
     image: '/images/stage-photo-nest.webp',
   },
   {
