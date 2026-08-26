@@ -1,0 +1,114 @@
+@import 'tailwindcss';
+
+/*
+ * Design tokens sampled from computed styles on the live Wix site.
+ * See MIGRATION-AUDIT.md §3.
+ */
+@theme {
+  --color-cream: #f7f4ee;
+  --color-cream-alt: #f6f2e8;
+  --color-sage: #59614b;
+  --color-rust: #5f2815;
+  --color-warm-grey: #6f6a63;
+  --color-forest: #3b4e2b;
+  --color-tan: #a27855;
+  --color-sage-light: #a8b29a;
+  --color-cream-light: #fffdf8;
+
+  --font-display: var(--font-cormorant), 'Cormorant Garamond', Georgia, serif;
+  --font-body: var(--font-nunito), 'Nunito Sans', 'Avenir Next', system-ui, sans-serif;
+  --font-accent: var(--font-fraunces), 'Fraunces', Georgia, serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    /* Sticky header is 88–129px; keep anchor targets clear of it. */
+    scroll-padding-top: 7rem;
+  }
+
+  body {
+    background-color: var(--color-cream);
+    color: var(--color-sage);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection {
+    background-color: color-mix(in srgb, var(--color-tan) 30%, transparent);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-forest);
+    outline-offset: 3px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  /*
+   * Wix set display type in Cormorant Garamond Light with roughly -5% tracking.
+   * Sizes below track the source at 1440px and scale down fluidly.
+   */
+  .display {
+    font-family: var(--font-display);
+    font-weight: 300;
+    letter-spacing: -0.05em;
+    line-height: 1.08;
+  }
+
+  /* Small uppercase labels: Avenir Light at +5% tracking on the source. */
+  .eyebrow {
+    font-family: var(--font-body);
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-size: clamp(0.625rem, 0.55rem + 0.3vw, 0.75rem);
+    line-height: 1.6;
+  }
+
+  .body-copy {
+    font-family: var(--font-body);
+    font-weight: 300;
+    letter-spacing: 0.05em;
+    line-height: 1.75;
+  }
+
+  /*
+   * Organic "leaf" crop used on the Experiences stage cards.
+   * The source sets border-radius: 136.6px 0 on a 128x192 box; expressed as
+   * percentages so it holds at any size while the 2:3 ratio is kept.
+   */
+  .leaf {
+    border-radius: 107% 0 107% 0 / 71% 0 71% 0;
+  }
+
+  /* Reveal-on-scroll, matching the source's gentle fade-up. */
+  .reveal {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 0.9s ease, transform 0.9s ease;
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal {
+      opacity: 1;
+      transform: none;
+    }
+  }
+}
