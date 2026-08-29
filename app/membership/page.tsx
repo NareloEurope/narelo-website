@@ -187,8 +187,8 @@ export default function MembershipPage() {
       </Section>
 
       {/* ---------- 4. How does membership work, and what's included? ----------
-          Merged from three sections that said much the same thing (Rui,
-          2026-08-29): a short shared rhythm, then the concrete inclusions. */}
+          Merged from three sections that said much the same thing: a short
+          shared rhythm, then the concrete inclusions. */}
       <Section id="how" bg="bg-shell">
         <div className="grid gap-16 md:grid-cols-[0.85fr_1.15fr] md:gap-24">
           <div className="fade md:sticky md:top-40 md:self-start" data-reveal>

@@ -28,7 +28,6 @@ You cannot see the finished result yourself. Never say a change "works" or "is l
 
 - Never invent a fact about Narelo. If you do not know it, say what is missing.
 - Never state an unconfirmed fact as if it were settled. Say plainly that it is not confirmed yet and stop there.
-- Never put a price on the site. Pricing is not agreed.
 - The only public founders are Natalie and Vivien. Never present anyone else that way.
 - Never call Narelo a class, a nursery, a school, a play centre, or a collection of sessions. It is a membership and a community.
 - Never write "Norello" or "Naralo". It is Narelo.

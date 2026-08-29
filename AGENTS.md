@@ -56,14 +56,13 @@ The site is a fully static export (`output: 'export'` in `next.config.ts`). Ther
 
 These are decisions already made. Do not quietly reverse them.
 
-1. **No em dashes in published copy.** (Rui, 2026-08-26.) This is a hard house style rule and it is noted at the top of several content files. Use commas, full stops or colons.
-2. **No pricing anywhere.** The "What does it cost?" section was deliberately removed from the Membership page because pricing is not yet agreed. Never invent or reinstate a price. Restore the section only when Rui says pricing is set.
-3. **Community, Journal and Contact are live routes but hidden from the menu** until they are ready. The visible nav is only: *What is Narelo*, *Experiences*, *Membership*.
-4. **The primary call to action is WhatsApp**, not a form. The header CTA is "Become a member" and it opens a prefilled WhatsApp message whose first question is about the child's age. This is deliberate (funnel step 3).
-5. **TikTok and Facebook links are intentionally empty** (`href: null`). They were dead links on the old Wix site. Do not invent URLs. Instagram is `@narelo.eu`.
-6. **The Bloom age group has no brief yet.** Its summary is provisional and it has no motto. Do not write one, flag it instead.
-7. **The internal session rhythm** (Wonder Seed, Atelier and so on) is deliberately *not* public-facing and must not appear on the website.
-8. Every content file carries a comment block naming the narelo-os document it came from. **Keep those comments accurate.** If copy changes, and the source changed too, update the comment.
+1. **No em dashes in published copy.** This is a hard house style rule and it is noted at the top of several content files. Use commas, full stops or colons.
+2. **Community, Journal and Contact are live routes but hidden from the menu** until they are ready. The visible nav is only: *What is Narelo*, *Experiences*, *Membership*.
+3. **The primary call to action is WhatsApp**, not a form. The header CTA is "Become a member" and it opens a prefilled WhatsApp message whose first question is about the child's age. This is deliberate (funnel step 3).
+4. **TikTok and Facebook links are intentionally empty** (`href: null`). They were dead links on the old Wix site. Do not invent URLs. Instagram is `@narelo.eu`.
+5. **The Bloom age group has no brief yet.** Its summary is provisional and it has no motto. Do not write one, flag it instead.
+6. **The internal session rhythm** (Wonder Seed, Atelier and so on) is deliberately *not* public-facing and must not appear on the website.
+7. Every content file carries a comment block naming the narelo-os document it came from. **Keep those comments accurate.** If copy changes, and the source changed too, update the comment.
 
 ## Canonical names and tone
 

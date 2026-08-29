@@ -11,16 +11,14 @@
  *   6. How do we join?                → joining
  *
  * "In practice," "How membership works" and "What's included" used to be
- * three separate sections saying much the same thing (Rui, 2026-08-29):
+ * three separate sections saying much the same thing:
  * combined into one, with the concrete inclusions still carried by the
  * IncludedAccordion so nothing is lost, just said once.
  *
- * "What does it cost?" is deliberately absent for now (Rui, 2026-08-26):
- * pricing is undefined in the repo (founding-family-presale.md) and the
- * section was removed rather than shown without figures. Restore it once
- * pricing is agreed.
+ * "What does it cost?" has no section yet: no pricing figures exist in the
+ * repo (founding-family-presale.md). Add one once figures are provided.
  *
- * House style: no em dashes in published copy (Rui, 2026-08-26).
+ * House style: no em dashes in published copy.
  *
  * Designed to be readable in 60–90 seconds on a phone, per the same document.
  * Primary CTA throughout is WhatsApp, which is the funnel's step 3.
@@ -43,8 +41,8 @@ export const whatItIs = {
 } as const;
 
 /**
- * What Narelo is NOT, given its own moment (Rui, 2026-08-26: the negation was
- * buried in body copy). Grounded in positioning.md: "Deliberately not
+ * What Narelo is NOT, given its own moment: the negation was buried in body
+ * copy. Grounded in positioning.md: "Deliberately not
  * positioned as another children's activity, class, nursery, play centre, or
  * collection of disconnected sessions."
  */
@@ -82,7 +80,7 @@ export const ageGroups = {
   body: 'Every child belongs to a named group that moves with them as they grow. Families can join at any point, and many begin before their child is born.',
   /** Rows come from content/stages.ts: name, age and one-line tagline only. The
    *  full breakdown of each stage lives on the Experiences page, not repeated
-   *  here (Rui, 2026-08-29). */
+   *  here. */
   note: 'Five-year-olds are placed between Builders I and Builders II depending on readiness, not their birthday.',
   linkLabel: 'See what each stage includes',
   linkHref: '/experiences/#journey',
@@ -118,7 +116,7 @@ export const howItWorks = {
 } as const;
 
 /**
- * Q5 — What is included? Split honestly (Rui, 2026-08-26): the weekly place
+ * Q5 — What is included? Split honestly: the weekly place
  * and member benefits come with membership; Signature Saturdays, holiday
  * experiences, community mornings and the wider Narelo world are available to
  * members at member rates but are not included in it. The group labels carry
@@ -150,8 +148,8 @@ export const included = {
 } as const;
 
 /**
- * Q5.5 — Who is actually behind this? Added before "How to join" (Rui,
- * 2026-08-29): the page made the case for Narelo without showing a single
+ * Q5.5 — Who is actually behind this? Added before "How to join":
+ * the page made the case for Narelo without showing a single
  * sign of the people or families behind it. Photo is a placeholder — company/team.md
  * gives Natalie and Vivien as the founders, but a real photo of them hasn't
  * been taken yet; swap `image` for it once it exists. Quote is carried over
@@ -161,7 +159,7 @@ export const proof = {
   eyebrow: 'Who is behind this',
   heading: 'Natalie and Vivien',
   body: 'Natalie leads Narelo’s direction and the community around it. She is a mother herself, and Narelo is the kind of childhood she wanted for her own son and could never find. Vivien, our Educational Leader, designs what actually happens with the children: a special needs teacher, speech therapist and movement specialist.',
-  /** TODO(Rui): placeholder until a real photo of Natalie and Vivien exists. */
+  /** TODO: placeholder until a real photo of Natalie and Vivien exists. */
   image: '/images/membership-beach-background.webp',
   quote: 'It’s more than the activities. It’s the feeling of being part of something.',
   attribution: 'Carlos · Narelo family',

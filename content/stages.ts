@@ -2,11 +2,11 @@
  * Age-group stage details. The Experiences page renders the full
  * StageAccordion (name, motto, summary and the "what to expect" list);
  * Membership shows only the one-line tagline per stage and links across to
- * Experiences for the rest (Rui, 2026-08-29: the full breakdown repeated on
- * both pages was too much for a page meant to read in 60-90 seconds).
+ * Experiences for the rest: the full breakdown repeated on both pages was too
+ * much for a page meant to read in 60-90 seconds.
  *
  * Names and ages are canonical (framework/age-groups.md). Mottos and
- * summaries for Nurture and The Nest are transcribed from Rui's stage briefs
+ * summaries for Nurture and The Nest are transcribed from the stage briefs
  * (assets-source/stage-briefs/, 2026-08-26), which also supplied their photos.
  *
  * Nurture and The Nest use their own stage briefs, including the session
@@ -15,7 +15,7 @@
  * Little Beginnings, Builders I, Builders II and Navigators come from the
  * four-groups chart (assets-source/stage-briefs/four-groups-chart.jpeg,
  * 2026-08-27): mottos, summaries and "what to expect" lists transcribed
- * verbatim. Photos are unchanged, per Rui.
+ * verbatim. Photos are unchanged.
  *
  * TODO: Bloom is the only stage still without a brief. Its summary is
  * provisional and it carries no motto or list.
@@ -43,7 +43,7 @@ export const stageDetails: readonly Stage[] = [
       'A calm space for expecting parents: time to slow down, connect with other families, and begin the Narelo journey before your child is born.',
     /*
      * Pexels 7155527 (free license, no attribution required), cropped below
-     * the face per Rui: pregnant woman on a woven beige mat, cream and tan.
+     * the face: pregnant woman on a woven beige mat, cream and tan.
      * Original archived: assets-source/stage-photo-bloom-pexels-7155527.jpg
      * Source: https://www.pexels.com/photo/pregnant-woman-doing-excercise-7155527/
      */

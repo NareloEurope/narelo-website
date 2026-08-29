@@ -7,7 +7,7 @@
  * session rhythm (Wonder Seed, Atelier etc.) is explicitly not public-facing
  * and is not published here.
  *
- * House style: no em dashes in published copy (Rui, 2026-08-26).
+ * House style: no em dashes in published copy.
  */
 
 export const hero = {

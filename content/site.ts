@@ -20,7 +20,7 @@ export const site = {
 
 /**
  * Community, Journal and Contact exist as routes but are hidden from the menu
- * until they are ready (Rui, 2026-08-26). Re-add them here when they are.
+ * until they are ready. Re-add them here when they are.
  */
 export const nav = [
   /*
@@ -37,7 +37,7 @@ export const nav = [
 /**
  * The primary CTA opens a WhatsApp conversation directly (funnel step 3).
  * "Become a member" promised more than the first message actually delivers
- * (Rui, 2026-08-29): this is the start of a conversation, not a signup.
+ * this is the start of a conversation, not a signup.
  */
 export const headerCta = { label: 'Start the conversation', external: true } as const;
 

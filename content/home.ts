@@ -11,7 +11,7 @@
  *  - framework/experience-rhythm-and-format.md — 90 minutes, ~8 children
  *  - offers/membership/Strategy/positioning.md — "first Narelo home"
  *
- * House style: no em dashes in published copy (Rui, 2026-08-26).
+ * House style: no em dashes in published copy.
  */
 
 export const hero = {
@@ -51,7 +51,7 @@ export const shape = {
 
 /**
  * framework/the-narelo-framework.md Part IV — canonical names and summaries.
- * Display names drop the leading "The" (Rui, 2026-08-26): World Around Us,
+ * Display names drop the leading "The": World Around Us,
  * Future. Movement and Stillness flow through all five rather than being a
  * sixth. Rendered on the home page as the scroll-driven WorldsExplorer.
  */
