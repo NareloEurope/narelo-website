@@ -5,7 +5,7 @@
  * Experiences for the rest: the full breakdown repeated on both pages was too
  * much for a page meant to read in 60-90 seconds.
  *
- * Names and ages are canonical (framework/age-groups.md). Mottos and
+ * Names and ages are canonical. Mottos and
  * summaries for Nurture and The Nest are transcribed from the stage briefs
  * (assets-source/stage-briefs/, 2026-08-26), which also supplied their photos.
  *

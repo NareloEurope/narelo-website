@@ -1,11 +1,11 @@
 /**
  * Experiences page copy.
  *
- * Sources: framework/the-narelo-framework.md Part IV (Five Worlds, canonical),
- * framework/age-groups.md, framework/experience-rhythm-and-format.md, plus the
- * experience-card copy carried over from the original site. The internal
- * session rhythm (Wonder Seed, Atelier etc.) is explicitly not public-facing
- * and is not published here.
+ * The Five Worlds, the age group names and ages, and the working format are
+ * canonical and must not be paraphrased or re-ordered. The experience-card
+ * copy is carried over from the original site. The internal session rhythm
+ * (Wonder Seed, Atelier etc.) is explicitly not public-facing and is not
+ * published here.
  *
  * House style: no em dashes in published copy.
  */
@@ -18,8 +18,7 @@ export const hero = {
 } as const;
 
 /**
- * framework/experience-rhythm-and-format.md — the working format (90 minutes,
- * ~8 children). The season figure comes from company/business-plan.md:
+ * The working format: 90 minutes, around 8 children. The season figure is
  * "Autumn · Winter · Spring · Summer. 10–12 weeks, 1 session per week."
  */
 export const format = {
@@ -35,7 +34,7 @@ export const format = {
   image: '/images/img-5211.webp',
 } as const;
 
-/** framework/the-narelo-framework.md Part IV — canonical names and summaries. */
+/** Canonical names and summaries: never paraphrase or re-order them. */
 export const worlds = {
   eyebrow: 'The Five Worlds',
   heading: 'Five doors we open together',
@@ -64,7 +63,7 @@ export const worlds = {
   ],
 } as const;
 
-/** framework/age-groups.md — canonical names and ages. */
+/** Canonical names and ages: never paraphrase or re-order them. */
 export const stages = {
   eyebrow: 'The journey',
   heading: 'A path for every stage',

@@ -1,6 +1,6 @@
 /**
  * Membership page — the funnel's "Instant Digital Flyer"
- * (offers/membership/Strategy/sales-funnel.md, step 2).
+ * (sales funnel, step 2).
  *
  * It answers, in this order, the questions that document specifies:
  *   1. What is Narelo?            → whatItIs
@@ -16,7 +16,7 @@
  * IncludedAccordion so nothing is lost, just said once.
  *
  * "What does it cost?" has no section yet: no pricing figures exist in the
- * repo (founding-family-presale.md). Add one once figures are provided.
+ * project. Add one once figures are provided.
  *
  * House style: no em dashes in published copy.
  *
@@ -31,7 +31,7 @@ export const hero = {
   image: '/images/membership-hero.webp',
 } as const;
 
-/** Q1 — What is Narelo? positioning.md, stated without jargon. */
+/** Q1 — What is Narelo? The positioning, stated without jargon. */
 export const whatItIs = {
   eyebrow: 'What Narelo is',
   heading: 'A members’ community built around extraordinary experiences',
@@ -42,7 +42,7 @@ export const whatItIs = {
 
 /**
  * What Narelo is NOT, given its own moment: the negation was buried in body
- * copy. Grounded in positioning.md: "Deliberately not
+ * copy. The positioning is explicit: "Deliberately not
  * positioned as another children's activity, class, nursery, play centre, or
  * collection of disconnected sessions."
  */
@@ -67,13 +67,13 @@ export const childExperience = {
   facts: [
     { value: '90 min', label: 'each experience' },
     { value: '~8', label: 'children per group' },
-    /* business-plan.md: Autumn/Winter/Spring/Summer, 10-12 weeks, 1 a week. */
+    /* Autumn/Winter/Spring/Summer, 10-12 weeks, 1 a week. */
     { value: '12', label: 'experiences a season' },
   ],
   note: 'Experiences happen in our Marbella home and well beyond it: beach, forest and real-world places. Younger groups may include a parent; older children come on their own.',
 } as const;
 
-/** Q3 — Which age group is relevant? framework/age-groups.md, canonical. */
+/** Q3 — Which age group is relevant? Names and ages are canonical. */
 export const ageGroups = {
   eyebrow: 'From the very beginning',
   heading: 'A place that grows with your child',
@@ -150,9 +150,9 @@ export const included = {
 /**
  * Q5.5 — Who is actually behind this? Added before "How to join":
  * the page made the case for Narelo without showing a single
- * sign of the people or families behind it. Photo is a placeholder — company/team.md
- * gives Natalie and Vivien as the founders, but a real photo of them hasn't
- * been taken yet; swap `image` for it once it exists. Quote is carried over
+ * sign of the people or families behind it. Photo is a placeholder: Natalie
+ * and Vivien are the founders, but a real photo of them hasn't been taken
+ * yet; swap `image` for it once it exists. Quote is carried over
  * from a real family, content/community.ts.
  */
 export const proof = {
@@ -165,7 +165,7 @@ export const proof = {
   attribution: 'Carlos · Narelo family',
 } as const;
 
-/** Q6 — How do we join? sales-funnel.md steps 3–6, exactly as documented. */
+/** Q6 — How do we join? Funnel steps 3–6, exactly as documented. */
 export const joining = {
   eyebrow: 'How to join',
   heading: 'Four steps, and a conversation before anything else',

@@ -1,15 +1,12 @@
 /**
  * Home page copy.
  *
- * Sources (nothing here is invented):
- *  - brand/brand-essence.md — belief, philosophy, values, promise
- *  - framework/mission-vision-promise.md — the Narelo Promise
- *  - framework/the-narelo-framework.md Part IV — the Five Worlds, canonical
- *    names and descriptions ("Ocean. Mountain. The World Around Us.
- *    Expression. The Future.")
- *  - framework/age-groups.md — canonical group names and ages
- *  - framework/experience-rhythm-and-format.md — 90 minutes, ~8 children
- *  - offers/membership/Strategy/positioning.md — "first Narelo home"
+ * Nothing here is invented. The canonical material it rests on, none of which
+ * may be paraphrased or re-ordered: the belief, philosophy and values; the
+ * Narelo Promise; the Five Worlds ("Ocean. Mountain. The World Around Us.
+ * Expression. The Future."); the age group names and their exact ages; the
+ * working format of 90 minutes and around 8 children; and "our first Narelo
+ * home" as the wording for Marbella.
  *
  * House style: no em dashes in published copy.
  */
@@ -24,7 +21,7 @@ export const hero = {
   scrollHint: 'Scroll',
 } as const;
 
-/** brand/brand-essence.md §8 — the belief, stated plainly. */
+/** The belief, stated plainly. */
 export const belief = {
   eyebrow: 'Our belief',
   heading: 'Children don’t need more activities. They need a richer childhood.',
@@ -32,12 +29,12 @@ export const belief = {
   image: '/images/home-moment-to-pause.webp',
 } as const;
 
-/** The central message from Strategy/positioning.md, given its own moment. */
+/** The central positioning message, given its own moment. */
 export const statement = {
   lines: ['Children join for the experiences.', 'Families stay for the community.'],
 } as const;
 
-/** framework/experience-rhythm-and-format.md — working format figures. */
+/** The working format figures. */
 export const shape = {
   eyebrow: 'How a Narelo day is built',
   heading: 'Small groups. Real places. Nobody rushed.',
@@ -50,7 +47,7 @@ export const shape = {
 } as const;
 
 /**
- * framework/the-narelo-framework.md Part IV — canonical names and summaries.
+ * Canonical names and summaries: never paraphrase or re-order them.
  * Display names drop the leading "The": World Around Us,
  * Future. Movement and Stillness flow through all five rather than being a
  * sixth. Rendered on the home page as the scroll-driven WorldsExplorer.
@@ -96,7 +93,7 @@ export const worlds = {
 } as const;
 
 /**
- * framework/age-groups.md — canonical names and ages.
+ * Canonical names and ages: never paraphrase or re-order them.
  * Rendered as stacked rows in the style of The Well's membership section:
  * hairline dividers, large serif name, tagline, link.
  */
@@ -118,7 +115,7 @@ export const journey = {
   linkHref: '/experiences/#journey',
 } as const;
 
-/** framework/mission-vision-promise.md — The Narelo Promise. */
+/** The Narelo Promise, canonical. Never re-title or re-word. */
 export const promise = {
   eyebrow: 'The Narelo promise',
   heading: 'What every family can expect',
@@ -130,7 +127,7 @@ export const promise = {
   ],
 } as const;
 
-/** offers/membership/Strategy/positioning.md — "first home" wording is strategic. */
+/** The "first Narelo home" wording is strategic, never "a Marbella business". */
 export const home = {
   eyebrow: 'Marbella',
   heading: 'Our first Narelo home opens this autumn',
@@ -139,7 +136,7 @@ export const home = {
   ctaLabel: 'Become a member',
 } as const;
 
-/** company/team.md — Natalie and Vivien only. Christian is never a public face. */
+/** Natalie and Vivien only. Christian is never a public face. */
 export const founders = {
   eyebrow: 'The founders',
   heading: 'Natalie and Vivien',

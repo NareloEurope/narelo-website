@@ -42,13 +42,13 @@ The design and the words are kept apart on purpose.
 |---|---|---|
 | **The words** (every headline, paragraph, label, link, testimonial) | `content/*.ts` | The Narelo team, freely |
 | **The design** (layout, spacing, animation, structure) | `app/*.tsx` and `components/*.tsx` | Changes here are bigger; flag them |
-| **The pictures** | `public/images/` and `public/video/` | Swap by filename |
+| **The pictures** | `public/images/` and `public/video/` | Swap by filename, or add new ones |
 
 Almost every request the team will ever make is a change to one file in `content/`. Those files are plain, readable objects. Editing them cannot break the design.
 
 Components are design, not words: `Header`, `Footer`, `Section`, `Motion`, `Gallery`, `Testimonials`, `StageAccordion`, `IncludedAccordion`, `WorldsExplorer`, `ContactForm`, `LazyVideo`, `VideoBand`, `WhatsAppIcon`. If a request needs one of these to behave differently, it is a design change, not a copy change.
 
-To swap a picture, the new file has to already be in the repository first. It cannot be added through this project. Describe the swap wanted and it goes to the reviewer as a request with the exact filename to replace.
+Pictures can be swapped or added directly. Originals live in `assets-source/` as the archive of record and are never edited or deleted; `npm run optimize-assets` regenerates the web-sized `.webp` files in `public/images/` from them. A new picture means adding the original to `assets-source/`, running that script, then pointing the content file at the new filename. Videos go straight into `public/video/`.
 
 The site is a fully static export (`output: 'export'` in `next.config.ts`). There is no server, no CMS and no database. `trailingSlash: true`, so every internal link ends in `/`.
 
@@ -62,7 +62,6 @@ These are decisions already made. Do not quietly reverse them.
 4. **TikTok and Facebook links are intentionally empty** (`href: null`). They were dead links on the old Wix site. Do not invent URLs. Instagram is `@narelo.eu`.
 5. **The Bloom age group has no brief yet.** Its summary is provisional and it has no motto. Do not write one, flag it instead.
 6. **The internal session rhythm** (Wonder Seed, Atelier and so on) is deliberately *not* public-facing and must not appear on the website.
-7. Every content file carries a comment block naming the narelo-os document it came from. **Keep those comments accurate.** If copy changes, and the source changed too, update the comment.
 
 ## Canonical names and tone
 
@@ -84,4 +83,4 @@ On the business itself:
 - **Never invent or guess a source** for any research or educational claim. If a source cannot be verified, say so rather than citing it.
 - Tone is **invitation, expedition, wonder**, never status or exclusivity. The curated community exists to protect the environment and the community, not to signal status.
 
-Some framework documents contain **⚠️ GAP** markers on facts that are not yet confirmed. Anything behind a GAP flag must never appear on the website as a statement of fact. If a requested change depends on one, say which GAP it is and stop.
+The Narelo framework and strategy documents are not part of this project, so nothing here can be checked against them. Treat the copy already on the site as the record. If a requested change needs a fact that is not already on the site or stated in this file, say what is missing rather than filling the gap.

@@ -1,13 +1,13 @@
 /**
  * Global site content.
  *
- * Copy follows brand/brand-essence.md §6 Tone of Voice: warm not childish,
- * intelligent not academic, aspirational NOT elitist, clear not promotional.
+ * Tone of voice: warm not childish, intelligent not academic, aspirational
+ * NOT elitist, clear not promotional.
  *
  * Note on the Soho House reference: the visual restraint is the model, not the
- * social language. framework/mission-vision-promise.md is explicit that Narelo's
- * curated community "is NOT status-based exclusivity" — selection exists to
- * protect the environment and community. No copy here implies otherwise.
+ * social language. Narelo's curated community is NOT status-based exclusivity,
+ * selection exists to protect the environment and community. No copy here
+ * implies otherwise.
  */
 
 export const site = {
@@ -52,7 +52,7 @@ export const contact = {
   phone: '+34 655 366 888',
   phoneHref: 'tel:+34655366888',
   /**
-   * The funnel's primary CTA (Strategy/sales-funnel.md step 2 → 3). The first
+   * The funnel's primary CTA (step 2 → 3). The first
    * question Narelo asks back is "How old is your child?", so the prefilled
    * message opens on exactly that.
    */
@@ -61,7 +61,7 @@ export const contact = {
 
 /**
  * ⚠️ On the Wix site these four icons were dead links, and @narelo.eu appeared
- * nowhere. Instagram is set from CLAUDE.md; the rest need real URLs before launch.
+ * nowhere. Instagram is @narelo.eu; the rest need real URLs before launch.
  */
 export const socialIcons = [
   { src: '/images/social-instagram.webp', label: 'Instagram', href: 'https://instagram.com/narelo.eu' },
