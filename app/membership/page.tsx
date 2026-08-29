@@ -4,17 +4,16 @@ import LazyVideo from '@/components/LazyVideo';
 import { contact } from '@/content/site';
 import WhatsAppIcon from '@/components/WhatsAppIcon';
 import IncludedAccordion from '@/components/IncludedAccordion';
-import StageAccordion from '@/components/StageAccordion';
 import { stageDetails } from '@/content/stages';
 import {
   hero,
   whatItIs,
   isNot,
   childExperience,
-  practice,
   ageGroups,
   howItWorks,
   included,
+  proof,
   joining,
   closing,
 } from '@/content/membership';
@@ -30,9 +29,8 @@ const CHAPTERS = [
   { id: 'what', label: 'What Narelo is' },
   { id: 'experience', label: 'The experiences' },
   { id: 'ages', label: 'Age groups' },
-  { id: 'practice', label: 'In practice' },
   { id: 'how', label: 'How it works' },
-  { id: 'included', label: 'What’s included' },
+  { id: 'who', label: 'Who we are' },
   { id: 'join', label: 'How to join' },
 ];
 
@@ -166,80 +164,91 @@ export default function MembershipPage() {
           <p className="lede text-ink-soft">{ageGroups.body}</p>
         </div>
 
-        <div className="fade" data-reveal>
-          <StageAccordion items={stageDetails} />
-        </div>
+        {/* One line per stage: the full breakdown lives on the Experiences page. */}
+        <ul className="reveal border-t border-ink/12" data-reveal>
+          {stageDetails.map((stage) => (
+            <li
+              key={stage.name}
+              className="grid grid-cols-[1fr_auto] items-baseline gap-x-4 gap-y-2 border-b border-ink/12 py-7 md:grid-cols-[1.2fr_7rem_1.6fr] md:gap-8 md:py-8"
+            >
+              <h3 className="display display-md col-start-1">{stage.name}</h3>
+              <span className="eyebrow col-start-1 text-olive md:col-start-2">{stage.age}</span>
+              <p className="body-copy col-start-1 max-w-md text-ink-soft md:col-start-3">{stage.tagline}</p>
+            </li>
+          ))}
+        </ul>
 
-        <p className="body-copy mt-12 max-w-xl text-ink-soft fade" data-reveal>
-          {ageGroups.note}
-        </p>
-      </Section>
-
-      {/* ---------- 4. In practice ---------- */}
-      <Section id="practice" bg="bg-shell">
-        <div className="grid gap-16 md:grid-cols-[0.85fr_1.15fr] md:gap-24">
-          <div className="fade md:sticky md:top-40 md:self-start" data-reveal>
-            <p className="eyebrow mb-8 text-olive">{practice.eyebrow}</p>
-            <h2 className="display display-lg">{practice.heading}</h2>
-          </div>
-
-          <ul className="reveal" data-reveal>
-            {practice.items.map((item) => (
-              <li
-                key={item.n}
-                className="grid gap-4 border-t border-ink/12 py-8 first:border-t-0 first:pt-0 md:grid-cols-[4rem_1fr] md:gap-8"
-              >
-                <span className="eyebrow text-olive">{item.n}</span>
-                <div>
-                  <h3 className="display display-md mb-3">{item.title}</h3>
-                  <p className="body-copy max-w-lg text-ink-soft">{item.body}</p>
-                </div>
-              </li>
-            ))}
-          </ul>
+        <div className="mt-12 flex flex-col gap-6 fade md:flex-row md:items-center md:justify-between" data-reveal>
+          <p className="body-copy max-w-xl text-ink-soft">{ageGroups.note}</p>
+          <Link href={ageGroups.linkHref} className="link-line eyebrow shrink-0 text-ink">
+            {ageGroups.linkLabel}
+          </Link>
         </div>
       </Section>
 
-      {/* ---------- 5. How does membership work? ---------- */}
+      {/* ---------- 4. How does membership work, and what's included? ----------
+          Merged from three sections that said much the same thing (Rui,
+          2026-08-29): a short shared rhythm, then the concrete inclusions. */}
       <Section id="how" bg="bg-shell">
         <div className="grid gap-16 md:grid-cols-[0.85fr_1.15fr] md:gap-24">
           <div className="fade md:sticky md:top-40 md:self-start" data-reveal>
             <p className="eyebrow mb-8 text-olive">{howItWorks.eyebrow}</p>
             <h2 className="display display-lg mb-8">{howItWorks.heading}</h2>
-            <p className="body-copy max-w-sm text-ink-soft">{howItWorks.note}</p>
+            <p className="body-copy max-w-sm text-ink-soft">{howItWorks.body}</p>
           </div>
 
-          <ul className="reveal" data-reveal>
-            {howItWorks.items.map((item) => (
-              <li
-                key={item.n}
-                className="grid gap-4 border-t border-ink/12 py-8 first:border-t-0 first:pt-0 md:grid-cols-[4rem_1fr] md:gap-8"
-              >
-                <span className="eyebrow text-olive">{item.n}</span>
-                <div>
-                  <h3 className="display display-md mb-3">{item.title}</h3>
-                  <p className="body-copy max-w-lg text-ink-soft">{item.body}</p>
-                </div>
-              </li>
-            ))}
-          </ul>
+          <div className="reveal" data-reveal>
+            <ul>
+              {howItWorks.items.map((item) => (
+                <li
+                  key={item.n}
+                  className="grid gap-4 border-t border-ink/12 py-8 first:border-t-0 first:pt-0 md:grid-cols-[4rem_1fr] md:gap-8"
+                >
+                  <span className="eyebrow text-olive">{item.n}</span>
+                  <div>
+                    <h3 className="display display-md mb-3">{item.title}</h3>
+                    <p className="body-copy max-w-lg text-ink-soft">{item.body}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+            <p className="body-copy mt-10 max-w-lg text-ink-soft">{howItWorks.note}</p>
+
+            <div className="mt-16 border-t border-ink/12 pt-12">
+              <p className="eyebrow mb-8 text-olive">{included.eyebrow}</p>
+              <IncludedAccordion groups={included.groups} />
+            </div>
+          </div>
         </div>
       </Section>
 
-      {/* ---------- 6. What is included? ---------- */}
-      <Section id="included">
-        <div className="grid gap-14 md:grid-cols-[0.8fr_1.2fr] md:gap-24">
-          <div className="fade md:sticky md:top-40 md:self-start" data-reveal>
-            <p className="eyebrow mb-8 text-olive">{included.eyebrow}</p>
-            <h2 className="display display-lg">{included.heading}</h2>
+      {/* ---------- 5. Who is behind this ---------- */}
+      <Section id="who">
+        <div className="grid items-center gap-14 md:grid-cols-2 md:gap-20">
+          <div className="img-settle overflow-hidden rounded-[2px]" data-reveal>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={proof.image}
+              alt=""
+              width={1855}
+              height={848}
+              loading="lazy"
+              className="aspect-[4/3] w-full object-cover"
+            />
           </div>
           <div className="fade" data-reveal>
-            <IncludedAccordion groups={included.groups} />
+            <p className="eyebrow mb-8 text-olive">{proof.eyebrow}</p>
+            <h2 className="display display-lg mb-8">{proof.heading}</h2>
+            <p className="lede mb-10 text-ink-soft">{proof.body}</p>
+            <blockquote className="display display-md border-t border-ink/12 pt-8 italic text-ink">
+              “{proof.quote}”
+            </blockquote>
+            <p className="eyebrow mt-4 text-ink-soft">{proof.attribution}</p>
           </div>
         </div>
       </Section>
 
-      {/* ---------- 7. How do we join? ---------- */}
+      {/* ---------- 6. How do we join? ---------- */}
       <Section id="join">
         <div className="mb-16 max-w-2xl fade" data-reveal>
           <p className="eyebrow mb-8 text-olive">{joining.eyebrow}</p>

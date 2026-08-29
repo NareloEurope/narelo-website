@@ -1,6 +1,9 @@
 /**
- * Age-group stage details, shared by the Experiences journey and the
- * Membership age-groups sections (both render them as expandable rows).
+ * Age-group stage details. The Experiences page renders the full
+ * StageAccordion (name, motto, summary and the "what to expect" list);
+ * Membership shows only the one-line tagline per stage and links across to
+ * Experiences for the rest (Rui, 2026-08-29: the full breakdown repeated on
+ * both pages was too much for a page meant to read in 60-90 seconds).
  *
  * Names and ages are canonical (framework/age-groups.md). Mottos and
  * summaries for Nurture and The Nest are transcribed from Rui's stage briefs
@@ -72,7 +75,7 @@ export const stageDetails: readonly Stage[] = [
       'Welcome and warm up: songs, movement and a hello ritual together',
       'Movement circuit: climb, crawl, balance, push, pull and jump through a prepared space',
       'Theme exploration: sensory play, materials and open-ended invitations',
-      'Group connection: games, music and stories that build social skills and confidence',
+      'Group connection: games, music and stories that build social skills and friendship',
       'Calm and reflect: breathing, a quiet moment or a gentle stretch to close',
     ],
     image: '/images/stage-photo-nest.webp',
@@ -80,10 +83,10 @@ export const stageDetails: readonly Stage[] = [
   {
     name: 'Little Beginnings',
     age: '2–3 years',
-    tagline: 'Building confidence through discovery.',
+    tagline: 'First steps into a world of discovery.',
     motto: 'I discover.',
     summary:
-      'First adventures in the Five Worlds. Sensory, playful experiences that spark curiosity, build confidence and create joyful memories.',
+      'First adventures in the Five Worlds. Sensory, playful experiences that spark curiosity, build independence and create joyful memories.',
     whatToExpect: [
       'Sensory exploration in nature and real environments',
       'Play-based learning through movement and discovery',
@@ -131,7 +134,7 @@ export const stageDetails: readonly Stage[] = [
     tagline: 'Growing independence and finding their way.',
     motto: 'I go deeper and find my way.',
     summary:
-      'Meaningful experiences that inspire curiosity, resilience and purpose as children grow into confident, capable young people.',
+      'Experiences that build curiosity, resilience and purpose, as children grow into their own independence.',
     whatToExpect: [
       'Real-world adventures and longer explorations',
       'Research, projects and creative expression',
