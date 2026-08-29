@@ -44,7 +44,8 @@ export const stageDetails: readonly Stage[] = [
     /*
      * Pregnant woman, eyes closed, in white, sitting cross-legged in soft
      * light. Supplied directly by the team (2026-08-29); source not
-     * confirmed.
+     * confirmed. Cropped to hair-through-belly, legs excluded, so the
+     * stage panel shows the whole framing without cutting off the face.
      */
     image: '/images/stage-photo-bloom.webp',
   },
