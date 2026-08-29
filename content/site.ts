@@ -15,7 +15,7 @@ export const site = {
   tagline: 'A private childhood membership',
   locale: 'en',
   location: 'Marbella, Spain',
-  copyright: '© 2026 Narelo. All rights reserved.',
+  copyright: '© 2026 Narelo. All rights reserved. Preview test.',
 } as const;
 
 /**
