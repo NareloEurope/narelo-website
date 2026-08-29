@@ -87,7 +87,7 @@ export const worlds = {
     {
       name: 'Future',
       short: 'Curiosity about what is changing',
-      body: 'Invention, experimentation and thoughtful encounters with new tools and ideas, so children meet change with curiosity and confidence.',
+      body: 'Invention, experimentation and thoughtful encounters with new tools and ideas, so children meet change with curiosity and an open mind.',
       image: '/images/contact-hero.webp',
     },
   ],
@@ -108,7 +108,7 @@ export const journey = {
     { name: 'Bloom', age: 'Pregnancy', body: 'A gentle beginning, before your child arrives.' },
     { name: 'Nurture', age: '0–1', body: 'Sensing, discovering and connecting.' },
     { name: 'The Nest', age: '1–2', body: 'Exploring the world through movement.' },
-    { name: 'Little Beginnings', age: '2–3', body: 'Building confidence through discovery.' },
+    { name: 'Little Beginnings', age: '2–3', body: 'First steps into a world of discovery.' },
     { name: 'Builders I', age: '3–5', body: 'Creating, exploring and making sense of the world.' },
     { name: 'Builders II', age: '5–6', body: 'Questioning, creating and building ideas.' },
     { name: 'Navigators', age: '6–8', body: 'Growing independence and finding their way.' },

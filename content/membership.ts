@@ -2,13 +2,18 @@
  * Membership page — the funnel's "Instant Digital Flyer"
  * (offers/membership/Strategy/sales-funnel.md, step 2).
  *
- * It answers, in this order, the seven questions that document specifies:
+ * It answers, in this order, the questions that document specifies:
  *   1. What is Narelo?            → whatItIs
  *   2. What does my child experience? → childExperience
  *   3. Which age group is relevant?   → ageGroups
- *   4. How does the membership work?  → howItWorks
- *   5. What is included?              → included
+ *   4. How does the membership work, and what's included? → howItWorks, included
+ *   5. Who is actually behind this?   → proof
  *   6. How do we join?                → joining
+ *
+ * "In practice," "How membership works" and "What's included" used to be
+ * three separate sections saying much the same thing (Rui, 2026-08-29):
+ * combined into one, with the concrete inclusions still carried by the
+ * IncludedAccordion so nothing is lost, just said once.
  *
  * "What does it cost?" is deliberately absent for now (Rui, 2026-08-26):
  * pricing is undefined in the repo (founding-family-presale.md) and the
@@ -70,56 +75,44 @@ export const childExperience = {
   note: 'Experiences happen in our Marbella home and well beyond it: beach, forest and real-world places. Younger groups may include a parent; older children come on their own.',
 } as const;
 
-/**
- * The membership in practice — adapted from Rui's brief (2026-08-26): weekly
- * cadence, experiences not activities, worlds blending, real places and real
- * feelings, Signature Saturdays twice a month (paid, no pricing on site).
- */
-export const practice = {
-  eyebrow: 'In practice',
-  heading: 'What actually happens',
-  items: [
-    {
-      n: '01',
-      title: 'One experience a week',
-      body: 'Your child’s group meets once a week, four times a month. We call them experiences rather than activities or lessons, because that is what we are building: time your child feels, not content they sit through.',
-    },
-    {
-      n: '02',
-      title: 'Out in the real world',
-      body: 'An experience might take the group to the beach, where water, sand and weather bring discovery all on their own. Or into the forest. Or to the people and craft behind everyday life. The five worlds often blend into one another, exactly as the real world does.',
-    },
-    {
-      n: '03',
-      title: 'Not between four walls',
-      body: 'This is what makes Narelo different. We are not filling an hour indoors. Children remember how an experience felt years after any lesson fades, so feelings are what we design for.',
-    },
-    {
-      n: '04',
-      title: 'Signature Saturdays',
-      body: 'Twice a month we create something bigger: an experience for the children, and a slow morning for the parents to be together. Saturdays sit alongside the weekly rhythm and are bookable at member rates.',
-    },
-  ],
-} as const;
-
 /** Q3 — Which age group is relevant? framework/age-groups.md, canonical. */
 export const ageGroups = {
   eyebrow: 'From the very beginning',
   heading: 'A place that grows with your child',
   body: 'Every child belongs to a named group that moves with them as they grow. Families can join at any point, and many begin before their child is born.',
-  /** Rows come from content/stages.ts, rendered by StageAccordion. */
+  /** Rows come from content/stages.ts: name, age and one-line tagline only. The
+   *  full breakdown of each stage lives on the Experiences page, not repeated
+   *  here (Rui, 2026-08-29). */
   note: 'Five-year-olds are placed between Builders I and Builders II depending on readiness, not their birthday.',
+  linkLabel: 'See what each stage includes',
+  linkHref: '/experiences/#journey',
 } as const;
 
-/** Q4 — How does the membership work? */
+/**
+ * Q4 — How does the membership work, and what's included? Merges what used
+ * to be three sections ("In practice," "How membership works," "What's
+ * included") into one: a short shared rhythm, then the concrete list.
+ */
 export const howItWorks = {
   eyebrow: 'How membership works',
   heading: 'One membership, an ongoing place',
+  body: 'Your child holds a place in their age group, not a slot in a schedule: one experience a week, out in the real world, with the same educators and the same small circle of friends.',
   items: [
-    { n: '01', title: 'A place that is yours', body: 'Your child holds a place in their age group, with the same educators and the same small circle of friends each week.' },
-    { n: '02', title: 'A weekly rhythm', body: 'Experiences run through the term, with holiday programmes and Signature Saturdays alongside them.' },
-    { n: '03', title: 'It grows with them', body: 'As your child moves into the next age group, their membership moves with them. Nothing restarts.' },
-    { n: '04', title: 'Families are members too', body: 'Community mornings, expert sessions and events are for the parents as much as the children.' },
+    {
+      n: '01',
+      title: 'Real places, not four walls',
+      body: 'An experience might take the group to the beach, into the forest, or to the people and craft behind everyday life. We call them experiences rather than lessons, because that is what we are building: time your child feels, not content they sit through.',
+    },
+    {
+      n: '02',
+      title: 'It grows with them',
+      body: 'As your child moves into the next age group, their membership moves with them. Nothing restarts.',
+    },
+    {
+      n: '03',
+      title: 'Families are members too',
+      body: 'Community mornings, expert sessions and events are for the parents as much as the children.',
+    },
   ],
   note: 'Places are limited by design. Groups stay small, so each age group only ever holds a small number of families.',
 } as const;
@@ -154,6 +147,24 @@ export const included = {
       ],
     },
   ],
+} as const;
+
+/**
+ * Q5.5 — Who is actually behind this? Added before "How to join" (Rui,
+ * 2026-08-29): the page made the case for Narelo without showing a single
+ * sign of the people or families behind it. Photo is a placeholder — company/team.md
+ * gives Natalie and Vivien as the founders, but a real photo of them hasn't
+ * been taken yet; swap `image` for it once it exists. Quote is carried over
+ * from a real family, content/community.ts.
+ */
+export const proof = {
+  eyebrow: 'Who is behind this',
+  heading: 'Natalie and Vivien',
+  body: 'Natalie leads Narelo’s direction and the community around it. She is a mother herself, and Narelo is the kind of childhood she wanted for her own son and could never find. Vivien, our Educational Leader, designs what actually happens with the children: a special needs teacher, speech therapist and movement specialist.',
+  /** TODO(Rui): placeholder until a real photo of Natalie and Vivien exists. */
+  image: '/images/membership-beach-background.webp',
+  quote: 'It’s more than the activities. It’s the feeling of being part of something.',
+  attribution: 'Carlos · Narelo family',
 } as const;
 
 /** Q6 — How do we join? sales-funnel.md steps 3–6, exactly as documented. */
