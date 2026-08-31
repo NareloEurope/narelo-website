@@ -164,8 +164,8 @@ export const proof = {
   heading: 'Natalie and Vivien',
   /**
    * Roles and bios kept in step with content/home.ts founders (Vivien,
-   * 2026-08-31). The founders' own quotes live on the home page; this section
-   * keeps the family quote below, so it carries the bios only.
+   * 2026-08-31). The founders' own quotes live on the home page, so this
+   * section carries the bios only.
    */
   people: [
     {
@@ -181,8 +181,6 @@ export const proof = {
   ],
   /** TODO(Rui): placeholder until a real photo of Natalie and Vivien exists. */
   image: '/images/membership-beach-background.webp',
-  quote: 'It’s more than the activities. It’s the feeling of being part of something.',
-  attribution: 'Carlos · Narelo family',
 } as const;
 
 /**
