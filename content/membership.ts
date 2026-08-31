@@ -37,7 +37,7 @@ export const hero = {
 export const whatItIs = {
   eyebrow: 'What Narelo is',
   heading: 'A members’ community built around extraordinary experiences',
-  body: 'Narelo is an ongoing membership: small groups of children exploring the real world with the same educators and the same friends, week after week.',
+  body: 'Narelo is a private members’ club built around extraordinary childhood experiences that help children grow through nature, creativity, movement and real-life adventures, within a membership community where like-minded families grow together.',
   pull: 'Children join for the experiences. Families stay for the community.',
   image: '/images/img-1667.webp',
 } as const;

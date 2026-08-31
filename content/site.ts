@@ -41,6 +41,25 @@ export const nav = [
  */
 export const headerCta = { label: 'Start the conversation', external: true } as const;
 
+/**
+ * The closing band above the footer, shown on every page. Previously
+ * hardcoded in components/Footer.tsx; lifted here so the team can edit it
+ * (Vivien, 2026-08-31), along with the expansion line and the CTA label.
+ *
+ * "Our first Narelo home" is the approved public wording for the opening.
+ * ⚠️ The Madrid and Mallorca line is new public copy supplied in the same
+ * feedback pass. It is not backed by a document in the repo: confirm before
+ * launch.
+ */
+export const footerCta = {
+  heading: 'Our first Narelo home opens in Marbella this autumn.',
+  subheading: 'Beginning in Marbella. Madrid and Mallorca on the horizon.',
+  ctaLabel: 'Start a conversation',
+  /** Sits under the logo in the footer. Longer than `site.tagline`, which
+   *  stays short because it is also the browser title. */
+  blurb: 'A private members’ club built around extraordinary childhood experiences.',
+} as const;
+
 export const contact = {
   visitLabel: 'Visit',
   visitName: 'Narelo, Marbella',

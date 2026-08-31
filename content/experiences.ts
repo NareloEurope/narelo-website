@@ -39,27 +39,27 @@ export const format = {
 export const worlds = {
   eyebrow: 'The Five Worlds',
   heading: 'Five doors we open together',
-  body: 'From around age three, every child’s year moves through five worlds. They are not subjects or programmes: they are territories, and they are designed to connect. Movement and stillness run through all of them.',
+  body: 'Our experiences move through five worlds inspired by the real world around us, each opening new ways to explore, move, create and discover. Different worlds. Different experiences. Always something new to uncover.',
   items: [
     {
       name: 'Ocean',
-      body: 'The sea experienced with senses and body. Sand, tides, rock pools and the life within them, growing into larger questions about marine environments and our responsibility towards them.',
+      body: 'Exploring the sea through senses, movement, curiosity and real-world discovery.',
     },
     {
       name: 'Mountain',
-      body: 'Woodland, hills, trails and open landscape. Children encounter nature on its own terms: exploring it physically, observing it closely and gradually understanding their place within it.',
+      body: 'Exploring nature through movement, challenge, observation and adventure.',
     },
     {
       name: 'World Around Us',
-      body: 'Much of everyday life happens behind doors children rarely get to open. This world opens them: craftsmanship, professions, food, culture and local traditions, with children participating rather than only observing.',
+      body: 'Discovering real life through people, places, professions, culture and everyday experiences.',
     },
     {
       name: 'Expression',
-      body: 'Where children interpret, transform and respond to what they encounter. Art, music, storytelling, construction and design, with no expectation of twenty identical finished products.',
+      body: 'Turning ideas and discoveries into art, music, stories, building and design.',
     },
     {
       name: 'Future',
-      body: 'Invention, experimentation and emerging possibilities, including thoughtful encounters with technology. Technology is a tool, not the thinker.',
+      body: 'Exploring invention, problem-solving and new possibilities, with technology, robotics and AI as tools to create, not replace thinking.',
     },
   ],
 } as const;
@@ -71,48 +71,63 @@ export const stages = {
   body: 'Every child belongs to a named group that moves with them as they grow. Families can join at any point along the way.',
   items: [
     { name: 'Bloom', age: 'Pregnancy', body: 'A gentle beginning, before your child arrives.' },
-    { name: 'Nurture', age: '0–1 year', body: 'Sensing, discovering and connecting.' },
-    { name: 'The Nest', age: '1–2 years', body: 'Exploring the world through movement.' },
-    { name: 'Little Beginnings', age: '2–3 years', body: 'First steps into a world of discovery.' },
-    { name: 'Builders I', age: '3–5 years', body: 'Creating, exploring and making sense of the world.' },
-    { name: 'Builders II', age: '5–6 years', body: 'Questioning, creating and building ideas.' },
-    { name: 'Navigators', age: '6–8 years', body: 'Growing independence and finding their way.' },
+    { name: 'Nurture', age: '0–1 year', body: 'Sensing, connecting and discovering together.' },
+    { name: 'The Nest', age: '1–2 years', body: 'Exploring the world through movement and growing independence.' },
+    { name: 'Little Beginnings', age: '2–3 years', body: 'Growing confidence through curiosity, movement and discovery.' },
+    { name: 'Builders I', age: '3–5 years', body: 'Exploring, creating and beginning to make sense of the world.' },
+    { name: 'Builders II', age: '5–6 years', body: 'Questioning, creating and turning ideas into something real.' },
+    { name: 'Navigators', age: '6–8 years', body: 'Growing independence, solving problems and finding their own way.' },
   ],
   note: 'Five-year-olds are placed between Builders I and Builders II depending on readiness, not birthday.',
 } as const;
 
-/** Carried over from the original site's Regular Experiences. */
+/**
+ * Carried over from the original site's Regular Experiences, restructured
+ * into two named groups (Vivien, 2026-08-31): what membership already carries,
+ * and what members can additionally book through the year. "Member events" was
+ * dropped in the same pass.
+ */
 export const regular = {
   eyebrow: 'Through the year',
-  heading: 'The rhythm every member shares',
-  items: [
-    { name: 'Weekly experiences', body: 'Your child’s regular place in their age group: the same educators, the same small circle, every week of term.' },
-    { name: 'Signature Saturdays', body: 'Slow Saturdays designed for discovery, creativity and meaningful time together.' },
-    { name: 'Holiday experiences', body: 'School holidays transformed into opportunities for adventure, discovery and connection.' },
-    { name: 'Community mornings', body: 'Casual mornings to meet, connect and grow together as a community.' },
-    { name: 'Member events', body: 'Exclusive events for members to connect, celebrate and be inspired.' },
-    { name: 'Expert insights', body: 'Inspiring conversations with experts exploring childhood, development and family wellbeing.' },
+  heading: 'Beyond the weekly experience',
+  body: 'Membership reaches beyond your child’s regular Narelo Experiences, bringing families into a wider community and opening access to additional experiences throughout the year.',
+  groups: [
+    {
+      label: 'Part of your Narelo world',
+      items: [
+        { name: 'Regular Narelo Experiences', body: 'A consistent place to explore, grow and build meaningful relationships over time.' },
+        { name: 'Community Mornings', body: 'Time for families to meet, connect and grow together.' },
+        { name: 'Expert Insights', body: 'Conversations with experts around childhood, development and family life.' },
+      ],
+    },
+    {
+      label: 'Additional bookable experiences',
+      items: [
+        { name: 'Signature Saturdays', body: 'Special Saturday experiences designed for discovery, creativity and adventure.' },
+        { name: 'Holiday Experiences', body: 'Curated experiences during the school holidays.' },
+      ],
+    },
   ],
 } as const;
 
-/** Carried over from the original site's Personalised Experiences. */
+/**
+ * Personalised Experiences, reduced from five cards to two (Vivien,
+ * 2026-08-31): Birthday and Bespoke Private cover what is actually offered.
+ */
 export const personalised = {
   eyebrow: 'Beyond the everyday',
   heading: 'Designed around your family',
-  body: 'Alongside the shared rhythm, members can ask for experiences created for their family alone.',
+  body: 'Beyond membership, Narelo also creates selected private experiences, thoughtfully tailored around your child and family.',
   items: [
-    { name: 'Birthday experiences', body: 'Thoughtfully curated celebrations inspired by your child’s interests and personality.' },
-    { name: 'Private experiences', body: 'Fully personalised experiences thoughtfully created around your child and family.' },
-    { name: 'Family experiences', body: 'Meaningful experiences designed for families to connect, explore and create memories together.' },
-    { name: 'Signature family days', body: 'Specially curated days created around your family, from thoughtful activities to unforgettable moments.' },
-    { name: 'Curated holiday experiences', body: 'Bespoke holiday programmes blending nature, creativity, adventure and meaningful experiences.' },
+    { name: 'Birthday Experiences', body: 'Thoughtfully curated celebrations inspired by your child’s interests and personality.' },
+    { name: 'Bespoke Private Experiences', body: 'Personalised experiences thoughtfully created around your child and family.' },
   ],
 } as const;
 
 export const closing = {
   headingLines: ['Some experiences', 'stay with you.'],
-  body: 'The ones children remember for years to come.',
-  ctaLabel: 'Become a member',
+  body: 'Because what children experience becomes part of who they become.',
+  ctaLabel: 'Start a conversation',
   video: '/video/experiences-closing.mp4',
   poster: '/images/experiences-video-poster.webp',
 } as const;

@@ -104,7 +104,7 @@ export default function MembershipPage() {
         </div>
 
         {/* What Narelo is NOT, struck through one by one, then what it is. */}
-        <div className="mt-24 border-t border-ink/12 pt-14 fade" data-reveal>
+        <div className="mt-16 border-t border-ink/12 pt-12 fade" data-reveal>
           <p className="eyebrow mb-8 text-olive">{isNot.eyebrow}</p>
           <ul className="flex flex-wrap items-baseline gap-x-10 gap-y-4">
             {isNot.items.map((item) => (
@@ -120,13 +120,13 @@ export default function MembershipPage() {
       {/* ---------- 2. What does my child experience? ---------- */}
       <section id="experience" className="bg-forest px-6 py-[var(--spacing-section)] text-linen md:px-10">
         <div className="mx-auto max-w-[1280px]">
-          <div className="mb-16 max-w-2xl fade" data-reveal>
+          <div className="mb-12 max-w-2xl fade" data-reveal>
             <p className="eyebrow mb-8 text-linen/60">{childExperience.eyebrow}</p>
             <h2 className="display display-lg mb-8">{childExperience.heading}</h2>
-            <p className="lede text-linen/75">{childExperience.body}</p>
+            <p className="lede text-linen/85">{childExperience.body}</p>
           </div>
 
-          <ul className="reveal mb-16" data-reveal>
+          <ul className="reveal mb-12" data-reveal>
             {childExperience.worlds.map((w, i) => (
               <li
                 key={w.name}
@@ -136,21 +136,23 @@ export default function MembershipPage() {
                 <h3 className="display display-md transition-transform duration-700 md:group-hover:translate-x-2">
                   {w.name}
                 </h3>
-                <p className="body-copy text-linen/70">{w.body}</p>
+                <p className="body-copy text-linen/80">{w.body}</p>
               </li>
             ))}
           </ul>
 
-          <ul className="reveal grid grid-cols-3 gap-6 border-t border-linen/15 pt-12" data-reveal>
+          {/* Numbers sit on their own tinted tiles so they read as cards
+              rather than loose text (Vivien, 2026-08-31). */}
+          <ul className="reveal grid gap-4 sm:grid-cols-3" data-reveal>
             {childExperience.facts.map((f) => (
-              <li key={f.label}>
+              <li key={f.label} className="rounded-[3px] bg-linen/10 p-6 md:p-7">
                 <p className="display text-[clamp(1.75rem,1.2rem+2.4vw,3.25rem)] leading-none">{f.value}</p>
-                <p className="eyebrow mt-3 text-linen/60">{f.label}</p>
+                <p className="eyebrow mt-3 text-linen/75">{f.label}</p>
               </li>
             ))}
           </ul>
 
-          <p className="body-copy mt-12 max-w-2xl text-linen/70 fade" data-reveal>
+          <p className="body-copy mt-10 max-w-2xl text-linen/80 fade" data-reveal>
             {childExperience.note}
           </p>
         </div>
@@ -158,7 +160,7 @@ export default function MembershipPage() {
 
       {/* ---------- 3. Which age group? ---------- */}
       <Section id="ages">
-        <div className="mb-16 max-w-2xl fade" data-reveal>
+        <div className="mb-12 max-w-2xl fade" data-reveal>
           <p className="eyebrow mb-8 text-olive">{ageGroups.eyebrow}</p>
           <h2 className="display display-lg mb-8">{ageGroups.heading}</h2>
           <p className="lede text-ink-soft">{ageGroups.body}</p>
@@ -214,7 +216,7 @@ export default function MembershipPage() {
             </ul>
             <p className="body-copy mt-10 max-w-lg text-ink-soft">{howItWorks.note}</p>
 
-            <div className="mt-16 border-t border-ink/12 pt-12">
+            <div className="mt-14 border-t border-ink/12 pt-10">
               <p className="eyebrow mb-8 text-olive">{included.eyebrow}</p>
               <IncludedAccordion groups={included.groups} />
             </div>
@@ -250,7 +252,7 @@ export default function MembershipPage() {
 
       {/* ---------- 6. How do we join? ---------- */}
       <Section id="join">
-        <div className="mb-16 max-w-2xl fade" data-reveal>
+        <div className="mb-12 max-w-2xl fade" data-reveal>
           <p className="eyebrow mb-8 text-olive">{joining.eyebrow}</p>
           <h2 className="display display-lg">{joining.heading}</h2>
         </div>
@@ -277,7 +279,7 @@ export default function MembershipPage() {
           ))}
         </ol>
 
-        <p className="lede mt-16 max-w-2xl text-ink-soft fade" data-reveal>
+        <p className="lede mt-12 max-w-2xl text-ink-soft fade" data-reveal>
           {joining.reassurance}
         </p>
       </Section>
@@ -287,7 +289,7 @@ export default function MembershipPage() {
         <LazyVideo src={closing.video} poster={closing.poster} className="absolute inset-0 -z-10 h-full w-full object-cover" />
         <div className="absolute inset-0 -z-10 bg-ink/70" aria-hidden="true" />
 
-        <div className="is-in mx-auto w-full max-w-[1280px] px-6 py-24 text-center md:px-10" data-reveal>
+        <div className="is-in mx-auto w-full max-w-[1280px] px-6 py-20 text-center md:px-10" data-reveal>
           <h2 className="display display-xl mb-10 text-linen">
             {closing.headingLines.map((line, i) => (
               <span className="mask-line" key={line}>
