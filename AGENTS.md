@@ -59,7 +59,7 @@ These are decisions already made. Do not quietly reverse them.
 1. **No em dashes in published copy.** (Rui, 2026-08-26.) This is a hard house style rule and it is noted at the top of several content files. Use commas, full stops or colons.
 2. **No pricing anywhere.** The "What does it cost?" section was deliberately removed from the Membership page because pricing is not yet agreed. Never invent or reinstate a price. Restore the section only when Rui says pricing is set.
 3. **Community, Journal and Contact are live routes but hidden from the menu** until they are ready. The visible nav is only: *What is Narelo*, *Experiences*, *Membership*.
-4. **The primary call to action is WhatsApp**, not a form. The header CTA is "Become a member" and it opens a prefilled WhatsApp message whose first question is about the child's age. This is deliberate (funnel step 3).
+4. **The primary call to action is WhatsApp**, not a form. Every CTA on the site reads **"Start a conversation"** and opens a prefilled WhatsApp message ("Hi Narelo, I'd love to learn more about membership for my family."). WhatsApp is the concierge entry point for every path, website, Instagram and referral alike (Funnel Process, 2026-08-31). There is no application form before the family conversation, and the mini dossier is offered on request, never as a gate.
 5. **TikTok and Facebook links are intentionally empty** (`href: null`). They were dead links on the old Wix site. Do not invent URLs. Instagram is `@narelo.eu`.
 6. **The Bloom age group has no brief yet.** Its summary is provisional and it has no motto. Do not write one, flag it instead.
 7. **The internal session rhythm** (Wonder Seed, Atelier and so on) is deliberately *not* public-facing and must not appear on the website.

@@ -23,7 +23,9 @@
  * House style: no em dashes in published copy (Rui, 2026-08-26).
  *
  * Designed to be readable in 60–90 seconds on a phone, per the same document.
- * Primary CTA throughout is WhatsApp, which is the funnel's step 3.
+ * Primary CTA throughout is WhatsApp: the Funnel Process document (2026-08-31)
+ * makes WhatsApp the concierge entry point for every path, under one wording,
+ * "Start a conversation".
  */
 
 export const hero = {
@@ -167,23 +169,30 @@ export const proof = {
   attribution: 'Carlos · Narelo family',
 } as const;
 
-/** Q6 — How do we join? sales-funnel.md steps 3–6, exactly as documented. */
+/**
+ * Q6 — How do we join? Funnel Process, 2026-08-31: CONNECT → MATCH → CHOOSE
+ * → MEET → JOIN, condensed into the four steps a family actually takes.
+ * WhatsApp is the only entry point and there is no application form before
+ * the family conversation. The deeper written information (the mini dossier)
+ * is offered on request inside step 03, never as a gate: a family who is
+ * ready to speak goes straight to the conversation.
+ */
 export const joining = {
   eyebrow: 'How to join',
   heading: 'Four steps, and a conversation before anything else',
   steps: [
-    { n: '01', title: 'Message us', body: 'Send us a WhatsApp and we’ll take it from there.', whatsapp: true },
-    { n: '02', title: 'We find the fit', body: 'We match your child to the right age group and check what places are open.' },
-    { n: '03', title: 'A short conversation', body: 'A live conversation with us: who your family is, what you’re hoping for, and everything you want to ask.' },
-    { n: '04', title: 'An invitation', body: 'If it’s right on both sides, we send a personal invitation, the membership agreement and a start date.' },
+    { n: '01', title: 'Start a conversation', body: 'Message us on WhatsApp. No form to fill in, and no application before we have spoken.', whatsapp: true },
+    { n: '02', title: 'We find the fit', body: 'We ask how old your child is, then tell you which age group they belong to and what places are open.' },
+    { n: '03', title: 'A family conversation', body: 'Fifteen to twenty minutes together: who your family is, what you’re hoping for, and everything you want to ask. If you would rather read about it properly first, we send you the fuller picture in writing and follow up after.' },
+    { n: '04', title: 'An invitation', body: 'If it’s right on both sides, a personal invitation, the membership agreement and a start date. Then a welcome, and your child’s first experience.' },
   ],
-  reassurance: 'We keep the community small and choose carefully. Not to be exclusive, but because small groups and a settled community are the whole point.',
+  reassurance: 'We keep the community small and choose carefully. Not to be exclusive, but because small groups and a settled community are the whole point. If there is no place in your child’s age group when we speak, we can hold your family on our waitlist and come back to you personally as soon as one opens.',
 } as const;
 
 export const closing = {
   headingLines: ['Come and see', 'if it fits.'],
   body: 'Start with a message, no commitment. Just a conversation about your family.',
-  ctaLabel: 'Talk to us on WhatsApp',
+  ctaLabel: 'Start a conversation',
   secondaryLabel: 'Or email us',
   video: '/video/membership-closing.mp4',
   poster: '/images/membership-video-poster.webp',

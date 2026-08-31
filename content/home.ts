@@ -136,7 +136,7 @@ export const home = {
   heading: 'Our first Narelo home opens this autumn',
   body: 'Marbella is where Narelo begins: the sea on one side, the mountains on the other, and a community of families we are choosing carefully and slowly. It is the first home, not the last.',
   image: '/images/home-discovery.webp',
-  ctaLabel: 'Become a member',
+  ctaLabel: 'Start a conversation',
 } as const;
 
 /** company/team.md — Natalie and Vivien only. Christian is never a public face. */
@@ -149,5 +149,5 @@ export const founders = {
 export const closing = {
   headingLines: ['A childhood', 'happens once.'],
   body: 'Membership opens in small numbers ahead of our first home. If it sounds like your family, we would love to talk.',
-  ctaLabel: 'Become a member',
+  ctaLabel: 'Start a conversation',
 } as const;

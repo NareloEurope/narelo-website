@@ -112,7 +112,7 @@ export const personalised = {
 export const closing = {
   headingLines: ['Some experiences', 'stay with you.'],
   body: 'The ones children remember for years to come.',
-  ctaLabel: 'Become a member',
+  ctaLabel: 'Start a conversation',
   video: '/video/experiences-closing.mp4',
   poster: '/images/experiences-video-poster.webp',
 } as const;
