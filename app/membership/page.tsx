@@ -239,7 +239,15 @@ export default function MembershipPage() {
           <div className="fade" data-reveal>
             <p className="eyebrow mb-8 text-olive">{proof.eyebrow}</p>
             <h2 className="display display-lg mb-8">{proof.heading}</h2>
-            <p className="lede mb-10 text-ink-soft">{proof.body}</p>
+            <div className="mb-10 space-y-8">
+              {proof.people.map((person) => (
+                <div key={person.name}>
+                  <h3 className="display display-md">{person.name}</h3>
+                  <p className="eyebrow mt-2 text-olive">{person.role}</p>
+                  <p className="body-copy mt-4 text-ink-soft">{person.body}</p>
+                </div>
+              ))}
+            </div>
             <blockquote className="display display-md border-t border-ink/12 pt-8 italic text-ink">
               “{proof.quote}”
             </blockquote>

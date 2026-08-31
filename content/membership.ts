@@ -162,7 +162,23 @@ export const included = {
 export const proof = {
   eyebrow: 'Who is behind this',
   heading: 'Natalie and Vivien',
-  body: 'Natalie leads Narelo’s direction and the community around it. She is a mother herself, and Narelo is the kind of childhood she wanted for her own son and could never find. Vivien, our Educational Leader, designs what actually happens with the children: a special needs teacher, speech therapist and movement specialist.',
+  /**
+   * Roles and bios kept in step with content/home.ts founders (Vivien,
+   * 2026-08-31). The founders' own quotes live on the home page; this section
+   * keeps the family quote below, so it carries the bios only.
+   */
+  people: [
+    {
+      name: 'Natalie',
+      role: 'Founder',
+      body: 'Natalie leads Narelo’s direction and the community around it. She is a mother herself, and Narelo is the kind of childhood she wanted for her own son and could never find.',
+    },
+    {
+      name: 'Vivien Vörös',
+      role: 'Co-founder & Head of Education',
+      body: 'For more than seven years, Vivien has worked as a Special Needs Educator and Therapist, specialising in behavioural disorders and learning disabilities, and later trained as a Speech and Language Therapist. Across nurseries, therapy rooms and one-on-one sessions, her work has always centred on one question: is this child actually being seen?',
+    },
+  ],
   /** TODO(Rui): placeholder until a real photo of Natalie and Vivien exists. */
   image: '/images/membership-beach-background.webp',
   quote: 'It’s more than the activities. It’s the feeling of being part of something.',
