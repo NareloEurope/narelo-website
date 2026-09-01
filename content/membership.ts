@@ -154,10 +154,9 @@ export const included = {
 /**
  * Q5.5 — Who is actually behind this? Added before "How to join" (Rui,
  * 2026-08-29): the page made the case for Narelo without showing a single
- * sign of the people or families behind it. Photo is a placeholder — company/team.md
- * gives Natalie and Vivien as the founders, but a real photo of them hasn't
- * been taken yet; swap `image` for it once it exists. Quote is carried over
- * from a real family, content/community.ts.
+ * sign of the people or families behind it. The placeholder section photo is
+ * gone: Natalie and Vivien now have their own portraits (Vivien, 2026-08-31),
+ * so the section is a block each, matching the home page.
  */
 export const proof = {
   eyebrow: 'Who is behind this',
@@ -171,16 +170,16 @@ export const proof = {
     {
       name: 'Natalie',
       role: 'Founder',
+      image: '/images/founder-natalie.webp',
       body: 'Natalie leads Narelo’s direction and the community around it. She is a mother herself, and Narelo is the kind of childhood she wanted for her own son and could never find.',
     },
     {
       name: 'Vivien Vörös',
       role: 'Co-founder & Head of Education',
+      image: '/images/founder-vivien.webp',
       body: 'For more than seven years, Vivien has worked as a Special Needs Educator and Therapist, specialising in behavioural disorders and learning disabilities, and later trained as a Speech and Language Therapist. Across nurseries, therapy rooms and one-on-one sessions, her work has always centred on one question: is this child actually being seen?',
     },
   ],
-  /** TODO(Rui): placeholder until a real photo of Natalie and Vivien exists. */
-  image: '/images/membership-beach-background.webp',
 } as const;
 
 /**

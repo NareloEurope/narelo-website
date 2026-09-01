@@ -226,6 +226,17 @@ export default function HomePage() {
         <div className="reveal grid gap-14 md:grid-cols-2 md:gap-20" data-reveal>
           {founders.people.map((person) => (
             <div key={person.name} className="flex flex-col">
+              <div className="img-settle mb-8 overflow-hidden rounded-[2px]">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={person.image}
+                  alt={person.name}
+                  width={1086}
+                  height={1448}
+                  loading="lazy"
+                  className="aspect-[4/5] w-full object-cover object-top"
+                />
+              </div>
               <div className="mb-5 h-px w-full bg-ink/15" aria-hidden="true" />
               <h3 className="display display-md">{person.name}</h3>
               <p className="eyebrow mt-3 text-olive">{person.role}</p>

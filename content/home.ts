@@ -157,12 +157,14 @@ export const founders = {
     {
       name: 'Natalie',
       role: 'Founder',
+      image: '/images/founder-natalie.webp',
       body: 'Natalie leads Narelo’s direction and the community around it. She is a mother herself, and Narelo is the kind of childhood she wanted for her own son and could never find.',
       quote: 'Becoming a mother made me ask that question much earlier. In a world shaped by rapid technological change, I wanted children to have real experiences that build curiosity, confidence, independence and connection to the world around them. That idea became Narelo.',
     },
     {
       name: 'Vivien Vörös',
       role: 'Co-founder & Head of Education',
+      image: '/images/founder-vivien.webp',
       body: 'For more than seven years, Vivien has worked as a Special Needs Educator and Therapist, specialising in behavioural disorders and learning disabilities, and later trained as a Speech and Language Therapist. Across nurseries, therapy rooms and one-on-one sessions, her work has always centred on one question: is this child actually being seen?',
       quote: 'Some children get noticed. I want Narelo to be the place where every child does.',
     },
