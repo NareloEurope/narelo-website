@@ -32,6 +32,11 @@ export const nav = [
   { label: 'What is Narelo', href: '/membership/#what' },
   { label: 'Experiences', href: '/experiences/' },
   { label: 'Membership', href: '/membership/' },
+  /*
+   * Points at the "Who we are" section of the Membership page (Vivien,
+   * 2026-09-02): the founders now appear in one place only, and this is it.
+   */
+  { label: 'Who we are', href: '/membership/#who' },
 ] as const;
 
 /**
