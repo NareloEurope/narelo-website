@@ -275,7 +275,7 @@ export default function MembershipPage() {
                   className="link-line eyebrow mt-5 inline-flex items-center gap-2.5 text-forest"
                 >
                   <WhatsAppIcon className="h-5 w-5" />
-                  Start on WhatsApp
+                  {joining.whatsappLabel}
                 </a>
               )}
             </li>

@@ -200,6 +200,11 @@ export const joining = {
     { n: '04', title: 'An invitation', body: 'If it’s right on both sides, a personal invitation, the membership agreement and a start date. Then a welcome, and your child’s first experience.' },
   ],
   reassurance: 'We keep the community small and choose carefully. Not to be exclusive, but because small groups and a settled community are the whole point. If there is no place in your child’s age group when we speak, we can hold your family on our waitlist and come back to you personally as soon as one opens.',
+  /** The WhatsApp link inside step 01. Kept here with the rest of the copy so
+   *  it stays in step with the other calls to action: the page used to hard
+   *  code "Start on WhatsApp", which was a sixth wording on a site that now
+   *  says the same thing everywhere (Vivien, 2026-09-02). */
+  whatsappLabel: 'Message us on WhatsApp',
 } as const;
 
 export const closing = {
