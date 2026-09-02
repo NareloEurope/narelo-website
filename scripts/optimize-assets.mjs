@@ -9,6 +9,12 @@
  * serves resized AVIF/WebP derivatives, so this brings the clone closer to
  * what a visitor actually downloads, not further away.
  *
+ * A corrected photograph is added as a NEW original next to the archived one,
+ * named for where it is used, rather than by editing the archived file in
+ * place. `world-ocean.jpg` is the one such file: gallery-01.jpg with its
+ * shadows lifted, because the backlit sunset read almost black behind the
+ * Five Worlds panel scrim (2026-09-02). gallery-01.jpg is unchanged.
+ *
  *   node scripts/optimize-assets.mjs
  */
 import { readdir, mkdir, stat } from 'node:fs/promises';

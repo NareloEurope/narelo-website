@@ -66,9 +66,16 @@ export const worlds = {
   body: 'Our experiences move through five worlds inspired by the real world around us, each opening new ways to explore, move, create and discover. Different worlds. Different experiences. Always something new to uncover.',
   items: [
     {
+      /*
+       * A brightened version of gallery-01: the original is a backlit sunset,
+       * so the sand and the children read almost black behind the panel's
+       * scrim (2026-09-02). world-ocean lifts the shadows and leaves the sun
+       * and the sky where they were. gallery-01 itself is untouched and the
+       * Community gallery still uses it.
+       */
       name: 'Ocean',
       short: 'The sea as a living place',
-      image: '/images/gallery-01.webp',
+      image: '/images/world-ocean.webp',
     },
     {
       name: 'Mountain',
