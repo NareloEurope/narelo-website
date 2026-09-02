@@ -227,27 +227,32 @@ export default function MembershipPage() {
 
       {/* ---------- 5. Who is behind this ---------- */}
       <Section id="who">
-        <div className="grid items-center gap-14 md:grid-cols-2 md:gap-20">
-          <div className="img-settle overflow-hidden rounded-[2px]" data-reveal>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={proof.image}
-              alt=""
-              width={1855}
-              height={848}
-              loading="lazy"
-              className="aspect-[4/3] w-full object-cover"
-            />
-          </div>
-          <div className="fade" data-reveal>
-            <p className="eyebrow mb-8 text-olive">{proof.eyebrow}</p>
-            <h2 className="display display-lg mb-8">{proof.heading}</h2>
-            <p className="lede mb-10 text-ink-soft">{proof.body}</p>
-            <blockquote className="display display-md border-t border-ink/12 pt-8 italic text-ink">
-              “{proof.quote}”
-            </blockquote>
-            <p className="eyebrow mt-4 text-ink-soft">{proof.attribution}</p>
-          </div>
+        <div className="mb-16 max-w-2xl fade" data-reveal>
+          <p className="eyebrow mb-8 text-olive">{proof.eyebrow}</p>
+          <h2 className="display display-lg">{proof.heading}</h2>
+        </div>
+
+        {/* A portrait and a block each, matching the home page's founders section. */}
+        <div className="reveal grid gap-14 md:grid-cols-2 md:gap-20" data-reveal>
+          {proof.people.map((person) => (
+            <div key={person.name}>
+              <div className="img-settle mb-8 overflow-hidden rounded-[2px]">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={person.image}
+                  alt={person.name}
+                  width={1086}
+                  height={1448}
+                  loading="lazy"
+                  className="aspect-[4/5] w-full object-cover object-top"
+                />
+              </div>
+              <div className="mb-5 h-px w-full bg-ink/15" aria-hidden="true" />
+              <h3 className="display display-md">{person.name}</h3>
+              <p className="eyebrow mt-3 text-olive">{person.role}</p>
+              <p className="body-copy mt-6 text-ink-soft">{person.body}</p>
+            </div>
+          ))}
         </div>
       </Section>
 
@@ -273,7 +278,7 @@ export default function MembershipPage() {
                   className="link-line eyebrow mt-5 inline-flex items-center gap-2.5 text-forest"
                 >
                   <WhatsAppIcon className="h-5 w-5" />
-                  Start on WhatsApp
+                  {joining.whatsappLabel}
                 </a>
               )}
             </li>

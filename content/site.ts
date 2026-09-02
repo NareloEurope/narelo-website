@@ -35,11 +35,13 @@ export const nav = [
 ] as const;
 
 /**
- * The primary CTA opens a WhatsApp conversation directly (funnel step 3).
- * "Become a member" promised more than the first message actually delivers
- * (Rui, 2026-08-29): this is the start of a conversation, not a signup.
+ * The primary CTA opens a WhatsApp conversation directly (Funnel Process,
+ * 2026-08-31: WhatsApp is the concierge entry point and the website's only
+ * call to action). The document sets the wording as "Start a conversation":
+ * this is the start of a conversation, not a signup, and there is no
+ * application form before the family conversation.
  */
-export const headerCta = { label: 'Start the conversation', external: true } as const;
+export const headerCta = { label: 'Start a conversation', external: true } as const;
 
 export const contact = {
   visitLabel: 'Visit',
@@ -52,11 +54,11 @@ export const contact = {
   phone: '+34 655 366 888',
   phoneHref: 'tel:+34655366888',
   /**
-   * The funnel's primary CTA (Strategy/sales-funnel.md step 2 → 3). The first
-   * question Narelo asks back is "How old is your child?", so the prefilled
-   * message opens on exactly that.
+   * The funnel's primary CTA (Funnel Process, 2026-08-31, PATH 1 step 2).
+   * The prefilled wording is taken from that document verbatim. Narelo's
+   * first reply asks how old the child is, so the prefill does not.
    */
-  whatsapp: 'https://wa.me/34655366888?text=Hello%20Narelo%2C%20I%27d%20like%20to%20find%20out%20about%20membership%20for%20my%20family.',
+  whatsapp: 'https://wa.me/34655366888?text=Hi%20Narelo%2C%20I%27d%20love%20to%20learn%20more%20about%20membership%20for%20my%20family.',
 } as const;
 
 /**

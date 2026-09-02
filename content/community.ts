@@ -11,7 +11,6 @@ export const hero = {
 
 export const testimonials = [
   { quote: '“The kids had an amazing time and were completely engaged throughout the whole celebration”', attribution: '- MARÍA · NARELO FAMILY' },
-  { quote: '“It’s more than the activities. It’s the feeling of being part of something.”', attribution: '- CARLOS · NARELO FAMILY' },
   { quote: '“My daughter looks forward to every experience. And so do I.”', attribution: '- TESSA · NARELO FAMILY' },
 ] as const;
 

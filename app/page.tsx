@@ -212,14 +212,40 @@ export default function HomePage() {
 
       {/* ---------- Founders ---------- */}
       <Section>
-        <div className="grid gap-14 md:grid-cols-[1fr_1.1fr] md:gap-24">
-          <div className="fade" data-reveal>
-            <p className="eyebrow mb-8 text-olive">{founders.eyebrow}</p>
-            <h2 className="display display-lg">{founders.heading}</h2>
-          </div>
-          <p className="lede self-end text-ink-soft fade" data-reveal>
-            {founders.body}
-          </p>
+        <div className="mb-16 max-w-2xl fade" data-reveal>
+          <p className="eyebrow mb-8 text-olive">{founders.eyebrow}</p>
+          <h2 className="display display-lg">{founders.heading}</h2>
+        </div>
+
+        {/*
+         * A block each rather than one shared paragraph: name and role, the
+         * bio, then their own words. Two columns on desktop, stacked on a
+         * phone, with the quote pinned to the foot of each column so the two
+         * quotes line up when the bios are different lengths.
+         */}
+        <div className="reveal grid gap-14 md:grid-cols-2 md:gap-20" data-reveal>
+          {founders.people.map((person) => (
+            <div key={person.name} className="flex flex-col">
+              <div className="img-settle mb-8 overflow-hidden rounded-[2px]">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={person.image}
+                  alt={person.name}
+                  width={1086}
+                  height={1448}
+                  loading="lazy"
+                  className="aspect-[4/5] w-full object-cover object-top"
+                />
+              </div>
+              <div className="mb-5 h-px w-full bg-ink/15" aria-hidden="true" />
+              <h3 className="display display-md">{person.name}</h3>
+              <p className="eyebrow mt-3 text-olive">{person.role}</p>
+              <p className="body-copy mt-6 text-ink-soft">{person.body}</p>
+              <blockquote className="lede mt-auto pt-10 italic text-ink">
+                “{person.quote}”
+              </blockquote>
+            </div>
+          ))}
         </div>
       </Section>
 

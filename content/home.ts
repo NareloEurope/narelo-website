@@ -141,18 +141,43 @@ export const home = {
   heading: 'Where Narelo begins',
   body: 'The sea on one side, the mountains on the other, and a community of families we are choosing carefully and slowly. Our first Narelo home opens here this autumn, and it is the first, not the last.',
   image: '/images/home-discovery.webp',
-  ctaLabel: 'Become a member',
+  ctaLabel: 'Start a conversation',
 } as const;
 
-/** company/team.md — Natalie and Vivien only. Christian is never a public face. */
+/**
+ * company/team.md — Natalie and Vivien only. Christian is never a public face.
+ *
+ * Rewritten from one shared paragraph into a block each, with role and a
+ * quote in their own words (Vivien, 2026-08-31, supplied verbatim). Vivien's
+ * title is now Co-founder & Head of Education.
+ *
+ * ⚠️ Natalie's quote opens on "that question" and nothing on the page asks
+ * one before it. The line it referred to was not supplied, so it has not been
+ * invented: needs either the missing opening line or a reworded first sentence.
+ */
 export const founders = {
   eyebrow: 'The founders',
   heading: 'Natalie and Vivien',
-  body: 'Natalie leads Narelo’s direction and the community around it. She is a mother herself, and Narelo is the kind of childhood she wanted for her own son and could never find. Vivien, our Educational Leader, designs what actually happens with the children: a special needs teacher, speech therapist and movement specialist.',
+  people: [
+    {
+      name: 'Natalie',
+      role: 'Founder',
+      image: '/images/founder-natalie.webp',
+      body: 'Natalie leads Narelo’s direction and the community around it. She is a mother herself, and Narelo is the kind of childhood she wanted for her own son and could never find.',
+      quote: 'Becoming a mother made me ask that question much earlier. In a world shaped by rapid technological change, I wanted children to have real experiences that build curiosity, confidence, independence and connection to the world around them. That idea became Narelo.',
+    },
+    {
+      name: 'Vivien Vörös',
+      role: 'Co-founder & Head of Education',
+      image: '/images/founder-vivien.webp',
+      body: 'For more than seven years, Vivien has worked as a Special Needs Educator and Therapist, specialising in behavioural disorders and learning disabilities, and later trained as a Speech and Language Therapist. Across nurseries, therapy rooms and one-on-one sessions, her work has always centred on one question: is this child actually being seen?',
+      quote: 'Some children get noticed. I want Narelo to be the place where every child does.',
+    },
+  ],
 } as const;
 
 export const closing = {
   headingLines: ['A childhood', 'happens once.'],
   body: 'Membership opens in small numbers ahead of our first home. If it sounds like your family, we would love to talk.',
-  ctaLabel: 'Become a member',
+  ctaLabel: 'Start a conversation',
 } as const;

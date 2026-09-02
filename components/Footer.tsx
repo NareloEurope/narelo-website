@@ -10,7 +10,7 @@ export default function Footer() {
             Our first Narelo home opens in Marbella this autumn.
           </p>
           <a href={contact.whatsapp} target="_blank" rel="noreferrer noopener" className="btn btn-ghost mt-10 text-linen">
-            Become a member
+            Start a conversation
           </a>
         </div>
 
