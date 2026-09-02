@@ -1,9 +1,16 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 
-type Item = { readonly title: string; readonly body: string };
-type Group = { readonly label: string; readonly items: readonly Item[] };
+type Item = { readonly title: string; readonly body?: string };
+type Group = {
+  readonly label: string;
+  readonly items: readonly Item[];
+  /** Where the things in this group are explained, when they are not here. */
+  readonly linkLabel?: string;
+  readonly linkHref?: string;
+};
 
 /**
  * The What's Included list as expandable rows, grouped so it stays honest:
@@ -11,7 +18,12 @@ type Group = { readonly label: string; readonly items: readonly Item[] };
  * member rates. The group labels carry that distinction quietly; the rows
  * themselves stay identical in weight.
  *
- * One row open at a time across both groups; the very first is open by
+ * A row without a body is a plain, non-interactive row (Rui, 2026-09-02):
+ * Signature Saturdays, holiday experiences and community mornings are
+ * explained once, on the Experiences page, so here they are simply named and
+ * the group carries a link across instead of a second description.
+ *
+ * One row open at a time across the expandable rows; the very first is open by
  * default so the pattern explains itself. Expansion animates
  * grid-template-rows 0fr -> 1fr; instant under prefers-reduced-motion.
  */
@@ -26,6 +38,14 @@ export default function IncludedAccordion({ groups }: { groups: readonly Group[]
           <p className="eyebrow mb-5 text-ink-soft">{group.label}</p>
           <ul className="border-t border-ink/12">
             {group.items.map((item) => {
+              if (!item.body) {
+                return (
+                  <li key={item.title} className="border-b border-ink/12">
+                    <p className="display py-6 text-xl text-ink-soft md:text-2xl">{item.title}</p>
+                  </li>
+                );
+              }
+
               index += 1;
               const i = index;
               const isOpen = i === open;
@@ -70,6 +90,12 @@ export default function IncludedAccordion({ groups }: { groups: readonly Group[]
               );
             })}
           </ul>
+
+          {group.linkLabel && group.linkHref && (
+            <Link href={group.linkHref} className="link-line eyebrow mt-6 inline-block text-ink">
+              {group.linkLabel}
+            </Link>
+          )}
         </div>
       ))}
     </div>

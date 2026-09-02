@@ -23,7 +23,9 @@
  * House style: no em dashes in published copy (Rui, 2026-08-26).
  *
  * Designed to be readable in 60–90 seconds on a phone, per the same document.
- * Primary CTA throughout is WhatsApp, which is the funnel's step 3.
+ * Primary CTA throughout is WhatsApp: the Funnel Process document (2026-08-31)
+ * makes WhatsApp the concierge entry point for every path, under one wording,
+ * "Start a conversation".
  */
 
 export const hero = {
@@ -54,7 +56,14 @@ export const isNot = {
   line: 'Narelo is a membership your family belongs to.',
 } as const;
 
-/** Q2 — What does my child experience? Five Worlds + the session shape. */
+/**
+ * Q2 — What does my child experience? The five worlds as a short index only.
+ *
+ * The one-line taglines are deliberate (Rui, 2026-09-02): the full write-up of
+ * the five worlds lives once, on the Experiences page, and this section links
+ * to it. The 90 minutes / ~8 children / 12 a season trio used to appear here
+ * as a second stat block and is now stated once, on the Experiences page.
+ */
 export const childExperience = {
   eyebrow: 'What your child experiences',
   heading: 'Real places, small groups, and the time to go deep',
@@ -66,13 +75,11 @@ export const childExperience = {
     { name: 'Expression', body: 'Art, making and giving form to their own ideas.' },
     { name: 'Future', body: 'Invention, experimentation and what might be possible.' },
   ],
-  facts: [
-    { value: '90 min', label: 'each experience' },
-    { value: '~8', label: 'children per group' },
-    /* business-plan.md: Autumn/Winter/Spring/Summer, 10-12 weeks, 1 a week. */
-    { value: '12', label: 'experiences a season' },
-  ],
+  worldsLinkLabel: 'The five worlds, in full',
+  worldsLinkHref: '/experiences/#worlds',
   note: 'Experiences happen in our Marbella home and well beyond it: beach, forest and real-world places. Younger groups may include a parent; older children come on their own.',
+  formatLinkLabel: 'How an experience is built',
+  formatLinkHref: '/experiences/#format',
 } as const;
 
 /** Q3 — Which age group is relevant? framework/age-groups.md, canonical. */
@@ -80,9 +87,9 @@ export const ageGroups = {
   eyebrow: 'From the very beginning',
   heading: 'A place that grows with your child',
   body: 'Every child belongs to a named group that moves with them as they grow. Families can join at any point, and many begin before their child is born.',
-  /** Rows come from content/stages.ts: name, age and one-line tagline only. The
-   *  full breakdown of each stage lives on the Experiences page, not repeated
-   *  here (Rui, 2026-08-29). */
+  /** Rows come from content/stages.ts: name and age only (Rui, 2026-09-02).
+   *  Every description of a stage, the one-liner included, lives on the
+   *  Experiences page, and the link below points there instead. */
   note: 'Five-year-olds are placed between Builders I and Builders II depending on readiness, not their birthday.',
   linkLabel: 'See what each stage includes',
   linkHref: '/experiences/#journey',
@@ -123,6 +130,11 @@ export const howItWorks = {
  * experiences, community mornings and the wider Narelo world are available to
  * members at member rates but are not included in it. The group labels carry
  * that distinction; "Member pricing" is no longer listed as an inclusion.
+ *
+ * The second group is a plain list of names (Rui, 2026-09-02): what each of
+ * those things actually is, is explained once on the Experiences page, so the
+ * rows here just name them and link across. Only the things that exist
+ * nowhere else, the weekly place, guidance and priority booking, carry copy.
  */
 export const included = {
   eyebrow: 'Membership',
@@ -139,12 +151,14 @@ export const included = {
     {
       label: 'For members, at member rates',
       items: [
-        { title: 'Signature Saturdays', body: 'Slow Saturdays built for discovery, creativity and time together as a family, twice a month.' },
-        { title: 'Expert insights', body: 'Sessions with specialists on childhood, development and family life.' },
-        { title: 'Holiday experiences', body: 'School holidays turned into adventure rather than logistics.' },
-        { title: 'Community mornings', body: 'Unhurried mornings to meet the other families and settle into the community.' },
-        { title: 'The wider Narelo world', body: 'Birthday experiences, private sessions and family days, created around your family.' },
+        { title: 'Signature Saturdays' },
+        { title: 'Expert insights' },
+        { title: 'Holiday experiences' },
+        { title: 'Community mornings' },
+        { title: 'The wider Narelo world' },
       ],
+      linkLabel: 'What each of these is',
+      linkHref: '/experiences/',
     },
   ],
 } as const;
@@ -152,38 +166,63 @@ export const included = {
 /**
  * Q5.5 — Who is actually behind this? Added before "How to join" (Rui,
  * 2026-08-29): the page made the case for Narelo without showing a single
- * sign of the people or families behind it. Photo is a placeholder — company/team.md
- * gives Natalie and Vivien as the founders, but a real photo of them hasn't
- * been taken yet; swap `image` for it once it exists. Quote is carried over
- * from a real family, content/community.ts.
+ * sign of the people or families behind it. The placeholder section photo is
+ * gone: Natalie and Vivien now have their own portraits (Vivien, 2026-08-31),
+ * so the section is a block each, matching the home page.
  */
 export const proof = {
   eyebrow: 'Who is behind this',
   heading: 'Natalie and Vivien',
-  body: 'Natalie leads Narelo’s direction and the community around it. She is a mother herself, and Narelo is the kind of childhood she wanted for her own son and could never find. Vivien, our Educational Leader, designs what actually happens with the children: a special needs teacher, speech therapist and movement specialist.',
-  /** TODO(Rui): placeholder until a real photo of Natalie and Vivien exists. */
-  image: '/images/membership-beach-background.webp',
-  quote: 'It’s more than the activities. It’s the feeling of being part of something.',
-  attribution: 'Carlos · Narelo family',
+  /**
+   * Roles and bios kept in step with content/home.ts founders (Vivien,
+   * 2026-08-31). The founders' own quotes live on the home page, so this
+   * section carries the bios only.
+   */
+  people: [
+    {
+      name: 'Natalie',
+      role: 'Founder',
+      image: '/images/founder-natalie.webp',
+      body: 'Natalie leads Narelo’s direction and the community around it. She is a mother herself, and Narelo is the kind of childhood she wanted for her own son and could never find.',
+    },
+    {
+      name: 'Vivien Vörös',
+      role: 'Co-founder & Head of Education',
+      image: '/images/founder-vivien.webp',
+      body: 'For more than seven years, Vivien has worked as a Special Needs Educator and Therapist, specialising in behavioural disorders and learning disabilities, and later trained as a Speech and Language Therapist. Across nurseries, therapy rooms and one-on-one sessions, her work has always centred on one question: is this child actually being seen?',
+    },
+  ],
 } as const;
 
-/** Q6 — How do we join? sales-funnel.md steps 3–6, exactly as documented. */
+/**
+ * Q6 — How do we join? Funnel Process, 2026-08-31: CONNECT → MATCH → CHOOSE
+ * → MEET → JOIN, condensed into the four steps a family actually takes.
+ * WhatsApp is the only entry point and there is no application form before
+ * the family conversation. The deeper written information (the mini dossier)
+ * is offered on request inside step 03, never as a gate: a family who is
+ * ready to speak goes straight to the conversation.
+ */
 export const joining = {
   eyebrow: 'How to join',
   heading: 'Four steps, and a conversation before anything else',
   steps: [
-    { n: '01', title: 'Message us', body: 'Send us a WhatsApp and we’ll take it from there.', whatsapp: true },
-    { n: '02', title: 'We find the fit', body: 'We match your child to the right age group and check what places are open.' },
-    { n: '03', title: 'A short conversation', body: 'A live conversation with us: who your family is, what you’re hoping for, and everything you want to ask.' },
-    { n: '04', title: 'An invitation', body: 'If it’s right on both sides, we send a personal invitation, the membership agreement and a start date.' },
+    { n: '01', title: 'Start a conversation', body: 'Message us on WhatsApp. No form to fill in, and no application before we have spoken.', whatsapp: true },
+    { n: '02', title: 'We find the fit', body: 'We ask how old your child is, then tell you which age group they belong to and what places are open.' },
+    { n: '03', title: 'A family conversation', body: 'Fifteen to twenty minutes together: who your family is, what you’re hoping for, and everything you want to ask. If you would rather read about it properly first, we send you the fuller picture in writing and follow up after.' },
+    { n: '04', title: 'An invitation', body: 'If it’s right on both sides, a personal invitation, the membership agreement and a start date. Then a welcome, and your child’s first experience.' },
   ],
-  reassurance: 'We keep the community small and choose carefully. Not to be exclusive, but because small groups and a settled community are the whole point.',
+  reassurance: 'We keep the community small and choose carefully. Not to be exclusive, but because small groups and a settled community are the whole point. If there is no place in your child’s age group when we speak, we can hold your family on our waitlist and come back to you personally as soon as one opens.',
+  /** The WhatsApp link inside step 01. Kept here with the rest of the copy so
+   *  it stays in step with the other calls to action: the page used to hard
+   *  code "Start on WhatsApp", which was a sixth wording on a site that now
+   *  says the same thing everywhere (Vivien, 2026-09-02). */
+  whatsappLabel: 'Message us on WhatsApp',
 } as const;
 
 export const closing = {
   headingLines: ['Come and see', 'if it fits.'],
   body: 'Start with a message, no commitment. Just a conversation about your family.',
-  ctaLabel: 'Talk to us on WhatsApp',
+  ctaLabel: 'Start a conversation',
   secondaryLabel: 'Or email us',
   video: '/video/membership-closing.mp4',
   poster: '/images/membership-video-poster.webp',

@@ -141,20 +141,20 @@ export default function MembershipPage() {
             ))}
           </ul>
 
-          {/* Numbers sit on their own tinted tiles so they read as cards
-              rather than loose text (Vivien, 2026-08-31). */}
-          <ul className="reveal grid gap-4 sm:grid-cols-3" data-reveal>
-            {childExperience.facts.map((f) => (
-              <li key={f.label} className="rounded-[3px] bg-linen/10 p-6 md:p-7">
-                <p className="display text-[clamp(1.75rem,1.2rem+2.4vw,3.25rem)] leading-none">{f.value}</p>
-                <p className="eyebrow mt-3 text-linen/75">{f.label}</p>
-              </li>
-            ))}
-          </ul>
+          {/* The worlds are named here and explained once, on the Experiences
+              page. Same for the session figures: this links, it does not
+              restate them (2026-09-02). */}
+          <div className="fade border-t border-linen/15 pt-10" data-reveal>
+            <Link href={childExperience.worldsLinkHref} className="link-line eyebrow text-linen">
+              {childExperience.worldsLinkLabel}
+            </Link>
 
-          <p className="body-copy mt-10 max-w-2xl text-linen/80 fade" data-reveal>
-            {childExperience.note}
-          </p>
+            <p className="body-copy mt-10 max-w-2xl text-linen/80">{childExperience.note}</p>
+
+            <Link href={childExperience.formatLinkHref} className="link-line eyebrow mt-8 inline-block text-linen">
+              {childExperience.formatLinkLabel}
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -166,16 +166,17 @@ export default function MembershipPage() {
           <p className="lede text-ink-soft">{ageGroups.body}</p>
         </div>
 
-        {/* One line per stage: the full breakdown lives on the Experiences page. */}
+        {/* Name and age only: an index, not a second set of descriptions. Every
+            description of a stage lives on the Experiences page (Rui,
+            2026-09-02). */}
         <ul className="reveal border-t border-ink/12" data-reveal>
           {stageDetails.map((stage) => (
             <li
               key={stage.name}
-              className="grid grid-cols-[1fr_auto] items-baseline gap-x-4 gap-y-2 border-b border-ink/12 py-7 md:grid-cols-[1.2fr_7rem_1.6fr] md:gap-8 md:py-8"
+              className="flex items-baseline justify-between gap-6 border-b border-ink/12 py-6 md:py-7"
             >
-              <h3 className="display display-md col-start-1">{stage.name}</h3>
-              <span className="eyebrow col-start-1 text-olive md:col-start-2">{stage.age}</span>
-              <p className="body-copy col-start-1 max-w-md text-ink-soft md:col-start-3">{stage.tagline}</p>
+              <h3 className="display display-md">{stage.name}</h3>
+              <span className="eyebrow shrink-0 text-olive">{stage.age}</span>
             </li>
           ))}
         </ul>
@@ -226,27 +227,32 @@ export default function MembershipPage() {
 
       {/* ---------- 5. Who is behind this ---------- */}
       <Section id="who">
-        <div className="grid items-center gap-14 md:grid-cols-2 md:gap-20">
-          <div className="img-settle overflow-hidden rounded-[2px]" data-reveal>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={proof.image}
-              alt=""
-              width={1855}
-              height={848}
-              loading="lazy"
-              className="aspect-[4/3] w-full object-cover"
-            />
-          </div>
-          <div className="fade" data-reveal>
-            <p className="eyebrow mb-8 text-olive">{proof.eyebrow}</p>
-            <h2 className="display display-lg mb-8">{proof.heading}</h2>
-            <p className="lede mb-10 text-ink-soft">{proof.body}</p>
-            <blockquote className="display display-md border-t border-ink/12 pt-8 italic text-ink">
-              “{proof.quote}”
-            </blockquote>
-            <p className="eyebrow mt-4 text-ink-soft">{proof.attribution}</p>
-          </div>
+        <div className="mb-16 max-w-2xl fade" data-reveal>
+          <p className="eyebrow mb-8 text-olive">{proof.eyebrow}</p>
+          <h2 className="display display-lg">{proof.heading}</h2>
+        </div>
+
+        {/* A portrait and a block each, matching the home page's founders section. */}
+        <div className="reveal grid gap-14 md:grid-cols-2 md:gap-20" data-reveal>
+          {proof.people.map((person) => (
+            <div key={person.name}>
+              <div className="img-settle mb-8 overflow-hidden rounded-[2px]">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={person.image}
+                  alt={person.name}
+                  width={1086}
+                  height={1448}
+                  loading="lazy"
+                  className="aspect-[4/5] w-full object-cover object-top"
+                />
+              </div>
+              <div className="mb-5 h-px w-full bg-ink/15" aria-hidden="true" />
+              <h3 className="display display-md">{person.name}</h3>
+              <p className="eyebrow mt-3 text-olive">{person.role}</p>
+              <p className="body-copy mt-6 text-ink-soft">{person.body}</p>
+            </div>
+          ))}
         </div>
       </Section>
 
@@ -272,7 +278,7 @@ export default function MembershipPage() {
                   className="link-line eyebrow mt-5 inline-flex items-center gap-2.5 text-forest"
                 >
                   <WhatsAppIcon className="h-5 w-5" />
-                  Start on WhatsApp
+                  {joining.whatsappLabel}
                 </a>
               )}
             </li>

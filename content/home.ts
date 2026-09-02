@@ -54,8 +54,11 @@ export const shape = {
  * Display names drop the leading "The" (Rui, 2026-08-26): World Around Us,
  * Future. Movement and Stillness flow through all five rather than being a
  * sixth. Rendered on the home page as the scroll-driven WorldsExplorer.
- * Descriptions shortened in Vivien's feedback pass (2026-08-31) and kept in
- * step with content/experiences.ts.
+ *
+ * The descriptions themselves live once, on the Experiences page (Vivien's
+ * feedback pass, 2026-08-31, supplied the wording). Here the panels carry the
+ * short tagline only and the link below points at the full version, so the
+ * same five things are not written up twice (2026-09-02).
  */
 export const worlds = {
   eyebrow: 'The Five Worlds',
@@ -65,55 +68,51 @@ export const worlds = {
     {
       name: 'Ocean',
       short: 'The sea as a living place',
-      body: 'Exploring the sea through senses, movement, curiosity and real-world discovery.',
       image: '/images/gallery-01.webp',
     },
     {
       name: 'Mountain',
       short: 'Nature on its own terms',
-      body: 'Exploring nature through movement, challenge, observation and adventure.',
       image: '/images/world-mountain.webp',
     },
     {
       name: 'World Around Us',
       short: 'Doors children rarely get to open',
-      body: 'Discovering real life through people, places, professions, culture and everyday experiences.',
       image: '/images/home-world-built-around-childhood.webp',
     },
     {
       name: 'Expression',
       short: 'Giving form to ideas',
-      body: 'Turning ideas and discoveries into art, music, stories, building and design.',
       image: '/images/gallery-02.webp',
     },
     {
       name: 'Future',
       short: 'Curiosity about what is changing',
-      body: 'Exploring invention, problem-solving and new possibilities, with technology, robotics and AI as tools to create, not replace thinking.',
       image: '/images/contact-hero.webp',
     },
   ],
-  linkLab: 'See how a year unfolds',
-  linkHref: '/experiences',
+  linkLab: 'The five worlds, in full',
+  linkHref: '/experiences/#worlds',
 } as const;
 
 /**
  * framework/age-groups.md — canonical names and ages.
- * Rendered as stacked rows in the style of The Well's membership section:
- * hairline dividers, large serif name, tagline, link.
+ * Rendered as a horizontal timeline: name and age only. The full description
+ * of each stage lives on the Experiences page and is linked, not repeated
+ * (Rui, 2026-09-02).
  */
 export const journey = {
   eyebrow: 'From the very beginning',
   heading: 'A place that grows with your child',
   body: 'Families can join at any point. Many begin before their child is born, and stay through the years that follow.',
   stages: [
-    { name: 'Bloom', age: 'Pregnancy', body: 'A gentle beginning, before your child arrives.' },
-    { name: 'Nurture', age: '0–1', body: 'Sensing, connecting and discovering together.' },
-    { name: 'The Nest', age: '1–2', body: 'Exploring the world through movement and growing independence.' },
-    { name: 'Little Beginnings', age: '2–3', body: 'Growing confidence through curiosity, movement and discovery.' },
-    { name: 'Builders I', age: '3–5', body: 'Exploring, creating and beginning to make sense of the world.' },
-    { name: 'Builders II', age: '5–6', body: 'Questioning, creating and turning ideas into something real.' },
-    { name: 'Navigators', age: '6–8', body: 'Growing independence, solving problems and finding their own way.' },
+    { name: 'Bloom', age: 'Pregnancy' },
+    { name: 'Nurture', age: '0–1' },
+    { name: 'The Nest', age: '1–2' },
+    { name: 'Little Beginnings', age: '2–3' },
+    { name: 'Builders I', age: '3–5' },
+    { name: 'Builders II', age: '5–6' },
+    { name: 'Navigators', age: '6–8' },
   ],
   note: 'Five-year-olds are placed between Builders I and Builders II depending on readiness, not birthday.',
   linkLabel: 'Explore the age groups',
@@ -135,17 +134,42 @@ export const promise = {
 /** offers/membership/Strategy/positioning.md — "first home" wording is strategic. */
 export const home = {
   eyebrow: 'Marbella',
-  heading: 'Our first Narelo home opens this autumn',
-  body: 'Marbella is where Narelo begins: the sea on one side, the mountains on the other, and a community of families we are choosing carefully and slowly. It is the first home, not the last.',
+  heading: 'Where Narelo begins',
+  body: 'The sea on one side, the mountains on the other, and a community of families we are choosing carefully and slowly. Our first Narelo home opens here this autumn, and it is the first, not the last.',
   image: '/images/home-discovery.webp',
   ctaLabel: 'Start a conversation',
 } as const;
 
-/** company/team.md — Natalie and Vivien only. Christian is never a public face. */
+/**
+ * company/team.md — Natalie and Vivien only. Christian is never a public face.
+ *
+ * Rewritten from one shared paragraph into a block each, with role and a
+ * quote in their own words (Vivien, 2026-08-31, supplied verbatim). Vivien's
+ * title is now Co-founder & Head of Education.
+ *
+ * ⚠️ Natalie's quote opens on "that question" and nothing on the page asks
+ * one before it. The line it referred to was not supplied, so it has not been
+ * invented: needs either the missing opening line or a reworded first sentence.
+ */
 export const founders = {
   eyebrow: 'The founders',
   heading: 'Natalie and Vivien',
-  body: 'Natalie leads Narelo’s direction and the community around it. She is a mother herself, and Narelo is the kind of childhood she wanted for her own son and could never find. Vivien, our Educational Leader, designs what actually happens with the children: a special needs teacher, speech therapist and movement specialist.',
+  people: [
+    {
+      name: 'Natalie',
+      role: 'Founder',
+      image: '/images/founder-natalie.webp',
+      body: 'Natalie leads Narelo’s direction and the community around it. She is a mother herself, and Narelo is the kind of childhood she wanted for her own son and could never find.',
+      quote: 'Becoming a mother made me ask that question much earlier. In a world shaped by rapid technological change, I wanted children to have real experiences that build curiosity, confidence, independence and connection to the world around them. That idea became Narelo.',
+    },
+    {
+      name: 'Vivien Vörös',
+      role: 'Co-founder & Head of Education',
+      image: '/images/founder-vivien.webp',
+      body: 'For more than seven years, Vivien has worked as a Special Needs Educator and Therapist, specialising in behavioural disorders and learning disabilities, and later trained as a Speech and Language Therapist. Across nurseries, therapy rooms and one-on-one sessions, her work has always centred on one question: is this child actually being seen?',
+      quote: 'Some children get noticed. I want Narelo to be the place where every child does.',
+    },
+  ],
 } as const;
 
 export const closing = {
