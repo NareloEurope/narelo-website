@@ -112,21 +112,30 @@ export default function HomePage() {
         </ul>
       </Section>
 
-      {/* ---------- The Five Worlds ---------- */}
-      <section className="bg-forest px-6 py-[var(--spacing-section)] text-linen md:px-10">
+      {/*
+       * ---------- The Five Worlds ----------
+       *
+       * On `shell` rather than the dark `forest` band the section used to
+       * carry (2026-09-02): even with forest lightened once already, the band
+       * read as very dark, and the five photographs are the event here. The
+       * light ground lets them supply the colour. Text pairs are the ones
+       * already verified in globals.css: ink 13.1, ink-soft 5.3 and olive 4.7
+       * on shell, all above AA.
+       */}
+      <section className="bg-shell px-6 py-[var(--spacing-section)] md:px-10">
         <div className="mx-auto max-w-[1280px]">
           <div className="mb-14 max-w-2xl fade" data-reveal>
-            <p className="eyebrow mb-8 text-linen/60">{worlds.eyebrow}</p>
+            <p className="eyebrow mb-8 text-olive">{worlds.eyebrow}</p>
             <h2 className="display display-lg mb-8">{worlds.heading}</h2>
-            <p className="lede text-linen/85">{worlds.body}</p>
+            <p className="lede text-ink-soft">{worlds.body}</p>
           </div>
 
           <div className="fade" data-reveal>
-            <WorldsExplorer items={worlds.items} />
+            <WorldsExplorer items={worlds.items} onLight />
           </div>
 
-          <div className="mt-12 border-t border-linen/15 pt-9 fade" data-reveal>
-            <Link href={worlds.linkHref} className="link-line eyebrow text-linen">
+          <div className="mt-12 border-t border-ink/15 pt-9 fade" data-reveal>
+            <Link href={worlds.linkHref} className="link-line eyebrow text-forest">
               {worlds.linkLab}
             </Link>
           </div>
