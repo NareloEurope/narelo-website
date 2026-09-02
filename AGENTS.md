@@ -26,7 +26,7 @@ Header, footer, navigation, contact details and social links are global and live
 
 What is in each content file:
 
-- **`content/home.ts`**, `hero`, `belief`, `statement`, `shape`, `worlds`, `journey`, `promise`, `home`, `founders`, `closing`
+- **`content/home.ts`**, `hero`, `belief`, `statement`, `shape`, `worlds`, `journey`, `promise`, `home`, `closing`
 - **`content/membership.ts`**, `hero`, `whatItIs`, `isNot`, `childExperience`, `practice`, `ageGroups`, `howItWorks`, `included`, `joining`, `closing`
 - **`content/experiences.ts`**, `hero`, `format`, `worlds`, `stages`, `regular`, `personalised`, `closing`
 - **`content/community.ts`**, `hero`, `testimonials`, `gallery`, `belong`, `events`, `journalTeaser`
@@ -58,7 +58,7 @@ These are decisions already made. Do not quietly reverse them.
 
 1. **No em dashes in published copy.** (Rui, 2026-08-26.) This is a hard house style rule and it is noted at the top of several content files. Use commas, full stops or colons.
 2. **No pricing anywhere.** The "What does it cost?" section was deliberately removed from the Membership page because pricing is not yet agreed. Never invent or reinstate a price. Restore the section only when Rui says pricing is set.
-3. **Community, Journal and Contact are live routes but hidden from the menu** until they are ready. The visible nav is only: *What is Narelo*, *Experiences*, *Membership*.
+3. **Community, Journal and Contact are live routes but hidden from the menu** until they are ready. The visible nav is only: *What is Narelo*, *Experiences*, *Membership*, *Who we are* (the last one is an anchor into the Membership page's "Who we are" section).
 4. **The primary call to action is WhatsApp**, not a form. Every CTA on the site reads **"Start a conversation"** and opens a prefilled WhatsApp message ("Hi Narelo, I'd love to learn more about membership for my family."). WhatsApp is the concierge entry point for every path, website, Instagram and referral alike (Funnel Process, 2026-08-31). There is no application form before the family conversation, and the mini dossier is offered on request, never as a gate.
 5. **TikTok and Facebook links are intentionally empty** (`href: null`). They were dead links on the old Wix site. Do not invent URLs. Instagram is `@narelo.eu`.
 6. **The Bloom age group has no brief yet.** Its summary is provisional and it has no motto. Do not write one, flag it instead.
@@ -79,7 +79,7 @@ On the business itself:
 - Marbella is **"our first Narelo home"**, never "a Marbella business"
 - Narelo is a **membership and a community**, never a class, nursery, play centre, school, or "a collection of sessions"
 - The name is **Narelo**. Never Norello, never Naralo.
-- The only public founder faces are **Natalie** (Founder) and **Vivien Vörös** (Co-founder & Head of Education). No one else appears on the site as a founder or a public face.
+- The only public founder faces are **Natalie** (Founder) and **Vivien Vörös** (Co-founder & Head of Education). No one else appears on the site as a founder or a public face. They appear in **one place only**: the "Who we are" section of the Membership page (`proof` in `content/membership.ts`). The home page's founders section was removed, do not re-add it.
 - The approved public wording for the opening is **"Our first Narelo home will open in Marbella this autumn."**
 - The messaging stage has moved from *Emotion & Curiosity* to **Understanding & Desire**. Copy must build understanding of what Narelo actually is, not just evoke a feeling.
 - **Never invent or guess a source** for any research or educational claim. If a source cannot be verified, say so rather than citing it.

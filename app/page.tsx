@@ -3,7 +3,7 @@ import Section from '@/components/Section';
 import LazyVideo from '@/components/LazyVideo';
 import WorldsExplorer from '@/components/WorldsExplorer';
 import { contact } from '@/content/site';
-import { hero, belief, statement, shape, worlds, journey, promise, home, founders, closing } from '@/content/home';
+import { hero, belief, statement, shape, worlds, journey, promise, home, closing } from '@/content/home';
 
 export const metadata = {
   title: 'Narelo · A private childhood membership',
@@ -112,21 +112,30 @@ export default function HomePage() {
         </ul>
       </Section>
 
-      {/* ---------- The Five Worlds ---------- */}
-      <section className="bg-forest px-6 py-[var(--spacing-section)] text-linen md:px-10">
+      {/*
+       * ---------- The Five Worlds ----------
+       *
+       * On `shell` rather than the dark `forest` band the section used to
+       * carry (2026-09-02): even with forest lightened once already, the band
+       * read as very dark, and the five photographs are the event here. The
+       * light ground lets them supply the colour. Text pairs are the ones
+       * already verified in globals.css: ink 13.1, ink-soft 5.3 and olive 4.7
+       * on shell, all above AA.
+       */}
+      <section className="bg-shell px-6 py-[var(--spacing-section)] md:px-10">
         <div className="mx-auto max-w-[1280px]">
           <div className="mb-14 max-w-2xl fade" data-reveal>
-            <p className="eyebrow mb-8 text-linen/60">{worlds.eyebrow}</p>
+            <p className="eyebrow mb-8 text-olive">{worlds.eyebrow}</p>
             <h2 className="display display-lg mb-8">{worlds.heading}</h2>
-            <p className="lede text-linen/85">{worlds.body}</p>
+            <p className="lede text-ink-soft">{worlds.body}</p>
           </div>
 
           <div className="fade" data-reveal>
-            <WorldsExplorer items={worlds.items} />
+            <WorldsExplorer items={worlds.items} onLight />
           </div>
 
-          <div className="mt-12 border-t border-linen/15 pt-9 fade" data-reveal>
-            <Link href={worlds.linkHref} className="link-line eyebrow text-linen">
+          <div className="mt-12 border-t border-ink/15 pt-9 fade" data-reveal>
+            <Link href={worlds.linkHref} className="link-line eyebrow text-forest">
               {worlds.linkLab}
             </Link>
           </div>
@@ -210,45 +219,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
-      {/* ---------- Founders ---------- */}
-      <Section>
-        <div className="mb-16 max-w-2xl fade" data-reveal>
-          <p className="eyebrow mb-8 text-olive">{founders.eyebrow}</p>
-          <h2 className="display display-lg">{founders.heading}</h2>
-        </div>
-
-        {/*
-         * A block each rather than one shared paragraph: name and role, the
-         * bio, then their own words. Two columns on desktop, stacked on a
-         * phone, with the quote pinned to the foot of each column so the two
-         * quotes line up when the bios are different lengths.
-         */}
-        <div className="reveal grid gap-14 md:grid-cols-2 md:gap-20" data-reveal>
-          {founders.people.map((person) => (
-            <div key={person.name} className="flex flex-col">
-              <div className="img-settle mb-8 overflow-hidden rounded-[2px]">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={person.image}
-                  alt={person.name}
-                  width={1086}
-                  height={1448}
-                  loading="lazy"
-                  className="aspect-[4/5] w-full object-cover object-top"
-                />
-              </div>
-              <div className="mb-5 h-px w-full bg-ink/15" aria-hidden="true" />
-              <h3 className="display display-md">{person.name}</h3>
-              <p className="eyebrow mt-3 text-olive">{person.role}</p>
-              <p className="body-copy mt-6 text-ink-soft">{person.body}</p>
-              <blockquote className="lede mt-auto pt-10 italic text-ink">
-                “{person.quote}”
-              </blockquote>
-            </div>
-          ))}
-        </div>
-      </Section>
 
       {/* ---------- Closing ---------- */}
       <Section bg="bg-shell" className="text-center">

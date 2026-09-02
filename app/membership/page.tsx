@@ -232,10 +232,15 @@ export default function MembershipPage() {
           <h2 className="display display-lg">{proof.heading}</h2>
         </div>
 
-        {/* A portrait and a block each, matching the home page's founders section. */}
+        {/*
+         * A portrait and a block each: name and role, the bio, then their own
+         * words. Two columns on desktop, stacked on a phone, with the quote
+         * pinned to the foot of each column so the two quotes line up when
+         * the bios are different lengths.
+         */}
         <div className="reveal grid gap-14 md:grid-cols-2 md:gap-20" data-reveal>
           {proof.people.map((person) => (
-            <div key={person.name}>
+            <div key={person.name} className="flex flex-col">
               <div className="img-settle mb-8 overflow-hidden rounded-[2px]">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
@@ -251,6 +256,9 @@ export default function MembershipPage() {
               <h3 className="display display-md">{person.name}</h3>
               <p className="eyebrow mt-3 text-olive">{person.role}</p>
               <p className="body-copy mt-6 text-ink-soft">{person.body}</p>
+              <blockquote className="lede mt-auto pt-10 italic text-ink">
+                “{person.quote}”
+              </blockquote>
             </div>
           ))}
         </div>

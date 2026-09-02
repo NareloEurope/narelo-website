@@ -29,7 +29,17 @@ type World = {
  * the scroll listener is rAF-throttled. Under prefers-reduced-motion the
  * transitions collapse to instant state changes and everything stays operable.
  */
-export default function WorldsExplorer({ items }: { items: readonly World[] }) {
+export default function WorldsExplorer({
+  items,
+  onLight = false,
+}: {
+  items: readonly World[];
+  /**
+   * Set when the section behind the gallery is a light one (the home page).
+   * Only the progress dots need it: cream dots vanish on a light ground.
+   */
+  onLight?: boolean;
+}) {
   const [active, setActive] = useState(0);
   const wrapRef = useRef<HTMLDivElement>(null);
 
@@ -100,7 +110,14 @@ export default function WorldsExplorer({ items }: { items: readonly World[] }) {
                     height={900}
                     loading="lazy"
                     className={`absolute inset-0 -z-10 h-full w-full object-cover transition-[transform,filter,opacity] duration-1000 ${
-                      isActive ? 'scale-100 opacity-100' : 'scale-110 opacity-85 grayscale-[20%]'
+                      /*
+                       * Inactive panels used to sit at opacity-85 with a 20%
+                       * grey wash on top of the scrim below, which read as
+                       * three dark photos beside one bright one. The scrim
+                       * alone now does the backing work for the spine label,
+                       * so the photographs keep their colour (2026-09-02).
+                       */
+                      isActive ? 'scale-100 opacity-100' : 'scale-110 opacity-95'
                     }`}
                     style={{ transitionTimingFunction: 'var(--ease-out-expo)' }}
                   />
@@ -149,7 +166,9 @@ export default function WorldsExplorer({ items }: { items: readonly World[] }) {
             <span
               key={world.name}
               className={`h-1.5 rounded-full transition-all duration-500 ${
-                i === active ? 'w-8 bg-linen' : 'w-1.5 bg-linen/40'
+                i === active
+                  ? `w-8 ${onLight ? 'bg-forest' : 'bg-linen'}`
+                  : `w-1.5 ${onLight ? 'bg-ink/25' : 'bg-linen/40'}`
               }`}
             />
           ))}

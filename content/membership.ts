@@ -174,9 +174,15 @@ export const proof = {
   eyebrow: 'Who is behind this',
   heading: 'Natalie and Vivien',
   /**
-   * Roles and bios kept in step with content/home.ts founders (Vivien,
-   * 2026-08-31). The founders' own quotes live on the home page, so this
-   * section carries the bios only.
+   * The only place on the site where the founders appear (Vivien, 2026-09-02):
+   * the home page's founders section was removed so there is one place, and
+   * their own words moved here with the bios. Quotes supplied verbatim
+   * (Vivien, 2026-08-31).
+   *
+   * ⚠️ Natalie's quote opens on "that question" and nothing above it asks
+   * one. The line it referred to was not supplied, so it has not been
+   * invented: needs either the missing opening line or a reworded first
+   * sentence.
    */
   people: [
     {
@@ -184,12 +190,14 @@ export const proof = {
       role: 'Founder',
       image: '/images/founder-natalie.webp',
       body: 'Natalie leads Narelo’s direction and the community around it. She is a mother herself, and Narelo is the kind of childhood she wanted for her own son and could never find.',
+      quote: 'Becoming a mother made me ask that question much earlier. In a world shaped by rapid technological change, I wanted children to have real experiences that build curiosity, confidence, independence and connection to the world around them. That idea became Narelo.',
     },
     {
       name: 'Vivien Vörös',
       role: 'Co-founder & Head of Education',
       image: '/images/founder-vivien.webp',
       body: 'For more than seven years, Vivien has worked as a Special Needs Educator and Therapist, specialising in behavioural disorders and learning disabilities, and later trained as a Speech and Language Therapist. Across nurseries, therapy rooms and one-on-one sessions, her work has always centred on one question: is this child actually being seen?',
+      quote: 'Some children get noticed. I want Narelo to be the place where every child does.',
     },
   ],
 } as const;

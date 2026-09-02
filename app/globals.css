@@ -9,6 +9,7 @@
  *
  * Every text pair below is verified against WCAG AA (4.5:1 body):
  *   ink on linen 14.36 · ink-soft on linen 5.82 · olive on linen 5.21
+ *   ink on shell 13.06 · ink-soft on shell 5.30 · olive on shell 4.74
  *   linen on forest 7.43 · linen/80 on forest 5.50 · ink on sand 8.48
  * `forest` was lightened from #3a4230 (Vivien, 2026-08-31: the dark bands read
  * as very dark). Muted text on forest moved from /70 to /80 to hold AA.

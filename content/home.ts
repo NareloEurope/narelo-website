@@ -66,9 +66,16 @@ export const worlds = {
   body: 'Our experiences move through five worlds inspired by the real world around us, each opening new ways to explore, move, create and discover. Different worlds. Different experiences. Always something new to uncover.',
   items: [
     {
+      /*
+       * A brightened version of gallery-01: the original is a backlit sunset,
+       * so the sand and the children read almost black behind the panel's
+       * scrim (2026-09-02). world-ocean lifts the shadows and leaves the sun
+       * and the sky where they were. gallery-01 itself is untouched and the
+       * Community gallery still uses it.
+       */
       name: 'Ocean',
       short: 'The sea as a living place',
-      image: '/images/gallery-01.webp',
+      image: '/images/world-ocean.webp',
     },
     {
       name: 'Mountain',
@@ -140,37 +147,14 @@ export const home = {
   ctaLabel: 'Start a conversation',
 } as const;
 
-/**
+/*
+ * The founders section was removed from the home page (Vivien, 2026-09-02):
+ * Natalie and Vivien appear in one place only, the "Who we are" section of
+ * the Membership page. Their bios and quotes live in content/membership.ts
+ * as `proof`. Do not re-add them here.
+ *
  * company/team.md — Natalie and Vivien only. Christian is never a public face.
- *
- * Rewritten from one shared paragraph into a block each, with role and a
- * quote in their own words (Vivien, 2026-08-31, supplied verbatim). Vivien's
- * title is now Co-founder & Head of Education.
- *
- * ⚠️ Natalie's quote opens on "that question" and nothing on the page asks
- * one before it. The line it referred to was not supplied, so it has not been
- * invented: needs either the missing opening line or a reworded first sentence.
  */
-export const founders = {
-  eyebrow: 'The founders',
-  heading: 'Natalie and Vivien',
-  people: [
-    {
-      name: 'Natalie',
-      role: 'Founder',
-      image: '/images/founder-natalie.webp',
-      body: 'Natalie leads Narelo’s direction and the community around it. She is a mother herself, and Narelo is the kind of childhood she wanted for her own son and could never find.',
-      quote: 'Becoming a mother made me ask that question much earlier. In a world shaped by rapid technological change, I wanted children to have real experiences that build curiosity, confidence, independence and connection to the world around them. That idea became Narelo.',
-    },
-    {
-      name: 'Vivien Vörös',
-      role: 'Co-founder & Head of Education',
-      image: '/images/founder-vivien.webp',
-      body: 'For more than seven years, Vivien has worked as a Special Needs Educator and Therapist, specialising in behavioural disorders and learning disabilities, and later trained as a Speech and Language Therapist. Across nurseries, therapy rooms and one-on-one sessions, her work has always centred on one question: is this child actually being seen?',
-      quote: 'Some children get noticed. I want Narelo to be the place where every child does.',
-    },
-  ],
-} as const;
 
 export const closing = {
   headingLines: ['A childhood', 'happens once.'],
