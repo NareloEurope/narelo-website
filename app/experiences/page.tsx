@@ -36,7 +36,9 @@ export default function ExperiencesPage() {
       </section>
 
       {/* ---------- Format ---------- */}
-      <Section>
+      {/* id="format": the Membership page links here for the session figures,
+          which are stated once, on this page. */}
+      <Section id="format">
         <div className="grid items-center gap-14 md:grid-cols-2 md:gap-20">
           <div className="fade" data-reveal>
             <p className="eyebrow mb-8 text-olive">{format.eyebrow}</p>
@@ -71,8 +73,10 @@ export default function ExperiencesPage() {
         </ul>
       </Section>
 
-      {/* ---------- The Five Worlds ---------- */}
-      <section className="bg-forest px-6 py-[var(--spacing-section)] text-linen md:px-10">
+      {/* ---------- The Five Worlds ----------
+          id="worlds": the one full write-up of the five worlds. The home page
+          and the Membership page carry short forms that link here. */}
+      <section id="worlds" className="bg-forest px-6 py-[var(--spacing-section)] text-linen md:px-10">
         <div className="mx-auto max-w-[1280px]">
           <div className="mb-20 max-w-2xl fade" data-reveal>
             <p className="eyebrow mb-8 text-linen/60">{worlds.eyebrow}</p>

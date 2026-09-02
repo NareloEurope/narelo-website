@@ -126,7 +126,7 @@ export default function MembershipPage() {
             <p className="lede text-linen/75">{childExperience.body}</p>
           </div>
 
-          <ul className="reveal mb-16" data-reveal>
+          <ul className="reveal mb-12" data-reveal>
             {childExperience.worlds.map((w, i) => (
               <li
                 key={w.name}
@@ -141,18 +141,20 @@ export default function MembershipPage() {
             ))}
           </ul>
 
-          <ul className="reveal grid grid-cols-3 gap-6 border-t border-linen/15 pt-12" data-reveal>
-            {childExperience.facts.map((f) => (
-              <li key={f.label}>
-                <p className="display text-[clamp(1.75rem,1.2rem+2.4vw,3.25rem)] leading-none">{f.value}</p>
-                <p className="eyebrow mt-3 text-linen/60">{f.label}</p>
-              </li>
-            ))}
-          </ul>
+          {/* The worlds are named here and explained once, on the Experiences
+              page. Same for the session figures: this links, it does not
+              restate them (Rui, 2026-09-02). */}
+          <div className="fade border-t border-linen/15 pt-10" data-reveal>
+            <Link href={childExperience.worldsLinkHref} className="link-line eyebrow text-linen">
+              {childExperience.worldsLinkLabel}
+            </Link>
 
-          <p className="body-copy mt-12 max-w-2xl text-linen/70 fade" data-reveal>
-            {childExperience.note}
-          </p>
+            <p className="body-copy mt-10 max-w-2xl text-linen/70">{childExperience.note}</p>
+
+            <Link href={childExperience.formatLinkHref} className="link-line eyebrow mt-8 inline-block text-linen">
+              {childExperience.formatLinkLabel}
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -164,16 +166,17 @@ export default function MembershipPage() {
           <p className="lede text-ink-soft">{ageGroups.body}</p>
         </div>
 
-        {/* One line per stage: the full breakdown lives on the Experiences page. */}
+        {/* Name and age only: an index, not a second set of descriptions. Every
+            description of a stage lives on the Experiences page (Rui,
+            2026-09-02). */}
         <ul className="reveal border-t border-ink/12" data-reveal>
           {stageDetails.map((stage) => (
             <li
               key={stage.name}
-              className="grid grid-cols-[1fr_auto] items-baseline gap-x-4 gap-y-2 border-b border-ink/12 py-7 md:grid-cols-[1.2fr_7rem_1.6fr] md:gap-8 md:py-8"
+              className="flex items-baseline justify-between gap-6 border-b border-ink/12 py-6 md:py-7"
             >
-              <h3 className="display display-md col-start-1">{stage.name}</h3>
-              <span className="eyebrow col-start-1 text-olive md:col-start-2">{stage.age}</span>
-              <p className="body-copy col-start-1 max-w-md text-ink-soft md:col-start-3">{stage.tagline}</p>
+              <h3 className="display display-md">{stage.name}</h3>
+              <span className="eyebrow shrink-0 text-olive">{stage.age}</span>
             </li>
           ))}
         </ul>

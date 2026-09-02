@@ -21,6 +21,10 @@ export const hero = {
  * framework/experience-rhythm-and-format.md — the working format (90 minutes,
  * ~8 children). The season figure comes from company/business-plan.md:
  * "Autumn · Winter · Spring · Summer. 10–12 weeks, 1 session per week."
+ *
+ * These three figures are stated here and nowhere else in full (Rui,
+ * 2026-09-02): the Membership page used to repeat the same trio as a second
+ * stat block and now links to this section instead.
  */
 export const format = {
   eyebrow: 'The shape of an experience',
@@ -35,7 +39,12 @@ export const format = {
   image: '/images/img-5211.webp',
 } as const;
 
-/** framework/the-narelo-framework.md Part IV — canonical names and summaries. */
+/**
+ * framework/the-narelo-framework.md Part IV — canonical names and summaries.
+ * This is the one full write-up of the five worlds on the site (Rui,
+ * 2026-09-02). The home page and the Membership page carry the short forms
+ * and link here, rather than explaining them a second time.
+ */
 export const worlds = {
   eyebrow: 'The Five Worlds',
   heading: 'Five doors we open together',
@@ -64,20 +73,17 @@ export const worlds = {
   ],
 } as const;
 
-/** framework/age-groups.md — canonical names and ages. */
+/**
+ * framework/age-groups.md — canonical names and ages. This section is the one
+ * place where each stage is described in full (Rui, 2026-09-02); the home page
+ * and the Membership page list the names and link here.
+ */
 export const stages = {
   eyebrow: 'The journey',
   heading: 'A path for every stage',
   body: 'Every child belongs to a named group that moves with them as they grow. Families can join at any point along the way.',
-  items: [
-    { name: 'Bloom', age: 'Pregnancy', body: 'A gentle beginning, before your child arrives.' },
-    { name: 'Nurture', age: '0–1 year', body: 'Sensing, discovering and connecting.' },
-    { name: 'The Nest', age: '1–2 years', body: 'Exploring the world through movement.' },
-    { name: 'Little Beginnings', age: '2–3 years', body: 'First steps into a world of discovery.' },
-    { name: 'Builders I', age: '3–5 years', body: 'Creating, exploring and making sense of the world.' },
-    { name: 'Builders II', age: '5–6 years', body: 'Questioning, creating and building ideas.' },
-    { name: 'Navigators', age: '6–8 years', body: 'Growing independence and finding their way.' },
-  ],
+  /* The rows themselves come from content/stages.ts, rendered in full by the
+     StageAccordion. This is the canonical place for the stage descriptions. */
   note: 'Five-year-olds are placed between Builders I and Builders II depending on readiness, not birthday.',
 } as const;
 

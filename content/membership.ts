@@ -54,7 +54,14 @@ export const isNot = {
   line: 'Narelo is a membership your family belongs to.',
 } as const;
 
-/** Q2 — What does my child experience? Five Worlds + the session shape. */
+/**
+ * Q2 — What does my child experience? The five worlds as a short index only.
+ *
+ * The one-line taglines are deliberate (Rui, 2026-09-02): the full write-up of
+ * the five worlds lives once, on the Experiences page, and this section links
+ * to it. The 90 minutes / ~8 children / 12 a season trio used to appear here
+ * as a second stat block and is now stated once, on the Experiences page.
+ */
 export const childExperience = {
   eyebrow: 'What your child experiences',
   heading: 'Real places, small groups, and the time to go deep',
@@ -66,13 +73,11 @@ export const childExperience = {
     { name: 'Expression', body: 'Art, making and giving form to their own ideas.' },
     { name: 'Future', body: 'Invention, experimentation and what might be possible.' },
   ],
-  facts: [
-    { value: '90 min', label: 'each experience' },
-    { value: '~8', label: 'children per group' },
-    /* business-plan.md: Autumn/Winter/Spring/Summer, 10-12 weeks, 1 a week. */
-    { value: '12', label: 'experiences a season' },
-  ],
+  worldsLinkLabel: 'The five worlds, in full',
+  worldsLinkHref: '/experiences/#worlds',
   note: 'Experiences happen in our Marbella home and well beyond it: beach, forest and real-world places. Younger groups may include a parent; older children come on their own.',
+  formatLinkLabel: 'How an experience is built',
+  formatLinkHref: '/experiences/#format',
 } as const;
 
 /** Q3 — Which age group is relevant? framework/age-groups.md, canonical. */
@@ -80,9 +85,9 @@ export const ageGroups = {
   eyebrow: 'From the very beginning',
   heading: 'A place that grows with your child',
   body: 'Every child belongs to a named group that moves with them as they grow. Families can join at any point, and many begin before their child is born.',
-  /** Rows come from content/stages.ts: name, age and one-line tagline only. The
-   *  full breakdown of each stage lives on the Experiences page, not repeated
-   *  here (Rui, 2026-08-29). */
+  /** Rows come from content/stages.ts: name and age only (Rui, 2026-09-02).
+   *  Every description of a stage, the one-liner included, lives on the
+   *  Experiences page, and the link below points there instead. */
   note: 'Five-year-olds are placed between Builders I and Builders II depending on readiness, not their birthday.',
   linkLabel: 'See what each stage includes',
   linkHref: '/experiences/#journey',
@@ -123,6 +128,11 @@ export const howItWorks = {
  * experiences, community mornings and the wider Narelo world are available to
  * members at member rates but are not included in it. The group labels carry
  * that distinction; "Member pricing" is no longer listed as an inclusion.
+ *
+ * The second group is a plain list of names (Rui, 2026-09-02): what each of
+ * those things actually is, is explained once on the Experiences page, so the
+ * rows here just name them and link across. Only the things that exist
+ * nowhere else, the weekly place, guidance and priority booking, carry copy.
  */
 export const included = {
   eyebrow: 'Membership',
@@ -139,12 +149,14 @@ export const included = {
     {
       label: 'For members, at member rates',
       items: [
-        { title: 'Signature Saturdays', body: 'Slow Saturdays built for discovery, creativity and time together as a family, twice a month.' },
-        { title: 'Expert insights', body: 'Sessions with specialists on childhood, development and family life.' },
-        { title: 'Holiday experiences', body: 'School holidays turned into adventure rather than logistics.' },
-        { title: 'Community mornings', body: 'Unhurried mornings to meet the other families and settle into the community.' },
-        { title: 'The wider Narelo world', body: 'Birthday experiences, private sessions and family days, created around your family.' },
+        { title: 'Signature Saturdays' },
+        { title: 'Expert insights' },
+        { title: 'Holiday experiences' },
+        { title: 'Community mornings' },
+        { title: 'The wider Narelo world' },
       ],
+      linkLabel: 'What each of these is',
+      linkHref: '/experiences/',
     },
   ],
 } as const;
