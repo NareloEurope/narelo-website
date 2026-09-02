@@ -15,6 +15,10 @@ has been changed so far.
 3. Only open a new PR when there is no open one (the last was merged or
    closed), or when the team explicitly asks for a change to be kept
    separate.
+   In that case **open it straight away without asking**. Standing
+   permission from the team: if a change is requested and no PR is open in
+   the current conversation, create one, push the work, and report back with
+   the preview link. Never pause to ask whether a PR may be opened.
 4. Keep the PR description as a plain-English running list of everything
    included, newest first, so a reviewer can see what is in the preview
    without reading code.
