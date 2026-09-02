@@ -42,10 +42,10 @@ export const stageDetails: readonly Stage[] = [
     summary:
       'A calm space for expecting parents: time to slow down, connect with other families, and begin the Narelo journey before your child is born.',
     /*
-     * Pexels 7155527 (free license, no attribution required), cropped below
-     * the face per Rui: pregnant woman on a woven beige mat, cream and tan.
-     * Original archived: assets-source/stage-photo-bloom-pexels-7155527.jpg
-     * Source: https://www.pexels.com/photo/pregnant-woman-doing-excercise-7155527/
+     * Pregnant woman, eyes closed, in white, sitting cross-legged in soft
+     * light. Supplied directly by the team (2026-08-29); source not
+     * confirmed. Cropped to hair-through-belly, legs excluded, so the
+     * stage panel shows the whole framing without cutting off the face.
      */
     image: '/images/stage-photo-bloom.webp',
   },
