@@ -54,40 +54,42 @@ export const shape = {
  * Display names drop the leading "The" (Rui, 2026-08-26): World Around Us,
  * Future. Movement and Stillness flow through all five rather than being a
  * sixth. Rendered on the home page as the scroll-driven WorldsExplorer.
+ * Descriptions shortened in Vivien's feedback pass (2026-08-31) and kept in
+ * step with content/experiences.ts.
  */
 export const worlds = {
   eyebrow: 'The Five Worlds',
   heading: 'Five ways of meeting the world',
-  body: 'From around age three, every child’s year moves through five worlds. Movement and stillness run through all of them.',
+  body: 'Our experiences move through five worlds inspired by the real world around us, each opening new ways to explore, move, create and discover. Different worlds. Different experiences. Always something new to uncover.',
   items: [
     {
       name: 'Ocean',
       short: 'The sea as a living place',
-      body: 'The sea experienced with senses and body: sand, tides, rock pools and the life within them, growing into bigger questions about the ocean and our place beside it.',
+      body: 'Exploring the sea through senses, movement, curiosity and real-world discovery.',
       image: '/images/gallery-01.webp',
     },
     {
       name: 'Mountain',
       short: 'Nature on its own terms',
-      body: 'Woodland, hills and trails. Uneven ground, changing seasons and natural challenge, met physically and observed closely.',
+      body: 'Exploring nature through movement, challenge, observation and adventure.',
       image: '/images/world-mountain.webp',
     },
     {
       name: 'World Around Us',
       short: 'Doors children rarely get to open',
-      body: 'The people, knowledge and craft behind everyday life: where things come from, how they are made, and who makes them possible. Children take part, not just watch.',
+      body: 'Discovering real life through people, places, professions, culture and everyday experiences.',
       image: '/images/home-world-built-around-childhood.webp',
     },
     {
       name: 'Expression',
       short: 'Giving form to ideas',
-      body: 'Art, music, storytelling, building and making. Space for each child to interpret what they encounter and take it somewhere of their own.',
+      body: 'Turning ideas and discoveries into art, music, stories, building and design.',
       image: '/images/gallery-02.webp',
     },
     {
       name: 'Future',
       short: 'Curiosity about what is changing',
-      body: 'Invention, experimentation and thoughtful encounters with new tools and ideas, so children meet change with curiosity and an open mind.',
+      body: 'Exploring invention, problem-solving and new possibilities, with technology, robotics and AI as tools to create, not replace thinking.',
       image: '/images/contact-hero.webp',
     },
   ],
@@ -106,12 +108,12 @@ export const journey = {
   body: 'Families can join at any point. Many begin before their child is born, and stay through the years that follow.',
   stages: [
     { name: 'Bloom', age: 'Pregnancy', body: 'A gentle beginning, before your child arrives.' },
-    { name: 'Nurture', age: '0–1', body: 'Sensing, discovering and connecting.' },
-    { name: 'The Nest', age: '1–2', body: 'Exploring the world through movement.' },
-    { name: 'Little Beginnings', age: '2–3', body: 'First steps into a world of discovery.' },
-    { name: 'Builders I', age: '3–5', body: 'Creating, exploring and making sense of the world.' },
-    { name: 'Builders II', age: '5–6', body: 'Questioning, creating and building ideas.' },
-    { name: 'Navigators', age: '6–8', body: 'Growing independence and finding their way.' },
+    { name: 'Nurture', age: '0–1', body: 'Sensing, connecting and discovering together.' },
+    { name: 'The Nest', age: '1–2', body: 'Exploring the world through movement and growing independence.' },
+    { name: 'Little Beginnings', age: '2–3', body: 'Growing confidence through curiosity, movement and discovery.' },
+    { name: 'Builders I', age: '3–5', body: 'Exploring, creating and beginning to make sense of the world.' },
+    { name: 'Builders II', age: '5–6', body: 'Questioning, creating and turning ideas into something real.' },
+    { name: 'Navigators', age: '6–8', body: 'Growing independence, solving problems and finding their own way.' },
   ],
   note: 'Five-year-olds are placed between Builders I and Builders II depending on readiness, not birthday.',
   linkLabel: 'Explore the age groups',
@@ -136,7 +138,7 @@ export const home = {
   heading: 'Our first Narelo home opens this autumn',
   body: 'Marbella is where Narelo begins: the sea on one side, the mountains on the other, and a community of families we are choosing carefully and slowly. It is the first home, not the last.',
   image: '/images/home-discovery.webp',
-  ctaLabel: 'Become a member',
+  ctaLabel: 'Start a conversation',
 } as const;
 
 /** company/team.md — Natalie and Vivien only. Christian is never a public face. */
@@ -149,5 +151,5 @@ export const founders = {
 export const closing = {
   headingLines: ['A childhood', 'happens once.'],
   body: 'Membership opens in small numbers ahead of our first home. If it sounds like your family, we would love to talk.',
-  ctaLabel: 'Become a member',
+  ctaLabel: 'Start a conversation',
 } as const;

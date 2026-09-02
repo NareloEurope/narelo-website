@@ -97,13 +97,13 @@ export default function WorldsExplorer({ items }: { items: readonly World[] }) {
                     height={900}
                     loading="lazy"
                     className={`absolute inset-0 -z-10 h-full w-full object-cover transition-[transform,filter,opacity] duration-1000 ${
-                      isActive ? 'scale-100 opacity-100' : 'scale-110 opacity-70 grayscale-[35%]'
+                      isActive ? 'scale-100 opacity-100' : 'scale-110 opacity-85 grayscale-[20%]'
                     }`}
                     style={{ transitionTimingFunction: 'var(--ease-out-expo)' }}
                   />
                   <div
                     className={`absolute inset-0 -z-10 transition-opacity duration-700 ${
-                      isActive ? 'bg-gradient-to-t from-ink/80 via-ink/25 to-ink/10' : 'bg-ink/55'
+                      isActive ? 'bg-gradient-to-t from-ink/75 via-ink/15 to-transparent' : 'bg-ink/40'
                     }`}
                     aria-hidden="true"
                   />
@@ -132,7 +132,7 @@ export default function WorldsExplorer({ items }: { items: readonly World[] }) {
                   >
                     <span className="eyebrow mb-3 block text-linen/70">{`0${i + 1}`}</span>
                     <span className="display display-md block text-linen">{world.name}</span>
-                    <span className="body-copy mt-4 block max-w-md text-linen/85">{world.body}</span>
+                    <span className="body-copy mt-4 block max-w-md text-linen/90">{world.body}</span>
                   </span>
                 </button>
               </li>
