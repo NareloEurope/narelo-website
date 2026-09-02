@@ -81,13 +81,13 @@ export default function HomePage() {
 
       {/* ---------- The shape of a day ---------- */}
       <Section>
-        <div className="mb-16 max-w-2xl fade" data-reveal>
+        <div className="mb-12 max-w-2xl fade" data-reveal>
           <p className="eyebrow mb-8 text-olive">{shape.eyebrow}</p>
           <h2 className="display display-lg mb-8">{shape.heading}</h2>
           <p className="lede text-ink-soft">{shape.body}</p>
         </div>
 
-        <div className="img-settle mb-20 overflow-hidden rounded-[2px]" data-reveal>
+        <div className="img-settle mb-14 overflow-hidden rounded-[2px]" data-reveal>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={shape.image}
@@ -99,10 +99,11 @@ export default function HomePage() {
           />
         </div>
 
-        <ul className="reveal grid gap-12 md:grid-cols-2 md:gap-16" data-reveal>
+        {/* Soft tinted tiles so the numbers read as cards, not loose text
+            (Vivien, 2026-08-31). */}
+        <ul className="reveal grid gap-6 md:grid-cols-2" data-reveal>
           {shape.facts.map((fact) => (
-            <li key={fact.label}>
-              <div className="mb-5 h-px w-full bg-ink/15" aria-hidden="true" />
+            <li key={fact.label} className="rounded-[3px] bg-sand/25 p-8 md:p-10">
               <p className="display text-[clamp(3rem,2rem+4vw,5rem)] leading-none text-olive">{fact.value}</p>
               <p className="eyebrow mt-4 text-ink">{fact.label}</p>
               <p className="body-copy mt-4 text-ink-soft">{fact.note}</p>
@@ -114,17 +115,17 @@ export default function HomePage() {
       {/* ---------- The Five Worlds ---------- */}
       <section className="bg-forest px-6 py-[var(--spacing-section)] text-linen md:px-10">
         <div className="mx-auto max-w-[1280px]">
-          <div className="mb-20 max-w-2xl fade" data-reveal>
+          <div className="mb-14 max-w-2xl fade" data-reveal>
             <p className="eyebrow mb-8 text-linen/60">{worlds.eyebrow}</p>
             <h2 className="display display-lg mb-8">{worlds.heading}</h2>
-            <p className="lede text-linen/75">{worlds.body}</p>
+            <p className="lede text-linen/85">{worlds.body}</p>
           </div>
 
           <div className="fade" data-reveal>
             <WorldsExplorer items={worlds.items} />
           </div>
 
-          <div className="mt-14 border-t border-linen/15 pt-10 fade" data-reveal>
+          <div className="mt-12 border-t border-linen/15 pt-9 fade" data-reveal>
             <Link href={worlds.linkHref} className="link-line eyebrow text-linen">
               {worlds.linkLab}
             </Link>
@@ -134,7 +135,7 @@ export default function HomePage() {
 
       {/* ---------- The journey ---------- */}
       <Section>
-        <div className="mb-16 max-w-2xl fade" data-reveal>
+        <div className="mb-12 max-w-2xl fade" data-reveal>
           <p className="eyebrow mb-8 text-olive">{journey.eyebrow}</p>
           <h2 className="display display-lg mb-8">{journey.heading}</h2>
           <p className="lede text-ink-soft">{journey.body}</p>
@@ -155,7 +156,7 @@ export default function HomePage() {
           </ol>
         </div>
 
-        <div className="mt-14 flex flex-col gap-6 fade md:flex-row md:items-center md:justify-between" data-reveal>
+        <div className="mt-12 flex flex-col gap-6 fade md:flex-row md:items-center md:justify-between" data-reveal>
           <p className="body-copy max-w-md text-ink-soft">{journey.note}</p>
           <Link href={journey.linkHref} className="link-line eyebrow shrink-0 text-ink">
             {journey.linkLabel}
@@ -198,9 +199,9 @@ export default function HomePage() {
         </div>
         <div className="absolute inset-0 -z-10 bg-gradient-to-t from-ink/75 via-ink/25 to-transparent" aria-hidden="true" />
 
-        <div className="mx-auto w-full max-w-[1280px] px-6 py-24 md:px-10 md:py-32">
+        <div className="mx-auto w-full max-w-[1280px] px-6 py-20 md:px-10 md:py-24">
           <div className="max-w-2xl fade" data-reveal>
-            <p className="eyebrow mb-8 text-linen/70">{home.eyebrow}</p>
+            <p className="eyebrow mb-8 text-linen/80">{home.eyebrow}</p>
             <h2 className="display display-lg mb-8 text-linen">{home.heading}</h2>
             <p className="lede mb-10 text-linen/85">{home.body}</p>
             <a href={contact.whatsapp} target="_blank" rel="noreferrer noopener" className="btn btn-ghost text-linen">

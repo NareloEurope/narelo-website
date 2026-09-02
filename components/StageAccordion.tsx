@@ -96,7 +96,7 @@ export default function StageAccordion({ items }: { items: readonly Stage[] }) {
                       width={900}
                       height={1200}
                       loading="lazy"
-                      className={`absolute inset-0 h-full w-full object-cover transition-transform duration-1000 ${
+                      className={`absolute inset-0 h-full w-full object-contain transition-transform duration-1000 ${
                         isOpen ? 'scale-100' : 'scale-110'
                       }`}
                       style={{ transitionTimingFunction: 'var(--ease-out-expo)' }}

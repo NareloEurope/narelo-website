@@ -48,7 +48,7 @@ Almost every request the team will ever make is a change to one file in `content
 
 Components are design, not words: `Header`, `Footer`, `Section`, `Motion`, `Gallery`, `Testimonials`, `StageAccordion`, `IncludedAccordion`, `WorldsExplorer`, `ContactForm`, `LazyVideo`, `VideoBand`, `WhatsAppIcon`. If a request needs one of these to behave differently, it is a design change, not a copy change.
 
-To swap a picture, the new file has to already be in the repository first. It cannot be added through this project. Describe the swap wanted and it goes to the reviewer as a request with the exact filename to replace.
+To swap a picture, a new image file can be added directly through this project (for example, one shared in the chat) and used to replace an existing file in `public/images/` or `public/video/`. Whoever supplies the image is vouching that it is free to use. Never invent or guess a source for a photo. If the source isn't known, say so plainly in the file's comment instead of citing one.
 
 The site is a fully static export (`output: 'export'` in `next.config.ts`). There is no server, no CMS and no database. `trailingSlash: true`, so every internal link ends in `/`.
 

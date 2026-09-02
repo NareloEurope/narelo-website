@@ -1,20 +1,19 @@
 import Link from 'next/link';
-import { site, nav, contact, socialIcons } from '@/content/site';
+import { site, nav, contact, socialIcons, footerCta } from '@/content/site';
 
 export default function Footer() {
   return (
     <footer className="bg-forest text-linen">
-      <div className="mx-auto max-w-[1560px] px-6 py-24 md:px-10 md:py-32">
+      <div className="mx-auto max-w-[1560px] px-6 py-20 md:px-10 md:py-24">
         <div className="fade" data-reveal>
-          <p className="display display-lg max-w-3xl">
-            Our first Narelo home opens in Marbella this autumn.
-          </p>
-          <a href={contact.whatsapp} target="_blank" rel="noreferrer noopener" className="btn btn-ghost mt-10 text-linen">
-            Start a conversation
+          <p className="display display-lg max-w-3xl">{footerCta.heading}</p>
+          <p className="lede mt-6 max-w-xl text-linen/75">{footerCta.subheading}</p>
+          <a href={contact.whatsapp} target="_blank" rel="noreferrer noopener" className="btn btn-ghost mt-9 text-linen">
+            {footerCta.ctaLabel}
           </a>
         </div>
 
-        <div className="mt-24 grid gap-12 border-t border-linen/15 pt-14 md:grid-cols-[1.4fr_1fr_1fr]">
+        <div className="mt-16 grid gap-12 border-t border-linen/15 pt-12 md:grid-cols-[1.4fr_1fr_1fr]">
           <div>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
@@ -25,7 +24,7 @@ export default function Footer() {
               loading="lazy"
               className="h-8 w-auto opacity-90 [filter:invert(1)_brightness(2)]"
             />
-            <p className="body-copy mt-6 max-w-xs text-linen/70">{site.tagline}</p>
+            <p className="body-copy mt-6 max-w-xs text-linen/70">{footerCta.blurb}</p>
           </div>
 
           <nav aria-label="Footer">
@@ -96,7 +95,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <p className="body-copy mt-16 text-xs text-linen/65">{site.copyright}</p>
+        <p className="body-copy mt-14 text-xs text-linen/65">{site.copyright}</p>
       </div>
     </footer>
   );

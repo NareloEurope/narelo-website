@@ -55,43 +55,39 @@ export const shape = {
  * Future. Movement and Stillness flow through all five rather than being a
  * sixth. Rendered on the home page as the scroll-driven WorldsExplorer.
  *
- * These are the short forms on purpose (Rui, 2026-09-02): the full write-up
- * of the five worlds lives once, on the Experiences page, and the link below
- * points at it rather than saying it all a second time.
+ * The descriptions themselves live once, on the Experiences page (Vivien's
+ * feedback pass, 2026-08-31, supplied the wording). Here the panels carry the
+ * short tagline only and the link below points at the full version, so the
+ * same five things are not written up twice (2026-09-02).
  */
 export const worlds = {
   eyebrow: 'The Five Worlds',
   heading: 'Five ways of meeting the world',
-  body: 'From around age three, every child’s year moves through five worlds. Movement and stillness run through all of them.',
+  body: 'Our experiences move through five worlds inspired by the real world around us, each opening new ways to explore, move, create and discover. Different worlds. Different experiences. Always something new to uncover.',
   items: [
     {
       name: 'Ocean',
       short: 'The sea as a living place',
-      body: 'The sea experienced with senses and body: sand, tides, rock pools and the life within them.',
       image: '/images/gallery-01.webp',
     },
     {
       name: 'Mountain',
       short: 'Nature on its own terms',
-      body: 'Woodland, hills and trails. Uneven ground, changing seasons and natural challenge.',
       image: '/images/world-mountain.webp',
     },
     {
       name: 'World Around Us',
       short: 'Doors children rarely get to open',
-      body: 'The people, knowledge and craft behind everyday life. Children take part, not just watch.',
       image: '/images/home-world-built-around-childhood.webp',
     },
     {
       name: 'Expression',
       short: 'Giving form to ideas',
-      body: 'Art, music, storytelling, building and making. Space to take an idea somewhere of their own.',
       image: '/images/gallery-02.webp',
     },
     {
       name: 'Future',
       short: 'Curiosity about what is changing',
-      body: 'Invention, experimentation and thoughtful encounters with new tools and ideas.',
       image: '/images/contact-hero.webp',
     },
   ],

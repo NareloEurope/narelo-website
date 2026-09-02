@@ -9,7 +9,9 @@
  *
  * Every text pair below is verified against WCAG AA (4.5:1 body):
  *   ink on linen 14.36 · ink-soft on linen 5.82 · olive on linen 5.21
- *   linen on forest 9.48 · ink on sand 8.48
+ *   linen on forest 7.43 · linen/80 on forest 5.50 · ink on sand 8.48
+ * `forest` was lightened from #3a4230 (Vivien, 2026-08-31: the dark bands read
+ * as very dark). Muted text on forest moved from /70 to /80 to hold AA.
  * `sand` is a surface colour only — cream on sand is 1.69 and must never be used.
  */
 @theme {
@@ -18,14 +20,18 @@
   --color-ink: #2b2018;
   --color-ink-soft: #6a5c50;
   --color-olive: #62694c;
-  --color-forest: #3a4230;
+  --color-forest: #49523d;
   --color-sand: #cdbba0;
 
   --font-display: var(--font-cormorant), 'Cormorant Garamond', Georgia, serif;
   --font-sans: var(--font-jost), 'Jost', 'Futura', system-ui, sans-serif;
 
-  /* Spacious scale — this is an editorial brand, not a dashboard. */
-  --spacing-section: clamp(5rem, 3rem + 9vw, 11rem);
+  /*
+   * Spacious scale — this is an editorial brand, not a dashboard. Tightened
+   * from clamp(5rem, 3rem + 9vw, 11rem) (Vivien, 2026-08-31): the gaps between
+   * sections were long enough to read as empty screens while scrolling.
+   */
+  --spacing-section: clamp(3.5rem, 2.25rem + 5.5vw, 7rem);
 
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-in-out-quint: cubic-bezier(0.83, 0, 0.17, 1);

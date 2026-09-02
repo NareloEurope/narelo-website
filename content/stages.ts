@@ -20,6 +20,9 @@
  * TODO: Bloom is the only stage still without a brief. Its summary is
  * provisional and it carries no motto or list.
  *
+ * Taglines refreshed from Vivien's feedback pass (2026-08-31); names and
+ * ages are unchanged.
+ *
  * House style: no em dashes in published copy.
  */
 
@@ -42,17 +45,17 @@ export const stageDetails: readonly Stage[] = [
     summary:
       'A calm space for expecting parents: time to slow down, connect with other families, and begin the Narelo journey before your child is born.',
     /*
-     * Pexels 7155527 (free license, no attribution required), cropped below
-     * the face per Rui: pregnant woman on a woven beige mat, cream and tan.
-     * Original archived: assets-source/stage-photo-bloom-pexels-7155527.jpg
-     * Source: https://www.pexels.com/photo/pregnant-woman-doing-excercise-7155527/
+     * Pregnant woman, eyes closed, in white, sitting cross-legged in soft
+     * light. Supplied directly by the team (2026-08-29); source not
+     * confirmed. Cropped to hair-through-belly, legs excluded, so the
+     * stage panel shows the whole framing without cutting off the face.
      */
     image: '/images/stage-photo-bloom.webp',
   },
   {
     name: 'Nurture',
     age: '0–1 year',
-    tagline: 'Sensing, discovering and connecting.',
+    tagline: 'Sensing, connecting and discovering together.',
     motto: 'I sense and discover.',
     summary:
       'A safe, loving space where babies explore with their senses, move their bodies and build the foundation for connection, curiosity and confidence, together with their parent.',
@@ -67,7 +70,7 @@ export const stageDetails: readonly Stage[] = [
   {
     name: 'The Nest',
     age: '1–2 years',
-    tagline: 'Exploring the world through movement.',
+    tagline: 'Exploring the world through movement and growing independence.',
     motto: 'I move and explore.',
     summary:
       'An active, joyful space where toddlers build strength, balance and confidence through movement, play and discovery, indoors and out in the world.',
@@ -83,7 +86,7 @@ export const stageDetails: readonly Stage[] = [
   {
     name: 'Little Beginnings',
     age: '2–3 years',
-    tagline: 'First steps into a world of discovery.',
+    tagline: 'Growing confidence through curiosity, movement and discovery.',
     motto: 'I discover.',
     summary:
       'First adventures in the Five Worlds. Sensory, playful experiences that spark curiosity, build independence and create joyful memories.',
@@ -99,7 +102,7 @@ export const stageDetails: readonly Stage[] = [
   {
     name: 'Builders I',
     age: '3–5 years',
-    tagline: 'Creating, exploring and making sense of the world.',
+    tagline: 'Exploring, creating and beginning to make sense of the world.',
     motto: 'I explore and create.',
     summary:
       'Hands-on experiences in the Five Worlds that encourage exploration, creativity, questioning and the joy of making.',
@@ -115,7 +118,7 @@ export const stageDetails: readonly Stage[] = [
   {
     name: 'Builders II',
     age: '5–6 years',
-    tagline: 'Questioning, creating and building ideas.',
+    tagline: 'Questioning, creating and turning ideas into something real.',
     motto: 'I investigate and build.',
     summary:
       'Deeper investigations and real-world experiences that develop thinking, collaboration and growing independence.',
@@ -131,7 +134,7 @@ export const stageDetails: readonly Stage[] = [
   {
     name: 'Navigators',
     age: '6–8 years',
-    tagline: 'Growing independence and finding their way.',
+    tagline: 'Growing independence, solving problems and finding their own way.',
     motto: 'I go deeper and find my way.',
     summary:
       'Experiences that build curiosity, resilience and purpose, as children grow into their own independence.',

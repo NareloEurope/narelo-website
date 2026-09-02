@@ -60,14 +60,15 @@ export default function ExperiencesPage() {
           </div>
         </div>
 
-        {/* Facts span the full width so three tiles each get room to breathe. */}
-        <ul className="reveal mt-20 grid gap-10 sm:grid-cols-3 md:gap-14" data-reveal>
+        {/* Facts span the full width so three tiles each get room to breathe.
+            Each sits on a soft sand tint so the numbers read as cards rather
+            than loose text (Vivien, 2026-08-31). */}
+        <ul className="reveal mt-16 grid gap-6 sm:grid-cols-3" data-reveal>
           {format.facts.map((fact) => (
-            <li key={fact.label}>
-              <div className="mb-5 h-px w-full bg-ink/15" aria-hidden="true" />
+            <li key={fact.label} className="rounded-[3px] bg-sand/25 p-7 md:p-8">
               <p className="display text-[clamp(2.75rem,2rem+3vw,4.25rem)] leading-none text-olive">{fact.value}</p>
               <p className="eyebrow mt-4 text-ink">{fact.label}</p>
-              <p className="body-copy mt-3 max-w-xs text-ink-soft">{fact.note}</p>
+              <p className="body-copy mt-3 text-ink-soft">{fact.note}</p>
             </li>
           ))}
         </ul>
@@ -78,10 +79,10 @@ export default function ExperiencesPage() {
           and the Membership page carry short forms that link here. */}
       <section id="worlds" className="bg-forest px-6 py-[var(--spacing-section)] text-linen md:px-10">
         <div className="mx-auto max-w-[1280px]">
-          <div className="mb-20 max-w-2xl fade" data-reveal>
+          <div className="mb-14 max-w-2xl fade" data-reveal>
             <p className="eyebrow mb-8 text-linen/60">{worlds.eyebrow}</p>
             <h2 className="display display-lg mb-8">{worlds.heading}</h2>
-            <p className="lede text-linen/75">{worlds.body}</p>
+            <p className="lede text-linen/85">{worlds.body}</p>
           </div>
 
           <ul className="reveal" data-reveal>
@@ -94,7 +95,7 @@ export default function ExperiencesPage() {
                 <h3 className="display display-md transition-transform duration-700 md:group-hover:translate-x-2">
                   {world.name}
                 </h3>
-                <p className="body-copy max-w-xl text-linen/70">{world.body}</p>
+                <p className="body-copy max-w-xl text-linen/80">{world.body}</p>
               </li>
             ))}
           </ul>
@@ -103,7 +104,7 @@ export default function ExperiencesPage() {
 
       {/* ---------- The journey ---------- */}
       <Section id="journey">
-        <div className="mb-16 max-w-2xl fade" data-reveal>
+        <div className="mb-12 max-w-2xl fade" data-reveal>
           <p className="eyebrow mb-8 text-olive">{stages.eyebrow}</p>
           <h2 className="display display-lg mb-8">{stages.heading}</h2>
           <p className="lede text-ink-soft">{stages.body}</p>
@@ -120,36 +121,46 @@ export default function ExperiencesPage() {
 
       {/* ---------- Through the year ---------- */}
       <Section bg="bg-shell">
-        <div className="mb-16 max-w-2xl fade" data-reveal>
+        <div className="mb-12 max-w-2xl fade" data-reveal>
           <p className="eyebrow mb-8 text-olive">{regular.eyebrow}</p>
-          <h2 className="display display-lg">{regular.heading}</h2>
+          <h2 className="display display-lg mb-8">{regular.heading}</h2>
+          <p className="lede text-ink-soft">{regular.body}</p>
         </div>
 
-        <ul className="reveal grid gap-x-12 gap-y-10 sm:grid-cols-2 lg:grid-cols-3" data-reveal>
-          {regular.items.map((item) => (
-            <li key={item.name}>
-              <div className="mb-5 h-px w-full bg-ink/15" aria-hidden="true" />
-              <h3 className="display text-xl leading-snug">{item.name}</h3>
-              <p className="body-copy mt-3 text-ink-soft">{item.body}</p>
-            </li>
+        {/* Two named groups: what membership already carries, and what can be
+            booked on top of it (Vivien, 2026-08-31). */}
+        <div className="reveal flex flex-col gap-12" data-reveal>
+          {regular.groups.map((group) => (
+            <div key={group.label}>
+              <p className="eyebrow border-t border-ink/15 pt-5 text-ink">{group.label}</p>
+              <ul className="mt-8 grid gap-x-12 gap-y-9 sm:grid-cols-2 lg:grid-cols-3">
+                {group.items.map((item) => (
+                  <li key={item.name}>
+                    <h3 className="display text-xl leading-snug">{item.name}</h3>
+                    <p className="body-copy mt-3 text-ink-soft">{item.body}</p>
+                  </li>
+                ))}
+              </ul>
+            </div>
           ))}
-        </ul>
+        </div>
       </Section>
 
       {/* ---------- Personalised ---------- */}
       <Section>
-        <div className="mb-16 max-w-2xl fade" data-reveal>
+        <div className="mb-12 max-w-2xl fade" data-reveal>
           <p className="eyebrow mb-8 text-olive">{personalised.eyebrow}</p>
           <h2 className="display display-lg mb-8">{personalised.heading}</h2>
           <p className="lede text-ink-soft">{personalised.body}</p>
         </div>
 
-        <ul className="reveal grid gap-x-12 gap-y-10 sm:grid-cols-2 lg:grid-cols-3" data-reveal>
+        {/* Only two cards now, so they take half the row each rather than
+            sitting in a three-up grid with a hole in it. */}
+        <ul className="reveal grid gap-6 sm:grid-cols-2" data-reveal>
           {personalised.items.map((item) => (
-            <li key={item.name}>
-              <div className="mb-5 h-px w-full bg-ink/15" aria-hidden="true" />
-              <h3 className="display text-xl leading-snug">{item.name}</h3>
-              <p className="body-copy mt-3 text-ink-soft">{item.body}</p>
+            <li key={item.name} className="rounded-[3px] bg-sand/25 p-8 md:p-10">
+              <h3 className="display display-md leading-snug">{item.name}</h3>
+              <p className="body-copy mt-4 max-w-sm text-ink-soft">{item.body}</p>
             </li>
           ))}
         </ul>
