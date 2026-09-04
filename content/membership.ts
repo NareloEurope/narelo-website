@@ -28,6 +28,20 @@
  * "Start a conversation".
  */
 
+/**
+ * Anchors for the sticky in-page nav, one per question the page answers.
+ * Lifted out of app/membership/page.tsx so the labels translate with the rest
+ * of the page (Vivien, 2026-09-04). The ids are structural, never translated.
+ */
+export const chapters = [
+  { id: 'what', label: 'What Narelo is' },
+  { id: 'experience', label: 'The experiences' },
+  { id: 'ages', label: 'Age groups' },
+  { id: 'how', label: 'How it works' },
+  { id: 'who', label: 'Who we are' },
+  { id: 'join', label: 'How to join' },
+] as const;
+
 export const hero = {
   eyebrow: 'Membership',
   headingLines: ['Belonging,', 'not booking.'],
@@ -40,6 +54,8 @@ export const whatItIs = {
   eyebrow: 'What Narelo is',
   heading: 'A members’ community built around extraordinary experiences',
   body: 'Narelo is a private members’ club built around extraordinary childhood experiences that help children grow through nature, creativity, movement and real-life adventures, within a membership community where like-minded families grow together.',
+  /** Second paragraph from the Narelo Family Guide (Vivien, 2026-09-04). */
+  body2: 'More than a children’s programme, Narelo is a membership community where children build confidence, independence and meaningful connections, parents continue learning through expert insights, and like-minded families grow together, preparing children to flourish in a world that is constantly changing.',
   pull: 'Children join for the experiences. Families stay for the community.',
   image: '/images/img-1667.webp',
 } as const;
@@ -54,6 +70,37 @@ export const isNot = {
   eyebrow: 'And what it is not',
   items: ['A class', 'A nursery', 'A play centre', 'Another activity'],
   line: 'Narelo is a membership your family belongs to.',
+} as const;
+
+/**
+ * "What makes Narelo different?" from the Narelo Family Guide (Vivien,
+ * 2026-09-04). It existed only in the dossier and now sits here, closing the
+ * trio the page already opens with: what Narelo is, what it is not, and what
+ * makes it different. Numbered because the dossier numbers them.
+ *
+ * Note the overlap with the Narelo Promise on the home page: "A rhythm that
+ * grows with you" and "Known, not just attending" cover the same ground as
+ * "Continuity" and the promise cards, in different words.
+ */
+export const different = {
+  eyebrow: 'What makes Narelo different',
+  items: [
+    {
+      n: '01',
+      title: 'A place to return to',
+      body: 'Not a one-off activity, but a constant across the year: experiences, relationships and shared moments your child comes back to.',
+    },
+    {
+      n: '02',
+      title: 'A rhythm that grows with you',
+      body: 'From one stage to the next, with real continuity, not a new programme to find every year.',
+    },
+    {
+      n: '03',
+      title: 'Known, not just attending',
+      body: 'In small, consistent groups, every child is seen as an individual, not one of many.',
+    },
+  ],
 } as const;
 
 /**
@@ -151,26 +198,45 @@ export const howItWorks = {
 export const included = {
   eyebrow: 'Membership includes',
   heading: 'What does your family actually receive?',
+  image: '/images/gallery-04.webp',
+  /**
+   * The dossier's three, in its final wording: the long titles with the small
+   * line under each. They are rendered as the green cards from the dossier
+   * (PromiseCards) rather than as accordion rows (Vivien, 2026-09-04), and
+   * this is now the only place on the site they appear. The home page's
+   * Narelo Promise went back to the four canonical Promise lines.
+   *
+   * ⚠️ The term-end digital reflection is a dossier fact with no document in
+   * the repo behind it, and "exclusive" is the one word left that reads as
+   * status rather than invitation. Both still need confirming.
+   */
+  cards: [
+    {
+      title: 'Your child’s own educator, in dialogue with you',
+      meta: 'Regular one-to-one conversations',
+      body: 'We get to know what draws your child in, what challenges them and how they grow, and share that journey through regular one-to-one conversations.',
+    },
+    {
+      title: 'Their season, documented and kept',
+      meta: 'An exclusive digital reflection each term',
+      body: 'A beautifully curated, modern digital reflection at the end of each term, capturing meaningful experiences and discoveries to revisit.',
+    },
+    {
+      title: 'The wider Narelo world, growing with you',
+      meta: 'Experiences, guidance and community',
+      body: 'A like-minded member community where children and parents can build meaningful connections over time.',
+    },
+  ],
+  /**
+   * What the cards do not carry. The weekly place and priority booking are
+   * facts the dossier states elsewhere; the second group is available to
+   * members at member rates and is explained once, on the Experiences page.
+   */
   groups: [
     {
-      label: 'Included in your membership',
+      label: 'Also included in your membership',
       items: [
         { title: 'Weekly experiences', body: 'Your child’s regular place in their age group, every week of term.' },
-        {
-          title: 'Your child’s own educator, in dialogue with you',
-          meta: 'Regular one-to-one conversations',
-          body: 'We get to know what draws your child in, what challenges them and how they grow, and share that journey through regular one-to-one conversations.',
-        },
-        {
-          title: 'Their season, documented and kept',
-          meta: 'An exclusive digital reflection each term',
-          body: 'A beautifully curated, modern digital reflection at the end of each term, capturing meaningful experiences and discoveries to revisit.',
-        },
-        {
-          title: 'A private circle of like-minded families',
-          meta: 'Members only, year after year',
-          body: 'A like-minded member community where children and parents can build meaningful connections over time.',
-        },
         { title: 'Priority booking', body: 'First access to experiences, events and limited places before they open more widely.' },
       ],
     },
@@ -205,6 +271,10 @@ export const proof = {
    * their own words moved here with the bios. Quotes supplied verbatim
    * (Vivien, 2026-08-31).
    *
+   * Names, roles and both biographies now come from the Narelo Family Guide
+   * (Vivien, 2026-09-04), replacing the shorter versions the site carried.
+   * The dossier's spaced hyphen in Natalie's last sentence is a comma here.
+   *
    * ⚠️ Natalie's quote opens on "that question" and nothing above it asks
    * one. The line it referred to was not supplied, so it has not been
    * invented: needs either the missing opening line or a reworded first
@@ -219,16 +289,16 @@ export const proof = {
        * decision and is left as "Founder" until it is made.
        */
       name: 'Natalie Curavic',
-      role: 'Founder',
+      role: 'Founder & CEO',
       image: '/images/founder-natalie.webp',
-      body: 'Natalie leads Narelo’s direction and the community around it. She is a mother herself, and Narelo is the kind of childhood she wanted for her own son and could never find.',
+      body: 'Natalie holds an M.A. in Cultural Geography and an MBA from FOM University of Applied Sciences. For more than 15 years, her work in Human Resources has focused on people and what helps them grow and thrive. She is also trained in prenatal yoga. Her own journey into motherhood deepened her understanding of how much belonging, connection and community matter, not only for children, but for parents too.',
       quote: 'Becoming a mother made me ask that question much earlier. In a world shaped by rapid technological change, I wanted children to have real experiences that build curiosity, confidence, independence and connection to the world around them. That idea became Narelo.',
     },
     {
       name: 'Vivien Vörös',
       role: 'Co-founder & Head of Education',
       image: '/images/founder-vivien.webp',
-      body: 'For more than seven years, Vivien has worked as a Special Needs Educator and Therapist, specialising in behavioural disorders and learning disabilities, and later trained as a Speech and Language Therapist. Across nurseries, therapy rooms and one-on-one sessions, her work has always centred on one question: is this child actually being seen?',
+      body: 'Vivien trained in Special Needs Education at Eötvös Loránd University, with further qualifications in Speech and Language Therapy and Complex Movement Therapy. For more than seven years, she has worked across schools, therapy settings and nurseries, always with the same focus: really getting to know each child.',
       quote: 'Some children get noticed. I want Narelo to be the place where every child does.',
     },
   ],

@@ -29,6 +29,11 @@ export const belief = {
   eyebrow: 'Our belief',
   heading: 'Children don’t need more activities. They need a richer childhood.',
   body: 'Between school runs, screens and busy weeks, childhood passes quietly in the background. We think it deserves the foreground: real days, real places, real people, and the time to take them in.',
+  /**
+   * The belief as the Narelo Family Guide states it (Vivien, 2026-09-04). It
+   * existed only in the dossier; it now closes this section as a pull line.
+   */
+  pull: 'We believe the greatest gift we can give children is a childhood that prepares them not just for school, but for a future we cannot yet imagine.',
   image: '/images/home-moment-to-pause.webp',
 } as const;
 
@@ -127,44 +132,25 @@ export const journey = {
 } as const;
 
 /**
- * framework/mission-vision-promise.md — The Narelo Promise.
+ * framework/mission-vision-promise.md — The Narelo Promise, canonical.
  *
- * Merged with the parent dossier's "What does your family actually receive?"
- * cards, so the two say one thing in one place (Vivien, 2026-09-04). `cards`
- * are the dossier's three, in its words and its order; `items` are the two
- * Promise lines the cards do not carry.
- *
- * ⚠️ Two canonical Promise lines are now carried by a card under the
- * dossier's title instead of their own: "Every child is known" reads "Your
- * child is known", and "Belonging, not attendance" reads "Your family
- * belongs". The Promise is canonical and is not normally re-titled, so this
- * needs confirming. "Continuity" and "A protected environment" are untouched.
- *
- * ⚠️ The term-end digital reflection is a dossier fact with no document in
- * the repo behind it. Confirm before launch.
+ * The dossier's three cards briefly lived here and have moved to the
+ * Membership page's "What does your family actually receive?", which is where
+ * the dossier puts them and where they now appear once (Vivien, 2026-09-04).
+ * That also puts the Promise back to its four canonical lines under their own
+ * titles: they had been re-titled to match the cards, which this file flagged
+ * as needing a decision. Do not re-title them again.
  */
 export const promise = {
   eyebrow: 'The Narelo promise',
   heading: 'What every family can expect',
   /** Background photograph for the band. Soft and light, not a hero. */
   image: '/images/membership-beach-background.webp',
-  cards: [
-    {
-      title: 'Your child is known',
-      body: 'We get to know what draws your child in, what challenges them and how they grow, and share that journey through regular one-to-one conversations.',
-    },
-    {
-      title: 'Their journey is captured',
-      body: 'A beautifully curated, modern digital reflection at the end of each term, capturing meaningful experiences and discoveries to revisit.',
-    },
-    {
-      title: 'Your family belongs',
-      body: 'A like-minded member community where children and parents can build meaningful connections over time.',
-    },
-  ],
   items: [
+    { title: 'Every child is known', body: 'Not a name on a register. The educators know what your child is working on, what they find hard, and what they love.' },
     { title: 'Continuity', body: 'The same faces, the same community, year after year. Children build on what came before instead of starting over each term.' },
     { title: 'A protected environment', body: 'We keep groups small and the community carefully held. That is what makes the rest of it possible.' },
+    { title: 'Belonging, not attendance', body: 'Membership is closer to a second family than a place you drop your child off. Families are part of it too.' },
   ],
 } as const;
 

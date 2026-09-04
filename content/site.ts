@@ -67,6 +67,22 @@ export const footerCta = {
   blurb: 'A private members’ club built around extraordinary childhood experiences.',
 } as const;
 
+/**
+ * Interface labels that are not page copy: the menu button, the skip link, the
+ * footer's two column headings. They used to be hardcoded in the components,
+ * which meant they stayed English when the rest of the page did not
+ * (Vivien, 2026-09-04).
+ */
+export const ui = {
+  openMenu: 'Open menu',
+  closeMenu: 'Close menu',
+  skipToContent: 'Skip to main content',
+  footerExplore: 'Explore',
+  footerContact: 'Contact',
+  languageLabel: 'Language',
+  homeLabel: 'home',
+} as const;
+
 export const contact = {
   visitLabel: 'Visit',
   visitName: 'Narelo, Marbella',
