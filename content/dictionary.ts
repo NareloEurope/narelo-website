@@ -10,8 +10,8 @@
  * or misspells one fails the build. A translation that says something
  * different, which is the whole point, does not.
  *
- * ⚠️ The Spanish and Hungarian copy has not been read by a native speaker.
- * It needs that pass before launch.
+ * ⚠️ The Spanish, German and Hungarian copy has not been read by a native
+ * speaker. It needs that pass before launch.
  */
 import * as community from './community';
 import * as experiences from './experiences';
@@ -27,10 +27,11 @@ export const en = { community, experiences, home, membership, pages, site, stage
 
 export type Dict = Translated<typeof en>;
 
+import { de } from './de';
 import { es } from './es';
 import { hu } from './hu';
 
-export const dict: Record<Lang, Dict> = { en, es, hu };
+export const dict: Record<Lang, Dict> = { en, es, de, hu };
 
 /** Everything for one language, in one call. */
 export function content(lang: Lang): Dict {

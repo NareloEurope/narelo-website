@@ -237,7 +237,9 @@ export default function MembershipPage({ lang }: { lang: Lang }) {
             loading="lazy"
             className="h-full w-full object-cover"
           />
-          <div className="absolute inset-0 bg-shell/90" aria-hidden="true" />
+          {/* Washed back to 85%, not 90%: the cards are translucent now, so the
+              photograph needs to be there to show through them. */}
+          <div className="absolute inset-0 bg-shell/85" aria-hidden="true" />
         </div>
 
         <div className="mx-auto max-w-[1280px]">

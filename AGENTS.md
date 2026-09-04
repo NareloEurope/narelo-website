@@ -36,20 +36,20 @@ What is in each content file:
 
 ## Three languages
 
-The site is published in **English (default), Spanish and Hungarian**.
+The site is published in **English (default), Spanish, German and Hungarian**, in that order in the selector.
 
 - English lives at the plain URLs (`/`, `/membership/`) and the English files in
   `content/*.ts` stay the source of truth. Edit those exactly as before.
-- Spanish is `/es/...` and its copy is one file: **`content/es/index.ts`**.
-- Hungarian is `/hu/...` and its copy is one file: **`content/hu/index.ts`**.
-- The two translation files mirror the English key for key. `content/dictionary.ts`
+- Spanish is `/es/...`, German `/de/...`, Hungarian `/hu/...`. Each is one file:
+  **`content/es/index.ts`**, **`content/de/index.ts`**, **`content/hu/index.ts`**.
+- The three translation files mirror the English key for key. `content/dictionary.ts`
   derives the shape from the English, so **a missing or misspelled key fails the
-  build**. When you add a key to an English file, add it to both translations.
+  build**. When you add a key to an English file, add it to all three.
 - Brand names are **not translated**: Narelo, the Five Worlds, the age group
   names, Signature Saturdays, Holiday Experiences, Expert Insights, Community
   Mornings, Narelo Experiences.
-- ⚠️ **Neither translation has been read by a native speaker.** They need that
-  pass before launch.
+- ⚠️ **No translation has been read by a native speaker.** They need that pass
+  before launch. German uses "Sie"; Spanish and Hungarian are informal.
 
 ## The editable surface
 

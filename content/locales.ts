@@ -1,15 +1,17 @@
 /**
- * The three languages the site is published in (Vivien, 2026-09-04).
+ * The four languages the site is published in (Vivien, 2026-09-04).
+ * The order here is the order the selector shows them in.
  *
  * English is the default and keeps the plain URLs: `/`, `/membership/`.
  * The other two sit under a prefix: `/es/membership/`, `/hu/membership/`.
  * Path segments stay in English on purpose, so a link shared between
  * languages still resolves and nobody has to maintain three sets of routes.
  *
- * ⚠️ The Spanish and Hungarian copy in `content/es/` and `content/hu/` has not
- * been read by a native speaker. It needs that pass before launch.
+ * ⚠️ The Spanish, German and Hungarian copy in `content/es/`, `content/de/`
+ * and `content/hu/` has not been read by a native speaker. It needs that pass
+ * before launch.
  */
-export const LANGS = ['en', 'es', 'hu'] as const;
+export const LANGS = ['en', 'es', 'de', 'hu'] as const;
 
 export type Lang = (typeof LANGS)[number];
 
@@ -21,6 +23,7 @@ export const PREFIXED_LANGS = LANGS.filter((l) => l !== DEFAULT_LANG);
 export const LANG_META: Record<Lang, { short: string; name: string; htmlLang: string; ogLocale: string }> = {
   en: { short: 'EN', name: 'English', htmlLang: 'en', ogLocale: 'en_GB' },
   es: { short: 'ES', name: 'Español', htmlLang: 'es', ogLocale: 'es_ES' },
+  de: { short: 'DE', name: 'Deutsch', htmlLang: 'de', ogLocale: 'de_DE' },
   hu: { short: 'HU', name: 'Magyar', htmlLang: 'hu', ogLocale: 'hu_HU' },
 };
 
