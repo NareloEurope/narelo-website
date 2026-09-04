@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Section from '@/components/Section';
 import LazyVideo from '@/components/LazyVideo';
 import WorldsExplorer from '@/components/WorldsExplorer';
+import PromiseIcon from '@/components/PromiseIcons';
 import { contact } from '@/content/site';
 import { hero, belief, statement, shape, worlds, journey, promise, home, closing } from '@/content/home';
 
@@ -173,24 +174,61 @@ export default function HomePage() {
         </div>
       </Section>
 
-      {/* ---------- The promise ---------- */}
-      <Section bg="bg-shell">
-        <div className="grid gap-16 md:grid-cols-[0.85fr_1.15fr] md:gap-24">
-          <div className="fade md:sticky md:top-32 md:self-start" data-reveal>
+      {/*
+       * ---------- The promise ----------
+       *
+       * The dossier's three cards and the Promise in one section (2026-09-04).
+       * The band was a plain two-column list before: it now carries a soft
+       * photograph washed back under linen, so it has some depth without
+       * turning into another dark band, and the three cards sit on it in
+       * forest green the way the dossier sets them.
+       */}
+      <section className="relative isolate overflow-hidden px-6 py-[var(--spacing-section)] md:px-10">
+        <div className="absolute inset-0 -z-10">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={promise.image}
+            alt=""
+            width={1800}
+            height={820}
+            loading="lazy"
+            className="h-full w-full object-cover"
+          />
+          {/* Washed almost out: texture and warmth, not a picture to look at. */}
+          <div className="absolute inset-0 bg-shell/90" aria-hidden="true" />
+        </div>
+
+        <div className="mx-auto max-w-[1280px]">
+          <div className="mb-14 max-w-2xl fade" data-reveal>
             <p className="eyebrow mb-8 text-olive">{promise.eyebrow}</p>
             <h2 className="display display-lg">{promise.heading}</h2>
           </div>
 
-          <ul className="reveal" data-reveal>
+          <ul className="reveal grid gap-6 md:grid-cols-3" data-reveal>
+            {promise.cards.map((card, i) => (
+              <li
+                key={card.title}
+                className="flex flex-col rounded-[2px] bg-forest p-9 text-linen shadow-[0_18px_40px_-24px_rgba(43,32,24,0.5)]"
+              >
+                <PromiseIcon index={i} className="mb-8 h-14 w-14 text-linen/70" />
+                <h3 className="display text-2xl leading-snug">{card.title}</h3>
+                <div className="mt-5 h-px w-12 bg-linen/30" aria-hidden="true" />
+                <p className="body-copy mt-5 text-linen/85">{card.body}</p>
+              </li>
+            ))}
+          </ul>
+
+          {/* The two Promise lines the cards do not carry, kept as they were. */}
+          <ul className="reveal mt-14 grid gap-10 border-t border-ink/15 pt-10 md:grid-cols-2 md:gap-16" data-reveal>
             {promise.items.map((item) => (
-              <li key={item.title} className="border-t border-ink/12 py-8 first:border-t-0 first:pt-0">
+              <li key={item.title}>
                 <h3 className="display display-md mb-4">{item.title}</h3>
                 <p className="body-copy max-w-lg text-ink-soft">{item.body}</p>
               </li>
             ))}
           </ul>
         </div>
-      </Section>
+      </section>
 
       {/* ---------- Marbella ---------- */}
       <section className="relative isolate flex min-h-[85svh] items-end overflow-hidden">
