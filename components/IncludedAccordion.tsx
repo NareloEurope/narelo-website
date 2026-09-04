@@ -3,7 +3,12 @@
 import { useState } from 'react';
 import Link from 'next/link';
 
-type Item = { readonly title: string; readonly body?: string };
+type Item = {
+  readonly title: string;
+  /** The small line the dossier prints under a title, e.g. "Members only, year after year". */
+  readonly meta?: string;
+  readonly body?: string;
+};
 type Group = {
   readonly label: string;
   readonly items: readonly Item[];
@@ -83,6 +88,7 @@ export default function IncludedAccordion({ groups }: { groups: readonly Group[]
                     }}
                   >
                     <div className="overflow-hidden">
+                      {item.meta && <p className="eyebrow mb-4 text-olive">{item.meta}</p>}
                       <p className="body-copy max-w-xl pb-7 text-ink-soft">{item.body}</p>
                     </div>
                   </div>

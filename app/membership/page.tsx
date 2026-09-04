@@ -219,6 +219,7 @@ export default function MembershipPage() {
 
             <div className="mt-14 border-t border-ink/12 pt-10">
               <p className="eyebrow mb-8 text-olive">{included.eyebrow}</p>
+              <h3 className="display display-md mb-10">{included.heading}</h3>
               <IncludedAccordion groups={included.groups} />
             </div>
           </div>
