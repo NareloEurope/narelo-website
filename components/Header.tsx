@@ -3,7 +3,9 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
-import { nav, headerCta, site, contact } from '@/content/site';
+import LanguageSelector from '@/components/LanguageSelector';
+import { content } from '@/content/dictionary';
+import { langFromPath, localePath } from '@/content/locales';
 
 /**
  * Sits transparently over a page's hero and resolves into a solid bar once you
@@ -12,6 +14,14 @@ import { nav, headerCta, site, contact } from '@/content/site';
  */
 export default function Header() {
   const pathname = usePathname();
+  /*
+   * The language comes from the URL rather than a prop: the header sits in the
+   * root layout, which does not know which locale tree it is rendering, and
+   * the path already says. Everything below reads from that language's copy.
+   */
+  const lang = langFromPath(pathname);
+  const { nav, headerCta, site, contact, ui } = content(lang).site;
+  const t = (path: string) => localePath(lang, path);
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   /**
@@ -74,7 +84,7 @@ export default function Header() {
         />
       )}
       <div className="mx-auto flex max-w-[1560px] items-center justify-between px-6 md:px-10">
-        <Link href="/" aria-label={`${site.name}, home`} className="relative z-10 shrink-0">
+        <Link href={t('/')} aria-label={`${site.name}, ${ui.homeLabel}`} className="relative z-10 shrink-0">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/images/narelo-logo.webp"
@@ -91,7 +101,7 @@ export default function Header() {
           {nav.map((item) => (
             <Link
               key={item.href}
-              href={item.href}
+              href={t(item.href)}
               aria-current={isActive(item.href) ? 'page' : undefined}
               className="group relative text-[0.82rem] font-light tracking-[0.06em] transition-opacity hover:opacity-70"
             >
@@ -113,6 +123,7 @@ export default function Header() {
           >
             {headerCta.label}
           </a>
+          <LanguageSelector current={lang} pathname={pathname} light={light} />
         </nav>
 
         <button
@@ -120,7 +131,7 @@ export default function Header() {
           onClick={() => setOpen((v) => !v)}
           aria-expanded={open}
           aria-controls="mobile-nav"
-          aria-label={open ? 'Close menu' : 'Open menu'}
+          aria-label={open ? ui.closeMenu : ui.openMenu}
           className="relative z-10 -mr-2 flex h-11 w-11 flex-col items-center justify-center gap-[6px] lg:hidden"
         >
           <span
@@ -152,7 +163,7 @@ export default function Header() {
           {nav.map((item, i) => (
             <Link
               key={item.href}
-              href={item.href}
+              href={t(item.href)}
               className="display display-md border-b border-ink/10 py-5 text-ink"
               style={{ transitionDelay: `${i * 40}ms` }}
             >
@@ -163,6 +174,7 @@ export default function Header() {
         <a href={contact.whatsapp} target="_blank" rel="noreferrer noopener" className="btn btn-solid mt-10 w-full">
           {headerCta.label}
         </a>
+        <LanguageSelector current={lang} pathname={pathname} className="mt-10 justify-center" />
       </div>
     </>
   );

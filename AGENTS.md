@@ -34,6 +34,23 @@ What is in each content file:
 - **`content/pages.ts`**, `contactPage` (including the form fields), `journalPage`, `eventsPage`
 - **`content/site.ts`**, `site`, `nav`, `headerCta`, `contact`, `socialIcons`
 
+## Three languages
+
+The site is published in **English (default), Spanish and Hungarian**.
+
+- English lives at the plain URLs (`/`, `/membership/`) and the English files in
+  `content/*.ts` stay the source of truth. Edit those exactly as before.
+- Spanish is `/es/...` and its copy is one file: **`content/es/index.ts`**.
+- Hungarian is `/hu/...` and its copy is one file: **`content/hu/index.ts`**.
+- The two translation files mirror the English key for key. `content/dictionary.ts`
+  derives the shape from the English, so **a missing or misspelled key fails the
+  build**. When you add a key to an English file, add it to both translations.
+- Brand names are **not translated**: Narelo, the Five Worlds, the age group
+  names, Signature Saturdays, Holiday Experiences, Expert Insights, Community
+  Mornings, Narelo Experiences.
+- ⚠️ **Neither translation has been read by a native speaker.** They need that
+  pass before launch.
+
 ## The editable surface
 
 The design and the words are kept apart on purpose.

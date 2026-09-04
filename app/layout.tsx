@@ -3,12 +3,14 @@ import { Cormorant_Garamond, Jost } from 'next/font/google';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Motion from '@/components/Motion';
+import HtmlLang from '@/components/HtmlLang';
+import SkipLink from '@/components/SkipLink';
 import { site } from '@/content/site';
 import './globals.css';
 
 /** Display face. Kept from the original brand — it was the one thing Wix got right. */
 const cormorant = Cormorant_Garamond({
-  subsets: ['latin'],
+  subsets: ['latin', 'latin-ext'],
   weight: ['300', '400', '500'],
   style: ['normal', 'italic'],
   variable: '--font-cormorant',
@@ -17,7 +19,7 @@ const cormorant = Cormorant_Garamond({
 
 /** Geometric sans for labels, navigation and body — quiet next to the serif. */
 const jost = Jost({
-  subsets: ['latin'],
+  subsets: ['latin', 'latin-ext'],
   weight: ['300', '400', '500'],
   variable: '--font-jost',
   display: 'swap',
@@ -46,12 +48,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang={site.locale} className={`${cormorant.variable} ${jost.variable}`}>
       <body>
-        <a
-          href="#main"
-          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-full focus:bg-forest focus:px-5 focus:py-3 focus:text-sm focus:text-linen"
-        >
-          Skip to main content
-        </a>
+        <SkipLink />
+        <HtmlLang />
         <Header />
         <main id="main">{children}</main>
         <Footer />

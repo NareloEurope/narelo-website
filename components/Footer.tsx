@@ -1,7 +1,18 @@
+'use client';
+
 import Link from 'next/link';
-import { site, nav, contact, socialIcons, footerCta } from '@/content/site';
+import { usePathname } from 'next/navigation';
+import LanguageSelector from '@/components/LanguageSelector';
+import { content } from '@/content/dictionary';
+import { langFromPath, localePath } from '@/content/locales';
 
 export default function Footer() {
+  /* Same as the header: the language comes from the URL, not a prop. */
+  const pathname = usePathname();
+  const lang = langFromPath(pathname);
+  const { site, nav, contact, socialIcons, footerCta, ui } = content(lang).site;
+  const t = (path: string) => localePath(lang, path);
+
   return (
     <footer className="bg-forest text-linen">
       <div className="mx-auto max-w-[1560px] px-6 py-20 md:px-10 md:py-24">
@@ -28,11 +39,11 @@ export default function Footer() {
           </div>
 
           <nav aria-label="Footer">
-            <h2 className="eyebrow mb-5 text-linen/70">Explore</h2>
+            <h2 className="eyebrow mb-5 text-linen/70">{ui.footerExplore}</h2>
             <ul className="flex flex-col gap-3">
               {nav.map((item) => (
                 <li key={item.href}>
-                  <Link href={item.href} className="body-copy text-linen/85 transition-opacity hover:opacity-60">
+                  <Link href={t(item.href)} className="body-copy text-linen/85 transition-opacity hover:opacity-60">
                     {item.label}
                   </Link>
                 </li>
@@ -41,7 +52,7 @@ export default function Footer() {
           </nav>
 
           <div>
-            <h2 className="eyebrow mb-5 text-linen/70">Contact</h2>
+            <h2 className="eyebrow mb-5 text-linen/70">{ui.footerContact}</h2>
             <ul className="flex flex-col gap-3">
               <li>
                 <a href={contact.emailHref} className="body-copy text-linen/85 transition-opacity hover:opacity-60">
@@ -95,7 +106,12 @@ export default function Footer() {
           </div>
         </div>
 
-        <p className="body-copy mt-14 text-xs text-linen/65">{site.copyright}</p>
+        <div className="mt-14 flex flex-wrap items-center justify-between gap-6">
+          <p className="body-copy text-xs text-linen/65">{site.copyright}</p>
+          {/* Second, quieter place to change language, for anyone who has
+              scrolled past the header. */}
+          <LanguageSelector current={lang} pathname={pathname} light />
+        </div>
       </div>
     </footer>
   );

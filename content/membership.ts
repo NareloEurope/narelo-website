@@ -28,6 +28,20 @@
  * "Start a conversation".
  */
 
+/**
+ * Anchors for the sticky in-page nav, one per question the page answers.
+ * Lifted out of app/membership/page.tsx so the labels translate with the rest
+ * of the page (Vivien, 2026-09-04). The ids are structural, never translated.
+ */
+export const chapters = [
+  { id: 'what', label: 'What Narelo is' },
+  { id: 'experience', label: 'The experiences' },
+  { id: 'ages', label: 'Age groups' },
+  { id: 'how', label: 'How it works' },
+  { id: 'who', label: 'Who we are' },
+  { id: 'join', label: 'How to join' },
+] as const;
+
 export const hero = {
   eyebrow: 'Membership',
   headingLines: ['Belonging,', 'not booking.'],
