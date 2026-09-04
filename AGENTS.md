@@ -79,7 +79,7 @@ On the business itself:
 - Marbella is **"our first Narelo home"**, never "a Marbella business"
 - Narelo is a **membership and a community**, never a class, nursery, play centre, school, or "a collection of sessions"
 - The name is **Narelo**. Never Norello, never Naralo.
-- The only public founder faces are **Natalie** (Founder) and **Vivien Vörös** (Co-founder & Head of Education). No one else appears on the site as a founder or a public face. They appear in **one place only**: the "Who we are" section of the Membership page (`proof` in `content/membership.ts`). The home page's founders section was removed, do not re-add it.
+- The only public founder faces are **Natalie Curavic** (Founder) and **Vivien Vörös** (Co-founder & Head of Education). Her full name comes from the Narelo Family Guide; the dossier's "Founder & CEO" is not yet on the site. No one else appears on the site as a founder or a public face. They appear in **one place only**: the "Who we are" section of the Membership page (`proof` in `content/membership.ts`). The home page's founders section was removed, do not re-add it.
 - The approved public wording for the opening is **"Our first Narelo home will open in Marbella this autumn."**
 - The messaging stage has moved from *Emotion & Curiosity* to **Understanding & Desire**. Copy must build understanding of what Narelo actually is, not just evoke a feeling.
 - **Never invent or guess a source** for any research or educational claim. If a source cannot be verified, say so rather than citing it.
