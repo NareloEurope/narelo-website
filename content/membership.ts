@@ -212,7 +212,13 @@ export const proof = {
    */
   people: [
     {
-      name: 'Natalie',
+      /*
+       * Full name, from the Narelo Family Guide (Vivien, 2026-09-04): the site
+       * said "Natalie" while Vivien carried a surname, and the dossier prints
+       * both in full. Her role there reads "Founder & CEO"; that is a separate
+       * decision and is left as "Founder" until it is made.
+       */
+      name: 'Natalie Curavic',
       role: 'Founder',
       image: '/images/founder-natalie.webp',
       body: 'Natalie leads Narelo’s direction and the community around it. She is a mother herself, and Narelo is the kind of childhood she wanted for her own son and could never find.',
