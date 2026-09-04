@@ -51,7 +51,9 @@ export default function HomePage() {
           <div className="fade" data-reveal>
             <p className="eyebrow mb-8 text-olive">{belief.eyebrow}</p>
             <h2 className="display display-lg mb-8 max-w-lg">{belief.heading}</h2>
-            <p className="lede max-w-md text-ink-soft">{belief.body}</p>
+            <p className="lede mb-10 max-w-md text-ink-soft">{belief.body}</p>
+            {/* The belief as the dossier states it, closing the section. */}
+            <p className="display display-md max-w-lg italic text-olive">{belief.pull}</p>
           </div>
           <div className="img-settle overflow-hidden rounded-[2px]" data-reveal>
             {/* eslint-disable-next-line @next/next/no-img-element */}

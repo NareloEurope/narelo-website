@@ -3,7 +3,7 @@ import LazyVideo from '@/components/LazyVideo';
 import { contact } from '@/content/site';
 import StageAccordion from '@/components/StageAccordion';
 import { stageDetails } from '@/content/stages';
-import { hero, format, worlds, stages, regular, personalised, closing } from '@/content/experiences';
+import { hero, format, spark, worlds, stages, regular, personalised, closing } from '@/content/experiences';
 
 export const metadata = {
   title: 'Experiences',
@@ -43,7 +43,9 @@ export default function ExperiencesPage() {
           <div className="fade" data-reveal>
             <p className="eyebrow mb-8 text-olive">{format.eyebrow}</p>
             <h2 className="display display-lg mb-8">{format.heading}</h2>
-            <p className="lede mb-12 max-w-md text-ink-soft">{format.body}</p>
+            <p className="lede mb-6 max-w-md text-ink-soft">{format.body}</p>
+            <p className="body-copy mb-6 max-w-md text-ink-soft">{format.body2}</p>
+            <p className="body-copy mb-12 max-w-md text-ink-soft">{format.body3}</p>
             <p className="body-copy text-ink-soft">{format.note}</p>
           </div>
 
@@ -72,6 +74,37 @@ export default function ExperiencesPage() {
             </li>
           ))}
         </ul>
+
+        <p className="display display-md mt-16 max-w-3xl italic text-olive fade" data-reveal>
+          {format.pull}
+        </p>
+      </Section>
+
+      {/*
+       * ---------- It can start with something this small ----------
+       *
+       * From the dossier (2026-09-04), where it sits between the shape of an
+       * experience and the age groups. A real sequence, so the steps are
+       * numbered and the line that closes it does exactly that.
+       */}
+      <Section bg="bg-shell">
+        <div className="mb-14 max-w-2xl fade" data-reveal>
+          <p className="eyebrow mb-8 text-olive">{spark.eyebrow}</p>
+          <h2 className="display display-lg">{spark.heading}</h2>
+        </div>
+
+        <ol className="reveal grid gap-8 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6" data-reveal>
+          {spark.steps.map((step, i) => (
+            <li key={step} className="border-t border-ink/15 pt-5">
+              <span className="eyebrow text-olive">{String(i + 1).padStart(2, '0')}</span>
+              <p className="display display-md mt-3">{step}</p>
+            </li>
+          ))}
+        </ol>
+
+        <p className="display display-md mt-14 max-w-2xl italic text-ink fade" data-reveal>
+          {spark.closing}
+        </p>
       </Section>
 
       {/* ---------- The Five Worlds ----------
@@ -121,20 +154,10 @@ export default function ExperiencesPage() {
 
       {/* ---------- Through the year ---------- */}
       <Section bg="bg-shell">
-        {/*
-         * Quote beside the opening rather than above it, the way the parent
-         * dossier sets this section (2026-09-04): the line and the paragraph
-         * it belongs to sit on one row on desktop, stacked on a phone.
-         */}
-        <div className="mb-12 grid gap-10 fade md:grid-cols-2 md:gap-16" data-reveal>
-          <div>
-            <p className="eyebrow mb-8 text-olive">{regular.eyebrow}</p>
-            <p className="lede italic text-ink-soft">{regular.quote}</p>
-          </div>
-          <div>
-            <h2 className="display display-lg mb-8">{regular.heading}</h2>
-            <p className="body-copy text-ink-soft">{regular.body}</p>
-          </div>
+        <div className="mb-12 max-w-2xl fade" data-reveal>
+          <p className="eyebrow mb-8 text-olive">{regular.eyebrow}</p>
+          <h2 className="display display-lg mb-8">{regular.heading}</h2>
+          <p className="lede text-ink-soft">{regular.body}</p>
         </div>
 
         {/* Two named groups: what membership already carries, and what can be

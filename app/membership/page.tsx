@@ -13,6 +13,7 @@ import {
   ageGroups,
   howItWorks,
   included,
+  different,
   proof,
   joining,
   closing,
@@ -87,7 +88,8 @@ export default function MembershipPage() {
           <div className="fade" data-reveal>
             <p className="eyebrow mb-8 text-olive">{whatItIs.eyebrow}</p>
             <h2 className="display display-lg mb-8">{whatItIs.heading}</h2>
-            <p className="lede mb-10 text-ink-soft">{whatItIs.body}</p>
+            <p className="lede mb-6 text-ink-soft">{whatItIs.body}</p>
+            <p className="body-copy mb-10 text-ink-soft">{whatItIs.body2}</p>
             <p className="display display-md italic text-olive">{whatItIs.pull}</p>
           </div>
           <div className="img-settle overflow-hidden rounded-[2px]" data-reveal>
@@ -114,6 +116,20 @@ export default function MembershipPage() {
             ))}
           </ul>
           <p className="display display-md mt-10 italic text-ink">{isNot.line}</p>
+        </div>
+
+        {/* And what makes it different, closing the trio (2026-09-04). */}
+        <div className="mt-16 border-t border-ink/12 pt-12 fade" data-reveal>
+          <p className="eyebrow mb-10 text-olive">{different.eyebrow}</p>
+          <ul className="reveal grid gap-10 md:grid-cols-3 md:gap-12" data-reveal>
+            {different.items.map((item) => (
+              <li key={item.n}>
+                <span className="eyebrow text-olive">{item.n}</span>
+                <h3 className="display display-md mt-3">{item.title}</h3>
+                <p className="body-copy mt-4 text-ink-soft">{item.body}</p>
+              </li>
+            ))}
+          </ul>
         </div>
       </Section>
 

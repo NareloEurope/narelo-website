@@ -30,6 +30,14 @@ export const format = {
   eyebrow: 'The shape of an experience',
   heading: 'Ninety minutes, a small circle, and somewhere real',
   body: 'Experiences happen in our Marbella home and well beyond it: the beach, the forest, and the places where everyday life actually happens. Nothing is rushed and nothing is filler.',
+  /**
+   * Two paragraphs and the pull line from the Narelo Family Guide (Vivien,
+   * 2026-09-04). All three existed only in the dossier. The dossier's spaced
+   * hyphen before "always with purpose" is a comma here.
+   */
+  body2: 'Children explore, move, question, build, create and solve together, guided by educators who know when to support and when to give them space to find their own way.',
+  body3: 'We believe children need both: a strong connection to the real world and the confidence to navigate the world ahead. That is why nature, movement and real-life experiences can meet creativity, robotics and AI, always with purpose.',
+  pull: 'Rooted in the real world. Ready for the world ahead.',
   facts: [
     { value: '90', label: 'minutes together', note: 'Long enough to settle, explore properly and come back to yourself.' },
     { value: '~8', label: 'children in a group', note: 'Small enough that every child is known by name, not managed as a crowd.' },
@@ -37,6 +45,22 @@ export const format = {
   ],
   note: 'Younger groups may include a parent. Older children come on their own.',
   image: '/images/img-5211.webp',
+} as const;
+
+/**
+ * "It can start with something this small" from the Narelo Family Guide
+ * (Vivien, 2026-09-04). It existed only in the dossier.
+ *
+ * A real sequence, so the steps are numbered and read in order. The closing
+ * line used to sit beside "Beyond the weekly experience" further down the
+ * page; the dossier uses it to close this sequence, which is where it belongs,
+ * so it has moved here and `regular` no longer carries it.
+ */
+export const spark = {
+  eyebrow: 'It can start with something this small',
+  heading: 'A child discovers something unexpected',
+  steps: ['We stop', 'We look closer', 'We wonder together', 'Curiosity becomes discovery'],
+  closing: 'A small moment can become the starting point for something much bigger.',
 } as const;
 
 /**
@@ -95,9 +119,12 @@ export const stages = {
  * dropped in the same pass.
  *
  * Aligned with the parent dossier (Vivien, 2026-09-04): the opening paragraph,
- * the pull quote beside it, the second group's label and its "and more to
- * come" aside, and the note about the experts are the dossier's own sentences.
- * The dossier's em dashes are commas here, per house style.
+ * the second group's label and its "and more to come" aside, and the note
+ * about the experts are the dossier's own sentences. The dossier's em dashes
+ * are commas here, per house style.
+ *
+ * The pull quote that briefly sat beside this heading has moved to `spark`,
+ * where the dossier puts it.
  *
  * ⚠️ "Every month" is a frequency the site has not stated before and is not
  * backed by a document in the repo. Confirm before launch.
@@ -105,7 +132,6 @@ export const stages = {
 export const regular = {
   eyebrow: 'Through the year',
   heading: 'Beyond the weekly experience',
-  quote: 'A small moment can become the starting point for something much bigger.',
   body: 'Membership reaches beyond your child’s weekly experiences. We come together regularly as a community, parents and children alike, and you have continuous access to our own experts. A place to keep learning about parenthood and about yourselves as a family.',
   note: 'Every month, our own experts open a session to you: yours, as part of the membership. When we invite specialists from outside, members are always seated at member rates.',
   groups: [

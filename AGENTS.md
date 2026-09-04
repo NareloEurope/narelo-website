@@ -27,8 +27,8 @@ Header, footer, navigation, contact details and social links are global and live
 What is in each content file:
 
 - **`content/home.ts`**, `hero`, `belief`, `statement`, `shape`, `worlds`, `journey`, `promise`, `home`, `closing`
-- **`content/membership.ts`**, `hero`, `whatItIs`, `isNot`, `childExperience`, `practice`, `ageGroups`, `howItWorks`, `included`, `joining`, `closing`
-- **`content/experiences.ts`**, `hero`, `format`, `worlds`, `stages`, `regular`, `personalised`, `closing`
+- **`content/membership.ts`**, `hero`, `whatItIs`, `isNot`, `different`, `childExperience`, `practice`, `ageGroups`, `howItWorks`, `included`, `joining`, `closing`
+- **`content/experiences.ts`**, `hero`, `format`, `spark`, `worlds`, `stages`, `regular`, `personalised`, `closing`
 - **`content/community.ts`**, `hero`, `testimonials`, `gallery`, `belong`, `events`, `journalTeaser`
 - **`content/stages.ts`**, `stageDetails`: the age-group rows (name, age, motto, summary, what to expect, photo). Shared by Membership *and* Experiences, so editing a stage changes both pages.
 - **`content/pages.ts`**, `contactPage` (including the form fields), `journalPage`, `eventsPage`
@@ -79,7 +79,7 @@ On the business itself:
 - Marbella is **"our first Narelo home"**, never "a Marbella business"
 - Narelo is a **membership and a community**, never a class, nursery, play centre, school, or "a collection of sessions"
 - The name is **Narelo**. Never Norello, never Naralo.
-- The only public founder faces are **Natalie Curavic** (Founder) and **Vivien Vörös** (Co-founder & Head of Education). Her full name comes from the Narelo Family Guide; the dossier's "Founder & CEO" is not yet on the site. No one else appears on the site as a founder or a public face. They appear in **one place only**: the "Who we are" section of the Membership page (`proof` in `content/membership.ts`). The home page's founders section was removed, do not re-add it.
+- The only public founder faces are **Natalie Curavic** (Founder & CEO) and **Vivien Vörös** (Co-founder & Head of Education). Names, roles and both biographies come from the Narelo Family Guide. No one else appears on the site as a founder or a public face. They appear in **one place only**: the "Who we are" section of the Membership page (`proof` in `content/membership.ts`). The home page's founders section was removed, do not re-add it.
 - The approved public wording for the opening is **"Our first Narelo home will open in Marbella this autumn."**
 - The messaging stage has moved from *Emotion & Curiosity* to **Understanding & Desire**. Copy must build understanding of what Narelo actually is, not just evoke a feeling.
 - **Never invent or guess a source** for any research or educational claim. If a source cannot be verified, say so rather than citing it.
