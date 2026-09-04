@@ -2,7 +2,6 @@ import Link from 'next/link';
 import Section from '@/components/Section';
 import LazyVideo from '@/components/LazyVideo';
 import WorldsExplorer from '@/components/WorldsExplorer';
-import PromiseIcon from '@/components/PromiseIcons';
 import { content } from '@/content/dictionary';
 import { localePath, type Lang } from '@/content/locales';
 
@@ -178,11 +177,10 @@ export default function HomePage({ lang }: { lang: Lang }) {
       {/*
        * ---------- The promise ----------
        *
-       * The dossier's three cards and the Promise in one section (2026-09-04).
-       * The band was a plain two-column list before: it now carries a soft
-       * photograph washed back under linen, so it has some depth without
-       * turning into another dark band, and the three cards sit on it in
-       * forest green the way the dossier sets them.
+       * The Narelo Promise, canonical, on a soft photograph washed back under
+       * linen so the band has depth without turning dark (2026-09-04). The
+       * dossier's three cards briefly sat here and now live once, on the
+       * Membership page.
        */}
       <section className="relative isolate overflow-hidden px-6 py-[var(--spacing-section)] md:px-10">
         <div className="absolute inset-0 -z-10">
@@ -205,22 +203,8 @@ export default function HomePage({ lang }: { lang: Lang }) {
             <h2 className="display display-lg">{promise.heading}</h2>
           </div>
 
-          <ul className="reveal grid gap-6 md:grid-cols-3" data-reveal>
-            {promise.cards.map((card, i) => (
-              <li
-                key={card.title}
-                className="flex flex-col rounded-[2px] bg-forest p-9 text-linen shadow-[0_18px_40px_-24px_rgba(43,32,24,0.5)]"
-              >
-                <PromiseIcon index={i} className="mb-8 h-14 w-14 text-linen/70" />
-                <h3 className="display text-2xl leading-snug">{card.title}</h3>
-                <div className="mt-5 h-px w-12 bg-linen/30" aria-hidden="true" />
-                <p className="body-copy mt-5 text-linen/85">{card.body}</p>
-              </li>
-            ))}
-          </ul>
-
-          {/* The two Promise lines the cards do not carry, kept as they were. */}
-          <ul className="reveal mt-14 grid gap-10 border-t border-ink/15 pt-10 md:grid-cols-2 md:gap-16" data-reveal>
+          {/* The four canonical Promise lines, two up. */}
+          <ul className="reveal grid gap-10 md:grid-cols-2 md:gap-x-16 md:gap-y-12" data-reveal>
             {promise.items.map((item) => (
               <li key={item.title}>
                 <h3 className="display display-md mb-4">{item.title}</h3>

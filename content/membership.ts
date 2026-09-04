@@ -198,26 +198,45 @@ export const howItWorks = {
 export const included = {
   eyebrow: 'Membership includes',
   heading: 'What does your family actually receive?',
+  image: '/images/gallery-04.webp',
+  /**
+   * The dossier's three, in its final wording: the long titles with the small
+   * line under each. They are rendered as the green cards from the dossier
+   * (PromiseCards) rather than as accordion rows (Vivien, 2026-09-04), and
+   * this is now the only place on the site they appear. The home page's
+   * Narelo Promise went back to the four canonical Promise lines.
+   *
+   * ⚠️ The term-end digital reflection is a dossier fact with no document in
+   * the repo behind it, and "exclusive" is the one word left that reads as
+   * status rather than invitation. Both still need confirming.
+   */
+  cards: [
+    {
+      title: 'Your child’s own educator, in dialogue with you',
+      meta: 'Regular one-to-one conversations',
+      body: 'We get to know what draws your child in, what challenges them and how they grow, and share that journey through regular one-to-one conversations.',
+    },
+    {
+      title: 'Their season, documented and kept',
+      meta: 'An exclusive digital reflection each term',
+      body: 'A beautifully curated, modern digital reflection at the end of each term, capturing meaningful experiences and discoveries to revisit.',
+    },
+    {
+      title: 'The wider Narelo world, growing with you',
+      meta: 'Experiences, guidance and community',
+      body: 'A like-minded member community where children and parents can build meaningful connections over time.',
+    },
+  ],
+  /**
+   * What the cards do not carry. The weekly place and priority booking are
+   * facts the dossier states elsewhere; the second group is available to
+   * members at member rates and is explained once, on the Experiences page.
+   */
   groups: [
     {
-      label: 'Included in your membership',
+      label: 'Also included in your membership',
       items: [
         { title: 'Weekly experiences', body: 'Your child’s regular place in their age group, every week of term.' },
-        {
-          title: 'Your child’s own educator, in dialogue with you',
-          meta: 'Regular one-to-one conversations',
-          body: 'We get to know what draws your child in, what challenges them and how they grow, and share that journey through regular one-to-one conversations.',
-        },
-        {
-          title: 'Their season, documented and kept',
-          meta: 'An exclusive digital reflection each term',
-          body: 'A beautifully curated, modern digital reflection at the end of each term, capturing meaningful experiences and discoveries to revisit.',
-        },
-        {
-          title: 'A private circle of like-minded families',
-          meta: 'Members only, year after year',
-          body: 'A like-minded member community where children and parents can build meaningful connections over time.',
-        },
         { title: 'Priority booking', body: 'First access to experiences, events and limited places before they open more widely.' },
       ],
     },

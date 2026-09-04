@@ -137,23 +137,11 @@ export const es: Dict = {
       eyebrow: 'La promesa Narelo',
       heading: 'Lo que toda familia puede esperar',
       image: '/images/membership-beach-background.webp',
-      cards: [
-        {
-          title: 'A tu hijo se le conoce',
-          body: 'Llegamos a saber qué despierta a tu hijo, qué le cuesta y cómo crece, y compartimos ese camino contigo en conversaciones regulares uno a uno.',
-        },
-        {
-          title: 'Su recorrido queda recogido',
-          body: 'Una recopilación digital cuidada y actual al final de cada trimestre, que recoge experiencias y descubrimientos significativos para volver a ellos.',
-        },
-        {
-          title: 'Tu familia pertenece',
-          body: 'Una comunidad de socios afines donde niños y padres construyen conexiones significativas con el tiempo.',
-        },
-      ],
       items: [
+        { title: 'A cada niño se le conoce', body: 'No un nombre en una lista. Los educadores saben en qué está tu hijo, qué le cuesta y qué le encanta.' },
         { title: 'Continuidad', body: 'Las mismas caras, la misma comunidad, año tras año. Los niños construyen sobre lo anterior en lugar de empezar de cero cada trimestre.' },
         { title: 'Un entorno protegido', body: 'Mantenemos los grupos pequeños y la comunidad cuidada. Eso es lo que hace posible todo lo demás.' },
+        { title: 'Pertenecer, no asistir', body: 'La membresía se parece más a una segunda familia que a un sitio donde dejas a tu hijo. Las familias también forman parte.' },
       ],
     },
     home: {
@@ -269,26 +257,29 @@ export const es: Dict = {
     included: {
       eyebrow: 'La membresía incluye',
       heading: '¿Qué recibe tu familia exactamente?',
+      image: '/images/gallery-04.webp',
+      cards: [
+        {
+          title: 'El educador de tu hijo, en diálogo contigo',
+          meta: 'Conversaciones regulares uno a uno',
+          body: 'Llegamos a saber qué despierta a tu hijo, qué le cuesta y cómo crece, y compartimos ese camino contigo en conversaciones regulares uno a uno.',
+        },
+        {
+          title: 'Su temporada, recogida y guardada',
+          meta: 'Una recopilación digital exclusiva cada trimestre',
+          body: 'Una recopilación digital cuidada y actual al final de cada trimestre, que recoge experiencias y descubrimientos significativos para volver a ellos.',
+        },
+        {
+          title: 'El mundo Narelo más amplio, creciendo contigo',
+          meta: 'Experiencias, acompañamiento y comunidad',
+          body: 'Una comunidad de socios afines donde niños y padres construyen conexiones significativas con el tiempo.',
+        },
+      ],
       groups: [
         {
-          label: 'Incluido en tu membresía',
+          label: 'También incluido en tu membresía',
           items: [
             { title: 'Experiencias semanales', body: 'El lugar habitual de tu hijo en su grupo de edad, cada semana del curso.' },
-            {
-              title: 'El educador de tu hijo, en diálogo contigo',
-              meta: 'Conversaciones regulares uno a uno',
-              body: 'Llegamos a saber qué despierta a tu hijo, qué le cuesta y cómo crece, y compartimos ese camino contigo en conversaciones regulares uno a uno.',
-            },
-            {
-              title: 'Su temporada, recogida y guardada',
-              meta: 'Una recopilación digital exclusiva cada trimestre',
-              body: 'Una recopilación digital cuidada y actual al final de cada trimestre, que recoge experiencias y descubrimientos significativos para volver a ellos.',
-            },
-            {
-              title: 'Un círculo privado de familias afines',
-              meta: 'Solo socios, año tras año',
-              body: 'Una comunidad de socios afines donde niños y padres construyen conexiones significativas con el tiempo.',
-            },
             { title: 'Reserva prioritaria', body: 'Acceso primero a experiencias, encuentros y plazas limitadas antes de que se abran más ampliamente.' },
           ],
         },

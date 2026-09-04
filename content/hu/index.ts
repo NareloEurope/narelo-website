@@ -136,23 +136,11 @@ export const hu: Dict = {
       eyebrow: 'A Narelo ígéret',
       heading: 'Amire minden család számíthat',
       image: '/images/membership-beach-background.webp',
-      cards: [
-        {
-          title: 'A gyermekedet ismerjük',
-          body: 'Megismerjük, mi ragadja meg a gyermekedet, mi jelent neki kihívást és hogyan fejlődik, és rendszeres négyszemközti beszélgetéseken megosztjuk veled ezt az utat.',
-        },
-        {
-          title: 'Az útját megőrizzük',
-          body: 'Gondosan összeállított, modern digitális visszatekintés minden félév végén, amely megőrzi a fontos élményeket és felfedezéseket, hogy vissza lehessen térni hozzájuk.',
-        },
-        {
-          title: 'A családod ide tartozik',
-          body: 'Hasonlóan gondolkodó tagokból álló közösség, ahol gyerekek és szülők idővel valódi kapcsolatokat építenek.',
-        },
-      ],
       items: [
+        { title: 'Minden gyereket ismerünk', body: 'Nem egy név a névsorban. A pedagógusok tudják, min dolgozik a gyermeked, mi nehéz neki, és mit szeret.' },
         { title: 'Folytonosság', body: 'Ugyanazok az arcok, ugyanaz a közösség, évről évre. A gyerekek arra építenek, ami korábban volt, ahelyett, hogy minden félévben elölről kezdenék.' },
         { title: 'Védett környezet', body: 'Kicsiben tartjuk a csoportokat, és gondosan óvjuk a közösséget. Ez teszi lehetővé az összes többit.' },
+        { title: 'Odatartozás, nem részvétel', body: 'A tagság közelebb áll egy második családhoz, mint egy helyhez, ahol leteszed a gyermeked. A családok is részei.' },
       ],
     },
     home: {
@@ -268,26 +256,29 @@ export const hu: Dict = {
     included: {
       eyebrow: 'A tagság tartalmazza',
       heading: 'Mit kap valójában a családod?',
+      image: '/images/gallery-04.webp',
+      cards: [
+        {
+          title: 'A gyermeked saját pedagógusa, veled párbeszédben',
+          meta: 'Rendszeres négyszemközti beszélgetések',
+          body: 'Megismerjük, mi ragadja meg a gyermekedet, mi jelent neki kihívást és hogyan fejlődik, és rendszeres négyszemközti beszélgetéseken megosztjuk veled ezt az utat.',
+        },
+        {
+          title: 'A félévük, megörökítve és megőrizve',
+          meta: 'Exkluzív digitális visszatekintés minden félévben',
+          body: 'Gondosan összeállított, modern digitális visszatekintés minden félév végén, amely megőrzi a fontos élményeket és felfedezéseket, hogy vissza lehessen térni hozzájuk.',
+        },
+        {
+          title: 'A tágabb Narelo világ, veled együtt növekedve',
+          meta: 'Élmények, útmutatás és közösség',
+          body: 'Hasonlóan gondolkodó tagokból álló közösség, ahol gyerekek és szülők idővel valódi kapcsolatokat építenek.',
+        },
+      ],
       groups: [
         {
-          label: 'A tagságod része',
+          label: 'Szintén a tagságod része',
           items: [
             { title: 'Heti élmények', body: 'A gyermeked állandó helye a saját korcsoportjában, a tanév minden hetében.' },
-            {
-              title: 'A gyermeked saját pedagógusa, veled párbeszédben',
-              meta: 'Rendszeres négyszemközti beszélgetések',
-              body: 'Megismerjük, mi ragadja meg a gyermekedet, mi jelent neki kihívást és hogyan fejlődik, és rendszeres négyszemközti beszélgetéseken megosztjuk veled ezt az utat.',
-            },
-            {
-              title: 'A félévük, megörökítve és megőrizve',
-              meta: 'Exkluzív digitális visszatekintés minden félévben',
-              body: 'Gondosan összeállított, modern digitális visszatekintés minden félév végén, amely megőrzi a fontos élményeket és felfedezéseket, hogy vissza lehessen térni hozzájuk.',
-            },
-            {
-              title: 'Hasonlóan gondolkodó családok zárt köre',
-              meta: 'Csak tagoknak, évről évre',
-              body: 'Hasonlóan gondolkodó tagokból álló közösség, ahol gyerekek és szülők idővel valódi kapcsolatokat építenek.',
-            },
             { title: 'Elsőbbségi foglalás', body: 'Elsőként férsz hozzá élményekhez, eseményekhez és korlátozott helyekhez, mielőtt szélesebb körben megnyílnának.' },
           ],
         },

@@ -3,6 +3,7 @@ import Section from '@/components/Section';
 import LazyVideo from '@/components/LazyVideo';
 import WhatsAppIcon from '@/components/WhatsAppIcon';
 import IncludedAccordion from '@/components/IncludedAccordion';
+import PromiseCards from '@/components/PromiseCards';
 import { content } from '@/content/dictionary';
 import { localePath, type Lang } from '@/content/locales';
 
@@ -212,14 +213,46 @@ export default function MembershipPage({ lang }: { lang: Lang }) {
             </ul>
             <p className="body-copy mt-10 max-w-lg text-ink-soft">{howItWorks.note}</p>
 
-            <div className="mt-14 border-t border-ink/12 pt-10">
-              <p className="eyebrow mb-8 text-olive">{included.eyebrow}</p>
-              <h3 className="display display-md mb-10">{included.heading}</h3>
-              <IncludedAccordion groups={included.groups} />
-            </div>
           </div>
         </div>
       </Section>
+
+      {/*
+       * ---------- 4b. What does your family actually receive? ----------
+       *
+       * Its own band now, the way the dossier sets it: the heading on the
+       * light ground, then the three cards in forest green over a photograph
+       * washed back so it reads as texture rather than a picture. The rest of
+       * what comes with membership stays as accordion rows underneath, on the
+       * light ground, so the three cards are the thing you see.
+       */}
+      <section className="relative isolate overflow-hidden px-6 py-[var(--spacing-section)] md:px-10">
+        <div className="absolute inset-0 -z-10">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={included.image}
+            alt=""
+            width={1800}
+            height={1200}
+            loading="lazy"
+            className="h-full w-full object-cover"
+          />
+          <div className="absolute inset-0 bg-shell/90" aria-hidden="true" />
+        </div>
+
+        <div className="mx-auto max-w-[1280px]">
+          <div className="mb-14 max-w-2xl fade" data-reveal>
+            <p className="eyebrow mb-8 text-olive">{included.eyebrow}</p>
+            <h2 className="display display-lg">{included.heading}</h2>
+          </div>
+
+          <PromiseCards cards={included.cards} />
+
+          <div className="mt-16 border-t border-ink/15 pt-12 fade" data-reveal>
+            <IncludedAccordion groups={included.groups} />
+          </div>
+        </div>
+      </section>
 
       {/* ---------- 5. Who is behind this ---------- */}
       <Section id="who">
