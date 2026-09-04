@@ -93,11 +93,21 @@ export const stages = {
  * into two named groups (Vivien, 2026-08-31): what membership already carries,
  * and what members can additionally book through the year. "Member events" was
  * dropped in the same pass.
+ *
+ * Aligned with the parent dossier (Vivien, 2026-09-04): the opening paragraph,
+ * the pull quote beside it, the second group's label and its "and more to
+ * come" aside, and the note about the experts are the dossier's own sentences.
+ * The dossier's em dashes are commas here, per house style.
+ *
+ * ⚠️ "Every month" is a frequency the site has not stated before and is not
+ * backed by a document in the repo. Confirm before launch.
  */
 export const regular = {
   eyebrow: 'Through the year',
   heading: 'Beyond the weekly experience',
-  body: 'Membership reaches beyond your child’s regular Narelo Experiences, bringing families into a wider community and opening access to additional experiences throughout the year.',
+  quote: 'A small moment can become the starting point for something much bigger.',
+  body: 'Membership reaches beyond your child’s weekly experiences. We come together regularly as a community, parents and children alike, and you have continuous access to our own experts. A place to keep learning about parenthood and about yourselves as a family.',
+  note: 'Every month, our own experts open a session to you: yours, as part of the membership. When we invite specialists from outside, members are always seated at member rates.',
   groups: [
     {
       label: 'Part of your Narelo world',
@@ -108,7 +118,8 @@ export const regular = {
       ],
     },
     {
-      label: 'Additional bookable experiences',
+      label: 'Also bookable for members',
+      aside: 'and more to come',
       items: [
         { name: 'Signature Saturdays', body: 'Special Saturday experiences designed for discovery, creativity and adventure.' },
         { name: 'Holiday Experiences', body: 'Curated experiences during the school holidays.' },

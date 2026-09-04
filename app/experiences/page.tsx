@@ -121,10 +121,20 @@ export default function ExperiencesPage() {
 
       {/* ---------- Through the year ---------- */}
       <Section bg="bg-shell">
-        <div className="mb-12 max-w-2xl fade" data-reveal>
-          <p className="eyebrow mb-8 text-olive">{regular.eyebrow}</p>
-          <h2 className="display display-lg mb-8">{regular.heading}</h2>
-          <p className="lede text-ink-soft">{regular.body}</p>
+        {/*
+         * Quote beside the opening rather than above it, the way the parent
+         * dossier sets this section (2026-09-04): the line and the paragraph
+         * it belongs to sit on one row on desktop, stacked on a phone.
+         */}
+        <div className="mb-12 grid gap-10 fade md:grid-cols-2 md:gap-16" data-reveal>
+          <div>
+            <p className="eyebrow mb-8 text-olive">{regular.eyebrow}</p>
+            <p className="lede italic text-ink-soft">{regular.quote}</p>
+          </div>
+          <div>
+            <h2 className="display display-lg mb-8">{regular.heading}</h2>
+            <p className="body-copy text-ink-soft">{regular.body}</p>
+          </div>
         </div>
 
         {/* Two named groups: what membership already carries, and what can be
@@ -132,7 +142,12 @@ export default function ExperiencesPage() {
         <div className="reveal flex flex-col gap-12" data-reveal>
           {regular.groups.map((group) => (
             <div key={group.label}>
-              <p className="eyebrow border-t border-ink/15 pt-5 text-ink">{group.label}</p>
+              <div className="flex items-baseline justify-between gap-6 border-t border-ink/15 pt-5">
+                <p className="eyebrow text-ink">{group.label}</p>
+                {'aside' in group && group.aside && (
+                  <p className="lede italic text-ink-soft">{group.aside}</p>
+                )}
+              </div>
               <ul className="mt-8 grid gap-x-12 gap-y-9 sm:grid-cols-2 lg:grid-cols-3">
                 {group.items.map((item) => (
                   <li key={item.name}>
@@ -144,6 +159,10 @@ export default function ExperiencesPage() {
             </div>
           ))}
         </div>
+
+        <p className="body-copy mt-12 max-w-2xl text-ink-soft fade" data-reveal>
+          {regular.note}
+        </p>
       </Section>
 
       {/* ---------- Personalised ---------- */}

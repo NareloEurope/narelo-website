@@ -135,16 +135,42 @@ export const howItWorks = {
  * those things actually is, is explained once on the Experiences page, so the
  * rows here just name them and link across. Only the things that exist
  * nowhere else, the weekly place, guidance and priority booking, carry copy.
+ *
+ * Aligned with the parent dossier (Vivien, 2026-09-04). The section heading,
+ * the eyebrow and three of the rows now use the dossier's own sentences, so a
+ * family reading both hears one voice. `meta` is the small line the dossier
+ * puts under each title. Two rows the dossier does not restate, the weekly
+ * place and priority booking, are kept: the dossier covers the weekly place
+ * elsewhere, and neither is contradicted.
+ *
+ * ⚠️ Two of the dossier sentences are new to the site and are not backed by a
+ * document in the repo: the digital reflection at the end of each term, and
+ * describing it as "exclusive". Confirm the term reflection is committed to
+ * before launch.
  */
 export const included = {
-  eyebrow: 'Membership',
-  heading: 'What comes with membership',
+  eyebrow: 'Membership includes',
+  heading: 'What does your family actually receive?',
   groups: [
     {
       label: 'Included in your membership',
       items: [
         { title: 'Weekly experiences', body: 'Your child’s regular place in their age group, every week of term.' },
-        { title: 'Personalised guidance', body: 'One-to-one support and personal guidance on your child’s development, from educators who know them well.' },
+        {
+          title: 'Your child’s own educator, in dialogue with you',
+          meta: 'Regular one-to-one conversations',
+          body: 'We get to know what draws your child in, what challenges them and how they grow, and share that journey through regular one-to-one conversations.',
+        },
+        {
+          title: 'Their season, documented and kept',
+          meta: 'An exclusive digital reflection each term',
+          body: 'A beautifully curated, modern digital reflection at the end of each term, capturing meaningful experiences and discoveries to revisit.',
+        },
+        {
+          title: 'A private circle of like-minded families',
+          meta: 'Members only, year after year',
+          body: 'A like-minded member community where children and parents can build meaningful connections over time.',
+        },
         { title: 'Priority booking', body: 'First access to experiences, events and limited places before they open more widely.' },
       ],
     },
