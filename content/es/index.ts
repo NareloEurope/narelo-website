@@ -314,6 +314,16 @@ export const es: Dict = {
           quote: 'A algunos niños se les nota. Quiero que Narelo sea el lugar donde se les note a todos.',
         },
       ],
+      teamLabel: 'El equipo',
+      team: [
+        {
+          name: 'Jessica Fletcher',
+          role: 'Educadora sénior',
+          image: '/images/team-jessica-fletcher.webp',
+          body: 'Jessica estudió Psicología en la Universidad Massey de Nueva Zelanda y tiene varios años de experiencia trabajando con niños en primera infancia y en entornos educativos. Su foco está en el desarrollo infantil, el bienestar emocional y las relaciones que dan forma al mundo de un niño, con un interés particular en la dinámica familiar y en fortalecer el vínculo entre los niños y sus padres.',
+          quote: 'Cuando entendemos al niño y las relaciones que le rodean, construimos bases más sólidas para que crezca.',
+        },
+      ],
     },
     joining: {
       eyebrow: 'Cómo unirse',

@@ -297,6 +297,27 @@ export const proof = {
       quote: 'Some children get noticed. I want Narelo to be the place where every child does.',
     },
   ],
+  /**
+   * Team, not founders (Vivien, 2026-09-05). Kept as a separate group under
+   * its own label so the distinction is visible on the page: the founders are
+   * Natalie and Vivien, and nobody else is ever presented as one.
+   *
+   * Jessica's role, biography and quote are her own, supplied verbatim. Her
+   * photograph was supplied by the team.
+   *
+   * ⚠️ Mercedes, Brand Experience Manager, belongs in this group too. Waiting
+   * on her surname, a photograph and her own introduction. Do not draft one.
+   */
+  teamLabel: 'The team',
+  team: [
+    {
+      name: 'Jessica Fletcher',
+      role: 'Senior Educator',
+      image: '/images/team-jessica-fletcher.webp',
+      body: 'Jessica studied Psychology at Massey University in New Zealand and has several years of experience working with children in early years and educational settings. Her focus lies in child development, emotional wellbeing and the relationships that shape a child’s world, with a particular interest in family dynamics and strengthening the connection between children and their parents.',
+      quote: 'When we understand the child and the relationships around them, we create stronger foundations for them to grow.',
+    },
+  ],
 } as const;
 
 /**

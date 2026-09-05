@@ -313,6 +313,16 @@ export const hu: Dict = {
           quote: 'Néhány gyerek feltűnik. Azt szeretném, hogy a Narelo legyen az a hely, ahol mindegyik feltűnik.',
         },
       ],
+      teamLabel: 'A csapat',
+      team: [
+        {
+          name: 'Jessica Fletcher',
+          role: 'Vezető pedagógus',
+          image: '/images/team-jessica-fletcher.webp',
+          body: 'Jessica pszichológiát tanult az új-zélandi Massey Egyetemen, és több éve dolgozik kisgyerekekkel kora gyermekkori és oktatási környezetben. Fókuszában a gyermeki fejlődés, az érzelmi jóllét, és azok a kapcsolatok állnak, amelyek egy gyerek világát alakítják, különös érdeklődéssel a családi dinamika és a gyerekek és szüleik közötti kapcsolat erősítése iránt.',
+          quote: 'Amikor megértjük a gyereket és a körülötte lévő kapcsolatokat, erősebb alapot teremtünk a fejlődéséhez.',
+        },
+      ],
     },
     joining: {
       eyebrow: 'Hogyan csatlakozz',

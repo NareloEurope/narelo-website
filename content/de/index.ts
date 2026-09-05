@@ -315,6 +315,16 @@ export const de: Dict = {
           quote: 'Manche Kinder fallen auf. Ich möchte, dass Narelo der Ort ist, an dem jedes Kind auffällt.',
         },
       ],
+      teamLabel: 'Das Team',
+      team: [
+        {
+          name: 'Jessica Fletcher',
+          role: 'Senior Educator',
+          image: '/images/team-jessica-fletcher.webp',
+          body: 'Jessica hat an der Massey University in Neuseeland Psychologie studiert und mehrere Jahre mit Kindern in der frühen Kindheit und in pädagogischen Einrichtungen gearbeitet. Ihr Schwerpunkt liegt auf kindlicher Entwicklung, emotionalem Wohlbefinden und den Beziehungen, die die Welt eines Kindes prägen, mit besonderem Interesse an Familiendynamik und daran, die Verbindung zwischen Kindern und ihren Eltern zu stärken.',
+          quote: 'Wenn wir das Kind und die Beziehungen um es herum verstehen, schaffen wir stärkere Grundlagen für sein Wachsen.',
+        },
+      ],
     },
     joining: {
       eyebrow: 'Wie Sie dazukommen',

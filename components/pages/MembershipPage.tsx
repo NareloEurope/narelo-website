@@ -277,6 +277,39 @@ export default function MembershipPage({ lang }: { lang: Lang }) {
             </div>
           ))}
         </div>
+
+        {/*
+         * The team, under its own label and below the founders, so the page
+         * shows the distinction rather than blurring it (2026-09-05). Same
+         * two-column grid, so a second person drops in without a redesign.
+         */}
+        <div className="mt-20 border-t border-ink/12 pt-14">
+          <p className="eyebrow mb-10 text-olive fade" data-reveal>{proof.teamLabel}</p>
+          <div className="reveal grid gap-14 md:grid-cols-2 md:gap-20" data-reveal>
+            {proof.team.map((person) => (
+              <div key={person.name} className="flex flex-col">
+                <div className="img-settle mb-8 overflow-hidden rounded-[2px]">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={person.image}
+                    alt={person.name}
+                    width={1086}
+                    height={1448}
+                    loading="lazy"
+                    className="aspect-[4/5] w-full object-cover object-top"
+                  />
+                </div>
+                <div className="mb-5 h-px w-full bg-ink/15" aria-hidden="true" />
+                <h3 className="display display-md">{person.name}</h3>
+                <p className="eyebrow mt-3 text-olive">{person.role}</p>
+                <p className="body-copy mt-6 text-ink-soft">{person.body}</p>
+                <blockquote className="lede mt-auto pt-10 italic text-ink">
+                  “{person.quote}”
+                </blockquote>
+              </div>
+            ))}
+          </div>
+        </div>
       </Section>
 
       {/* ---------- 6. How do we join? ---------- */}
