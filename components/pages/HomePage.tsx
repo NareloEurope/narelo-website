@@ -57,7 +57,7 @@ export default function HomePage({ lang }: { lang: Lang }) {
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={belief.image}
-              alt=""
+              alt={belief.imageAlt}
               width={1080}
               height={1350}
               loading="lazy"
@@ -92,7 +92,7 @@ export default function HomePage({ lang }: { lang: Lang }) {
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={shape.image}
-            alt=""
+            alt={shape.imageAlt}
             width={1080}
             height={1350}
             loading="lazy"
@@ -153,7 +153,8 @@ export default function HomePage({ lang }: { lang: Lang }) {
 
         {/* Horizontal timeline: a hairline with seven stops. Scrolls sideways
             on small screens rather than cramming seven columns. */}
-        <div className="fade overflow-x-auto pb-4" data-reveal>
+        {/* Keyboard-reachable scroll region (audit, 2026-09-05, 4.1). */}
+        <div className="fade overflow-x-auto pb-4" tabIndex={0} aria-label={journey.heading} data-reveal>
           <ol className="relative flex min-w-[880px]">
             <div className="absolute left-0 right-0 top-[5px] h-px bg-ink/15" aria-hidden="true" />
             {journey.stages.map((stage) => (
@@ -221,7 +222,7 @@ export default function HomePage({ lang }: { lang: Lang }) {
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={home.image}
-            alt=""
+            alt={home.imageAlt}
             width={1536}
             height={1024}
             loading="lazy"
@@ -236,9 +237,6 @@ export default function HomePage({ lang }: { lang: Lang }) {
             <p className="eyebrow mb-8 text-linen/80">{home.eyebrow}</p>
             <h2 className="display display-lg mb-8 text-linen">{home.heading}</h2>
             <p className="lede mb-10 text-linen/85">{home.body}</p>
-            <a href={contact.whatsapp} target="_blank" rel="noreferrer noopener" className="btn btn-ghost text-linen">
-              {home.ctaLabel}
-            </a>
           </div>
         </div>
       </section>

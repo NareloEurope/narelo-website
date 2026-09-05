@@ -48,10 +48,12 @@ export const de: Dict = {
       openMenu: 'Menü öffnen',
       closeMenu: 'Menü schließen',
       skipToContent: 'Zum Hauptinhalt springen',
-      footerExplore: 'Entdecken',
       footerContact: 'Kontakt',
       languageLabel: 'Sprache',
       homeLabel: 'Startseite',
+      galleryAlt: 'Ein Moment aus einem Narelo Erlebnis',
+      whatToExpect: 'Was Sie erwartet',
+      backToTop: 'Nach oben',
     },
     contact: {
       visitLabel: 'Besuchen Sie uns',
@@ -89,6 +91,7 @@ export const de: Dict = {
       body: 'Zwischen Schulwegen, Bildschirmen und vollen Wochen vergeht die Kindheit still im Hintergrund. Wir finden, sie gehört in den Vordergrund: echte Tage, echte Orte, echte Menschen, und die Zeit, sie wirklich aufzunehmen.',
       pull: 'Wir glauben, das größte Geschenk, das wir Kindern machen können, ist eine Kindheit, die sie nicht nur auf die Schule vorbereitet, sondern auf eine Zukunft, die wir uns noch gar nicht vorstellen können.',
       image: '/images/home-moment-to-pause.webp',
+      imageAlt: 'Ein Kind hält draußen inne und nimmt etwas in sich auf.',
     },
     statement: {
       lines: ['Kinder kommen wegen der Erlebnisse.', 'Familien bleiben wegen der Gemeinschaft.'],
@@ -102,6 +105,7 @@ export const de: Dict = {
         { value: '90', label: 'Minuten miteinander', note: 'Lange genug, um anzukommen, richtig zu erkunden und wieder bei sich zu sein.' },
       ],
       image: '/images/home-not-to-be-rushed.webp',
+      imageAlt: 'Eine kleine Gruppe Kinder erkundet gemeinsam, ohne Eile.',
     },
     worlds: {
       eyebrow: 'Die Fünf Welten',
@@ -150,7 +154,7 @@ export const de: Dict = {
       heading: 'Wo Narelo beginnt',
       body: 'Auf der einen Seite das Meer, auf der anderen die Berge, und eine Gemeinschaft von Familien, die wir sorgfältig und langsam auswählen. Unser erstes Narelo Zuhause öffnet hier diesen Herbst, und es ist das erste, nicht das letzte.',
       image: '/images/home-discovery.webp',
-      ctaLabel: 'Beginnen Sie ein Gespräch',
+      imageAlt: 'Die Küste bei Marbella, wo das erste Narelo Zuhause öffnet.',
     },
     closing: {
       headingLines: ['Kindheit', 'geschieht einmal.'],
@@ -181,6 +185,7 @@ export const de: Dict = {
       body2: 'Mehr als ein Kinderprogramm: Narelo ist eine Mitgliedergemeinschaft, in der Kinder Selbstvertrauen, Eigenständigkeit und echte Verbindungen aufbauen, Eltern durch unsere Fachleute weiterlernen und gleichgesinnte Familien miteinander wachsen, damit Kinder in einer sich ständig verändernden Welt aufblühen können.',
       pull: 'Kinder kommen wegen der Erlebnisse. Familien bleiben wegen der Gemeinschaft.',
       image: '/images/img-1667.webp',
+      imageAlt: 'Kinder draußen in der wirklichen Welt bei einem Narelo Erlebnis.',
     },
     isNot: {
       eyebrow: 'Und was es nicht ist',
@@ -211,13 +216,6 @@ export const de: Dict = {
       eyebrow: 'Was Ihr Kind erlebt',
       heading: 'Echte Orte, kleine Gruppen und die Zeit, in die Tiefe zu gehen',
       body: 'Etwa ab drei Jahren führt das Jahr durch fünf Welten. Jüngere Kinder beginnen mit Bewegung, Sinnen und Verbindung und wachsen in sie hinein.',
-      worlds: [
-        { name: 'Ocean', body: 'Das Meer als lebendiger Ort, mit Sinnen und Körper erfahren.' },
-        { name: 'Mountain', body: 'Wald, Hügel und Pfade, zu den Bedingungen der Natur.' },
-        { name: 'World Around Us', body: 'Die Menschen und das Handwerk hinter dem Alltag.' },
-        { name: 'Expression', body: 'Kunst, Gestalten und den eigenen Ideen eine Form geben.' },
-        { name: 'Future', body: 'Erfinden, Ausprobieren und was möglich sein könnte.' },
-      ],
       worldsLinkLabel: 'Die fünf Welten, vollständig',
       worldsLinkHref: '/experiences/#worlds',
       note: 'Die Erlebnisse finden in unserem Haus in Marbella statt und weit darüber hinaus: am Strand, im Wald und an echten Orten des Alltags. Bei den jüngeren Gruppen kann ein Elternteil dabei sein; ältere Kinder kommen allein.',
@@ -361,6 +359,7 @@ export const de: Dict = {
       ],
       note: 'Bei den jüngeren Gruppen kann ein Elternteil dabei sein. Ältere Kinder kommen allein.',
       image: '/images/img-5211.webp',
+      imageAlt: 'Ein Narelo Erlebnis an einem echten Ort.',
     },
     spark: {
       eyebrow: 'Es kann mit etwas so Kleinem beginnen',

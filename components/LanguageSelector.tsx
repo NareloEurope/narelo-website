@@ -16,12 +16,19 @@ export default function LanguageSelector({
   current,
   pathname,
   light = false,
+  onDark = false,
   className = '',
 }: {
   current: Lang;
   pathname: string;
   /** Over a dark hero the header runs light type, and so does this. */
   light?: boolean;
+  /**
+   * On a solid dark ground, the inactive links need much more than the 45%
+   * they use over a photograph: at 45% on forest they are well under AA
+   * (audit, 2026-09-05). 75% clears it while still reading as secondary.
+   */
+  onDark?: boolean;
   className?: string;
 }) {
   const here = neutralPath(pathname);
@@ -48,7 +55,7 @@ export default function LanguageSelector({
               aria-current={isCurrent ? 'true' : undefined}
               title={LANG_META[lang].name}
               className={`text-[0.68rem] tracking-[0.12em] transition-opacity ${
-                isCurrent ? 'opacity-100' : 'opacity-45 hover:opacity-80'
+                isCurrent ? 'opacity-100' : onDark ? 'opacity-75 hover:opacity-100' : 'opacity-45 hover:opacity-80'
               }`}
             >
               {LANG_META[lang].short}

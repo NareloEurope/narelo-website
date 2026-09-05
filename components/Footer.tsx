@@ -18,13 +18,10 @@ export default function Footer() {
       <div className="mx-auto max-w-[1560px] px-6 py-20 md:px-10 md:py-24">
         <div className="fade" data-reveal>
           <p className="display display-lg max-w-3xl">{footerCta.heading}</p>
-          <p className="lede mt-6 max-w-xl text-linen/75">{footerCta.subheading}</p>
-          <a href={contact.whatsapp} target="_blank" rel="noreferrer noopener" className="btn btn-ghost mt-9 text-linen">
-            {footerCta.ctaLabel}
-          </a>
+          <p className="lede mt-6 max-w-xl text-linen/85">{footerCta.subheading}</p>
         </div>
 
-        <div className="mt-16 grid gap-12 border-t border-linen/15 pt-12 md:grid-cols-[1.4fr_1fr_1fr]">
+        <div className="mt-16 grid gap-12 border-t border-linen/15 pt-12 md:grid-cols-[1.6fr_1fr]">
           <div>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
@@ -35,24 +32,11 @@ export default function Footer() {
               loading="lazy"
               className="h-8 w-auto opacity-90 [filter:invert(1)_brightness(2)]"
             />
-            <p className="body-copy mt-6 max-w-xs text-linen/70">{footerCta.blurb}</p>
+            <p className="body-copy mt-6 max-w-xs text-linen/80">{footerCta.blurb}</p>
           </div>
 
-          <nav aria-label="Footer">
-            <h2 className="eyebrow mb-5 text-linen/70">{ui.footerExplore}</h2>
-            <ul className="flex flex-col gap-3">
-              {nav.map((item) => (
-                <li key={item.href}>
-                  <Link href={t(item.href)} className="body-copy text-linen/85 transition-opacity hover:opacity-60">
-                    {item.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
-
           <div>
-            <h2 className="eyebrow mb-5 text-linen/70">{ui.footerContact}</h2>
+            <h2 className="eyebrow mb-5 text-linen/80">{ui.footerContact}</h2>
             <ul className="flex flex-col gap-3">
               <li>
                 <a href={contact.emailHref} className="body-copy text-linen/85 transition-opacity hover:opacity-60">
@@ -64,7 +48,7 @@ export default function Footer() {
                   {contact.phone}
                 </a>
               </li>
-              <li className="body-copy text-linen/60">{site.location}</li>
+              <li className="body-copy text-linen/80">{site.location}</li>
             </ul>
 
             <ul className="mt-8 flex items-center gap-4">
@@ -107,10 +91,10 @@ export default function Footer() {
         </div>
 
         <div className="mt-14 flex flex-wrap items-center justify-between gap-6">
-          <p className="body-copy text-xs text-linen/65">{site.copyright}</p>
+          <p className="body-copy text-xs text-linen/80">{site.copyright}</p>
           {/* Second, quieter place to change language, for anyone who has
               scrolled past the header. */}
-          <LanguageSelector current={lang} pathname={pathname} light />
+          <LanguageSelector current={lang} pathname={pathname} light onDark />
         </div>
       </div>
     </footer>

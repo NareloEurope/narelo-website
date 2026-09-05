@@ -52,7 +52,7 @@ export default function ExperiencesPage({ lang }: { lang: Lang }) {
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={format.image}
-              alt=""
+              alt={format.imageAlt}
               width={1536}
               height={2048}
               loading="lazy"
@@ -143,7 +143,7 @@ export default function ExperiencesPage({ lang }: { lang: Lang }) {
         </div>
 
         <div className="fade" data-reveal>
-          <StageAccordion items={stageDetails} />
+          <StageAccordion items={stageDetails} whatToExpectLabel={c.site.ui.whatToExpect} />
         </div>
 
         <p className="body-copy mt-10 max-w-xl text-ink-soft fade" data-reveal>

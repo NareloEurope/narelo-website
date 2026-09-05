@@ -48,7 +48,12 @@ export default function MembershipPage({ lang }: { lang: Lang }) {
         aria-label="On this page"
         className="sticky top-[68px] z-40 border-y border-ink/10 bg-linen/92 backdrop-blur-md"
       >
-        <ul className="mx-auto flex max-w-[1560px] gap-7 overflow-x-auto px-6 py-4 md:px-10 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+        {/* tabIndex makes the scroll region reachable and scrollable by keyboard,
+            which it was not before (audit, 2026-09-05, 4.1). */}
+        <ul
+          tabIndex={0}
+          className="mx-auto flex max-w-[1560px] gap-7 overflow-x-auto px-6 py-4 md:px-10 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+        >
           {CHAPTERS.map((c) => (
             <li key={c.id} className="shrink-0">
               <a
@@ -76,7 +81,7 @@ export default function MembershipPage({ lang }: { lang: Lang }) {
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={whatItIs.image}
-              alt=""
+              alt={whatItIs.imageAlt}
               width={1536}
               height={2048}
               loading="lazy"
@@ -119,28 +124,7 @@ export default function MembershipPage({ lang }: { lang: Lang }) {
           <div className="mb-12 max-w-2xl fade" data-reveal>
             <p className="eyebrow mb-8 text-linen/60">{childExperience.eyebrow}</p>
             <h2 className="display display-lg mb-8">{childExperience.heading}</h2>
-            <p className="lede text-linen/85">{childExperience.body}</p>
-          </div>
-
-          <ul className="reveal mb-12" data-reveal>
-            {childExperience.worlds.map((w, i) => (
-              <li
-                key={w.name}
-                className="group grid gap-3 border-t border-linen/15 py-7 md:grid-cols-[5rem_1fr_1.2fr] md:items-baseline md:gap-8"
-              >
-                <span className="eyebrow text-linen/60">{String(i + 1).padStart(2, '0')}</span>
-                <h3 className="display display-md transition-transform duration-700 md:group-hover:translate-x-2">
-                  {w.name}
-                </h3>
-                <p className="body-copy text-linen/80">{w.body}</p>
-              </li>
-            ))}
-          </ul>
-
-          {/* The worlds are named here and explained once, on the Experiences
-              page. Same for the session figures: this links, it does not
-              restate them (2026-09-02). */}
-          <div className="fade border-t border-linen/15 pt-10" data-reveal>
+            <p className="lede mb-10 text-linen/85">{childExperience.body}</p>
             <Link href={childExperience.worldsLinkHref} className="link-line eyebrow text-linen">
               {childExperience.worldsLinkLabel}
             </Link>

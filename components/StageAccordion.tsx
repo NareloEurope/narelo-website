@@ -13,7 +13,7 @@ import type { Stage } from '@/content/stages';
  * Expansion animates grid-template-rows 0fr -> 1fr (no measured heights);
  * collapses to instant state changes under prefers-reduced-motion.
  */
-export default function StageAccordion({ items }: { items: readonly Stage[] }) {
+export default function StageAccordion({ items, whatToExpectLabel }: { items: readonly Stage[]; whatToExpectLabel: string }) {
   const [open, setOpen] = useState(-1);
 
   return (
@@ -76,7 +76,7 @@ export default function StageAccordion({ items }: { items: readonly Stage[] }) {
 
                     {stage.whatToExpect && (
                       <div className="mt-8 border-t border-ink/12 pt-7">
-                        <p className="eyebrow mb-4 text-olive">What to expect</p>
+                        <p className="eyebrow mb-4 text-olive">{whatToExpectLabel}</p>
                         <ul className="flex flex-col gap-2.5">
                           {stage.whatToExpect.map((point) => (
                             <li key={point} className="body-copy flex gap-3 text-ink-soft">
@@ -92,7 +92,7 @@ export default function StageAccordion({ items }: { items: readonly Stage[] }) {
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
                       src={stage.image}
-                      alt=""
+                      alt={stage.name}
                       width={900}
                       height={1200}
                       loading="lazy"

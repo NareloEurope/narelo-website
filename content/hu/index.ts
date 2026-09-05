@@ -46,10 +46,12 @@ export const hu: Dict = {
       openMenu: 'Menü megnyitása',
       closeMenu: 'Menü bezárása',
       skipToContent: 'Ugrás a fő tartalomra',
-      footerExplore: 'Fedezd fel',
       footerContact: 'Kapcsolat',
       languageLabel: 'Nyelv',
       homeLabel: 'kezdőlap',
+      galleryAlt: 'Egy pillanat egy Narelo élményből',
+      whatToExpect: 'Mire számíthatsz',
+      backToTop: 'Vissza a tetejére',
     },
     contact: {
       visitLabel: 'Látogass el hozzánk',
@@ -87,6 +89,7 @@ export const hu: Dict = {
       body: 'Az iskola, a képernyők és a zsúfolt hetek között a gyermekkor csendben, a háttérben telik el. Szerintünk az előtérbe való: valódi napok, valódi helyek, valódi emberek, és idő arra, hogy be is fogadjuk őket.',
       pull: 'Hisszük, hogy a legnagyobb ajándék, amit egy gyereknek adhatunk, egy olyan gyermekkor, amely nemcsak az iskolára készíti fel, hanem egy olyan jövőre is, amelyet még el sem tudunk képzelni.',
       image: '/images/home-moment-to-pause.webp',
+      imageAlt: 'Egy gyerek megáll a szabadban, és befogadja, ami körülötte van.',
     },
     statement: {
       lines: ['A gyerekek az élményekért jönnek.', 'A családok a közösségért maradnak.'],
@@ -100,6 +103,7 @@ export const hu: Dict = {
         { value: '90', label: 'perc együtt', note: 'Elég hosszú ahhoz, hogy megérkezzünk, rendesen felfedezzünk, és visszataláljunk magunkhoz.' },
       ],
       image: '/images/home-not-to-be-rushed.webp',
+      imageAlt: 'Kis csoport gyerek fedez fel együtt, sietség nélkül.',
     },
     worlds: {
       eyebrow: 'Az Öt Világ',
@@ -148,7 +152,7 @@ export const hu: Dict = {
       heading: 'Ahol a Narelo elkezdődik',
       body: 'Egyik oldalon a tenger, a másikon a hegyek, és egy családokból álló közösség, amelyet gondosan és lassan választunk. Az első Narelo otthonunk itt nyílik idén ősszel, és ez az első, nem az utolsó.',
       image: '/images/home-discovery.webp',
-      ctaLabel: 'Kezdjünk egy beszélgetést',
+      imageAlt: 'A marbellai tengerpart, ahol az első Narelo otthon nyílik.',
     },
     closing: {
       headingLines: ['A gyermekkor', 'egyszer történik meg.'],
@@ -179,6 +183,7 @@ export const hu: Dict = {
       body2: 'A Narelo több mint gyerekprogram: tagsági közösség, ahol a gyerekek magabiztosságot, önállóságot és valódi kapcsolatokat építenek, a szülők tovább tanulnak a szakértőinktől, és hasonlóan gondolkodó családok nőnek fel együtt, felkészítve a gyerekeket arra, hogy egy folyamatosan változó világban is kibontakozzanak.',
       pull: 'A gyerekek az élményekért jönnek. A családok a közösségért maradnak.',
       image: '/images/img-1667.webp',
+      imageAlt: 'Gyerekek a valódi világban egy Narelo élmény közben.',
     },
     isNot: {
       eyebrow: 'És ami nem',
@@ -209,13 +214,6 @@ export const hu: Dict = {
       eyebrow: 'Amit a gyermeked átél',
       heading: 'Valódi helyek, kis csoportok, és idő arra, hogy mélyre menjünk',
       body: 'Nagyjából hároméves kortól az év öt világon halad keresztül. A kisebbek a mozgással, az érzékekkel és a kapcsolódással kezdik, és fokozatosan nőnek bele.',
-      worlds: [
-        { name: 'Ocean', body: 'A tenger mint élő hely, érzékekkel és testtel megélve.' },
-        { name: 'Mountain', body: 'Erdő, dombok és ösvények, a természet saját feltételei szerint.' },
-        { name: 'World Around Us', body: 'Az emberek és a mesterségek a hétköznapi élet mögött.' },
-        { name: 'Expression', body: 'Művészet, alkotás, és formát adni a saját gondolatoknak.' },
-        { name: 'Future', body: 'Feltalálás, kísérletezés, és ami lehetségessé válhat.' },
-      ],
       worldsLinkLabel: 'Az öt világ, teljes egészében',
       worldsLinkHref: '/experiences/#worlds',
       note: 'Az élmények a marbellai otthonunkban és jóval azon túl zajlanak: tengerparton, erdőben és a valódi élet helyszínein. A kisebbek csoportjaiba szülő is jöhet; a nagyobbak egyedül érkeznek.',
@@ -359,6 +357,7 @@ export const hu: Dict = {
       ],
       note: 'A kisebbek csoportjaiba szülő is jöhet. A nagyobbak egyedül érkeznek.',
       image: '/images/img-5211.webp',
+      imageAlt: 'Egy Narelo élmény egy valódi helyszínen.',
     },
     spark: {
       eyebrow: 'Valami ilyen aprósággal is kezdődhet',
