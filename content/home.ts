@@ -35,6 +35,7 @@ export const belief = {
    */
   pull: 'We believe the greatest gift we can give children is a childhood that prepares them not just for school, but for a future we cannot yet imagine.',
   image: '/images/home-moment-to-pause.webp',
+  imageAlt: 'A child pausing outdoors, taking something in.',
 } as const;
 
 /** The central message from Strategy/positioning.md, given its own moment. */
@@ -52,6 +53,7 @@ export const shape = {
     { value: '90', label: 'minutes together', note: 'Long enough to settle, explore properly and come back to yourself.' },
   ],
   image: '/images/home-not-to-be-rushed.webp',
+  imageAlt: 'A small group of children exploring together, unhurried.',
 } as const;
 
 /**
@@ -160,7 +162,7 @@ export const home = {
   heading: 'Where Narelo begins',
   body: 'The sea on one side, the mountains on the other, and a community of families we are choosing carefully and slowly. Our first Narelo home opens here this autumn, and it is the first, not the last.',
   image: '/images/home-discovery.webp',
-  ctaLabel: 'Start a conversation',
+  imageAlt: 'The coast at Marbella, where the first Narelo home opens.',
 } as const;
 
 /*

@@ -45,6 +45,7 @@ export const format = {
   ],
   note: 'Younger groups may include a parent. Older children come on their own.',
   image: '/images/img-5211.webp',
+  imageAlt: 'A Narelo experience in progress, out in a real place.',
 } as const;
 
 /**

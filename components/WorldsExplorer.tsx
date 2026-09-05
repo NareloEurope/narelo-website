@@ -105,7 +105,7 @@ export default function WorldsExplorer({
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={world.image}
-                    alt=""
+                    alt={world.name}
                     width={1200}
                     height={900}
                     loading="lazy"

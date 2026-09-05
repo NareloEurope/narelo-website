@@ -58,6 +58,7 @@ export const whatItIs = {
   body2: 'More than a children’s programme, Narelo is a membership community where children build confidence, independence and meaningful connections, parents continue learning through expert insights, and like-minded families grow together, preparing children to flourish in a world that is constantly changing.',
   pull: 'Children join for the experiences. Families stay for the community.',
   image: '/images/img-1667.webp',
+  imageAlt: 'Children out in the real world on a Narelo experience.',
 } as const;
 
 /**
@@ -104,25 +105,19 @@ export const different = {
 } as const;
 
 /**
- * Q2 — What does my child experience? The five worlds as a short index only.
+ * Q2 — What does my child experience?
  *
- * The one-line taglines are deliberate (Rui, 2026-09-02): the full write-up of
- * the five worlds lives once, on the Experiences page, and this section links
- * to it. The 90 minutes / ~8 children / 12 a season trio used to appear here
- * as a second stat block and is now stated once, on the Experiences page.
+ * The five worlds no longer appear here (audit, 2026-09-05, 1.6.5). They were
+ * the third copy on the site: a full write-up on Experiences, a teaser on the
+ * home page, and this list. A visitor reading all three pages met the same
+ * five things three times. Now this section says what the week actually is
+ * and links across, which the page already did anyway.
  */
 export const childExperience = {
   eyebrow: 'What your child experiences',
   heading: 'Real places, small groups, and the time to go deep',
   body: 'From around age three, the year moves through five worlds. Younger children begin with movement, senses and connection, and grow into them.',
-  worlds: [
-    { name: 'Ocean', body: 'The sea as a living place, met with senses and body.' },
-    { name: 'Mountain', body: 'Woodland, hills and trails, on nature’s own terms.' },
-    { name: 'World Around Us', body: 'The people and craft behind everyday life.' },
-    { name: 'Expression', body: 'Art, making and giving form to their own ideas.' },
-    { name: 'Future', body: 'Invention, experimentation and what might be possible.' },
-  ],
-  worldsLinkLabel: 'The five worlds, in full',
+  worldsLinkLabel: 'Discover the five worlds',
   worldsLinkHref: '/experiences/#worlds',
   note: 'Experiences happen in our Marbella home and well beyond it: beach, forest and real-world places. Younger groups may include a parent; older children come on their own.',
   formatLinkLabel: 'How an experience is built',
@@ -165,7 +160,7 @@ export const howItWorks = {
     {
       n: '03',
       title: 'Families are members too',
-      body: 'Community mornings, expert sessions and events are for the parents as much as the children.',
+      body: 'Community Mornings, expert sessions and events are for the parents as much as the children.',
     },
   ],
   note: 'Places are limited by design. Groups stay small, so each age group only ever holds a small number of families.',
@@ -244,9 +239,9 @@ export const included = {
       label: 'For members, at member rates',
       items: [
         { title: 'Signature Saturdays' },
-        { title: 'Expert insights' },
-        { title: 'Holiday experiences' },
-        { title: 'Community mornings' },
+        { title: 'Expert Insights' },
+        { title: 'Holiday Experiences' },
+        { title: 'Community Mornings' },
         { title: 'The wider Narelo world' },
       ],
       linkLabel: 'What each of these is',
@@ -300,6 +295,27 @@ export const proof = {
       image: '/images/founder-vivien.webp',
       body: 'Vivien trained in Special Needs Education at Eötvös Loránd University, with further qualifications in Speech and Language Therapy and Complex Movement Therapy. For more than seven years, she has worked across schools, therapy settings and nurseries, always with the same focus: really getting to know each child.',
       quote: 'Some children get noticed. I want Narelo to be the place where every child does.',
+    },
+  ],
+  /**
+   * Team, not founders (Vivien, 2026-09-05). Kept as a separate group under
+   * its own label so the distinction is visible on the page: the founders are
+   * Natalie and Vivien, and nobody else is ever presented as one.
+   *
+   * Jessica's role, biography and quote are her own, supplied verbatim. Her
+   * photograph was supplied by the team.
+   *
+   * ⚠️ Mercedes, Brand Experience Manager, belongs in this group too. Waiting
+   * on her surname, a photograph and her own introduction. Do not draft one.
+   */
+  teamLabel: 'The team',
+  team: [
+    {
+      name: 'Jessica Fletcher',
+      role: 'Senior Educator',
+      image: '/images/team-jessica-fletcher.webp',
+      body: 'Jessica studied Psychology at Massey University in New Zealand and has several years of experience working with children in early years and educational settings. Her focus lies in child development, emotional wellbeing and the relationships that shape a child’s world, with a particular interest in family dynamics and strengthening the connection between children and their parents.',
+      quote: 'When we understand the child and the relationships around them, we create stronger foundations for them to grow.',
     },
   ],
 } as const;

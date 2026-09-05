@@ -33,7 +33,7 @@ export default function CommunityPage({ lang }: { lang: Lang }) {
 
       {/* Gallery — three at a time */}
       <Section>
-        <Gallery items={gallery} />
+        <Gallery items={gallery} alt={c.site.ui.galleryAlt} />
       </Section>
 
       {/* A place to belong */}

@@ -77,10 +77,14 @@ export const ui = {
   openMenu: 'Open menu',
   closeMenu: 'Close menu',
   skipToContent: 'Skip to main content',
-  footerExplore: 'Explore',
   footerContact: 'Contact',
   languageLabel: 'Language',
   homeLabel: 'home',
+  /** Used to describe the community gallery photographs, numbered after it. */
+  galleryAlt: 'A moment from a Narelo experience',
+  /** The heading above each stage's list, on the Experiences page. */
+  whatToExpect: 'What to expect',
+  backToTop: 'Back to top',
 } as const;
 
 export const contact = {

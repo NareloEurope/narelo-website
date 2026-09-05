@@ -69,6 +69,31 @@ To swap a picture, a new image file can be added directly through this project (
 
 The site is a fully static export (`output: 'export'` in `next.config.ts`). There is no server, no CMS and no database. `trailingSlash: true`, so every internal link ends in `/`.
 
+## What the September audit changed
+
+An external website audit (V1, 2026-09-05) drove a pass over structure,
+accessibility, SEO and the Spanish copy. Decisions taken from it, so they are
+not quietly reversed:
+
+- **One call to action per page close.** The home page had three buttons in a
+  row and every other page had two. The Marbella section and the footer band
+  lost their buttons; each page's closing block keeps its own, and a small
+  floating WhatsApp button (`FloatingActions`) is always within reach.
+- **The footer no longer repeats the main menu.** The "Explore" column is gone.
+- **The five worlds appear twice, not three times:** in full on Experiences,
+  as a teaser on the home page. The Membership recap is a sentence and a link.
+- **Images that carry meaning have alt text**, in every language. Full-bleed
+  background photographs behind headlines keep `alt=""` on purpose: they are
+  decorative and a screen reader should skip them.
+- **`robots.txt`, `sitemap.xml` and Organization/LocalBusiness JSON-LD** exist
+  now. robots follows the same `NEXT_PUBLIC_ALLOW_INDEXING` switch as the meta
+  tag, so launch is one environment variable, not a code change.
+
+Still open from the audit, deliberately not done: moving "What Narelo is" to
+the home page, giving the founders their own page, merging the Narelo Promise
+with "What makes Narelo different", and translating the Spanish URL slugs.
+All four are content-architecture decisions for the team.
+
 ## House rules baked into the site
 
 These are decisions already made. Do not quietly reverse them.
@@ -96,7 +121,9 @@ On the business itself:
 - Marbella is **"our first Narelo home"**, never "a Marbella business"
 - Narelo is a **membership and a community**, never a class, nursery, play centre, school, or "a collection of sessions"
 - The name is **Narelo**. Never Norello, never Naralo.
-- The only public founder faces are **Natalie Curavic** (Founder & CEO) and **Vivien Vörös** (Co-founder & Head of Education). Names, roles and both biographies come from the Narelo Family Guide. No one else appears on the site as a founder or a public face. They appear in **one place only**: the "Who we are" section of the Membership page (`proof` in `content/membership.ts`). The home page's founders section was removed, do not re-add it.
+- The only **founders** are **Natalie Curavic** (Founder & CEO) and **Vivien Vörös** (Co-founder & Head of Education). Names, roles and both biographies come from the Narelo Family Guide. They appear in **one place only**: the "Who we are" section of the Membership page (`proof` in `content/membership.ts`). The home page's founders section was removed, do not re-add it.
+- **Jessica Fletcher and Mercedes are team, not founders** (Vivien, 2026-09-05). The September audit listed them alongside Natalie and Vivien; that was wrong. **Jessica Fletcher** is Senior Educator and **Mercedes** is Brand Experience Manager. They live in `proof.team` in `content/membership.ts`, under their own "The team" label below the founders, so the page shows the distinction. Never present either of them as a founder.
+  ⚠️ **Mercedes is not on the site yet.** Waiting on her surname, a photograph and her own introduction. She is writing it herself, so do not draft one. Her entry drops into `proof.team` next to Jessica's when it arrives.
 - The approved public wording for the opening is **"Our first Narelo home will open in Marbella this autumn."**
 - The messaging stage has moved from *Emotion & Curiosity* to **Understanding & Desire**. Copy must build understanding of what Narelo actually is, not just evoke a feeling.
 - **Never invent or guess a source** for any research or educational claim. If a source cannot be verified, say so rather than citing it.

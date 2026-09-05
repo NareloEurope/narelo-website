@@ -4,6 +4,8 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Motion from '@/components/Motion';
 import HtmlLang from '@/components/HtmlLang';
+import FloatingActions from '@/components/FloatingActions';
+import StructuredData from '@/components/StructuredData';
 import SkipLink from '@/components/SkipLink';
 import { site } from '@/content/site';
 import './globals.css';
@@ -48,11 +50,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang={site.locale} className={`${cormorant.variable} ${jost.variable}`}>
       <body>
+        <StructuredData />
         <SkipLink />
         <HtmlLang />
         <Header />
         <main id="main">{children}</main>
         <Footer />
+        <FloatingActions />
         <Motion />
       </body>
     </html>

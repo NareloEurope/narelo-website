@@ -8,7 +8,7 @@ type Slide = { readonly src: string; readonly n: string };
  * Three-up slider with Previous/Next and an "01 / 06" counter, matching the
  * source. Clicking a slide opens a lightbox with Close / Previous / Next.
  */
-export default function Gallery({ items }: { items: readonly Slide[] }) {
+export default function Gallery({ items, alt }: { items: readonly Slide[]; alt: string }) {
   const [start, setStart] = useState(0);
   const [open, setOpen] = useState<number | null>(null);
 
@@ -46,12 +46,12 @@ export default function Gallery({ items }: { items: readonly Slide[] }) {
               type="button"
               onClick={() => setOpen(idx)}
               className="group block w-full overflow-hidden rounded-sm"
-              aria-label={`Open image ${items[idx].n} of ${items.length}`}
+              aria-label={`${alt} ${items[idx].n}`}
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={items[idx].src}
-                alt=""
+                alt={`${alt} ${items[idx].n}`}
                 width={1536}
                 height={2048}
                 loading="lazy"
@@ -83,7 +83,7 @@ export default function Gallery({ items }: { items: readonly Slide[] }) {
           onClick={close}
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={items[open].src} alt="" className="max-h-[80vh] max-w-full object-contain" onClick={(e) => e.stopPropagation()} />
+          <img src={items[open].src} alt={`${alt} ${items[open].n}`} className="max-h-[80vh] max-w-full object-contain" onClick={(e) => e.stopPropagation()} />
           <p className="eyebrow mt-6 text-linen/80">
             {items[open].n} / {String(items.length).padStart(2, '0')}
           </p>
