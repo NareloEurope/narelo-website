@@ -123,7 +123,7 @@ On the business itself:
 - The name is **Narelo**. Never Norello, never Naralo.
 - The only **founders** are **Natalie Curavic** (Founder & CEO) and **Vivien Vörös** (Co-founder & Head of Education). Names, roles and both biographies come from the Narelo Family Guide. They appear in **one place only**: the "Who we are" section of the Membership page (`proof` in `content/membership.ts`). The home page's founders section was removed, do not re-add it.
 - **Jessica Fletcher and Mercedes are team, not founders** (Vivien, 2026-09-05). The September audit listed them alongside Natalie and Vivien; that was wrong. **Jessica Fletcher** is Senior Educator and **Mercedes** is Brand Experience Manager. They live in `proof.team` in `content/membership.ts`, under their own "The team" label below the founders, so the page shows the distinction. Never present either of them as a founder.
-  ⚠️ **Mercedes is not on the site yet.** Waiting on her surname, a photograph and her own introduction. She is writing it herself, so do not draft one. Her entry drops into `proof.team` next to Jessica's when it arrives.
+  ⚠️ **Mercedes appears with her first name only.** No surname supplied, and her title came from Vivien rather than from Mercedes herself. Both worth confirming with her before launch. Her biography, quote and photograph are her own.
 - The approved public wording for the opening is **"Our first Narelo home will open in Marbella this autumn."**
 - The messaging stage has moved from *Emotion & Curiosity* to **Understanding & Desire**. Copy must build understanding of what Narelo actually is, not just evoke a feeling.
 - **Never invent or guess a source** for any research or educational claim. If a source cannot be verified, say so rather than citing it.

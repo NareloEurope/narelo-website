@@ -305,8 +305,8 @@ export const proof = {
    * Jessica's role, biography and quote are her own, supplied verbatim. Her
    * photograph was supplied by the team.
    *
-   * ⚠️ Mercedes, Brand Experience Manager, belongs in this group too. Waiting
-   * on her surname, a photograph and her own introduction. Do not draft one.
+   * ⚠️ Mercedes appears with her first name only: no surname supplied yet,
+   * and her title came from Vivien rather than from her. Confirm both.
    */
   teamLabel: 'The team',
   team: [
@@ -316,6 +316,19 @@ export const proof = {
       image: '/images/team-jessica-fletcher.webp',
       body: 'Jessica studied Psychology at Massey University in New Zealand and has several years of experience working with children in early years and educational settings. Her focus lies in child development, emotional wellbeing and the relationships that shape a child’s world, with a particular interest in family dynamics and strengthening the connection between children and their parents.',
       quote: 'When we understand the child and the relationships around them, we create stronger foundations for them to grow.',
+    },
+    {
+      /*
+       * ⚠️ First name only: Mercedes has not supplied a surname. The title is
+       * from Vivien (2026-09-05), not from Mercedes herself. Both worth
+       * confirming with her before launch. Her biography, quote and
+       * photograph are her own, supplied verbatim.
+       */
+      name: 'Mercedes',
+      role: 'Brand Experience Manager',
+      image: '/images/team-mercedes.webp',
+      body: 'Mercedes studied Advertising, Public Relations and Marketing at ESIC Business & Marketing School in Madrid. Her background spans marketing, content creation and creative production. Her experience with children has shaped her appreciation for the curiosity, connections and small moments that define childhood. At Narelo, she brings these worlds together, translating its philosophy into how the brand is communicated and experienced.',
+      quote: 'The most meaningful stories grow from real moments, genuine connections and a little curiosity.',
     },
   ],
 } as const;
