@@ -69,7 +69,7 @@ The design and the words are kept apart on purpose.
 
 Almost every request the team will ever make is a change to one file in `content/`. Those files are plain, readable objects. Editing them cannot break the design.
 
-Components are design, not words: `Header`, `Footer`, `Section`, `Motion`, `Gallery`, `Testimonials`, `StageAccordion`, `IncludedPanels`, `WorldsExplorer`, `ContactForm`, `LazyVideo`, `VideoBand`, `WhatsAppIcon`. If a request needs one of these to behave differently, it is a design change, not a copy change.
+Components are design, not words: `Header`, `Footer`, `Section`, `Motion`, `Gallery`, `Testimonials`, `StageAccordion`, `StageTimeline`, `IncludedPanels`, `Portrait`, `WorldsExplorer`, `ContactForm`, `LazyVideo`, `VideoBand`, `WhatsAppIcon`. If a request needs one of these to behave differently, it is a design change, not a copy change.
 
 To swap a picture, a new image file can be added directly through this project (for example, one shared in the chat) and used to replace an existing file in `public/images/` or `public/video/`. Whoever supplies the image is vouching that it is free to use. Never invent or guess a source for a photo. If the source isn't known, say so plainly in the file's comment instead of citing one.
 

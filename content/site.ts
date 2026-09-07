@@ -85,6 +85,8 @@ export const ui = {
   /** The heading above each stage's list, on the Experiences page. */
   whatToExpect: 'What to expect',
   backToTop: 'Back to top',
+  /** The close control on the enlarged portrait, Membership page. */
+  closePortrait: 'Close',
 } as const;
 
 export const contact = {
