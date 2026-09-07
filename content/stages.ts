@@ -46,9 +46,8 @@ export const stageDetails: readonly Stage[] = [
       'A calm space for expecting parents: time to slow down, connect with other families, and begin the Narelo journey before your child is born.',
     /*
      * Pregnant woman, eyes closed, in white, sitting cross-legged in soft
-     * light. Supplied directly by the team (2026-08-29); source not
-     * confirmed. Cropped to hair-through-belly, legs excluded, so the
-     * stage panel shows the whole framing without cutting off the face.
+     * light, hands resting on her belly. Supplied by Vivien (2026-09-07),
+     * replacing the earlier Bloom photograph. Source not confirmed.
      */
     image: '/images/stage-photo-bloom.webp',
   },
@@ -145,6 +144,11 @@ export const stageDetails: readonly Stage[] = [
       'Physical challenges and skill-building',
       'Reflection, goal setting and personal growth',
     ],
-    image: '/images/world-mountain.webp',
+    /*
+     * Four children running towards the camera through a sunlit wood.
+     * Supplied by Vivien (2026-09-07); source not confirmed. It replaces the
+     * borrowed Mountain world photograph, which was standing in here.
+     */
+    image: '/images/stage-photo-navigators.webp',
   },
 ] as const;

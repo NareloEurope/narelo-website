@@ -4,6 +4,8 @@ import LazyVideo from '@/components/LazyVideo';
 import WhatsAppIcon from '@/components/WhatsAppIcon';
 import IncludedPanels from '@/components/IncludedPanels';
 import PromiseCards from '@/components/PromiseCards';
+import Portrait from '@/components/Portrait';
+import StageTimeline from '@/components/StageTimeline';
 import { content } from '@/content/dictionary';
 import { localePath, type Lang } from '@/content/locales';
 
@@ -11,7 +13,7 @@ import { localePath, type Lang } from '@/content/locales';
 
 export default function MembershipPage({ lang }: { lang: Lang }) {
   const c = content(lang);
-  const { contact } = c.site;
+  const { contact, ui } = c.site;
   const { stageDetails } = c.stages;
   const CHAPTERS = c.membership.chapters;
   const { hero, whatItIs, isNot, childExperience, ageGroups, howItWorks, included, different, proof, joining, closing } = c.membership;
@@ -150,18 +152,9 @@ export default function MembershipPage({ lang }: { lang: Lang }) {
 
         {/* Name and age only: an index, not a second set of descriptions. Every
             description of a stage lives on the Experiences page (Rui,
-            2026-09-02). */}
-        <ul className="reveal border-t border-ink/12" data-reveal>
-          {stageDetails.map((stage) => (
-            <li
-              key={stage.name}
-              className="flex items-baseline justify-between gap-6 border-b border-ink/12 py-6 md:py-7"
-            >
-              <h3 className="display display-md">{stage.name}</h3>
-              <span className="eyebrow shrink-0 text-olive">{stage.age}</span>
-            </li>
-          ))}
-        </ul>
+            2026-09-02). Drawn as one timeline rather than seven full-width
+            rows, which looked clickable and were not (Vivien, 2026-09-07). */}
+        <StageTimeline items={stageDetails} />
 
         <div className="mt-12 flex flex-col gap-6 fade md:flex-row md:items-center md:justify-between" data-reveal>
           <p className="body-copy max-w-xl text-ink-soft">{ageGroups.note}</p>
@@ -243,7 +236,9 @@ export default function MembershipPage({ lang }: { lang: Lang }) {
       </section>
 
       {/* ---------- 5. Who is behind this ---------- */}
-      <Section id="who">
+      {/* The team quotes end in their own whitespace, so a full section
+          rhythm on both sides of the join left a hole (Vivien, 2026-09-07). */}
+      <Section id="who" tightBottom>
         <div className="mb-16 max-w-2xl fade" data-reveal>
           <p className="eyebrow mb-8 text-olive">{proof.eyebrow}</p>
           <h2 className="display display-lg">{proof.heading}</h2>
@@ -266,17 +261,12 @@ export default function MembershipPage({ lang }: { lang: Lang }) {
           {proof.people.map((person) => (
             <div key={person.name} className="flex flex-col border-t border-ink/15 pt-8 md:row-span-3 md:grid md:grid-rows-subgrid md:gap-0">
               <div className="flex items-center gap-6">
-                <div className="img-settle w-36 shrink-0 overflow-hidden rounded-[2px] md:w-[10.5rem]">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src={person.image}
-                    alt={person.name}
-                    width={1086}
-                    height={1448}
-                    loading="lazy"
-                    className="aspect-[4/5] w-full object-cover object-top"
-                  />
-                </div>
+                <Portrait
+                  src={person.image}
+                  name={person.name}
+                  closeLabel={ui.closePortrait}
+                  className="w-36 md:w-[10.5rem]"
+                />
                 <div>
                   <h3 className="display display-md">{person.name}</h3>
                   <p className="eyebrow mt-3 text-olive">{person.role}</p>
@@ -303,17 +293,12 @@ export default function MembershipPage({ lang }: { lang: Lang }) {
                 <div className="flex items-center gap-6">
                   {/* A size down from the founders, so the two rows read as
                       two rows rather than one long gallery. */}
-                  <div className="img-settle w-30 shrink-0 overflow-hidden rounded-[2px] md:w-36">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                      src={person.image}
-                      alt={person.name}
-                      width={1086}
-                      height={1448}
-                      loading="lazy"
-                      className="aspect-[4/5] w-full object-cover object-top"
-                    />
-                  </div>
+                  <Portrait
+                    src={person.image}
+                    name={person.name}
+                    closeLabel={ui.closePortrait}
+                    className="w-30 md:w-36"
+                  />
                   <div>
                     <h3 className="display display-md">{person.name}</h3>
                     <p className="eyebrow mt-3 text-olive">{person.role}</p>

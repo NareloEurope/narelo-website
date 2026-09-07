@@ -53,6 +53,7 @@ export const es: Dict = {
       galleryAlt: 'Un momento de una experiencia Narelo',
       whatToExpect: 'Qué esperar',
       backToTop: 'Volver arriba',
+      closePortrait: 'Cerrar',
     },
     contact: {
       visitLabel: 'Visítanos',
@@ -413,13 +414,13 @@ export const es: Dict = {
         {
           label: 'Parte de tu mundo Narelo',
           items: [
-            { name: 'Narelo Experiences', body: 'Un lugar constante donde explorar, crecer y construir relaciones significativas con el tiempo.' },
-            { name: 'Community Mornings', body: 'Tiempo para que las familias se conozcan, conecten y crezcan juntas.' },
-            { name: 'Narelo Expert Insights', body: 'Conversaciones con nuestros propios expertos sobre infancia, desarrollo y vida familiar.' },
+            { name: 'Regular Narelo Experiences', body: 'Para tu hijo: una experiencia por semana con su propio grupo pequeño, un lugar constante donde explorar, crecer y construir amistades reales con el tiempo.' },
+            { name: 'Community Mornings', body: 'Para toda la familia: tiempo para conocer a otras familias Narelo, conectar y crecer juntas.' },
+            { name: 'Narelo Expert Insights', body: 'Para los padres: conversaciones con nuestros propios expertos sobre infancia, desarrollo y vida familiar.' },
           ],
         },
         {
-          label: 'También reservable para socios',
+          label: 'Reservable para socios, con tarifa de socio',
           aside: 'y más por venir',
           items: [
             { name: 'Guest Expert Insights', body: 'Sesiones con especialistas que invitamos de fuera de Narelo, con tarifa de socio.' },

@@ -159,22 +159,43 @@ export default function ExperiencesPage({ lang }: { lang: Lang }) {
           <p className="lede text-ink-soft">{regular.body}</p>
         </div>
 
-        {/* Two named groups: what membership already carries, and what can be
-            booked on top of it (Vivien, 2026-08-31). */}
-        <div className="reveal flex flex-col gap-12" data-reveal>
-          {regular.groups.map((group) => (
-            <div key={group.label}>
-              <div className="flex items-baseline justify-between gap-6 border-t border-ink/15 pt-5">
-                <p className="eyebrow text-ink">{group.label}</p>
+        {/*
+         * Two named groups: what membership already carries, and what can be
+         * booked on top of it (Vivien, 2026-08-31).
+         *
+         * Panels now, the same ones the Membership page uses (Vivien,
+         * 2026-09-07). This is the section a family reads to work out what
+         * they actually get, so it has to be the thing you see, not a pair of
+         * hairline lists on a flat ground. Filled mark for what membership
+         * carries, hollow for what is bookable on top, as over there.
+         */}
+        <div className="reveal flex flex-col gap-8" data-reveal>
+          {regular.groups.map((group, gi) => (
+            <div
+              key={group.label}
+              className="rounded-[2px] bg-linen p-8 shadow-[0_18px_40px_-30px_rgba(43,32,24,0.45)] ring-1 ring-forest/15 md:p-11"
+            >
+              <div className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-2">
+                <p className="eyebrow text-olive">{group.label}</p>
                 {'aside' in group && group.aside && (
                   <p className="lede italic text-ink-soft">{group.aside}</p>
                 )}
               </div>
-              <ul className="mt-8 grid gap-x-12 gap-y-9 sm:grid-cols-2 lg:grid-cols-3">
+              <div className="mb-9 mt-2 h-px w-12 bg-olive/40" aria-hidden="true" />
+
+              <ul className="grid gap-x-12 gap-y-9 sm:grid-cols-2 lg:grid-cols-3">
                 {group.items.map((item) => (
-                  <li key={item.name}>
-                    <h3 className="display text-xl leading-snug">{item.name}</h3>
-                    <p className="body-copy mt-3 text-ink-soft">{item.body}</p>
+                  <li key={item.name} className="flex gap-4">
+                    <span
+                      className={`mt-[0.6rem] h-1.5 w-1.5 shrink-0 rounded-full ${
+                        gi === 0 ? 'bg-olive' : 'border border-olive'
+                      }`}
+                      aria-hidden="true"
+                    />
+                    <div>
+                      <h3 className="display text-xl leading-snug text-ink">{item.name}</h3>
+                      <p className="body-copy mt-3 text-ink-soft">{item.body}</p>
+                    </div>
                   </li>
                 ))}
               </ul>
@@ -206,7 +227,10 @@ export default function ExperiencesPage({ lang }: { lang: Lang }) {
           ))}
         </ul>
 
-        <p className="body-copy mt-10 max-w-2xl text-ink-soft fade" data-reveal>
+        {/* The member-rate line was body copy and read like a footnote. It is
+            the answer to the question these two cards raise, so it is a lede
+            behind a rule now (Vivien, 2026-09-07). */}
+        <p className="lede mt-10 max-w-2xl border-l-2 border-olive/50 pl-6 text-ink fade" data-reveal>
           {personalised.note}
         </p>
       </Section>

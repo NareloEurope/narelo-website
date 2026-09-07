@@ -57,6 +57,7 @@ export const hu: Dict = {
       galleryAlt: 'Egy pillanat egy Narelo élményből',
       whatToExpect: 'Mire számíthatsz',
       backToTop: 'Vissza a tetejére',
+      closePortrait: 'Bezárás',
     },
     contact: {
       visitLabel: 'Látogass el hozzánk',
@@ -417,13 +418,13 @@ export const hu: Dict = {
         {
           label: 'A Narelo világod része',
           items: [
-            { name: 'Narelo Experiences', body: 'Állandó hely a felfedezéshez, a fejlődéshez és a valódi kapcsolatok építéséhez, időről időre.' },
-            { name: 'Community Mornings', body: 'Idő arra, hogy a családok találkozzanak, kapcsolódjanak és együtt fejlődjenek.' },
-            { name: 'Narelo Expert Insights', body: 'Beszélgetések a saját szakértőinkkel a gyermekkorról, a fejlődésről és a családi életről.' },
+            { name: 'Regular Narelo Experiences', body: 'A gyermekednek: heti egy élmény a saját kis csoportjával, állandó hely a felfedezéshez, a fejlődéshez és valódi barátságok építéséhez.' },
+            { name: 'Community Mornings', body: 'Az egész családnak: idő arra, hogy más Narelo családokat megismerj, kapcsolódj és együtt fejlődjetek.' },
+            { name: 'Narelo Expert Insights', body: 'A szülőknek: beszélgetések a saját szakértőinkkel a gyermekkorról, a fejlődésről és a családi életről.' },
           ],
         },
         {
-          label: 'Tagoknak is foglalható',
+          label: 'Tagoknak foglalható, tagsági áron',
           aside: 'és még több jön',
           items: [
             { name: 'Guest Expert Insights', body: 'Alkalmak Narelón kívülről meghívott szakemberekkel, a tagoknak tagsági áron.' },
