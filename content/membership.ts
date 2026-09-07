@@ -237,6 +237,11 @@ export const included = {
    * the Experiences page had them under "Part of your Narelo world", which is
    * a straight contradiction between two pages. The Experiences page is
    * right, so they are included, and their descriptions are its own.
+   *
+   * Expert Insights then split in two (Vivien, 2026-09-07), because the two
+   * kinds are not the same offer: a session led by one of our own is part of
+   * the membership, a visiting specialist is at a member rate. Naming them
+   * apart is what makes that legible on the page.
    */
   groups: [
     {
@@ -245,12 +250,13 @@ export const included = {
         { title: 'Weekly experiences', body: 'Your child’s regular place in their age group, every week of term.' },
         { title: 'Priority booking', body: 'First access to experiences, events and limited places before they open more widely.' },
         { title: 'Community Mornings', body: 'Time for families to meet, connect and grow together.' },
-        { title: 'Expert Insights', body: 'Conversations with our own experts around childhood, development and family life.' },
+        { title: 'Narelo Expert Insights', body: 'Conversations with our own experts around childhood, development and family life, yours as part of the membership.' },
       ],
     },
     {
       label: 'For members, at member rates',
       items: [
+        { title: 'Guest Expert Insights' },
         { title: 'Signature Saturdays' },
         { title: 'Holiday Experiences' },
         { title: 'Birthday Experiences' },
