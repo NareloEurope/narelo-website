@@ -88,7 +88,12 @@ export const worlds = {
     {
       name: 'Mountain',
       short: 'Nature on its own terms',
-      image: '/images/world-mountain.webp',
+      /*
+       * The Navigators photograph, the four children running through the
+       * wood, used here too (Vivien, 2026-09-08). world-mountain.webp is no
+       * longer used anywhere; it stays in the repo in case it is wanted back.
+       */
+      image: '/images/stage-photo-navigators.webp',
     },
     {
       name: 'World Around Us',

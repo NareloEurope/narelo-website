@@ -117,7 +117,7 @@ export const hu: Dict = {
       body: 'Élményeink öt világon haladnak keresztül, amelyeket a körülöttünk lévő valódi világ ihletett, és mindegyik új utakat nyit a felfedezéshez, a mozgáshoz, az alkotáshoz. Más világok. Más élmények. Mindig van még valami felfedezni való.',
       items: [
         { name: 'Ocean', short: 'A tenger mint élő hely', image: '/images/world-ocean.webp' },
-        { name: 'Mountain', short: 'A természet a maga feltételei szerint', image: '/images/world-mountain.webp' },
+        { name: 'Mountain', short: 'A természet a maga feltételei szerint', image: '/images/stage-photo-navigators.webp' },
         { name: 'World Around Us', short: 'Ajtók, amelyeket gyerekek ritkán nyithatnak ki', image: '/images/home-world-built-around-childhood.webp' },
         { name: 'Expression', short: 'Formát adni a gondolatoknak', image: '/images/gallery-02.webp' },
         { name: 'Future', short: 'Kíváncsiság arra, ami változik', image: '/images/contact-hero.webp' },
