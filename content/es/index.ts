@@ -323,6 +323,13 @@ export const es: Dict = {
           body: 'Jessica estudió Psicología en la Universidad Massey de Nueva Zelanda y tiene varios años de experiencia trabajando con niños en primera infancia y en entornos educativos. Su foco está en el desarrollo infantil, el bienestar emocional y las relaciones que dan forma al mundo de un niño, con un interés particular en la dinámica familiar y en fortalecer el vínculo entre los niños y sus padres.',
           quote: 'Cuando entendemos al niño y las relaciones que le rodean, construimos bases más sólidas para que crezca.',
         },
+        {
+          name: 'Mercedes',
+          role: 'Responsable de Experiencia de Marca',
+          image: '/images/team-mercedes.webp',
+          body: 'Mercedes estudió Publicidad, Relaciones Públicas y Marketing en ESIC Business & Marketing School en Madrid. Su trayectoria abarca marketing, creación de contenido y producción creativa. Su experiencia con niños ha moldeado su aprecio por la curiosidad, los vínculos y los pequeños momentos que definen la infancia. En Narelo une esos mundos, traduciendo su filosofía en la forma en que la marca se comunica y se vive.',
+          quote: 'Las historias que más significan nacen de momentos reales, vínculos genuinos y un poco de curiosidad.',
+        },
       ],
     },
     joining: {

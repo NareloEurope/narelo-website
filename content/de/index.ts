@@ -324,6 +324,13 @@ export const de: Dict = {
           body: 'Jessica hat an der Massey University in Neuseeland Psychologie studiert und mehrere Jahre mit Kindern in der frühen Kindheit und in pädagogischen Einrichtungen gearbeitet. Ihr Schwerpunkt liegt auf kindlicher Entwicklung, emotionalem Wohlbefinden und den Beziehungen, die die Welt eines Kindes prägen, mit besonderem Interesse an Familiendynamik und daran, die Verbindung zwischen Kindern und ihren Eltern zu stärken.',
           quote: 'Wenn wir das Kind und die Beziehungen um es herum verstehen, schaffen wir stärkere Grundlagen für sein Wachsen.',
         },
+        {
+          name: 'Mercedes',
+          role: 'Brand Experience Manager',
+          image: '/images/team-mercedes.webp',
+          body: 'Mercedes hat an der ESIC Business & Marketing School in Madrid Werbung, Öffentlichkeitsarbeit und Marketing studiert. Ihr Hintergrund reicht von Marketing über Content-Erstellung bis zur kreativen Produktion. Ihre Erfahrung mit Kindern hat ihren Blick für die Neugier, die Verbindungen und die kleinen Momente geprägt, die Kindheit ausmachen. Bei Narelo bringt sie diese Welten zusammen und übersetzt die Philosophie in die Art, wie die Marke kommuniziert und erlebt wird.',
+          quote: 'Die Geschichten, die am meisten bedeuten, wachsen aus echten Momenten, ehrlichen Verbindungen und ein wenig Neugier.',
+        },
       ],
     },
     joining: {

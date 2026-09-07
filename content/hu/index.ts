@@ -322,6 +322,13 @@ export const hu: Dict = {
           body: 'Jessica pszichológiát tanult az új-zélandi Massey Egyetemen, és több éve dolgozik kisgyerekekkel kora gyermekkori és oktatási környezetben. Fókuszában a gyermeki fejlődés, az érzelmi jóllét, és azok a kapcsolatok állnak, amelyek egy gyerek világát alakítják, különös érdeklődéssel a családi dinamika és a gyerekek és szüleik közötti kapcsolat erősítése iránt.',
           quote: 'Amikor megértjük a gyereket és a körülötte lévő kapcsolatokat, erősebb alapot teremtünk a fejlődéséhez.',
         },
+        {
+          name: 'Mercedes',
+          role: 'Márkaélmény-menedzser',
+          image: '/images/team-mercedes.webp',
+          body: 'Mercedes reklám, PR és marketing szakon végzett a madridi ESIC Business & Marketing School intézményében. Háttere a marketingtől a tartalomkészítésen át a kreatív produkcióig terjed. A gyerekekkel szerzett tapasztalata formálta azt, ahogyan a kíváncsiságra, a kapcsolatokra és azokra az apró pillanatokra tekint, amelyek a gyermekkort meghatározzák. A Narelónál ezeket a világokat hozza össze, és fordítja le a filozófiát arra, ahogyan a márkát kommunikáljuk és megélhetővé tesszük.',
+          quote: 'A legfontosabb történetek valódi pillanatokból, őszinte kapcsolatokból és egy kis kíváncsiságból nőnek ki.',
+        },
       ],
     },
     joining: {
