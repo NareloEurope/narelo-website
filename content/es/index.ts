@@ -113,7 +113,7 @@ export const es: Dict = {
       body: 'Nuestras experiencias recorren cinco mundos inspirados en el mundo real que nos rodea, cada uno abriendo nuevas formas de explorar, moverse, crear y descubrir. Mundos distintos. Experiencias distintas. Siempre algo nuevo por descubrir.',
       items: [
         { name: 'Ocean', short: 'El mar como lugar vivo', image: '/images/world-ocean.webp' },
-        { name: 'Mountain', short: 'La naturaleza en sus propios términos', image: '/images/world-mountain.webp' },
+        { name: 'Mountain', short: 'La naturaleza en sus propios términos', image: '/images/stage-photo-navigators.webp' },
         { name: 'World Around Us', short: 'Puertas que los niños rara vez pueden abrir', image: '/images/home-world-built-around-childhood.webp' },
         { name: 'Expression', short: 'Dar forma a las ideas', image: '/images/gallery-02.webp' },
         { name: 'Future', short: 'Curiosidad por lo que está cambiando', image: '/images/contact-hero.webp' },
