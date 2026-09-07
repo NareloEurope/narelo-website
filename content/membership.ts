@@ -71,6 +71,11 @@ export const isNot = {
   eyebrow: 'And what it is not',
   items: ['A class', 'A nursery', 'A play centre', 'Another activity'],
   line: 'Narelo is a membership your family belongs to.',
+  /**
+   * The Narelo Family Guide's view on childhood, in one line (Vivien,
+   * 2026-09-07). It existed only in the dossier until now.
+   */
+  pull: 'We don’t create a world for children. We open the real world to them.',
 } as const;
 
 /**
@@ -132,7 +137,7 @@ export const ageGroups = {
   /** Rows come from content/stages.ts: name and age only (Rui, 2026-09-02).
    *  Every description of a stage, the one-liner included, lives on the
    *  Experiences page, and the link below points there instead. */
-  note: 'Five-year-olds are placed between Builders I and Builders II depending on readiness, not their birthday.',
+  note: 'Ages are indicative: we adapt to each child’s development and interests.',
   linkLabel: 'See what each stage includes',
   linkHref: '/experiences/#journey',
 } as const;

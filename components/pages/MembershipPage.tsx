@@ -101,6 +101,8 @@ export default function MembershipPage({ lang }: { lang: Lang }) {
             ))}
           </ul>
           <p className="display display-md mt-10 italic text-ink">{isNot.line}</p>
+          {/* The dossier's view on childhood, closing the negation (2026-09-07). */}
+          <p className="body-copy mt-6 max-w-xl text-ink-soft">{isNot.pull}</p>
         </div>
 
         {/* And what makes it different, closing the trio (2026-09-04). */}

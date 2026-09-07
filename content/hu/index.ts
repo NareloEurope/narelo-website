@@ -67,7 +67,7 @@ export const hu: Dict = {
         'https://wa.me/34655366888?text=Szia%20Narelo%2C%20szeretn%C3%A9k%20t%C3%B6bbet%20megtudni%20a%20csal%C3%A1dunknak%20sz%C3%B3l%C3%B3%20tags%C3%A1gr%C3%B3l.',
     },
     socialIcons: [
-      { src: '/images/social-instagram.webp', label: 'Instagram', href: 'https://instagram.com/narelo.eu' },
+      { src: '/images/social-instagram.webp', label: 'Instagram', href: 'https://instagram.com/narelo.europe' },
       { src: '/images/social-whatsapp.webp', label: 'WhatsApp', href: 'https://wa.me/34655366888?text=Szia%20Narelo%2C%20szeretn%C3%A9k%20t%C3%B6bbet%20megtudni%20a%20csal%C3%A1dunknak%20sz%C3%B3l%C3%B3%20tags%C3%A1gr%C3%B3l.' },
       { src: '/images/social-tiktok.webp', label: 'TikTok', href: null },
       { src: '/images/social-facebook.webp', label: 'Facebook', href: null },
@@ -132,7 +132,7 @@ export const hu: Dict = {
         { name: 'Builders II', age: '5–6' },
         { name: 'Navigators', age: '6–8' },
       ],
-      note: 'Az ötéveseket érettségük alapján soroljuk a Builders I és a Builders II közé, nem a születési dátum szerint.',
+      note: 'Az életkorok tájékoztató jellegűek: minden gyermek fejlődéséhez és érdeklődéséhez igazodunk.',
       linkLabel: 'Fedezd fel a korcsoportokat',
       linkHref: '/experiences/#journey',
     },
@@ -189,6 +189,7 @@ export const hu: Dict = {
       eyebrow: 'És ami nem',
       items: ['Egy foglalkozás', 'Egy bölcsőde', 'Egy játszóház', 'Még egy program'],
       line: 'A Narelo egy tagság, amelyhez a családod tartozik.',
+      pull: 'Nem világot teremtünk a gyerekeknek. Megnyitjuk előttük a valódi világot.',
     },
     different: {
       eyebrow: 'Mitől más a Narelo',
@@ -224,7 +225,7 @@ export const hu: Dict = {
       eyebrow: 'A legelső pillanattól',
       heading: 'Egy hely, amely együtt nő a gyermekeddel',
       body: 'Minden gyerek egy néven nevezett csoporthoz tartozik, amely vele együtt halad, ahogy nő. A családok bármikor csatlakozhatnak, és sokan még a gyerekük születése előtt kezdik.',
-      note: 'Az ötéveseket érettségük alapján soroljuk a Builders I és a Builders II közé, nem a születési dátum szerint.',
+      note: 'Az életkorok tájékoztató jellegűek: minden gyermek fejlődéséhez és érdeklődéséhez igazodunk.',
       linkLabel: 'Nézd meg, mit tartalmaz az egyes szakaszok',
       linkHref: '/experiences/#journey',
     },
@@ -398,13 +399,13 @@ export const hu: Dict = {
       eyebrow: 'Az út',
       heading: 'Minden szakaszhoz saját ösvény',
       body: 'Minden gyerek egy néven nevezett csoporthoz tartozik, amely vele együtt halad, ahogy nő. A családok az út bármely pontján csatlakozhatnak.',
-      note: 'Az ötéveseket érettségük alapján soroljuk a Builders I és a Builders II közé, nem a születési dátum szerint.',
+      note: 'Az életkorok tájékoztató jellegűek: minden gyermek fejlődéséhez és érdeklődéséhez igazodunk.',
     },
     regular: {
       eyebrow: 'Az év során',
       heading: 'A heti élményen túl',
       body: 'A tagság túlmutat a gyermeked heti élményein. Rendszeresen összejövünk közösségként, szülők és gyerekek egyaránt, és folyamatosan elérhetők a saját szakértőink. Egy hely, ahol tovább tanulhattok a szülőségről és magatokról mint családról.',
-      note: 'Minden hónapban a saját szakértőink megnyitnak egy alkalmat neked: a tiéd, a tagság részeként. Amikor kívülről hívunk szakembert, a tagok mindig tagsági áron vesznek részt.',
+      note: 'Minden hónapban a saját szakértőink egyike megnyit egy alkalmat neked, ez a tagság része. Amikor Narelón kívüli szakembert hívunk, a tagok tagsági áron vesznek részt.',
       groups: [
         {
           label: 'A Narelo világod része',
@@ -428,6 +429,7 @@ export const hu: Dict = {
       eyebrow: 'A hétköznapin túl',
       heading: 'A családodra tervezve',
       body: 'A tagságon túl a Narelo válogatott privát élményeket is készít, gondosan a gyermeked és a családod köré szabva.',
+      note: 'Ezek az élmények a tagságon kívül esnek. A tagok foglalnak elsőként, és mindig tagsági áron.',
       items: [
         { name: 'Születésnapi élmények', body: 'Gondosan összeállított ünneplések a gyermeked érdeklődéséből és személyiségéből kiindulva.' },
         { name: 'Egyedi privát élmények', body: 'Személyre szabott élmények, gondosan a gyermeked és a családod köré építve.' },

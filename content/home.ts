@@ -128,7 +128,7 @@ export const journey = {
     { name: 'Builders II', age: '5–6' },
     { name: 'Navigators', age: '6–8' },
   ],
-  note: 'Five-year-olds are placed between Builders I and Builders II depending on readiness, not birthday.',
+  note: 'Ages are indicative: we adapt to each child’s development and interests.',
   linkLabel: 'Explore the age groups',
   linkHref: '/experiences/#journey',
 } as const;

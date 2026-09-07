@@ -106,11 +106,11 @@ export const contact = {
 } as const;
 
 /**
- * ⚠️ On the Wix site these four icons were dead links, and @narelo.eu appeared
+ * ⚠️ On the Wix site these four icons were dead links,  and @narelo.europe appeared
  * nowhere. Instagram is set from CLAUDE.md; the rest need real URLs before launch.
  */
 export const socialIcons = [
-  { src: '/images/social-instagram.webp', label: 'Instagram', href: 'https://instagram.com/narelo.eu' },
+  { src: '/images/social-instagram.webp', label: 'Instagram', href: 'https://instagram.com/narelo.europe' },
   { src: '/images/social-whatsapp.webp', label: 'WhatsApp', href: contact.whatsapp },
   { src: '/images/social-tiktok.webp', label: 'TikTok', href: null },
   { src: '/images/social-facebook.webp', label: 'Facebook', href: null },

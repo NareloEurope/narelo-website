@@ -68,7 +68,7 @@ export const es: Dict = {
         'https://wa.me/34655366888?text=Hola%20Narelo%2C%20me%20encantar%C3%ADa%20saber%20m%C3%A1s%20sobre%20la%20membres%C3%ADa%20para%20mi%20familia.',
     },
     socialIcons: [
-      { src: '/images/social-instagram.webp', label: 'Instagram', href: 'https://instagram.com/narelo.eu' },
+      { src: '/images/social-instagram.webp', label: 'Instagram', href: 'https://instagram.com/narelo.europe' },
       { src: '/images/social-whatsapp.webp', label: 'WhatsApp', href: 'https://wa.me/34655366888?text=Hola%20Narelo%2C%20me%20encantar%C3%ADa%20saber%20m%C3%A1s%20sobre%20la%20membres%C3%ADa%20para%20mi%20familia.' },
       { src: '/images/social-tiktok.webp', label: 'TikTok', href: null },
       { src: '/images/social-facebook.webp', label: 'Facebook', href: null },
@@ -133,7 +133,7 @@ export const es: Dict = {
         { name: 'Builders II', age: '5–6' },
         { name: 'Navigators', age: '6–8' },
       ],
-      note: 'Los niños de cinco años se sitúan entre Builders I y Builders II según su madurez, no según su fecha de nacimiento.',
+      note: 'Las edades son orientativas: nos adaptamos al desarrollo y a los intereses de cada niño.',
       linkLabel: 'Descubre los grupos de edad',
       linkHref: '/experiences/#journey',
     },
@@ -190,6 +190,7 @@ export const es: Dict = {
       eyebrow: 'Y qué no es',
       items: ['Una clase', 'Una guardería', 'Un centro de juego', 'Otra actividad más'],
       line: 'Narelo es una membresía a la que tu familia pertenece.',
+      pull: 'No creamos un mundo para los niños. Les abrimos el mundo real.',
     },
     different: {
       eyebrow: 'Qué hace diferente a Narelo',
@@ -225,7 +226,7 @@ export const es: Dict = {
       eyebrow: 'Desde el principio',
       heading: 'Un lugar que crece con tu hijo',
       body: 'Cada niño pertenece a un grupo con nombre propio que se mueve con él a medida que crece. Las familias pueden unirse en cualquier momento, y muchas empiezan antes de que su hijo nazca.',
-      note: 'Los niños de cinco años se sitúan entre Builders I y Builders II según su madurez, no según su fecha de nacimiento.',
+      note: 'Las edades son orientativas: nos adaptamos al desarrollo y a los intereses de cada niño.',
       linkLabel: 'Mira qué incluye cada etapa',
       linkHref: '/experiences/#journey',
     },
@@ -399,13 +400,13 @@ export const es: Dict = {
       eyebrow: 'El recorrido',
       heading: 'Un camino para cada etapa',
       body: 'Cada niño pertenece a un grupo con nombre propio que se mueve con él según crece. Las familias pueden unirse en cualquier punto del camino.',
-      note: 'Los niños de cinco años se sitúan entre Builders I y Builders II según su madurez, no según su fecha de nacimiento.',
+      note: 'Las edades son orientativas: nos adaptamos al desarrollo y a los intereses de cada niño.',
     },
     regular: {
       eyebrow: 'A lo largo del año',
       heading: 'Más allá de la experiencia semanal',
       body: 'La membresía va más allá de las experiencias semanales de tu hijo. Nos reunimos regularmente como comunidad, padres y niños por igual, y tienes acceso continuo a nuestros propios expertos. Un lugar donde seguir aprendiendo sobre la maternidad y la paternidad, y sobre vosotros mismos como familia.',
-      note: 'Cada mes, nuestros propios expertos abren una sesión para ti: tuya, como parte de la membresía. Cuando invitamos a especialistas de fuera, los socios siempre tienen tarifa de socio.',
+      note: 'Cada mes, uno de nuestros propios expertos abre una sesión para ti, incluida en tu membresía. Cuando invitamos a un especialista de fuera de Narelo, los socios tienen tarifa de socio.',
       groups: [
         {
           label: 'Parte de tu mundo Narelo',
@@ -429,6 +430,7 @@ export const es: Dict = {
       eyebrow: 'Más allá de lo cotidiano',
       heading: 'Diseñado en torno a tu familia',
       body: 'Más allá de la membresía, Narelo también crea experiencias privadas seleccionadas, pensadas a medida de tu hijo y de tu familia.',
+      note: 'Estas experiencias quedan fuera de la membresía. Los socios reservan primero, y siempre con tarifa de socio.',
       items: [
         { name: 'Experiencias de cumpleaños', body: 'Celebraciones cuidadas e inspiradas en los intereses y la personalidad de tu hijo.' },
         { name: 'Experiencias privadas a medida', body: 'Experiencias personalizadas creadas con cuidado en torno a tu hijo y tu familia.' },
