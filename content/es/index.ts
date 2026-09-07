@@ -153,8 +153,8 @@ export const es: Dict = {
       eyebrow: 'Marbella',
       heading: 'Aquí comienza Narelo',
       body: 'El mar a un lado, la montaña al otro, y una comunidad de familias que elegimos con cuidado y sin prisa. Nuestra primera casa Narelo abre en Marbella este otoño, y es la primera, pero no la última.',
-      image: '/images/home-discovery.webp',
-      imageAlt: 'La costa de Marbella, donde abre la primera casa Narelo.',
+      image: '/images/img-5208.webp',
+      imageAlt: 'Tres niños en una duna al atardecer, mirando el mar.',
     },
     closing: {
       headingLines: ['La infancia', 'solo se vive una vez.'],

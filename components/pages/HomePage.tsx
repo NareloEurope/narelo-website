@@ -216,7 +216,20 @@ export default function HomePage({ lang }: { lang: Lang }) {
         </div>
       </section>
 
-      {/* ---------- Marbella ---------- */}
+      {/*
+       * ---------- Marbella ----------
+       *
+       * The photograph here used to be an almost empty washed-out sky. On a
+       * phone the crop landed on nothing but haze, so the band read as a grey
+       * panel with white text you could barely make out (Vivien, 2026-09-07).
+       * It is a coastline now, sea and headland, which is what the copy
+       * describes, and it is portrait so a phone gets the picture rather than
+       * a slice of sky.
+       *
+       * The scrim went with it. Text sits at the foot of the band, so the
+       * gradient is dark where the words are and stays dark enough further up
+       * that a bright patch of sea cannot swallow the heading.
+       */}
       <section className="relative isolate flex min-h-[85svh] items-end overflow-hidden">
         <div className="absolute inset-0 -z-10 overflow-hidden">
           {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -224,13 +237,13 @@ export default function HomePage({ lang }: { lang: Lang }) {
             src={home.image}
             alt={home.imageAlt}
             width={1536}
-            height={1024}
+            height={2048}
             loading="lazy"
-            className="parallax h-[118%] w-full object-cover"
+            className="parallax h-[118%] w-full object-cover object-[50%_62%]"
             data-speed="0.16"
           />
         </div>
-        <div className="absolute inset-0 -z-10 bg-gradient-to-t from-ink/75 via-ink/25 to-transparent" aria-hidden="true" />
+        <div className="absolute inset-0 -z-10 bg-gradient-to-t from-ink/85 via-ink/55 to-ink/25" aria-hidden="true" />
 
         <div className="mx-auto w-full max-w-[1280px] px-6 py-20 md:px-10 md:py-24">
           <div className="max-w-2xl fade" data-reveal>

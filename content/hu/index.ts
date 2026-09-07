@@ -157,8 +157,8 @@ export const hu: Dict = {
       eyebrow: 'Marbella',
       heading: 'Ahol a Narelo elkezdődik',
       body: 'Egyik oldalon a tenger, a másikon a hegyek, és egy családokból álló közösség, amelyet gondosan és lassan választunk. Az első Narelo otthonunk itt nyílik idén ősszel, és ez az első, nem az utolsó.',
-      image: '/images/home-discovery.webp',
-      imageAlt: 'A marbellai tengerpart, ahol az első Narelo otthon nyílik.',
+      image: '/images/img-5208.webp',
+      imageAlt: 'Három gyerek egy homokdűnén naplementekor, a tengert nézve.',
     },
     closing: {
       headingLines: ['A gyermekkor', 'egyszer történik meg.'],
