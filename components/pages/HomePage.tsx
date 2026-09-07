@@ -43,26 +43,36 @@ export default function HomePage({ lang }: { lang: Lang }) {
         </div>
       </section>
 
-      {/* ---------- Belief ---------- */}
+      {/*
+       * ---------- Belief ----------
+       *
+       * Three paragraphs stacked beside the photograph was one too many
+       * (Vivien, 2026-09-07). The heading and the paragraph stay on the left,
+       * now aligned with the top of the photograph rather than centred
+       * against it, and the dossier's belief line moved under the photograph
+       * in a smaller size. It reads as a caption to the picture, which is
+       * what it is.
+       */}
       <Section>
-        <div className="grid items-center gap-14 md:grid-cols-2 md:gap-20">
+        <div className="grid items-start gap-14 md:grid-cols-2 md:gap-20">
           <div className="fade" data-reveal>
             <p className="eyebrow mb-8 text-olive">{belief.eyebrow}</p>
             <h2 className="display display-lg mb-8 max-w-lg">{belief.heading}</h2>
-            <p className="lede mb-10 max-w-md text-ink-soft">{belief.body}</p>
-            {/* The belief as the dossier states it, closing the section. */}
-            <p className="display display-md max-w-lg italic text-olive">{belief.pull}</p>
+            <p className="lede max-w-md text-ink-soft">{belief.body}</p>
           </div>
-          <div className="img-settle overflow-hidden rounded-[2px]" data-reveal>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={belief.image}
-              alt={belief.imageAlt}
-              width={1080}
-              height={1350}
-              loading="lazy"
-              className="aspect-[4/5] w-full object-cover"
-            />
+          <div className="fade" data-reveal>
+            <div className="img-settle overflow-hidden rounded-[2px]">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={belief.image}
+                alt={belief.imageAlt}
+                width={1080}
+                height={1350}
+                loading="lazy"
+                className="aspect-[4/5] w-full object-cover"
+              />
+            </div>
+            <p className="body-copy mt-6 italic text-olive">{belief.pull}</p>
           </div>
         </div>
       </Section>

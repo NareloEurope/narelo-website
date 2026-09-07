@@ -556,7 +556,7 @@ export const hu: Dict = {
           'Fizikai kihívások és készségfejlesztés',
           'Reflexió, célkitűzés és személyes fejlődés',
         ],
-        image: '/images/world-mountain.webp',
+        image: '/images/stage-photo-navigators.webp',
       },
     ],
   },
