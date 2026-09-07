@@ -324,7 +324,7 @@ export const es: Dict = {
           quote: 'Cuando entendemos al niño y las relaciones que le rodean, construimos bases más sólidas para que crezca.',
         },
         {
-          name: 'Mercedes',
+          name: 'Mercedes Carrasco Galera',
           role: 'Responsable de Experiencia de Marca',
           image: '/images/team-mercedes.webp',
           body: 'Mercedes estudió Publicidad, Relaciones Públicas y Marketing en ESIC Business & Marketing School en Madrid. Su trayectoria abarca marketing, creación de contenido y producción creativa. Su experiencia con niños ha moldeado su aprecio por la curiosidad, los vínculos y los pequeños momentos que definen la infancia. En Narelo une esos mundos, traduciendo su filosofía en la forma en que la marca se comunica y se vive.',
