@@ -280,16 +280,17 @@ export const es: Dict = {
           items: [
             { title: 'Experiencias semanales', body: 'El lugar habitual de tu hijo en su grupo de edad, cada semana del curso.' },
             { title: 'Reserva prioritaria', body: 'Acceso primero a experiencias, encuentros y plazas limitadas antes de que se abran más ampliamente.' },
+            { title: 'Community Mornings', body: 'Tiempo para que las familias se encuentren, conecten y crezcan juntas.' },
+            { title: 'Expert Insights', body: 'Conversaciones con nuestros propios expertos sobre infancia, desarrollo y vida familiar.' },
           ],
         },
         {
           label: 'Para socios, con tarifa de socio',
           items: [
             { title: 'Signature Saturdays' },
-            { title: 'Expert Insights' },
             { title: 'Holiday Experiences' },
-            { title: 'Community Mornings' },
-            { title: 'El mundo Narelo más amplio' },
+            { title: 'Experiencias de cumpleaños' },
+            { title: 'Experiencias privadas a medida' },
           ],
           linkLabel: 'Qué es cada una de estas cosas',
           linkHref: '/experiences/',

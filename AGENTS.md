@@ -34,17 +34,23 @@ What is in each content file:
 - **`content/pages.ts`**, `contactPage` (including the form fields), `journalPage`, `eventsPage`
 - **`content/site.ts`**, `site`, `nav`, `headerCta`, `contact`, `socialIcons`
 
-## Three languages
+## Languages
 
-The site is published in **English (default), Spanish, German and Hungarian**, in that order in the selector.
+The site is published in **English (default), Spanish and German**, in that order in the selector.
 
 - English lives at the plain URLs (`/`, `/membership/`) and the English files in
   `content/*.ts` stay the source of truth. Edit those exactly as before.
-- Spanish is `/es/...`, German `/de/...`, Hungarian `/hu/...`. Each is one file:
-  **`content/es/index.ts`**, **`content/de/index.ts`**, **`content/hu/index.ts`**.
-- The three translation files mirror the English key for key. `content/dictionary.ts`
+- Spanish is `/es/...` and German `/de/...`. Each is one file:
+  **`content/es/index.ts`** and **`content/de/index.ts`**.
+- **Hungarian is switched off** (Vivien, 2026-09-07). `content/hu/index.ts` is
+  finished, still in the repo and still type-checked, it is simply not
+  published. To bring it back, add `'hu'` to `LANGS` and `LANG_META` in
+  `content/locales.ts` and re-import it in `content/dictionary.ts`. **Keep it
+  updated when you add a key**, or turning it back on becomes a rewrite.
+- The translation files mirror the English key for key. `content/dictionary.ts`
   derives the shape from the English, so **a missing or misspelled key fails the
-  build**. When you add a key to an English file, add it to all three.
+  build**. When you add a key to an English file, add it to all three,
+  Hungarian included.
 - Brand names are **not translated**: Narelo, the Five Worlds, the age group
   names, Signature Saturdays, Holiday Experiences, Expert Insights, Community
   Mornings, Narelo Experiences.
