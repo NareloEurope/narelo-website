@@ -64,6 +64,11 @@ export const stageDetails: readonly Stage[] = [
       'Sensory theme experience: a prepared environment babies explore at their own pace',
       'Calm and reflect: a moment to slow down together, quiet sensory play and connection',
     ],
+    /*
+     * Babies and parents on the floor around sensory trays, the Narelo
+     * banner behind them. Supplied by Vivien (2026-09-07), replacing the
+     * wide strip that was here. Source not confirmed.
+     */
     image: '/images/stage-photo-nurture.webp',
   },
   {
@@ -80,6 +85,10 @@ export const stageDetails: readonly Stage[] = [
       'Group connection: games, music and stories that build social skills and friendship',
       'Calm and reflect: breathing, a quiet moment or a gentle stretch to close',
     ],
+    /*
+     * Toddlers climbing over fallen logs in a sunlit wood. Supplied by
+     * Vivien (2026-09-07); source not confirmed.
+     */
     image: '/images/stage-photo-nest.webp',
   },
   {

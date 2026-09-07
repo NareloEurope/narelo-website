@@ -161,8 +161,17 @@ export const home = {
   eyebrow: 'Marbella',
   heading: 'Where Narelo begins',
   body: 'The sea on one side, the mountains on the other, and a community of families we are choosing carefully and slowly. Our first Narelo home opens here this autumn, and it is the first, not the last.',
-  image: '/images/home-discovery.webp',
-  imageAlt: 'The coast at Marbella, where the first Narelo home opens.',
+  /*
+   * The old home-discovery.webp was a near-empty pale sky, which on a phone
+   * cropped to a flat grey panel (Vivien, 2026-09-07). This is children on a
+   * dune at sunset with the sea behind them, which carries the paragraph.
+   * ⚠️ It is not a photograph of Marbella; there is no confirmed Marbella
+   * photograph in the project yet, so the alt text does not claim one. Worth
+   * replacing with a real one before launch. It also appears in the Community
+   * gallery, which is not published yet.
+   */
+  image: '/images/img-5208.webp',
+  imageAlt: 'Three children on a dune at sunset, looking out over the sea.',
 } as const;
 
 /*

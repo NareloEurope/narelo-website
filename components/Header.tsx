@@ -91,7 +91,9 @@ export default function Header() {
             alt={site.name}
             width={796}
             height={341}
-            className={`h-7 w-auto transition-[filter] duration-700 md:h-8 ${
+            /* A step up from h-7/h-8 (Vivien, 2026-09-07): the mark was reading small
+               against the menu beside it. */
+            className={`h-8 w-auto transition-[filter] duration-700 md:h-9 ${
               light ? '[filter:invert(1)_brightness(2)]' : ''
             }`}
           />

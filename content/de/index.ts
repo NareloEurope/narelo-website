@@ -154,8 +154,8 @@ export const de: Dict = {
       eyebrow: 'Marbella',
       heading: 'Wo Narelo beginnt',
       body: 'Auf der einen Seite das Meer, auf der anderen die Berge, und eine Gemeinschaft von Familien, die wir sorgfältig und langsam auswählen. Unser erstes Narelo Zuhause öffnet hier diesen Herbst, und es ist das erste, nicht das letzte.',
-      image: '/images/home-discovery.webp',
-      imageAlt: 'Die Küste bei Marbella, wo das erste Narelo Zuhause öffnet.',
+      image: '/images/img-5208.webp',
+      imageAlt: 'Drei Kinder auf einer Düne bei Sonnenuntergang, mit Blick aufs Meer.',
     },
     closing: {
       headingLines: ['Kindheit', 'geschieht einmal.'],
