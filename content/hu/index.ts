@@ -285,12 +285,13 @@ export const hu: Dict = {
             { title: 'Heti élmények', body: 'A gyermeked állandó helye a saját korcsoportjában, a tanév minden hetében.' },
             { title: 'Elsőbbségi foglalás', body: 'Elsőként férsz hozzá élményekhez, eseményekhez és korlátozott helyekhez, mielőtt szélesebb körben megnyílnának.' },
             { title: 'Community Mornings', body: 'Idő a családoknak, hogy találkozzanak, kapcsolódjanak és együtt növekedjenek.' },
-            { title: 'Expert Insights', body: 'Beszélgetések a saját szakértőinkkel a gyermekkorról, a fejlődésről és a családi életről.' },
+            { title: 'Narelo Expert Insights', body: 'Beszélgetések a saját szakértőinkkel a gyermekkorról, a fejlődésről és a családi életről, a tagságod részeként.' },
           ],
         },
         {
           label: 'Tagoknak, tagsági áron',
           items: [
+            { title: 'Guest Expert Insights' },
             { title: 'Signature Saturdays' },
             { title: 'Holiday Experiences' },
             { title: 'Születésnapi élmények' },
@@ -418,13 +419,14 @@ export const hu: Dict = {
           items: [
             { name: 'Narelo Experiences', body: 'Állandó hely a felfedezéshez, a fejlődéshez és a valódi kapcsolatok építéséhez, időről időre.' },
             { name: 'Community Mornings', body: 'Idő arra, hogy a családok találkozzanak, kapcsolódjanak és együtt fejlődjenek.' },
-            { name: 'Expert Insights', body: 'Beszélgetések szakértőkkel a gyermekkorról, a fejlődésről és a családi életről.' },
+            { name: 'Narelo Expert Insights', body: 'Beszélgetések a saját szakértőinkkel a gyermekkorról, a fejlődésről és a családi életről.' },
           ],
         },
         {
           label: 'Tagoknak is foglalható',
           aside: 'és még több jön',
           items: [
+            { name: 'Guest Expert Insights', body: 'Alkalmak Narelón kívülről meghívott szakemberekkel, a tagoknak tagsági áron.' },
             { name: 'Signature Saturdays', body: 'Különleges szombati élmények felfedezésre, alkotásra és kalandra tervezve.' },
             { name: 'Holiday Experiences', body: 'Gondosan összeállított élmények az iskolai szünetekben.' },
           ],

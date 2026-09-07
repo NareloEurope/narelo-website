@@ -2,7 +2,7 @@ import Link from 'next/link';
 import Section from '@/components/Section';
 import LazyVideo from '@/components/LazyVideo';
 import WhatsAppIcon from '@/components/WhatsAppIcon';
-import IncludedAccordion from '@/components/IncludedAccordion';
+import IncludedPanels from '@/components/IncludedPanels';
 import PromiseCards from '@/components/PromiseCards';
 import { content } from '@/content/dictionary';
 import { localePath, type Lang } from '@/content/locales';
@@ -237,7 +237,7 @@ export default function MembershipPage({ lang }: { lang: Lang }) {
           <PromiseCards cards={included.cards} />
 
           <div className="mt-16 border-t border-ink/15 pt-12 fade" data-reveal>
-            <IncludedAccordion groups={included.groups} />
+            <IncludedPanels groups={included.groups} />
           </div>
         </div>
       </section>
@@ -252,17 +252,21 @@ export default function MembershipPage({ lang }: { lang: Lang }) {
         {/*
          * The portraits used to run the full width of the column, which read
          * like a model agency rather than the people behind a membership
-         * (Vivien, 2026-09-07). They are small now and sit beside the name,
-         * the way a byline does, so the writing leads and the face supports
-         * it. Two columns on desktop, stacked on a phone, with the quote
-         * pinned to the foot of each column so the two quotes line up when
-         * the bios are different lengths.
+         * (Vivien, 2026-09-07). They sit beside the name now, the way a byline
+         * does, so the writing leads and the face supports it. Half again
+         * bigger than the first attempt at that, which went too small.
+         *
+         * Three rows in a subgrid, so the two columns share row heights: the
+         * quotes now begin on the same line rather than being pushed to the
+         * bottom of a column and lining up by their last line, which left a
+         * gap under the shorter bio (Vivien, 2026-09-07). Without subgrid the
+         * quote simply follows its own bio, which is a reasonable fallback.
          */}
-        <div className="reveal grid gap-14 md:grid-cols-2 md:gap-20" data-reveal>
+        <div className="reveal grid gap-14 md:grid-cols-2 md:grid-rows-[auto_auto_1fr] md:gap-x-20 md:gap-y-0" data-reveal>
           {proof.people.map((person) => (
-            <div key={person.name} className="flex flex-col border-t border-ink/15 pt-8">
+            <div key={person.name} className="flex flex-col border-t border-ink/15 pt-8 md:row-span-3 md:grid md:grid-rows-subgrid md:gap-0">
               <div className="flex items-center gap-6">
-                <div className="img-settle w-24 shrink-0 overflow-hidden rounded-[2px] md:w-28">
+                <div className="img-settle w-36 shrink-0 overflow-hidden rounded-[2px] md:w-[10.5rem]">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={person.image}
@@ -279,7 +283,7 @@ export default function MembershipPage({ lang }: { lang: Lang }) {
                 </div>
               </div>
               <p className="body-copy mt-8 text-ink-soft">{person.body}</p>
-              <blockquote className="lede mt-auto pt-8 italic text-ink">
+              <blockquote className="lede pt-8 italic text-ink">
                 “{person.quote}”
               </blockquote>
             </div>
@@ -293,13 +297,13 @@ export default function MembershipPage({ lang }: { lang: Lang }) {
          */}
         <div className="mt-20 border-t border-ink/12 pt-14">
           <p className="eyebrow mb-10 text-olive fade" data-reveal>{proof.teamLabel}</p>
-          <div className="reveal grid gap-14 md:grid-cols-2 md:gap-20" data-reveal>
+          <div className="reveal grid gap-14 md:grid-cols-2 md:grid-rows-[auto_auto_1fr] md:gap-x-20 md:gap-y-0" data-reveal>
             {proof.team.map((person) => (
-              <div key={person.name} className="flex flex-col border-t border-ink/15 pt-8">
+              <div key={person.name} className="flex flex-col border-t border-ink/15 pt-8 md:row-span-3 md:grid md:grid-rows-subgrid md:gap-0">
                 <div className="flex items-center gap-6">
                   {/* A size down from the founders, so the two rows read as
                       two rows rather than one long gallery. */}
-                  <div className="img-settle w-20 shrink-0 overflow-hidden rounded-[2px] md:w-24">
+                  <div className="img-settle w-30 shrink-0 overflow-hidden rounded-[2px] md:w-36">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
                       src={person.image}
@@ -316,7 +320,7 @@ export default function MembershipPage({ lang }: { lang: Lang }) {
                   </div>
                 </div>
                 <p className="body-copy mt-8 text-ink-soft">{person.body}</p>
-                <blockquote className="lede mt-auto pt-8 italic text-ink">
+                <blockquote className="lede pt-8 italic text-ink">
                   “{person.quote}”
                 </blockquote>
               </div>

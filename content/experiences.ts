@@ -141,13 +141,14 @@ export const regular = {
       items: [
         { name: 'Regular Narelo Experiences', body: 'A consistent place to explore, grow and build meaningful relationships over time.' },
         { name: 'Community Mornings', body: 'Time for families to meet, connect and grow together.' },
-        { name: 'Expert Insights', body: 'Conversations with experts around childhood, development and family life.' },
+        { name: 'Narelo Expert Insights', body: 'Conversations with our own experts around childhood, development and family life.' },
       ],
     },
     {
       label: 'Also bookable for members',
       aside: 'and more to come',
       items: [
+        { name: 'Guest Expert Insights', body: 'Sessions with specialists we invite from outside Narelo, offered to members at a member rate.' },
         { name: 'Signature Saturdays', body: 'Special Saturday experiences designed for discovery, creativity and adventure.' },
         { name: 'Holiday Experiences', body: 'Curated experiences during the school holidays.' },
       ],

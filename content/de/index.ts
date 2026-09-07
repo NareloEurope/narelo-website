@@ -282,12 +282,13 @@ export const de: Dict = {
             { title: 'Wöchentliche Erlebnisse', body: 'Der feste Platz Ihres Kindes in seiner Altersgruppe, in jeder Woche des Halbjahres.' },
             { title: 'Bevorzugte Buchung', body: 'Zuerst Zugang zu Erlebnissen, Terminen und begrenzten Plätzen, bevor sie weiter geöffnet werden.' },
             { title: 'Community Mornings', body: 'Zeit für Familien, sich zu begegnen, zu verbinden und miteinander zu wachsen.' },
-            { title: 'Expert Insights', body: 'Gespräche mit unseren eigenen Fachleuten über Kindheit, Entwicklung und Familienleben.' },
+            { title: 'Narelo Expert Insights', body: 'Gespräche mit unseren eigenen Fachleuten über Kindheit, Entwicklung und Familienleben, in Ihrer Mitgliedschaft enthalten.' },
           ],
         },
         {
           label: 'Für Mitglieder, zum Mitgliedspreis',
           items: [
+            { title: 'Guest Expert Insights' },
             { title: 'Signature Saturdays' },
             { title: 'Holiday Experiences' },
             { title: 'Geburtstagserlebnisse' },
@@ -415,13 +416,14 @@ export const de: Dict = {
           items: [
             { name: 'Narelo Experiences', body: 'Ein beständiger Ort, um zu erkunden, zu wachsen und mit der Zeit echte Beziehungen aufzubauen.' },
             { name: 'Community Mornings', body: 'Zeit für Familien, sich zu begegnen, zu verbinden und miteinander zu wachsen.' },
-            { name: 'Expert Insights', body: 'Gespräche mit Fachleuten über Kindheit, Entwicklung und Familienleben.' },
+            { name: 'Narelo Expert Insights', body: 'Gespräche mit unseren eigenen Fachleuten über Kindheit, Entwicklung und Familienleben.' },
           ],
         },
         {
           label: 'Auch für Mitglieder buchbar',
           aside: 'und mehr wird folgen',
           items: [
+            { name: 'Guest Expert Insights', body: 'Runden mit Fachleuten, die wir von außerhalb Narelos einladen, für Mitglieder zum Mitgliedspreis.' },
             { name: 'Signature Saturdays', body: 'Besondere Samstagserlebnisse für Entdeckung, Kreativität und Abenteuer.' },
             { name: 'Holiday Experiences', body: 'Sorgfältig gestaltete Erlebnisse in den Schulferien.' },
           ],

@@ -281,12 +281,13 @@ export const es: Dict = {
             { title: 'Experiencias semanales', body: 'El lugar habitual de tu hijo en su grupo de edad, cada semana del curso.' },
             { title: 'Reserva prioritaria', body: 'Acceso primero a experiencias, encuentros y plazas limitadas antes de que se abran más ampliamente.' },
             { title: 'Community Mornings', body: 'Tiempo para que las familias se encuentren, conecten y crezcan juntas.' },
-            { title: 'Expert Insights', body: 'Conversaciones con nuestros propios expertos sobre infancia, desarrollo y vida familiar.' },
+            { title: 'Narelo Expert Insights', body: 'Conversaciones con nuestros propios expertos sobre infancia, desarrollo y vida familiar, tuyas como parte de la membresía.' },
           ],
         },
         {
           label: 'Para socios, con tarifa de socio',
           items: [
+            { title: 'Guest Expert Insights' },
             { title: 'Signature Saturdays' },
             { title: 'Holiday Experiences' },
             { title: 'Experiencias de cumpleaños' },
@@ -414,13 +415,14 @@ export const es: Dict = {
           items: [
             { name: 'Narelo Experiences', body: 'Un lugar constante donde explorar, crecer y construir relaciones significativas con el tiempo.' },
             { name: 'Community Mornings', body: 'Tiempo para que las familias se conozcan, conecten y crezcan juntas.' },
-            { name: 'Expert Insights', body: 'Conversaciones con expertos sobre infancia, desarrollo y vida familiar.' },
+            { name: 'Narelo Expert Insights', body: 'Conversaciones con nuestros propios expertos sobre infancia, desarrollo y vida familiar.' },
           ],
         },
         {
           label: 'También reservable para socios',
           aside: 'y más por venir',
           items: [
+            { name: 'Guest Expert Insights', body: 'Sesiones con especialistas que invitamos de fuera de Narelo, con tarifa de socio.' },
             { name: 'Signature Saturdays', body: 'Experiencias especiales de sábado pensadas para el descubrimiento, la creatividad y la aventura.' },
             { name: 'Holiday Experiences', body: 'Experiencias cuidadas durante las vacaciones escolares.' },
           ],
