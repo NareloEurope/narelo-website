@@ -552,7 +552,7 @@ export const es: Dict = {
           'Retos físicos y desarrollo de habilidades',
           'Reflexión, objetivos y crecimiento personal',
         ],
-        image: '/images/world-mountain.webp',
+        image: '/images/stage-photo-navigators.webp',
       },
     ],
   },

@@ -129,15 +129,25 @@ export default function MembershipPage({ lang }: { lang: Lang }) {
             <p className="eyebrow mb-8 text-linen/60">{childExperience.eyebrow}</p>
             <h2 className="display display-lg mb-8">{childExperience.heading}</h2>
             <p className="lede mb-10 text-linen/85">{childExperience.body}</p>
-            <Link href={childExperience.worldsLinkHref} className="link-line eyebrow text-linen">
-              {childExperience.worldsLinkLabel}
-            </Link>
 
-            <p className="body-copy mt-10 max-w-2xl text-linen/80">{childExperience.note}</p>
+            <p className="body-copy max-w-2xl text-linen/80">{childExperience.note}</p>
 
-            <Link href={childExperience.formatLinkHref} className="link-line eyebrow mt-8 inline-block text-linen">
-              {childExperience.formatLinkLabel}
-            </Link>
+            {/*
+             * The two ways on from this section used to be underlined text
+             * links, one above the paragraph and one below, and neither
+             * carried any weight on a dark band (Vivien, 2026-09-07). They
+             * are framed now and sit together, so the reader sees both routes
+             * at once. Outlined rather than filled, so they stay below the
+             * page's one WhatsApp call to action.
+             */}
+            <div className="mt-10 flex flex-wrap gap-4">
+              <Link href={childExperience.worldsLinkHref} className="btn btn-ghost">
+                {childExperience.worldsLinkLabel}
+              </Link>
+              <Link href={childExperience.formatLinkHref} className="btn btn-ghost">
+                {childExperience.formatLinkLabel}
+              </Link>
+            </div>
           </div>
         </div>
       </section>

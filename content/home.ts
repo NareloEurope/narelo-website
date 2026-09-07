@@ -31,7 +31,8 @@ export const belief = {
   body: 'Between school runs, screens and busy weeks, childhood passes quietly in the background. We think it deserves the foreground: real days, real places, real people, and the time to take them in.',
   /**
    * The belief as the Narelo Family Guide states it (Vivien, 2026-09-04). It
-   * existed only in the dossier; it now closes this section as a pull line.
+   * existed only in the dossier. It sits under the photograph now, in a
+   * smaller size, rather than as a third paragraph beside it (2026-09-07).
    */
   pull: 'We believe the greatest gift we can give children is a childhood that prepares them not just for school, but for a future we cannot yet imagine.',
   image: '/images/home-moment-to-pause.webp',

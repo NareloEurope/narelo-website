@@ -553,7 +553,7 @@ export const de: Dict = {
           'Körperliche Herausforderungen und Können aufbauen',
           'Nachdenken, Ziele setzen und persönliches Wachstum',
         ],
-        image: '/images/world-mountain.webp',
+        image: '/images/stage-photo-navigators.webp',
       },
     ],
   },
