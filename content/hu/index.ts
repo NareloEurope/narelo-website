@@ -2,6 +2,11 @@
  * Hungarian. Mirrors the English in `content/` key for key; the shape is
  * checked against it at build time, so a missing key fails the build.
  *
+ * ⚠️ NOT PUBLISHED (Vivien, 2026-09-07). Hungarian is switched off in
+ * `content/locales.ts` and `content/dictionary.ts`. This file is kept and
+ * kept correct so it can be turned back on in one line, but nothing on the
+ * live site reads it today.
+ *
  * ⚠️ NOT YET READ BY A NATIVE SPEAKER (Vivien, 2026-09-04). Vivien is the
  * obvious reader for this one.
  *
@@ -279,16 +284,17 @@ export const hu: Dict = {
           items: [
             { title: 'Heti élmények', body: 'A gyermeked állandó helye a saját korcsoportjában, a tanév minden hetében.' },
             { title: 'Elsőbbségi foglalás', body: 'Elsőként férsz hozzá élményekhez, eseményekhez és korlátozott helyekhez, mielőtt szélesebb körben megnyílnának.' },
+            { title: 'Community Mornings', body: 'Idő a családoknak, hogy találkozzanak, kapcsolódjanak és együtt növekedjenek.' },
+            { title: 'Expert Insights', body: 'Beszélgetések a saját szakértőinkkel a gyermekkorról, a fejlődésről és a családi életről.' },
           ],
         },
         {
           label: 'Tagoknak, tagsági áron',
           items: [
             { title: 'Signature Saturdays' },
-            { title: 'Expert Insights' },
             { title: 'Holiday Experiences' },
-            { title: 'Community Mornings' },
-            { title: 'A tágabb Narelo világ' },
+            { title: 'Születésnapi élmények' },
+            { title: 'Egyedi privát élmények' },
           ],
           linkLabel: 'Mi is pontosan mindez',
           linkHref: '/experiences/',

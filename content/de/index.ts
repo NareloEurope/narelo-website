@@ -281,16 +281,17 @@ export const de: Dict = {
           items: [
             { title: 'Wöchentliche Erlebnisse', body: 'Der feste Platz Ihres Kindes in seiner Altersgruppe, in jeder Woche des Halbjahres.' },
             { title: 'Bevorzugte Buchung', body: 'Zuerst Zugang zu Erlebnissen, Terminen und begrenzten Plätzen, bevor sie weiter geöffnet werden.' },
+            { title: 'Community Mornings', body: 'Zeit für Familien, sich zu begegnen, zu verbinden und miteinander zu wachsen.' },
+            { title: 'Expert Insights', body: 'Gespräche mit unseren eigenen Fachleuten über Kindheit, Entwicklung und Familienleben.' },
           ],
         },
         {
           label: 'Für Mitglieder, zum Mitgliedspreis',
           items: [
             { title: 'Signature Saturdays' },
-            { title: 'Expert Insights' },
             { title: 'Holiday Experiences' },
-            { title: 'Community Mornings' },
-            { title: 'Die weitere Narelo Welt' },
+            { title: 'Geburtstagserlebnisse' },
+            { title: 'Private Erlebnisse nach Maß' },
           ],
           linkLabel: 'Was jedes davon ist',
           linkHref: '/experiences/',

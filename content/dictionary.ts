@@ -29,9 +29,14 @@ export type Dict = Translated<typeof en>;
 
 import { de } from './de';
 import { es } from './es';
-import { hu } from './hu';
 
-export const dict: Record<Lang, Dict> = { en, es, de, hu };
+/*
+ * Hungarian is switched off (Vivien, 2026-09-07). `content/hu/index.ts` is
+ * still in the repo and still type-checked against the English shape, it is
+ * simply not published. Re-import it here and add 'hu' back to LANGS and
+ * LANG_META in content/locales.ts to bring it back.
+ */
+export const dict: Record<Lang, Dict> = { en, es, de };
 
 /** Everything for one language, in one call. */
 export function content(lang: Lang): Dict {

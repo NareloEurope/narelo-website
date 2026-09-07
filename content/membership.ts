@@ -228,9 +228,15 @@ export const included = {
     },
   ],
   /**
-   * What the cards do not carry. The weekly place and priority booking are
-   * facts the dossier states elsewhere; the second group is available to
-   * members at member rates and is explained once, on the Experiences page.
+   * What the cards do not carry. The first group is what membership already
+   * includes; the second is what members can additionally book, at member
+   * rates, and is explained once on the Experiences page.
+   *
+   * Community Mornings and Expert Insights moved up into the first group
+   * (Vivien, 2026-09-07). They were listed as member-rate extras here while
+   * the Experiences page had them under "Part of your Narelo world", which is
+   * a straight contradiction between two pages. The Experiences page is
+   * right, so they are included, and their descriptions are its own.
    */
   groups: [
     {
@@ -238,16 +244,17 @@ export const included = {
       items: [
         { title: 'Weekly experiences', body: 'Your child’s regular place in their age group, every week of term.' },
         { title: 'Priority booking', body: 'First access to experiences, events and limited places before they open more widely.' },
+        { title: 'Community Mornings', body: 'Time for families to meet, connect and grow together.' },
+        { title: 'Expert Insights', body: 'Conversations with our own experts around childhood, development and family life.' },
       ],
     },
     {
       label: 'For members, at member rates',
       items: [
         { title: 'Signature Saturdays' },
-        { title: 'Expert Insights' },
         { title: 'Holiday Experiences' },
-        { title: 'Community Mornings' },
-        { title: 'The wider Narelo world' },
+        { title: 'Birthday Experiences' },
+        { title: 'Bespoke Private Experiences' },
       ],
       linkLabel: 'What each of these is',
       linkHref: '/experiences/',

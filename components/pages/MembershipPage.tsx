@@ -250,30 +250,36 @@ export default function MembershipPage({ lang }: { lang: Lang }) {
         </div>
 
         {/*
-         * A portrait and a block each: name and role, the bio, then their own
-         * words. Two columns on desktop, stacked on a phone, with the quote
+         * The portraits used to run the full width of the column, which read
+         * like a model agency rather than the people behind a membership
+         * (Vivien, 2026-09-07). They are small now and sit beside the name,
+         * the way a byline does, so the writing leads and the face supports
+         * it. Two columns on desktop, stacked on a phone, with the quote
          * pinned to the foot of each column so the two quotes line up when
          * the bios are different lengths.
          */}
         <div className="reveal grid gap-14 md:grid-cols-2 md:gap-20" data-reveal>
           {proof.people.map((person) => (
-            <div key={person.name} className="flex flex-col">
-              <div className="img-settle mb-8 overflow-hidden rounded-[2px]">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={person.image}
-                  alt={person.name}
-                  width={1086}
-                  height={1448}
-                  loading="lazy"
-                  className="aspect-[4/5] w-full object-cover object-top"
-                />
+            <div key={person.name} className="flex flex-col border-t border-ink/15 pt-8">
+              <div className="flex items-center gap-6">
+                <div className="img-settle w-24 shrink-0 overflow-hidden rounded-[2px] md:w-28">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={person.image}
+                    alt={person.name}
+                    width={1086}
+                    height={1448}
+                    loading="lazy"
+                    className="aspect-[4/5] w-full object-cover object-top"
+                  />
+                </div>
+                <div>
+                  <h3 className="display display-md">{person.name}</h3>
+                  <p className="eyebrow mt-3 text-olive">{person.role}</p>
+                </div>
               </div>
-              <div className="mb-5 h-px w-full bg-ink/15" aria-hidden="true" />
-              <h3 className="display display-md">{person.name}</h3>
-              <p className="eyebrow mt-3 text-olive">{person.role}</p>
-              <p className="body-copy mt-6 text-ink-soft">{person.body}</p>
-              <blockquote className="lede mt-auto pt-10 italic text-ink">
+              <p className="body-copy mt-8 text-ink-soft">{person.body}</p>
+              <blockquote className="lede mt-auto pt-8 italic text-ink">
                 “{person.quote}”
               </blockquote>
             </div>
@@ -289,23 +295,28 @@ export default function MembershipPage({ lang }: { lang: Lang }) {
           <p className="eyebrow mb-10 text-olive fade" data-reveal>{proof.teamLabel}</p>
           <div className="reveal grid gap-14 md:grid-cols-2 md:gap-20" data-reveal>
             {proof.team.map((person) => (
-              <div key={person.name} className="flex flex-col">
-                <div className="img-settle mb-8 overflow-hidden rounded-[2px]">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src={person.image}
-                    alt={person.name}
-                    width={1086}
-                    height={1448}
-                    loading="lazy"
-                    className="aspect-[4/5] w-full object-cover object-top"
-                  />
+              <div key={person.name} className="flex flex-col border-t border-ink/15 pt-8">
+                <div className="flex items-center gap-6">
+                  {/* A size down from the founders, so the two rows read as
+                      two rows rather than one long gallery. */}
+                  <div className="img-settle w-20 shrink-0 overflow-hidden rounded-[2px] md:w-24">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={person.image}
+                      alt={person.name}
+                      width={1086}
+                      height={1448}
+                      loading="lazy"
+                      className="aspect-[4/5] w-full object-cover object-top"
+                    />
+                  </div>
+                  <div>
+                    <h3 className="display display-md">{person.name}</h3>
+                    <p className="eyebrow mt-3 text-olive">{person.role}</p>
+                  </div>
                 </div>
-                <div className="mb-5 h-px w-full bg-ink/15" aria-hidden="true" />
-                <h3 className="display display-md">{person.name}</h3>
-                <p className="eyebrow mt-3 text-olive">{person.role}</p>
-                <p className="body-copy mt-6 text-ink-soft">{person.body}</p>
-                <blockquote className="lede mt-auto pt-10 italic text-ink">
+                <p className="body-copy mt-8 text-ink-soft">{person.body}</p>
+                <blockquote className="lede mt-auto pt-8 italic text-ink">
                   “{person.quote}”
                 </blockquote>
               </div>
