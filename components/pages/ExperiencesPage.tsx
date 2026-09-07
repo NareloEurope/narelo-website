@@ -205,6 +205,10 @@ export default function ExperiencesPage({ lang }: { lang: Lang }) {
             </li>
           ))}
         </ul>
+
+        <p className="body-copy mt-10 max-w-2xl text-ink-soft fade" data-reveal>
+          {personalised.note}
+        </p>
       </Section>
 
       {/* ---------- Closing ---------- */}

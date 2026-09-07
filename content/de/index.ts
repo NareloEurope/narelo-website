@@ -69,7 +69,7 @@ export const de: Dict = {
         'https://wa.me/34655366888?text=Hallo%20Narelo%2C%20ich%20w%C3%BCrde%20gern%20mehr%20%C3%BCber%20die%20Mitgliedschaft%20f%C3%BCr%20unsere%20Familie%20erfahren.',
     },
     socialIcons: [
-      { src: '/images/social-instagram.webp', label: 'Instagram', href: 'https://instagram.com/narelo.eu' },
+      { src: '/images/social-instagram.webp', label: 'Instagram', href: 'https://instagram.com/narelo.europe' },
       { src: '/images/social-whatsapp.webp', label: 'WhatsApp', href: 'https://wa.me/34655366888?text=Hallo%20Narelo%2C%20ich%20w%C3%BCrde%20gern%20mehr%20%C3%BCber%20die%20Mitgliedschaft%20f%C3%BCr%20unsere%20Familie%20erfahren.' },
       { src: '/images/social-tiktok.webp', label: 'TikTok', href: null },
       { src: '/images/social-facebook.webp', label: 'Facebook', href: null },
@@ -134,7 +134,7 @@ export const de: Dict = {
         { name: 'Builders II', age: '5–6' },
         { name: 'Navigators', age: '6–8' },
       ],
-      note: 'Fünfjährige werden je nach Entwicklungsstand zwischen Builders I und Builders II eingeordnet, nicht nach dem Geburtsdatum.',
+      note: 'Die Altersangaben sind Richtwerte: Wir richten uns nach der Entwicklung und den Interessen jedes Kindes.',
       linkLabel: 'Die Altersgruppen entdecken',
       linkHref: '/experiences/#journey',
     },
@@ -191,6 +191,7 @@ export const de: Dict = {
       eyebrow: 'Und was es nicht ist',
       items: ['Ein Kurs', 'Eine Kita', 'Ein Spielcenter', 'Noch eine Aktivität'],
       line: 'Narelo ist eine Mitgliedschaft, zu der Ihre Familie gehört.',
+      pull: 'Wir erschaffen keine Welt für Kinder. Wir öffnen ihnen die wirkliche Welt.',
     },
     different: {
       eyebrow: 'Was Narelo anders macht',
@@ -226,7 +227,7 @@ export const de: Dict = {
       eyebrow: 'Von Anfang an',
       heading: 'Ein Ort, der mit Ihrem Kind wächst',
       body: 'Jedes Kind gehört zu einer benannten Gruppe, die mit ihm weitergeht, während es wächst. Familien können jederzeit dazukommen, und viele beginnen, bevor ihr Kind geboren ist.',
-      note: 'Fünfjährige werden je nach Entwicklungsstand zwischen Builders I und Builders II eingeordnet, nicht nach dem Geburtsdatum.',
+      note: 'Die Altersangaben sind Richtwerte: Wir richten uns nach der Entwicklung und den Interessen jedes Kindes.',
       linkLabel: 'Sehen, was jede Stufe umfasst',
       linkHref: '/experiences/#journey',
     },
@@ -400,13 +401,13 @@ export const de: Dict = {
       eyebrow: 'Der Weg',
       heading: 'Ein Weg für jede Stufe',
       body: 'Jedes Kind gehört zu einer benannten Gruppe, die mit ihm weitergeht, während es wächst. Familien können an jedem Punkt dazukommen.',
-      note: 'Fünfjährige werden je nach Entwicklungsstand zwischen Builders I und Builders II eingeordnet, nicht nach dem Geburtsdatum.',
+      note: 'Die Altersangaben sind Richtwerte: Wir richten uns nach der Entwicklung und den Interessen jedes Kindes.',
     },
     regular: {
       eyebrow: 'Durch das Jahr',
       heading: 'Über das wöchentliche Erlebnis hinaus',
       body: 'Die Mitgliedschaft reicht über die wöchentlichen Erlebnisse Ihres Kindes hinaus. Wir kommen regelmäßig als Gemeinschaft zusammen, Eltern und Kinder gleichermaßen, und Sie haben durchgehend Zugang zu unseren eigenen Fachleuten. Ein Ort, an dem Sie weiterlernen können, über Elternschaft und über sich als Familie.',
-      note: 'Jeden Monat öffnen unsere eigenen Fachleute eine Runde für Sie: Ihre, als Teil der Mitgliedschaft. Wenn wir Fachleute von außen einladen, sitzen Mitglieder immer zum Mitgliedspreis dabei.',
+      note: 'Jeden Monat öffnet eine unserer eigenen Fachpersonen eine Runde für Sie, in Ihrer Mitgliedschaft enthalten. Wenn wir eine Fachperson von außerhalb Narelos einladen, gilt für Mitglieder der Mitgliedspreis.',
       groups: [
         {
           label: 'Teil Ihrer Narelo Welt',
@@ -430,6 +431,7 @@ export const de: Dict = {
       eyebrow: 'Über den Alltag hinaus',
       heading: 'Um Ihre Familie herum gestaltet',
       body: 'Über die Mitgliedschaft hinaus gestaltet Narelo auch ausgewählte private Erlebnisse, sorgfältig auf Ihr Kind und Ihre Familie zugeschnitten.',
+      note: 'Diese Erlebnisse liegen außerhalb der Mitgliedschaft. Mitglieder buchen zuerst, und immer zum Mitgliedspreis.',
       items: [
         { name: 'Geburtstagserlebnisse', body: 'Sorgfältig gestaltete Feiern, inspiriert von den Interessen und der Persönlichkeit Ihres Kindes.' },
         { name: 'Private Erlebnisse nach Maß', body: 'Persönliche Erlebnisse, sorgfältig um Ihr Kind und Ihre Familie herum entwickelt.' },

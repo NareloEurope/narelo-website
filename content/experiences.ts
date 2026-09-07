@@ -110,7 +110,7 @@ export const stages = {
   /* The rows themselves come from content/stages.ts, rendered in full by the
      StageAccordion. This is the canonical place for the stage descriptions,
      so they are not restated here. */
-  note: 'Five-year-olds are placed between Builders I and Builders II depending on readiness, not birthday.',
+  note: 'Ages are indicative: we adapt to each child’s development and interests.',
 } as const;
 
 /**
@@ -134,7 +134,7 @@ export const regular = {
   eyebrow: 'Through the year',
   heading: 'Beyond the weekly experience',
   body: 'Membership reaches beyond your child’s weekly experiences. We come together regularly as a community, parents and children alike, and you have continuous access to our own experts. A place to keep learning about parenthood and about yourselves as a family.',
-  note: 'Every month, our own experts open a session to you: yours, as part of the membership. When we invite specialists from outside, members are always seated at member rates.',
+  note: 'Every month, one of our own experts opens a session to you, included in your membership. When we invite a specialist from outside Narelo, members are offered a member rate.',
   groups: [
     {
       label: 'Part of your Narelo world',
@@ -163,6 +163,12 @@ export const personalised = {
   eyebrow: 'Beyond the everyday',
   heading: 'Designed around your family',
   body: 'Beyond membership, Narelo also creates selected private experiences, thoughtfully tailored around your child and family.',
+  /**
+   * How these sit alongside the membership (Vivien, 2026-09-07): outside it,
+   * but at a member rate, and members are the first to book. No figure is
+   * named here, pricing is still not agreed.
+   */
+  note: 'These sit beyond the membership. Members book first, and always at a member rate.',
   items: [
     { name: 'Birthday Experiences', body: 'Thoughtfully curated celebrations inspired by your child’s interests and personality.' },
     { name: 'Bespoke Private Experiences', body: 'Personalised experiences thoughtfully created around your child and family.' },
