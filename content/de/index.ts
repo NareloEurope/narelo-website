@@ -325,7 +325,7 @@ export const de: Dict = {
           quote: 'Wenn wir das Kind und die Beziehungen um es herum verstehen, schaffen wir stärkere Grundlagen für sein Wachsen.',
         },
         {
-          name: 'Mercedes',
+          name: 'Mercedes Carrasco Galera',
           role: 'Brand Experience Manager',
           image: '/images/team-mercedes.webp',
           body: 'Mercedes hat an der ESIC Business & Marketing School in Madrid Werbung, Öffentlichkeitsarbeit und Marketing studiert. Ihr Hintergrund reicht von Marketing über Content-Erstellung bis zur kreativen Produktion. Ihre Erfahrung mit Kindern hat ihren Blick für die Neugier, die Verbindungen und die kleinen Momente geprägt, die Kindheit ausmachen. Bei Narelo bringt sie diese Welten zusammen und übersetzt die Philosophie in die Art, wie die Marke kommuniziert und erlebt wird.',

@@ -323,7 +323,7 @@ export const hu: Dict = {
           quote: 'Amikor megértjük a gyereket és a körülötte lévő kapcsolatokat, erősebb alapot teremtünk a fejlődéséhez.',
         },
         {
-          name: 'Mercedes',
+          name: 'Mercedes Carrasco Galera',
           role: 'Márkaélmény-menedzser',
           image: '/images/team-mercedes.webp',
           body: 'Mercedes reklám, PR és marketing szakon végzett a madridi ESIC Business & Marketing School intézményében. Háttere a marketingtől a tartalomkészítésen át a kreatív produkcióig terjed. A gyerekekkel szerzett tapasztalata formálta azt, ahogyan a kíváncsiságra, a kapcsolatokra és azokra az apró pillanatokra tekint, amelyek a gyermekkort meghatározzák. A Narelónál ezeket a világokat hozza össze, és fordítja le a filozófiát arra, ahogyan a márkát kommunikáljuk és megélhetővé tesszük.',
