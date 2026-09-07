@@ -1,5 +1,8 @@
-import type { Stage } from '@/content/stages';
 import StageIcon from '@/components/StageIcons';
+
+/** All this needs of a stage. The home page passes a shorter object than
+ *  content/stages.ts does, so it is typed to the two fields it reads. */
+type TimelineStage = { readonly name: string; readonly age: string };
 
 /**
  * The seven age groups as one linear timeline: a ringed mark on the rail, the
@@ -11,6 +14,11 @@ import StageIcon from '@/components/StageIcons';
  * say what is really just an index. Every stage is still described in full on
  * the Experiences page, and the link under this points there.
  *
+ * The home page says the same thing under the same heading and had its own
+ * timeline: plain hollow dots on a rail 880px wide, which on a phone became a
+ * sideways scroll. It uses this one now (Vivien, 2026-09-08), so both carry
+ * the growth marks and neither scrolls sideways.
+ *
  * The marks are a plant growing from a seed to a tree and then to the hills
  * beyond it, one step per group (StageIcons). The seventh child gets the
  * seventh mark, so reordering the stages reorders the plant with them.
@@ -19,7 +27,7 @@ import StageIcon from '@/components/StageIcons';
  * joins up across the row and breaks cleanly wherever the grid wraps. No
  * absolute positioning to keep in sync.
  */
-export default function StageTimeline({ items }: { items: readonly Stage[] }) {
+export default function StageTimeline({ items }: { items: readonly TimelineStage[] }) {
   return (
     <ol className="reveal grid grid-cols-2 gap-y-10 sm:grid-cols-4 lg:grid-cols-7 lg:gap-y-0" data-reveal>
       {items.map((stage, i) => (

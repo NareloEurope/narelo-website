@@ -300,7 +300,7 @@ export const es: Dict = {
       ],
     },
     proof: {
-      eyebrow: 'Quién está detrás de esto',
+      eyebrow: 'Quiénes somos',
       heading: 'Natalie y Vivien',
       people: [
         {
@@ -417,6 +417,8 @@ export const es: Dict = {
             { name: 'Regular Narelo Experiences', body: 'Para tu hijo: una experiencia por semana con su propio grupo pequeño, un lugar constante donde explorar, crecer y construir amistades reales con el tiempo.' },
             { name: 'Community Mornings', body: 'Para toda la familia: tiempo para conocer a otras familias Narelo, conectar y crecer juntas.' },
             { name: 'Narelo Expert Insights', body: 'Para los padres: conversaciones con nuestros propios expertos sobre infancia, desarrollo y vida familiar.' },
+            { name: 'One-to-one Educator Conversations', body: 'Para los padres: una vez por temporada, un rato con el educador de tu hijo para hablar de cómo va creciendo.' },
+            { name: 'End-of-season Video Reflections', body: 'Para tu familia: un vídeo personal al cerrar cada temporada, que recoge los descubrimientos de tu hijo para conservarlos.' },
           ],
         },
         {
