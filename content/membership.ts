@@ -276,7 +276,10 @@ export const included = {
  * so the section is a block each, matching the home page.
  */
 export const proof = {
-  eyebrow: 'Who is behind this',
+  /* One name for this section, the same one the menu and the chapter nav
+     use (Vivien, 2026-09-08). It read "Who is behind this" here and
+     "Who we are" everywhere else. */
+  eyebrow: 'Who we are',
   heading: 'Natalie and Vivien',
   /**
    * The only place on the site where the founders appear (Vivien, 2026-09-02):

@@ -304,7 +304,7 @@ export const hu: Dict = {
       ],
     },
     proof: {
-      eyebrow: 'Kik állnak mögötte',
+      eyebrow: 'Kik vagyunk',
       heading: 'Natalie és Vivien',
       people: [
         {
@@ -421,6 +421,8 @@ export const hu: Dict = {
             { name: 'Regular Narelo Experiences', body: 'A gyermekednek: heti egy élmény a saját kis csoportjával, állandó hely a felfedezéshez, a fejlődéshez és valódi barátságok építéséhez.' },
             { name: 'Community Mornings', body: 'Az egész családnak: idő arra, hogy más Narelo családokat megismerj, kapcsolódj és együtt fejlődjetek.' },
             { name: 'Narelo Expert Insights', body: 'A szülőknek: beszélgetések a saját szakértőinkkel a gyermekkorról, a fejlődésről és a családi életről.' },
+            { name: 'One-to-one Educator Conversations', body: 'A szülőknek: évadonként egyszer idő a gyermeked saját pedagógusával, hogy beszéljetek a fejlődéséről.' },
+            { name: 'End-of-season Video Reflections', body: 'A családodnak: személyes videó minden évad végén, amely megőrzi a gyermeked felfedezéseit.' },
           ],
         },
         {

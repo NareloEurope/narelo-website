@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Section from '@/components/Section';
+import StageTimeline from '@/components/StageTimeline';
 import LazyVideo from '@/components/LazyVideo';
 import WorldsExplorer from '@/components/WorldsExplorer';
 import { content } from '@/content/dictionary';
@@ -161,21 +162,11 @@ export default function HomePage({ lang }: { lang: Lang }) {
           <p className="lede text-ink-soft">{journey.body}</p>
         </div>
 
-        {/* Horizontal timeline: a hairline with seven stops. Scrolls sideways
-            on small screens rather than cramming seven columns. */}
-        {/* Keyboard-reachable scroll region (audit, 2026-09-05, 4.1). */}
-        <div className="fade overflow-x-auto pb-4" tabIndex={0} aria-label={journey.heading} data-reveal>
-          <ol className="relative flex min-w-[880px]">
-            <div className="absolute left-0 right-0 top-[5px] h-px bg-ink/15" aria-hidden="true" />
-            {journey.stages.map((stage) => (
-              <li key={stage.name} className="flex flex-1 flex-col items-center px-2 text-center">
-                <span className="h-[11px] w-[11px] rounded-full border border-olive bg-linen" aria-hidden="true" />
-                <h3 className="display mt-6 text-lg leading-tight md:text-xl">{stage.name}</h3>
-                <p className="eyebrow mt-2 text-olive">{stage.age}</p>
-              </li>
-            ))}
-          </ol>
-        </div>
+        {/* The same timeline the Membership page carries, growth marks and all
+            (Vivien, 2026-09-08). It used to be its own version: plain hollow
+            dots on a rail 880px wide, which on a phone was a sideways scroll
+            with no marks on it. */}
+        <StageTimeline items={journey.stages} />
 
         <div className="mt-12 flex flex-col gap-6 fade md:flex-row md:items-center md:justify-between" data-reveal>
           <p className="body-copy max-w-md text-ink-soft">{journey.note}</p>

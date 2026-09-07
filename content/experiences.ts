@@ -142,6 +142,8 @@ export const regular = {
         { name: 'Regular Narelo Experiences', body: 'For your child: one experience a week with their own small group, a consistent place to explore, grow and build real friendships over time.' },
         { name: 'Community Mornings', body: 'For the whole family: time to meet other Narelo families, connect and grow together.' },
         { name: 'Narelo Expert Insights', body: 'For parents: conversations with our own experts around childhood, development and family life.' },
+        { name: 'One-to-one Educator Conversations', body: 'For parents: once each season, time with your child’s own educator to talk about how they are growing.' },
+        { name: 'End-of-season Video Reflections', body: 'For your family: a personal video at the close of each season, capturing your child’s discoveries to keep.' },
       ],
     },
     {
