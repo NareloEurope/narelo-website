@@ -45,17 +45,27 @@ export default function ExperiencesPage({ lang }: { lang: Lang }) {
       {/* id="format": the Membership page links here for the session figures,
           which are stated once, on this page. */}
       <Section id="format">
-        <div className="grid items-center gap-14 md:grid-cols-2 md:gap-20">
-          <div className="fade" data-reveal>
+        {/*
+         * Three items, not two, so the phone can breathe: the opening half of
+         * the writing, then the photograph, then the closing half (Vivien,
+         * 2026-09-08). Four paragraphs stacked before the picture was a wall
+         * of text on a narrow screen.
+         *
+         * On desktop nothing moves. The photograph spans both rows in the
+         * second column, the two halves sit one above the other in the first,
+         * and pushing the top half down and the bottom half up leaves only the
+         * row gap between them, so the writing still reads as one block
+         * centred against the picture.
+         */}
+        <div className="grid items-center gap-14 md:grid-cols-2 md:gap-x-20 md:gap-y-6">
+          <div className="fade md:self-end" data-reveal>
             <p className="eyebrow mb-8 text-olive">{format.eyebrow}</p>
             <h2 className="display display-lg mb-8">{format.heading}</h2>
             <p className="lede mb-6 max-w-md text-ink-soft">{format.body}</p>
-            <p className="body-copy mb-6 max-w-md text-ink-soft">{format.body2}</p>
-            <p className="body-copy mb-12 max-w-md text-ink-soft">{format.body3}</p>
-            <p className="body-copy text-ink-soft">{format.note}</p>
+            <p className="body-copy max-w-md text-ink-soft">{format.body2}</p>
           </div>
 
-          <div className="img-settle overflow-hidden rounded-[2px]" data-reveal>
+          <div className="img-settle overflow-hidden rounded-[2px] md:row-span-2" data-reveal>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={format.image}
@@ -65,6 +75,13 @@ export default function ExperiencesPage({ lang }: { lang: Lang }) {
               loading="lazy"
               className="aspect-[4/5] w-full object-cover"
             />
+          </div>
+
+          <div className="fade md:self-start" data-reveal>
+            {/* The two closing lines belong together, so they sit closer than
+                the paragraphs above them (Vivien, 2026-09-08). */}
+            <p className="body-copy mb-4 max-w-md text-ink-soft">{format.body3}</p>
+            <p className="body-copy max-w-md text-ink-soft">{format.note}</p>
           </div>
         </div>
 

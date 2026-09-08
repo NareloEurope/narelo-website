@@ -370,7 +370,7 @@ export const hu: Dict = {
     format: {
       eyebrow: 'Egy élmény formája',
       heading: 'Kilencven perc, egy kis kör, és egy valódi hely',
-      body: 'Az élmények a marbellai otthonunkban és jóval azon túl zajlanak: a tengerparton, az erdőben, és azokon a helyeken, ahol a hétköznapi élet valóban történik. Semmi sem siet, és semmi sem töltelék.',
+      body: 'Az élmények a marbellai otthonunkban és jóval azon túl zajlanak: a tengerparton, az erdőben, és azokon a helyeken, ahol a hétköznapi élet valóban történik. Semmi sem siet.',
       body2: 'A gyerekek együtt fedeznek fel, mozognak, kérdeznek, építenek, alkotnak és oldanak meg feladatokat, olyan pedagógusok vezetésével, akik tudják, mikor kell támogatni, és mikor kell teret adni, hogy megtalálják a saját útjukat.',
       body3: 'Hisszük, hogy a gyerekeknek mindkettőre szükségük van: erős kapcsolatra a valódi világgal, és magabiztosságra ahhoz, hogy eligazodjanak az eljövendőben. Ezért találkozhat a természet, a mozgás és a valós élmény a kreativitással, a robotikával és a mesterséges intelligenciával, mindig céllal.',
       pull: 'Gyökerekkel a valódi világban. Készen az eljövendőre.',

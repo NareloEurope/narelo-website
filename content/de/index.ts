@@ -367,7 +367,7 @@ export const de: Dict = {
     format: {
       eyebrow: 'Die Form eines Erlebnisses',
       heading: 'Neunzig Minuten, ein kleiner Kreis und ein echter Ort',
-      body: 'Die Erlebnisse finden in unserem Haus in Marbella statt und weit darüber hinaus: am Strand, im Wald und an den Orten, an denen der Alltag wirklich stattfindet. Nichts wird gehetzt und nichts ist Füllmaterial.',
+      body: 'Die Erlebnisse finden in unserem Haus in Marbella statt und weit darüber hinaus: am Strand, im Wald und an den Orten, an denen der Alltag wirklich stattfindet. Nichts wird gehetzt.',
       body2: 'Kinder erkunden, bewegen sich, fragen, bauen, gestalten und lösen gemeinsam, begleitet von Pädagoginnen und Pädagogen, die wissen, wann sie unterstützen und wann sie Raum lassen, damit Kinder ihren eigenen Weg finden.',
       body3: 'Wir glauben, Kinder brauchen beides: eine starke Verbindung zur wirklichen Welt und das Selbstvertrauen, sich in der kommenden zurechtzufinden. Deshalb dürfen Natur, Bewegung und echte Erlebnisse auf Kreativität, Robotik und KI treffen, immer mit Absicht.',
       pull: 'Verwurzelt in der wirklichen Welt. Bereit für die kommende.',

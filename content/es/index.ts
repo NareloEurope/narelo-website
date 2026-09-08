@@ -366,7 +366,7 @@ export const es: Dict = {
     format: {
       eyebrow: 'La forma de una experiencia',
       heading: 'Noventa minutos, un círculo pequeño y un lugar real',
-      body: 'Las experiencias ocurren en nuestra casa de Marbella y mucho más allá: la playa, el bosque y los lugares donde la vida cotidiana sucede de verdad. Nada va con prisa y nada es relleno.',
+      body: 'Las experiencias ocurren en nuestra casa de Marbella y mucho más allá: la playa, el bosque y los lugares donde la vida cotidiana sucede de verdad. Nada va con prisa.',
       body2: 'Los niños exploran, se mueven, preguntan, construyen, crean y resuelven juntos, guiados por educadores que saben cuándo acompañar y cuándo dejarles espacio para encontrar su propio camino.',
       body3: 'Creemos que los niños necesitan las dos cosas: una conexión fuerte con el mundo real y la confianza para navegar el mundo que viene. Por eso la naturaleza, el movimiento y las experiencias de la vida real pueden encontrarse con la creatividad, la robótica y la IA, siempre con un propósito.',
       pull: 'Con raíces en el mundo real. Preparados para el mundo que viene.',
