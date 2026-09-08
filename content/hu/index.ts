@@ -444,11 +444,13 @@ export const hu: Dict = {
           name: 'Születésnapi élmények',
           body: 'Gondosan összeállított ünneplések a gyermeked érdeklődéséből és személyiségéből kiindulva.',
           ctaLabel: 'Szeretnél velünk ünnepelni?',
+          whatsappText: 'Szia Narelo, szívesen hallanék többet egy születésnapi élményről a gyermekemnek.',
         },
         {
           name: 'Egyedi privát élmények',
           body: 'Személyre szabott élmények, gondosan a gyermeked és a családod köré építve.',
           ctaLabel: 'Tervezzünk valamit a családodnak?',
+          whatsappText: 'Szia Narelo, szívesen beszélnék egy privát élményről a családomnak.',
         },
       ],
     },

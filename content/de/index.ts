@@ -441,11 +441,13 @@ export const de: Dict = {
           name: 'Geburtstagserlebnisse',
           body: 'Sorgfältig gestaltete Feiern, inspiriert von den Interessen und der Persönlichkeit Ihres Kindes.',
           ctaLabel: 'Möchten Sie mit uns feiern?',
+          whatsappText: 'Hallo Narelo, ich würde gerne mehr über ein Geburtstagserlebnis für mein Kind erfahren.',
         },
         {
           name: 'Private Erlebnisse nach Maß',
           body: 'Persönliche Erlebnisse, sorgfältig um Ihr Kind und Ihre Familie herum entwickelt.',
           ctaLabel: 'Sollen wir etwas für Ihre Familie gestalten?',
+          whatsappText: 'Hallo Narelo, ich würde gerne über ein privates Erlebnis für meine Familie sprechen.',
         },
       ],
     },
