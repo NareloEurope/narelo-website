@@ -133,8 +133,8 @@ export const stages = {
 export const regular = {
   eyebrow: 'Through the year',
   heading: 'Beyond the weekly experience',
-  body: 'Membership reaches beyond your child’s weekly experiences. We come together regularly as a community, parents and children alike, and you have continuous access to our own experts. A place to keep learning about parenthood and about yourselves as a family.',
-  note: 'Every month, one of our own experts opens a session to you, included in your membership. When we invite a specialist from outside Narelo, members are offered a member rate.',
+  body: 'Membership reaches beyond your child’s weekly experiences. We come together regularly as a community, parents and children alike, and you have continuous access to our experts. A place to keep learning about parenthood and about yourselves as a family.',
+  note: 'Every month, one of our own experts opens a session to you, included in your membership. When we invite a specialist from outside Narelo, members are offered a special rate.',
   groups: [
     {
       label: 'Part of your Narelo world',
@@ -147,10 +147,10 @@ export const regular = {
       ],
     },
     {
-      label: 'Priority booking, at member rates',
+      label: 'Priority booking, at special rates',
       aside: 'and more to come',
       items: [
-        { name: 'Guest Expert Insights', body: 'Sessions with specialists we invite from outside Narelo, offered to members at a member rate.' },
+        { name: 'Guest Expert Insights', body: 'Sessions with specialists we invite from outside Narelo, offered to members at a special rate.' },
         { name: 'Signature Saturdays', body: 'Special Saturday experiences designed for discovery, creativity and adventure.' },
         { name: 'Holiday Experiences', body: 'Curated experiences during the school holidays.' },
       ],
@@ -172,7 +172,7 @@ export const personalised = {
    * members book first at a member rate. No figure is named here, pricing is
    * still not agreed.
    */
-  note: 'These sit beyond the membership and are open to families who are not members. Members book first, and always at a member rate.',
+  note: 'These sit beyond the membership and are open to families who are not members. Members book first, and always at a special rate.',
   /**
    * Each card carries its own small invitation to write, because these are
    * the one part of the site a family can act on without joining first
@@ -204,7 +204,7 @@ export const personalised = {
 
 export const closing = {
   headingLines: ['Some experiences', 'stay with you.'],
-  body: 'Because what children experience becomes part of who they become.',
+  body: 'What children experience becomes part of who they are.',
   ctaLabel: 'Start a conversation',
   video: '/video/experiences-closing.mp4',
   poster: '/images/experiences-video-poster.webp',

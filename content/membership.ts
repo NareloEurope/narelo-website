@@ -271,7 +271,7 @@ export const included = {
        * non-members, Guest Expert Insights, Signature Saturdays and Holiday
        * Experiences are not. Add it once that is settled.
        */
-      label: 'Priority access, at member rates',
+      label: 'Priority access, at special rates',
       items: [
         { title: 'Guest Expert Insights' },
         { title: 'Signature Saturdays' },

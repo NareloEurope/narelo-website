@@ -285,7 +285,7 @@ export const de: Dict = {
           ],
         },
         {
-          label: 'Vorrangiger Zugang, zum Mitgliedspreis',
+          label: 'Vorrangiger Zugang, zum Sonderpreis',
           items: [
             { title: 'Guest Expert Insights' },
             { title: 'Signature Saturdays' },
@@ -407,8 +407,8 @@ export const de: Dict = {
     regular: {
       eyebrow: 'Durch das Jahr',
       heading: 'Über das wöchentliche Erlebnis hinaus',
-      body: 'Die Mitgliedschaft reicht über die wöchentlichen Erlebnisse Ihres Kindes hinaus. Wir kommen regelmäßig als Gemeinschaft zusammen, Eltern und Kinder gleichermaßen, und Sie haben durchgehend Zugang zu unseren eigenen Fachleuten. Ein Ort, an dem Sie weiterlernen können, über Elternschaft und über sich als Familie.',
-      note: 'Jeden Monat öffnet eine unserer eigenen Fachpersonen eine Runde für Sie, in Ihrer Mitgliedschaft enthalten. Wenn wir eine Fachperson von außerhalb Narelos einladen, gilt für Mitglieder der Mitgliedspreis.',
+      body: 'Die Mitgliedschaft reicht über die wöchentlichen Erlebnisse Ihres Kindes hinaus. Wir kommen regelmäßig als Gemeinschaft zusammen, Eltern und Kinder gleichermaßen, und Sie haben durchgehend Zugang zu unseren Fachleuten. Ein Ort, an dem Sie weiterlernen können, über Elternschaft und über sich als Familie.',
+      note: 'Jeden Monat öffnet eine unserer eigenen Fachpersonen eine Runde für Sie, in Ihrer Mitgliedschaft enthalten. Wenn wir eine Fachperson von außerhalb Narelos einladen, gilt für Mitglieder der Sonderpreis.',
       groups: [
         {
           label: 'Teil Ihrer Narelo Welt',
@@ -421,10 +421,10 @@ export const de: Dict = {
           ],
         },
         {
-          label: 'Vorrangige Buchung, zum Mitgliedspreis',
+          label: 'Vorrangige Buchung, zum Sonderpreis',
           aside: 'und mehr wird folgen',
           items: [
-            { name: 'Guest Expert Insights', body: 'Runden mit Fachleuten, die wir von außerhalb Narelos einladen, für Mitglieder zum Mitgliedspreis.' },
+            { name: 'Guest Expert Insights', body: 'Runden mit Fachleuten, die wir von außerhalb Narelos einladen, für Mitglieder zum Sonderpreis.' },
             { name: 'Signature Saturdays', body: 'Besondere Samstagserlebnisse für Entdeckung, Kreativität und Abenteuer.' },
             { name: 'Holiday Experiences', body: 'Sorgfältig gestaltete Erlebnisse in den Schulferien.' },
           ],
@@ -435,7 +435,7 @@ export const de: Dict = {
       eyebrow: 'Über den Alltag hinaus',
       heading: 'Um Ihre Familie herum gestaltet',
       body: 'Über die Mitgliedschaft hinaus gestaltet Narelo auch ausgewählte private Erlebnisse, sorgfältig auf Ihr Kind und Ihre Familie zugeschnitten.',
-      note: 'Diese Erlebnisse liegen außerhalb der Mitgliedschaft und stehen auch Familien offen, die keine Mitglieder sind. Mitglieder buchen zuerst, und immer zum Mitgliedspreis.',
+      note: 'Diese Erlebnisse liegen außerhalb der Mitgliedschaft und stehen auch Familien offen, die keine Mitglieder sind. Mitglieder buchen zuerst, und immer zum Sonderpreis.',
       items: [
         {
           name: 'Geburtstagserlebnisse',
@@ -453,7 +453,7 @@ export const de: Dict = {
     },
     closing: {
       headingLines: ['Manche Erlebnisse', 'bleiben.'],
-      body: 'Weil das, was Kinder erleben, Teil dessen wird, wer sie werden.',
+      body: 'Was Kinder erleben, wird Teil dessen, wer sie sind.',
       ctaLabel: 'Beginnen Sie ein Gespräch',
       video: '/video/experiences-closing.mp4',
       poster: '/images/experiences-video-poster.webp',
@@ -467,7 +467,7 @@ export const de: Dict = {
         age: 'Schwangerschaft',
         tagline: 'Ein sanfter Anfang, bevor Ihr Kind ankommt.',
         summary:
-          'Ein ruhiger Raum für werdende Eltern: Zeit zum Langsamerwerden, um andere Familien kennenzulernen und den Narelo Weg zu beginnen, bevor Ihr Kind geboren ist.',
+          'Ein ruhiger Raum für werdende Mütter: Zeit zum Langsamerwerden, um andere Frauen kennenzulernen und den Narelo Weg zu beginnen, bevor Ihr Kind geboren ist.',
         image: '/images/stage-photo-bloom.webp',
       },
       {
@@ -520,7 +520,7 @@ export const de: Dict = {
       {
         name: 'Builders I',
         age: '3–5 Jahre',
-        tagline: 'Erkunden, gestalten und beginnen, die Welt zu verstehen.',
+        tagline: 'Erkunden, gestalten und die Welt verstehen.',
         motto: 'Ich erkunde und gestalte.',
         summary:
           'Erlebnisse zum Anfassen in den Fünf Welten, die zum Erkunden, Gestalten, Fragen und zur Freude am Machen einladen.',

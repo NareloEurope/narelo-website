@@ -288,7 +288,7 @@ export const hu: Dict = {
           ],
         },
         {
-          label: 'Elsőbbségi hozzáférés, tagsági áron',
+          label: 'Elsőbbségi hozzáférés, kedvezményes áron',
           items: [
             { title: 'Guest Expert Insights' },
             { title: 'Signature Saturdays' },
@@ -410,8 +410,8 @@ export const hu: Dict = {
     regular: {
       eyebrow: 'Az év során',
       heading: 'A heti élményen túl',
-      body: 'A tagság túlmutat a gyermeked heti élményein. Rendszeresen összejövünk közösségként, szülők és gyerekek egyaránt, és folyamatosan elérhetők a saját szakértőink. Egy hely, ahol tovább tanulhattok a szülőségről és magatokról mint családról.',
-      note: 'Minden hónapban a saját szakértőink egyike megnyit egy alkalmat neked, ez a tagság része. Amikor Narelón kívüli szakembert hívunk, a tagok tagsági áron vesznek részt.',
+      body: 'A tagság túlmutat a gyermeked heti élményein. Rendszeresen összejövünk közösségként, szülők és gyerekek egyaránt, és folyamatosan elérhetők a szakértőink. Egy hely, ahol tovább tanulhattok a szülőségről és magatokról mint családról.',
+      note: 'Minden hónapban a saját szakértőink egyike megnyit egy alkalmat neked, ez a tagság része. Amikor Narelón kívüli szakembert hívunk, a tagok kedvezményes áron vesznek részt.',
       groups: [
         {
           label: 'A Narelo világod része',
@@ -424,10 +424,10 @@ export const hu: Dict = {
           ],
         },
         {
-          label: 'Elsőbbségi foglalás, tagsági áron',
+          label: 'Elsőbbségi foglalás, kedvezményes áron',
           aside: 'és még több jön',
           items: [
-            { name: 'Guest Expert Insights', body: 'Alkalmak Narelón kívülről meghívott szakemberekkel, a tagoknak tagsági áron.' },
+            { name: 'Guest Expert Insights', body: 'Alkalmak Narelón kívülről meghívott szakemberekkel, a tagoknak kedvezményes áron.' },
             { name: 'Signature Saturdays', body: 'Különleges szombati élmények felfedezésre, alkotásra és kalandra tervezve.' },
             { name: 'Holiday Experiences', body: 'Gondosan összeállított élmények az iskolai szünetekben.' },
           ],
@@ -438,7 +438,7 @@ export const hu: Dict = {
       eyebrow: 'A hétköznapin túl',
       heading: 'A családodra tervezve',
       body: 'A tagságon túl a Narelo válogatott privát élményeket is készít, gondosan a gyermeked és a családod köré szabva.',
-      note: 'Ezek az élmények a tagságon kívül esnek, és olyan családok számára is nyitottak, akik nem tagok. A tagok foglalnak elsőként, és mindig tagsági áron.',
+      note: 'Ezek az élmények a tagságon kívül esnek, és olyan családok számára is nyitottak, akik nem tagok. A tagok foglalnak elsőként, és mindig kedvezményes áron.',
       items: [
         {
           name: 'Születésnapi élmények',
@@ -456,7 +456,7 @@ export const hu: Dict = {
     },
     closing: {
       headingLines: ['Néhány élmény', 'veled marad.'],
-      body: 'Mert amit a gyerekek átélnek, része lesz annak, akivé válnak.',
+      body: 'Amit a gyerekek átélnek, része lesz annak, akik ők maguk.',
       ctaLabel: 'Kezdjünk egy beszélgetést',
       video: '/video/experiences-closing.mp4',
       poster: '/images/experiences-video-poster.webp',
@@ -470,7 +470,7 @@ export const hu: Dict = {
         age: 'Várandósság',
         tagline: 'Szelíd kezdet, még mielőtt a gyermeked megérkezik.',
         summary:
-          'Nyugodt tér a leendő szülőknek: idő a lassításra, más családokkal való kapcsolódásra, és arra, hogy a Narelo út még a gyermeked születése előtt elkezdődjön.',
+          'Nyugodt tér a leendő édesanyáknak: idő a lassításra, más nőkkel való kapcsolódásra, és arra, hogy a Narelo út még a gyermeked születése előtt elkezdődjön.',
         image: '/images/stage-photo-bloom.webp',
       },
       {
@@ -523,7 +523,7 @@ export const hu: Dict = {
       {
         name: 'Builders I',
         age: '3–5 év',
-        tagline: 'Felfedezni, alkotni, és érteni kezdeni a világot.',
+        tagline: 'Felfedezni, alkotni és megérteni a világot.',
         motto: 'Felfedezek és alkotok.',
         summary:
           'Gyakorlati élmények az Öt Világban, amelyek felfedezésre, alkotásra, kérdezésre és az alkotás örömére hívnak.',

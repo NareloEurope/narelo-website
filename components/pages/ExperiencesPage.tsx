@@ -185,7 +185,9 @@ export default function ExperiencesPage({ lang }: { lang: Lang }) {
               <div className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-2">
                 <p className="eyebrow text-olive">{group.label}</p>
                 {'aside' in group && group.aside && (
-                  <p className="lede italic text-ink-soft">{group.aside}</p>
+                  /* Desktop only (Vivien, 2026-09-08): on a phone it sat under
+                     the label as an orphan line and read as clutter. */
+                  <p className="hidden lede italic text-ink-soft md:block">{group.aside}</p>
                 )}
               </div>
               <div className="mb-9 mt-2 h-px w-12 bg-olive/40" aria-hidden="true" />
