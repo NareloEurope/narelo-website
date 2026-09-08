@@ -42,7 +42,12 @@ the selector.
 
 - English lives at the plain URLs (`/`, `/membership/`) and the English files in
   `content/*.ts` stay the source of truth. Edit those exactly as before.
-- Spanish is `/es/...`, one file: **`content/es/index.ts`**.
+- Spanish is `/es/...`, one file: **`content/es/index.ts`**. It has had its
+  native-speaker pass (Translation Review V3, 2026-09-08): every visible string
+  on Home, Experiences, Membership and Who we are is the reviewer's wording,
+  not a translation of the English. **When you change an English string, the
+  Spanish needs a real sentence, not a literal rendering.** The head of that
+  file records where the review and the English disagreed and why.
 - **German is switched off** (Vivien, 2026-09-08) and **Hungarian** before it
   (2026-09-07). `content/de/index.ts` and `content/hu/index.ts` are finished,
   still in the repo and still type-checked, they are simply not published. To
@@ -56,8 +61,12 @@ the selector.
 - Brand names are **not translated**: Narelo, the Five Worlds, the age group
   names, Signature Saturdays, Holiday Experiences, Expert Insights, Community
   Mornings, Narelo Experiences.
-- ⚠️ **No translation has been read by a native speaker.** They need that pass
-  before launch. German uses "Sie"; Spanish and Hungarian are informal.
+- ⚠️ **German and Hungarian have not been read by a native speaker.** They need
+  that pass before they are switched back on. German uses "Sie"; Spanish and
+  Hungarian are informal.
+- Spanish calls the Marbella home **"nuestro espacio Narelo"**, not "casa", and
+  every call to action reads **"Hablemos"**, not a literal "Empieza una
+  conversación". Both are the reviewer's choices (V3). Keep them.
 
 ## The editable surface
 
@@ -103,6 +112,16 @@ Still open from the audit, deliberately not done: moving "What Narelo is" to
 the home page, merging the Narelo Promise with "What makes Narelo different",
 and translating the Spanish URL slugs. All three are content-architecture
 decisions for the team.
+
+The V3 review (2026-09-08) adds a fourth, and calls it the most important one
+left: **roughly 11% of the site repeats itself across pages.** The age journey
+is told in full three times (Home teaser, Membership, Experiences), what the
+membership includes is told twice (Membership `included` and Experiences
+`regular`), and the brand differentiators exist as two separate lists (`promise`
+on Home and `different` on Membership). The proposed rule is one owner per
+subject: the page that tells it in full, and a single linked sentence
+everywhere else. **Not done**, because it removes whole sections from live
+pages and that is the team's call, not an editorial one.
 
 ## House rules baked into the site
 
