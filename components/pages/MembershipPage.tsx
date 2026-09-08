@@ -4,7 +4,6 @@ import LazyVideo from '@/components/LazyVideo';
 import WhatsAppIcon from '@/components/WhatsAppIcon';
 import IncludedPanels from '@/components/IncludedPanels';
 import PromiseCards from '@/components/PromiseCards';
-import Portrait from '@/components/Portrait';
 import StageTimeline from '@/components/StageTimeline';
 import { content } from '@/content/dictionary';
 import { localePath, type Lang } from '@/content/locales';
@@ -13,10 +12,10 @@ import { localePath, type Lang } from '@/content/locales';
 
 export default function MembershipPage({ lang }: { lang: Lang }) {
   const c = content(lang);
-  const { contact, ui } = c.site;
+  const { contact } = c.site;
   const { stageDetails } = c.stages;
   const CHAPTERS = c.membership.chapters;
-  const { hero, whatItIs, isNot, childExperience, ageGroups, howItWorks, included, different, proof, joining, closing } = c.membership;
+  const { hero, whatItIs, isNot, childExperience, ageGroups, howItWorks, included, different, joining, closing } = c.membership;
   const t = (path: string) => localePath(lang, path);
   return (
     <>
@@ -69,26 +68,36 @@ export default function MembershipPage({ lang }: { lang: Lang }) {
         </ul>
       </nav>
 
-      {/* ---------- 1. What is Narelo? ---------- */}
+      {/*
+       * ---------- 1. What is Narelo? ----------
+       *
+       * Three blocks of text stacked beside the photograph was one too many
+       * (Vivien, 2026-09-08), the same problem the home page's belief section
+       * had. The heading and the two paragraphs stay on the left, aligned with
+       * the top of the photograph. The positioning line moved under the
+       * photograph at body size, where it reads as a caption.
+       */}
       <Section id="what">
-        <div className="grid gap-14 md:grid-cols-2 md:gap-20">
+        <div className="grid items-start gap-14 md:grid-cols-2 md:gap-20">
           <div className="fade" data-reveal>
             <p className="eyebrow mb-8 text-olive">{whatItIs.eyebrow}</p>
             <h2 className="display display-lg mb-8">{whatItIs.heading}</h2>
             <p className="lede mb-6 text-ink-soft">{whatItIs.body}</p>
-            <p className="body-copy mb-10 text-ink-soft">{whatItIs.body2}</p>
-            <p className="display display-md italic text-olive">{whatItIs.pull}</p>
+            <p className="body-copy text-ink-soft">{whatItIs.body2}</p>
           </div>
-          <div className="img-settle overflow-hidden rounded-[2px]" data-reveal>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={whatItIs.image}
-              alt={whatItIs.imageAlt}
-              width={1536}
-              height={2048}
-              loading="lazy"
-              className="aspect-[4/5] w-full object-cover"
-            />
+          <div className="fade" data-reveal>
+            <div className="img-settle overflow-hidden rounded-[2px]">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={whatItIs.image}
+                alt={whatItIs.imageAlt}
+                width={1536}
+                height={2048}
+                loading="lazy"
+                className="aspect-[4/5] w-full object-cover"
+              />
+            </div>
+            <p className="body-copy mt-6 italic text-olive">{whatItIs.pull}</p>
           </div>
         </div>
 
@@ -246,84 +255,6 @@ export default function MembershipPage({ lang }: { lang: Lang }) {
       </section>
 
       {/* ---------- 5. Who is behind this ---------- */}
-      {/* The team quotes end in their own whitespace, so a full section
-          rhythm on both sides of the join left a hole (Vivien, 2026-09-07). */}
-      <Section id="who" tightBottom>
-        <div className="mb-16 max-w-2xl fade" data-reveal>
-          <p className="eyebrow mb-8 text-olive">{proof.eyebrow}</p>
-          <h2 className="display display-lg">{proof.heading}</h2>
-        </div>
-
-        {/*
-         * The portraits used to run the full width of the column, which read
-         * like a model agency rather than the people behind a membership
-         * (Vivien, 2026-09-07). They sit beside the name now, the way a byline
-         * does, so the writing leads and the face supports it. Half again
-         * bigger than the first attempt at that, which went too small.
-         *
-         * Three rows in a subgrid, so the two columns share row heights: the
-         * quotes now begin on the same line rather than being pushed to the
-         * bottom of a column and lining up by their last line, which left a
-         * gap under the shorter bio (Vivien, 2026-09-07). Without subgrid the
-         * quote simply follows its own bio, which is a reasonable fallback.
-         */}
-        <div className="reveal grid gap-14 md:grid-cols-2 md:grid-rows-[auto_auto_1fr] md:gap-x-20 md:gap-y-0" data-reveal>
-          {proof.people.map((person) => (
-            <div key={person.name} className="flex flex-col border-t border-ink/15 pt-8 md:row-span-3 md:grid md:grid-rows-subgrid md:gap-0">
-              <div className="flex items-center gap-6">
-                <Portrait
-                  src={person.image}
-                  name={person.name}
-                  closeLabel={ui.closePortrait}
-                  className="w-36 md:w-[10.5rem]"
-                />
-                <div>
-                  <h3 className="display display-md">{person.name}</h3>
-                  <p className="eyebrow mt-3 text-olive">{person.role}</p>
-                </div>
-              </div>
-              <p className="body-copy mt-8 text-ink-soft">{person.body}</p>
-              <blockquote className="lede pt-8 italic text-ink">
-                “{person.quote}”
-              </blockquote>
-            </div>
-          ))}
-        </div>
-
-        {/*
-         * The team, under its own label and below the founders, so the page
-         * shows the distinction rather than blurring it (2026-09-05). Same
-         * two-column grid, so a second person drops in without a redesign.
-         */}
-        <div className="mt-20 border-t border-ink/12 pt-14">
-          <p className="eyebrow mb-10 text-olive fade" data-reveal>{proof.teamLabel}</p>
-          <div className="reveal grid gap-14 md:grid-cols-2 md:grid-rows-[auto_auto_1fr] md:gap-x-20 md:gap-y-0" data-reveal>
-            {proof.team.map((person) => (
-              <div key={person.name} className="flex flex-col border-t border-ink/15 pt-8 md:row-span-3 md:grid md:grid-rows-subgrid md:gap-0">
-                <div className="flex items-center gap-6">
-                  {/* A size down from the founders, so the two rows read as
-                      two rows rather than one long gallery. */}
-                  <Portrait
-                    src={person.image}
-                    name={person.name}
-                    closeLabel={ui.closePortrait}
-                    className="w-30 md:w-36"
-                  />
-                  <div>
-                    <h3 className="display display-md">{person.name}</h3>
-                    <p className="eyebrow mt-3 text-olive">{person.role}</p>
-                  </div>
-                </div>
-                <p className="body-copy mt-8 text-ink-soft">{person.body}</p>
-                <blockquote className="lede pt-8 italic text-ink">
-                  “{person.quote}”
-                </blockquote>
-              </div>
-            ))}
-          </div>
-        </div>
-      </Section>
-
       {/* ---------- 6. How do we join? ---------- */}
       <Section id="join">
         <div className="mb-12 max-w-2xl fade" data-reveal>

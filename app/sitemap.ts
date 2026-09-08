@@ -13,7 +13,7 @@ export const dynamic = 'force-static';
 
 /** Community, Journal and Contact are live routes but hidden from the menu;
  *  they are still real pages, so they belong in the sitemap. */
-const PATHS = ['/', '/membership/', '/experiences/', '/community/', '/contact/', '/journal/', '/events/'];
+const PATHS = ['/', '/membership/', '/experiences/', '/who-we-are/', '/community/', '/contact/', '/journal/', '/events/'];
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return PATHS.flatMap((path) =>

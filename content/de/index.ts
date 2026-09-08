@@ -35,7 +35,7 @@ export const de: Dict = {
       { label: 'Was Narelo ist', href: '/membership/#what' },
       { label: 'Erlebnisse', href: '/experiences/' },
       { label: 'Mitgliedschaft', href: '/membership/' },
-      { label: 'Wer wir sind', href: '/membership/#who' },
+      { label: 'Wer wir sind', href: '/who-we-are/' },
     ],
     headerCta: { label: 'Beginnen Sie ein Gespräch', external: true },
     footerCta: {
@@ -170,7 +170,6 @@ export const de: Dict = {
       { id: 'experience', label: 'Die Erlebnisse' },
       { id: 'ages', label: 'Altersgruppen' },
       { id: 'how', label: 'Wie es funktioniert' },
-      { id: 'who', label: 'Wer wir sind' },
       { id: 'join', label: 'Wie Sie dazukommen' },
     ],
     hero: {
@@ -418,7 +417,7 @@ export const de: Dict = {
             { name: 'Regular Narelo Experiences', body: 'Für Ihr Kind: ein Erlebnis pro Woche mit der eigenen kleinen Gruppe, ein beständiger Ort, um zu erkunden, zu wachsen und mit der Zeit echte Freundschaften aufzubauen.' },
             { name: 'Community Mornings', body: 'Für die ganze Familie: Zeit, andere Narelo Familien kennenzulernen, sich zu verbinden und miteinander zu wachsen.' },
             { name: 'Narelo Expert Insights', body: 'Für Eltern: Gespräche mit unseren eigenen Fachleuten über Kindheit, Entwicklung und Familienleben.' },
-            { name: 'One-to-one Educator Conversations', body: 'Für Eltern: einmal pro Saison Zeit mit der eigenen Pädagogin oder dem eigenen Pädagogen Ihres Kindes, um über seine Entwicklung zu sprechen.' },
+            { name: 'One-to-one Educator Conversations', body: 'Für Eltern: einmal pro Trimester oder Saison Zeit mit der eigenen Pädagogin oder dem eigenen Pädagogen Ihres Kindes, um über seine Entwicklung zu sprechen.' },
             { name: 'End-of-season Video Reflections', body: 'Für Ihre Familie: ein persönliches Video zum Abschluss jeder Saison, das die Entdeckungen Ihres Kindes festhält.' },
           ],
         },
@@ -437,10 +436,18 @@ export const de: Dict = {
       eyebrow: 'Über den Alltag hinaus',
       heading: 'Um Ihre Familie herum gestaltet',
       body: 'Über die Mitgliedschaft hinaus gestaltet Narelo auch ausgewählte private Erlebnisse, sorgfältig auf Ihr Kind und Ihre Familie zugeschnitten.',
-      note: 'Diese Erlebnisse liegen außerhalb der Mitgliedschaft. Mitglieder buchen zuerst, und immer zum Mitgliedspreis.',
+      note: 'Diese Erlebnisse liegen außerhalb der Mitgliedschaft und stehen auch Familien offen, die keine Mitglieder sind. Mitglieder buchen zuerst, und immer zum Mitgliedspreis.',
       items: [
-        { name: 'Geburtstagserlebnisse', body: 'Sorgfältig gestaltete Feiern, inspiriert von den Interessen und der Persönlichkeit Ihres Kindes.' },
-        { name: 'Private Erlebnisse nach Maß', body: 'Persönliche Erlebnisse, sorgfältig um Ihr Kind und Ihre Familie herum entwickelt.' },
+        {
+          name: 'Geburtstagserlebnisse',
+          body: 'Sorgfältig gestaltete Feiern, inspiriert von den Interessen und der Persönlichkeit Ihres Kindes.',
+          ctaLabel: 'Möchten Sie mit uns feiern?',
+        },
+        {
+          name: 'Private Erlebnisse nach Maß',
+          body: 'Persönliche Erlebnisse, sorgfältig um Ihr Kind und Ihre Familie herum entwickelt.',
+          ctaLabel: 'Sollen wir etwas für Ihre Familie gestalten?',
+        },
       ],
     },
     closing: {

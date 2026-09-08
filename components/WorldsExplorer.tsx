@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useState } from 'react';
 
 type World = {
   readonly name: string;
@@ -9,25 +9,22 @@ type World = {
 };
 
 /**
- * The Five Worlds as a scroll-driven gallery (home page only; the membership
- * flyer keeps its plain list).
+ * The Five Worlds as a gallery of five panels (home page only; the membership
+ * flyer keeps its plain list). Click or tap a panel to open it.
  *
  * Panels carry the world's name and its short tagline. The descriptions are
  * written out once, on the Experiences page, and the link under the gallery
  * goes there (2026-09-02).
  *
- * Desktop: the panel row pins to the viewport while its tall wrapper scrolls,
- * and scroll progress advances the active world one by one, so the reader
- * walks through all five on the way down the page. Clicking a panel still
- * jumps to it.
+ * It used to pin to the viewport on desktop and advance through the five as
+ * you scrolled, inside a wrapper 320vh tall. That is gone (Vivien,
+ * 2026-09-08): it made the page hard to get past, because scrolling was
+ * driving the gallery rather than the page. Same panels, one behaviour at
+ * every width, and the reader stays in control of the scroll.
  *
- * Mobile: no pinning. A tall pinned block would fight the thumb on a phone,
- * so panels become a tap-to-expand stack instead, which is the natural touch
- * equivalent of the same motion.
- *
- * All transitions are flex-grow/height/opacity from globals.css easing tokens;
- * the scroll listener is rAF-throttled. Under prefers-reduced-motion the
- * transitions collapse to instant state changes and everything stays operable.
+ * All transitions are flex-grow/height/opacity from globals.css easing tokens.
+ * Under prefers-reduced-motion they collapse to instant state changes and
+ * everything stays operable.
  */
 export default function WorldsExplorer({
   items,
@@ -41,40 +38,10 @@ export default function WorldsExplorer({
   onLight?: boolean;
 }) {
   const [active, setActive] = useState(0);
-  const wrapRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const wrap = wrapRef.current;
-    if (!wrap) return;
-
-    // Scroll-driving only where the panel actually pins (md and up).
-    const mq = window.matchMedia('(min-width: 768px)');
-    let frame = 0;
-
-    const onScroll = () => {
-      if (frame || !mq.matches) return;
-      frame = requestAnimationFrame(() => {
-        frame = 0;
-        const rect = wrap.getBoundingClientRect();
-        const scrollable = rect.height - window.innerHeight;
-        if (scrollable <= 0) return;
-        const progress = Math.min(1, Math.max(0, -rect.top / scrollable));
-        // Hold each world for an equal slice of the scroll.
-        setActive(Math.min(items.length - 1, Math.floor(progress * items.length)));
-      });
-    };
-
-    onScroll();
-    window.addEventListener('scroll', onScroll, { passive: true });
-    return () => {
-      window.removeEventListener('scroll', onScroll);
-      if (frame) cancelAnimationFrame(frame);
-    };
-  }, [items.length]);
 
   return (
-    <div ref={wrapRef} className="md:h-[320vh]">
-      <div className="md:sticky md:top-[calc(50vh-280px)]">
+    <div>
+      <div>
         <ul className="flex flex-col gap-2 md:h-[560px] md:flex-row md:gap-3">
           {items.map((world, i) => {
             const isActive = i === active;
@@ -160,7 +127,7 @@ export default function WorldsExplorer({
           })}
         </ul>
 
-        {/* Progress dots, desktop only: which of the five the scroll is on. */}
+        {/* Which of the five is open, desktop only. */}
         <div className="mt-6 hidden justify-center gap-2.5 md:flex" aria-hidden="true">
           {items.map((world, i) => (
             <span

@@ -17,6 +17,7 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 | Home | `/` | `content/home.ts` + `content/site.ts` | `app/page.tsx` |
 | Membership | `/membership/` | `content/membership.ts` + `content/stages.ts` + `content/site.ts` | `app/membership/page.tsx` |
 | Experiences | `/experiences/` | `content/experiences.ts` + `content/stages.ts` + `content/site.ts` | `app/experiences/page.tsx` |
+| Who we are | `/who-we-are/` | `proof` in `content/membership.ts` | `components/pages/WhoWeArePage.tsx` |
 | Community | `/community/` | `content/community.ts` | `app/community/page.tsx` |
 | Contact | `/contact/` | `content/pages.ts` + `content/site.ts` | `app/contact/page.tsx` |
 | Journal | `/journal/` | `content/pages.ts` | `app/journal/page.tsx` |
@@ -69,7 +70,7 @@ The design and the words are kept apart on purpose.
 
 Almost every request the team will ever make is a change to one file in `content/`. Those files are plain, readable objects. Editing them cannot break the design.
 
-Components are design, not words: `Header`, `Footer`, `Section`, `Motion`, `Gallery`, `Testimonials`, `StageAccordion`, `StageTimeline`, `IncludedPanels`, `Portrait`, `WorldsExplorer`, `ContactForm`, `LazyVideo`, `VideoBand`, `WhatsAppIcon`. If a request needs one of these to behave differently, it is a design change, not a copy change.
+Components are design, not words: `Header`, `Footer`, `Section`, `Motion`, `Gallery`, `Testimonials`, `StageAccordion`, `StageTimeline`, `StageIcons`, `IncludedPanels`, `Portrait`, `WorldsExplorer`, `ContactForm`, `LazyVideo`, `VideoBand`, `WhatsAppIcon`. If a request needs one of these to behave differently, it is a design change, not a copy change.
 
 To swap a picture, a new image file can be added directly through this project (for example, one shared in the chat) and used to replace an existing file in `public/images/` or `public/video/`. Whoever supplies the image is vouching that it is free to use. Never invent or guess a source for a photo. If the source isn't known, say so plainly in the file's comment instead of citing one.
 
@@ -95,10 +96,12 @@ not quietly reversed:
   now. robots follows the same `NEXT_PUBLIC_ALLOW_INDEXING` switch as the meta
   tag, so launch is one environment variable, not a code change.
 
+Giving the founders their own page is done (Vivien, 2026-09-08): `/who-we-are/`.
+
 Still open from the audit, deliberately not done: moving "What Narelo is" to
-the home page, giving the founders their own page, merging the Narelo Promise
-with "What makes Narelo different", and translating the Spanish URL slugs.
-All four are content-architecture decisions for the team.
+the home page, merging the Narelo Promise with "What makes Narelo different",
+and translating the Spanish URL slugs. All three are content-architecture
+decisions for the team.
 
 ## House rules baked into the site
 
@@ -106,7 +109,7 @@ These are decisions already made. Do not quietly reverse them.
 
 1. **No em dashes in published copy.** (Rui, 2026-08-26.) This is a hard house style rule and it is noted at the top of several content files. Use commas, full stops or colons.
 2. **No pricing anywhere.** The "What does it cost?" section was deliberately removed from the Membership page because pricing is not yet agreed. Never invent or reinstate a price. Restore the section only when Rui says pricing is set.
-3. **Community, Journal and Contact are live routes but hidden from the menu** until they are ready. The visible nav is only: *What is Narelo*, *Experiences*, *Membership*, *Who we are* (the last one is an anchor into the Membership page's "Who we are" section).
+3. **Community, Journal and Contact are live routes but hidden from the menu** until they are ready. The visible nav is only: *What is Narelo*, *Experiences*, *Membership*, *Who we are* (the last one is its own page, `/who-we-are/`).
 4. **The primary call to action is WhatsApp**, not a form. Every CTA on the site reads **"Start a conversation"** and opens a prefilled WhatsApp message ("Hi Narelo, I'd love to learn more about membership for my family."). WhatsApp is the concierge entry point for every path, website, Instagram and referral alike (Funnel Process, 2026-08-31). There is no application form before the family conversation, and the mini dossier is offered on request, never as a gate.
 5. **TikTok and Facebook links are intentionally empty** (`href: null`). They were dead links on the old Wix site. Do not invent URLs. Instagram is `@narelo.eu`.
 6. **The Bloom age group has no brief yet.** Its summary is provisional and it has no motto. Do not write one, flag it instead.
@@ -127,7 +130,7 @@ On the business itself:
 - Marbella is **"our first Narelo home"**, never "a Marbella business"
 - Narelo is a **membership and a community**, never a class, nursery, play centre, school, or "a collection of sessions"
 - The name is **Narelo**. Never Norello, never Naralo.
-- The only **founders** are **Natalie Curavic** (Founder & CEO) and **Vivien Vörös** (Co-founder & Head of Education). Names, roles and both biographies come from the Narelo Family Guide. They appear in **one place only**: the "Who we are" section of the Membership page (`proof` in `content/membership.ts`). The home page's founders section was removed, do not re-add it.
+- The only **founders** are **Natalie Curavic** (Founder & CEO) and **Vivien Vörös** (Co-founder & Head of Education). Names, roles and both biographies come from the Narelo Family Guide. They appear in **one place only**: the `/who-we-are/` page (Vivien, 2026-09-08). The words are still `proof` in `content/membership.ts`, so the translations did not have to move; only the page they render on changed. The home page's founders section was removed and the Membership page's went with it, do not re-add either.
 - **Jessica Fletcher and Mercedes Carrasco Galera are team, not founders** (Vivien, 2026-09-05). The September audit listed them alongside Natalie and Vivien; that was wrong. **Jessica Fletcher** is Senior Educator and **Mercedes Carrasco Galera** is Brand Experience Manager. They live in `proof.team` in `content/membership.ts`, under their own "The team" label below the founders, so the page shows the distinction. Never present either of them as a founder.
 - The approved public wording for the opening is **"Our first Narelo home will open in Marbella this autumn."**
 - The messaging stage has moved from *Emotion & Curiosity* to **Understanding & Desire**. Copy must build understanding of what Narelo actually is, not just evoke a feeling.
