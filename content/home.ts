@@ -18,7 +18,7 @@ export const hero = {
   eyebrow: 'A private childhood membership · Marbella',
   /** Split across lines so each can rise independently out of its mask. */
   headingLines: ['Childhood,', 'deeply lived.'],
-  lede: 'Narelo is a members’ community built around extraordinary real-world experiences, for children from pregnancy to around the age of eight, and for the families who grow alongside them.',
+  lede: 'Narelo is a members’ community for families built around extraordinary real-world experiences. The membership journey starts from pregnancy all the way to the age of 8.',
   video: '/video/home-hero.mp4',
   poster: '/images/home-hero-poster.webp',
   scrollHint: 'Scroll',
@@ -47,11 +47,11 @@ export const statement = {
 /** framework/experience-rhythm-and-format.md — working format figures. */
 export const shape = {
   eyebrow: 'How a Narelo day is built',
-  heading: 'Small groups. Real places. Nobody rushed.',
-  body: 'Every experience is built to the same shape, whether it happens in our home, on the beach or in the hills behind town.',
+  heading: 'Small groups. Real places. No rush.',
+  body: 'Every experience is built to the same shape, whether it happens in our home, on the beach or in the mountains.',
   facts: [
-    { value: '~8', label: 'children in a group', note: 'Small enough that every child is known by name, not managed as a crowd.' },
-    { value: '90', label: 'minutes together', note: 'Long enough to settle, explore properly and come back to yourself.' },
+    { value: '8', label: 'children in a group', note: 'Small enough that every child is known by name, not managed as a crowd.' },
+    { value: '90', label: 'minutes together', note: 'Long enough to settle, explore and stay centred.' },
   ],
   image: '/images/home-not-to-be-rushed.webp',
   imageAlt: 'A small group of children exploring together, unhurried.',
@@ -71,7 +71,7 @@ export const shape = {
 export const worlds = {
   eyebrow: 'The Five Worlds',
   heading: 'Five ways of meeting the world',
-  body: 'Our experiences move through five worlds inspired by the real world around us, each opening new ways to explore, move, create and discover. Different worlds. Different experiences. Always something new to uncover.',
+  body: 'Our experiences move through five worlds inspired by the real life around us, each opening new ways to explore, move, create and discover. Different worlds. Different experiences. Always something new to uncover.',
   items: [
     {
       /*

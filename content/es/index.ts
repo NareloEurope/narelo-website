@@ -80,7 +80,7 @@ export const es: Dict = {
     hero: {
       eyebrow: 'Una membresía privada para la infancia · Marbella',
       headingLines: ['Una infancia que', 'de verdad se vive.'],
-      lede: 'Narelo es una comunidad de experiencias extraordinarias en el mundo real. Desde el embarazo hasta aproximadamente los 8 años, y para que la familia pueda crecer junta.',
+      lede: 'Narelo es una comunidad de socios para familias, construida en torno a experiencias extraordinarias en el mundo real. El camino de la membresía empieza en el embarazo y llega hasta los 8 años.',
       video: '/video/home-hero.mp4',
       poster: '/images/home-hero-poster.webp',
       scrollHint: 'Desliza',
@@ -98,11 +98,11 @@ export const es: Dict = {
     },
     shape: {
       eyebrow: 'Cómo se construye un día Narelo',
-      heading: 'Grupos pequeños. Lugares reales. Nadie con prisa.',
-      body: 'Cada experiencia sigue la misma forma, ocurra en nuestra casa, en la playa o en las colinas que hay detrás del pueblo.',
+      heading: 'Grupos pequeños. Lugares reales. Sin prisa.',
+      body: 'Cada experiencia sigue la misma forma, ocurra en nuestra casa, en la playa o en la montaña.',
       facts: [
-        { value: '~8', label: 'niños por grupo', note: 'Grupos reducidos, para conocer a cada niño por su nombre y que nadie se pierda entre la multitud.' },
-        { value: '90', label: 'minutos juntos', note: 'Tiempo de sobra para calmarse, explorar de verdad y reencontrarse con uno mismo.' },
+        { value: '8', label: 'niños por grupo', note: 'Grupos reducidos, para conocer a cada niño por su nombre y que nadie se pierda entre la multitud.' },
+        { value: '90', label: 'minutos juntos', note: 'Tiempo suficiente para calmarse, explorar y mantenerse centrado.' },
       ],
       image: '/images/home-not-to-be-rushed.webp',
       imageAlt: 'Un grupo pequeño de niños explorando juntos, sin prisa.',
@@ -110,7 +110,7 @@ export const es: Dict = {
     worlds: {
       eyebrow: 'Los Cinco Mundos',
       heading: 'Cinco formas de descubrir el mundo',
-      body: 'Nuestras experiencias recorren cinco mundos inspirados en el mundo real que nos rodea, cada uno abriendo nuevas formas de explorar, moverse, crear y descubrir. Mundos distintos. Experiencias distintas. Siempre algo nuevo por descubrir.',
+      body: 'Nuestras experiencias recorren cinco mundos inspirados en la vida real que nos rodea, cada uno abriendo nuevas formas de explorar, moverse, crear y descubrir. Mundos distintos. Experiencias distintas. Siempre algo nuevo por descubrir.',
       items: [
         { name: 'Ocean', short: 'El mar como lugar vivo', image: '/images/world-ocean.webp' },
         { name: 'Mountain', short: 'La naturaleza en sus propios términos', image: '/images/stage-photo-navigators.webp' },
@@ -371,8 +371,8 @@ export const es: Dict = {
       body3: 'Creemos que los niños necesitan las dos cosas: una conexión fuerte con el mundo real y la confianza para navegar el mundo que viene. Por eso la naturaleza, el movimiento y las experiencias de la vida real pueden encontrarse con la creatividad, la robótica y la IA, siempre con un propósito.',
       pull: 'Con raíces en el mundo real. Preparados para el mundo que viene.',
       facts: [
-        { value: '90', label: 'minutos juntos', note: 'Tiempo de sobra para calmarse, explorar de verdad y reencontrarse con uno mismo.' },
-        { value: '~8', label: 'niños por grupo', note: 'Grupos reducidos, para conocer a cada niño por su nombre y que nadie se pierda entre la multitud.' },
+        { value: '90', label: 'minutos juntos', note: 'Tiempo suficiente para calmarse, explorar y mantenerse centrado.' },
+        { value: '8', label: 'niños por grupo', note: 'Grupos reducidos, para conocer a cada niño por su nombre y que nadie se pierda entre la multitud.' },
         { value: '12', label: 'experiencias por temporada', note: 'Una por semana durante el curso, para que el año se construya en lugar de reiniciarse.' },
       ],
       note: 'Los grupos de los más pequeños pueden incluir a un adulto. Los mayores vienen solos.',
@@ -388,7 +388,7 @@ export const es: Dict = {
     worlds: {
       eyebrow: 'Los Cinco Mundos',
       heading: 'Cinco puertas que abrimos juntos',
-      body: 'Nuestras experiencias recorren cinco mundos inspirados en el mundo real que nos rodea, cada uno abriendo nuevas formas de explorar, moverse, crear y descubrir. Mundos distintos. Experiencias distintas. Siempre algo nuevo por descubrir.',
+      body: 'Nuestras experiencias recorren cinco mundos inspirados en la vida real que nos rodea, cada uno abriendo nuevas formas de explorar, moverse, crear y descubrir. Mundos distintos. Experiencias distintas. Siempre algo nuevo por descubrir.',
       items: [
         { name: 'Ocean', body: 'Explorar el mar a través de los sentidos, el movimiento, la curiosidad y el descubrimiento en el mundo real.' },
         { name: 'Mountain', body: 'Explorar la naturaleza a través del movimiento, el reto, la observación y la aventura.' },

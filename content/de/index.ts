@@ -81,7 +81,7 @@ export const de: Dict = {
     hero: {
       eyebrow: 'Eine private Mitgliedschaft für die Kindheit · Marbella',
       headingLines: ['Kindheit,', 'wirklich gelebt.'],
-      lede: 'Narelo ist eine Mitgliedergemeinschaft rund um außergewöhnliche Erlebnisse in der wirklichen Welt, für Kinder von der Schwangerschaft bis etwa zum achten Lebensjahr, und für die Familien, die mit ihnen wachsen.',
+      lede: 'Narelo ist eine Mitgliedergemeinschaft für Familien, rund um außergewöhnliche Erlebnisse in der wirklichen Welt. Der Weg der Mitgliedschaft beginnt in der Schwangerschaft und reicht bis zum achten Lebensjahr.',
       video: '/video/home-hero.mp4',
       poster: '/images/home-hero-poster.webp',
       scrollHint: 'Scrollen',
@@ -99,11 +99,11 @@ export const de: Dict = {
     },
     shape: {
       eyebrow: 'Wie ein Narelo Tag aufgebaut ist',
-      heading: 'Kleine Gruppen. Echte Orte. Niemand in Eile.',
-      body: 'Jedes Erlebnis folgt derselben Form, ob es in unserem Haus stattfindet, am Strand oder in den Hügeln hinter der Stadt.',
+      heading: 'Kleine Gruppen. Echte Orte. Keine Eile.',
+      body: 'Jedes Erlebnis folgt derselben Form, ob es in unserem Haus stattfindet, am Strand oder in den Bergen.',
       facts: [
-        { value: '~8', label: 'Kinder in einer Gruppe', note: 'Wenige genug, dass jedes Kind mit Namen gekannt wird und nicht als Teil einer Menge behandelt.' },
-        { value: '90', label: 'Minuten miteinander', note: 'Lange genug, um anzukommen, richtig zu erkunden und wieder bei sich zu sein.' },
+        { value: '8', label: 'Kinder in einer Gruppe', note: 'Wenige genug, dass jedes Kind mit Namen gekannt wird und nicht als Teil einer Menge behandelt.' },
+        { value: '90', label: 'Minuten miteinander', note: 'Lange genug, um anzukommen, zu erkunden und bei sich zu bleiben.' },
       ],
       image: '/images/home-not-to-be-rushed.webp',
       imageAlt: 'Eine kleine Gruppe Kinder erkundet gemeinsam, ohne Eile.',
@@ -111,7 +111,7 @@ export const de: Dict = {
     worlds: {
       eyebrow: 'Die Fünf Welten',
       heading: 'Fünf Arten, der Welt zu begegnen',
-      body: 'Unsere Erlebnisse führen durch fünf Welten, inspiriert von der wirklichen Welt um uns herum, und jede öffnet neue Wege zu erkunden, sich zu bewegen, zu gestalten und zu entdecken. Andere Welten. Andere Erlebnisse. Immer etwas Neues zu entdecken.',
+      body: 'Unsere Erlebnisse führen durch fünf Welten, inspiriert vom wirklichen Leben um uns herum, und jede öffnet neue Wege zu erkunden, sich zu bewegen, zu gestalten und zu entdecken. Andere Welten. Andere Erlebnisse. Immer etwas Neues zu entdecken.',
       items: [
         { name: 'Ocean', short: 'Das Meer als lebendiger Ort', image: '/images/world-ocean.webp' },
         { name: 'Mountain', short: 'Natur zu ihren eigenen Bedingungen', image: '/images/stage-photo-navigators.webp' },
@@ -372,8 +372,8 @@ export const de: Dict = {
       body3: 'Wir glauben, Kinder brauchen beides: eine starke Verbindung zur wirklichen Welt und das Selbstvertrauen, sich in der kommenden zurechtzufinden. Deshalb dürfen Natur, Bewegung und echte Erlebnisse auf Kreativität, Robotik und KI treffen, immer mit Absicht.',
       pull: 'Verwurzelt in der wirklichen Welt. Bereit für die kommende.',
       facts: [
-        { value: '90', label: 'Minuten miteinander', note: 'Lange genug, um anzukommen, richtig zu erkunden und wieder bei sich zu sein.' },
-        { value: '~8', label: 'Kinder in einer Gruppe', note: 'Wenige genug, dass jedes Kind mit Namen gekannt wird und nicht als Teil einer Menge behandelt.' },
+        { value: '90', label: 'Minuten miteinander', note: 'Lange genug, um anzukommen, zu erkunden und bei sich zu bleiben.' },
+        { value: '8', label: 'Kinder in einer Gruppe', note: 'Wenige genug, dass jedes Kind mit Namen gekannt wird und nicht als Teil einer Menge behandelt.' },
         { value: '12', label: 'Erlebnisse pro Saison', note: 'Eines pro Woche im Halbjahr, damit das Jahr aufbaut statt neu zu beginnen.' },
       ],
       note: 'Bei den jüngeren Gruppen kann ein Elternteil dabei sein. Ältere Kinder kommen allein.',
@@ -389,7 +389,7 @@ export const de: Dict = {
     worlds: {
       eyebrow: 'Die Fünf Welten',
       heading: 'Fünf Türen, die wir gemeinsam öffnen',
-      body: 'Unsere Erlebnisse führen durch fünf Welten, inspiriert von der wirklichen Welt um uns herum, und jede öffnet neue Wege zu erkunden, sich zu bewegen, zu gestalten und zu entdecken. Andere Welten. Andere Erlebnisse. Immer etwas Neues zu entdecken.',
+      body: 'Unsere Erlebnisse führen durch fünf Welten, inspiriert vom wirklichen Leben um uns herum, und jede öffnet neue Wege zu erkunden, sich zu bewegen, zu gestalten und zu entdecken. Andere Welten. Andere Erlebnisse. Immer etwas Neues zu entdecken.',
       items: [
         { name: 'Ocean', body: 'Das Meer erkunden über die Sinne, Bewegung, Neugier und echtes Entdecken.' },
         { name: 'Mountain', body: 'Die Natur erkunden über Bewegung, Herausforderung, Beobachtung und Abenteuer.' },
