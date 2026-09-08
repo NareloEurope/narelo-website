@@ -43,7 +43,7 @@ export const stageDetails: readonly Stage[] = [
     age: 'Pregnancy',
     tagline: 'A gentle beginning, before your child arrives.',
     summary:
-      'A calm space for expecting parents: time to slow down, connect with other families, and begin the Narelo journey before your child is born.',
+      'A calm space for expecting mothers: time to slow down, connect with other women, and begin the Narelo journey before your child is born.',
     /*
      * Pregnant woman, eyes closed, in white, sitting cross-legged in soft
      * light, hands resting on her belly. Supplied by Vivien (2026-09-07),
@@ -110,7 +110,7 @@ export const stageDetails: readonly Stage[] = [
   {
     name: 'Builders I',
     age: '3–5 years',
-    tagline: 'Exploring, creating and beginning to make sense of the world.',
+    tagline: 'Exploring, creating and making sense of the world.',
     motto: 'I explore and create.',
     summary:
       'Hands-on experiences in the Five Worlds that encourage exploration, creativity, questioning and the joy of making.',

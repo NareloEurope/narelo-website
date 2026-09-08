@@ -284,7 +284,7 @@ export const es: Dict = {
           ],
         },
         {
-          label: 'Acceso prioritario, con tarifa de socio',
+          label: 'Acceso prioritario, con tarifa especial',
           items: [
             { title: 'Guest Expert Insights' },
             { title: 'Signature Saturdays' },
@@ -406,8 +406,8 @@ export const es: Dict = {
     regular: {
       eyebrow: 'A lo largo del año',
       heading: 'Más allá de la experiencia semanal',
-      body: 'La membresía va más allá de las experiencias semanales de tu hijo. Nos reunimos regularmente como comunidad, padres y niños por igual, y tienes acceso continuo a nuestros propios expertos. Un lugar donde seguir aprendiendo sobre la maternidad y la paternidad, y sobre vosotros mismos como familia.',
-      note: 'Cada mes, uno de nuestros propios expertos abre una sesión para ti, incluida en tu membresía. Cuando invitamos a un especialista de fuera de Narelo, los socios tienen tarifa de socio.',
+      body: 'La membresía va más allá de las experiencias semanales de tu hijo. Nos reunimos regularmente como comunidad, padres y niños por igual, y tienes acceso continuo a nuestros expertos. Un lugar donde seguir aprendiendo sobre la maternidad y la paternidad, y sobre vosotros mismos como familia.',
+      note: 'Cada mes, uno de nuestros propios expertos abre una sesión para ti, incluida en tu membresía. Cuando invitamos a un especialista de fuera de Narelo, los socios tienen tarifa especial.',
       groups: [
         {
           label: 'Parte de tu mundo Narelo',
@@ -420,10 +420,10 @@ export const es: Dict = {
           ],
         },
         {
-          label: 'Reserva prioritaria, con tarifa de socio',
+          label: 'Reserva prioritaria, con tarifa especial',
           aside: 'y más por venir',
           items: [
-            { name: 'Guest Expert Insights', body: 'Sesiones con especialistas que invitamos de fuera de Narelo, con tarifa de socio.' },
+            { name: 'Guest Expert Insights', body: 'Sesiones con especialistas que invitamos de fuera de Narelo, con tarifa especial.' },
             { name: 'Signature Saturdays', body: 'Experiencias especiales de sábado pensadas para el descubrimiento, la creatividad y la aventura.' },
             { name: 'Holiday Experiences', body: 'Experiencias cuidadas durante las vacaciones escolares.' },
           ],
@@ -434,7 +434,7 @@ export const es: Dict = {
       eyebrow: 'Más allá de lo cotidiano',
       heading: 'Diseñado en torno a tu familia',
       body: 'Más allá de la membresía, Narelo también crea experiencias privadas seleccionadas, pensadas a medida de tu hijo y de tu familia.',
-      note: 'Estas experiencias quedan fuera de la membresía y están abiertas a familias que no son socias. Los socios reservan primero, y siempre con tarifa de socio.',
+      note: 'Estas experiencias quedan fuera de la membresía y están abiertas a familias que no son socias. Los socios reservan primero, y siempre con tarifa especial.',
       items: [
         {
           name: 'Experiencias de cumpleaños',
@@ -452,7 +452,7 @@ export const es: Dict = {
     },
     closing: {
       headingLines: ['Algunas experiencias', 'se quedan contigo.'],
-      body: 'Porque lo que los niños viven se convierte en parte de quienes llegan a ser.',
+      body: 'Lo que los niños viven se convierte en parte de quienes son.',
       ctaLabel: 'Empieza una conversación',
       video: '/video/experiences-closing.mp4',
       poster: '/images/experiences-video-poster.webp',
@@ -466,7 +466,7 @@ export const es: Dict = {
         age: 'Embarazo',
         tagline: 'Un comienzo suave, antes de que llegue tu hijo.',
         summary:
-          'Un espacio en calma para futuros padres: tiempo para bajar el ritmo, conectar con otras familias y empezar el camino Narelo antes de que nazca tu hijo.',
+          'Un espacio en calma para futuras madres: tiempo para bajar el ritmo, conectar con otras mujeres y empezar el camino Narelo antes de que nazca tu hijo.',
         image: '/images/stage-photo-bloom.webp',
       },
       {
@@ -519,7 +519,7 @@ export const es: Dict = {
       {
         name: 'Builders I',
         age: '3–5 años',
-        tagline: 'Explorar, crear y empezar a dar sentido al mundo.',
+        tagline: 'Explorar, crear y dar sentido al mundo.',
         motto: 'Exploro y creo.',
         summary:
           'Experiencias prácticas en los Cinco Mundos que animan a explorar, crear, preguntar y disfrutar del hacer.',
