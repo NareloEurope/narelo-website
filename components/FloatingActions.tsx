@@ -14,10 +14,14 @@ import { langFromPath } from '@/content/locales';
  * repeated CTA blocks come out of the page: a visitor always has one within
  * reach, so the same button no longer has to appear in every section.
  *
- * Hidden until the hero is behind you, so the first screen stays clean, and
- * hidden entirely for anyone who prefers reduced motion to see less movement.
- * The buttons are small and circular rather than a bar, which is the least
- * shouty version of this pattern.
+ * Hidden until you are past the hero, so the first screen stays clean.
+ *
+ * On a phone it says what it is (Vivien, 2026-09-08): a bare green circle
+ * left people unsure how to actually join, so below md it is a pill carrying
+ * the same "Start a conversation" wording every other call to action uses,
+ * and it appears sooner, just under half a screen down. On a desktop the
+ * header keeps its own button in view the whole time, so there it stays the
+ * quiet circle it was.
  */
 export default function FloatingActions() {
   const lang = langFromPath(usePathname());
@@ -30,7 +34,7 @@ export default function FloatingActions() {
       if (frame) return;
       frame = requestAnimationFrame(() => {
         frame = 0;
-        setShown(window.scrollY > window.innerHeight * 0.9);
+        setShown(window.scrollY > window.innerHeight * 0.45);
       });
     };
     onScroll();
@@ -64,11 +68,13 @@ export default function FloatingActions() {
         href={contact.whatsapp}
         target="_blank"
         rel="noreferrer noopener"
-        aria-label={headerCta.label}
         title={headerCta.label}
-        className="flex h-14 w-14 items-center justify-center rounded-full bg-forest text-linen shadow-[0_10px_28px_-12px_rgba(43,32,24,0.7)] transition-colors hover:bg-ink"
+        className="flex h-12 items-center justify-center gap-2.5 rounded-full bg-forest px-4 text-linen shadow-[0_10px_28px_-12px_rgba(43,32,24,0.7)] transition-colors hover:bg-ink md:h-14 md:w-14 md:px-0"
       >
-        <WhatsAppIcon className="h-6 w-6" />
+        <WhatsAppIcon className="h-5 w-5 shrink-0 md:h-6 md:w-6" />
+        {/* The label is the point of this on a phone. On a desktop the header
+            carries the same button, so it collapses back to the icon. */}
+        <span className="eyebrow whitespace-nowrap !tracking-[0.1em] md:sr-only">{headerCta.label}</span>
       </a>
     </div>
   );

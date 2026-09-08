@@ -166,7 +166,7 @@ export default function HomePage({ lang }: { lang: Lang }) {
             (Vivien, 2026-09-08). It used to be its own version: plain hollow
             dots on a rail 880px wide, which on a phone was a sideways scroll
             with no marks on it. */}
-        <StageTimeline items={journey.stages} />
+        <StageTimeline items={journey.stages} label={journey.heading} />
 
         <div className="mt-12 flex flex-col gap-6 fade md:flex-row md:items-center md:justify-between" data-reveal>
           <p className="body-copy max-w-md text-ink-soft">{journey.note}</p>

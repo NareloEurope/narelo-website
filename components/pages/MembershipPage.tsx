@@ -173,7 +173,7 @@ export default function MembershipPage({ lang }: { lang: Lang }) {
             description of a stage lives on the Experiences page (Rui,
             2026-09-02). Drawn as one timeline rather than seven full-width
             rows, which looked clickable and were not (Vivien, 2026-09-07). */}
-        <StageTimeline items={stageDetails} />
+        <StageTimeline items={stageDetails} label={ageGroups.heading} />
 
         <div className="mt-12 flex flex-col gap-6 fade md:flex-row md:items-center md:justify-between" data-reveal>
           <p className="body-copy max-w-xl text-ink-soft">{ageGroups.note}</p>
