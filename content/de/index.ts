@@ -183,7 +183,6 @@ export const de: Dict = {
       heading: 'Eine Mitgliedergemeinschaft rund um außergewöhnliche Erlebnisse',
       body: 'Narelo ist ein privater Members Club rund um außergewöhnliche Kindheitserlebnisse, die Kinder durch Natur, Kreativität, Bewegung und echte Abenteuer wachsen lassen, innerhalb einer Gemeinschaft gleichgesinnter Familien, die miteinander wachsen.',
       body2: 'Mehr als ein Kinderprogramm: Narelo ist eine Mitgliedergemeinschaft, in der Kinder Selbstvertrauen, Eigenständigkeit und echte Verbindungen aufbauen, Eltern durch unsere Fachleute weiterlernen und gleichgesinnte Familien miteinander wachsen, damit Kinder in einer sich ständig verändernden Welt aufblühen können.',
-      pull: 'Kinder kommen wegen der Erlebnisse. Familien bleiben wegen der Gemeinschaft.',
       image: '/images/img-1667.webp',
       imageAlt: 'Kinder draußen in der wirklichen Welt bei einem Narelo Erlebnis.',
     },
@@ -286,7 +285,7 @@ export const de: Dict = {
           ],
         },
         {
-          label: 'Für Mitglieder, zum Mitgliedspreis',
+          label: 'Vorrangiger Zugang, zum Mitgliedspreis',
           items: [
             { title: 'Guest Expert Insights' },
             { title: 'Signature Saturdays' },
@@ -422,7 +421,7 @@ export const de: Dict = {
           ],
         },
         {
-          label: 'Für Mitglieder buchbar, zum Mitgliedspreis',
+          label: 'Vorrangige Buchung, zum Mitgliedspreis',
           aside: 'und mehr wird folgen',
           items: [
             { name: 'Guest Expert Insights', body: 'Runden mit Fachleuten, die wir von außerhalb Narelos einladen, für Mitglieder zum Mitgliedspreis.' },

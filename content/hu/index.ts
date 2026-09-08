@@ -186,7 +186,6 @@ export const hu: Dict = {
       heading: 'Tagsági közösség, rendkívüli élmények köré építve',
       body: 'A Narelo privát klub, amely rendkívüli gyermekkori élmények köré épül, és a természeten, a kreativitáson, a mozgáson és a valódi kalandokon keresztül segíti a gyerekek fejlődését, egy olyan tagsági közösségben, ahol hasonlóan gondolkodó családok nőnek fel együtt.',
       body2: 'A Narelo több mint gyerekprogram: tagsági közösség, ahol a gyerekek magabiztosságot, önállóságot és valódi kapcsolatokat építenek, a szülők tovább tanulnak a szakértőinktől, és hasonlóan gondolkodó családok nőnek fel együtt, felkészítve a gyerekeket arra, hogy egy folyamatosan változó világban is kibontakozzanak.',
-      pull: 'A gyerekek az élményekért jönnek. A családok a közösségért maradnak.',
       image: '/images/img-1667.webp',
       imageAlt: 'Gyerekek a valódi világban egy Narelo élmény közben.',
     },
@@ -289,7 +288,7 @@ export const hu: Dict = {
           ],
         },
         {
-          label: 'Tagoknak, tagsági áron',
+          label: 'Elsőbbségi hozzáférés, tagsági áron',
           items: [
             { title: 'Guest Expert Insights' },
             { title: 'Signature Saturdays' },
@@ -425,7 +424,7 @@ export const hu: Dict = {
           ],
         },
         {
-          label: 'Tagoknak foglalható, tagsági áron',
+          label: 'Elsőbbségi foglalás, tagsági áron',
           aside: 'és még több jön',
           items: [
             { name: 'Guest Expert Insights', body: 'Alkalmak Narelón kívülről meghívott szakemberekkel, a tagoknak tagsági áron.' },

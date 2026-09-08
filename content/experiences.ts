@@ -147,7 +147,7 @@ export const regular = {
       ],
     },
     {
-      label: 'Bookable for members, at member rates',
+      label: 'Priority booking, at member rates',
       aside: 'and more to come',
       items: [
         { name: 'Guest Expert Insights', body: 'Sessions with specialists we invite from outside Narelo, offered to members at a member rate.' },

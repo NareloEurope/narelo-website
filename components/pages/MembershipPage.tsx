@@ -128,7 +128,6 @@ export default function MembershipPage({ lang }: { lang: Lang }) {
                 className="aspect-[4/5] w-full object-cover"
               />
             </div>
-            <p className="body-copy mt-6 italic text-olive">{whatItIs.pull}</p>
           </div>
         </div>
 
@@ -163,34 +162,57 @@ export default function MembershipPage({ lang }: { lang: Lang }) {
       </Section>
 
       {/* ---------- 5. Who is behind this ---------- */}
-      {/* ---------- 6. How do we join? ---------- */}
-      <Section id="join" outerClassName="md:order-6">
+      {/*
+       * ---------- 6. How do we join? ----------
+       *
+       * The section a reader is looking for, and it used to look like every
+       * other one: four hairlines on the same linen ground, easy to scroll
+       * straight past (Vivien, 2026-09-08). Three changes, all in the site's
+       * own language rather than a new one.
+       *
+       * It sits on shell now, so it lifts off the linen above it. The steps
+       * are in the same panel the "what's included" list uses, which is the
+       * treatment that already reads as "this is the part that matters". And
+       * each number is in the ring the age timeline uses, so four steps read
+       * as a sequence at a glance instead of four paragraphs.
+       *
+       * Step one's WhatsApp link is a proper button rather than an underline.
+       * Same single action in the same place, just findable. No new call to
+       * action was added: the page still has its one at the close.
+       */}
+      <Section id="join" bg="bg-shell" outerClassName="md:order-6">
         <div className="mb-12 max-w-2xl fade" data-reveal>
           <p className="eyebrow mb-8 text-olive">{joining.eyebrow}</p>
           <h2 className="display display-lg">{joining.heading}</h2>
         </div>
 
-        <ol className="reveal grid gap-10 md:grid-cols-4 md:gap-8" data-reveal>
-          {joining.steps.map((step) => (
-            <li key={step.n}>
-              <div className="mb-5 h-px w-full bg-ink/15" aria-hidden="true" />
-              <span className="eyebrow text-olive">{step.n}</span>
-              <h3 className="display display-md mt-3">{step.title}</h3>
-              <p className="body-copy mt-3 text-ink-soft">{step.body}</p>
-              {'whatsapp' in step && step.whatsapp && (
-                <a
-                  href={contact.whatsapp}
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  className="link-line eyebrow mt-5 inline-flex items-center gap-2.5 text-forest"
+        <div className="rounded-[2px] bg-linen p-8 shadow-[0_18px_40px_-30px_rgba(43,32,24,0.45)] ring-1 ring-forest/15 md:p-11 fade" data-reveal>
+          <ol className="grid gap-10 md:grid-cols-4 md:gap-8">
+            {joining.steps.map((step) => (
+              <li key={step.n}>
+                <span
+                  className="flex h-11 w-11 items-center justify-center rounded-full border border-olive/45 text-olive"
+                  aria-hidden="true"
                 >
-                  <WhatsAppIcon className="h-5 w-5" />
-                  {joining.whatsappLabel}
-                </a>
-              )}
-            </li>
-          ))}
-        </ol>
+                  <span className="eyebrow !tracking-normal">{step.n}</span>
+                </span>
+                <h3 className="display display-md mt-5">{step.title}</h3>
+                <p className="body-copy mt-3 text-ink-soft">{step.body}</p>
+                {'whatsapp' in step && step.whatsapp && (
+                  <a
+                    href={contact.whatsapp}
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    className="btn btn-solid mt-6 !px-6"
+                  >
+                    <WhatsAppIcon className="h-5 w-5" />
+                    {joining.whatsappLabel}
+                  </a>
+                )}
+              </li>
+            ))}
+          </ol>
+        </div>
 
         <p className="lede mt-12 max-w-2xl text-ink-soft fade" data-reveal>
           {joining.reassurance}
