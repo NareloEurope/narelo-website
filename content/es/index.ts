@@ -2,19 +2,41 @@
  * Spanish. Mirrors the English in `content/` key for key; the shape is checked
  * against it at build time, so a missing key fails the build.
  *
- * ⚠️ NOT YET READ BY A NATIVE SPEAKER (Vivien, 2026-09-04). Marbella is the
- * first Narelo home and Spanish is the commercially important language here,
- * so this needs a proper editorial pass before launch, not just a proofread.
+ * ✅ READ AND REWRITTEN BY A NATIVE SPEAKER (Translation Review V3, 2026-09-08,
+ * brought in by Vivien). Every visible string on Home, Experiences, Membership
+ * and Who we are now carries the reviewer's wording. This was the editorial
+ * pass AGENTS.md had been asking for, not a proofread: sentences were rebuilt,
+ * not corrected.
+ *
+ * Where the review and the current English disagreed, the English won, because
+ * the English changed after the review was written:
+ * - "Sin prisas. Sin relleno." is only "Sin prisas." now.
+ * - The group size is 8, not ~8.
+ *
+ * Departures from the review, all noted for the team:
+ * - Brand names stay in English, because AGENTS.md forbids re-titling them.
+ *   The review translated several (Mañanas en comunidad, Consejos de expertos
+ *   Narelo, Charlas con expertos invitados, Experiencias en vacaciones); the
+ *   English names are kept and the review's sentences describe them.
+ * - Role titles stay in Spanish. The review shows them in English, but it
+ *   shows them as section labels rather than as a translation decision.
+ * - "Entorno a la infancia" in the hero eyebrow is "en torno a la infancia".
+ * - The home group-size note borrows the review's own clearer construction
+ *   from the Experiences page ("Grupos lo suficientemente reducidos"), because
+ *   "suficientemente chicos" next to "niños" reads as "boys" in Spain.
+ * - "Un lugar que crece con tu hijo" on both Home and Membership. The review
+ *   says "espacio" on one and "lugar" on the other for the same English line.
+ * - The Narelo Promise keeps its closing "Las familias también forman parte.",
+ *   which the review dropped.
  *
  * Translation rules followed here:
- * - Brand names stay in English, because AGENTS.md forbids re-titling them:
- *   Narelo, the Five Worlds (Ocean, Mountain, World Around Us, Expression,
- *   Future), the age groups (Bloom, Nurture, The Nest, Little Beginnings,
- *   Builders I, Builders II, Navigators), Signature Saturdays, Holiday
- *   Experiences, Expert Insights, Community Mornings, Narelo Experiences.
+ * - Brand names stay in English: Narelo, the Five Worlds (Ocean, Mountain,
+ *   World Around Us, Expression, Future), the age groups (Bloom, Nurture, The
+ *   Nest, Little Beginnings, Builders I, Builders II, Navigators), Signature
+ *   Saturdays, Holiday Experiences, Expert Insights, Community Mornings,
+ *   Narelo Experiences.
  * - No em dashes, same as the English.
- * - Tone is invitation and wonder, never status. "Club privado de socios"
- *   rather than anything that reads as exclusivity.
+ * - Tone is invitation and wonder, never status.
  * - Usted vs tú: tú throughout, warmer and right for families.
  * - Paths, images, videos, numbers and contact details are untouched.
  * - The WhatsApp prefill is translated so a Spanish family writes in Spanish.
@@ -25,7 +47,7 @@ export const es: Dict = {
   site: {
     site: {
       name: 'Narelo',
-      tagline: 'Una membresía privada para la infancia',
+      tagline: 'Una comunidad privada en torno a la infancia',
       locale: 'es',
       location: 'Marbella, España',
       copyright: '© 2026 Narelo. Todos los derechos reservados.',
@@ -36,12 +58,12 @@ export const es: Dict = {
       { label: 'Membresía', href: '/membership/' },
       { label: 'Quiénes somos', href: '/who-we-are/' },
     ],
-    headerCta: { label: 'Empieza una conversación', external: true },
+    headerCta: { label: 'Hablemos', external: true },
     footerCta: {
-      heading: 'Nuestra primera casa Narelo abre en Marbella este otoño.',
-      subheading: 'Empezamos en Marbella. Madrid y Mallorca en el horizonte.',
-      ctaLabel: 'Empieza una conversación',
-      blurb: 'Un club privado de socios construido en torno a experiencias extraordinarias de la infancia.',
+      heading: 'Nuestro primer espacio Narelo abre en Marbella este otoño.',
+      subheading: 'Comenzamos en Marbella. Madrid y Mallorca como próximos destinos.',
+      ctaLabel: 'Hablemos',
+      blurb: 'Una comunidad privada para familias, creada en torno a experiencias de infancia extraordinarias.',
     },
     ui: {
       openMenu: 'Abrir menú',
@@ -78,31 +100,31 @@ export const es: Dict = {
 
   home: {
     hero: {
-      eyebrow: 'Una membresía privada para la infancia · Marbella',
+      eyebrow: 'Una comunidad privada en torno a la infancia · Marbella',
       headingLines: ['Una infancia que', 'de verdad se vive.'],
-      lede: 'Narelo es una comunidad de socios para familias, construida en torno a experiencias extraordinarias en el mundo real. El camino de la membresía empieza en el embarazo y llega hasta los 8 años.',
+      lede: 'Narelo es una comunidad privada para familias, creada alrededor de experiencias extraordinarias del mundo real. El recorrido comienza desde el embarazo y acompaña a los niños hasta los 8 años.',
       video: '/video/home-hero.mp4',
       poster: '/images/home-hero-poster.webp',
       scrollHint: 'Desliza',
     },
     belief: {
-      eyebrow: 'En qué creemos',
+      eyebrow: 'Nuestra filosofía',
       heading: 'Los niños no necesitan más actividades. Necesitan una infancia más rica.',
-      body: 'Entre el colegio, las pantallas y la rutina, la infancia pasa desapercibida. Creemos que merece todo el protagonismo: días, lugares y personas reales, que realmente les permitan vivir su infancia.',
-      pull: 'El mejor regalo que le podemos hacer a un niño es una infancia que lo prepare, no solo para el colegio, sino para un futuro que todavía no podemos ni imaginar.',
+      body: 'Entre las idas y venidas del colegio, las pantallas y la rutina ajetreada, la infancia pasa desapercibida. Creemos que se merecen el foco: días reales, sitios reales, personas reales, y el tiempo de disfrutarlo.',
+      pull: 'Creemos que el mayor regalo que le podemos ofrecer a los niños es una infancia que les prepare, no solo para el colegio, sino también para un futuro que no podemos ni imaginar.',
       image: '/images/home-moment-to-pause.webp',
       imageAlt: 'Un niño que se detiene al aire libre y se toma su tiempo.',
     },
     statement: {
-      lines: ['Los niños se apuntan por las experiencias.', 'Las familias se quedan por la comunidad.'],
+      lines: ['Los niños vienen por las experiencias.', 'Las familias se quedan por la comunidad.'],
     },
     shape: {
-      eyebrow: 'Cómo se construye un día Narelo',
-      heading: 'Grupos pequeños. Lugares reales. Sin prisa.',
-      body: 'Cada experiencia sigue la misma forma, ocurra en nuestra casa, en la playa o en la montaña.',
+      eyebrow: 'Cómo se construye un día en Narelo',
+      heading: 'Grupos reducidos. Espacios reales. Sin prisa.',
+      body: 'Cada experiencia se elabora con el mismo pensamiento, da igual que sea dentro de nuestra casa, en la playa o en las montañas.',
       facts: [
-        { value: '8', label: 'niños por grupo', note: 'Grupos reducidos, para conocer a cada niño por su nombre y que nadie se pierda entre la multitud.' },
-        { value: '90', label: 'minutos juntos', note: 'Tiempo suficiente para calmarse, explorar y mantenerse centrado.' },
+        { value: '8', label: 'niños por grupo', note: 'Grupos lo suficientemente reducidos para conocer a cada niño por su nombre y que ninguno se pierda entre la multitud.' },
+        { value: '90', label: 'minutos juntos', note: 'Tiempo de sobra para calmarse, explorar y estar concentrado.' },
       ],
       image: '/images/home-not-to-be-rushed.webp',
       imageAlt: 'Un grupo pequeño de niños explorando juntos, sin prisa.',
@@ -110,21 +132,21 @@ export const es: Dict = {
     worlds: {
       eyebrow: 'Los Cinco Mundos',
       heading: 'Cinco formas de descubrir el mundo',
-      body: 'Nuestras experiencias recorren cinco mundos inspirados en la vida real que nos rodea, cada uno abriendo nuevas formas de explorar, moverse, crear y descubrir. Mundos distintos. Experiencias distintas. Siempre algo nuevo por descubrir.',
+      body: 'Nuestras experiencias recorren cinco mundos inspirados en el mundo real que nos rodea. Cada día, nuevas formas de explorar, moverse, crear y descubrir. Diferentes mundos. Diferentes experiencias. Siempre algo nuevo por descubrir.',
       items: [
-        { name: 'Ocean', short: 'El mar como lugar vivo', image: '/images/world-ocean.webp' },
-        { name: 'Mountain', short: 'La naturaleza en sus propios términos', image: '/images/stage-photo-navigators.webp' },
-        { name: 'World Around Us', short: 'Puertas que los niños rara vez pueden abrir', image: '/images/home-world-built-around-childhood.webp' },
+        { name: 'Ocean', short: 'El mar como entorno', image: '/images/world-ocean.webp' },
+        { name: 'Mountain', short: 'Naturaleza en sí misma', image: '/images/stage-photo-navigators.webp' },
+        { name: 'World Around Us', short: 'Puertas que los niños rara vez tienen la oportunidad de abrir', image: '/images/home-world-built-around-childhood.webp' },
         { name: 'Expression', short: 'Dar forma a las ideas', image: '/images/gallery-02.webp' },
-        { name: 'Future', short: 'Curiosidad por lo que está cambiando', image: '/images/contact-hero.webp' },
+        { name: 'Future', short: 'Curiosidad por lo que está por venir', image: '/images/contact-hero.webp' },
       ],
-      linkLab: 'Los cinco mundos, al completo',
+      linkLab: 'Los cinco mundos en detalle',
       linkHref: '/experiences/#worlds',
     },
     journey: {
       eyebrow: 'Desde el principio',
       heading: 'Un lugar que crece con tu hijo',
-      body: 'Donde toda la familia pueda disfrutar. Muchas experiencias empiezan incluso antes de que nazca y continúan a lo largo de los años siguientes.',
+      body: 'Donde toda la familia pueda disfrutar. Muchas de las experiencias empiezan incluso antes de que nazca y continúan a lo largo de los años.',
       stages: [
         { name: 'Bloom', age: 'Embarazo' },
         { name: 'Nurture', age: '0–1' },
@@ -134,32 +156,32 @@ export const es: Dict = {
         { name: 'Builders II', age: '5–6' },
         { name: 'Navigators', age: '6–8' },
       ],
-      note: 'Las edades son orientativas: nos adaptamos al desarrollo y a los intereses de cada niño.',
-      linkLabel: 'Descubre los grupos de edad',
+      note: 'Las edades son orientativas, nos adaptamos al desarrollo e interés de cada niño.',
+      linkLabel: 'Explorar los grupos de edades',
       linkHref: '/experiences/#journey',
     },
     promise: {
-      eyebrow: 'La promesa Narelo',
-      heading: 'Lo que toda familia puede esperar',
+      eyebrow: 'Nuestra promesa',
+      heading: 'Qué puede esperar cada familia',
       image: '/images/membership-beach-background.webp',
       items: [
-        { title: 'A cada niño se le conoce', body: 'No un nombre en una lista. Los educadores saben en qué está tu hijo, qué le cuesta y qué le encanta.' },
-        { title: 'Continuidad', body: 'Las mismas caras, la misma comunidad, año tras año. Los niños construyen sobre lo anterior en lugar de empezar de cero cada trimestre.' },
-        { title: 'Un entorno protegido', body: 'Mantenemos los grupos pequeños y la comunidad cuidada. Eso es lo que hace posible todo lo demás.' },
-        { title: 'Pertenecer y no solo asistir', body: 'La membresía se parece más a una segunda familia que a un sitio donde dejas a tu hijo. Las familias también forman parte.' },
+        { title: 'Cada niño es conocido', body: 'No solo un nombre en la lista. Las educadoras conocen aquello en lo que tu hijo está trabajando, lo que le resulta difícil y lo que le apasiona.' },
+        { title: 'Continuidad', body: 'Las mismas caras, la misma comunidad año tras año. Los niños construyen sobre lo que han vivido anteriormente, en lugar de empezar de cero cada trimestre.' },
+        { title: 'Un entorno protegido', body: 'Mantenemos grupos reducidos y cuidamos especialmente de nuestra comunidad, lo que nos permite hacer posible todo lo demás.' },
+        { title: 'Pertenencia, no asistencia', body: 'La membresía será como tu segunda familia, no simplemente un lugar donde dejas a tu hijo. Las familias también forman parte.' },
       ],
     },
     home: {
       eyebrow: 'Marbella',
-      heading: 'Aquí comienza Narelo',
-      body: 'El mar a un lado, la montaña al otro, y una comunidad de familias que elegimos con cuidado y sin prisa. Nuestra primera casa Narelo abre en Marbella este otoño, y es la primera, pero no la última.',
+      heading: 'Donde comienza Narelo',
+      body: 'El mar a un lado, las montañas al otro y una comunidad de familias que estamos formando con cuidado y sin prisas. Nuestro primer espacio Narelo abre aquí este otoño, y será el primero, pero no el último.',
       image: '/images/img-5208.webp',
       imageAlt: 'Tres niños en una duna al atardecer, mirando el mar.',
     },
     closing: {
       headingLines: ['La infancia', 'solo se vive una vez.'],
-      body: 'Abrimos las primeras inscripciones con plazas limitadas para nuestra primera casa. Si crees que tu familia encaja con la filosofía Narelo, nos encantaría hablar.',
-      ctaLabel: 'Empieza una conversación',
+      body: 'Abrimos las primeras inscripciones con plazas limitadas antes de inaugurar nuestro primer espacio. Si crees que tu familia encaja con la filosofía Narelo, nos encantaría hablar contigo.',
+      ctaLabel: 'Hablemos',
     },
   },
 
@@ -169,27 +191,27 @@ export const es: Dict = {
       { id: 'experience', label: 'Las experiencias' },
       { id: 'ages', label: 'Grupos de edad' },
       { id: 'how', label: 'Cómo funciona' },
-      { id: 'join', label: 'Cómo unirse' },
+      { id: 'join', label: 'Cómo formar parte' },
     ],
     hero: {
       eyebrow: 'Membresía',
-      headingLines: ['Pertenecer,', 'no reservar.'],
-      lede: 'Una membresía privada para familias que quieren que la infancia sea algo que sus hijos recuerden de verdad.',
+      headingLines: ['Pertenencia,', 'desde el primer contacto.'],
+      lede: 'Una comunidad privada para familias que quieren que la infancia sea algo que sus hijos realmente recuerden.',
       image: '/images/membership-hero.webp',
     },
     whatItIs: {
       eyebrow: 'Qué es Narelo',
-      heading: 'Una comunidad para experiencias únicas',
-      body: 'Narelo es un club privado de socios construido en torno a experiencias extraordinarias de la infancia que ayudan a los niños a crecer a través de la naturaleza, la creatividad, el movimiento y las aventuras de la vida real, dentro de una comunidad de familias afines que crecen juntas.',
-      body2: 'Más que un programa infantil, Narelo es una comunidad de socios donde los niños construyen confianza, independencia y vínculos significativos, los padres siguen aprendiendo con nuestros expertos, y familias afines crecen juntas, preparando a los niños para florecer en un mundo en cambio constante.',
+      heading: 'Una comunidad de familias, construida en torno a experiencias extraordinarias',
+      body: 'Narelo es una comunidad privada para familias, creada en torno a experiencias extraordinarias de infancia que ayudan a los niños a crecer a través de la naturaleza, la creatividad, el movimiento y las aventuras en el mundo real, dentro de un grupo de familias con valores afines que crecen juntas.',
+      body2: 'Más que un programa infantil, Narelo es una comunidad donde los niños desarrollan confianza, independencia y vínculos significativos; los padres siguen aprendiendo gracias al conocimiento de expertos; y las familias con valores afines crecen juntas, preparando a los niños para desenvolverse en un mundo en constante cambio.',
       image: '/images/img-1667.webp',
       imageAlt: 'Niños en el mundo real durante una experiencia Narelo.',
     },
     isNot: {
-      eyebrow: 'Y qué no es',
-      items: ['Una clase', 'Una guardería', 'Un centro de juego', 'Otra actividad más'],
-      line: 'Narelo es una membresía a la que tu familia pertenece.',
-      pull: 'No creamos un mundo para los niños. Les abrimos el mundo real.',
+      eyebrow: 'Qué no es Narelo',
+      items: ['Una clase', 'Una guardería', 'Un centro de juegos', 'Una actividad más'],
+      line: 'Narelo es una comunidad a la que pertenece tu familia.',
+      pull: 'No creamos un mundo para los niños. Les abrimos las puertas al mundo real.',
     },
     different: {
       eyebrow: 'Qué hace diferente a Narelo',
@@ -197,102 +219,102 @@ export const es: Dict = {
         {
           n: '01',
           title: 'Un lugar al que volver',
-          body: 'No una actividad suelta, sino una constante a lo largo del año: experiencias, relaciones y momentos compartidos a los que tu hijo vuelve.',
+          body: 'No es una actividad puntual, sino una constante a lo largo del año: experiencias, relaciones y momentos compartidos a los que tu hijo vuelve una y otra vez.',
         },
         {
           n: '02',
           title: 'Un ritmo que crece contigo',
-          body: 'De una etapa a la siguiente, con continuidad real, sin tener que buscar un programa nuevo cada año.',
+          body: 'De una etapa a la siguiente, con una continuidad real, sin tener que buscar un programa nuevo cada año.',
         },
         {
           n: '03',
-          title: 'Sentirse conocido, no solo asistir',
-          body: 'En grupos pequeños y estables, cada niño es visto como un individuo, no como uno más entre muchos.',
+          title: 'Ser conocido, no simplemente asistir',
+          body: 'En grupos pequeños y estables, cada niño es reconocido como individuo, no como uno más.',
         },
       ],
     },
     childExperience: {
-      eyebrow: 'Lo que vive tu hijo',
-      heading: 'Lugares reales, grupos pequeños y vínculos de verdad',
-      body: 'A partir de los tres años, el curso recorre cinco mundos. Los más pequeños empiezan con movimiento, sentidos y conexión, y van creciendo hacia ellos.',
-      worldsLinkLabel: 'Los cinco mundos, al completo',
+      eyebrow: 'Qué experimenta tu hijo',
+      heading: 'Lugares reales, grupos pequeños y vínculos auténticos',
+      body: 'A partir de aproximadamente los tres años, el año transcurre a través de cinco mundos. Los niños más pequeños comienzan con el movimiento, los sentidos y la conexión, y van creciendo hacia ellos.',
+      worldsLinkLabel: 'Descubre los Cinco Mundos',
       worldsLinkHref: '/experiences/#worlds',
-      note: 'Las experiencias ocurren en nuestra casa de Marbella y mucho más allá: playa, bosque y lugares de la vida real. Los grupos de los más pequeños pueden incluir a un adulto; los mayores vienen solos.',
-      formatLinkLabel: 'Cómo se construye una experiencia',
+      note: 'Las experiencias tienen lugar en nuestro espacio de Marbella y mucho más allá: en la playa, el bosque y otros lugares del mundo real. En los grupos de menor edad puede participar uno de los padres; los niños mayores acuden por su cuenta.',
+      formatLinkLabel: 'Cómo se crea una experiencia',
       formatLinkHref: '/experiences/#format',
     },
     ageGroups: {
       eyebrow: 'Desde el principio',
       heading: 'Un lugar que crece con tu hijo',
-      body: 'Cada niño pertenece a un grupo con nombre propio que se mueve con él a medida que crece. Las familias pueden unirse en cualquier momento, y muchas empiezan antes de que su hijo nazca.',
-      note: 'Las edades son orientativas: nos adaptamos al desarrollo y a los intereses de cada niño.',
+      body: 'Cada niño pertenece a un grupo con nombre propio que le acompaña a medida que crece. Las familias pueden incorporarse en cualquier momento, y muchas comienzan incluso antes de que nazca su hijo.',
+      note: 'Las edades son orientativas, nos adaptamos al desarrollo e interés de cada niño.',
       linkLabel: 'Mira qué incluye cada etapa',
       linkHref: '/experiences/#journey',
     },
     howItWorks: {
       eyebrow: 'Cómo funciona la membresía',
-      heading: 'Una membresía, un lugar que continúa',
-      body: 'Tu hijo tiene un lugar en su grupo de edad, no una plaza en un horario: una experiencia por semana, en el mundo real, con los mismos educadores y el mismo pequeño círculo de amigos.',
+      heading: 'Una membresía, un lugar al que seguir perteneciendo',
+      body: 'Tu hijo tiene una plaza en su grupo de edad, no simplemente un hueco en un horario: una experiencia a la semana, en el mundo real, con las mismas educadoras y el mismo pequeño círculo de amigos.',
       items: [
         {
           n: '01',
           title: 'Lugares reales, no cuatro paredes',
-          body: 'Una experiencia puede llevar al grupo a la playa, al bosque, o a las personas y los oficios que hay detrás de la vida cotidiana. Las llamamos experiencias y no clases, porque eso es lo que construimos: tiempo que tu hijo siente, no contenido que se sienta a escuchar.',
+          body: 'Una experiencia puede llevar al grupo a la playa, al bosque o a conocer a las personas y los oficios que forman parte de la vida cotidiana. Las llamamos experiencias, y no clases, porque eso es lo que estamos creando: momentos que tu hijo vive y siente, no contenidos que simplemente recibe.',
         },
         {
           n: '02',
           title: 'Crece con ellos',
-          body: 'Cuando tu hijo pasa al siguiente grupo de edad, su membresía se mueve con él. No se reinicia nada.',
+          body: 'A medida que tu hijo pasa al siguiente grupo de edad, su membresía le acompaña. Nada vuelve a empezar desde cero.',
         },
         {
           n: '03',
-          title: 'Las familias también son socias',
-          body: 'Los Community Mornings, las sesiones con expertos y los encuentros son tanto para los padres como para los niños.',
+          title: 'Las familias también forman parte',
+          body: 'Los Community Mornings, las sesiones con expertos y los eventos están pensados tanto para los padres como para los niños.',
         },
       ],
-      note: 'Las plazas son limitadas por diseño. Los grupos se mantienen pequeños, así que cada grupo de edad acoge solo a un número reducido de familias.',
+      note: 'Las plazas son limitadas por diseño. Los grupos se mantienen pequeños, por lo que cada grupo de edad acoge únicamente a un número reducido de familias.',
     },
     included: {
-      eyebrow: 'La membresía incluye',
-      heading: '¿Qué recibe tu familia exactamente?',
+      eyebrow: 'Qué incluye la membresía',
+      heading: '¿Qué recibe realmente tu familia?',
       image: '/images/gallery-04.webp',
       cards: [
         {
-          title: 'El educador de tu hijo, en diálogo contigo',
-          meta: 'Conversaciones regulares uno a uno',
-          body: 'Descubrimos qué le motiva, qué le cuesta y cómo va creciendo, y compartimos ese camino contigo en conversaciones periódicas, uno a uno.',
+          title: 'Tu hijo cuenta con su propia educadora, en diálogo contigo',
+          meta: 'Conversaciones individuales periódicas',
+          body: 'Conocemos qué despierta el interés de tu hijo, qué le supone un reto y cómo va creciendo, y compartimos ese recorrido contigo a través de conversaciones individuales periódicas.',
         },
         {
-          title: 'Su temporada, recogida y guardada',
-          meta: 'Una memoria digital exclusiva cada trimestre',
-          body: 'Una memoria digital cuidada y actual al final de cada trimestre, con las experiencias y los descubrimientos más significativos para revivirlos cuando quieras.',
+          title: 'Sus recuerdos, documentados y conservados para siempre',
+          meta: 'Un recuerdo digital exclusivo cada trimestre',
+          body: 'Un recuerdo digital moderno y cuidadosamente elaborado al final de cada trimestre, que recoge experiencias y descubrimientos significativos para volver a ellos con el tiempo.',
         },
         {
-          title: 'El mundo Narelo más amplio, creciendo contigo',
+          title: 'El universo Narelo, creciendo contigo',
           meta: 'Experiencias, acompañamiento y comunidad',
-          body: 'Una comunidad de socios afines donde niños y padres construyen conexiones significativas con el tiempo.',
+          body: 'Una comunidad de miembros con valores afines donde niños y padres pueden construir vínculos significativos a lo largo del tiempo.',
         },
       ],
       groups: [
         {
-          label: 'También incluido en tu membresía',
+          label: 'También está incluido en la membresía',
           items: [
-            { title: 'Experiencias semanales', body: 'El lugar habitual de tu hijo en su grupo de edad, cada semana del curso.' },
-            { title: 'Reserva prioritaria', body: 'Acceso primero a experiencias, encuentros y plazas limitadas antes de que se abran más ampliamente.' },
-            { title: 'Community Mornings', body: 'Tiempo para que las familias se encuentren, conecten y crezcan juntas.' },
-            { title: 'Narelo Expert Insights', body: 'Conversaciones con nuestros propios expertos sobre infancia, desarrollo y vida familiar, tuyas como parte de la membresía.' },
+            { title: 'Experiencias semanales', body: 'La plaza habitual de tu hijo en su grupo de edad, cada semana del trimestre.' },
+            { title: 'Acceso anticipado', body: 'Acceso anticipado a experiencias, eventos y plazas limitadas antes de que se abran a un público más amplio.' },
+            { title: 'Community Mornings', body: 'Tiempo para que las familias se conozcan, conecten y crezcan juntas.' },
+            { title: 'Narelo Expert Insights', body: 'Conversaciones con nuestros propios expertos sobre infancia, desarrollo y vida familiar, incluidas como parte de tu membresía.' },
           ],
         },
         {
-          label: 'Acceso prioritario, con tarifa especial',
+          label: 'Acceso prioritario con tarifas especiales',
           items: [
             { title: 'Guest Expert Insights' },
             { title: 'Signature Saturdays' },
             { title: 'Holiday Experiences' },
             { title: 'Experiencias de cumpleaños' },
-            { title: 'Experiencias privadas a medida' },
+            { title: 'Experiencias privadas, creadas para tu familia' },
           ],
-          linkLabel: 'Qué es cada una de estas cosas',
+          linkLabel: 'Descubre en qué consiste cada una',
           linkHref: '/experiences/',
         },
       ],
@@ -305,15 +327,15 @@ export const es: Dict = {
           name: 'Natalie Curavic',
           role: 'Fundadora y CEO',
           image: '/images/founder-natalie.webp',
-          body: 'Natalie tiene un máster en Geografía Cultural y un MBA por la FOM University of Applied Sciences. Durante más de 15 años, su trabajo en Recursos Humanos se ha centrado en las personas y en lo que les ayuda a crecer y desarrollarse. También está formada en yoga prenatal. Su propio camino hacia la maternidad profundizó su comprensión de cuánto importan la pertenencia, la conexión y la comunidad, no solo para los niños, sino también para los padres.',
-          quote: 'Ser madre me hizo plantearme esa pregunta mucho antes. En un mundo marcado por un cambio tecnológico acelerado, quería que los niños tuvieran experiencias reales que construyeran curiosidad, confianza, independencia y conexión con el mundo que les rodea. De esa idea nació Narelo.',
+          body: 'Natalie cuenta con un máster en Geografía Cultural y un MBA por la FOM University of Applied Sciences. Durante más de 15 años, su trabajo en Recursos Humanos se ha centrado en las personas y en aquello que les ayuda a crecer y desarrollarse. También cuenta con formación en yoga prenatal. Su propia experiencia con la maternidad profundizó su comprensión de la importancia del sentido de pertenencia, la conexión y la comunidad, no solo para los niños, sino también para los padres.',
+          quote: 'Convertirme en madre hizo que me planteara esa pregunta mucho antes. En un mundo marcado por rápidos cambios tecnológicos, quería que los niños tuvieran experiencias reales que fomentaran su curiosidad, confianza, independencia y conexión con el mundo que les rodea. De esa idea nació Narelo.',
         },
         {
           name: 'Vivien Vörös',
           role: 'Cofundadora y Directora de Educación',
           image: '/images/founder-vivien.webp',
-          body: 'Vivien se formó en Educación Especial en la Universidad Eötvös Loránd, con titulaciones adicionales en Logopedia y Terapia de Movimiento Compleja. Durante más de siete años ha trabajado en colegios, entornos terapéuticos y escuelas infantiles, siempre con el mismo foco: llegar a conocer de verdad a cada niño.',
-          quote: 'A algunos niños se les nota. Quiero que Narelo sea el lugar donde se les note a todos.',
+          body: 'Vivien se formó en Educación Especial en la Universidad Eötvös Loránd y cuenta con formación complementaria en Logopedia y Terapia del Movimiento Complejo. Durante más de siete años, ha trabajado en colegios, centros terapéuticos y escuelas infantiles, siempre con un mismo enfoque: conocer de verdad a cada niño.',
+          quote: 'Algunos niños reciben atención. Quiero que Narelo sea el lugar donde todos la reciban.',
         },
       ],
       teamLabel: 'El equipo',
@@ -322,35 +344,35 @@ export const es: Dict = {
           name: 'Jessica Fletcher',
           role: 'Educadora sénior',
           image: '/images/team-jessica-fletcher.webp',
-          body: 'Jessica estudió Psicología en la Universidad Massey de Nueva Zelanda y tiene varios años de experiencia trabajando con niños en primera infancia y en entornos educativos. Su foco está en el desarrollo infantil, el bienestar emocional y las relaciones que dan forma al mundo de un niño, con un interés particular en la dinámica familiar y en fortalecer el vínculo entre los niños y sus padres.',
-          quote: 'Cuando entendemos al niño y las relaciones que le rodean, construimos bases más sólidas para que crezca.',
+          body: 'Jessica estudió Psicología en la Universidad Massey de Nueva Zelanda y cuenta con varios años de experiencia trabajando con niños en la primera infancia y en entornos educativos. Su enfoque se centra en el desarrollo infantil, el bienestar emocional y las relaciones que dan forma al mundo de cada niño, con especial interés en las dinámicas familiares y en fortalecer el vínculo entre padres e hijos.',
+          quote: 'Cuando comprendemos al niño y las relaciones que le rodean, creamos una base más sólida para que pueda crecer.',
         },
         {
           name: 'Mercedes Carrasco Galera',
           role: 'Responsable de Experiencia de Marca',
           image: '/images/team-mercedes.webp',
-          body: 'Mercedes estudió Publicidad, Relaciones Públicas y Marketing en ESIC Business & Marketing School en Madrid. Su trayectoria abarca marketing, creación de contenido y producción creativa. Su experiencia con niños ha moldeado su aprecio por la curiosidad, los vínculos y los pequeños momentos que definen la infancia. En Narelo une esos mundos, traduciendo su filosofía en la forma en que la marca se comunica y se vive.',
-          quote: 'Las historias que más significan nacen de momentos reales, vínculos genuinos y un poco de curiosidad.',
+          body: 'Mercedes estudió Publicidad, Relaciones Públicas y Marketing en ESIC Business & Marketing School, en Madrid. Su trayectoria abarca el marketing, la creación de contenido y la producción creativa. Su experiencia con niños ha contribuido a desarrollar su sensibilidad hacia la curiosidad, las conexiones y los pequeños momentos que definen la infancia. En Narelo, une estos mundos para trasladar su filosofía a la manera en que la marca se comunica y se vive.',
+          quote: 'Las historias más significativas nacen de momentos reales, conexiones auténticas y un poquito de curiosidad.',
         },
       ],
     },
     joining: {
-      eyebrow: 'Cómo unirse',
-      heading: 'Cuatro pasos, y una conversación antes que nada',
+      eyebrow: 'Cómo formar parte',
+      heading: 'Cuatro pasos, y una conversación antes de nada',
       steps: [
-        { n: '01', title: 'Empieza una conversación', body: 'Escríbenos por WhatsApp. Sin formularios, y sin ninguna solicitud antes de haber hablado.', whatsapp: true },
-        { n: '02', title: 'Encontramos el encaje', body: 'Te preguntamos qué edad tiene tu hijo, y te decimos a qué grupo de edad pertenece y qué plazas hay abiertas.' },
-        { n: '03', title: 'Una conversación en familia', body: 'Quince o veinte minutos juntos: quién es tu familia, qué esperas, y todo lo que quieras preguntar. Si prefieres leerlo con calma antes, te enviamos la información completa por escrito y te escribimos después.' },
-        { n: '04', title: 'Una invitación', body: 'Si encaja por ambas partes, una invitación personal, el acuerdo de membresía y una fecha de inicio. Después, la bienvenida y la primera experiencia de tu hijo.' },
+        { n: '01', title: 'Iniciamos una conversación', body: 'Escríbenos por WhatsApp. Sin formularios que rellenar ni solicitudes antes de haber hablado.', whatsapp: true },
+        { n: '02', title: 'Encontramos el grupo adecuado', body: 'Te preguntamos la edad de tu hijo y te contamos qué grupo le corresponde y qué plazas hay disponibles.' },
+        { n: '03', title: 'Una conversación en familia', body: 'Entre quince y veinte minutos juntos para conocer a tu familia, saber qué estás buscando y responder a todas tus preguntas. Si prefieres leer primero toda la información con calma, te enviamos una explicación más completa por escrito y retomamos la conversación después.' },
+        { n: '04', title: 'Una invitación', body: 'Si sentimos que encaja por ambas partes, recibirás una invitación personal, el acuerdo de membresía y una fecha de inicio. Después, la bienvenida y la primera experiencia de tu hijo.' },
       ],
-      reassurance: 'Mantenemos la comunidad pequeña y elegimos con cuidado. No por ser exclusivos, sino porque los grupos pequeños y una comunidad asentada son justamente lo importante. Si no hay plaza en el grupo de tu hijo cuando hablemos, podemos guardar a tu familia en nuestra lista de espera y volver a escribirte personalmente en cuanto se abra una.',
+      reassurance: 'Mantenemos una comunidad pequeña y elegimos cuidadosamente a las familias. No por exclusividad, sino porque los grupos reducidos y una comunidad estable son la esencia de Narelo. Si cuando hablamos no hay plazas disponibles en el grupo de edad de tu hijo, podemos incluir a tu familia en nuestra lista de espera y contactar personalmente contigo en cuanto se libere una plaza.',
       whatsappLabel: 'Escríbenos por WhatsApp',
     },
     closing: {
-      headingLines: ['Ven a ver', 'si encaja.'],
-      body: 'Empieza con un mensaje, sin compromiso. Solo una conversación sobre tu familia.',
-      ctaLabel: 'Empieza una conversación',
-      secondaryLabel: 'O escríbenos un email',
+      headingLines: ['Descubre si', 'encajamos contigo.'],
+      body: 'Empieza con un mensaje, sin compromiso. Simplemente una conversación sobre tu familia.',
+      ctaLabel: 'Hablemos',
+      secondaryLabel: 'O escríbenos por email',
       video: '/video/membership-closing.mp4',
       poster: '/images/membership-video-poster.webp',
     },
@@ -359,101 +381,101 @@ export const es: Dict = {
   experiences: {
     hero: {
       eyebrow: 'Experiencias',
-      headingLines: ['Experiencias que', 'crecen con tu hijo'],
-      lede: 'Pensadas con cariño para despertar la curiosidad, la creatividad y la conexión, desde antes de que nazca tu hijo hasta aproximadamente los 8 años.',
+      headingLines: ['Pensadas para que', 'crezcan con tu hijo'],
+      lede: 'Experiencias creadas cuidadosamente, que invitan a la curiosidad, a la creatividad y a la conexión, desde antes de que tu hijo nazca hasta los 8 años.',
       image: '/images/experiences-hero.webp',
     },
     format: {
-      eyebrow: 'La forma de una experiencia',
-      heading: 'Noventa minutos, un círculo pequeño y un lugar real',
-      body: 'Las experiencias ocurren en nuestra casa de Marbella y mucho más allá: la playa, el bosque y los lugares donde la vida cotidiana sucede de verdad. Nada va con prisa.',
-      body2: 'Los niños exploran, se mueven, preguntan, construyen, crean y resuelven juntos, guiados por educadores que saben cuándo acompañar y cuándo dejarles espacio para encontrar su propio camino.',
-      body3: 'Creemos que los niños necesitan las dos cosas: una conexión fuerte con el mundo real y la confianza para navegar el mundo que viene. Por eso la naturaleza, el movimiento y las experiencias de la vida real pueden encontrarse con la creatividad, la robótica y la IA, siempre con un propósito.',
-      pull: 'Con raíces en el mundo real. Preparados para el mundo que viene.',
+      eyebrow: 'Cómo es una experiencia',
+      heading: 'Noventa minutos, un grupo reducido y un entorno real',
+      body: 'Las experiencias suceden en nuestro espacio en Marbella, pero también en la playa, en el bosque, y en esos lugares en los que día a día transcurre la vida. Sin prisas.',
+      body2: 'Los niños exploran, se mueven, se hacen preguntas, construyen, crean y resuelven retos juntos, acompañados por educadoras que saben cuándo ofrecer apoyo y cuándo darles espacio para encontrar su propio camino.',
+      body3: 'Creemos que los niños necesitan ambas cosas: una conexión sólida con el mundo real, y la confianza para desenvolverse en el mundo que viene. Por eso, la naturaleza, el movimiento y las experiencias de la vida real pueden convivir con la creatividad, la robótica y la inteligencia artificial, siempre con un propósito.',
+      pull: 'Conectados con el mundo real. Preparados para lo que está por venir.',
       facts: [
-        { value: '90', label: 'minutos juntos', note: 'Tiempo suficiente para calmarse, explorar y mantenerse centrado.' },
-        { value: '8', label: 'niños por grupo', note: 'Grupos reducidos, para conocer a cada niño por su nombre y que nadie se pierda entre la multitud.' },
-        { value: '12', label: 'experiencias por temporada', note: 'Una por semana durante el curso, para que el año se construya en lugar de reiniciarse.' },
+        { value: '90', label: 'minutos juntos', note: 'Tiempo suficiente para adaptarse, explorar y disfrutar de la experiencia sin prisas.' },
+        { value: '8', label: 'niños por grupo', note: 'Grupos lo suficientemente reducidos para que cada niño sea conocido por su nombre y reciba una atención personalizada.' },
+        { value: '12', label: 'experiencias por temporada', note: 'Una experiencia a la semana durante el trimestre, para que cada etapa construya sobre la anterior, en lugar de empezar de cero.' },
       ],
-      note: 'Los grupos de los más pequeños pueden incluir a un adulto. Los mayores vienen solos.',
+      note: 'Los grupos de los más pequeños pueden incluir a uno de sus padres, los más mayores participan de manera independiente.',
       image: '/images/img-5211.webp',
       imageAlt: 'Una experiencia Narelo en marcha, en un lugar real.',
     },
     spark: {
       eyebrow: 'Puede empezar con algo así de pequeño',
       heading: 'Un niño descubre algo inesperado',
-      steps: ['Nos paramos', 'Miramos más de cerca', 'Nos preguntamos juntos', 'La curiosidad se vuelve descubrimiento'],
-      closing: 'Un momento pequeño puede ser el punto de partida de algo mucho más grande.',
+      steps: ['Nos paramos', 'Miramos más de cerca', 'Imaginamos juntos', 'La curiosidad se convierte en un descubrimiento'],
+      closing: 'Un momento pequeño se puede convertir en el punto de partida de algo mucho más grande.',
     },
     worlds: {
       eyebrow: 'Los Cinco Mundos',
       heading: 'Cinco puertas que abrimos juntos',
-      body: 'Nuestras experiencias recorren cinco mundos inspirados en la vida real que nos rodea, cada uno abriendo nuevas formas de explorar, moverse, crear y descubrir. Mundos distintos. Experiencias distintas. Siempre algo nuevo por descubrir.',
+      body: 'Nuestras experiencias recorren cinco mundos inspirados en la vida real. Cada uno abre nuevas formas de explorar, moverse, crear y descubrir. Mundos diferentes. Experiencias diferentes. Siempre algo nuevo por descubrir.',
       items: [
-        { name: 'Ocean', body: 'Explorar el mar a través de los sentidos, el movimiento, la curiosidad y el descubrimiento en el mundo real.' },
-        { name: 'Mountain', body: 'Explorar la naturaleza a través del movimiento, el reto, la observación y la aventura.' },
-        { name: 'World Around Us', body: 'Descubrir la vida real a través de personas, lugares, oficios, cultura y experiencias cotidianas.' },
-        { name: 'Expression', body: 'Convertir ideas y descubrimientos en arte, música, historias, construcción y diseño.' },
-        { name: 'Future', body: 'Explorar la invención, la resolución de problemas y nuevas posibilidades, con la tecnología, la robótica y la IA como herramientas para crear, no para sustituir al pensamiento.' },
+        { name: 'Ocean', body: 'Explorar el mar a través de los sentidos, el movimiento, la curiosidad y el descubrimiento del mundo real.' },
+        { name: 'Mountain', body: 'Explorar la naturaleza a través del movimiento, los retos, la observación y la aventura.' },
+        { name: 'World Around Us', body: 'Descubrir la vida real a través de las personas, los lugares, las profesiones, la cultura y las experiencias cotidianas.' },
+        { name: 'Expression', body: 'Transformar ideas y descubrimientos en arte, música, historias, construcciones y diseño.' },
+        { name: 'Future', body: 'Explorar la invención, la resolución de problemas y nuevas posibilidades, utilizando la tecnología, la robótica y la inteligencia artificial como herramientas para crear, no para sustituir el pensamiento.' },
       ],
     },
     stages: {
       eyebrow: 'El recorrido',
       heading: 'Un camino para cada etapa',
-      body: 'Cada niño pertenece a un grupo con nombre propio que se mueve con él según crece. Las familias pueden unirse en cualquier punto del camino.',
-      note: 'Las edades son orientativas: nos adaptamos al desarrollo y a los intereses de cada niño.',
+      body: 'Cada niño forma parte de un grupo con nombre propio que le acompaña a medida que crece. Las familias pueden unirse en cualquier momento del recorrido.',
+      note: 'Las edades son orientativas, nos adaptamos al desarrollo e interés de cada niño.',
     },
     regular: {
       eyebrow: 'A lo largo del año',
       heading: 'Más allá de la experiencia semanal',
-      body: 'La membresía va más allá de las experiencias semanales de tu hijo. Nos reunimos regularmente como comunidad, padres y niños por igual, y tienes acceso continuo a nuestros expertos. Un lugar donde seguir aprendiendo sobre la maternidad y la paternidad, y sobre vosotros mismos como familia.',
-      note: 'Cada mes, uno de nuestros propios expertos abre una sesión para ti, incluida en tu membresía. Cuando invitamos a un especialista de fuera de Narelo, los socios tienen tarifa especial.',
+      body: 'La membresía va más allá de las experiencias semanales de tu hijo. Nos reunimos regularmente como comunidad, tanto padres como niños, y tienes acceso continuo a nuestros expertos. Un espacio para seguir aprendiendo sobre la crianza y sobre ti mismo, en tu propia familia.',
+      note: 'Cada mes, uno de nuestros expertos ofrece una sesión para ti, incluida en la membresía. Cuando invitamos a un especialista externo, los miembros disfrutan de una tarifa especial.',
       groups: [
         {
           label: 'Parte de tu mundo Narelo',
           items: [
-            { name: 'Regular Narelo Experiences', body: 'Para tu hijo: una experiencia por semana con su propio grupo pequeño, un lugar constante donde explorar, crecer y construir amistades reales con el tiempo.' },
-            { name: 'Community Mornings', body: 'Para toda la familia: tiempo para conocer a otras familias Narelo, conectar y crecer juntas.' },
+            { name: 'Regular Narelo Experiences', body: 'Para tu hijo: una experiencia a la semana con su propio grupo reducido, un espacio constante donde explorar, crecer y construir amistades auténticas con el tiempo.' },
+            { name: 'Community Mornings', body: 'Para toda la familia: tiempo para conocer a otras familias Narelo, conectar y crecer juntos.' },
             { name: 'Narelo Expert Insights', body: 'Para los padres: conversaciones con nuestros propios expertos sobre infancia, desarrollo y vida familiar.' },
-            { name: 'One-to-one Educator Conversations', body: 'Para los padres: una vez por trimestre o temporada, un rato con el educador de tu hijo para hablar de cómo va creciendo.' },
-            { name: 'End-of-season Video Reflections', body: 'Para tu familia: un vídeo personal al cerrar cada temporada, que recoge los descubrimientos de tu hijo para conservarlos.' },
+            { name: 'Conversaciones individuales con la educadora', body: 'Para los padres: una vez por trimestre o temporada, tiempo con la educadora de tu hijo para hablar sobre cómo está creciendo.' },
+            { name: 'Vídeos que reflejan el final de cada temporada', body: 'Para tu familia: un vídeo personal al cierre de cada temporada que recoge los descubrimientos de tu hijo para conservarlos como recuerdo.' },
           ],
         },
         {
-          label: 'Reserva prioritaria, con tarifa especial',
+          label: 'Acceso prioritario con tarifas especiales',
           aside: 'y más por venir',
           items: [
-            { name: 'Guest Expert Insights', body: 'Sesiones con especialistas que invitamos de fuera de Narelo, con tarifa especial.' },
-            { name: 'Signature Saturdays', body: 'Experiencias especiales de sábado pensadas para el descubrimiento, la creatividad y la aventura.' },
-            { name: 'Holiday Experiences', body: 'Experiencias cuidadas durante las vacaciones escolares.' },
+            { name: 'Guest Expert Insights', body: 'Sesiones con especialistas externos invitados por Narelo, ofrecidas a los miembros con una tarifa especial.' },
+            { name: 'Signature Saturdays', body: 'Experiencias especiales de sábado diseñadas para el descubrimiento, la creatividad y la aventura.' },
+            { name: 'Holiday Experiences', body: 'Experiencias cuidadosamente diseñadas durante las vacaciones escolares.' },
           ],
         },
       ],
     },
     personalised: {
-      eyebrow: 'Más allá de lo cotidiano',
+      eyebrow: 'Más allá del día a día',
       heading: 'Diseñado en torno a tu familia',
-      body: 'Más allá de la membresía, Narelo también crea experiencias privadas seleccionadas, pensadas a medida de tu hijo y de tu familia.',
-      note: 'Estas experiencias quedan fuera de la membresía y están abiertas a familias que no son socias. Los socios reservan primero, y siempre con tarifa especial.',
+      body: 'Además de la membresía, Narelo también crea experiencias privadas seleccionadas, cuidadosamente adaptadas a tu hijo y a tu familia.',
+      note: 'Estas experiencias son independientes de la membresía y están abiertas a familias que no son miembros. Los miembros tienen prioridad de reserva y disfrutan siempre de una tarifa especial.',
       items: [
         {
           name: 'Experiencias de cumpleaños',
-          body: 'Celebraciones cuidadas e inspiradas en los intereses y la personalidad de tu hijo.',
-          ctaLabel: '¿Te gustaría celebrarlo con nosotros?',
+          body: 'Celebraciones cuidadosamente diseñadas e inspiradas en los intereses y la personalidad de tu hijo.',
+          ctaLabel: '¿Te gustaría celebrar con nosotros?',
           whatsappText: 'Hola Narelo, me encantaría saber más sobre una experiencia de cumpleaños para mi hijo.',
         },
         {
-          name: 'Experiencias privadas a medida',
-          body: 'Experiencias personalizadas creadas con cuidado en torno a tu hijo y tu familia.',
+          name: 'Experiencias privadas hechas a medida',
+          body: 'Experiencias personalizadas, creadas con atención en torno a tu hijo y a tu familia.',
           ctaLabel: '¿Diseñamos algo para tu familia?',
           whatsappText: 'Hola Narelo, me encantaría hablar sobre una experiencia privada para mi familia.',
         },
       ],
     },
     closing: {
-      headingLines: ['Algunas experiencias', 'se quedan contigo.'],
+      headingLines: ['Hay experiencias', 'que permanecen contigo.'],
       body: 'Lo que los niños viven se convierte en parte de quienes son.',
-      ctaLabel: 'Empieza una conversación',
+      ctaLabel: 'Hablemos',
       video: '/video/experiences-closing.mp4',
       poster: '/images/experiences-video-poster.webp',
     },
@@ -464,39 +486,39 @@ export const es: Dict = {
       {
         name: 'Bloom',
         age: 'Embarazo',
-        tagline: 'Un comienzo suave, antes de que llegue tu hijo.',
+        tagline: 'Un comienzo tranquilo, antes de la llegada de tu hijo.',
         summary:
-          'Un espacio en calma para futuras madres: tiempo para bajar el ritmo, conectar con otras mujeres y empezar el camino Narelo antes de que nazca tu hijo.',
+          'Un espacio de calma para futuras madres: tiempo para bajar el ritmo, conectar con otras mujeres y comenzar el recorrido Narelo antes de que nazca tu hijo.',
         image: '/images/stage-photo-bloom.webp',
       },
       {
         name: 'Nurture',
         age: '0–1 año',
-        tagline: 'Sentir, conectar y descubrir juntos.',
+        tagline: 'Sintiendo, conectando y descubriendo juntos.',
         motto: 'Siento y descubro.',
         summary:
-          'Un espacio seguro y afectuoso donde los bebés exploran con sus sentidos, mueven su cuerpo y construyen la base de la conexión, la curiosidad y la confianza, junto a su madre o su padre.',
+          'Un espacio seguro y acogedor donde los bebés exploran a través de sus sentidos, mueven su cuerpo y comienzan a desarrollar las bases de la conexión, la curiosidad y la confianza, junto a sus padres.',
         whatToExpect: [
-          'Bienvenida e instalarse: llegada, saludo, exploración libre y acomodarse en el espacio',
-          'Conexión entre adulto y bebé: canciones, masaje infantil, movimiento suave y juego de vínculo',
-          'Experiencia sensorial temática: un entorno preparado que los bebés exploran a su ritmo',
-          'Calma y reflexión: un momento para bajar el ritmo juntos, juego sensorial tranquilo y conexión',
+          'Una bienvenida tranquila, con tiempo para explorar y familiarizarse con el espacio',
+          'Canciones, masajes, movimiento suave y juegos para fortalecer el vínculo entre padres y bebés',
+          'Experiencias sensoriales en un entorno preparado, que cada bebé explora a su propio ritmo',
+          'Momentos de calma, juego sensorial y conexión para cerrar',
         ],
         image: '/images/stage-photo-nurture.webp',
       },
       {
         name: 'The Nest',
         age: '1–2 años',
-        tagline: 'Explorar el mundo a través del movimiento y una independencia que crece.',
+        tagline: 'Explorando el mundo a través del movimiento y creciendo con independencia.',
         motto: 'Me muevo y exploro.',
         summary:
-          'Un espacio activo y alegre donde los más pequeños construyen fuerza, equilibrio y confianza a través del movimiento, el juego y el descubrimiento, dentro y fuera de casa.',
+          'Un espacio activo y alegre donde los más pequeños desarrollan fuerza, equilibrio y confianza a través del movimiento, el juego y el descubrimiento, tanto en interiores como al aire libre.',
         whatToExpect: [
-          'Bienvenida y calentamiento: canciones, movimiento y un ritual de saludo juntos',
-          'Circuito de movimiento: trepar, gatear, equilibrarse, empujar, tirar y saltar por un espacio preparado',
-          'Exploración temática: juego sensorial, materiales e invitaciones abiertas',
-          'Conexión de grupo: juegos, música e historias que construyen habilidades sociales y amistad',
-          'Calma y reflexión: respiración, un momento tranquilo o un estiramiento suave para cerrar',
+          'Bienvenida y calentamiento con canciones, movimiento y un pequeño ritual de saludo',
+          'Circuitos para trepar, gatear, mantener el equilibrio, empujar, tirar y saltar',
+          'Exploración sensorial con materiales y propuestas abiertas',
+          'Juegos, música e historias que favorecen las habilidades sociales y la amistad',
+          'Un momento final de calma, respiración o estiramientos suaves',
         ],
         image: '/images/stage-photo-nest.webp',
       },
@@ -506,7 +528,7 @@ export const es: Dict = {
         tagline: 'Confianza que crece a través de la curiosidad, el movimiento y el descubrimiento.',
         motto: 'Descubro.',
         summary:
-          'Primeras aventuras en los Cinco Mundos. Experiencias sensoriales y llenas de juego que despiertan la curiosidad, construyen independencia y crean recuerdos alegres.',
+          'Las primeras aventuras en los Cinco Mundos. Experiencias sensoriales y lúdicas que despiertan la curiosidad, fomentan la independencia y crean recuerdos felices.',
         whatToExpect: [
           'Exploración sensorial en la naturaleza y en entornos reales',
           'Aprendizaje a través del juego, el movimiento y el descubrimiento',
@@ -519,10 +541,10 @@ export const es: Dict = {
       {
         name: 'Builders I',
         age: '3–5 años',
-        tagline: 'Explorar, crear y dar sentido al mundo.',
+        tagline: 'Explorando, creando y comprendiendo el mundo.',
         motto: 'Exploro y creo.',
         summary:
-          'Experiencias prácticas en los Cinco Mundos que animan a explorar, crear, preguntar y disfrutar del hacer.',
+          'Experiencias prácticas en los Cinco Mundos que fomentan la exploración, la creatividad, las preguntas y el placer de crear.',
         whatToExpect: [
           'Exploración de la naturaleza y aventuras al aire libre',
           'Proyectos creativos con materiales naturales y reciclados',
@@ -535,10 +557,10 @@ export const es: Dict = {
       {
         name: 'Builders II',
         age: '5–6 años',
-        tagline: 'Preguntar, crear y convertir las ideas en algo real.',
+        tagline: 'Preguntando, creando y convirtiendo las ideas en algo real.',
         motto: 'Investigo y construyo.',
         summary:
-          'Investigaciones más profundas y experiencias en el mundo real que desarrollan el pensamiento, la colaboración y una independencia creciente.',
+          'Investigaciones más profundas y experiencias en el mundo real que desarrollan el pensamiento, la colaboración y una autonomía cada vez mayor.',
         whatToExpect: [
           'Investigaciones a fondo sobre la naturaleza y el territorio',
           'Pequeños proyectos, experimentos y creaciones',
@@ -551,10 +573,10 @@ export const es: Dict = {
       {
         name: 'Navigators',
         age: '6–8 años',
-        tagline: 'Independencia que crece, problemas que se resuelven y un camino propio.',
-        motto: 'Voy más hondo y encuentro mi camino.',
+        tagline: 'Creciendo con independencia, resolviendo problemas y encontrando su propio ritmo.',
+        motto: 'Profundizo y encuentro mi propio camino.',
         summary:
-          'Experiencias que construyen curiosidad, resiliencia y propósito, mientras los niños crecen hacia su propia independencia.',
+          'Experiencias que desarrollan la curiosidad, la resiliencia y el sentido de propósito, a medida que los niños adquieren mayor autonomía.',
         whatToExpect: [
           'Aventuras en el mundo real y exploraciones más largas',
           'Investigación, proyectos y expresión creativa',
