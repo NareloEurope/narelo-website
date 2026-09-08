@@ -29,7 +29,7 @@ export const hero = {
 export const format = {
   eyebrow: 'The shape of an experience',
   heading: 'Ninety minutes, a small circle, and somewhere real',
-  body: 'Experiences happen in our Marbella home and well beyond it: the beach, the forest, and the places where everyday life actually happens. Nothing is rushed and nothing is filler.',
+  body: 'Experiences happen in our Marbella home and well beyond it: the beach, the forest, and the places where everyday life actually happens. Nothing is rushed.',
   /**
    * Two paragraphs and the pull line from the Narelo Family Guide (Vivien,
    * 2026-09-04). All three existed only in the dossier. The dossier's spaced
