@@ -214,7 +214,7 @@ export const de: Dict = {
     },
     childExperience: {
       eyebrow: 'Was Ihr Kind erlebt',
-      heading: 'Echte Orte, kleine Gruppen und die Zeit, in die Tiefe zu gehen',
+      heading: 'Echte Orte, kleine Gruppen und echte Verbindungen',
       body: 'Etwa ab drei Jahren führt das Jahr durch fünf Welten. Jüngere Kinder beginnen mit Bewegung, Sinnen und Verbindung und wachsen in sie hinein.',
       worldsLinkLabel: 'Die fünf Welten, vollständig',
       worldsLinkHref: '/experiences/#worlds',

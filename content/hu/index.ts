@@ -217,7 +217,7 @@ export const hu: Dict = {
     },
     childExperience: {
       eyebrow: 'Amit a gyermeked átél',
-      heading: 'Valódi helyek, kis csoportok, és idő arra, hogy mélyre menjünk',
+      heading: 'Valódi helyek, kis csoportok és igazi kapcsolatok',
       body: 'Nagyjából hároméves kortól az év öt világon halad keresztül. A kisebbek a mozgással, az érzékekkel és a kapcsolódással kezdik, és fokozatosan nőnek bele.',
       worldsLinkLabel: 'Az öt világ, teljes egészében',
       worldsLinkHref: '/experiences/#worlds',

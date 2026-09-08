@@ -213,7 +213,7 @@ export const es: Dict = {
     },
     childExperience: {
       eyebrow: 'Lo que vive tu hijo',
-      heading: 'Lugares reales, grupos pequeños y tiempo para llegar hondo',
+      heading: 'Lugares reales, grupos pequeños y vínculos de verdad',
       body: 'A partir de los tres años, el curso recorre cinco mundos. Los más pequeños empiezan con movimiento, sentidos y conexión, y van creciendo hacia ellos.',
       worldsLinkLabel: 'Los cinco mundos, al completo',
       worldsLinkHref: '/experiences/#worlds',
