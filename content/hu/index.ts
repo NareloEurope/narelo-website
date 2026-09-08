@@ -38,7 +38,7 @@ export const hu: Dict = {
       { label: 'Mi az a Narelo', href: '/membership/#what' },
       { label: 'Élmények', href: '/experiences/' },
       { label: 'Tagság', href: '/membership/' },
-      { label: 'Kik vagyunk', href: '/membership/#who' },
+      { label: 'Kik vagyunk', href: '/who-we-are/' },
     ],
     headerCta: { label: 'Kezdjünk egy beszélgetést', external: true },
     footerCta: {
@@ -173,7 +173,6 @@ export const hu: Dict = {
       { id: 'experience', label: 'Az élmények' },
       { id: 'ages', label: 'Korcsoportok' },
       { id: 'how', label: 'Hogyan működik' },
-      { id: 'who', label: 'Kik vagyunk' },
       { id: 'join', label: 'Hogyan csatlakozz' },
     ],
     hero: {
@@ -421,7 +420,7 @@ export const hu: Dict = {
             { name: 'Regular Narelo Experiences', body: 'A gyermekednek: heti egy élmény a saját kis csoportjával, állandó hely a felfedezéshez, a fejlődéshez és valódi barátságok építéséhez.' },
             { name: 'Community Mornings', body: 'Az egész családnak: idő arra, hogy más Narelo családokat megismerj, kapcsolódj és együtt fejlődjetek.' },
             { name: 'Narelo Expert Insights', body: 'A szülőknek: beszélgetések a saját szakértőinkkel a gyermekkorról, a fejlődésről és a családi életről.' },
-            { name: 'One-to-one Educator Conversations', body: 'A szülőknek: évadonként egyszer idő a gyermeked saját pedagógusával, hogy beszéljetek a fejlődéséről.' },
+            { name: 'One-to-one Educator Conversations', body: 'A szülőknek: trimeszterenként, azaz évadonként egyszer idő a gyermeked saját pedagógusával, hogy beszéljetek a fejlődéséről.' },
             { name: 'End-of-season Video Reflections', body: 'A családodnak: személyes videó minden évad végén, amely megőrzi a gyermeked felfedezéseit.' },
           ],
         },
@@ -440,10 +439,18 @@ export const hu: Dict = {
       eyebrow: 'A hétköznapin túl',
       heading: 'A családodra tervezve',
       body: 'A tagságon túl a Narelo válogatott privát élményeket is készít, gondosan a gyermeked és a családod köré szabva.',
-      note: 'Ezek az élmények a tagságon kívül esnek. A tagok foglalnak elsőként, és mindig tagsági áron.',
+      note: 'Ezek az élmények a tagságon kívül esnek, és olyan családok számára is nyitottak, akik nem tagok. A tagok foglalnak elsőként, és mindig tagsági áron.',
       items: [
-        { name: 'Születésnapi élmények', body: 'Gondosan összeállított ünneplések a gyermeked érdeklődéséből és személyiségéből kiindulva.' },
-        { name: 'Egyedi privát élmények', body: 'Személyre szabott élmények, gondosan a gyermeked és a családod köré építve.' },
+        {
+          name: 'Születésnapi élmények',
+          body: 'Gondosan összeállított ünneplések a gyermeked érdeklődéséből és személyiségéből kiindulva.',
+          ctaLabel: 'Szeretnél velünk ünnepelni?',
+        },
+        {
+          name: 'Egyedi privát élmények',
+          body: 'Személyre szabott élmények, gondosan a gyermeked és a családod köré építve.',
+          ctaLabel: 'Tervezzünk valamit a családodnak?',
+        },
       ],
     },
     closing: {

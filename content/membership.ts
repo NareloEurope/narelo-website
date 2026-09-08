@@ -38,7 +38,7 @@ export const chapters = [
   { id: 'experience', label: 'The experiences' },
   { id: 'ages', label: 'Age groups' },
   { id: 'how', label: 'How it works' },
-  { id: 'who', label: 'Who we are' },
+  /* "Who we are" left this page for /who-we-are/ (Vivien, 2026-09-08). */
   { id: 'join', label: 'How to join' },
 ] as const;
 

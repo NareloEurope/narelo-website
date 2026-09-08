@@ -1,6 +1,7 @@
 import Section from '@/components/Section';
 import LazyVideo from '@/components/LazyVideo';
 import StageAccordion from '@/components/StageAccordion';
+import WhatsAppIcon from '@/components/WhatsAppIcon';
 import { content } from '@/content/dictionary';
 import { localePath, type Lang } from '@/content/locales';
 
@@ -223,6 +224,17 @@ export default function ExperiencesPage({ lang }: { lang: Lang }) {
             <li key={item.name} className="rounded-[3px] bg-sand/25 p-8 md:p-10">
               <h3 className="display display-md leading-snug">{item.name}</h3>
               <p className="body-copy mt-4 max-w-sm text-ink-soft">{item.body}</p>
+              {/* A small invitation to write, one per card. Deliberately quiet:
+                  the page's own call to action is the one at its foot. */}
+              <a
+                href={contact.whatsapp}
+                target="_blank"
+                rel="noreferrer noopener"
+                className="link-line mt-6 inline-flex items-center gap-2 text-[0.78rem] tracking-[0.02em] text-ink"
+              >
+                <WhatsAppIcon className="h-4 w-4 shrink-0" />
+                {item.ctaLabel}
+              </a>
             </li>
           ))}
         </ul>

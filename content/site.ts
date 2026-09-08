@@ -33,10 +33,11 @@ export const nav = [
   { label: 'Experiences', href: '/experiences/' },
   { label: 'Membership', href: '/membership/' },
   /*
-   * Points at the "Who we are" section of the Membership page (Vivien,
-   * 2026-09-02): the founders now appear in one place only, and this is it.
+   * Its own page now (Vivien, 2026-09-08). It was an anchor into the
+   * Membership page; the founders and the team came off that page and moved
+   * to /who-we-are/, which is still the one place on the site they appear.
    */
-  { label: 'Who we are', href: '/membership/#who' },
+  { label: 'Who we are', href: '/who-we-are/' },
 ] as const;
 
 /**

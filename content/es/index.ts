@@ -34,7 +34,7 @@ export const es: Dict = {
       { label: 'Qué es Narelo', href: '/membership/#what' },
       { label: 'Experiencias', href: '/experiences/' },
       { label: 'Membresía', href: '/membership/' },
-      { label: 'Quiénes somos', href: '/membership/#who' },
+      { label: 'Quiénes somos', href: '/who-we-are/' },
     ],
     headerCta: { label: 'Empieza una conversación', external: true },
     footerCta: {
@@ -169,7 +169,6 @@ export const es: Dict = {
       { id: 'experience', label: 'Las experiencias' },
       { id: 'ages', label: 'Grupos de edad' },
       { id: 'how', label: 'Cómo funciona' },
-      { id: 'who', label: 'Quiénes somos' },
       { id: 'join', label: 'Cómo unirse' },
     ],
     hero: {
@@ -417,7 +416,7 @@ export const es: Dict = {
             { name: 'Regular Narelo Experiences', body: 'Para tu hijo: una experiencia por semana con su propio grupo pequeño, un lugar constante donde explorar, crecer y construir amistades reales con el tiempo.' },
             { name: 'Community Mornings', body: 'Para toda la familia: tiempo para conocer a otras familias Narelo, conectar y crecer juntas.' },
             { name: 'Narelo Expert Insights', body: 'Para los padres: conversaciones con nuestros propios expertos sobre infancia, desarrollo y vida familiar.' },
-            { name: 'One-to-one Educator Conversations', body: 'Para los padres: una vez por temporada, un rato con el educador de tu hijo para hablar de cómo va creciendo.' },
+            { name: 'One-to-one Educator Conversations', body: 'Para los padres: una vez por trimestre o temporada, un rato con el educador de tu hijo para hablar de cómo va creciendo.' },
             { name: 'End-of-season Video Reflections', body: 'Para tu familia: un vídeo personal al cerrar cada temporada, que recoge los descubrimientos de tu hijo para conservarlos.' },
           ],
         },
@@ -436,10 +435,18 @@ export const es: Dict = {
       eyebrow: 'Más allá de lo cotidiano',
       heading: 'Diseñado en torno a tu familia',
       body: 'Más allá de la membresía, Narelo también crea experiencias privadas seleccionadas, pensadas a medida de tu hijo y de tu familia.',
-      note: 'Estas experiencias quedan fuera de la membresía. Los socios reservan primero, y siempre con tarifa de socio.',
+      note: 'Estas experiencias quedan fuera de la membresía y están abiertas a familias que no son socias. Los socios reservan primero, y siempre con tarifa de socio.',
       items: [
-        { name: 'Experiencias de cumpleaños', body: 'Celebraciones cuidadas e inspiradas en los intereses y la personalidad de tu hijo.' },
-        { name: 'Experiencias privadas a medida', body: 'Experiencias personalizadas creadas con cuidado en torno a tu hijo y tu familia.' },
+        {
+          name: 'Experiencias de cumpleaños',
+          body: 'Celebraciones cuidadas e inspiradas en los intereses y la personalidad de tu hijo.',
+          ctaLabel: '¿Te gustaría celebrarlo con nosotros?',
+        },
+        {
+          name: 'Experiencias privadas a medida',
+          body: 'Experiencias personalizadas creadas con cuidado en torno a tu hijo y tu familia.',
+          ctaLabel: '¿Diseñamos algo para tu familia?',
+        },
       ],
     },
     closing: {

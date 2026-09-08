@@ -19,6 +19,8 @@ function metaFor(lang: Lang, path: string): PageMeta {
         description: c.home.hero.lede,
         image: c.home.hero.poster,
       };
+    case '/who-we-are/':
+      return { title: c.membership.proof.eyebrow, description: c.membership.proof.people[0].body, image: c.membership.proof.people[0].image };
     case '/membership/':
       return { title: c.membership.hero.eyebrow, description: c.membership.hero.lede, image: c.membership.hero.image };
     case '/experiences/':

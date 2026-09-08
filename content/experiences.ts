@@ -142,7 +142,7 @@ export const regular = {
         { name: 'Regular Narelo Experiences', body: 'For your child: one experience a week with their own small group, a consistent place to explore, grow and build real friendships over time.' },
         { name: 'Community Mornings', body: 'For the whole family: time to meet other Narelo families, connect and grow together.' },
         { name: 'Narelo Expert Insights', body: 'For parents: conversations with our own experts around childhood, development and family life.' },
-        { name: 'One-to-one Educator Conversations', body: 'For parents: once each season, time with your child’s own educator to talk about how they are growing.' },
+        { name: 'One-to-one Educator Conversations', body: 'For parents: once each term or season, time with your child’s own educator to talk about how they are growing.' },
         { name: 'End-of-season Video Reflections', body: 'For your family: a personal video at the close of each season, capturing your child’s discoveries to keep.' },
       ],
     },
@@ -167,14 +167,29 @@ export const personalised = {
   heading: 'Designed around your family',
   body: 'Beyond membership, Narelo also creates selected private experiences, thoughtfully tailored around your child and family.',
   /**
-   * How these sit alongside the membership (Vivien, 2026-09-07): outside it,
-   * but at a member rate, and members are the first to book. No figure is
-   * named here, pricing is still not agreed.
+   * How these sit alongside the membership (Vivien, 2026-09-07, extended
+   * 2026-09-08): outside it, open to families who are not members, and
+   * members book first at a member rate. No figure is named here, pricing is
+   * still not agreed.
    */
-  note: 'These sit beyond the membership. Members book first, and always at a member rate.',
+  note: 'These sit beyond the membership and are open to families who are not members. Members book first, and always at a member rate.',
+  /**
+   * Each card carries its own small invitation to write, because these are
+   * the one part of the site a family can act on without joining first
+   * (Vivien, 2026-09-08). Deliberately small: the page's own call to action
+   * stays the one at the foot of it.
+   */
   items: [
-    { name: 'Birthday Experiences', body: 'Thoughtfully curated celebrations inspired by your child’s interests and personality.' },
-    { name: 'Bespoke Private Experiences', body: 'Personalised experiences thoughtfully created around your child and family.' },
+    {
+      name: 'Birthday Experiences',
+      body: 'Thoughtfully curated celebrations inspired by your child’s interests and personality.',
+      ctaLabel: 'Would you like to celebrate with us?',
+    },
+    {
+      name: 'Bespoke Private Experiences',
+      body: 'Personalised experiences thoughtfully created around your child and family.',
+      ctaLabel: 'Shall we design something for your family?',
+    },
   ],
 } as const;
 
