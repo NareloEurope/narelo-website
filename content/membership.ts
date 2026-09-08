@@ -125,7 +125,7 @@ export const different = {
  */
 export const childExperience = {
   eyebrow: 'What your child experiences',
-  heading: 'Real places, small groups, and the time to go deep',
+  heading: 'Real places, small groups, and true connections',
   body: 'From around age three, the year moves through five worlds. Younger children begin with movement, senses and connection, and grow into them.',
   worldsLinkLabel: 'Discover the five worlds',
   worldsLinkHref: '/experiences/#worlds',
