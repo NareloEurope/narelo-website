@@ -49,25 +49,56 @@ export default function MembershipPage({ lang }: { lang: Lang }) {
         aria-label="On this page"
         className="sticky top-[68px] z-40 border-y border-ink/10 bg-linen/92 backdrop-blur-md"
       >
-        {/* tabIndex makes the scroll region reachable and scrollable by keyboard,
-            which it was not before (audit, 2026-09-05, 4.1). */}
-        <ul
-          tabIndex={0}
-          className="mx-auto flex max-w-[1560px] gap-7 overflow-x-auto px-6 py-4 md:px-10 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
-        >
-          {CHAPTERS.map((c) => (
-            <li key={c.id} className="shrink-0">
-              <a
-                href={`#${c.id}`}
-                className="eyebrow whitespace-nowrap text-ink-soft transition-colors hover:text-ink"
-              >
-                {c.label}
-              </a>
-            </li>
-          ))}
-        </ul>
+        {/*
+         * The strip is 656px of chips in a 390px phone window, so "How to
+         * join" used to sit entirely off the right edge: the one shortcut to
+         * the answer, invisible (Vivien, 2026-09-08). It comes first on a
+         * phone now, and the fade below says the rest slides.
+         *
+         * tabIndex makes the scroll region reachable and scrollable by
+         * keyboard, which it was not before (audit, 2026-09-05, 4.1).
+         */}
+        <div className="relative">
+          <ul
+            tabIndex={0}
+            className="mx-auto flex max-w-[1560px] gap-7 overflow-x-auto px-6 py-4 md:px-10 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+          >
+            {CHAPTERS.map((c) => (
+              <li key={c.id} className={`shrink-0 ${c.id === 'join' ? 'order-first md:order-none' : ''}`}>
+                <a
+                  href={`#${c.id}`}
+                  className="eyebrow whitespace-nowrap text-ink-soft transition-colors hover:text-ink"
+                >
+                  {c.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+
+          {/* Says the strip slides, without adding a control to press.
+              Not needed once the whole strip fits, so it stops at md. */}
+          <div
+            className="pointer-events-none absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-linen from-30% to-transparent md:hidden"
+            aria-hidden="true"
+          />
+        </div>
       </nav>
 
+      {/*
+       * Everything below the sticky strip sits in one flex column so the phone
+       * can take a different order from the desktop (Vivien, 2026-09-08).
+       *
+       * The source order below is the PHONE order: what Narelo is, then how to
+       * join, then the detail. On a phone the page runs to about fourteen
+       * screens and "How to join" used to start ten screens down, which is
+       * further than anyone scrolls. It is at about screen four now.
+       *
+       * The desktop order is unchanged, restored by the md:order-* on each
+       * section. Source order matches the phone on purpose: a reader using a
+       * screen reader or the keyboard meets the sections in the order they see
+       * them, and the phone is where this reorder matters.
+       */}
+      <div className="flex flex-col">
       {/*
        * ---------- 1. What is Narelo? ----------
        *
@@ -77,7 +108,7 @@ export default function MembershipPage({ lang }: { lang: Lang }) {
        * the top of the photograph. The positioning line moved under the
        * photograph at body size, where it reads as a caption.
        */}
-      <Section id="what">
+      <Section id="what" outerClassName="md:order-1">
         <div className="grid items-start gap-14 md:grid-cols-2 md:gap-20">
           <div className="fade" data-reveal>
             <p className="eyebrow mb-8 text-olive">{whatItIs.eyebrow}</p>
@@ -131,8 +162,43 @@ export default function MembershipPage({ lang }: { lang: Lang }) {
         </div>
       </Section>
 
+      {/* ---------- 5. Who is behind this ---------- */}
+      {/* ---------- 6. How do we join? ---------- */}
+      <Section id="join" outerClassName="md:order-6">
+        <div className="mb-12 max-w-2xl fade" data-reveal>
+          <p className="eyebrow mb-8 text-olive">{joining.eyebrow}</p>
+          <h2 className="display display-lg">{joining.heading}</h2>
+        </div>
+
+        <ol className="reveal grid gap-10 md:grid-cols-4 md:gap-8" data-reveal>
+          {joining.steps.map((step) => (
+            <li key={step.n}>
+              <div className="mb-5 h-px w-full bg-ink/15" aria-hidden="true" />
+              <span className="eyebrow text-olive">{step.n}</span>
+              <h3 className="display display-md mt-3">{step.title}</h3>
+              <p className="body-copy mt-3 text-ink-soft">{step.body}</p>
+              {'whatsapp' in step && step.whatsapp && (
+                <a
+                  href={contact.whatsapp}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  className="link-line eyebrow mt-5 inline-flex items-center gap-2.5 text-forest"
+                >
+                  <WhatsAppIcon className="h-5 w-5" />
+                  {joining.whatsappLabel}
+                </a>
+              )}
+            </li>
+          ))}
+        </ol>
+
+        <p className="lede mt-12 max-w-2xl text-ink-soft fade" data-reveal>
+          {joining.reassurance}
+        </p>
+      </Section>
+
       {/* ---------- 2. What does my child experience? ---------- */}
-      <section id="experience" className="bg-forest px-6 py-[var(--spacing-section)] text-linen md:px-10">
+      <section id="experience" className="md:order-2 bg-forest px-6 py-[var(--spacing-section)] text-linen md:px-10">
         <div className="mx-auto max-w-[1280px]">
           <div className="mb-12 max-w-2xl fade" data-reveal>
             <p className="eyebrow mb-8 text-linen/60">{childExperience.eyebrow}</p>
@@ -162,7 +228,7 @@ export default function MembershipPage({ lang }: { lang: Lang }) {
       </section>
 
       {/* ---------- 3. Which age group? ---------- */}
-      <Section id="ages">
+      <Section id="ages" outerClassName="md:order-3">
         <div className="mb-12 max-w-2xl fade" data-reveal>
           <p className="eyebrow mb-8 text-olive">{ageGroups.eyebrow}</p>
           <h2 className="display display-lg mb-8">{ageGroups.heading}</h2>
@@ -186,7 +252,7 @@ export default function MembershipPage({ lang }: { lang: Lang }) {
       {/* ---------- 4. How does membership work, and what's included? ----------
           Merged from three sections that said much the same thing (Rui,
           2026-08-29): a short shared rhythm, then the concrete inclusions. */}
-      <Section id="how" bg="bg-shell">
+      <Section id="how" bg="bg-shell" outerClassName="md:order-4">
         <div className="grid gap-16 md:grid-cols-[0.85fr_1.15fr] md:gap-24">
           <div className="fade md:sticky md:top-40 md:self-start" data-reveal>
             <p className="eyebrow mb-8 text-olive">{howItWorks.eyebrow}</p>
@@ -224,7 +290,7 @@ export default function MembershipPage({ lang }: { lang: Lang }) {
        * what comes with membership stays as accordion rows underneath, on the
        * light ground, so the three cards are the thing you see.
        */}
-      <section className="relative isolate overflow-hidden px-6 py-[var(--spacing-section)] md:px-10">
+      <section className="md:order-5 relative isolate overflow-hidden px-6 py-[var(--spacing-section)] md:px-10">
         <div className="absolute inset-0 -z-10">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
@@ -254,43 +320,8 @@ export default function MembershipPage({ lang }: { lang: Lang }) {
         </div>
       </section>
 
-      {/* ---------- 5. Who is behind this ---------- */}
-      {/* ---------- 6. How do we join? ---------- */}
-      <Section id="join">
-        <div className="mb-12 max-w-2xl fade" data-reveal>
-          <p className="eyebrow mb-8 text-olive">{joining.eyebrow}</p>
-          <h2 className="display display-lg">{joining.heading}</h2>
-        </div>
-
-        <ol className="reveal grid gap-10 md:grid-cols-4 md:gap-8" data-reveal>
-          {joining.steps.map((step) => (
-            <li key={step.n}>
-              <div className="mb-5 h-px w-full bg-ink/15" aria-hidden="true" />
-              <span className="eyebrow text-olive">{step.n}</span>
-              <h3 className="display display-md mt-3">{step.title}</h3>
-              <p className="body-copy mt-3 text-ink-soft">{step.body}</p>
-              {'whatsapp' in step && step.whatsapp && (
-                <a
-                  href={contact.whatsapp}
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  className="link-line eyebrow mt-5 inline-flex items-center gap-2.5 text-forest"
-                >
-                  <WhatsAppIcon className="h-5 w-5" />
-                  {joining.whatsappLabel}
-                </a>
-              )}
-            </li>
-          ))}
-        </ol>
-
-        <p className="lede mt-12 max-w-2xl text-ink-soft fade" data-reveal>
-          {joining.reassurance}
-        </p>
-      </Section>
-
       {/* ---------- Closing ---------- */}
-      <section className="relative isolate flex min-h-[75svh] items-center overflow-hidden">
+      <section className="md:order-7 relative isolate flex min-h-[75svh] items-center overflow-hidden">
         <LazyVideo src={closing.video} poster={closing.poster} className="absolute inset-0 -z-10 h-full w-full object-cover" />
         <div className="absolute inset-0 -z-10 bg-ink/70" aria-hidden="true" />
 
@@ -313,6 +344,8 @@ export default function MembershipPage({ lang }: { lang: Lang }) {
           </div>
         </div>
       </section>
+      </div>
+
     </>
   );
 }
