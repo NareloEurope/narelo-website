@@ -178,17 +178,26 @@ export const personalised = {
    * the one part of the site a family can act on without joining first
    * (Vivien, 2026-09-08). Deliberately small: the page's own call to action
    * stays the one at the foot of it.
+   *
+   * `whatsappText` is what is already typed when the chat opens. These two
+   * are the only places on the site that do not open the membership message
+   * (Vivien, 2026-09-08): someone asking about a birthday was sending a note
+   * about membership, which read as a mistake at the other end. Every other
+   * button on the site still opens `contact.whatsapp` unchanged. The number
+   * is not repeated here, the component takes it from that one link.
    */
   items: [
     {
       name: 'Birthday Experiences',
       body: 'Thoughtfully curated celebrations inspired by your child’s interests and personality.',
       ctaLabel: 'Would you like to celebrate with us?',
+      whatsappText: 'Hi Narelo, I’d love to hear about a birthday experience for my child.',
     },
     {
       name: 'Bespoke Private Experiences',
       body: 'Personalised experiences thoughtfully created around your child and family.',
       ctaLabel: 'Shall we design something for your family?',
+      whatsappText: 'Hi Narelo, I’d love to talk about a private experience for my family.',
     },
   ],
 } as const;

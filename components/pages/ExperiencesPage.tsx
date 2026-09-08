@@ -9,6 +9,12 @@ import { localePath, type Lang } from '@/content/locales';
 export default function ExperiencesPage({ lang }: { lang: Lang }) {
   const c = content(lang);
   const { contact } = c.site;
+  /*
+   * A WhatsApp link with a different opening message, built off the one in
+   * content/site.ts so the number lives in exactly one place (Vivien,
+   * 2026-09-08). Only the two personalised cards use it.
+   */
+  const whatsappWith = (text: string) => `${contact.whatsapp.split('?')[0]}?text=${encodeURIComponent(text)}`;
   const { stageDetails } = c.stages;
   const { hero, format, spark, worlds, stages, regular, personalised, closing } = c.experiences;
   const t = (path: string) => localePath(lang, path);
@@ -227,7 +233,7 @@ export default function ExperiencesPage({ lang }: { lang: Lang }) {
               {/* A small invitation to write, one per card. Deliberately quiet:
                   the page's own call to action is the one at its foot. */}
               <a
-                href={contact.whatsapp}
+                href={whatsappWith(item.whatsappText)}
                 target="_blank"
                 rel="noreferrer noopener"
                 className="link-line mt-6 inline-flex items-center gap-2 text-[0.78rem] tracking-[0.02em] text-ink"

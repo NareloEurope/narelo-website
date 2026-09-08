@@ -440,11 +440,13 @@ export const es: Dict = {
           name: 'Experiencias de cumpleaños',
           body: 'Celebraciones cuidadas e inspiradas en los intereses y la personalidad de tu hijo.',
           ctaLabel: '¿Te gustaría celebrarlo con nosotros?',
+          whatsappText: 'Hola Narelo, me encantaría saber más sobre una experiencia de cumpleaños para mi hijo.',
         },
         {
           name: 'Experiencias privadas a medida',
           body: 'Experiencias personalizadas creadas con cuidado en torno a tu hijo y tu familia.',
           ctaLabel: '¿Diseñamos algo para tu familia?',
+          whatsappText: 'Hola Narelo, me encantaría hablar sobre una experiencia privada para mi familia.',
         },
       ],
     },
