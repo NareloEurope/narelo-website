@@ -14,7 +14,9 @@ import { langFromPath } from '@/content/locales';
  * repeated CTA blocks come out of the page: a visitor always has one within
  * reach, so the same button no longer has to appear in every section.
  *
- * Hidden until you are past the hero, so the first screen stays clean.
+ * Hidden until you are past the hero, so the first screen stays clean, and
+ * hidden again once the footer is in view, where it used to sit on top of the
+ * contact details.
  *
  * On a phone it says what it is (Vivien, 2026-09-08): a bare green circle
  * left people unsure how to actually join, so below md it is a pill carrying
@@ -34,13 +36,25 @@ export default function FloatingActions() {
       if (frame) return;
       frame = requestAnimationFrame(() => {
         frame = 0;
-        setShown(window.scrollY > window.innerHeight * 0.45);
+        const past = window.scrollY > window.innerHeight * 0.45;
+        /*
+         * And out of the way again once the footer arrives: the stack was
+         * sitting on top of the footer's contact block for the whole last
+         * stretch of every page (audit V2, 2026-09-08, 2.1). The footer
+         * carries the same two things anyway, an email address and a phone
+         * number, so nothing is lost by standing down there.
+         */
+        const footer = document.querySelector('footer');
+        const atFooter = footer ? footer.getBoundingClientRect().top < window.innerHeight - 40 : false;
+        setShown(past && !atFooter);
       });
     };
     onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
     return () => {
       window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('resize', onScroll);
       if (frame) cancelAnimationFrame(frame);
     };
   }, []);

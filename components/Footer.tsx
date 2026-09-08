@@ -37,7 +37,10 @@ export default function Footer() {
 
           <div>
             <h2 className="eyebrow mb-5 text-linen/80">{ui.footerContact}</h2>
-            <ul className="flex flex-col gap-3">
+            {/* Across rather than down on a phone, which takes a tall stack out
+                of the end of every page (audit V2, 2026-09-08, 1.4). It goes
+                back to a column at sm, where the sidebar is narrow again. */}
+            <ul className="flex flex-wrap gap-x-8 gap-y-3 sm:flex-col">
               <li>
                 <a href={contact.emailHref} className="body-copy text-linen/85 transition-opacity hover:opacity-60">
                   {contact.email}
@@ -51,7 +54,7 @@ export default function Footer() {
               <li className="body-copy text-linen/80">{site.location}</li>
             </ul>
 
-            <ul className="mt-8 flex items-center gap-4">
+            <ul className="mt-6 flex items-center gap-4 sm:mt-8">
               {socialIcons.map((icon) => (
                 <li key={icon.label}>
                   {icon.href ? (

@@ -166,10 +166,18 @@ export default function Header() {
             <Link
               key={item.href}
               href={t(item.href)}
-              className="display display-md border-b border-ink/10 py-5 text-ink"
+              aria-current={isActive(item.href) ? 'page' : undefined}
+              /* The drawer's four links were identical with nothing saying
+                 which page you were on, while the desktop bar has had its
+                 underline all along (audit V2, 2026-09-08, 1.6). Same idea,
+                 sized for the drawer: the current page is full ink with a rule
+                 under the words, the rest sit back. */
+              className={`display display-md flex items-center justify-between gap-4 border-b border-ink/10 py-5 ${
+                isActive(item.href) ? 'text-ink' : 'text-ink-soft'
+              }`}
               style={{ transitionDelay: `${i * 40}ms` }}
             >
-              {item.label}
+              <span className={isActive(item.href) ? 'border-b border-olive pb-1' : ''}>{item.label}</span>
             </Link>
           ))}
         </nav>

@@ -182,7 +182,6 @@ export const es: Dict = {
       heading: 'Una comunidad para experiencias únicas',
       body: 'Narelo es un club privado de socios construido en torno a experiencias extraordinarias de la infancia que ayudan a los niños a crecer a través de la naturaleza, la creatividad, el movimiento y las aventuras de la vida real, dentro de una comunidad de familias afines que crecen juntas.',
       body2: 'Más que un programa infantil, Narelo es una comunidad de socios donde los niños construyen confianza, independencia y vínculos significativos, los padres siguen aprendiendo con nuestros expertos, y familias afines crecen juntas, preparando a los niños para florecer en un mundo en cambio constante.',
-      pull: 'Los niños vienen por las experiencias. Las familias se quedan por la comunidad.',
       image: '/images/img-1667.webp',
       imageAlt: 'Niños en el mundo real durante una experiencia Narelo.',
     },
@@ -285,7 +284,7 @@ export const es: Dict = {
           ],
         },
         {
-          label: 'Para socios, con tarifa de socio',
+          label: 'Acceso prioritario, con tarifa de socio',
           items: [
             { title: 'Guest Expert Insights' },
             { title: 'Signature Saturdays' },
@@ -421,7 +420,7 @@ export const es: Dict = {
           ],
         },
         {
-          label: 'Reservable para socios, con tarifa de socio',
+          label: 'Reserva prioritaria, con tarifa de socio',
           aside: 'y más por venir',
           items: [
             { name: 'Guest Expert Insights', body: 'Sesiones con especialistas que invitamos de fuera de Narelo, con tarifa de socio.' },

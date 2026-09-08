@@ -56,7 +56,12 @@ export const whatItIs = {
   body: 'Narelo is a private members’ club built around extraordinary childhood experiences that help children grow through nature, creativity, movement and real-life adventures, within a membership community where like-minded families grow together.',
   /** Second paragraph from the Narelo Family Guide (Vivien, 2026-09-04). */
   body2: 'More than a children’s programme, Narelo is a membership community where children build confidence, independence and meaningful connections, parents continue learning through expert insights, and like-minded families grow together, preparing children to flourish in a world that is constantly changing.',
-  pull: 'Children join for the experiences. Families stay for the community.',
+  /*
+   * "Children join for the experiences. Families stay for the community."
+   * used to close this block. It is word for word the home page's own
+   * statement band, which a reader meets first (audit V2, 2026-09-08, 1.1),
+   * so it lives there and not here now.
+   */
   image: '/images/img-1667.webp',
   imageAlt: 'Children out in the real world on a Narelo experience.',
 } as const;
@@ -254,7 +259,19 @@ export const included = {
       ],
     },
     {
-      label: 'For members, at member rates',
+      /*
+       * "For members, at member rates" read as members only while the page
+       * says elsewhere that some of this is open to families who are not
+       * members (audit V2, 2026-09-08, 1.2). "Priority access" says the true
+       * thing: members come first.
+       *
+       * ⚠️ The audit also proposes a line saying some of these are open to
+       * guests, and asks Natalie and Vivien to confirm which. Not added:
+       * Birthday and Bespoke Private Experiences are confirmed open to
+       * non-members, Guest Expert Insights, Signature Saturdays and Holiday
+       * Experiences are not. Add it once that is settled.
+       */
+      label: 'Priority access, at member rates',
       items: [
         { title: 'Guest Expert Insights' },
         { title: 'Signature Saturdays' },
