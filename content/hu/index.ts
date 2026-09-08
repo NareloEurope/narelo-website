@@ -84,7 +84,7 @@ export const hu: Dict = {
     hero: {
       eyebrow: 'Privát gyermekkor-tagság · Marbella',
       headingLines: ['Gyermekkor,', 'mélyen megélve.'],
-      lede: 'A Narelo egy tagsági közösség, amely rendkívüli, valós világban átélt élmények köré épül, a várandósságtól nagyjából nyolcéves korig, és azoknak a családoknak, akik együtt nőnek fel a gyerekeikkel.',
+      lede: 'A Narelo családoknak szóló tagsági közösség, amely rendkívüli, valós világban átélt élmények köré épül. A tagság útja a várandósságtól egészen 8 éves korig tart.',
       video: '/video/home-hero.mp4',
       poster: '/images/home-hero-poster.webp',
       scrollHint: 'Görgess',
@@ -102,11 +102,11 @@ export const hu: Dict = {
     },
     shape: {
       eyebrow: 'Hogyan épül fel egy Narelo nap',
-      heading: 'Kis csoportok. Valódi helyek. Senki sem siet.',
-      body: 'Minden élmény ugyanarra a formára épül, akár az otthonunkban, akár a tengerparton, akár a város mögötti dombokon történik.',
+      heading: 'Kis csoportok. Valódi helyek. Semmi kapkodás.',
+      body: 'Minden élmény ugyanarra a formára épül, akár az otthonunkban, akár a tengerparton, akár a hegyekben történik.',
       facts: [
-        { value: '~8', label: 'gyerek egy csoportban', note: 'Elég kevés ahhoz, hogy minden gyereket a nevén ismerjünk, és ne tömegként kelljen kezelni.' },
-        { value: '90', label: 'perc együtt', note: 'Elég hosszú ahhoz, hogy megérkezzünk, rendesen felfedezzünk, és visszataláljunk magunkhoz.' },
+        { value: '8', label: 'gyerek egy csoportban', note: 'Elég kevés ahhoz, hogy minden gyereket a nevén ismerjünk, és ne tömegként kelljen kezelni.' },
+        { value: '90', label: 'perc együtt', note: 'Elég hosszú ahhoz, hogy megérkezzünk, felfedezzünk, és megőrizzük a nyugalmunkat.' },
       ],
       image: '/images/home-not-to-be-rushed.webp',
       imageAlt: 'Kis csoport gyerek fedez fel együtt, sietség nélkül.',
@@ -114,7 +114,7 @@ export const hu: Dict = {
     worlds: {
       eyebrow: 'Az Öt Világ',
       heading: 'Öt út a világ felé',
-      body: 'Élményeink öt világon haladnak keresztül, amelyeket a körülöttünk lévő valódi világ ihletett, és mindegyik új utakat nyit a felfedezéshez, a mozgáshoz, az alkotáshoz. Más világok. Más élmények. Mindig van még valami felfedezni való.',
+      body: 'Élményeink öt világon haladnak keresztül, amelyeket a körülöttünk lévő valódi élet ihletett, és mindegyik új utakat nyit a felfedezéshez, a mozgáshoz, az alkotáshoz. Más világok. Más élmények. Mindig van még valami felfedezni való.',
       items: [
         { name: 'Ocean', short: 'A tenger mint élő hely', image: '/images/world-ocean.webp' },
         { name: 'Mountain', short: 'A természet a maga feltételei szerint', image: '/images/stage-photo-navigators.webp' },
@@ -375,8 +375,8 @@ export const hu: Dict = {
       body3: 'Hisszük, hogy a gyerekeknek mindkettőre szükségük van: erős kapcsolatra a valódi világgal, és magabiztosságra ahhoz, hogy eligazodjanak az eljövendőben. Ezért találkozhat a természet, a mozgás és a valós élmény a kreativitással, a robotikával és a mesterséges intelligenciával, mindig céllal.',
       pull: 'Gyökerekkel a valódi világban. Készen az eljövendőre.',
       facts: [
-        { value: '90', label: 'perc együtt', note: 'Elég hosszú ahhoz, hogy megérkezzünk, rendesen felfedezzünk, és visszataláljunk magunkhoz.' },
-        { value: '~8', label: 'gyerek egy csoportban', note: 'Elég kevés ahhoz, hogy minden gyereket a nevén ismerjünk, és ne tömegként kelljen kezelni.' },
+        { value: '90', label: 'perc együtt', note: 'Elég hosszú ahhoz, hogy megérkezzünk, felfedezzünk, és megőrizzük a nyugalmunkat.' },
+        { value: '8', label: 'gyerek egy csoportban', note: 'Elég kevés ahhoz, hogy minden gyereket a nevén ismerjünk, és ne tömegként kelljen kezelni.' },
         { value: '12', label: 'élmény egy évadban', note: 'Heti egy a tanév során, hogy az év épüljön, ne induljon újra.' },
       ],
       note: 'A kisebbek csoportjaiba szülő is jöhet. A nagyobbak egyedül érkeznek.',
@@ -392,7 +392,7 @@ export const hu: Dict = {
     worlds: {
       eyebrow: 'Az Öt Világ',
       heading: 'Öt ajtó, amelyet együtt nyitunk ki',
-      body: 'Élményeink öt világon haladnak keresztül, amelyeket a körülöttünk lévő valódi világ ihletett, és mindegyik új utakat nyit a felfedezéshez, a mozgáshoz, az alkotáshoz. Más világok. Más élmények. Mindig van még valami felfedezni való.',
+      body: 'Élményeink öt világon haladnak keresztül, amelyeket a körülöttünk lévő valódi élet ihletett, és mindegyik új utakat nyit a felfedezéshez, a mozgáshoz, az alkotáshoz. Más világok. Más élmények. Mindig van még valami felfedezni való.',
       items: [
         { name: 'Ocean', body: 'A tenger felfedezése az érzékeken, a mozgáson, a kíváncsiságon és a valós felfedezésen keresztül.' },
         { name: 'Mountain', body: 'A természet felfedezése mozgáson, kihíváson, megfigyelésen és kalandon keresztül.' },

@@ -81,7 +81,13 @@
     letter-spacing: -0.035em;
   }
   .display-lg {
-    font-size: clamp(2.25rem, 1.5rem + 3.4vw, 4.5rem);
+    /*
+     * The phone end went up from 2.25rem to 2.5rem (Vivien, 2026-09-08: the
+     * section headings read small on a phone). The ceiling is untouched, so
+     * a desktop is exactly as it was; only the narrow end of the ramp moved,
+     * and every section heading moves with it rather than one going odd.
+     */
+    font-size: clamp(2.5rem, 1.75rem + 3.4vw, 4.5rem);
     letter-spacing: -0.028em;
   }
   .display-md {
@@ -94,7 +100,10 @@
     font-weight: 400;
     text-transform: uppercase;
     letter-spacing: 0.22em;
-    font-size: clamp(0.625rem, 0.58rem + 0.2vw, 0.72rem);
+    /* Floor raised from 0.625rem to 0.6875rem, so the small labels above each
+       heading are legible on a phone (Vivien, 2026-09-08). The ceiling is
+       unchanged: a desktop looks exactly as it did. */
+    font-size: clamp(0.6875rem, 0.64rem + 0.2vw, 0.72rem);
     line-height: 1.5;
   }
 

@@ -39,8 +39,8 @@ export const format = {
   body3: 'We believe children need both: a strong connection to the real world and the confidence to navigate the world ahead. That is why nature, movement and real-life experiences can meet creativity, robotics and AI, always with purpose.',
   pull: 'Rooted in the real world. Ready for the world ahead.',
   facts: [
-    { value: '90', label: 'minutes together', note: 'Long enough to settle, explore properly and come back to yourself.' },
-    { value: '~8', label: 'children in a group', note: 'Small enough that every child is known by name, not managed as a crowd.' },
+    { value: '90', label: 'minutes together', note: 'Long enough to settle, explore and stay centred.' },
+    { value: '8', label: 'children in a group', note: 'Small enough that every child is known by name, not managed as a crowd.' },
     { value: '12', label: 'experiences a season', note: 'One a week through the term, so the year builds instead of restarting.' },
   ],
   note: 'Younger groups may include a parent. Older children come on their own.',
@@ -73,7 +73,7 @@ export const spark = {
 export const worlds = {
   eyebrow: 'The Five Worlds',
   heading: 'Five doors we open together',
-  body: 'Our experiences move through five worlds inspired by the real world around us, each opening new ways to explore, move, create and discover. Different worlds. Different experiences. Always something new to uncover.',
+  body: 'Our experiences move through five worlds inspired by the real life around us, each opening new ways to explore, move, create and discover. Different worlds. Different experiences. Always something new to uncover.',
   items: [
     {
       name: 'Ocean',
