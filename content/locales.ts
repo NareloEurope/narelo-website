@@ -3,30 +3,31 @@
  * The order here is the order the selector shows them in.
  *
  * English is the default and keeps the plain URLs: `/`, `/membership/`.
- * The others sit under a prefix: `/es/membership/`, `/de/membership/`.
- * Path segments stay in English on purpose, so a link shared between
- * languages still resolves and nobody has to maintain several sets of routes.
+ * Spanish sits under a prefix: `/es/membership/`. Path segments stay in
+ * English on purpose, so a link shared between languages still resolves and
+ * nobody has to maintain several sets of routes.
  *
- * Hungarian is switched off for now (Vivien, 2026-09-07). The translation is
- * finished and still in the repo at `content/hu/index.ts`; putting 'hu' back
- * in this list, in LANG_META and in `content/dictionary.ts` publishes it again.
+ * German is switched off (Vivien, 2026-09-08) and Hungarian before it
+ * (2026-09-07). Both translations are finished and still in the repo, at
+ * `content/de/index.ts` and `content/hu/index.ts`, and both are still checked
+ * against the English shape at build time. Putting 'de' or 'hu' back in this
+ * list, in LANG_META and in `content/dictionary.ts` publishes it again.
  *
- * ⚠️ The Spanish and German copy in `content/es/` and `content/de/` has not
- * been read by a native speaker. It needs that pass before launch.
+ * ⚠️ The Spanish copy in `content/es/` has not been read by a native speaker.
+ * It needs that pass before launch.
  */
-export const LANGS = ['en', 'es', 'de'] as const;
+export const LANGS = ['en', 'es'] as const;
 
 export type Lang = (typeof LANGS)[number];
 
 export const DEFAULT_LANG: Lang = 'en';
 
-/** The two extra language trees that get built under a prefix. */
+/** The language trees that get built under a prefix. */
 export const PREFIXED_LANGS = LANGS.filter((l) => l !== DEFAULT_LANG);
 
 export const LANG_META: Record<Lang, { short: string; name: string; htmlLang: string; ogLocale: string }> = {
   en: { short: 'EN', name: 'English', htmlLang: 'en', ogLocale: 'en_GB' },
   es: { short: 'ES', name: 'Español', htmlLang: 'es', ogLocale: 'es_ES' },
-  de: { short: 'DE', name: 'Deutsch', htmlLang: 'de', ogLocale: 'de_DE' },
 };
 
 /**
@@ -41,7 +42,7 @@ export function localePath(lang: Lang, path: string): string {
 
 /**
  * Strips a language prefix back off, so the header can work out which
- * language-neutral page it is on and offer the same page in the other two.
+ * language-neutral page it is on and offer the same page in the others.
  */
 export function neutralPath(pathname: string): string {
   for (const lang of PREFIXED_LANGS) {

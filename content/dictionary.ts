@@ -3,15 +3,15 @@
  *
  * The English files in `content/` stay exactly as they were and remain the
  * source of truth: they are what the Narelo team edits. This file gathers them
- * into `en`, derives the shape from it, and adds the two translations, which
- * live in `content/es/` and `content/hu/` under the same shape.
+ * into `en`, derives the shape from it, and adds the translations, which live
+ * in `content/es/` under the same shape.
  *
  * Because `Dict` is derived from the English, a translation that misses a key
  * or misspells one fails the build. A translation that says something
  * different, which is the whole point, does not.
  *
- * ⚠️ The Spanish, German and Hungarian copy has not been read by a native
- * speaker. It needs that pass before launch.
+ * ⚠️ The Spanish copy has not been read by a native speaker. It needs that
+ * pass before launch.
  */
 import * as community from './community';
 import * as experiences from './experiences';
@@ -27,16 +27,16 @@ export const en = { community, experiences, home, membership, pages, site, stage
 
 export type Dict = Translated<typeof en>;
 
-import { de } from './de';
 import { es } from './es';
 
 /*
- * Hungarian is switched off (Vivien, 2026-09-07). `content/hu/index.ts` is
- * still in the repo and still type-checked against the English shape, it is
- * simply not published. Re-import it here and add 'hu' back to LANGS and
+ * German is switched off (Vivien, 2026-09-08), Hungarian before it
+ * (2026-09-07). `content/de/index.ts` and `content/hu/index.ts` are still in
+ * the repo and still type-checked against the English shape, they are simply
+ * not published. Re-import one here and add its code back to LANGS and
  * LANG_META in content/locales.ts to bring it back.
  */
-export const dict: Record<Lang, Dict> = { en, es, de };
+export const dict: Record<Lang, Dict> = { en, es };
 
 /** Everything for one language, in one call. */
 export function content(lang: Lang): Dict {
