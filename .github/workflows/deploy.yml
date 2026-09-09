@@ -1,0 +1,67 @@
+# Publishes the site to narelo.es.
+#
+# The site is a static export (`output: 'export'` in next.config.ts), so this
+# job builds it into `out/` and uploads that folder to the hosting company's
+# server over FTP. Adam supplied the FTP details; they are stored as GitHub
+# secrets, never in this file.
+#
+# Runs automatically on every push to `main`, and can be run by hand from the
+# Actions tab ("Run workflow").
+#
+# Required repository secrets (Settings > Secrets and variables > Actions):
+#   FTP_SERVER     the FTP host, e.g. ftp.narelo.es
+#   FTP_USERNAME   the FTP user
+#   FTP_PASSWORD   the FTP password
+#
+# Optional repository variables (same page, "Variables" tab):
+#   FTP_SERVER_DIR  folder on the server to publish into. Defaults to
+#                   /httpdocs/, which is where Plesk serves a domain from.
+#   FTP_PROTOCOL    ftps (default, encrypted) or ftp if the host cannot do FTPS.
+#   ALLOW_INDEXING  set to true only when the site should appear in Google.
+#                   Anything else keeps search engines out.
+#   SITE_URL        the public address, defaults to https://narelo.es
+
+name: Deploy to narelo.es
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# One deploy at a time. Two uploads writing to the same folder would
+# interleave files and leave the live site in a half-updated state.
+concurrency:
+  group: deploy-narelo-es
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - name: Build the static site
+        env:
+          NEXT_PUBLIC_SITE_URL: ${{ vars.SITE_URL || 'https://narelo.es' }}
+          NEXT_PUBLIC_ALLOW_INDEXING: ${{ vars.ALLOW_INDEXING }}
+        run: npm run build
+
+      - name: Upload to the hosting server
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ${{ vars.FTP_PROTOCOL || 'ftps' }}
+          local-dir: ./out/
+          server-dir: ${{ vars.FTP_SERVER_DIR || '/httpdocs/' }}
+          # After the first run only changed files are re-uploaded, which
+          # matters here: the videos alone are about 30 MB.
+          state-name: .narelo-deploy-state.json

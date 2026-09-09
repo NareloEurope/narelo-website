@@ -3,8 +3,9 @@
 A static clone of the Narelo site, migrated off Wix
 (`https://mercedescgalera.wixsite.com/narelo`) into Next.js.
 
-**Nothing here is deployed yet.** No DNS, domain or hosting has been touched, and
-the live Wix site is untouched and still serving.
+**Publishing:** pushes to `main` build the site and upload it to the narelo.es
+host over FTP. See **[DEPLOYMENT.md](DEPLOYMENT.md)** for the one-time setup and
+for the switch that lets search engines in.
 
 > Full record of the migration — what the Wix site contained, what was changed and
 > why, what is still open — is in **[MIGRATION-AUDIT.md](MIGRATION-AUDIT.md)**.
