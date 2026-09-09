@@ -1,0 +1,27 @@
+# Apache configuration for the Plesk host that serves narelo.es.
+#
+# This file sits in public/, so `next build` copies it into out/ and it is
+# uploaded with the rest of the site. It has no effect on Vercel previews.
+
+# The static export writes its own 404 page; Apache needs telling to use it.
+ErrorDocument 404 /404.html
+
+# Everything under /_next/static/ has a content hash in its filename, so it can
+# be cached indefinitely. Pages and media are checked more often.
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresDefault "access plus 1 hour"
+  ExpiresByType text/html "access plus 5 minutes"
+  ExpiresByType image/webp "access plus 7 days"
+  ExpiresByType video/mp4 "access plus 7 days"
+</IfModule>
+
+<IfModule mod_headers.c>
+  <FilesMatch "\.(js|css|woff2)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+</IfModule>
+
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/plain text/xml application/javascript application/json image/svg+xml
+</IfModule>
