@@ -33,6 +33,8 @@ function metaFor(lang: Lang, path: string): PageMeta {
       return { title: c.pages.journalPage.title, description: c.pages.journalPage.emptyBody };
     case '/events/':
       return { title: c.pages.eventsPage.title, description: c.pages.eventsPage.emptyHeading };
+    case '/legal/':
+      return { title: c.pages.legalPage.title, description: c.pages.legalPage.intro };
     default:
       return { title: c.site.site.name, description: c.site.site.tagline };
   }

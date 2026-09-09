@@ -76,6 +76,7 @@ export const es: Dict = {
       whatToExpect: 'Qué esperar',
       backToTop: 'Volver arriba',
       closePortrait: 'Cerrar',
+      legalLabel: 'Aviso legal',
     },
     contact: {
       visitLabel: 'Visítanos',
@@ -653,6 +654,18 @@ export const es: Dict = {
     eventsPage: {
       title: 'Encuentros',
       emptyHeading: 'No hay encuentros en este momento',
+    },
+    legalPage: {
+      title: 'Aviso legal',
+      intro: 'Quién está detrás de esta web, según lo exige la Ley 34/2002, de servicios de la sociedad de la información y de comercio electrónico.',
+      rows: [
+        { label: 'Denominación social', value: 'Narelo Europe S.L.', href: null },
+        { label: 'NIF', value: 'B93933273', href: null },
+        { label: 'Domicilio social', value: 'C. Valentuñana, 2, 29601 Marbella, Málaga, España', href: null },
+        { label: 'Email', value: 'hello@narelo.es', href: 'mailto:hello@narelo.es' },
+        { label: 'Teléfono', value: '+34 655 366 888', href: 'tel:+34655366888' },
+        { label: 'Administradoras', value: 'Natalie Curavic y Vivien Vörös', href: null },
+      ],
     },
   },
 };

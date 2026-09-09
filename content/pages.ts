@@ -41,3 +41,29 @@ export const eventsPage = {
   /** MIGRATION FIX (audit §7B #12): Wix read "No hay eventos en este momento". */
   emptyHeading: 'There are no events at this time',
 } as const;
+
+/**
+ * The legal notice. Spain asks a commercial website to say plainly who is
+ * behind it (Ley 34/2002, LSSI-CE), and nothing on the site said so.
+ *
+ * ⚠️ Every value here is a legal fact supplied by Vivien on 2026-09-09. Do not
+ * edit, guess at or "tidy" any of it. If something is wrong, it is wrong in the
+ * company records too, and the team fixes it there first.
+ *
+ * ⚠️ NOT INCLUDED, because they were not supplied: the Registro Mercantil
+ * entry (tomo, folio, hoja) and the data protection wording. A privacy policy
+ * is a separate page and separate text, and it has to come from the company's
+ * gestor or lawyer, not from here.
+ */
+export const legalPage = {
+  title: 'Legal notice',
+  intro: 'Who is behind this website, as required by Spanish law (Ley 34/2002, on information society services and electronic commerce).',
+  rows: [
+    { label: 'Company name', value: 'Narelo Europe S.L.', href: null },
+    { label: 'NIF', value: 'B93933273', href: null },
+    { label: 'Registered office', value: 'C. Valentuñana, 2, 29601 Marbella, Málaga, Spain', href: null },
+    { label: 'Email', value: 'hello@narelo.es', href: 'mailto:hello@narelo.es' },
+    { label: 'Telephone', value: '+34 655 366 888', href: 'tel:+34655366888' },
+    { label: 'Managing directors', value: 'Natalie Curavic and Vivien Vörös', href: null },
+  ],
+} as const;

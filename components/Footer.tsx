@@ -94,7 +94,16 @@ export default function Footer() {
         </div>
 
         <div className="mt-14 flex flex-wrap items-center justify-between gap-6">
-          <p className="body-copy text-xs text-linen/80">{site.copyright}</p>
+          {/* Copyright and the legal notice sit together as one quiet line.
+              The audit took the menu out of the footer and this is not a way
+              back in: it is the one link Spanish law expects a commercial site
+              to carry (Vivien, 2026-09-09). */}
+          <p className="body-copy flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-linen/80">
+            <span>{site.copyright}</span>
+            <Link href={t('/legal/')} className="underline underline-offset-4 transition-opacity hover:opacity-70">
+              {ui.legalLabel}
+            </Link>
+          </p>
           {/* Second, quieter place to change language, for anyone who has
               scrolled past the header. */}
           <LanguageSelector current={lang} pathname={pathname} light onDark />

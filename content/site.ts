@@ -88,6 +88,8 @@ export const ui = {
   backToTop: 'Back to top',
   /** The close control on the enlarged portrait, Membership page. */
   closePortrait: 'Close',
+  /** The one link out of the footer, to /legal/. */
+  legalLabel: 'Legal notice',
 } as const;
 
 export const contact = {

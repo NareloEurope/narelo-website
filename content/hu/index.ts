@@ -58,6 +58,7 @@ export const hu: Dict = {
       whatToExpect: 'Mire számíthatsz',
       backToTop: 'Vissza a tetejére',
       closePortrait: 'Bezárás',
+      legalLabel: 'Impresszum',
     },
     contact: {
       visitLabel: 'Látogass el hozzánk',
@@ -635,6 +636,18 @@ export const hu: Dict = {
     eventsPage: {
       title: 'Események',
       emptyHeading: 'Jelenleg nincsenek események',
+    },
+    legalPage: {
+      title: 'Impresszum',
+      intro: 'Ki áll a weboldal mögött, a spanyol jogszabály (Ley 34/2002, az információs társadalommal összefüggő szolgáltatásokról és az elektronikus kereskedelemről) előírása szerint.',
+      rows: [
+        { label: 'Cégnév', value: 'Narelo Europe S.L.', href: null },
+        { label: 'Adószám (NIF)', value: 'B93933273', href: null },
+        { label: 'Székhely', value: 'C. Valentuñana, 2, 29601 Marbella, Málaga, Spanyolország', href: null },
+        { label: 'E-mail', value: 'hello@narelo.es', href: 'mailto:hello@narelo.es' },
+        { label: 'Telefon', value: '+34 655 366 888', href: 'tel:+34655366888' },
+        { label: 'Ügyvezetők', value: 'Natalie Curavic és Vivien Vörös', href: null },
+      ],
     },
   },
 };
