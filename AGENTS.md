@@ -22,6 +22,7 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 | Contact | `/contact/` | `content/pages.ts` + `content/site.ts` | `app/contact/page.tsx` |
 | Journal | `/journal/` | `content/pages.ts` | `app/journal/page.tsx` |
 | Events | `/events/` | `content/pages.ts` | `app/events/page.tsx` |
+| Legal notice | `/legal/` | `legalPage` in `content/pages.ts` | `components/pages/LegalPage.tsx` |
 
 Header, footer, navigation, contact details and social links are global and live in **`content/site.ts`**, changing them changes every page at once.
 
@@ -32,7 +33,7 @@ What is in each content file:
 - **`content/experiences.ts`**, `hero`, `format`, `spark`, `worlds`, `stages`, `regular`, `personalised`, `closing`
 - **`content/community.ts`**, `hero`, `testimonials`, `gallery`, `belong`, `events`, `journalTeaser`
 - **`content/stages.ts`**, `stageDetails`: the age-group rows (name, age, motto, summary, what to expect, photo). Shared by Membership *and* Experiences, so editing a stage changes both pages.
-- **`content/pages.ts`**, `contactPage` (including the form fields), `journalPage`, `eventsPage`
+- **`content/pages.ts`**, `contactPage` (including the form fields), `journalPage`, `eventsPage`, `legalPage`
 - **`content/site.ts`**, `site`, `nav`, `headerCta`, `contact`, `socialIcons`
 
 ## Languages
@@ -134,7 +135,19 @@ These are decisions already made. Do not quietly reverse them.
 5. **TikTok and Facebook links are intentionally empty** (`href: null`). They were dead links on the old Wix site. Do not invent URLs. Instagram is `@narelo.eu`.
 6. **The Bloom age group has no brief yet.** Its summary is provisional and it has no motto. Do not write one, flag it instead.
 7. **The internal session rhythm** (Wonder Seed, Atelier and so on) is deliberately *not* public-facing and must not appear on the website.
-8. Every content file carries a comment block naming the narelo-os document it came from. **Keep those comments accurate.** If copy changes, and the source changed too, update the comment.
+8. **The legal notice is legal fact, not copy.** `/legal/` carries the company
+   details Vivien supplied on 2026-09-09: Narelo Europe S.L., NIF B93933273,
+   C. Valentuñana, 2, 29601 Marbella, Málaga, directors Natalie Curavic and
+   Vivien Vörös. **Never edit, guess at or reword any of it.** If a value is
+   wrong it is wrong in the company records too, and the team fixes it there
+   first. It is linked once, from the footer, in every language.
+   ⚠️ Two things are **missing and known to be missing**: the Registro
+   Mercantil entry (tomo, folio, hoja), which was not supplied, and a **privacy
+   policy**, which the site does not have at all. The site takes personal data
+   through WhatsApp and the contact form, so it likely needs one under GDPR.
+   That text has to come from the company's gestor or lawyer. Put it on the
+   site exactly as given; never draft it here.
+9. Every content file carries a comment block naming the narelo-os document it came from. **Keep those comments accurate.** If copy changes, and the source changed too, update the comment.
 
 ## Canonical names and tone
 
