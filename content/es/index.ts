@@ -348,13 +348,6 @@ export const es: Dict = {
           body: 'Jessica estudió Psicología en la Universidad Massey de Nueva Zelanda y cuenta con varios años de experiencia trabajando con niños en la primera infancia y en entornos educativos. Su enfoque se centra en el desarrollo infantil, el bienestar emocional y las relaciones que dan forma al mundo de cada niño, con especial interés en las dinámicas familiares y en fortalecer el vínculo entre padres e hijos.',
           quote: 'Cuando comprendemos al niño y las relaciones que le rodean, creamos una base más sólida para que pueda crecer.',
         },
-        {
-          name: 'Mercedes Carrasco Galera',
-          role: 'Responsable de Experiencia de Marca',
-          image: '/images/team-mercedes.webp',
-          body: 'Mercedes estudió Publicidad, Relaciones Públicas y Marketing en ESIC Business & Marketing School, en Madrid. Su trayectoria abarca el marketing, la creación de contenido y la producción creativa. Su experiencia con niños ha contribuido a desarrollar su sensibilidad hacia la curiosidad, las conexiones y los pequeños momentos que definen la infancia. En Narelo, une estos mundos para trasladar su filosofía a la manera en que la marca se comunica y se vive.',
-          quote: 'Las historias más significativas nacen de momentos reales, conexiones auténticas y un poquito de curiosidad.',
-        },
       ],
     },
     joining: {

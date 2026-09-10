@@ -341,10 +341,12 @@ export const proof = {
    * Natalie and Vivien, and nobody else is ever presented as one.
    *
    * Jessica's role, biography and quote are her own, supplied verbatim. Her
-   * photograph was supplied by the team.
+   * photograph was supplied by the team. Her entry is complete: full name,
+   * title, photograph and her own words.
    *
-   * Both team entries are complete: full names, titles, photographs and
-   * their own words.
+   * Mercedes Carrasco Galera (Brand Experience Manager) was removed on
+   * 2026-09-10 (Vivien): she no longer works with Narelo. Her entry, her
+   * translations in all three files and her photograph went with her.
    */
   teamLabel: 'The team',
   team: [
@@ -354,15 +356,6 @@ export const proof = {
       image: '/images/team-jessica-fletcher.webp',
       body: 'Jessica studied Psychology at Massey University in New Zealand and has several years of experience working with children in early years and educational settings. Her focus lies in child development, emotional wellbeing and the relationships that shape a child’s world, with a particular interest in family dynamics and strengthening the connection between children and their parents.',
       quote: 'When we understand the child and the relationships around them, we create stronger foundations for them to grow.',
-    },
-    {
-      /* Full name and title confirmed (Vivien, 2026-09-07). Her biography,
-         quote and photograph are her own, supplied verbatim. */
-      name: 'Mercedes Carrasco Galera',
-      role: 'Brand Experience Manager',
-      image: '/images/team-mercedes.webp',
-      body: 'Mercedes studied Advertising, Public Relations and Marketing at ESIC Business & Marketing School in Madrid. Her background spans marketing, content creation and creative production. Her experience with children has shaped her appreciation for the curiosity, connections and small moments that define childhood. At Narelo, she brings these worlds together, translating its philosophy into how the brand is communicated and experienced.',
-      quote: 'The most meaningful stories grow from real moments, genuine connections and a little curiosity.',
     },
   ],
 } as const;
