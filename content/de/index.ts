@@ -82,7 +82,7 @@ export const de: Dict = {
     hero: {
       eyebrow: 'Eine private Mitgliedschaft für die Kindheit · Marbella',
       headingLines: ['Kindheit,', 'wirklich gelebt.'],
-      lede: 'Narelo ist eine Mitgliedergemeinschaft für Familien, rund um außergewöhnliche Erlebnisse in der wirklichen Welt. Der Weg der Mitgliedschaft beginnt in der Schwangerschaft und reicht bis zum achten Lebensjahr.',
+      lede: 'Narelo ist ein privater Members Club rund um außergewöhnliche Kindheitserlebnisse. Der Weg der Mitgliedschaft beginnt in der Schwangerschaft und reicht bis zum achten Lebensjahr.',
       video: '/video/home-hero.mp4',
       poster: '/images/home-hero-poster.webp',
       scrollHint: 'Scrollen',

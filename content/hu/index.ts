@@ -85,7 +85,7 @@ export const hu: Dict = {
     hero: {
       eyebrow: 'Privát gyermekkor-tagság · Marbella',
       headingLines: ['Gyermekkor,', 'mélyen megélve.'],
-      lede: 'A Narelo családoknak szóló tagsági közösség, amely rendkívüli, valós világban átélt élmények köré épül. A tagság útja a várandósságtól egészen 8 éves korig tart.',
+      lede: 'A Narelo privát klub, amely rendkívüli gyermekkori élmények köré épül. A tagság útja a várandósságtól egészen 8 éves korig tart.',
       video: '/video/home-hero.mp4',
       poster: '/images/home-hero-poster.webp',
       scrollHint: 'Görgess',
