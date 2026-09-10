@@ -181,7 +181,7 @@ export const de: Dict = {
     },
     whatItIs: {
       eyebrow: 'Was Narelo ist',
-      heading: 'Eine Mitgliedergemeinschaft rund um außergewöhnliche Erlebnisse',
+      heading: 'Ein privater Members Club rund um außergewöhnliche Kindheitserlebnisse',
       body: 'Narelo ist ein privater Members Club rund um außergewöhnliche Kindheitserlebnisse, die Kinder durch Natur, Kreativität, Bewegung und echte Abenteuer wachsen lassen, innerhalb einer Gemeinschaft gleichgesinnter Familien, die miteinander wachsen.',
       body2: 'Mehr als ein Kinderprogramm: Narelo ist eine Mitgliedergemeinschaft, in der Kinder Selbstvertrauen, Eigenständigkeit und echte Verbindungen aufbauen, Eltern durch unsere Fachleute weiterlernen und gleichgesinnte Familien miteinander wachsen, damit Kinder in einer sich ständig verändernden Welt aufblühen können.',
       image: '/images/img-1667.webp',
