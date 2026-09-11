@@ -82,7 +82,7 @@ export const de: Dict = {
     hero: {
       eyebrow: 'Eine private Mitgliedschaft für die Kindheit · Marbella',
       headingLines: ['Kindheit,', 'wirklich gelebt.'],
-      lede: 'Narelo ist eine Mitgliedergemeinschaft für Familien, rund um außergewöhnliche Erlebnisse in der wirklichen Welt. Der Weg der Mitgliedschaft beginnt in der Schwangerschaft und reicht bis zum achten Lebensjahr.',
+      lede: 'Narelo ist ein privater Members Club rund um außergewöhnliche Kindheitserlebnisse. Der Weg der Mitgliedschaft beginnt in der Schwangerschaft und reicht bis zum achten Lebensjahr.',
       video: '/video/home-hero.mp4',
       poster: '/images/home-hero-poster.webp',
       scrollHint: 'Scrollen',
@@ -181,7 +181,7 @@ export const de: Dict = {
     },
     whatItIs: {
       eyebrow: 'Was Narelo ist',
-      heading: 'Eine Mitgliedergemeinschaft rund um außergewöhnliche Erlebnisse',
+      heading: 'Ein privater Members Club rund um außergewöhnliche Kindheitserlebnisse',
       body: 'Narelo ist ein privater Members Club rund um außergewöhnliche Kindheitserlebnisse, die Kinder durch Natur, Kreativität, Bewegung und echte Abenteuer wachsen lassen, innerhalb einer Gemeinschaft gleichgesinnter Familien, die miteinander wachsen.',
       body2: 'Mehr als ein Kinderprogramm: Narelo ist eine Mitgliedergemeinschaft, in der Kinder Selbstvertrauen, Eigenständigkeit und echte Verbindungen aufbauen, Eltern durch unsere Fachleute weiterlernen und gleichgesinnte Familien miteinander wachsen, damit Kinder in einer sich ständig verändernden Welt aufblühen können.',
       image: '/images/img-1667.webp',

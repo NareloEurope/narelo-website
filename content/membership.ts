@@ -52,7 +52,10 @@ export const hero = {
 /** Q1 — What is Narelo? positioning.md, stated without jargon. */
 export const whatItIs = {
   eyebrow: 'What Narelo is',
-  heading: 'A members’ community built around extraordinary experiences',
+  /* The heading repeated the opening line loosely and said something
+     slightly different (Vivien, 2026-09-10): it is now the same sentence
+     the paragraph beneath it opens with. */
+  heading: 'A private members’ club built around extraordinary childhood experiences',
   body: 'Narelo is a private members’ club built around extraordinary childhood experiences that help children grow through nature, creativity, movement and real-life adventures, within a membership community where like-minded families grow together.',
   /** Second paragraph from the Narelo Family Guide (Vivien, 2026-09-04). */
   body2: 'More than a children’s programme, Narelo is a membership community where children build confidence, independence and meaningful connections, parents continue learning through expert insights, and like-minded families grow together, preparing children to flourish in a world that is constantly changing.',

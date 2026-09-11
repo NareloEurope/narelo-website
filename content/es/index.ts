@@ -103,7 +103,7 @@ export const es: Dict = {
     hero: {
       eyebrow: 'Una comunidad privada en torno a la infancia · Marbella',
       headingLines: ['Una infancia que', 'de verdad se vive.'],
-      lede: 'Narelo es una comunidad privada para familias, creada alrededor de experiencias extraordinarias del mundo real. El recorrido comienza desde el embarazo y acompaña a los niños hasta los 8 años.',
+      lede: 'Narelo es una comunidad privada para familias, creada en torno a experiencias extraordinarias de infancia. El recorrido comienza desde el embarazo y acompaña a los niños hasta los 8 años.',
       video: '/video/home-hero.mp4',
       poster: '/images/home-hero-poster.webp',
       scrollHint: 'Desliza',
@@ -202,7 +202,7 @@ export const es: Dict = {
     },
     whatItIs: {
       eyebrow: 'Qué es Narelo',
-      heading: 'Una comunidad de familias, construida en torno a experiencias extraordinarias',
+      heading: 'Una comunidad privada para familias, creada en torno a experiencias extraordinarias de infancia',
       body: 'Narelo es una comunidad privada para familias, creada en torno a experiencias extraordinarias de infancia que ayudan a los niños a crecer a través de la naturaleza, la creatividad, el movimiento y las aventuras en el mundo real, dentro de un grupo de familias con valores afines que crecen juntas.',
       body2: 'Más que un programa infantil, Narelo es una comunidad donde los niños desarrollan confianza, independencia y vínculos significativos; los padres siguen aprendiendo gracias al conocimiento de expertos; y las familias con valores afines crecen juntas, preparando a los niños para desenvolverse en un mundo en constante cambio.',
       image: '/images/img-1667.webp',

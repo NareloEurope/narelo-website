@@ -18,7 +18,10 @@ export const hero = {
   eyebrow: 'A private childhood membership · Marbella',
   /** Split across lines so each can rise independently out of its mask. */
   headingLines: ['Childhood,', 'deeply lived.'],
-  lede: 'Narelo is a members’ community for families built around extraordinary real-world experiences. The membership journey starts from pregnancy all the way to the age of 8.',
+  /* "a members’ community for families ... real-world experiences" until
+     2026-09-10 (Vivien): the first line a visitor reads now uses the same
+     description as the Membership page, a private members’ club. */
+  lede: 'Narelo is a private members’ club built around extraordinary childhood experiences. The membership journey starts from pregnancy all the way to the age of 8.',
   video: '/video/home-hero.mp4',
   poster: '/images/home-hero-poster.webp',
   scrollHint: 'Scroll',

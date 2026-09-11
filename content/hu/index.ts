@@ -85,7 +85,7 @@ export const hu: Dict = {
     hero: {
       eyebrow: 'Privát gyermekkor-tagság · Marbella',
       headingLines: ['Gyermekkor,', 'mélyen megélve.'],
-      lede: 'A Narelo családoknak szóló tagsági közösség, amely rendkívüli, valós világban átélt élmények köré épül. A tagság útja a várandósságtól egészen 8 éves korig tart.',
+      lede: 'A Narelo privát klub, amely rendkívüli gyermekkori élmények köré épül. A tagság útja a várandósságtól egészen 8 éves korig tart.',
       video: '/video/home-hero.mp4',
       poster: '/images/home-hero-poster.webp',
       scrollHint: 'Görgess',
@@ -184,7 +184,7 @@ export const hu: Dict = {
     },
     whatItIs: {
       eyebrow: 'Mi az a Narelo',
-      heading: 'Tagsági közösség, rendkívüli élmények köré építve',
+      heading: 'Privát klub, rendkívüli gyermekkori élmények köré építve',
       body: 'A Narelo privát klub, amely rendkívüli gyermekkori élmények köré épül, és a természeten, a kreativitáson, a mozgáson és a valódi kalandokon keresztül segíti a gyerekek fejlődését, egy olyan tagsági közösségben, ahol hasonlóan gondolkodó családok nőnek fel együtt.',
       body2: 'A Narelo több mint gyerekprogram: tagsági közösség, ahol a gyerekek magabiztosságot, önállóságot és valódi kapcsolatokat építenek, a szülők tovább tanulnak a szakértőinktől, és hasonlóan gondolkodó családok nőnek fel együtt, felkészítve a gyerekeket arra, hogy egy folyamatosan változó világban is kibontakozzanak.',
       image: '/images/img-1667.webp',
