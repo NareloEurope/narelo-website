@@ -8,7 +8,22 @@ import { LANGS, LANG_META, localePath, type Lang } from '@/content/locales';
  * described consistently and search engines are told the three versions are
  * the same page.
  */
-type PageMeta = { title: string; description: string; image?: string };
+type PageMeta = { title: string; description: string };
+
+/*
+ * One social card for the whole site, not one per page.
+ *
+ * Each page used to offer its own photograph, but every one of them was a
+ * .webp and WhatsApp, Facebook and LinkedIn do not render WebP previews: the
+ * link arrived with no picture at all. This is a JPEG at the 1200x630 every
+ * platform crops to, built by scripts/build-share-card.mjs.
+ */
+const SHARE_CARD = {
+  url: '/images/share-card.jpg',
+  width: 1200,
+  height: 630,
+  type: 'image/jpeg',
+} as const;
 
 function metaFor(lang: Lang, path: string): PageMeta {
   const c = content(lang);
@@ -17,18 +32,17 @@ function metaFor(lang: Lang, path: string): PageMeta {
       return {
         title: `${c.site.site.name} · ${c.site.site.tagline}`,
         description: c.home.hero.lede,
-        image: c.home.hero.poster,
       };
     case '/who-we-are/':
-      return { title: c.membership.proof.eyebrow, description: c.membership.proof.people[0].body, image: c.membership.proof.people[0].image };
+      return { title: c.membership.proof.eyebrow, description: c.membership.proof.people[0].body };
     case '/membership/':
-      return { title: c.membership.hero.eyebrow, description: c.membership.hero.lede, image: c.membership.hero.image };
+      return { title: c.membership.hero.eyebrow, description: c.membership.hero.lede };
     case '/experiences/':
-      return { title: c.experiences.hero.eyebrow, description: c.experiences.hero.lede, image: c.experiences.hero.image };
+      return { title: c.experiences.hero.eyebrow, description: c.experiences.hero.lede };
     case '/community/':
-      return { title: c.community.belong.heading, description: c.community.belong.body, image: c.community.hero.image };
+      return { title: c.community.belong.heading, description: c.community.belong.body };
     case '/contact/':
-      return { title: c.pages.contactPage.heading, description: c.pages.contactPage.sub, image: c.pages.contactPage.image };
+      return { title: c.pages.contactPage.heading, description: c.pages.contactPage.sub };
     case '/journal/':
       return { title: c.pages.journalPage.title, description: c.pages.journalPage.emptyBody };
     case '/events/':
@@ -41,7 +55,7 @@ function metaFor(lang: Lang, path: string): PageMeta {
 }
 
 export function pageMetadata(lang: Lang, path: string): Metadata {
-  const { title, description, image } = metaFor(lang, path);
+  const { title, description } = metaFor(lang, path);
   const name = content(lang).site.site.name;
   const isHome = path === '/';
 
@@ -65,11 +79,18 @@ export function pageMetadata(lang: Lang, path: string): Metadata {
       canonical: localePath(lang, path),
       languages: { ...languages, 'x-default': path },
     },
+    /*
+     * Next replaces the layout's openGraph wholesale when a page sets its own,
+     * so siteName and type have to be repeated here or every page loses them.
+     */
     openGraph: {
       title: isHome ? title : `${title} | ${name}`,
       description,
+      siteName: name,
+      type: 'website',
+      url: localePath(lang, path),
       locale: LANG_META[lang].ogLocale,
-      ...(image ? { images: [image] } : {}),
+      images: [{ ...SHARE_CARD, alt: name }],
     },
   };
 }

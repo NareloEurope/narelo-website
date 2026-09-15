@@ -148,6 +148,14 @@ These are decisions already made. Do not quietly reverse them.
    That text has to come from the company's gestor or lawyer. Put it on the
    site exactly as given; never draft it here.
 9. Every content file carries a comment block naming the narelo-os document it came from. **Keep those comments accurate.** If copy changes, and the source changed too, update the comment.
+10. **The social card is a JPEG, and there is one for the whole site.**
+    `public/images/share-card.jpg`, built by `npm run build-share-card` from
+    the home hero poster plus the logo, and set for every page in
+    `lib/metadata.ts`. Every page used to offer its own `.webp` and **WhatsApp,
+    Facebook and LinkedIn do not render WebP previews**, so shared links
+    arrived with no picture. Never point `og:image` at a `.webp`. Note also
+    that Next replaces the layout's `openGraph` wholesale when a page sets its
+    own, so `siteName` and `type` live in `lib/metadata.ts`, not the layout.
 
 ## Canonical names and tone
 
