@@ -9,7 +9,8 @@
     "start": "npx serve out",
     "lint": "next lint",
     "fetch-assets": "node scripts/fetch-assets.mjs",
-    "optimize-assets": "node scripts/optimize-assets.mjs"
+    "optimize-assets": "node scripts/optimize-assets.mjs",
+    "build-share-card": "node scripts/build-share-card.mjs"
   },
   "dependencies": {
     "next": "^16.3.3",
