@@ -47,12 +47,20 @@ files that changed.
 
 ## Search engines
 
-The site currently tells Google and everyone else **not** to index it. That is
-deliberate: it stays invisible until the team says it is ready.
+**The site launched on 16 September 2026 and is open to search engines.** Every
+publish tells Google and the rest that they may list it, and points them at the
+sitemap.
 
-To open it up, add a repository variable `ALLOW_INDEXING` set to `true`, then
-re-run the workflow. That single switch changes both the instruction to search
-engines and the tag on every page.
+To pull it back out again, add a repository variable `ALLOW_INDEXING` set to
+`false` (Settings > Secrets and variables > Actions > Variables) and republish.
+
+Preview links are separate and always have been. They never run this workflow,
+so they stay out of search no matter what the live site does.
+
+Link preview crawlers (WhatsApp, Instagram, LinkedIn and the rest) and the AI
+assistants (Claude, ChatGPT, Perplexity, Gemini and others) are welcome either
+way, by name, so shared links keep their picture and the assistants can still
+find Narelo even if the site is ever taken back out of Google.
 
 ---
 
