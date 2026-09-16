@@ -25,24 +25,80 @@ const SHARE_CARD_CRAWLERS = [
 ];
 
 /**
+ * The AI assistants (Vivien, 2026-09-16).
+ *
+ * Three different jobs, all allowed:
+ *
+ *   - fetching a page because someone asked the assistant about Narelo right
+ *     then (Claude-User, ChatGPT-User, Perplexity-User, Mistralai-User)
+ *   - building the index an assistant answers from and cites
+ *     (Claude-SearchBot, OAI-SearchBot, PerplexityBot, DuckAssistBot, YouBot)
+ *   - collecting pages that train future models (ClaudeBot, GPTBot, CCBot,
+ *     Amazonbot, Bytespider, meta-externalagent, cohere-ai and the rest)
+ *
+ * Two of these names are opt-out switches rather than crawlers of their own:
+ * Google-Extended and Applebot-Extended only say what may be used once the
+ * page has been read, and the reading itself is done by Googlebot and Applebot.
+ * Googlebot comes in under the blanket rule now that the site is launched, so
+ * Gemini and the AI answers in Google search pick Narelo up with it.
+ *
+ * This is a list of names, so any crawler not on it stays out under the
+ * blanket rule below until it is added.
+ */
+const AI_CRAWLERS = [
+  // Anthropic
+  'ClaudeBot',
+  'Claude-User',
+  'Claude-SearchBot',
+  'anthropic-ai',
+  // OpenAI
+  'GPTBot',
+  'ChatGPT-User',
+  'OAI-SearchBot',
+  // Google and Apple: permission tokens, not crawlers (see above)
+  'Google-Extended',
+  'Applebot',
+  'Applebot-Extended',
+  // Perplexity
+  'PerplexityBot',
+  'Perplexity-User',
+  // Meta
+  'meta-externalagent',
+  'FacebookBot',
+  // Others
+  'CCBot', // Common Crawl, which feeds many training sets
+  'Amazonbot',
+  'Bytespider',
+  'cohere-ai',
+  'Mistralai-User',
+  'DuckAssistBot',
+  'YouBot',
+  'Diffbot',
+];
+
+/**
  * The audit found robots.txt returning 404 (2026-09-05, 3.1).
  *
- * It follows the same switch as the meta robots tag in the layout: while the
- * site is pre-launch everything except the share card crawlers is disallowed,
- * so the vercel.app preview cannot be indexed and compete with the real domain.
- * Setting NEXT_PUBLIC_ALLOW_INDEXING=true at launch opens it and points at the
- * sitemap, with no code change.
+ * The crawlers named above are always welcome. Everyone else follows the
+ * launch switch: while the site was pre-launch the rest of the web was
+ * disallowed, so the vercel.app preview could not be indexed and compete with
+ * the real domain later.
+ *
+ * Launched 2026-09-16 (Vivien). The publish to narelo.es now sets
+ * NEXT_PUBLIC_ALLOW_INDEXING=true by default, so the live site is open to
+ * search engines and points at its sitemap. Vercel previews do not run that
+ * workflow, so the variable is unset there and they stay out of search, which
+ * is the whole reason the switch exists.
  */
 export const dynamic = 'force-static';
 
 export default function robots(): MetadataRoute.Robots {
   const live = process.env.NEXT_PUBLIC_ALLOW_INDEXING === 'true';
+  const welcome = [...SHARE_CARD_CRAWLERS, ...AI_CRAWLERS].map((userAgent) => ({
+    userAgent,
+    allow: '/',
+  }));
   return live
-    ? { rules: [{ userAgent: '*', allow: '/' }], sitemap: `${SITE_URL}/sitemap.xml` }
-    : {
-        rules: [
-          ...SHARE_CARD_CRAWLERS.map((userAgent) => ({ userAgent, allow: '/' })),
-          { userAgent: '*', disallow: '/' },
-        ],
-      };
+    ? { rules: [...welcome, { userAgent: '*', allow: '/' }], sitemap: `${SITE_URL}/sitemap.xml` }
+    : { rules: [...welcome, { userAgent: '*', disallow: '/' }] };
 }

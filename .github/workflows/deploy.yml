@@ -17,8 +17,10 @@
 #   FTP_SERVER_DIR  folder on the server to publish into. Defaults to
 #                   /httpdocs/, which is where Plesk serves a domain from.
 #   FTP_PROTOCOL    ftps (default, encrypted) or ftp if the host cannot do FTPS.
-#   ALLOW_INDEXING  set to true only when the site should appear in Google.
-#                   Anything else keeps search engines out.
+#   ALLOW_INDEXING  the site launched on 2026-09-16 and is open to search
+#                   engines by default. Set this to false to pull it back out
+#                   of Google. Vercel previews never see this and stay out of
+#                   search either way.
 #   SITE_URL        the public address, defaults to https://narelo.es
 
 name: Deploy to narelo.es
@@ -50,7 +52,7 @@ jobs:
       - name: Build the static site
         env:
           NEXT_PUBLIC_SITE_URL: ${{ vars.SITE_URL || 'https://narelo.es' }}
-          NEXT_PUBLIC_ALLOW_INDEXING: ${{ vars.ALLOW_INDEXING }}
+          NEXT_PUBLIC_ALLOW_INDEXING: ${{ vars.ALLOW_INDEXING || 'true' }}
         run: npm run build
 
       - name: Upload to the hosting server

@@ -105,8 +105,13 @@ framework preset detects Next.js and needs no extra configuration.
 Set `NEXT_PUBLIC_SITE_URL` to the production origin in the host's environment
 settings.
 
-**Do not point DNS at this until the contact form is wired up** — a live site that
-drops enquiries is worse than the Wix one.
+The site is live at narelo.es and launched on 16 September 2026. Publishing is
+automatic on every push to `main`; see DEPLOYMENT.md.
+
+⚠️ **The contact form still does not deliver anywhere.** It shows a thank-you
+message and the enquiry goes nowhere. WhatsApp is the primary way in, so the
+site is not silent, but the form should be connected to a form service or taken
+off the page.
 
 ---
 
