@@ -22,6 +22,14 @@ export type Lang = (typeof LANGS)[number];
 
 export const DEFAULT_LANG: Lang = 'en';
 
+/**
+ * Pages that exist only in English, with no translated counterpart: today
+ * just /dossier/, whose source PDF has no Spanish version. Header and Footer
+ * hide the language selector on these rather than link to a route that does
+ * not exist.
+ */
+export const UNLOCALIZED_PATHS: readonly string[] = ['/dossier/'];
+
 /** The language trees that get built under a prefix. */
 export const PREFIXED_LANGS = LANGS.filter((l) => l !== DEFAULT_LANG);
 

@@ -5,7 +5,7 @@ import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import LanguageSelector from '@/components/LanguageSelector';
 import { content } from '@/content/dictionary';
-import { langFromPath, localePath } from '@/content/locales';
+import { langFromPath, localePath, UNLOCALIZED_PATHS } from '@/content/locales';
 
 /**
  * Sits transparently over a page's hero and resolves into a solid bar once you
@@ -22,6 +22,7 @@ export default function Header() {
   const lang = langFromPath(pathname);
   const { nav, headerCta, site, contact, ui } = content(lang).site;
   const t = (path: string) => localePath(lang, path);
+  const showLanguageSelector = !UNLOCALIZED_PATHS.includes(pathname);
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   /**
@@ -125,7 +126,7 @@ export default function Header() {
           >
             {headerCta.label}
           </a>
-          <LanguageSelector current={lang} pathname={pathname} light={light} />
+          {showLanguageSelector && <LanguageSelector current={lang} pathname={pathname} light={light} />}
         </nav>
 
         <button
@@ -184,7 +185,9 @@ export default function Header() {
         <a href={contact.whatsapp} target="_blank" rel="noreferrer noopener" className="btn btn-solid mt-10 w-full">
           {headerCta.label}
         </a>
-        <LanguageSelector current={lang} pathname={pathname} className="mt-10 justify-center" />
+        {showLanguageSelector && (
+          <LanguageSelector current={lang} pathname={pathname} className="mt-10 justify-center" />
+        )}
       </div>
     </>
   );
