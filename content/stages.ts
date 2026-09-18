@@ -27,6 +27,12 @@
  * Builders II and Navigators' "what to expect" lists (Vivien, 2026-09-19),
  * supplied directly rather than transcribed from a stage brief.
  *
+ * `shortSummary` (Vivien, 2026-09-19) is a condensed rewrite of `summary`
+ * for the dossier's compact per-stage card, which asked for something
+ * shorter and more scannable than the Experiences page's fuller paragraph.
+ * Same facts, fewer words: nothing here says anything `summary` does not.
+ * The Experiences page's StageAccordion keeps using the full `summary`.
+ *
  * House style: no em dashes in published copy.
  */
 
@@ -36,6 +42,14 @@ export type Stage = {
   tagline: string;
   motto?: string;
   summary: string;
+  /**
+   * A shorter rewrite of `summary`, for compact contexts like the dossier's
+   * card. Optional, not because English ever omits it, but because `Stage`
+   * is shared with the translated `content/es/`, `content/de/` and
+   * `content/hu/` stage lists, which the dossier does not use (it is
+   * English only) and so do not carry a translation of this field.
+   */
+  shortSummary?: string;
   /** "What to expect" bullets from the stage brief, where one exists. */
   whatToExpect?: readonly string[];
   image: string;
@@ -48,6 +62,7 @@ export const stageDetails: readonly Stage[] = [
     tagline: 'A gentle beginning, before your child arrives.',
     summary:
       'A calm space for expecting mothers: time to slow down, connect with other women, and begin the Narelo journey before your child is born.',
+    shortSummary: 'A calm space for expecting mothers to slow down and connect, before your child is born.',
     /*
      * Pregnant woman, eyes closed, in white, sitting cross-legged in soft
      * light, hands resting on her belly. Supplied by Vivien (2026-09-07),
@@ -62,6 +77,7 @@ export const stageDetails: readonly Stage[] = [
     motto: 'I sense and discover.',
     summary:
       'A safe, loving space where babies explore with their senses, move their bodies and build the foundation for connection, curiosity and confidence, together with their parent.',
+    shortSummary: 'A safe space where babies explore, move and connect, together with their parent.',
     whatToExpect: [
       'Welcome and settle: arrival, greeting, free exploration and settling in the space',
       'Parent and baby connection: songs, baby massage, gentle movement and playful bonding',
@@ -82,6 +98,7 @@ export const stageDetails: readonly Stage[] = [
     motto: 'I move and explore.',
     summary:
       'An active, joyful space where toddlers build strength, balance and confidence through movement, play and discovery, indoors and out in the world.',
+    shortSummary: 'An active space where toddlers build strength and confidence through movement and play.',
     whatToExpect: [
       'Welcome and warm up: songs, movement and a hello ritual together',
       'Movement circuit: climb, crawl, balance, push, pull and jump through a prepared space',
@@ -102,6 +119,7 @@ export const stageDetails: readonly Stage[] = [
     motto: 'I discover.',
     summary:
       'First adventures in the Five Worlds. Sensory, playful experiences that spark curiosity, build independence and create joyful memories.',
+    shortSummary: 'First adventures in the Five Worlds: playful experiences that spark curiosity and independence.',
     whatToExpect: [
       'Sensory exploration in nature and real environments',
       'Play-based learning through movement and discovery',
@@ -118,6 +136,7 @@ export const stageDetails: readonly Stage[] = [
     motto: 'I explore and create.',
     summary:
       'Hands-on experiences in the Five Worlds that encourage exploration, creativity, questioning and the joy of making.',
+    shortSummary: 'Hands-on experiences in the Five Worlds: exploration, creativity and the joy of making.',
     whatToExpect: [
       'Nature exploration and outdoor adventures',
       'Creative projects with natural and recycled materials',
@@ -135,6 +154,7 @@ export const stageDetails: readonly Stage[] = [
     motto: 'I investigate and build.',
     summary:
       'Deeper investigations and real-world experiences that develop thinking, collaboration and growing independence.',
+    shortSummary: 'Deeper investigations that build thinking, collaboration and independence.',
     whatToExpect: [
       'In-depth nature and place-based investigations',
       'Small projects, experiments and creations',
@@ -152,6 +172,7 @@ export const stageDetails: readonly Stage[] = [
     motto: 'I go deeper and find my way.',
     summary:
       'Experiences that build curiosity, resilience and purpose, as children grow into their own independence.',
+    shortSummary: 'Experiences that build curiosity, resilience and independence.',
     whatToExpect: [
       'Real-world adventures and longer explorations',
       'Research, projects and creative expression',

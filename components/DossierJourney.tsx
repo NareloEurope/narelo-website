@@ -67,14 +67,15 @@ export default function DossierJourney({
               style={{ gridTemplateRows: isOpen ? '1fr' : '0fr', transitionTimingFunction: 'var(--ease-in-out-quint)' }}
             >
               <div className="overflow-hidden">
-                {/* Denser than a first pass (Vivien, 2026-09-19): the motto
-                    read as a second headline at display-md, competing with
-                    the stage name above it, and the whole card felt loose
-                    for something meant to be quick to scan. The motto drops
-                    to a small italic line and every gap tightens a notch. */}
+                {/* Denser than a first pass (Vivien, 2026-09-19, twice over):
+                    the motto is a small italic line now, well below body
+                    size, not a heading competing with the stage name above
+                    it, and the summary is `shortSummary`, a genuinely
+                    shorter rewrite for this card rather than the Experiences
+                    page's fuller paragraph, kept at the same facts. */}
                 <div className="mb-4 ml-[4.25rem] rounded-[2px] bg-shell p-5">
-                  {stage.motto && <p className="body-copy mb-2 italic text-olive">{stage.motto}</p>}
-                  <p className="body-copy text-sm text-ink-soft">{stage.summary}</p>
+                  {stage.motto && <p className="mb-2 text-sm italic leading-snug text-olive">{stage.motto}</p>}
+                  <p className="body-copy text-sm text-ink-soft">{stage.shortSummary ?? stage.summary}</p>
                   {stage.whatToExpect && (
                     <div className="mt-4 border-t border-ink/12 pt-4">
                       <p className="eyebrow mb-2 text-olive">{whatToExpectLabel}</p>
