@@ -67,16 +67,21 @@ export default function DossierJourney({
               style={{ gridTemplateRows: isOpen ? '1fr' : '0fr', transitionTimingFunction: 'var(--ease-in-out-quint)' }}
             >
               <div className="overflow-hidden">
-                <div className="mb-4 ml-[4.25rem] rounded-[2px] bg-shell p-6">
-                  {stage.motto && <p className="display display-md mb-3 italic text-olive">{stage.motto}</p>}
-                  <p className="body-copy text-ink-soft">{stage.summary}</p>
+                {/* Denser than a first pass (Vivien, 2026-09-19): the motto
+                    read as a second headline at display-md, competing with
+                    the stage name above it, and the whole card felt loose
+                    for something meant to be quick to scan. The motto drops
+                    to a small italic line and every gap tightens a notch. */}
+                <div className="mb-4 ml-[4.25rem] rounded-[2px] bg-shell p-5">
+                  {stage.motto && <p className="body-copy mb-2 italic text-olive">{stage.motto}</p>}
+                  <p className="body-copy text-sm text-ink-soft">{stage.summary}</p>
                   {stage.whatToExpect && (
-                    <div className="mt-5 border-t border-ink/12 pt-5">
-                      <p className="eyebrow mb-3 text-olive">{whatToExpectLabel}</p>
-                      <ul className="flex flex-col gap-2">
+                    <div className="mt-4 border-t border-ink/12 pt-4">
+                      <p className="eyebrow mb-2 text-olive">{whatToExpectLabel}</p>
+                      <ul className="flex flex-col gap-1.5">
                         {stage.whatToExpect.map((point) => (
-                          <li key={point} className="body-copy flex gap-3 text-ink-soft">
-                            <span className="mt-[0.65em] h-1 w-1 shrink-0 rounded-full bg-olive" aria-hidden="true" />
+                          <li key={point} className="body-copy flex gap-3 text-sm text-ink-soft">
+                            <span className="mt-[0.6em] h-1 w-1 shrink-0 rounded-full bg-olive" aria-hidden="true" />
                             <span>{point}</span>
                           </li>
                         ))}
@@ -84,12 +89,12 @@ export default function DossierJourney({
                     </div>
                   )}
 
-                  <div className="mt-5 border-t border-ink/12 pt-5">
-                    <p className="eyebrow mb-3 text-olive">{includedLabel}</p>
-                    <ul className="flex flex-col gap-2">
+                  <div className="mt-4 border-t border-ink/12 pt-4">
+                    <p className="eyebrow mb-2 text-olive">{includedLabel}</p>
+                    <ul className="flex flex-col gap-1.5">
                       {includedItems.map((item) => (
-                        <li key={item.title} className="body-copy flex gap-3 text-ink-soft">
-                          <span className="mt-[0.65em] h-1 w-1 shrink-0 rounded-full bg-olive" aria-hidden="true" />
+                        <li key={item.title} className="body-copy flex gap-3 text-sm text-ink-soft">
+                          <span className="mt-[0.6em] h-1 w-1 shrink-0 rounded-full bg-olive" aria-hidden="true" />
                           <span>{item.title}</span>
                         </li>
                       ))}

@@ -23,6 +23,10 @@
  * Taglines refreshed from Vivien's feedback pass (2026-08-31); names and
  * ages are unchanged.
  *
+ * Woodwork and real tools, at an age-appropriate level, added to Builders I,
+ * Builders II and Navigators' "what to expect" lists (Vivien, 2026-09-19),
+ * supplied directly rather than transcribed from a stage brief.
+ *
  * House style: no em dashes in published copy.
  */
 
@@ -120,6 +124,7 @@ export const stageDetails: readonly Stage[] = [
       'Movement, yoga and body awareness',
       'Music, stories, drama and imaginative play',
       'Group challenges, teamwork and problem solving',
+      'Building and creating with wood and natural materials, using real tools at an age-appropriate level',
     ],
     image: '/images/gallery-02.webp',
   },
@@ -136,6 +141,7 @@ export const stageDetails: readonly Stage[] = [
       'Challenging movement and outdoor activities',
       'Meeting experts, visiting inspiring places',
       'Planning, reflecting and sharing ideas',
+      'Building and creating with wood and natural materials, using real tools at an age-appropriate level',
     ],
     image: '/images/home-not-to-be-rushed.webp',
   },
@@ -152,6 +158,7 @@ export const stageDetails: readonly Stage[] = [
       'Leadership, collaboration and community impact',
       'Physical challenges and skill-building',
       'Reflection, goal setting and personal growth',
+      'Building and creating with wood and natural materials, using real tools at an age-appropriate level',
     ],
     /*
      * Four children running towards the camera through a sunlit wood.
