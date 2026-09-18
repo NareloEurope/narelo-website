@@ -59,15 +59,6 @@ export const membershipChapter = {
   heartEyebrow: 'The heart of the membership',
   heartHeading: 'Weekly Experiences, all year round',
   heartFacts: ['Pregnancy to age eight', 'Small groups of eight', '90 minutes'],
-  enjoyLabel: 'Members also enjoy',
-  /**
-   * Named with the site's own current names for these (Rui/Vivien's renames:
-   * Birthday and Bespoke Private Experiences), not the dossier's older
-   * "Celebration" and "Private Experiences", so the one page that lists
-   * pricing does not reintroduce retired names elsewhere in the site.
-   */
-  enjoyItems: ['Signature Saturdays', 'Guest Expert Insights', 'Holiday Experiences', 'Birthday Experiences', 'Bespoke Private Experiences'],
-  bookFirst: 'Members book first, at special rates, ahead of anyone outside the club.',
 } as const;
 
 export type PricingPlan = {

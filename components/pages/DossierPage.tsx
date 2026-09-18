@@ -1,5 +1,6 @@
 import Section from '@/components/Section';
 import PromiseCards from '@/components/PromiseCards';
+import IncludedPanels from '@/components/IncludedPanels';
 import StageTimeline from '@/components/StageTimeline';
 import WhatsAppIcon from '@/components/WhatsAppIcon';
 import * as home from '@/content/home';
@@ -218,24 +219,26 @@ export default function DossierPage() {
         <div className="mx-auto mt-16 max-w-2xl rounded-[2px] bg-linen p-8 text-center shadow-[0_18px_40px_-30px_rgba(43,32,24,0.45)] ring-1 ring-forest/15 fade md:p-11" data-reveal>
           <p className="eyebrow mb-4 text-olive">{membershipChapter.heartEyebrow}</p>
           <h3 className="display display-md mb-6">{membershipChapter.heartHeading}</h3>
-          <p className="eyebrow mb-10 flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-ink-soft">
+          <p className="eyebrow flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-ink-soft">
             {membershipChapter.heartFacts.map((fact) => (
               <span key={fact}>{fact}</span>
             ))}
           </p>
-
-          <p className="eyebrow mb-6 border-t border-ink/12 pt-8 text-olive">{membershipChapter.enjoyLabel}</p>
-          <ul className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3">
-            {membershipChapter.enjoyItems.map((item) => (
-              <li key={item} className="body-copy text-ink">
-                {item}
-              </li>
-            ))}
-          </ul>
-
-          <p className="lede mt-8 border-t border-ink/12 pt-8 italic text-ink-soft">{membershipChapter.bookFirst}</p>
-          <p className="body-copy mt-4 text-ink-soft">{regular.note}</p>
         </div>
+
+        {/* What is actually included in membership, kept apart from what is
+            bookable on top at a member rate: the dossier's "members also
+            enjoy" list ran both together under one "book first" line, which
+            reads as though Community Mornings and the included Expert
+            Insights sessions cost extra too (Vivien, 2026-09-18). These are
+            the same two groups the Membership page already keeps distinct. */}
+        <div className="mx-auto mt-12 max-w-2xl fade" data-reveal>
+          <IncludedPanels groups={included.groups} />
+        </div>
+
+        <p className="body-copy mx-auto mt-12 max-w-2xl text-center text-ink-soft fade" data-reveal>
+          {regular.note}
+        </p>
       </Section>
 
       {/* ---------- Your membership ---------- */}
