@@ -1,15 +1,16 @@
 import Section from '@/components/Section';
 import PromiseCards from '@/components/PromiseCards';
 import IncludedPanels from '@/components/IncludedPanels';
-import StageIcon from '@/components/StageIcons';
+import DossierJourney from '@/components/DossierJourney';
 import PriceReveal from '@/components/PriceReveal';
 import WhatsAppIcon from '@/components/WhatsAppIcon';
 import Link from 'next/link';
 import * as home from '@/content/home';
 import * as membership from '@/content/membership';
 import * as experiences from '@/content/experiences';
+import * as stages from '@/content/stages';
 import * as dossier from '@/content/dossier';
-import { contact, socialIcons } from '@/content/site';
+import { contact, socialIcons, ui } from '@/content/site';
 
 /**
  * The Narelo Family Guide as a page: /dossier/.
@@ -205,24 +206,19 @@ export default function DossierPage() {
           layout instead, since it is the one thing the team asked to carry
           over exactly (Vivien, 2026-09-18). The marks themselves stay the
           site's own growth icons, so the two are still recognisably one
-          family rather than a second icon set. */}
+          family rather than a second icon set.
+
+          Each row now opens a small card of its own on tap (Vivien,
+          2026-09-19): the stage's motto, summary and "what to expect"
+          bullets, the same content the Experiences page's StageAccordion
+          already carries in full, from content/stages.ts rather than
+          written again here. */}
       <Section id="journey">
         <div className="mx-auto max-w-2xl">
           <h3 className="display display-md mb-10 text-center">{experienceChapter.journeyEyebrow}</h3>
         </div>
 
-        <ol className="relative mx-auto max-w-md">
-          <div className="absolute left-6 top-6 bottom-6 w-px bg-olive/25" aria-hidden="true" />
-          {home.journey.stages.map((stage, i) => (
-            <li key={stage.name} className="relative flex items-center gap-5 py-3">
-              <span className="relative z-10 flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-olive/45 bg-linen text-olive">
-                <StageIcon index={i} className="h-6 w-6" />
-              </span>
-              <span className="display display-md flex-1 leading-snug">{stage.name}</span>
-              <span className="eyebrow text-ink-soft">{stage.age}</span>
-            </li>
-          ))}
-        </ol>
+        <DossierJourney stages={stages.stageDetails} whatToExpectLabel={ui.whatToExpect} />
 
         <p className="body-copy mx-auto mt-10 max-w-2xl text-center text-ink-soft">
           {membership.howItWorks.items[1].body} {home.journey.note}
