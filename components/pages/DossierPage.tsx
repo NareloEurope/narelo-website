@@ -296,91 +296,104 @@ export default function DossierPage() {
           <p className="body-copy mt-6 text-ink-soft">{pricing.intro}</p>
         </div>
 
-        {/* Two membership choices per age group, not four pricing tiers
-            (Vivien, 2026-09-19): a 3-Month Membership and an Annual
-            Membership side by side, each leading with its monthly figure
-            and carrying the Founding Family rate as a second line inside
-            it, so the decision reads as one question, three months or the
-            year. The real totals are a tap away under the monthly figure
-            ("See the full price", back by request after one revision
-            without it). No "save N%" anywhere. The annual option is
-            the solid forest block, with one factual line about Founding
-            Families, in place of the earlier "rate we hope you land on". */}
-        <div className="mx-auto mt-12 flex max-w-3xl flex-col gap-6">
-          {pricing.plans.map((plan) => (
-            <div
-              key={plan.name}
-              className="rounded-[2px] bg-linen p-7 shadow-[0_18px_40px_-30px_rgba(43,32,24,0.45)] ring-1 ring-forest/15 md:p-9"
-            >
-              <h3 className="display display-md leading-snug">
-                {plan.name} <span className="body-copy text-ink-soft">({plan.age})</span>
-              </h3>
-
-              <div className={`mt-6 grid gap-4 ${plan.options.length > 1 ? 'md:grid-cols-2' : ''}`}>
-                {plan.options.map((option) => {
-                  const dark = !!option.best;
-                  const muted = dark ? 'text-linen/70' : 'text-ink-soft';
-                  return (
-                    <div
-                      key={option.name}
-                      className={`flex flex-col items-center gap-1 rounded-[2px] px-5 py-7 text-center ${
-                        dark ? 'bg-forest text-linen' : 'bg-shell/70 text-ink'
-                      }`}
-                    >
-                      <p className={`eyebrow ${dark ? 'text-linen/80' : 'text-olive'}`}>{option.name}</p>
-                      <p className={`display display-md mt-2 ${dark ? 'text-linen' : 'text-ink'}`}>
-                        {option.perMonth}
-                        <span className={`body-copy ${muted}`}>{pricing.perMonthSuffix}</span>
-                      </p>
-                      {option.equivalent && <p className={`body-copy -mt-1 text-sm ${muted}`}>{pricing.equivalentSuffix}</p>}
-                      <p className={`body-copy mt-3 ${dark ? 'text-linen/90' : 'text-olive'}`}>
-                        {pricing.foundingLabel}: {option.foundingPerMonth}
-                        <span className={muted}>{pricing.perMonthSuffix}</span>
-                      </p>
-                      <PriceReveal label={pricing.revealLabel} light={dark}>
-                        {option.total} · {pricing.foundingLabel} {option.foundingTotal}
-                      </PriceReveal>
-                      {option.best && (
-                        <p className="body-copy mt-4 max-w-[16rem] border-t border-linen/20 pt-4 text-sm text-linen/90">
-                          {pricing.bestLabel}
-                        </p>
-                      )}
-                    </div>
-                  );
-                })}
+        {/* The Narelo Price List 2026, laid out as the one-page PDF lays it
+            out (Vivien, 2026-09-19): two tiers, two prices in a table, the
+            fine print under it, then "Two ways to join" as two cards with
+            the recommended one in forest, then three "Good to know" facts
+            and the one-sentence "included in every membership". The
+            12-month annual total is behind the PriceReveal tap; the
+            3-month "equals N€ per month" is a comparison and stays in
+            view. Every word is content/dossier.ts. */}
+        <div className="mx-auto mt-14 max-w-3xl">
+          <p className="eyebrow mb-5 text-olive">{pricing.tiersLabel}</p>
+          <div className="flex flex-col gap-6">
+            {pricing.tiers.map((tier) => (
+              <div
+                key={tier.name}
+                className="grid rounded-[2px] bg-linen shadow-[0_18px_40px_-30px_rgba(43,32,24,0.45)] ring-1 ring-forest/15 md:grid-cols-[1.1fr_1fr_1fr]"
+              >
+                <div className="p-7 md:p-8">
+                  <h3 className="display display-md leading-snug">{tier.name}</h3>
+                  <p className="body-copy mt-2 text-ink-soft">{tier.groups}</p>
+                  <p className="body-copy mt-1 text-sm text-ink-soft">{tier.ages}</p>
+                </div>
+                <div className="flex flex-col items-center justify-center bg-forest/[0.08] p-7 text-center md:p-8">
+                  <p className="eyebrow text-olive">{pricing.columnMonthly}</p>
+                  <p className="display display-md mt-3 text-olive">
+                    {tier.monthly.perMonth}
+                    <span className="body-copy text-ink-soft">{pricing.perMonthSuffix}</span>
+                  </p>
+                  <PriceReveal label={pricing.revealLabel}>{tier.monthly.perYear}</PriceReveal>
+                </div>
+                <div className="flex flex-col items-center justify-center bg-shell/70 p-7 text-center md:p-8">
+                  <p className="eyebrow text-ink-soft">{pricing.columnSeason}</p>
+                  <p className="display display-md mt-3 text-ink">
+                    {tier.season.once}
+                    <span className="body-copy text-ink-soft">{pricing.onceSuffix}</span>
+                  </p>
+                  <p className="body-copy mt-2 text-sm text-ink-soft">{tier.season.equals}</p>
+                </div>
               </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
 
-        <p className="body-copy mx-auto mt-10 max-w-2xl text-center text-ink-soft">
-          {pricing.joiningFee}
-        </p>
-
-        {/* The payment logic, explained once and separately from the
-            choice itself (Vivien, 2026-09-19), so the cards above stay two
-            figures and nothing else. */}
-        <div className="mx-auto mt-14 max-w-2xl border-t border-ink/12 pt-12">
-          <p className="eyebrow mb-5 text-olive">{pricing.howItWorks.label}</p>
-          <div className="flex flex-col gap-4">
-            {pricing.howItWorks.body.map((paragraph) => (
-              <p key={paragraph} className="body-copy text-ink-soft">
-                {paragraph}
+          <div className="mt-6 flex flex-col gap-2">
+            {pricing.finePrint.map((line) => (
+              <p key={line} className="body-copy text-sm text-ink-soft">
+                {line}
               </p>
             ))}
           </div>
         </div>
 
-        <ul className="mx-auto mt-14 flex max-w-2xl flex-col gap-8 border-t border-ink/12 pt-14 sm:flex-row sm:justify-center sm:gap-16">
-          {pricing.discounts.map((d) => (
-            <li key={d.label} className="flex flex-col items-center text-center">
-              <span className="flex h-16 w-16 items-center justify-center rounded-full border border-olive/45 text-olive">
-                <span className="eyebrow !tracking-normal">{d.value}</span>
-              </span>
-              <p className="body-copy mt-4 max-w-[16rem] text-ink-soft">{d.label}</p>
-            </li>
-          ))}
-        </ul>
+        <div className="mx-auto mt-16 max-w-3xl">
+          <p className="eyebrow mb-5 text-olive">{pricing.joinLabel}</p>
+          <div className="grid gap-6 md:grid-cols-2">
+            {pricing.joinOptions.map((option) => {
+              const dark = !!option.recommended;
+              return (
+                <div
+                  key={option.heading}
+                  className={`rounded-[2px] p-7 md:p-8 ${
+                    dark ? 'bg-forest text-linen' : 'bg-linen text-ink ring-1 ring-forest/15'
+                  }`}
+                >
+                  <p className={`eyebrow ${dark ? 'text-linen/70' : 'text-ink-soft'}`}>{option.eyebrow}</p>
+                  <h3 className="display display-md mt-2 leading-snug">{option.heading}</h3>
+                  <p
+                    className={`eyebrow mt-4 inline-block border px-3 py-1.5 ${
+                      dark ? 'border-linen/40 text-linen/90' : 'border-olive/50 text-olive'
+                    }`}
+                  >
+                    {option.tag}
+                  </p>
+                  <ul className="mt-6 flex flex-col gap-2.5">
+                    {option.points.map((point) => (
+                      <li key={point} className={`body-copy flex gap-3 text-sm ${dark ? 'text-linen/90' : 'text-ink-soft'}`}>
+                        <span className={`mt-[0.6em] h-1 w-1 shrink-0 rounded-full ${dark ? 'bg-linen/70' : 'bg-olive'}`} aria-hidden="true" />
+                        <span>{point}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+
+        <div className="mx-auto mt-16 max-w-3xl">
+          <p className="eyebrow mb-5 text-olive">{pricing.goodToKnowLabel}</p>
+          <ul className="grid gap-4 sm:grid-cols-3">
+            {pricing.goodToKnow.map((fact) => (
+              <li key={fact.title} className="flex flex-col items-center rounded-[2px] bg-linen p-6 text-center ring-1 ring-forest/15">
+                <span className="display display-md text-olive">{fact.value}</span>
+                <p className="body-copy mt-2 text-ink">{fact.title}</p>
+                <p className="body-copy mt-1 text-sm text-ink-soft">{fact.label}</p>
+              </li>
+            ))}
+          </ul>
+          <p className="body-copy mt-8 text-sm text-ink-soft">{pricing.includedNote}</p>
+        </div>
       </Section>
 
       {/* ---------- Reserve your family's place ---------- */}
