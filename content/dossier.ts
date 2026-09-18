@@ -64,26 +64,23 @@ export const membershipChapter = {
 /**
  * Shown per month rather than as one termly or annual total (Vivien,
  * 2026-09-18): families who received the totals as a single lump figure
- * stopped replying, and a monthly figure is the honest, familiar way most
- * memberships and subscriptions are actually compared.
+ * stopped replying. This is the standard subscription convention Vivien
+ * asked for directly: the figure a family weighs is "how much a month",
+ * the same way a yearly app subscription is sold as its monthly-equivalent
+ * price even though the charge itself is once a year.
  *
- * The totals themselves are unchanged, nothing here is a new price. Each
- * monthly figure is the real total divided by the actual weeks the 2026/27
- * season runs, not a blind divide-by-12: the season is 37 weeks, the last
- * week of October (26 Oct 2026, the calendar Vivien supplied treats the
- * first three weeks of October as before the season starts) to the second
- * week of July 2027 (11 Jul, the last week before the summer closure),
- * which is 8.51 months. Termly divides one term's fee by a quarter of that,
- * 2.13 months; yearly divides the discounted annual total by the full 8.51.
- * That is also why the yearly monthly figure comes out lower than the
- * termly one, the 5% saving, not a rounding artefact.
+ * The totals themselves are unchanged, nothing here is a new price. Termly
+ * divides one term's fee by 3, the ordinary length of a term; yearly divides
+ * the discounted annual total by 12. (An earlier pass divided by the
+ * 2026/27 season's real length, 8.5 months, rather than 3 and 12; Vivien
+ * asked for the plain convention instead, 2026-09-18.)
  *
- * The founding-family figures (Vivien, 2026-09-18) apply that group's
- * further 10% off on top of whichever of the two above a family already
- * pays, termly or yearly, since it is a lifetime membership discount, not
- * one tied to paying annually. The two discounts multiply rather than add:
- * yearly's monthly figure is already 5% down, and founding takes a further
- * 10% off that, roughly 14.5% off the termly rate in total, not a flat 15%.
+ * The founding-family figures apply that group's further 10% off on top of
+ * whichever of the two above a family already pays, termly or yearly, since
+ * it is a lifetime membership discount, not one tied to paying annually.
+ * The two discounts multiply rather than add: yearly's monthly figure is
+ * already 5% down, and founding takes a further 10% off that, roughly 14.5%
+ * off the termly rate in total, not a flat 15%.
  */
 export type PricingPlan = {
   readonly name: string;
@@ -104,7 +101,7 @@ export const pricing = {
   heading: 'Your membership',
   eyebrow: 'Every week · All year round',
   lede: 'One membership, one place to belong',
-  seasonNote: 'Shown per month, based on the 2026/27 season: the last week of October to the second week of July, about 8.5 months. The termly and yearly totals are unchanged, and appear underneath.',
+  seasonNote: 'Shown per month: the termly figure divides one term’s fee across its 3 months, the yearly figure divides the annual total across the year. The termly and yearly totals are unchanged, and appear underneath.',
   termlyLabel: 'Paid termly',
   yearlyLabel: 'Paid yearly · save 5%',
   perMonthSuffix: '/month',
@@ -115,11 +112,11 @@ export const pricing = {
       name: 'Nurture',
       age: '0–1',
       quarterly: {
-        termlyPerMonth: '209€',
+        termlyPerMonth: '148€',
         termlyTotal: '445€ each term',
-        termlyFoundingPerMonth: '188€',
-        yearlyPerMonth: '199€',
-        yearlyFoundingPerMonth: '179€',
+        termlyFoundingPerMonth: '134€',
+        yearlyPerMonth: '141€',
+        yearlyFoundingPerMonth: '127€',
         annualFull: '1.785€',
         annualDiscounted: '1.695€',
       },
@@ -128,11 +125,11 @@ export const pricing = {
       name: 'The Nest',
       age: '1–2',
       quarterly: {
-        termlyPerMonth: '244€',
+        termlyPerMonth: '173€',
         termlyTotal: '520€ each term',
-        termlyFoundingPerMonth: '220€',
-        yearlyPerMonth: '233€',
-        yearlyFoundingPerMonth: '209€',
+        termlyFoundingPerMonth: '156€',
+        yearlyPerMonth: '165€',
+        yearlyFoundingPerMonth: '148€',
         annualFull: '2.085€',
         annualDiscounted: '1.980€',
       },
@@ -141,11 +138,11 @@ export const pricing = {
       name: 'Little Beginnings',
       age: '2–3',
       quarterly: {
-        termlyPerMonth: '315€',
+        termlyPerMonth: '223€',
         termlyTotal: '670€ each term',
-        termlyFoundingPerMonth: '283€',
-        yearlyPerMonth: '300€',
-        yearlyFoundingPerMonth: '270€',
+        termlyFoundingPerMonth: '201€',
+        yearlyPerMonth: '212€',
+        yearlyFoundingPerMonth: '191€',
         annualFull: '2.685€',
         annualDiscounted: '2.550€',
       },
@@ -154,11 +151,11 @@ export const pricing = {
       name: 'Builders I',
       age: '3–5',
       quarterly: {
-        termlyPerMonth: '315€',
+        termlyPerMonth: '223€',
         termlyTotal: '670€ each term',
-        termlyFoundingPerMonth: '283€',
-        yearlyPerMonth: '300€',
-        yearlyFoundingPerMonth: '270€',
+        termlyFoundingPerMonth: '201€',
+        yearlyPerMonth: '212€',
+        yearlyFoundingPerMonth: '191€',
         annualFull: '2.685€',
         annualDiscounted: '2.550€',
       },
@@ -167,11 +164,11 @@ export const pricing = {
       name: 'Builders II',
       age: '5–6',
       quarterly: {
-        termlyPerMonth: '315€',
+        termlyPerMonth: '223€',
         termlyTotal: '670€ each term',
-        termlyFoundingPerMonth: '283€',
-        yearlyPerMonth: '300€',
-        yearlyFoundingPerMonth: '270€',
+        termlyFoundingPerMonth: '201€',
+        yearlyPerMonth: '212€',
+        yearlyFoundingPerMonth: '191€',
         annualFull: '2.685€',
         annualDiscounted: '2.550€',
       },
@@ -180,11 +177,11 @@ export const pricing = {
       name: 'Navigators',
       age: '6–8',
       quarterly: {
-        termlyPerMonth: '334€',
+        termlyPerMonth: '237€',
         termlyTotal: '710€ each term',
-        termlyFoundingPerMonth: '300€',
-        yearlyPerMonth: '317€',
-        yearlyFoundingPerMonth: '285€',
+        termlyFoundingPerMonth: '213€',
+        yearlyPerMonth: '225€',
+        yearlyFoundingPerMonth: '202€',
         annualFull: '2.835€',
         annualDiscounted: '2.695€',
       },
