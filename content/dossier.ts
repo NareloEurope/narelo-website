@@ -17,8 +17,7 @@
  * chapter headings, lives in this file.
  *
  * Pricing is published here on the team's explicit instruction (Vivien,
- * 2026-09-17), from the Narelo Price List 2026 since 2026-09-19 (see the
- * `pricing` comment), even though the rest of the site carries none: the dossier is
+ * 2026-09-17), even though the rest of the site carries none: the dossier is
  * the one place a family already deep in conversation sees figures, and this
  * page is that same document, not the public marketing pages. Do not lift
  * these figures onto Membership, Experiences or any other page.
@@ -63,135 +62,239 @@ export const membershipChapter = {
 } as const;
 
 /**
- * Pricing follows the Narelo Price List 2026 (EN), a one-page PDF Vivien
- * supplied on 2026-09-19 to replace everything the dossier PDF and this
- * page said about prices before. It is a different model, not new numbers
- * in the old one:
+ * Two membership choices, not four pricing options (Vivien, 2026-09-19,
+ * after the financial advisor): a 3-Month Membership and an Annual
+ * Membership. The Founding Family rate is a second line inside the Annual
+ * Membership only; the 3-Month Membership carries a one-line note
+ * ("Flexible 3-month commitment") and no founding rate, exactly as Vivien
+ * laid the Navigators card out on 2026-09-19 after a one-page price list
+ * (two tiers, Early and Explore) had been tried and set aside the same
+ * day. Bloom, a single four-month membership with no annual option, keeps
+ * its founding line since there is no annual card for it to live on.
+ * Figures read "€284 / month", euro sign first, as Vivien wrote them.
+ * The decision a family faces should be one question, three months or the
+ * year, and the page is built so that is what it feels like. "Pay per term"
+ * and "pay per year" are no longer the headline, quarterly payment of the
+ * annual fee is not mentioned at all (it is handled in the contract for
+ * families who ask), no tier says "save N%" (discount-heavy, not Narelo),
+ * and the real totals are one tap away under the monthly figure, the
+ * same PriceReveal tap as before, so the actual annual charge is always
+ * there to see.
  *
- * - Two tiers, not seven age-group prices. Narelo Early (Bloom, Nurture,
- *   The Nest; pregnancy to 2 years) and Narelo Explore (Little Beginnings,
- *   Builders I, Builders II, Navigators; 2 to 8 years). One price per tier,
- *   including when a child moves up a group.
- * - Two ways to join. 12 months, paid monthly by direct debit (150€ or 220€
- *   a month, 1.800€ or 2.640€ a year; pay the year at the start and it is
- *   eleven months instead of twelve, 1.650€ or 2.420€). Or 3 months, one
- *   season, one single payment (595€ or 875€, which equals 198€ or 292€ a
- *   month), after which the membership ends on its own.
- * - Bloom runs four months and costs 600€ in one payment.
- * - Per child, including 21% IVA. One-off joining fee 99€ per family (the
- *   dossier's 49€ Bloom fee is gone).
- * - The price list calls itself complete: "that is the entire discount
- *   system, with no small print". So the Founding Family 10%, the 15%
- *   sibling discount and any "pay per year" percentage are gone from this
- *   page. What remains: a 25€ a month sibling discount from the second
- *   child, eleven of twelve months when the year is paid at the start, and
- *   Expert Insights at 0€, included.
- * - Included in every membership: weekly Experiences, Community Mornings,
- *   Expert Insights and four transferable sessions a year for siblings or
- *   friends. Members book Signature Saturdays, Holiday, Birthday and
- *   Private Experiences in advance at member rates. The "four transferable
- *   sessions" is new to the site and appears here only, in the price list's
- *   own sentence, not in the shared `included` list in content/membership.ts.
+ * The figures: the 3-Month Membership is 20% above the PDF's term fee
+ * (445€ became 534€, 520€ became 624€, 670€ became 804€, 710€ became 852€).
+ * The Annual Membership is the PDF's full annual total less 10%, where the
+ * PDF gave 5%. Against four 3-month memberships that is about 25% less a
+ * year, which the "How payment works" note says in words, not as a badge.
+ * Founding Families, the first 50, take a lifetime 10% off either. Bloom
+ * is a single four-month membership with no annual option and is
+ * unchanged from the PDF. These are the dossier page's figures only, they
+ * are not in the PDF and the PDF was not regenerated.
  *
- * Every string below is the price list's wording, with its spaced dashes
- * turned into commas or colons (house style: no em dashes) and its
- * "1,800 €" written as "1.800€", the way the rest of this page already
- * writes totals. The 12-month annual total sits behind the PriceReveal tap
- * (Vivien, 2026-09-19: "make the full price clickable"); the 3-month
- * option's "equals 198€ per month" is a comparison, not a total, so it
- * stays in view.
+ * Per-month figures divide the 3-month fee by 3 and the annual total by
+ * 12, the standard subscription convention Vivien asked for on
+ * 2026-09-18. `bestLabel` replaces the earlier "The rate we hope
+ * you land on", which read as salesy (Vivien, 2026-09-19); the new line
+ * states a fact about the annual option for Founding Families and nothing
+ * more.
  *
- * `reserve.eyebrow` still says founding memberships are limited to 50
- * families. That is about places, not price, and the price list does not
- * contradict it, so it stays; flagged to Vivien all the same.
+ * The discounts row at the foot keeps the sibling and founding lines from
+ * the PDF. The PDF's "5% discount for annual payment" line is gone: the
+ * Annual Membership is now its own price rather than a discount on
+ * something else, and a percentage badge there would have contradicted
+ * the two figures a family has just read.
  */
-export type PricingTier = {
+export type PricingOption = {
   readonly name: string;
-  readonly groups: string;
-  readonly ages: string;
-  /** 12 months, paid monthly. */
-  readonly monthly: { readonly perMonth: string; readonly perYear: string };
-  /** 3 months, one single payment. */
-  readonly season: { readonly once: string; readonly equals: string };
+  /** What `total` covers, in words: '3 months', 'the year', '4 months'. */
+  readonly period: string;
+  readonly perMonth: string;
+  /** One short line under the monthly figure, where an option has one ('Flexible 3-month commitment'). */
+  readonly note?: string;
+  /** The Founding Family rate, shown on the annual option (and Bloom, which has no annual). The 3-month option carries none (Vivien, 2026-09-19). */
+  readonly foundingPerMonth?: string;
+  readonly total: string;
+  readonly foundingTotal?: string;
+  readonly best?: boolean;
 };
 
-export type JoinOption = {
-  readonly eyebrow: string;
-  readonly heading: string;
-  readonly tag: string;
-  readonly points: readonly string[];
-  readonly recommended?: boolean;
+export type PricingPlan = {
+  readonly name: string;
+  readonly age: string;
+  readonly options: readonly PricingOption[];
 };
 
 export const pricing = {
   heading: 'Your membership',
-  eyebrow: 'Membership · Prices 2026',
-  lede: 'One membership, one home',
-  intro: 'Every week, all year round, from pregnancy to the age of eight.',
-  tiersLabel: 'Two tiers, two prices',
-  columnMonthly: '12 months · paid monthly',
-  columnSeason: '3 months · one single payment',
-  perMonthSuffix: ' per month',
-  onceSuffix: ' once',
+  eyebrow: 'Every week · All year round',
+  lede: 'One membership, one place to belong',
+  intro: 'Two ways to belong: for three months at a time, or for the whole year. Founding Families, the first 50, have their own annual rate.',
+  perMonthSuffix: ' / month',
+  foundingLabel: 'Founding Family',
+  /** The tap that shows an option's real total. Back by request (Vivien, 2026-09-19): the totals were shown plainly for one revision, then asked for behind a tap again. */
   revealLabel: 'See the full price',
-  tiers: [
+  bestLabel: 'Our best value for Founding Families joining for the year',
+  howItWorks: {
+    label: 'How payment works',
+    body: [
+      'The 3-Month Membership is paid at the start of each three months.',
+      'The Annual Membership is one payment at the start of the year, and works out around a quarter less than four 3-month memberships. Its monthly figure is that total divided by twelve.',
+      'Founding Families, the first 50, receive a lifetime 10% off the Annual Membership.',
+    ],
+  },
+  plans: [
     {
-      name: 'Narelo Early',
-      groups: 'Bloom · Nurture · The Nest',
-      ages: 'pregnancy to 2 years',
-      monthly: { perMonth: '150€', perYear: '1.800€ per year' },
-      season: { once: '595€', equals: 'equals 198€ per month' },
-    },
-    {
-      name: 'Narelo Explore',
-      groups: 'Little Beginnings · Builders I · Builders II · Navigators',
-      ages: '2 to 8 years',
-      monthly: { perMonth: '220€', perYear: '2.640€ per year' },
-      season: { once: '875€', equals: 'equals 292€ per month' },
-    },
-  ] as readonly PricingTier[],
-  finePrint: [
-    'That is the complete price list. Per child, including 21% IVA.',
-    '12 months: paid monthly by SEPA direct debit. Pay the year at the start and you pay eleven months instead of twelve (1.650€ or 2.420€).',
-    '3 months: no monthly payments, no direct debit. The amount is paid in one sum at the start and the membership then ends automatically.',
-    'Bloom (pregnancy) runs four months and costs 600€ in one payment. One-off joining fee 99€ per family.',
-  ],
-  joinLabel: 'Two ways to join',
-  joinOptions: [
-    {
-      eyebrow: 'Recommended',
-      heading: '12 months',
-      tag: 'Monthly by direct debit',
-      points: [
-        'About a quarter cheaper per month: that is the entire discount system, with no small print',
-        'One price for the whole tier, including when your child moves up a group',
-        'A fixed place in the group for the whole year',
-        'Moving up to the next age group is included, at no extra cost',
-        'Monthly by direct debit, or at the start: eleven instead of twelve months',
-        'Afterwards it continues monthly, cancellable with one month’s notice',
-      ],
-      recommended: true,
-    },
-    {
-      eyebrow: 'To get to know us',
-      heading: '3 months, one season',
-      tag: 'One payment · No monthly fees',
-      points: [
-        'A full season of twelve Experiences',
-        'The whole amount is paid once at the start. Nothing follows afterwards',
-        'Upgrade any time: move to 12 months within the season and everything you paid is credited',
-        'Places subject to availability; annual members are considered first',
+      name: 'Bloom',
+      age: 'Pregnancy',
+      options: [
+        {
+          name: 'Bloom Membership',
+          period: '4 months',
+          perMonth: '€149',
+          foundingPerMonth: '€134',
+          total: '€595 for the 4 months',
+          foundingTotal: '€536',
+        },
       ],
     },
-  ] as readonly JoinOption[],
-  goodToKnowLabel: 'Good to know',
-  goodToKnow: [
-    { value: '−25€', title: 'Sibling discount', label: 'per month, from the second child' },
-    { value: '11 of 12', title: 'Paid at the start', label: 'eleven instead of twelve monthly fees' },
-    { value: '0€', title: 'Expert Insights', label: 'monthly, included in the membership' },
+    {
+      name: 'Nurture',
+      age: '0–1 year',
+      options: [
+        {
+          name: '3-Month Membership',
+          period: '3 months',
+          perMonth: '€178',
+          note: 'Flexible 3-month commitment',
+          total: '€534 for the 3 months',
+        },
+        {
+          name: 'Annual Membership',
+          period: 'the year',
+          perMonth: '€134',
+          foundingPerMonth: '€121',
+          total: '€1.607 for the year',
+          foundingTotal: '€1.446',
+          best: true,
+        },
+      ],
+    },
+    {
+      name: 'The Nest',
+      age: '1–2 years',
+      options: [
+        {
+          name: '3-Month Membership',
+          period: '3 months',
+          perMonth: '€208',
+          note: 'Flexible 3-month commitment',
+          total: '€624 for the 3 months',
+        },
+        {
+          name: 'Annual Membership',
+          period: 'the year',
+          perMonth: '€156',
+          foundingPerMonth: '€141',
+          total: '€1.877 for the year',
+          foundingTotal: '€1.689',
+          best: true,
+        },
+      ],
+    },
+    {
+      name: 'Little Beginnings',
+      age: '2–3 years',
+      options: [
+        {
+          name: '3-Month Membership',
+          period: '3 months',
+          perMonth: '€268',
+          note: 'Flexible 3-month commitment',
+          total: '€804 for the 3 months',
+        },
+        {
+          name: 'Annual Membership',
+          period: 'the year',
+          perMonth: '€201',
+          foundingPerMonth: '€181',
+          total: '€2.417 for the year',
+          foundingTotal: '€2.175',
+          best: true,
+        },
+      ],
+    },
+    {
+      name: 'Builders I',
+      age: '3–5 years',
+      options: [
+        {
+          name: '3-Month Membership',
+          period: '3 months',
+          perMonth: '€268',
+          note: 'Flexible 3-month commitment',
+          total: '€804 for the 3 months',
+        },
+        {
+          name: 'Annual Membership',
+          period: 'the year',
+          perMonth: '€201',
+          foundingPerMonth: '€181',
+          total: '€2.417 for the year',
+          foundingTotal: '€2.175',
+          best: true,
+        },
+      ],
+    },
+    {
+      name: 'Builders II',
+      age: '5–6 years',
+      options: [
+        {
+          name: '3-Month Membership',
+          period: '3 months',
+          perMonth: '€268',
+          note: 'Flexible 3-month commitment',
+          total: '€804 for the 3 months',
+        },
+        {
+          name: 'Annual Membership',
+          period: 'the year',
+          perMonth: '€201',
+          foundingPerMonth: '€181',
+          total: '€2.417 for the year',
+          foundingTotal: '€2.175',
+          best: true,
+        },
+      ],
+    },
+    {
+      name: 'Navigators',
+      age: '6–8 years',
+      options: [
+        {
+          name: '3-Month Membership',
+          period: '3 months',
+          perMonth: '€284',
+          note: 'Flexible 3-month commitment',
+          total: '€852 for the 3 months',
+        },
+        {
+          name: 'Annual Membership',
+          period: 'the year',
+          perMonth: '€213',
+          foundingPerMonth: '€191',
+          total: '€2.552 for the year',
+          foundingTotal: '€2.297',
+          best: true,
+        },
+      ],
+    },
+  ] as readonly PricingPlan[],
+  joiningFee: 'One-time joining fee of €99 per family · €49 for Bloom.',
+  discounts: [
+    { value: '15%', label: 'sibling discount' },
+    { value: '10%', label: 'lifetime membership discount for the first 50 Founding Families' },
   ],
-  includedNote:
-    'Included in every membership: weekly Experiences, Community Mornings, Expert Insights and four transferable sessions a year for siblings or friends. Members book Signature Saturdays, Holiday, Birthday and Private Experiences in advance at member rates.',
 } as const;
 
 export const reserve = {
