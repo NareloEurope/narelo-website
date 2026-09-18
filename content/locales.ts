@@ -30,6 +30,19 @@ export const DEFAULT_LANG: Lang = 'en';
  */
 export const UNLOCALIZED_PATHS: readonly string[] = ['/dossier/'];
 
+/**
+ * Pages that render with none of the site's shared chrome, Header, Footer or
+ * the floating WhatsApp action: today just /dossier/ (Vivien, 2026-09-18). It
+ * is meant to feel like its own document, reachable only by link, rather than
+ * a page stitched into the rest of the site, so it carries its own contact
+ * details and its own single link back to the site at its close instead.
+ *
+ * Kept here rather than in content/site.ts: that file feeds the translated
+ * dictionary, where every key needs a translation in `content/es/` (and the
+ * switched-off `content/de/` and `content/hu/`), and this is routing, not copy.
+ */
+export const STANDALONE_PATHS: readonly string[] = ['/dossier/'];
+
 /** The language trees that get built under a prefix. */
 export const PREFIXED_LANGS = LANGS.filter((l) => l !== DEFAULT_LANG);
 

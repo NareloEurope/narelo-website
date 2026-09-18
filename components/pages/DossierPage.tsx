@@ -1,8 +1,9 @@
 import Section from '@/components/Section';
 import PromiseCards from '@/components/PromiseCards';
 import IncludedPanels from '@/components/IncludedPanels';
-import StageTimeline from '@/components/StageTimeline';
+import StageIcon from '@/components/StageIcons';
 import WhatsAppIcon from '@/components/WhatsAppIcon';
+import Link from 'next/link';
 import * as home from '@/content/home';
 import * as membership from '@/content/membership';
 import * as experiences from '@/content/experiences';
@@ -43,7 +44,7 @@ export default function DossierPage() {
   return (
     <>
       {/* ---------- Cover ---------- */}
-      <section className="relative isolate flex min-h-[92svh] items-center overflow-hidden" data-hero-dark>
+      <section className="relative isolate flex min-h-[92svh] items-center overflow-hidden">
         <div className="absolute inset-0 -z-10 overflow-hidden">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src={hero.image} alt="" width={1536} height={2048} className="h-full w-full object-cover" />
@@ -179,12 +180,31 @@ export default function DossierPage() {
         </div>
       </section>
 
+      {/* The dossier draws the age groups as a single vertical list, a ringed
+          mark and a connecting line down the left, name and age on one row.
+          The site elsewhere uses a horizontal swipeable timeline for this,
+          which belongs to the main pages; this follows the dossier's own
+          layout instead, since it is the one thing the team asked to carry
+          over exactly (Vivien, 2026-09-18). The marks themselves stay the
+          site's own growth icons, so the two are still recognisably one
+          family rather than a second icon set. */}
       <Section id="journey">
         <div className="mx-auto max-w-2xl fade" data-reveal>
           <h3 className="display display-md mb-10 text-center">{experienceChapter.journeyEyebrow}</h3>
         </div>
 
-        <StageTimeline items={home.journey.stages} label={experienceChapter.journeyEyebrow} />
+        <ol className="reveal relative mx-auto max-w-md" data-reveal>
+          <div className="absolute left-6 top-6 bottom-6 w-px bg-olive/25" aria-hidden="true" />
+          {home.journey.stages.map((stage, i) => (
+            <li key={stage.name} className="relative flex items-center gap-5 py-3">
+              <span className="relative z-10 flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-olive/45 bg-linen text-olive">
+                <StageIcon index={i} className="h-6 w-6" />
+              </span>
+              <span className="display display-md flex-1 leading-snug">{stage.name}</span>
+              <span className="eyebrow text-ink-soft">{stage.age}</span>
+            </li>
+          ))}
+        </ol>
 
         <p className="body-copy mx-auto mt-10 max-w-2xl text-center text-ink-soft fade" data-reveal>
           {membership.howItWorks.items[1].body} {home.journey.note}
@@ -231,9 +251,14 @@ export default function DossierPage() {
             enjoy" list ran both together under one "book first" line, which
             reads as though Community Mornings and the included Expert
             Insights sessions cost extra too (Vivien, 2026-09-18). These are
-            the same two groups the Membership page already keeps distinct. */}
+            the same two groups the Membership page already keeps distinct.
+            The second group's "what each of these is" link to /experiences/
+            is dropped here: this page keeps a reader on it until the one
+            link at its close, rather than sending them off mid-read. */}
         <div className="mx-auto mt-12 max-w-2xl fade" data-reveal>
-          <IncludedPanels groups={included.groups} />
+          <IncludedPanels
+            groups={included.groups.map((group) => ({ label: group.label, items: group.items }))}
+          />
         </div>
 
         <p className="body-copy mx-auto mt-12 max-w-2xl text-center text-ink-soft fade" data-reveal>
@@ -352,6 +377,16 @@ export default function DossierPage() {
               <span className="body-copy text-ink">WhatsApp · {contact.phone}</span>
             </a>
           </div>
+
+          {/* The one way off this page back to the rest of the site, placed
+              only here at the very end: a quiet line, not a button, so
+              nothing along the way pulls a reader off the guide before they
+              have read it (Vivien, 2026-09-18). */}
+          <p className="body-copy mt-14 text-ink-soft fade" data-reveal>
+            <Link href="/" className="link-line text-ink">
+              Visit the Narelo website
+            </Link>
+          </p>
         </div>
       </Section>
     </>
