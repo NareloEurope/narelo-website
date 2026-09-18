@@ -83,7 +83,7 @@ export const membershipChapter = {
  * further 10% off whichever of standard termly or yearly a family already
  * pays, it is a lifetime membership discount, not one tied to paying
  * annually, so it appears against both. The two discounts multiply rather
- * than add: founding paid yearly is 0.95 x 0.9, 14.5% off the standard
+ * than add: founding pay per year is 0.95 x 0.9, 14.5% off the standard
  * termly rate, not a flat 15%, and that 14.5% is exact for every stage
  * because it falls out of the two percentages alone, not the totals
  * themselves. The last tier carries `best: true`, which the page marks
@@ -109,7 +109,7 @@ export const pricing = {
   heading: 'Your membership',
   eyebrow: 'Every week · All year round',
   lede: 'One membership, one place to belong',
-  seasonNote: 'Shown per month: the termly figure divides one term’s fee across its 3 months, the yearly figure divides the annual total across the year. Tap a figure to see the full price.',
+  seasonNote: 'Shown per month: the per-term figure divides one term’s fee across its 3 months, the per-year figure divides the annual total across the year. Tap a figure to see the full price.',
   perMonthSuffix: '/month',
   revealLabel: 'See the full price',
   bestLabel: 'The rate we hope you land on',
@@ -126,60 +126,60 @@ export const pricing = {
       name: 'Nurture',
       age: '0–1',
       tiers: [
-        { label: 'Standard · paid termly', perMonth: '148€', totalAfter: '445€ each term' },
-        { label: 'Standard · paid yearly · save 5%', perMonth: '141€', totalBefore: '1.785€', totalAfter: '1.695€ a year' },
-        { label: 'Founding Family · paid termly · save 10%', perMonth: '134€', totalBefore: '445€', totalAfter: '400€ each term' },
-        { label: 'Founding Family · paid yearly · save 14.5%', perMonth: '127€', totalBefore: '1.695€', totalAfter: '1.526€ a year', best: true },
+        { label: 'Standard · pay per term', perMonth: '148€', totalAfter: '445€ each term' },
+        { label: 'Standard · pay per year · save 5%', perMonth: '141€', totalBefore: '1.785€', totalAfter: '1.695€ a year' },
+        { label: 'Founding Family · pay per term · save 10%', perMonth: '134€', totalBefore: '445€', totalAfter: '400€ each term' },
+        { label: 'Founding Family · pay per year · save 14.5%', perMonth: '127€', totalBefore: '1.695€', totalAfter: '1.526€ a year', best: true },
       ],
     },
     {
       name: 'The Nest',
       age: '1–2',
       tiers: [
-        { label: 'Standard · paid termly', perMonth: '173€', totalAfter: '520€ each term' },
-        { label: 'Standard · paid yearly · save 5%', perMonth: '165€', totalBefore: '2.085€', totalAfter: '1.980€ a year' },
-        { label: 'Founding Family · paid termly · save 10%', perMonth: '156€', totalBefore: '520€', totalAfter: '468€ each term' },
-        { label: 'Founding Family · paid yearly · save 14.5%', perMonth: '148€', totalBefore: '1.980€', totalAfter: '1.782€ a year', best: true },
+        { label: 'Standard · pay per term', perMonth: '173€', totalAfter: '520€ each term' },
+        { label: 'Standard · pay per year · save 5%', perMonth: '165€', totalBefore: '2.085€', totalAfter: '1.980€ a year' },
+        { label: 'Founding Family · pay per term · save 10%', perMonth: '156€', totalBefore: '520€', totalAfter: '468€ each term' },
+        { label: 'Founding Family · pay per year · save 14.5%', perMonth: '148€', totalBefore: '1.980€', totalAfter: '1.782€ a year', best: true },
       ],
     },
     {
       name: 'Little Beginnings',
       age: '2–3',
       tiers: [
-        { label: 'Standard · paid termly', perMonth: '223€', totalAfter: '670€ each term' },
-        { label: 'Standard · paid yearly · save 5%', perMonth: '212€', totalBefore: '2.685€', totalAfter: '2.550€ a year' },
-        { label: 'Founding Family · paid termly · save 10%', perMonth: '201€', totalBefore: '670€', totalAfter: '603€ each term' },
-        { label: 'Founding Family · paid yearly · save 14.5%', perMonth: '191€', totalBefore: '2.550€', totalAfter: '2.295€ a year', best: true },
+        { label: 'Standard · pay per term', perMonth: '223€', totalAfter: '670€ each term' },
+        { label: 'Standard · pay per year · save 5%', perMonth: '212€', totalBefore: '2.685€', totalAfter: '2.550€ a year' },
+        { label: 'Founding Family · pay per term · save 10%', perMonth: '201€', totalBefore: '670€', totalAfter: '603€ each term' },
+        { label: 'Founding Family · pay per year · save 14.5%', perMonth: '191€', totalBefore: '2.550€', totalAfter: '2.295€ a year', best: true },
       ],
     },
     {
       name: 'Builders I',
       age: '3–5',
       tiers: [
-        { label: 'Standard · paid termly', perMonth: '223€', totalAfter: '670€ each term' },
-        { label: 'Standard · paid yearly · save 5%', perMonth: '212€', totalBefore: '2.685€', totalAfter: '2.550€ a year' },
-        { label: 'Founding Family · paid termly · save 10%', perMonth: '201€', totalBefore: '670€', totalAfter: '603€ each term' },
-        { label: 'Founding Family · paid yearly · save 14.5%', perMonth: '191€', totalBefore: '2.550€', totalAfter: '2.295€ a year', best: true },
+        { label: 'Standard · pay per term', perMonth: '223€', totalAfter: '670€ each term' },
+        { label: 'Standard · pay per year · save 5%', perMonth: '212€', totalBefore: '2.685€', totalAfter: '2.550€ a year' },
+        { label: 'Founding Family · pay per term · save 10%', perMonth: '201€', totalBefore: '670€', totalAfter: '603€ each term' },
+        { label: 'Founding Family · pay per year · save 14.5%', perMonth: '191€', totalBefore: '2.550€', totalAfter: '2.295€ a year', best: true },
       ],
     },
     {
       name: 'Builders II',
       age: '5–6',
       tiers: [
-        { label: 'Standard · paid termly', perMonth: '223€', totalAfter: '670€ each term' },
-        { label: 'Standard · paid yearly · save 5%', perMonth: '212€', totalBefore: '2.685€', totalAfter: '2.550€ a year' },
-        { label: 'Founding Family · paid termly · save 10%', perMonth: '201€', totalBefore: '670€', totalAfter: '603€ each term' },
-        { label: 'Founding Family · paid yearly · save 14.5%', perMonth: '191€', totalBefore: '2.550€', totalAfter: '2.295€ a year', best: true },
+        { label: 'Standard · pay per term', perMonth: '223€', totalAfter: '670€ each term' },
+        { label: 'Standard · pay per year · save 5%', perMonth: '212€', totalBefore: '2.685€', totalAfter: '2.550€ a year' },
+        { label: 'Founding Family · pay per term · save 10%', perMonth: '201€', totalBefore: '670€', totalAfter: '603€ each term' },
+        { label: 'Founding Family · pay per year · save 14.5%', perMonth: '191€', totalBefore: '2.550€', totalAfter: '2.295€ a year', best: true },
       ],
     },
     {
       name: 'Navigators',
       age: '6–8',
       tiers: [
-        { label: 'Standard · paid termly', perMonth: '237€', totalAfter: '710€ each term' },
-        { label: 'Standard · paid yearly · save 5%', perMonth: '225€', totalBefore: '2.835€', totalAfter: '2.695€ a year' },
-        { label: 'Founding Family · paid termly · save 10%', perMonth: '213€', totalBefore: '710€', totalAfter: '639€ each term' },
-        { label: 'Founding Family · paid yearly · save 14.5%', perMonth: '202€', totalBefore: '2.695€', totalAfter: '2.426€ a year', best: true },
+        { label: 'Standard · pay per term', perMonth: '237€', totalAfter: '710€ each term' },
+        { label: 'Standard · pay per year · save 5%', perMonth: '225€', totalBefore: '2.835€', totalAfter: '2.695€ a year' },
+        { label: 'Founding Family · pay per term · save 10%', perMonth: '213€', totalBefore: '710€', totalAfter: '639€ each term' },
+        { label: 'Founding Family · pay per year · save 14.5%', perMonth: '202€', totalBefore: '2.695€', totalAfter: '2.426€ a year', best: true },
       ],
     },
   ] as readonly PricingPlan[],
