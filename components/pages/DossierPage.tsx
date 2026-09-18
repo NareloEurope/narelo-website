@@ -50,7 +50,11 @@ export default function DossierPage() {
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src={hero.image} alt="" width={1536} height={2048} className="h-full w-full object-cover" />
         </div>
-        <div className="absolute inset-0 -z-10 bg-gradient-to-t from-ink/80 via-ink/35 to-ink/45" aria-hidden="true" />
+        {/* Lighter than the site's usual dark-hero overlay (Vivien,
+            2026-09-19): this page carries no header competing for contrast
+            over the photo, and the dossier's own cover reads as the bright
+            sunset itself, not a photo dimmed for a menu bar. */}
+        <div className="absolute inset-0 -z-10 bg-gradient-to-t from-ink/45 via-ink/10 to-ink/15" aria-hidden="true" />
 
         <div className="is-in mx-auto w-full max-w-2xl px-6 py-24 text-center md:px-10">
           <p className="eyebrow mb-8 text-linen/80">{hero.eyebrow}</p>
@@ -284,10 +288,14 @@ export default function DossierPage() {
             the true figure, just not the first thing on the screen.
 
             Four tiers per stage, standard termly down to founding yearly,
-            each one cheaper than the last, so the sequence itself makes the
-            case for the last row rather than a family having to work it
-            out. Its border and label are the only things that mark it: the
-            numbers, not a banner, are what should read as the better deal. */}
+            each one cheaper than the last. Colour, not just a border, now
+            carries that (Vivien, 2026-09-19: the tiers were reading as one
+            flat list, nothing pulling the eye anywhere): the two standard
+            rows stay plain, a founding row warms to olive, and the best
+            rate is its own solid forest block, the same weight PromiseCards
+            gives "what a family actually receives" elsewhere on this page.
+            The sequence of colour is what should read as "better and
+            better", not a banner. */}
         <div className="reveal mx-auto mt-12 flex max-w-2xl flex-col gap-6" data-reveal>
           {pricing.plans.map((plan) => (
             <div
@@ -298,26 +306,31 @@ export default function DossierPage() {
                 {plan.name} <span className="body-copy text-ink-soft">({plan.age})</span>
               </h3>
 
-              <div className="mt-6 flex flex-col">
-                {plan.tiers.map((tier) => (
-                  <div
-                    key={tier.label}
-                    className={`flex flex-col items-center gap-1 border-t py-5 text-center first:border-t-0 first:pt-0 ${
-                      tier.best ? 'border-olive/25 bg-olive/5 -mx-7 px-7 md:-mx-9 md:px-9' : 'border-ink/12'
-                    }`}
-                  >
-                    <p className={`eyebrow ${tier.best ? 'text-olive' : 'text-ink-soft'}`}>{tier.label}</p>
-                    {tier.best && <p className="body-copy text-olive">{pricing.bestLabel}</p>}
-                    <p className={`display display-md ${tier.best ? 'text-olive' : 'text-ink'}`}>
-                      {tier.perMonth}
-                      <span className="body-copy text-ink-soft">{pricing.perMonthSuffix}</span>
-                    </p>
-                    <PriceReveal label={pricing.revealLabel}>
-                      {tier.totalBefore && <span className="mr-2 line-through">{tier.totalBefore}</span>}
-                      {tier.totalAfter}
-                    </PriceReveal>
-                  </div>
-                ))}
+              <div className="mt-6 flex flex-col gap-4">
+                {plan.tiers.map((tier) => {
+                  const founding = tier.label.includes('Founding');
+                  return (
+                    <div
+                      key={tier.label}
+                      className={`flex flex-col items-center gap-1 rounded-[2px] py-5 text-center ${
+                        tier.best ? 'bg-forest py-7 text-linen' : founding ? 'bg-olive/25' : 'bg-shell/60'
+                      }`}
+                    >
+                      <p className={`eyebrow ${tier.best ? 'text-linen/70' : founding ? 'text-olive' : 'text-ink-soft'}`}>
+                        {tier.label}
+                      </p>
+                      {tier.best && <p className="body-copy text-linen/90">{pricing.bestLabel}</p>}
+                      <p className={`display display-md ${tier.best ? 'text-linen' : founding ? 'text-olive' : 'text-ink'}`}>
+                        {tier.perMonth}
+                        <span className={`body-copy ${tier.best ? 'text-linen/70' : 'text-ink-soft'}`}>{pricing.perMonthSuffix}</span>
+                      </p>
+                      <PriceReveal label={pricing.revealLabel} light={tier.best}>
+                        {tier.totalBefore && <span className="mr-2 line-through">{tier.totalBefore}</span>}
+                        {tier.totalAfter}
+                      </PriceReveal>
+                    </div>
+                  );
+                })}
               </div>
             </div>
           ))}
