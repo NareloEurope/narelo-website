@@ -56,10 +56,10 @@ export default function DossierJourney({
                 <StageIcon index={i} className="h-6 w-6" />
               </span>
               <span className="display display-md flex-1 leading-snug">{stage.name}</span>
-              {/* content/stages.ts spells this "0–1 year" / "6–8 years"; the
-                  dossier's own compact list drops the word, as home.ts's
-                  journey.stages already does for the same ages. */}
-              <span className="eyebrow text-ink-soft">{stage.age.replace(/ years?$/, '')}</span>
+              {/* "0–1 year", "1–2 years", as content/stages.ts spells it. A first
+                  pass dropped the word to match the PDF's compact list, but a
+                  bare "0–1" did not read clearly as an age (Vivien, 2026-09-19). */}
+              <span className="eyebrow text-ink-soft">{stage.age}</span>
             </button>
 
             <div
