@@ -67,131 +67,120 @@ export const membershipChapter = {
  * stopped replying. This is the standard subscription convention Vivien
  * asked for directly: the figure a family weighs is "how much a month",
  * the same way a yearly app subscription is sold as its monthly-equivalent
- * price even though the charge itself is once a year.
- *
- * The totals themselves are unchanged, nothing here is a new price. Termly
- * divides one term's fee by 3, the ordinary length of a term; yearly divides
- * the discounted annual total by 12. (An earlier pass divided by the
- * 2026/27 season's real length, 8.5 months, rather than 3 and 12; Vivien
- * asked for the plain convention instead, 2026-09-18.)
- *
- * The founding-family figures apply that group's further 10% off on top of
- * whichever of the two above a family already pays, termly or yearly, since
- * it is a lifetime membership discount, not one tied to paying annually.
- * The two discounts multiply rather than add: yearly's monthly figure is
- * already 5% down, and founding takes a further 10% off that, roughly 14.5%
- * off the termly rate in total, not a flat 15%.
- *
- * The termly and yearly totals themselves sit behind PriceReveal, a tap to
- * see them (Vivien, 2026-09-18), the way an app store shows a subscription's
- * price per month and leaves the annual charge a click away rather than
- * beside it. Nothing is concealed for good, `revealLabel` is what the tap
+ * price even though the charge itself is once a year. Termly divides one
+ * term's fee by 3, the ordinary length of a term; yearly divides the
+ * discounted annual total by 12. The totals themselves are unchanged,
+ * nothing here is a new price, and each sits behind PriceReveal, a tap to
+ * see it, the way an app store leaves the annual charge a click away
+ * rather than beside the monthly figure. `revealLabel` is what the tap
  * says before it opens.
+ *
+ * Four tiers per stage now (Vivien, 2026-09-18), since this dossier goes to
+ * families being invited to found the community: standard termly, standard
+ * yearly, founding termly, founding yearly, in that order, each cheaper
+ * than the last, so the sequence itself makes the case for the last row
+ * without a family having to work it out. The founding discount is a
+ * further 10% off whichever of standard termly or yearly a family already
+ * pays, it is a lifetime membership discount, not one tied to paying
+ * annually, so it appears against both. The two discounts multiply rather
+ * than add: founding paid yearly is 0.95 x 0.9, 14.5% off the standard
+ * termly rate, not a flat 15%, and that 14.5% is exact for every stage
+ * because it falls out of the two percentages alone, not the totals
+ * themselves. The last tier carries `best: true`, which the page marks
+ * quietly, this is the rate the team wants a family to land on, not a
+ * discount they are pressured toward.
  */
+export type PricingTier = {
+  readonly label: string;
+  readonly perMonth: string;
+  /** Crossed out before `totalAfter` in the reveal, when this tier is a discount off a total shown above it. Omitted for the first, undiscounted tier. */
+  readonly totalBefore?: string;
+  readonly totalAfter: string;
+  readonly best?: boolean;
+};
+
 export type PricingPlan = {
   readonly name: string;
   readonly age: string;
-  readonly oneOff?: { readonly perMonth: string; readonly foundingPerMonth: string; readonly price: string; readonly period: string };
-  readonly quarterly?: {
-    readonly termlyPerMonth: string;
-    readonly termlyTotal: string;
-    readonly termlyFoundingPerMonth: string;
-    readonly yearlyPerMonth: string;
-    readonly yearlyFoundingPerMonth: string;
-    readonly annualFull: string;
-    readonly annualDiscounted: string;
-  };
+  readonly tiers: readonly PricingTier[];
 };
 
 export const pricing = {
   heading: 'Your membership',
   eyebrow: 'Every week · All year round',
   lede: 'One membership, one place to belong',
-  seasonNote: 'Shown per month: the termly figure divides one term’s fee across its 3 months, the yearly figure divides the annual total across the year. Tap a figure to see the full termly or yearly price.',
-  termlyLabel: 'Paid termly',
-  yearlyLabel: 'Paid yearly · save 5%',
+  seasonNote: 'Shown per month: the termly figure divides one term’s fee across its 3 months, the yearly figure divides the annual total across the year. Tap a figure to see the full price.',
   perMonthSuffix: '/month',
   revealLabel: 'See the full price',
-  foundingLabel: 'As a Founding Family (first 50, a lifetime 10% off)',
+  bestLabel: 'The rate we hope you land on',
   plans: [
-    { name: 'Bloom', age: 'Pregnancy', oneOff: { perMonth: '149€', foundingPerMonth: '134€', price: '595€', period: '4 months' } },
+    {
+      name: 'Bloom',
+      age: 'Pregnancy',
+      tiers: [
+        { label: 'Standard', perMonth: '149€', totalAfter: '595€, across the 4 months' },
+        { label: 'Founding Family · a lifetime 10% off', perMonth: '134€', totalBefore: '595€', totalAfter: '536€, across the 4 months', best: true },
+      ],
+    },
     {
       name: 'Nurture',
       age: '0–1',
-      quarterly: {
-        termlyPerMonth: '148€',
-        termlyTotal: '445€ each term',
-        termlyFoundingPerMonth: '134€',
-        yearlyPerMonth: '141€',
-        yearlyFoundingPerMonth: '127€',
-        annualFull: '1.785€',
-        annualDiscounted: '1.695€',
-      },
+      tiers: [
+        { label: 'Standard · paid termly', perMonth: '148€', totalAfter: '445€ each term' },
+        { label: 'Standard · paid yearly · save 5%', perMonth: '141€', totalBefore: '1.785€', totalAfter: '1.695€ a year' },
+        { label: 'Founding Family · paid termly · save 10%', perMonth: '134€', totalBefore: '445€', totalAfter: '400€ each term' },
+        { label: 'Founding Family · paid yearly · save 14.5%', perMonth: '127€', totalBefore: '1.695€', totalAfter: '1.526€ a year', best: true },
+      ],
     },
     {
       name: 'The Nest',
       age: '1–2',
-      quarterly: {
-        termlyPerMonth: '173€',
-        termlyTotal: '520€ each term',
-        termlyFoundingPerMonth: '156€',
-        yearlyPerMonth: '165€',
-        yearlyFoundingPerMonth: '148€',
-        annualFull: '2.085€',
-        annualDiscounted: '1.980€',
-      },
+      tiers: [
+        { label: 'Standard · paid termly', perMonth: '173€', totalAfter: '520€ each term' },
+        { label: 'Standard · paid yearly · save 5%', perMonth: '165€', totalBefore: '2.085€', totalAfter: '1.980€ a year' },
+        { label: 'Founding Family · paid termly · save 10%', perMonth: '156€', totalBefore: '520€', totalAfter: '468€ each term' },
+        { label: 'Founding Family · paid yearly · save 14.5%', perMonth: '148€', totalBefore: '1.980€', totalAfter: '1.782€ a year', best: true },
+      ],
     },
     {
       name: 'Little Beginnings',
       age: '2–3',
-      quarterly: {
-        termlyPerMonth: '223€',
-        termlyTotal: '670€ each term',
-        termlyFoundingPerMonth: '201€',
-        yearlyPerMonth: '212€',
-        yearlyFoundingPerMonth: '191€',
-        annualFull: '2.685€',
-        annualDiscounted: '2.550€',
-      },
+      tiers: [
+        { label: 'Standard · paid termly', perMonth: '223€', totalAfter: '670€ each term' },
+        { label: 'Standard · paid yearly · save 5%', perMonth: '212€', totalBefore: '2.685€', totalAfter: '2.550€ a year' },
+        { label: 'Founding Family · paid termly · save 10%', perMonth: '201€', totalBefore: '670€', totalAfter: '603€ each term' },
+        { label: 'Founding Family · paid yearly · save 14.5%', perMonth: '191€', totalBefore: '2.550€', totalAfter: '2.295€ a year', best: true },
+      ],
     },
     {
       name: 'Builders I',
       age: '3–5',
-      quarterly: {
-        termlyPerMonth: '223€',
-        termlyTotal: '670€ each term',
-        termlyFoundingPerMonth: '201€',
-        yearlyPerMonth: '212€',
-        yearlyFoundingPerMonth: '191€',
-        annualFull: '2.685€',
-        annualDiscounted: '2.550€',
-      },
+      tiers: [
+        { label: 'Standard · paid termly', perMonth: '223€', totalAfter: '670€ each term' },
+        { label: 'Standard · paid yearly · save 5%', perMonth: '212€', totalBefore: '2.685€', totalAfter: '2.550€ a year' },
+        { label: 'Founding Family · paid termly · save 10%', perMonth: '201€', totalBefore: '670€', totalAfter: '603€ each term' },
+        { label: 'Founding Family · paid yearly · save 14.5%', perMonth: '191€', totalBefore: '2.550€', totalAfter: '2.295€ a year', best: true },
+      ],
     },
     {
       name: 'Builders II',
       age: '5–6',
-      quarterly: {
-        termlyPerMonth: '223€',
-        termlyTotal: '670€ each term',
-        termlyFoundingPerMonth: '201€',
-        yearlyPerMonth: '212€',
-        yearlyFoundingPerMonth: '191€',
-        annualFull: '2.685€',
-        annualDiscounted: '2.550€',
-      },
+      tiers: [
+        { label: 'Standard · paid termly', perMonth: '223€', totalAfter: '670€ each term' },
+        { label: 'Standard · paid yearly · save 5%', perMonth: '212€', totalBefore: '2.685€', totalAfter: '2.550€ a year' },
+        { label: 'Founding Family · paid termly · save 10%', perMonth: '201€', totalBefore: '670€', totalAfter: '603€ each term' },
+        { label: 'Founding Family · paid yearly · save 14.5%', perMonth: '191€', totalBefore: '2.550€', totalAfter: '2.295€ a year', best: true },
+      ],
     },
     {
       name: 'Navigators',
       age: '6–8',
-      quarterly: {
-        termlyPerMonth: '237€',
-        termlyTotal: '710€ each term',
-        termlyFoundingPerMonth: '213€',
-        yearlyPerMonth: '225€',
-        yearlyFoundingPerMonth: '202€',
-        annualFull: '2.835€',
-        annualDiscounted: '2.695€',
-      },
+      tiers: [
+        { label: 'Standard · paid termly', perMonth: '237€', totalAfter: '710€ each term' },
+        { label: 'Standard · paid yearly · save 5%', perMonth: '225€', totalBefore: '2.835€', totalAfter: '2.695€ a year' },
+        { label: 'Founding Family · paid termly · save 10%', perMonth: '213€', totalBefore: '710€', totalAfter: '639€ each term' },
+        { label: 'Founding Family · paid yearly · save 14.5%', perMonth: '202€', totalBefore: '2.695€', totalAfter: '2.426€ a year', best: true },
+      ],
     },
   ] as readonly PricingPlan[],
   joiningFee: 'One-time joining fee of 99€ per family · 49€ for Bloom.',

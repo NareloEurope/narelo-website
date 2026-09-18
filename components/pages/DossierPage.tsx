@@ -277,12 +277,17 @@ export default function DossierPage() {
           <p className="body-copy mt-6 text-ink-soft">{pricing.seasonNote}</p>
         </div>
 
-        {/* Per-month first, for both ways to pay, so the figure a family
-            actually weighs is never a five-figure lump sum. The real termly
-            or yearly total is a tap away behind PriceReveal, the way an
-            app's yearly plan is sold by its monthly-equivalent price
-            (Vivien, 2026-09-18): still the true figure, just not the first
-            thing on the screen. */}
+        {/* Per-month first, for every way to pay, so the figure a family
+            actually weighs is never a five-figure lump sum. The real total
+            is a tap away behind PriceReveal, the way an app's yearly plan is
+            sold by its monthly-equivalent price (Vivien, 2026-09-18): still
+            the true figure, just not the first thing on the screen.
+
+            Four tiers per stage, standard termly down to founding yearly,
+            each one cheaper than the last, so the sequence itself makes the
+            case for the last row rather than a family having to work it
+            out. Its border and label are the only things that mark it: the
+            numbers, not a banner, are what should read as the better deal. */}
         <div className="reveal mx-auto mt-12 flex max-w-2xl flex-col gap-6" data-reveal>
           {pricing.plans.map((plan) => (
             <div
@@ -293,69 +298,27 @@ export default function DossierPage() {
                 {plan.name} <span className="body-copy text-ink-soft">({plan.age})</span>
               </h3>
 
-              {plan.oneOff ? (
-                <div className="mt-6 text-center">
-                  <p className="display display-md text-olive">
-                    {plan.oneOff.perMonth}
-                    <span className="body-copy text-ink-soft">{pricing.perMonthSuffix}</span>
-                  </p>
-                  <PriceReveal label={pricing.revealLabel}>
-                    One payment of {plan.oneOff.price}, across the {plan.oneOff.period}
-                  </PriceReveal>
-                  <p className="body-copy mt-4 border-t border-olive/20 pt-4 text-olive">
-                    {pricing.foundingLabel}: {plan.oneOff.foundingPerMonth}
-                    {pricing.perMonthSuffix}
-                  </p>
-                </div>
-              ) : (
-                plan.quarterly && (
-                  <>
-                    <div className="mt-6 grid gap-6 border-t border-ink/12 pt-6 sm:grid-cols-2 sm:border-t-0 sm:pt-0">
-                      <div className="text-center sm:border-r sm:border-ink/12">
-                        <p className="eyebrow text-ink-soft">{pricing.termlyLabel}</p>
-                        <p className="display display-md mt-2 text-olive">
-                          {plan.quarterly.termlyPerMonth}
-                          <span className="body-copy text-ink-soft">{pricing.perMonthSuffix}</span>
-                        </p>
-                        <div className="flex justify-center">
-                          <PriceReveal label={pricing.revealLabel}>{plan.quarterly.termlyTotal}</PriceReveal>
-                        </div>
-                      </div>
-                      <div className="text-center">
-                        <p className="eyebrow text-ink-soft">{pricing.yearlyLabel}</p>
-                        <p className="display display-md mt-2 text-olive">
-                          {plan.quarterly.yearlyPerMonth}
-                          <span className="body-copy text-ink-soft">{pricing.perMonthSuffix}</span>
-                        </p>
-                        <div className="flex justify-center">
-                          <PriceReveal label={pricing.revealLabel}>
-                            <span className="mr-2 line-through">{plan.quarterly.annualFull}</span>
-                            {plan.quarterly.annualDiscounted} a year
-                          </PriceReveal>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* The founding family's further 10% off, applied to
-                        whichever of the two a family already pays (Vivien,
-                        2026-09-18): a lifetime discount, not one tied to
-                        paying annually, so it sits under both columns. */}
-                    <div className="mt-4 border-t border-olive/20 pt-4 text-center">
-                      <p className="eyebrow text-olive">{pricing.foundingLabel}</p>
-                      <div className="mt-2 grid gap-1 sm:grid-cols-2">
-                        <p className="body-copy text-olive">
-                          {plan.quarterly.termlyFoundingPerMonth}
-                          {pricing.perMonthSuffix}
-                        </p>
-                        <p className="body-copy text-olive">
-                          {plan.quarterly.yearlyFoundingPerMonth}
-                          {pricing.perMonthSuffix}
-                        </p>
-                      </div>
-                    </div>
-                  </>
-                )
-              )}
+              <div className="mt-6 flex flex-col">
+                {plan.tiers.map((tier) => (
+                  <div
+                    key={tier.label}
+                    className={`flex flex-col items-center gap-1 border-t py-5 text-center first:border-t-0 first:pt-0 ${
+                      tier.best ? 'border-olive/25 bg-olive/5 -mx-7 px-7 md:-mx-9 md:px-9' : 'border-ink/12'
+                    }`}
+                  >
+                    <p className={`eyebrow ${tier.best ? 'text-olive' : 'text-ink-soft'}`}>{tier.label}</p>
+                    {tier.best && <p className="body-copy text-olive">{pricing.bestLabel}</p>}
+                    <p className={`display display-md ${tier.best ? 'text-olive' : 'text-ink'}`}>
+                      {tier.perMonth}
+                      <span className="body-copy text-ink-soft">{pricing.perMonthSuffix}</span>
+                    </p>
+                    <PriceReveal label={pricing.revealLabel}>
+                      {tier.totalBefore && <span className="mr-2 line-through">{tier.totalBefore}</span>}
+                      {tier.totalAfter}
+                    </PriceReveal>
+                  </div>
+                ))}
+              </div>
             </div>
           ))}
         </div>
