@@ -218,7 +218,12 @@ export default function DossierPage() {
           <h3 className="display display-md mb-10 text-center">{experienceChapter.journeyEyebrow}</h3>
         </div>
 
-        <DossierJourney stages={stages.stageDetails} whatToExpectLabel={ui.whatToExpect} />
+        <DossierJourney
+          stages={stages.stageDetails}
+          whatToExpectLabel={ui.whatToExpect}
+          includedLabel={included.groups[0].label}
+          includedItems={included.groups[0].items}
+        />
 
         <p className="body-copy mx-auto mt-10 max-w-2xl text-center text-ink-soft">
           {membership.howItWorks.items[1].body} {home.journey.note}

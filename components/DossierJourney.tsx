@@ -9,14 +9,30 @@ import type { Stage } from '@/content/stages';
  * 2026-09-19): a ringed mark and a connecting line down the left, name and
  * age on each row, and now a small card that opens under a row on tap,
  * carrying the same summary, motto and "what to expect" bullets already on
- * the Experiences page's StageAccordion. Nothing new is written here, this
- * only surfaces content that already exists.
+ * the Experiences page's StageAccordion, plus the membership-includes
+ * bullets from further down this page, so a family sees both what a
+ * session for that age actually holds and what membership itself includes
+ * without leaving the row (Vivien, 2026-09-19). Nothing here is written
+ * twice by hand: `includedItems` is passed down from the same
+ * `included.groups[0].items` the "Becoming part of Narelo" section already
+ * renders in full via IncludedPanels.
  *
  * One row open at a time, the same as StageAccordion. Bloom has no motto or
  * "what to expect" list in content/stages.ts (it has no brief yet, AGENTS.md),
- * so its card is just the summary, exactly as StageAccordion already handles it.
+ * so its card carries the summary and the membership bullets only, exactly
+ * as StageAccordion already handles the missing fields elsewhere.
  */
-export default function DossierJourney({ stages, whatToExpectLabel }: { stages: readonly Stage[]; whatToExpectLabel: string }) {
+export default function DossierJourney({
+  stages,
+  whatToExpectLabel,
+  includedLabel,
+  includedItems,
+}: {
+  stages: readonly Stage[];
+  whatToExpectLabel: string;
+  includedLabel: string;
+  includedItems: readonly { readonly title: string }[];
+}) {
   const [open, setOpen] = useState(-1);
 
   return (
@@ -67,6 +83,18 @@ export default function DossierJourney({ stages, whatToExpectLabel }: { stages: 
                       </ul>
                     </div>
                   )}
+
+                  <div className="mt-5 border-t border-ink/12 pt-5">
+                    <p className="eyebrow mb-3 text-olive">{includedLabel}</p>
+                    <ul className="flex flex-col gap-2">
+                      {includedItems.map((item) => (
+                        <li key={item.title} className="body-copy flex gap-3 text-ink-soft">
+                          <span className="mt-[0.65em] h-1 w-1 shrink-0 rounded-full bg-olive" aria-hidden="true" />
+                          <span>{item.title}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
