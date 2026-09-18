@@ -124,7 +124,7 @@ export const pricing = {
     },
     {
       name: 'Nurture',
-      age: '0–1',
+      age: '0–1 year',
       tiers: [
         { label: 'Standard · pay per term', perMonth: '148€', totalAfter: '445€ each term' },
         { label: 'Standard · pay per year · save 5%', perMonth: '141€', totalBefore: '1.785€', totalAfter: '1.695€ a year' },
@@ -134,7 +134,7 @@ export const pricing = {
     },
     {
       name: 'The Nest',
-      age: '1–2',
+      age: '1–2 years',
       tiers: [
         { label: 'Standard · pay per term', perMonth: '173€', totalAfter: '520€ each term' },
         { label: 'Standard · pay per year · save 5%', perMonth: '165€', totalBefore: '2.085€', totalAfter: '1.980€ a year' },
@@ -144,7 +144,7 @@ export const pricing = {
     },
     {
       name: 'Little Beginnings',
-      age: '2–3',
+      age: '2–3 years',
       tiers: [
         { label: 'Standard · pay per term', perMonth: '223€', totalAfter: '670€ each term' },
         { label: 'Standard · pay per year · save 5%', perMonth: '212€', totalBefore: '2.685€', totalAfter: '2.550€ a year' },
@@ -154,7 +154,7 @@ export const pricing = {
     },
     {
       name: 'Builders I',
-      age: '3–5',
+      age: '3–5 years',
       tiers: [
         { label: 'Standard · pay per term', perMonth: '223€', totalAfter: '670€ each term' },
         { label: 'Standard · pay per year · save 5%', perMonth: '212€', totalBefore: '2.685€', totalAfter: '2.550€ a year' },
@@ -164,7 +164,7 @@ export const pricing = {
     },
     {
       name: 'Builders II',
-      age: '5–6',
+      age: '5–6 years',
       tiers: [
         { label: 'Standard · pay per term', perMonth: '223€', totalAfter: '670€ each term' },
         { label: 'Standard · pay per year · save 5%', perMonth: '212€', totalBefore: '2.685€', totalAfter: '2.550€ a year' },
@@ -174,7 +174,7 @@ export const pricing = {
     },
     {
       name: 'Navigators',
-      age: '6–8',
+      age: '6–8 years',
       tiers: [
         { label: 'Standard · pay per term', perMonth: '237€', totalAfter: '710€ each term' },
         { label: 'Standard · pay per year · save 5%', perMonth: '225€', totalBefore: '2.835€', totalAfter: '2.695€ a year' },
