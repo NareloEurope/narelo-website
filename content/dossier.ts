@@ -81,6 +81,12 @@ export const membershipChapter = {
  * The two discounts multiply rather than add: yearly's monthly figure is
  * already 5% down, and founding takes a further 10% off that, roughly 14.5%
  * off the termly rate in total, not a flat 15%.
+ *
+ * The termly and yearly totals themselves sit behind PriceReveal, a tap to
+ * see them (Vivien, 2026-09-18), the way an app store shows a subscription's
+ * price per month and leaves the annual charge a click away rather than
+ * beside it. Nothing is concealed for good, `revealLabel` is what the tap
+ * says before it opens.
  */
 export type PricingPlan = {
   readonly name: string;
@@ -101,10 +107,11 @@ export const pricing = {
   heading: 'Your membership',
   eyebrow: 'Every week · All year round',
   lede: 'One membership, one place to belong',
-  seasonNote: 'Shown per month: the termly figure divides one term’s fee across its 3 months, the yearly figure divides the annual total across the year. The termly and yearly totals are unchanged, and appear underneath.',
+  seasonNote: 'Shown per month: the termly figure divides one term’s fee across its 3 months, the yearly figure divides the annual total across the year. Tap a figure to see the full termly or yearly price.',
   termlyLabel: 'Paid termly',
   yearlyLabel: 'Paid yearly · save 5%',
   perMonthSuffix: '/month',
+  revealLabel: 'See the full price',
   foundingLabel: 'As a Founding Family (first 50, a lifetime 10% off)',
   plans: [
     { name: 'Bloom', age: 'Pregnancy', oneOff: { perMonth: '149€', foundingPerMonth: '134€', price: '595€', period: '4 months' } },

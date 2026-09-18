@@ -2,6 +2,7 @@ import Section from '@/components/Section';
 import PromiseCards from '@/components/PromiseCards';
 import IncludedPanels from '@/components/IncludedPanels';
 import StageIcon from '@/components/StageIcons';
+import PriceReveal from '@/components/PriceReveal';
 import WhatsAppIcon from '@/components/WhatsAppIcon';
 import Link from 'next/link';
 import * as home from '@/content/home';
@@ -278,8 +279,10 @@ export default function DossierPage() {
 
         {/* Per-month first, for both ways to pay, so the figure a family
             actually weighs is never a five-figure lump sum. The real termly
-            or yearly total sits underneath in small print, unchanged and
-            never hidden (Vivien, 2026-09-18). */}
+            or yearly total is a tap away behind PriceReveal, the way an
+            app's yearly plan is sold by its monthly-equivalent price
+            (Vivien, 2026-09-18): still the true figure, just not the first
+            thing on the screen. */}
         <div className="reveal mx-auto mt-12 flex max-w-2xl flex-col gap-6" data-reveal>
           {pricing.plans.map((plan) => (
             <div
@@ -296,9 +299,9 @@ export default function DossierPage() {
                     {plan.oneOff.perMonth}
                     <span className="body-copy text-ink-soft">{pricing.perMonthSuffix}</span>
                   </p>
-                  <p className="eyebrow mt-2 text-ink-soft">
+                  <PriceReveal label={pricing.revealLabel}>
                     One payment of {plan.oneOff.price}, across the {plan.oneOff.period}
-                  </p>
+                  </PriceReveal>
                   <p className="body-copy mt-4 border-t border-olive/20 pt-4 text-olive">
                     {pricing.foundingLabel}: {plan.oneOff.foundingPerMonth}
                     {pricing.perMonthSuffix}
@@ -314,7 +317,9 @@ export default function DossierPage() {
                           {plan.quarterly.termlyPerMonth}
                           <span className="body-copy text-ink-soft">{pricing.perMonthSuffix}</span>
                         </p>
-                        <p className="body-copy mt-1 text-ink-soft">{plan.quarterly.termlyTotal}</p>
+                        <div className="flex justify-center">
+                          <PriceReveal label={pricing.revealLabel}>{plan.quarterly.termlyTotal}</PriceReveal>
+                        </div>
                       </div>
                       <div className="text-center">
                         <p className="eyebrow text-ink-soft">{pricing.yearlyLabel}</p>
@@ -322,10 +327,12 @@ export default function DossierPage() {
                           {plan.quarterly.yearlyPerMonth}
                           <span className="body-copy text-ink-soft">{pricing.perMonthSuffix}</span>
                         </p>
-                        <p className="body-copy mt-1 text-ink-soft">
-                          <span className="mr-2 line-through">{plan.quarterly.annualFull}</span>
-                          {plan.quarterly.annualDiscounted} a year
-                        </p>
+                        <div className="flex justify-center">
+                          <PriceReveal label={pricing.revealLabel}>
+                            <span className="mr-2 line-through">{plan.quarterly.annualFull}</span>
+                            {plan.quarterly.annualDiscounted} a year
+                          </PriceReveal>
+                        </div>
                       </div>
                     </div>
 
