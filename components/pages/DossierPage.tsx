@@ -322,20 +322,25 @@ export default function DossierPage() {
               </h3>
 
               <div className="mt-6 flex flex-col gap-4">
-                {plan.tiers.map((tier) => {
-                  const founding = tier.label.includes('Founding');
+                {plan.tiers.map((tier, i) => {
+                  // Colour deepens with position, not with the word "Founding":
+                  // the tiers run most expensive to best deal, and since paying
+                  // per year (25%) is now worth more than the founding 10%, a
+                  // founding tier sits second and a standard one third
+                  // (Vivien, 2026-09-19). Tinting by label would alternate.
+                  const warm = i > 0 && !tier.best;
                   return (
                     <div
                       key={tier.label}
                       className={`flex flex-col items-center gap-1 rounded-[2px] py-5 text-center ${
-                        tier.best ? 'bg-forest py-7 text-linen' : founding ? 'bg-olive/25' : 'bg-shell/60'
+                        tier.best ? 'bg-forest py-7 text-linen' : i === 2 ? 'bg-olive/25' : i === 1 ? 'bg-olive/12' : 'bg-shell/60'
                       }`}
                     >
-                      <p className={`eyebrow ${tier.best ? 'text-linen/70' : founding ? 'text-olive' : 'text-ink-soft'}`}>
+                      <p className={`eyebrow ${tier.best ? 'text-linen/70' : warm ? 'text-olive' : 'text-ink-soft'}`}>
                         {tier.label}
                       </p>
                       {tier.best && <p className="body-copy text-linen/90">{pricing.bestLabel}</p>}
-                      <p className={`display display-md ${tier.best ? 'text-linen' : founding ? 'text-olive' : 'text-ink'}`}>
+                      <p className={`display display-md ${tier.best ? 'text-linen' : warm ? 'text-olive' : 'text-ink'}`}>
                         {tier.perMonth}
                         <span className={`body-copy ${tier.best ? 'text-linen/70' : 'text-ink-soft'}`}>{pricing.perMonthSuffix}</span>
                       </p>
