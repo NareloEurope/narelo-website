@@ -299,30 +299,54 @@ export default function DossierPage() {
                   <p className="eyebrow mt-2 text-ink-soft">
                     One payment of {plan.oneOff.price}, across the {plan.oneOff.period}
                   </p>
+                  <p className="body-copy mt-4 border-t border-olive/20 pt-4 text-olive">
+                    {pricing.foundingLabel}: {plan.oneOff.foundingPerMonth}
+                    {pricing.perMonthSuffix}
+                  </p>
                 </div>
               ) : (
                 plan.quarterly && (
-                  <div className="mt-6 grid gap-6 border-t border-ink/12 pt-6 sm:grid-cols-2 sm:border-t-0 sm:pt-0">
-                    <div className="text-center sm:border-r sm:border-ink/12">
-                      <p className="eyebrow text-ink-soft">{pricing.termlyLabel}</p>
-                      <p className="display display-md mt-2 text-olive">
-                        {plan.quarterly.termlyPerMonth}
-                        <span className="body-copy text-ink-soft">{pricing.perMonthSuffix}</span>
-                      </p>
-                      <p className="body-copy mt-1 text-ink-soft">{plan.quarterly.termlyTotal}</p>
+                  <>
+                    <div className="mt-6 grid gap-6 border-t border-ink/12 pt-6 sm:grid-cols-2 sm:border-t-0 sm:pt-0">
+                      <div className="text-center sm:border-r sm:border-ink/12">
+                        <p className="eyebrow text-ink-soft">{pricing.termlyLabel}</p>
+                        <p className="display display-md mt-2 text-olive">
+                          {plan.quarterly.termlyPerMonth}
+                          <span className="body-copy text-ink-soft">{pricing.perMonthSuffix}</span>
+                        </p>
+                        <p className="body-copy mt-1 text-ink-soft">{plan.quarterly.termlyTotal}</p>
+                      </div>
+                      <div className="text-center">
+                        <p className="eyebrow text-ink-soft">{pricing.yearlyLabel}</p>
+                        <p className="display display-md mt-2 text-olive">
+                          {plan.quarterly.yearlyPerMonth}
+                          <span className="body-copy text-ink-soft">{pricing.perMonthSuffix}</span>
+                        </p>
+                        <p className="body-copy mt-1 text-ink-soft">
+                          <span className="mr-2 line-through">{plan.quarterly.annualFull}</span>
+                          {plan.quarterly.annualDiscounted} a year
+                        </p>
+                      </div>
                     </div>
-                    <div className="text-center">
-                      <p className="eyebrow text-ink-soft">{pricing.yearlyLabel}</p>
-                      <p className="display display-md mt-2 text-olive">
-                        {plan.quarterly.yearlyPerMonth}
-                        <span className="body-copy text-ink-soft">{pricing.perMonthSuffix}</span>
-                      </p>
-                      <p className="body-copy mt-1 text-ink-soft">
-                        <span className="mr-2 line-through">{plan.quarterly.annualFull}</span>
-                        {plan.quarterly.annualDiscounted} a year
-                      </p>
+
+                    {/* The founding family's further 10% off, applied to
+                        whichever of the two a family already pays (Vivien,
+                        2026-09-18): a lifetime discount, not one tied to
+                        paying annually, so it sits under both columns. */}
+                    <div className="mt-4 border-t border-olive/20 pt-4 text-center">
+                      <p className="eyebrow text-olive">{pricing.foundingLabel}</p>
+                      <div className="mt-2 grid gap-1 sm:grid-cols-2">
+                        <p className="body-copy text-olive">
+                          {plan.quarterly.termlyFoundingPerMonth}
+                          {pricing.perMonthSuffix}
+                        </p>
+                        <p className="body-copy text-olive">
+                          {plan.quarterly.yearlyFoundingPerMonth}
+                          {pricing.perMonthSuffix}
+                        </p>
+                      </div>
                     </div>
-                  </div>
+                  </>
                 )
               )}
             </div>

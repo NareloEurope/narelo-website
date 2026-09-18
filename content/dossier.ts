@@ -77,15 +77,24 @@ export const membershipChapter = {
  * 2.13 months; yearly divides the discounted annual total by the full 8.51.
  * That is also why the yearly monthly figure comes out lower than the
  * termly one, the 5% saving, not a rounding artefact.
+ *
+ * The founding-family figures (Vivien, 2026-09-18) apply that group's
+ * further 10% off on top of whichever of the two above a family already
+ * pays, termly or yearly, since it is a lifetime membership discount, not
+ * one tied to paying annually. The two discounts multiply rather than add:
+ * yearly's monthly figure is already 5% down, and founding takes a further
+ * 10% off that, roughly 14.5% off the termly rate in total, not a flat 15%.
  */
 export type PricingPlan = {
   readonly name: string;
   readonly age: string;
-  readonly oneOff?: { readonly perMonth: string; readonly price: string; readonly period: string };
+  readonly oneOff?: { readonly perMonth: string; readonly foundingPerMonth: string; readonly price: string; readonly period: string };
   readonly quarterly?: {
     readonly termlyPerMonth: string;
     readonly termlyTotal: string;
+    readonly termlyFoundingPerMonth: string;
     readonly yearlyPerMonth: string;
+    readonly yearlyFoundingPerMonth: string;
     readonly annualFull: string;
     readonly annualDiscounted: string;
   };
@@ -99,37 +108,86 @@ export const pricing = {
   termlyLabel: 'Paid termly',
   yearlyLabel: 'Paid yearly · save 5%',
   perMonthSuffix: '/month',
+  foundingLabel: 'As a Founding Family (first 50, a lifetime 10% off)',
   plans: [
-    { name: 'Bloom', age: 'Pregnancy', oneOff: { perMonth: '149€', price: '595€', period: '4 months' } },
+    { name: 'Bloom', age: 'Pregnancy', oneOff: { perMonth: '149€', foundingPerMonth: '134€', price: '595€', period: '4 months' } },
     {
       name: 'Nurture',
       age: '0–1',
-      quarterly: { termlyPerMonth: '209€', termlyTotal: '445€ each term', yearlyPerMonth: '199€', annualFull: '1.785€', annualDiscounted: '1.695€' },
+      quarterly: {
+        termlyPerMonth: '209€',
+        termlyTotal: '445€ each term',
+        termlyFoundingPerMonth: '188€',
+        yearlyPerMonth: '199€',
+        yearlyFoundingPerMonth: '179€',
+        annualFull: '1.785€',
+        annualDiscounted: '1.695€',
+      },
     },
     {
       name: 'The Nest',
       age: '1–2',
-      quarterly: { termlyPerMonth: '244€', termlyTotal: '520€ each term', yearlyPerMonth: '233€', annualFull: '2.085€', annualDiscounted: '1.980€' },
+      quarterly: {
+        termlyPerMonth: '244€',
+        termlyTotal: '520€ each term',
+        termlyFoundingPerMonth: '220€',
+        yearlyPerMonth: '233€',
+        yearlyFoundingPerMonth: '209€',
+        annualFull: '2.085€',
+        annualDiscounted: '1.980€',
+      },
     },
     {
       name: 'Little Beginnings',
       age: '2–3',
-      quarterly: { termlyPerMonth: '315€', termlyTotal: '670€ each term', yearlyPerMonth: '300€', annualFull: '2.685€', annualDiscounted: '2.550€' },
+      quarterly: {
+        termlyPerMonth: '315€',
+        termlyTotal: '670€ each term',
+        termlyFoundingPerMonth: '283€',
+        yearlyPerMonth: '300€',
+        yearlyFoundingPerMonth: '270€',
+        annualFull: '2.685€',
+        annualDiscounted: '2.550€',
+      },
     },
     {
       name: 'Builders I',
       age: '3–5',
-      quarterly: { termlyPerMonth: '315€', termlyTotal: '670€ each term', yearlyPerMonth: '300€', annualFull: '2.685€', annualDiscounted: '2.550€' },
+      quarterly: {
+        termlyPerMonth: '315€',
+        termlyTotal: '670€ each term',
+        termlyFoundingPerMonth: '283€',
+        yearlyPerMonth: '300€',
+        yearlyFoundingPerMonth: '270€',
+        annualFull: '2.685€',
+        annualDiscounted: '2.550€',
+      },
     },
     {
       name: 'Builders II',
       age: '5–6',
-      quarterly: { termlyPerMonth: '315€', termlyTotal: '670€ each term', yearlyPerMonth: '300€', annualFull: '2.685€', annualDiscounted: '2.550€' },
+      quarterly: {
+        termlyPerMonth: '315€',
+        termlyTotal: '670€ each term',
+        termlyFoundingPerMonth: '283€',
+        yearlyPerMonth: '300€',
+        yearlyFoundingPerMonth: '270€',
+        annualFull: '2.685€',
+        annualDiscounted: '2.550€',
+      },
     },
     {
       name: 'Navigators',
       age: '6–8',
-      quarterly: { termlyPerMonth: '334€', termlyTotal: '710€ each term', yearlyPerMonth: '317€', annualFull: '2.835€', annualDiscounted: '2.695€' },
+      quarterly: {
+        termlyPerMonth: '334€',
+        termlyTotal: '710€ each term',
+        termlyFoundingPerMonth: '300€',
+        yearlyPerMonth: '317€',
+        yearlyFoundingPerMonth: '285€',
+        annualFull: '2.835€',
+        annualDiscounted: '2.695€',
+      },
     },
   ] as readonly PricingPlan[],
   joiningFee: 'One-time joining fee of 99€ per family · 49€ for Bloom.',
