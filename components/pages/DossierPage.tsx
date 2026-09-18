@@ -1,4 +1,5 @@
 import Section from '@/components/Section';
+import PriceReveal from '@/components/PriceReveal';
 import PromiseCards from '@/components/PromiseCards';
 import IncludedPanels from '@/components/IncludedPanels';
 import DossierJourney from '@/components/DossierJourney';
@@ -300,8 +301,9 @@ export default function DossierPage() {
             Membership side by side, each leading with its monthly figure
             and carrying the Founding Family rate as a second line inside
             it, so the decision reads as one question, three months or the
-            year. The real totals sit plainly under the monthly figure, no
-            tap to reveal them. No "save N%" anywhere. The annual option is
+            year. The real totals are a tap away under the monthly figure
+            ("See the full price", back by request after one revision
+            without it). No "save N%" anywhere. The annual option is
             the solid forest block, with one factual line about Founding
             Families, in place of the earlier "rate we hope you land on". */}
         <div className="mx-auto mt-12 flex max-w-3xl flex-col gap-6">
@@ -335,9 +337,9 @@ export default function DossierPage() {
                         {pricing.foundingLabel}: {option.foundingPerMonth}
                         <span className={muted}>{pricing.perMonthSuffix}</span>
                       </p>
-                      <p className={`body-copy mt-4 text-sm ${muted}`}>
+                      <PriceReveal label={pricing.revealLabel} light={dark}>
                         {option.total} · {pricing.foundingLabel} {option.foundingTotal}
-                      </p>
+                      </PriceReveal>
                       {option.best && (
                         <p className="body-copy mt-4 max-w-[16rem] border-t border-linen/20 pt-4 text-sm text-linen/90">
                           {pricing.bestLabel}

@@ -70,8 +70,9 @@ export const membershipChapter = {
  * and "pay per year" are no longer the headline, quarterly payment of the
  * annual fee is not mentioned at all (it is handled in the contract for
  * families who ask), no tier says "save N%" (discount-heavy, not Narelo),
- * and the totals sit plainly under the monthly figure rather than behind a
- * tap, so the actual annual charge is never a surprise.
+ * and the real totals are one tap away under the monthly figure, the
+ * same PriceReveal tap as before, so the actual annual charge is always
+ * there to see.
  *
  * The figures: the 3-Month Membership is 20% above the PDF's term fee
  * (445€ became 534€, 520€ became 624€, 670€ became 804€, 710€ became 852€).
@@ -124,6 +125,8 @@ export const pricing = {
   perMonthSuffix: '/month',
   equivalentSuffix: 'equivalent',
   foundingLabel: 'Founding Family',
+  /** The tap that shows an option's real total. Back by request (Vivien, 2026-09-19): the totals were shown plainly for one revision, then asked for behind a tap again. */
+  revealLabel: 'See the full price',
   bestLabel: 'Our best value for Founding Families joining for the year',
   howItWorks: {
     label: 'How payment works',
