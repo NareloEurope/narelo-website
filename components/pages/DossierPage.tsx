@@ -29,7 +29,7 @@ import { contact, socialIcons } from '@/content/site';
 /** A centred chapter title, olive on linen, the way the PDF marks each part. */
 function ChapterTitle({ children }: { children: React.ReactNode }) {
   return (
-    <div className="mb-14 text-center fade" data-reveal>
+    <div className="mb-14 text-center">
       <h2 className="display display-lg text-olive">{children}</h2>
       <div className="mx-auto mt-6 h-px w-16 bg-olive/40" aria-hidden="true" />
     </div>
@@ -48,13 +48,26 @@ export default function DossierPage() {
       <section className="relative isolate flex min-h-[92svh] items-center overflow-hidden">
         <div className="absolute inset-0 -z-10 overflow-hidden">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={hero.image} alt="" width={1536} height={2048} className="h-full w-full object-cover" />
+          {/* The file in public/images is a deliberately dark, underexposed
+              grade of this photo; the dossier PDF's own cover uses a
+              distinctly brighter, warmer grade of the same shot that does
+              not exist as its own asset here (Vivien, 2026-09-19). Lifted
+              with a filter on the image itself, since a lighter overlay
+              alone (the previous pass) cannot brighten shadow detail the
+              source file does not have without also washing out the sun. */}
+          <img
+            src={hero.image}
+            alt=""
+            width={1536}
+            height={2048}
+            className="h-full w-full object-cover [filter:brightness(1.5)_contrast(0.88)_saturate(1.1)]"
+          />
         </div>
         {/* Lighter than the site's usual dark-hero overlay (Vivien,
             2026-09-19): this page carries no header competing for contrast
             over the photo, and the dossier's own cover reads as the bright
             sunset itself, not a photo dimmed for a menu bar. */}
-        <div className="absolute inset-0 -z-10 bg-gradient-to-t from-ink/45 via-ink/10 to-ink/15" aria-hidden="true" />
+        <div className="absolute inset-0 -z-10 bg-gradient-to-t from-ink/35 via-ink/5 to-ink/10" aria-hidden="true" />
 
         <div className="is-in mx-auto w-full max-w-2xl px-6 py-24 text-center md:px-10">
           <p className="eyebrow mb-8 text-linen/80">{hero.eyebrow}</p>
@@ -73,7 +86,7 @@ export default function DossierPage() {
 
       {/* ---------- Our view on childhood ---------- */}
       <Section className="text-center">
-        <div className="mx-auto max-w-2xl fade" data-reveal>
+        <div className="mx-auto max-w-2xl">
           <p className="eyebrow mb-8 text-olive">{research.eyebrow}</p>
           <p className="display display-md text-ink-soft">
             We don’t create a<br className="hidden sm:block" /> world for children.
@@ -81,12 +94,12 @@ export default function DossierPage() {
           <p className="display display-md mt-2 text-olive">We open the real world to them.</p>
         </div>
 
-        <div className="mx-auto mt-16 max-w-2xl border-t border-ink/12 pt-12 fade" data-reveal>
+        <div className="mx-auto mt-16 max-w-2xl border-t border-ink/12 pt-12">
           <p className="eyebrow mb-6 text-ink-soft">{research.label}</p>
           <p className="lede text-ink-soft">{research.body}</p>
         </div>
 
-        <ul className="mx-auto mt-10 flex max-w-2xl flex-wrap items-center justify-center gap-x-8 gap-y-3 border-t border-ink/12 pt-10 fade" data-reveal>
+        <ul className="mx-auto mt-10 flex max-w-2xl flex-wrap items-center justify-center gap-x-8 gap-y-3 border-t border-ink/12 pt-10">
           {research.citations.map((c) => (
             <li key={c} className="eyebrow text-ink-soft">
               {c}
@@ -99,17 +112,17 @@ export default function DossierPage() {
       <Section bg="bg-shell">
         <ChapterTitle>{worldChapter.heading}</ChapterTitle>
 
-        <div className="mx-auto max-w-2xl fade" data-reveal>
+        <div className="mx-auto max-w-2xl">
           <h3 className="display display-md mb-6">{worldChapter.whatIsLabel}</h3>
           <p className="lede mb-6 text-ink-soft">{whatItIs.body}</p>
           <p className="body-copy text-ink-soft">{whatItIs.body2}</p>
         </div>
 
-        <div className="mx-auto mt-14 max-w-2xl rounded-[2px] bg-linen p-8 text-center shadow-[0_18px_40px_-30px_rgba(43,32,24,0.45)] ring-1 ring-forest/15 fade md:p-11" data-reveal>
+        <div className="mx-auto mt-14 max-w-2xl rounded-[2px] bg-linen p-8 text-center shadow-[0_18px_40px_-30px_rgba(43,32,24,0.45)] ring-1 ring-forest/15 md:p-11">
           <p className="lede italic text-ink">“{home.belief.pull}”</p>
         </div>
 
-        <div className="mx-auto mt-16 max-w-2xl fade" data-reveal>
+        <div className="mx-auto mt-16 max-w-2xl">
           <h3 className="display display-md mb-8">{worldChapter.whoLabel}</h3>
           <div className="flex flex-col gap-6">
             {proof.people.map((person) => (
@@ -136,9 +149,9 @@ export default function DossierPage() {
           </div>
         </div>
 
-        <div className="mx-auto mt-16 max-w-2xl border-t border-ink/12 pt-12 fade" data-reveal>
+        <div className="mx-auto mt-16 max-w-2xl border-t border-ink/12 pt-12">
           <p className="eyebrow mb-10 text-olive">{different.eyebrow}</p>
-          <ul className="reveal flex flex-col gap-10" data-reveal>
+          <ul className="flex flex-col gap-10">
             {different.items.map((item) => (
               <li key={item.n}>
                 <span className="eyebrow text-olive">{item.n}</span>
@@ -154,7 +167,7 @@ export default function DossierPage() {
       <Section>
         <ChapterTitle>{experienceChapter.heading}</ChapterTitle>
 
-        <div className="mx-auto max-w-2xl fade" data-reveal>
+        <div className="mx-auto max-w-2xl">
           <h3 className="display display-md mb-6">{experienceChapter.whatLabel}</h3>
           <p className="body-copy mb-6 text-ink-soft">{format.body2}</p>
           <p className="body-copy text-ink-soft">{format.body3}</p>
@@ -163,11 +176,11 @@ export default function DossierPage() {
 
       <section className="relative isolate overflow-hidden bg-forest px-6 py-[var(--spacing-section)] text-linen md:px-10">
         <div className="mx-auto max-w-2xl">
-          <p className="display display-md text-center italic fade" data-reveal>
+          <p className="display display-md text-center italic">
             {format.pull}
           </p>
 
-          <div className="mt-14 rounded-[2px] bg-linen/10 p-8 ring-1 ring-linen/20 fade md:p-11" data-reveal>
+          <div className="mt-14 rounded-[2px] bg-linen/10 p-8 ring-1 ring-linen/20 md:p-11">
             <p className="eyebrow mb-8 text-center text-linen/70">{spark.eyebrow}</p>
             <ol className="flex flex-col gap-5">
               {spark.steps.map((step, i) => (
@@ -194,11 +207,11 @@ export default function DossierPage() {
           site's own growth icons, so the two are still recognisably one
           family rather than a second icon set. */}
       <Section id="journey">
-        <div className="mx-auto max-w-2xl fade" data-reveal>
+        <div className="mx-auto max-w-2xl">
           <h3 className="display display-md mb-10 text-center">{experienceChapter.journeyEyebrow}</h3>
         </div>
 
-        <ol className="reveal relative mx-auto max-w-md" data-reveal>
+        <ol className="relative mx-auto max-w-md">
           <div className="absolute left-6 top-6 bottom-6 w-px bg-olive/25" aria-hidden="true" />
           {home.journey.stages.map((stage, i) => (
             <li key={stage.name} className="relative flex items-center gap-5 py-3">
@@ -211,7 +224,7 @@ export default function DossierPage() {
           ))}
         </ol>
 
-        <p className="body-copy mx-auto mt-10 max-w-2xl text-center text-ink-soft fade" data-reveal>
+        <p className="body-copy mx-auto mt-10 max-w-2xl text-center text-ink-soft">
           {membership.howItWorks.items[1].body} {home.journey.note}
         </p>
       </Section>
@@ -231,17 +244,17 @@ export default function DossierPage() {
       <Section bg="bg-shell">
         <ChapterTitle>{membershipChapter.heading}</ChapterTitle>
 
-        <div className="mx-auto max-w-2xl fade" data-reveal>
+        <div className="mx-auto max-w-2xl">
           <h3 className="display display-md mb-10 text-center">{membershipChapter.receiveLabel}</h3>
         </div>
         <PromiseCards cards={included.cards} />
 
-        <div className="mx-auto mt-16 max-w-2xl border-t border-ink/12 pt-12 text-center fade" data-reveal>
+        <div className="mx-auto mt-16 max-w-2xl border-t border-ink/12 pt-12 text-center">
           <h3 className="display display-md mb-6">{regular.heading}</h3>
           <p className="body-copy text-ink-soft">{regular.body}</p>
         </div>
 
-        <div className="mx-auto mt-16 max-w-2xl rounded-[2px] bg-linen p-8 text-center shadow-[0_18px_40px_-30px_rgba(43,32,24,0.45)] ring-1 ring-forest/15 fade md:p-11" data-reveal>
+        <div className="mx-auto mt-16 max-w-2xl rounded-[2px] bg-linen p-8 text-center shadow-[0_18px_40px_-30px_rgba(43,32,24,0.45)] ring-1 ring-forest/15 md:p-11">
           <p className="eyebrow mb-4 text-olive">{membershipChapter.heartEyebrow}</p>
           <h3 className="display display-md mb-6">{membershipChapter.heartHeading}</h3>
           <p className="eyebrow flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-ink-soft">
@@ -260,13 +273,13 @@ export default function DossierPage() {
             The second group's "what each of these is" link to /experiences/
             is dropped here: this page keeps a reader on it until the one
             link at its close, rather than sending them off mid-read. */}
-        <div className="mx-auto mt-12 max-w-2xl fade" data-reveal>
+        <div className="mx-auto mt-12 max-w-2xl">
           <IncludedPanels
             groups={included.groups.map((group) => ({ label: group.label, items: group.items }))}
           />
         </div>
 
-        <p className="body-copy mx-auto mt-12 max-w-2xl text-center text-ink-soft fade" data-reveal>
+        <p className="body-copy mx-auto mt-12 max-w-2xl text-center text-ink-soft">
           {regular.note}
         </p>
       </Section>
@@ -275,7 +288,7 @@ export default function DossierPage() {
       <Section>
         <ChapterTitle>{pricing.heading}</ChapterTitle>
 
-        <div className="mx-auto max-w-2xl text-center fade" data-reveal>
+        <div className="mx-auto max-w-2xl text-center">
           <p className="eyebrow mb-4 text-olive">{pricing.eyebrow}</p>
           <p className="lede text-ink-soft">{pricing.lede}</p>
           <p className="body-copy mt-6 text-ink-soft">{pricing.seasonNote}</p>
@@ -296,7 +309,7 @@ export default function DossierPage() {
             gives "what a family actually receives" elsewhere on this page.
             The sequence of colour is what should read as "better and
             better", not a banner. */}
-        <div className="reveal mx-auto mt-12 flex max-w-2xl flex-col gap-6" data-reveal>
+        <div className="mx-auto mt-12 flex max-w-2xl flex-col gap-6">
           {pricing.plans.map((plan) => (
             <div
               key={plan.name}
@@ -336,11 +349,11 @@ export default function DossierPage() {
           ))}
         </div>
 
-        <p className="body-copy mx-auto mt-10 max-w-2xl text-center text-ink-soft fade" data-reveal>
+        <p className="body-copy mx-auto mt-10 max-w-2xl text-center text-ink-soft">
           {pricing.joiningFee}
         </p>
 
-        <ul className="reveal mx-auto mt-14 flex max-w-2xl flex-col gap-8 border-t border-ink/12 pt-14 sm:flex-row sm:justify-between" data-reveal>
+        <ul className="mx-auto mt-14 flex max-w-2xl flex-col gap-8 border-t border-ink/12 pt-14 sm:flex-row sm:justify-between">
           {pricing.discounts.map((d) => (
             <li key={d.label} className="flex flex-1 flex-col items-center text-center">
               <span className="flex h-16 w-16 items-center justify-center rounded-full border border-olive/45 text-olive">
@@ -354,7 +367,7 @@ export default function DossierPage() {
 
       {/* ---------- Reserve your family's place ---------- */}
       <Section bg="bg-shell" className="text-center">
-        <div className="mx-auto max-w-xl fade" data-reveal>
+        <div className="mx-auto max-w-xl">
           <p className="eyebrow mb-6 text-olive">{reserve.eyebrow}</p>
           <h2 className="display display-lg mb-8">{reserve.heading}</h2>
           <p className="lede mb-10 text-ink-soft">{reserve.body}</p>
@@ -403,7 +416,7 @@ export default function DossierPage() {
               only here at the very end: a quiet line, not a button, so
               nothing along the way pulls a reader off the guide before they
               have read it (Vivien, 2026-09-18). */}
-          <p className="body-copy mt-14 text-ink-soft fade" data-reveal>
+          <p className="body-copy mt-14 text-ink-soft">
             <Link href="/" className="link-line text-ink">
               Visit the Narelo website
             </Link>
