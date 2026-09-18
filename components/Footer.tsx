@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import LanguageSelector from '@/components/LanguageSelector';
 import { content } from '@/content/dictionary';
-import { langFromPath, localePath } from '@/content/locales';
+import { langFromPath, localePath, UNLOCALIZED_PATHS, STANDALONE_PATHS } from '@/content/locales';
 
 export default function Footer() {
   /* Same as the header: the language comes from the URL, not a prop. */
@@ -12,6 +12,12 @@ export default function Footer() {
   const lang = langFromPath(pathname);
   const { site, nav, contact, socialIcons, footerCta, ui } = content(lang).site;
   const t = (path: string) => localePath(lang, path);
+  const showLanguageSelector = !UNLOCALIZED_PATHS.includes(pathname);
+
+  // The dossier carries its own contact block and closing link; the site
+  // footer, with the main nav's contact details, would connect it back to
+  // the rest of the site (Vivien, 2026-09-18).
+  if (STANDALONE_PATHS.includes(pathname)) return null;
 
   return (
     <footer className="bg-forest text-linen">
@@ -106,7 +112,7 @@ export default function Footer() {
           </p>
           {/* Second, quieter place to change language, for anyone who has
               scrolled past the header. */}
-          <LanguageSelector current={lang} pathname={pathname} light onDark />
+          {showLanguageSelector && <LanguageSelector current={lang} pathname={pathname} light onDark />}
         </div>
       </div>
     </footer>

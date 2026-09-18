@@ -254,11 +254,14 @@ export const included = {
   groups: [
     {
       label: 'Also included in your membership',
+      /* Priority booking last (Vivien, 2026-09-19): the weekly place and the
+         community/expert benefits are what a family pictures first, and
+         priority booking reads better as a bonus on top of those. */
       items: [
         { title: 'Weekly experiences', body: 'Your child’s regular place in their age group, every week of term.' },
-        { title: 'Priority booking', body: 'First access to experiences, events and limited places before they open more widely.' },
         { title: 'Community Mornings', body: 'Time for families to meet, connect and grow together.' },
         { title: 'Narelo Expert Insights', body: 'Conversations with our own experts around childhood, development and family life, yours as part of the membership.' },
+        { title: 'Priority booking', body: 'First access to experiences, events and limited places before they open more widely.' },
       ],
     },
     {
