@@ -46,42 +46,43 @@ export default function DossierPage() {
   return (
     <>
       {/* ---------- Cover ---------- */}
-      <section className="relative isolate flex min-h-[92svh] items-center overflow-hidden">
+      {/*
+       * The cover as the dossier PDF actually draws it (Vivien, 2026-09-19,
+       * third pass, this time against the PDF side by side): not a dark
+       * hero with white type, but a high-key, warm, cream-toned cover. The
+       * sky fades up into the page's own linen so the "Family Guide" label,
+       * the logo and the tagline sit in dark olive and ink on light ground,
+       * and the children stand in the lower half, lit rather than
+       * silhouetted.
+       *
+       * The file in public/images is a deliberately dark, underexposed grade
+       * of this photo and the PDF's brighter grade does not exist as its own
+       * asset here, so the look is built in CSS: a strong lift on the image
+       * (brightness up, contrast down, a warm sepia cast) and a linen
+       * gradient from the top instead of an ink one from the bottom.
+       */}
+      <section className="relative isolate flex min-h-[92svh] items-start overflow-hidden bg-linen">
         <div className="absolute inset-0 -z-10 overflow-hidden">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          {/* The file in public/images is a deliberately dark, underexposed
-              grade of this photo; the dossier PDF's own cover uses a
-              distinctly brighter, warmer grade of the same shot that does
-              not exist as its own asset here (Vivien, 2026-09-19). Lifted
-              with a filter on the image itself, since a lighter overlay
-              alone (the previous pass) cannot brighten shadow detail the
-              source file does not have without also washing out the sun. */}
           <img
             src={hero.image}
             alt=""
             width={1536}
             height={2048}
-            className="h-full w-full object-cover [filter:brightness(1.5)_contrast(0.88)_saturate(1.1)]"
+            className="h-full w-full object-cover object-[50%_78%] [filter:brightness(1.75)_contrast(0.78)_saturate(0.85)_sepia(0.22)]"
           />
         </div>
-        {/* Lighter than the site's usual dark-hero overlay (Vivien,
-            2026-09-19): this page carries no header competing for contrast
-            over the photo, and the dossier's own cover reads as the bright
-            sunset itself, not a photo dimmed for a menu bar. */}
-        <div className="absolute inset-0 -z-10 bg-gradient-to-t from-ink/35 via-ink/5 to-ink/10" aria-hidden="true" />
+        <div
+          className="absolute inset-0 -z-10 bg-gradient-to-b from-linen from-18% via-linen/75 via-45% to-transparent"
+          aria-hidden="true"
+        />
 
-        <div className="is-in mx-auto w-full max-w-2xl px-6 py-24 text-center md:px-10">
-          <p className="eyebrow mb-8 text-linen/80">{hero.eyebrow}</p>
+        <div className="mx-auto w-full max-w-2xl px-6 pt-14 pb-24 text-center md:px-10 md:pt-20">
+          <p className="eyebrow inline-block border-y border-olive/30 px-8 py-3 text-olive">· {hero.eyebrow} ·</p>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/images/narelo-logo.webp"
-            alt="Narelo"
-            width={796}
-            height={341}
-            className="mx-auto h-16 w-auto opacity-95 [filter:invert(1)_brightness(2)] md:h-20"
-          />
-          <div className="mx-auto mt-8 h-px w-16 bg-linen/40" aria-hidden="true" />
-          <p className="eyebrow mt-8 text-linen/90">{whatItIs.heading}</p>
+          <img src="/images/narelo-logo.webp" alt="Narelo" width={796} height={341} className="mx-auto mt-10 h-20 w-auto md:h-24" />
+          <div className="mx-auto mt-8 h-px w-16 bg-olive/40" aria-hidden="true" />
+          <p className="eyebrow mt-8 text-olive">{whatItIs.heading}</p>
         </div>
       </section>
 
