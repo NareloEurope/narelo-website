@@ -273,44 +273,58 @@ export default function DossierPage() {
         <div className="mx-auto max-w-2xl text-center fade" data-reveal>
           <p className="eyebrow mb-4 text-olive">{pricing.eyebrow}</p>
           <p className="lede text-ink-soft">{pricing.lede}</p>
+          <p className="body-copy mt-6 text-ink-soft">{pricing.seasonNote}</p>
         </div>
 
-        <div className="reveal mx-auto mt-12 flex max-w-2xl flex-col gap-5" data-reveal>
+        {/* Per-month first, for both ways to pay, so the figure a family
+            actually weighs is never a five-figure lump sum. The real termly
+            or yearly total sits underneath in small print, unchanged and
+            never hidden (Vivien, 2026-09-18). */}
+        <div className="reveal mx-auto mt-12 flex max-w-2xl flex-col gap-6" data-reveal>
           {pricing.plans.map((plan) => (
             <div
               key={plan.name}
-              className="flex flex-col gap-4 rounded-[2px] bg-linen p-7 shadow-[0_18px_40px_-30px_rgba(43,32,24,0.45)] ring-1 ring-forest/15 sm:flex-row sm:items-center sm:justify-between md:p-9"
+              className="rounded-[2px] bg-linen p-7 shadow-[0_18px_40px_-30px_rgba(43,32,24,0.45)] ring-1 ring-forest/15 md:p-9"
             >
-              <div>
-                <h3 className="display display-md leading-snug">
-                  {plan.name} <span className="body-copy text-ink-soft">({plan.age})</span>
-                </h3>
-                {plan.oneOff ? (
-                  <p className="eyebrow mt-3 text-ink-soft">{'One payment'}</p>
-                ) : (
-                  <p className="eyebrow mt-3 text-ink-soft">{pricing.quarterlyLabel}</p>
-                )}
-                {plan.quarterly && <p className="body-copy mt-1 text-ink-soft">{plan.quarterly.label}</p>}
-              </div>
+              <h3 className="display display-md leading-snug">
+                {plan.name} <span className="body-copy text-ink-soft">({plan.age})</span>
+              </h3>
 
-              <div className="text-left sm:text-right">
-                {plan.oneOff ? (
-                  <>
-                    <p className="display display-md text-olive">{plan.oneOff.price}</p>
-                    <p className="eyebrow mt-1 text-ink-soft">{plan.oneOff.period}</p>
-                  </>
-                ) : (
-                  plan.quarterly && (
-                    <>
-                      <p className="eyebrow text-ink-soft">{pricing.annualLabel}</p>
-                      <p className="mt-2">
-                        <span className="body-copy mr-3 text-ink-soft line-through">{plan.quarterly.annualFull}</span>
-                        <span className="display display-md text-olive">{plan.quarterly.annualDiscounted}</span>
+              {plan.oneOff ? (
+                <div className="mt-6 text-center">
+                  <p className="display display-md text-olive">
+                    {plan.oneOff.perMonth}
+                    <span className="body-copy text-ink-soft">{pricing.perMonthSuffix}</span>
+                  </p>
+                  <p className="eyebrow mt-2 text-ink-soft">
+                    One payment of {plan.oneOff.price}, across the {plan.oneOff.period}
+                  </p>
+                </div>
+              ) : (
+                plan.quarterly && (
+                  <div className="mt-6 grid gap-6 border-t border-ink/12 pt-6 sm:grid-cols-2 sm:border-t-0 sm:pt-0">
+                    <div className="text-center sm:border-r sm:border-ink/12">
+                      <p className="eyebrow text-ink-soft">{pricing.termlyLabel}</p>
+                      <p className="display display-md mt-2 text-olive">
+                        {plan.quarterly.termlyPerMonth}
+                        <span className="body-copy text-ink-soft">{pricing.perMonthSuffix}</span>
                       </p>
-                    </>
-                  )
-                )}
-              </div>
+                      <p className="body-copy mt-1 text-ink-soft">{plan.quarterly.termlyTotal}</p>
+                    </div>
+                    <div className="text-center">
+                      <p className="eyebrow text-ink-soft">{pricing.yearlyLabel}</p>
+                      <p className="display display-md mt-2 text-olive">
+                        {plan.quarterly.yearlyPerMonth}
+                        <span className="body-copy text-ink-soft">{pricing.perMonthSuffix}</span>
+                      </p>
+                      <p className="body-copy mt-1 text-ink-soft">
+                        <span className="mr-2 line-through">{plan.quarterly.annualFull}</span>
+                        {plan.quarterly.annualDiscounted} a year
+                      </p>
+                    </div>
+                  </div>
+                )
+              )}
             </div>
           ))}
         </div>

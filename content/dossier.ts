@@ -61,27 +61,76 @@ export const membershipChapter = {
   heartFacts: ['Pregnancy to age eight', 'Small groups of eight', '90 minutes'],
 } as const;
 
+/**
+ * Shown per month rather than as one termly or annual total (Vivien,
+ * 2026-09-18): families who received the totals as a single lump figure
+ * stopped replying, and a monthly figure is the honest, familiar way most
+ * memberships and subscriptions are actually compared.
+ *
+ * The totals themselves are unchanged, nothing here is a new price. Each
+ * monthly figure is the real total divided by the actual weeks the 2026/27
+ * season runs, not a blind divide-by-12: the season is 37 weeks, the last
+ * week of October (26 Oct 2026, the calendar Vivien supplied treats the
+ * first three weeks of October as before the season starts) to the second
+ * week of July 2027 (11 Jul, the last week before the summer closure),
+ * which is 8.51 months. Termly divides one term's fee by a quarter of that,
+ * 2.13 months; yearly divides the discounted annual total by the full 8.51.
+ * That is also why the yearly monthly figure comes out lower than the
+ * termly one, the 5% saving, not a rounding artefact.
+ */
 export type PricingPlan = {
   readonly name: string;
   readonly age: string;
-  readonly oneOff?: { readonly price: string; readonly period: string };
-  readonly quarterly?: { readonly label: string; readonly annualFull: string; readonly annualDiscounted: string };
+  readonly oneOff?: { readonly perMonth: string; readonly price: string; readonly period: string };
+  readonly quarterly?: {
+    readonly termlyPerMonth: string;
+    readonly termlyTotal: string;
+    readonly yearlyPerMonth: string;
+    readonly annualFull: string;
+    readonly annualDiscounted: string;
+  };
 };
 
 export const pricing = {
   heading: 'Your membership',
   eyebrow: 'Every week · All year round',
   lede: 'One membership, one place to belong',
-  quarterlyLabel: 'Quarterly',
-  annualLabel: 'Paid annually · Save 5%',
+  seasonNote: 'Shown per month, based on the 2026/27 season: the last week of October to the second week of July, about 8.5 months. The termly and yearly totals are unchanged, and appear underneath.',
+  termlyLabel: 'Paid termly',
+  yearlyLabel: 'Paid yearly · save 5%',
+  perMonthSuffix: '/month',
   plans: [
-    { name: 'Bloom', age: 'Pregnancy', oneOff: { price: '595€', period: '4 months' } },
-    { name: 'Nurture', age: '0–1', quarterly: { label: '4 × 445€', annualFull: '1.785€', annualDiscounted: '1.695€' } },
-    { name: 'The Nest', age: '1–2', quarterly: { label: '4 × 520€', annualFull: '2.085€', annualDiscounted: '1.980€' } },
-    { name: 'Little Beginnings', age: '2–3', quarterly: { label: '4 × 670€', annualFull: '2.685€', annualDiscounted: '2.550€' } },
-    { name: 'Builders I', age: '3–5', quarterly: { label: '4 × 670€', annualFull: '2.685€', annualDiscounted: '2.550€' } },
-    { name: 'Builders II', age: '5–6', quarterly: { label: '4 × 670€', annualFull: '2.685€', annualDiscounted: '2.550€' } },
-    { name: 'Navigators', age: '6–8', quarterly: { label: '4 × 710€', annualFull: '2.835€', annualDiscounted: '2.695€' } },
+    { name: 'Bloom', age: 'Pregnancy', oneOff: { perMonth: '149€', price: '595€', period: '4 months' } },
+    {
+      name: 'Nurture',
+      age: '0–1',
+      quarterly: { termlyPerMonth: '209€', termlyTotal: '445€ each term', yearlyPerMonth: '199€', annualFull: '1.785€', annualDiscounted: '1.695€' },
+    },
+    {
+      name: 'The Nest',
+      age: '1–2',
+      quarterly: { termlyPerMonth: '244€', termlyTotal: '520€ each term', yearlyPerMonth: '233€', annualFull: '2.085€', annualDiscounted: '1.980€' },
+    },
+    {
+      name: 'Little Beginnings',
+      age: '2–3',
+      quarterly: { termlyPerMonth: '315€', termlyTotal: '670€ each term', yearlyPerMonth: '300€', annualFull: '2.685€', annualDiscounted: '2.550€' },
+    },
+    {
+      name: 'Builders I',
+      age: '3–5',
+      quarterly: { termlyPerMonth: '315€', termlyTotal: '670€ each term', yearlyPerMonth: '300€', annualFull: '2.685€', annualDiscounted: '2.550€' },
+    },
+    {
+      name: 'Builders II',
+      age: '5–6',
+      quarterly: { termlyPerMonth: '315€', termlyTotal: '670€ each term', yearlyPerMonth: '300€', annualFull: '2.685€', annualDiscounted: '2.550€' },
+    },
+    {
+      name: 'Navigators',
+      age: '6–8',
+      quarterly: { termlyPerMonth: '334€', termlyTotal: '710€ each term', yearlyPerMonth: '317€', annualFull: '2.835€', annualDiscounted: '2.695€' },
+    },
   ] as readonly PricingPlan[],
   joiningFee: 'One-time joining fee of 99€ per family · 49€ for Bloom.',
   discounts: [
