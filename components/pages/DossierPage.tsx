@@ -2,7 +2,6 @@ import Section from '@/components/Section';
 import PromiseCards from '@/components/PromiseCards';
 import IncludedPanels from '@/components/IncludedPanels';
 import DossierJourney from '@/components/DossierJourney';
-import PriceReveal from '@/components/PriceReveal';
 import WhatsAppIcon from '@/components/WhatsAppIcon';
 import Link from 'next/link';
 import * as home from '@/content/home';
@@ -293,25 +292,19 @@ export default function DossierPage() {
         <div className="mx-auto max-w-2xl text-center">
           <p className="eyebrow mb-4 text-olive">{pricing.eyebrow}</p>
           <p className="lede text-ink-soft">{pricing.lede}</p>
-          <p className="body-copy mt-6 text-ink-soft">{pricing.seasonNote}</p>
+          <p className="body-copy mt-6 text-ink-soft">{pricing.intro}</p>
         </div>
 
-        {/* Per-month first, for every way to pay, so the figure a family
-            actually weighs is never a five-figure lump sum. The real total
-            is a tap away behind PriceReveal, the way an app's yearly plan is
-            sold by its monthly-equivalent price (Vivien, 2026-09-18): still
-            the true figure, just not the first thing on the screen.
-
-            Four tiers per stage, standard termly down to founding yearly,
-            each one cheaper than the last. Colour, not just a border, now
-            carries that (Vivien, 2026-09-19: the tiers were reading as one
-            flat list, nothing pulling the eye anywhere): the two standard
-            rows stay plain, a founding row warms to olive, and the best
-            rate is its own solid forest block, the same weight PromiseCards
-            gives "what a family actually receives" elsewhere on this page.
-            The sequence of colour is what should read as "better and
-            better", not a banner. */}
-        <div className="mx-auto mt-12 flex max-w-2xl flex-col gap-6">
+        {/* Two membership choices per age group, not four pricing tiers
+            (Vivien, 2026-09-19): a 3-Month Membership and an Annual
+            Membership side by side, each leading with its monthly figure
+            and carrying the Founding Family rate as a second line inside
+            it, so the decision reads as one question, three months or the
+            year. The real totals sit plainly under the monthly figure, no
+            tap to reveal them. No "save N%" anywhere. The annual option is
+            the solid forest block, with one factual line about Founding
+            Families, in place of the earlier "rate we hope you land on". */}
+        <div className="mx-auto mt-12 flex max-w-3xl flex-col gap-6">
           {pricing.plans.map((plan) => (
             <div
               key={plan.name}
@@ -321,33 +314,35 @@ export default function DossierPage() {
                 {plan.name} <span className="body-copy text-ink-soft">({plan.age})</span>
               </h3>
 
-              <div className="mt-6 flex flex-col gap-4">
-                {plan.tiers.map((tier, i) => {
-                  // Colour deepens with position, not with the word "Founding":
-                  // the tiers run most expensive to best deal, and since paying
-                  // per year (25%) is now worth more than the founding 10%, a
-                  // founding tier sits second and a standard one third
-                  // (Vivien, 2026-09-19). Tinting by label would alternate.
-                  const warm = i > 0 && !tier.best;
+              <div className={`mt-6 grid gap-4 ${plan.options.length > 1 ? 'md:grid-cols-2' : ''}`}>
+                {plan.options.map((option) => {
+                  const dark = !!option.best;
+                  const muted = dark ? 'text-linen/70' : 'text-ink-soft';
                   return (
                     <div
-                      key={tier.label}
-                      className={`flex flex-col items-center gap-1 rounded-[2px] py-5 text-center ${
-                        tier.best ? 'bg-forest py-7 text-linen' : i === 2 ? 'bg-olive/25' : i === 1 ? 'bg-olive/12' : 'bg-shell/60'
+                      key={option.name}
+                      className={`flex flex-col items-center gap-1 rounded-[2px] px-5 py-7 text-center ${
+                        dark ? 'bg-forest text-linen' : 'bg-shell/70 text-ink'
                       }`}
                     >
-                      <p className={`eyebrow ${tier.best ? 'text-linen/70' : warm ? 'text-olive' : 'text-ink-soft'}`}>
-                        {tier.label}
+                      <p className={`eyebrow ${dark ? 'text-linen/80' : 'text-olive'}`}>{option.name}</p>
+                      <p className={`display display-md mt-2 ${dark ? 'text-linen' : 'text-ink'}`}>
+                        {option.perMonth}
+                        <span className={`body-copy ${muted}`}>{pricing.perMonthSuffix}</span>
                       </p>
-                      {tier.best && <p className="body-copy text-linen/90">{pricing.bestLabel}</p>}
-                      <p className={`display display-md ${tier.best ? 'text-linen' : warm ? 'text-olive' : 'text-ink'}`}>
-                        {tier.perMonth}
-                        <span className={`body-copy ${tier.best ? 'text-linen/70' : 'text-ink-soft'}`}>{pricing.perMonthSuffix}</span>
+                      {option.equivalent && <p className={`body-copy -mt-1 text-sm ${muted}`}>{pricing.equivalentSuffix}</p>}
+                      <p className={`body-copy mt-3 ${dark ? 'text-linen/90' : 'text-olive'}`}>
+                        {pricing.foundingLabel}: {option.foundingPerMonth}
+                        <span className={muted}>{pricing.perMonthSuffix}</span>
                       </p>
-                      <PriceReveal label={pricing.revealLabel} light={tier.best}>
-                        {tier.totalBefore && <span className="mr-2 line-through">{tier.totalBefore}</span>}
-                        {tier.totalAfter}
-                      </PriceReveal>
+                      <p className={`body-copy mt-4 text-sm ${muted}`}>
+                        {option.total} · {pricing.foundingLabel} {option.foundingTotal}
+                      </p>
+                      {option.best && (
+                        <p className="body-copy mt-4 max-w-[16rem] border-t border-linen/20 pt-4 text-sm text-linen/90">
+                          {pricing.bestLabel}
+                        </p>
+                      )}
                     </div>
                   );
                 })}
@@ -360,9 +355,23 @@ export default function DossierPage() {
           {pricing.joiningFee}
         </p>
 
-        <ul className="mx-auto mt-14 flex max-w-2xl flex-col gap-8 border-t border-ink/12 pt-14 sm:flex-row sm:justify-between">
+        {/* The payment logic, explained once and separately from the
+            choice itself (Vivien, 2026-09-19), so the cards above stay two
+            figures and nothing else. */}
+        <div className="mx-auto mt-14 max-w-2xl border-t border-ink/12 pt-12">
+          <p className="eyebrow mb-5 text-olive">{pricing.howItWorks.label}</p>
+          <div className="flex flex-col gap-4">
+            {pricing.howItWorks.body.map((paragraph) => (
+              <p key={paragraph} className="body-copy text-ink-soft">
+                {paragraph}
+              </p>
+            ))}
+          </div>
+        </div>
+
+        <ul className="mx-auto mt-14 flex max-w-2xl flex-col gap-8 border-t border-ink/12 pt-14 sm:flex-row sm:justify-center sm:gap-16">
           {pricing.discounts.map((d) => (
-            <li key={d.label} className="flex flex-1 flex-col items-center text-center">
+            <li key={d.label} className="flex flex-col items-center text-center">
               <span className="flex h-16 w-16 items-center justify-center rounded-full border border-olive/45 text-olive">
                 <span className="eyebrow !tracking-normal">{d.value}</span>
               </span>

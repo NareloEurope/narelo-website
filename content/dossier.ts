@@ -62,150 +62,240 @@ export const membershipChapter = {
 } as const;
 
 /**
- * The figures themselves changed on 2026-09-19 (Vivien, after speaking to
- * the company's financial advisor): two ways to pay, per term or per year,
- * nothing else, exceptions handled one family at a time. Paying per term
- * costs 20% more than the PDF's term fee (445€ became 534€, 520€ became
- * 624€, 670€ became 804€, 710€ became 852€). Paying per year is the PDF's
- * full annual total (four terms at the PDF fee) less 10%, where the PDF
- * gave 5%. Vivien's shorthand for this was "a 30% difference"; against
- * four terms at the new per-term fee the yearly total is in fact 25% less
- * (0.9 / 1.2 = 0.75), which is what the label says, because the two
- * percentages sit on different bases. The Founding Family 10% still
- * multiplies on top of either, so founding pay per year is 0.75 x 0.9,
- * about 32% off four terms at the per-term fee. Bloom is a single
- * four-month season with no yearly option, so it is unchanged from the
- * PDF. These are the dossier page's figures only, they are not in the PDF
- * and the PDF was not regenerated.
+ * Two membership choices, not four pricing options (Vivien, 2026-09-19,
+ * after the financial advisor): a 3-Month Membership and an Annual
+ * Membership, and within each the Founding Family rate as a second line.
+ * The decision a family faces should be one question, three months or the
+ * year, and the page is built so that is what it feels like. "Pay per term"
+ * and "pay per year" are no longer the headline, quarterly payment of the
+ * annual fee is not mentioned at all (it is handled in the contract for
+ * families who ask), no tier says "save N%" (discount-heavy, not Narelo),
+ * and the totals sit plainly under the monthly figure rather than behind a
+ * tap, so the actual annual charge is never a surprise.
  *
- * Tier order is most expensive to best deal. Paying per year (25%) is now
- * worth more than being a founding family (10%), so the founding per-term
- * tier sits second and the standard per-year tier third, the reverse of
- * the PDF-era order where the 5% annual discount was the smaller of the two.
+ * The figures: the 3-Month Membership is 20% above the PDF's term fee
+ * (445€ became 534€, 520€ became 624€, 670€ became 804€, 710€ became 852€).
+ * The Annual Membership is the PDF's full annual total less 10%, where the
+ * PDF gave 5%. Against four 3-month memberships that is about 25% less a
+ * year, which the "How payment works" note says in words, not as a badge.
+ * Founding Families, the first 50, take a lifetime 10% off either. Bloom
+ * is a single four-month membership with no annual option and is
+ * unchanged from the PDF. These are the dossier page's figures only, they
+ * are not in the PDF and the PDF was not regenerated.
  *
- * Shown per month rather than as one termly or annual total (Vivien,
- * 2026-09-18): families who received the totals as a single lump figure
- * stopped replying. This is the standard subscription convention Vivien
- * asked for directly: the figure a family weighs is "how much a month",
- * the same way a yearly app subscription is sold as its monthly-equivalent
- * price even though the charge itself is once a year. Termly divides one
- * term's fee by 3, the ordinary length of a term; yearly divides the
- * discounted annual total by 12. The totals themselves are unchanged,
- * nothing here is a new price, and each sits behind PriceReveal, a tap to
- * see it, the way an app store leaves the annual charge a click away
- * rather than beside the monthly figure. `revealLabel` is what the tap
- * says before it opens.
+ * Per-month figures divide the 3-month fee by 3 and the annual total by
+ * 12, the standard subscription convention Vivien asked for on
+ * 2026-09-18; the annual one is marked "equivalent" since the charge
+ * itself is once a year. `bestLabel` replaces the earlier "The rate we hope
+ * you land on", which read as salesy (Vivien, 2026-09-19); the new line
+ * states a fact about the annual option for Founding Families and nothing
+ * more.
  *
- * Four tiers per stage now (Vivien, 2026-09-18), since this dossier goes to
- * families being invited to found the community: standard per term,
- * founding per term, standard per year, founding per year, in that order,
- * each cheaper than the last, so the sequence itself makes the case for the last row
- * without a family having to work it out. The founding discount is a
- * further 10% off whichever of standard termly or yearly a family already
- * pays, it is a lifetime membership discount, not one tied to paying
- * annually, so it appears against both. The two discounts multiply rather
- * than add: founding pay per year is 0.75 x 0.9, about 32% off four terms
- * at the standard per-term rate, not a flat 35%. The last tier carries `best: true`, which the page marks
- * quietly, this is the rate the team wants a family to land on, not a
- * discount they are pressured toward.
+ * The discounts row at the foot keeps the sibling and founding lines from
+ * the PDF. The PDF's "5% discount for annual payment" line is gone: the
+ * Annual Membership is now its own price rather than a discount on
+ * something else, and a percentage badge there would have contradicted
+ * the two figures a family has just read.
  */
-export type PricingTier = {
-  readonly label: string;
+export type PricingOption = {
+  readonly name: string;
+  /** What `total` covers, in words: '3 months', 'the year', '4 months'. */
+  readonly period: string;
   readonly perMonth: string;
-  /** Crossed out before `totalAfter` in the reveal, when this tier is a discount off a total shown above it. Omitted for the first, undiscounted tier. */
-  readonly totalBefore?: string;
-  readonly totalAfter: string;
+  readonly foundingPerMonth: string;
+  /** True for the annual option: the monthly figure is an equivalent, the charge is once a year. */
+  readonly equivalent?: boolean;
+  readonly total: string;
+  readonly foundingTotal: string;
   readonly best?: boolean;
 };
 
 export type PricingPlan = {
   readonly name: string;
   readonly age: string;
-  readonly tiers: readonly PricingTier[];
+  readonly options: readonly PricingOption[];
 };
 
 export const pricing = {
   heading: 'Your membership',
   eyebrow: 'Every week · All year round',
   lede: 'One membership, one place to belong',
-  seasonNote: 'Shown per month: the per-term figure divides one term’s fee across its 3 months, the per-year figure divides the annual total across the year. Tap a figure to see the full price.',
+  intro: 'Two ways to belong: for three months at a time, or for the whole year. Founding Families, the first 50, have their own rate within each.',
   perMonthSuffix: '/month',
-  revealLabel: 'See the full price',
-  bestLabel: 'The rate we hope you land on',
+  equivalentSuffix: 'equivalent',
+  foundingLabel: 'Founding Family',
+  bestLabel: 'Our best value for Founding Families joining for the year',
+  howItWorks: {
+    label: 'How payment works',
+    body: [
+      'The 3-Month Membership is paid at the start of each three months.',
+      'The Annual Membership is one payment at the start of the year, and works out around a quarter less than four 3-month memberships. Its monthly figure is that total divided by twelve.',
+      'Founding Families, the first 50, receive a lifetime 10% off whichever they choose.',
+    ],
+  },
   plans: [
     {
       name: 'Bloom',
       age: 'Pregnancy',
-      tiers: [
-        { label: 'Standard', perMonth: '149€', totalAfter: '595€, across the 4 months' },
-        { label: 'Founding Family · a lifetime 10% off', perMonth: '134€', totalBefore: '595€', totalAfter: '536€, across the 4 months', best: true },
+      options: [
+        {
+          name: 'Bloom Membership',
+          period: '4 months',
+          perMonth: '149€',
+          foundingPerMonth: '134€',
+          total: '595€ for the 4 months',
+          foundingTotal: '536€',
+        },
       ],
     },
     {
       name: 'Nurture',
       age: '0–1 year',
-      tiers: [
-        { label: 'Standard · pay per term', perMonth: '178€', totalAfter: '534€ each term' },
-        { label: 'Founding Family · pay per term · save 10%', perMonth: '160€', totalBefore: '534€', totalAfter: '481€ each term' },
-        { label: 'Standard · pay per year · save 25%', perMonth: '134€', totalBefore: '2.136€', totalAfter: '1.607€ a year' },
-        { label: 'Founding Family · pay per year · save 32%', perMonth: '121€', totalBefore: '1.607€', totalAfter: '1.446€ a year', best: true },
+      options: [
+        {
+          name: '3-Month Membership',
+          period: '3 months',
+          perMonth: '178€',
+          foundingPerMonth: '160€',
+          total: '534€ for the 3 months',
+          foundingTotal: '481€',
+        },
+        {
+          name: 'Annual Membership',
+          period: 'the year',
+          perMonth: '134€',
+          foundingPerMonth: '121€',
+          equivalent: true,
+          total: '1.607€ for the year',
+          foundingTotal: '1.446€',
+          best: true,
+        },
       ],
     },
     {
       name: 'The Nest',
       age: '1–2 years',
-      tiers: [
-        { label: 'Standard · pay per term', perMonth: '208€', totalAfter: '624€ each term' },
-        { label: 'Founding Family · pay per term · save 10%', perMonth: '187€', totalBefore: '624€', totalAfter: '562€ each term' },
-        { label: 'Standard · pay per year · save 25%', perMonth: '156€', totalBefore: '2.496€', totalAfter: '1.877€ a year' },
-        { label: 'Founding Family · pay per year · save 32%', perMonth: '141€', totalBefore: '1.877€', totalAfter: '1.689€ a year', best: true },
+      options: [
+        {
+          name: '3-Month Membership',
+          period: '3 months',
+          perMonth: '208€',
+          foundingPerMonth: '187€',
+          total: '624€ for the 3 months',
+          foundingTotal: '562€',
+        },
+        {
+          name: 'Annual Membership',
+          period: 'the year',
+          perMonth: '156€',
+          foundingPerMonth: '141€',
+          equivalent: true,
+          total: '1.877€ for the year',
+          foundingTotal: '1.689€',
+          best: true,
+        },
       ],
     },
     {
       name: 'Little Beginnings',
       age: '2–3 years',
-      tiers: [
-        { label: 'Standard · pay per term', perMonth: '268€', totalAfter: '804€ each term' },
-        { label: 'Founding Family · pay per term · save 10%', perMonth: '241€', totalBefore: '804€', totalAfter: '724€ each term' },
-        { label: 'Standard · pay per year · save 25%', perMonth: '201€', totalBefore: '3.216€', totalAfter: '2.417€ a year' },
-        { label: 'Founding Family · pay per year · save 32%', perMonth: '181€', totalBefore: '2.417€', totalAfter: '2.175€ a year', best: true },
+      options: [
+        {
+          name: '3-Month Membership',
+          period: '3 months',
+          perMonth: '268€',
+          foundingPerMonth: '241€',
+          total: '804€ for the 3 months',
+          foundingTotal: '724€',
+        },
+        {
+          name: 'Annual Membership',
+          period: 'the year',
+          perMonth: '201€',
+          foundingPerMonth: '181€',
+          equivalent: true,
+          total: '2.417€ for the year',
+          foundingTotal: '2.175€',
+          best: true,
+        },
       ],
     },
     {
       name: 'Builders I',
       age: '3–5 years',
-      tiers: [
-        { label: 'Standard · pay per term', perMonth: '268€', totalAfter: '804€ each term' },
-        { label: 'Founding Family · pay per term · save 10%', perMonth: '241€', totalBefore: '804€', totalAfter: '724€ each term' },
-        { label: 'Standard · pay per year · save 25%', perMonth: '201€', totalBefore: '3.216€', totalAfter: '2.417€ a year' },
-        { label: 'Founding Family · pay per year · save 32%', perMonth: '181€', totalBefore: '2.417€', totalAfter: '2.175€ a year', best: true },
+      options: [
+        {
+          name: '3-Month Membership',
+          period: '3 months',
+          perMonth: '268€',
+          foundingPerMonth: '241€',
+          total: '804€ for the 3 months',
+          foundingTotal: '724€',
+        },
+        {
+          name: 'Annual Membership',
+          period: 'the year',
+          perMonth: '201€',
+          foundingPerMonth: '181€',
+          equivalent: true,
+          total: '2.417€ for the year',
+          foundingTotal: '2.175€',
+          best: true,
+        },
       ],
     },
     {
       name: 'Builders II',
       age: '5–6 years',
-      tiers: [
-        { label: 'Standard · pay per term', perMonth: '268€', totalAfter: '804€ each term' },
-        { label: 'Founding Family · pay per term · save 10%', perMonth: '241€', totalBefore: '804€', totalAfter: '724€ each term' },
-        { label: 'Standard · pay per year · save 25%', perMonth: '201€', totalBefore: '3.216€', totalAfter: '2.417€ a year' },
-        { label: 'Founding Family · pay per year · save 32%', perMonth: '181€', totalBefore: '2.417€', totalAfter: '2.175€ a year', best: true },
+      options: [
+        {
+          name: '3-Month Membership',
+          period: '3 months',
+          perMonth: '268€',
+          foundingPerMonth: '241€',
+          total: '804€ for the 3 months',
+          foundingTotal: '724€',
+        },
+        {
+          name: 'Annual Membership',
+          period: 'the year',
+          perMonth: '201€',
+          foundingPerMonth: '181€',
+          equivalent: true,
+          total: '2.417€ for the year',
+          foundingTotal: '2.175€',
+          best: true,
+        },
       ],
     },
     {
       name: 'Navigators',
       age: '6–8 years',
-      tiers: [
-        { label: 'Standard · pay per term', perMonth: '284€', totalAfter: '852€ each term' },
-        { label: 'Founding Family · pay per term · save 10%', perMonth: '256€', totalBefore: '852€', totalAfter: '767€ each term' },
-        { label: 'Standard · pay per year · save 25%', perMonth: '213€', totalBefore: '3.408€', totalAfter: '2.552€ a year' },
-        { label: 'Founding Family · pay per year · save 32%', perMonth: '191€', totalBefore: '2.552€', totalAfter: '2.297€ a year', best: true },
+      options: [
+        {
+          name: '3-Month Membership',
+          period: '3 months',
+          perMonth: '284€',
+          foundingPerMonth: '256€',
+          total: '852€ for the 3 months',
+          foundingTotal: '767€',
+        },
+        {
+          name: 'Annual Membership',
+          period: 'the year',
+          perMonth: '213€',
+          foundingPerMonth: '191€',
+          equivalent: true,
+          total: '2.552€ for the year',
+          foundingTotal: '2.297€',
+          best: true,
+        },
       ],
     },
   ] as readonly PricingPlan[],
   joiningFee: 'One-time joining fee of 99€ per family · 49€ for Bloom.',
   discounts: [
     { value: '15%', label: 'sibling discount' },
-    { value: '10%', label: 'discount for annual payment' },
     { value: '10%', label: 'lifetime membership discount for the first 50 Founding Families' },
   ],
 } as const;
