@@ -1,5 +1,4 @@
 import Section from '@/components/Section';
-import PriceReveal from '@/components/PriceReveal';
 import PromiseCards from '@/components/PromiseCards';
 import IncludedPanels from '@/components/IncludedPanels';
 import DossierJourney from '@/components/DossierJourney';
@@ -296,98 +295,60 @@ export default function DossierPage() {
           <p className="body-copy mt-6 text-ink-soft">{pricing.intro}</p>
         </div>
 
-        {/* Two membership choices per age group, not four pricing tiers
-            (Vivien, 2026-09-19): a 3-Month Membership and an Annual
-            Membership side by side, each leading with its monthly figure.
-            The Founding Family rate sits inside the annual option only, as
-            its own small figure; the 3-month option carries a one-line
-            note instead (Vivien, 2026-09-19), so the decision reads as one
-            question, three months or the year. The real totals are a tap away under the monthly figure
-            ("See the full price", back by request after one revision
-            without it). No "save N%" anywhere. The annual option is
-            the solid forest block, with one factual line about Founding
-            Families, in place of the earlier "rate we hope you land on". */}
-        <div className="mx-auto mt-12 flex max-w-3xl flex-col gap-6">
-          {pricing.plans.map((plan) => (
-            <div
-              key={plan.name}
-              className="rounded-[2px] bg-linen p-7 shadow-[0_18px_40px_-30px_rgba(43,32,24,0.45)] ring-1 ring-forest/15 md:p-9"
-            >
-              <h3 className="display display-md leading-snug">
-                {plan.name} <span className="body-copy text-ink-soft">({plan.age})</span>
-              </h3>
+        {/* The 12-Experience model (Vivien, 2026-09-20): two tiers side by
+            side, each one price for a cycle of 12 Experiences and the
+            per-Experience figure under it, then how the cycle works and
+            what stays part of every membership. No per-month figures, no
+            tap to reveal a total, no discounts: the price is the price.
+            Every word is content/dossier.ts. */}
+        <div className="mx-auto mt-14 max-w-3xl">
+          <p className="eyebrow mb-5 text-olive">{pricing.tiersLabel}</p>
+          <div className="grid gap-6 md:grid-cols-2">
+            {pricing.tiers.map((tier, i) => {
+              const dark = i === 1;
+              const muted = dark ? 'text-linen/70' : 'text-ink-soft';
+              return (
+                <div
+                  key={tier.name}
+                  className={`flex flex-col rounded-[2px] p-7 md:p-9 ${
+                    dark ? 'bg-forest text-linen' : 'bg-linen text-ink shadow-[0_18px_40px_-30px_rgba(43,32,24,0.45)] ring-1 ring-forest/15'
+                  }`}
+                >
+                  <h3 className="display display-md leading-snug">{tier.name}</h3>
+                  <p className={`body-copy mt-2 ${dark ? 'text-linen/90' : 'text-ink-soft'}`}>{tier.groups}</p>
+                  <p className={`body-copy mt-1 text-sm ${muted}`}>{tier.ages}</p>
 
-              <div className={`mt-6 grid gap-4 ${plan.options.length > 1 ? 'md:grid-cols-2' : ''}`}>
-                {plan.options.map((option) => {
-                  const dark = !!option.best;
-                  const muted = dark ? 'text-linen/70' : 'text-ink-soft';
-                  return (
-                    <div
-                      key={option.name}
-                      className={`flex flex-col items-center gap-1 rounded-[2px] px-5 py-7 text-center ${
-                        dark ? 'bg-forest text-linen' : 'bg-shell/70 text-ink'
-                      }`}
-                    >
-                      <p className={`eyebrow ${dark ? 'text-linen/80' : 'text-olive'}`}>{option.name}</p>
-                      <p className={`display display-md mt-2 ${dark ? 'text-linen' : 'text-ink'}`}>
-                        {option.perMonth}
-                        <span className={`body-copy ${muted}`}>{pricing.perMonthSuffix}</span>
-                      </p>
-                      {option.note && <p className={`body-copy mt-1 text-sm ${muted}`}>{option.note}</p>}
-                      {option.foundingPerMonth && (
-                        <div className="mt-4">
-                          <p className={`eyebrow ${dark ? 'text-linen/80' : 'text-olive'}`}>{pricing.foundingLabel}</p>
-                          <p className={`display display-md mt-1 ${dark ? 'text-linen' : 'text-olive'}`}>
-                            {option.foundingPerMonth}
-                            <span className={`body-copy ${muted}`}>{pricing.perMonthSuffix}</span>
-                          </p>
-                        </div>
-                      )}
-                      <PriceReveal label={pricing.revealLabel} light={dark}>
-                        {option.total}
-                        {option.foundingTotal && ` · ${pricing.foundingLabel} ${option.foundingTotal}`}
-                      </PriceReveal>
-                      {option.best && (
-                        <p className="body-copy mt-4 max-w-[16rem] border-t border-linen/20 pt-4 text-sm text-linen/90">
-                          {pricing.bestLabel}
-                        </p>
-                      )}
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
-          ))}
-        </div>
-
-        <p className="body-copy mx-auto mt-10 max-w-2xl text-center text-ink-soft">
-          {pricing.joiningFee}
-        </p>
-
-        {/* The payment logic, explained once and separately from the
-            choice itself (Vivien, 2026-09-19), so the cards above stay two
-            figures and nothing else. */}
-        <div className="mx-auto mt-14 max-w-2xl border-t border-ink/12 pt-12">
-          <p className="eyebrow mb-5 text-olive">{pricing.howItWorks.label}</p>
-          <div className="flex flex-col gap-4">
-            {pricing.howItWorks.body.map((paragraph) => (
-              <p key={paragraph} className="body-copy text-ink-soft">
-                {paragraph}
-              </p>
-            ))}
+                  <div className={`mt-8 border-t pt-8 ${dark ? 'border-linen/20' : 'border-ink/12'}`}>
+                    <p className={`eyebrow ${dark ? 'text-linen/80' : 'text-olive'}`}>{pricing.cycleLabel}</p>
+                    <p className={`display display-lg mt-2 ${dark ? 'text-linen' : 'text-olive'}`}>{tier.price}</p>
+                    <p className={`body-copy mt-1 text-sm ${muted}`}>{pricing.priceNote}</p>
+                    <p className={`body-copy mt-4 ${dark ? 'text-linen/90' : 'text-ink'}`}>{tier.perExperience}</p>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
 
-        <ul className="mx-auto mt-14 flex max-w-2xl flex-col gap-8 border-t border-ink/12 pt-14 sm:flex-row sm:justify-center sm:gap-16">
-          {pricing.discounts.map((d) => (
-            <li key={d.label} className="flex flex-col items-center text-center">
-              <span className="flex h-16 w-16 items-center justify-center rounded-full border border-olive/45 text-olive">
-                <span className="eyebrow !tracking-normal">{d.value}</span>
-              </span>
-              <p className="body-copy mt-4 max-w-[16rem] text-ink-soft">{d.label}</p>
-            </li>
-          ))}
-        </ul>
+        <div className="mx-auto mt-16 grid max-w-3xl gap-10 md:grid-cols-[1.2fr_1fr]">
+          <div>
+            <p className="eyebrow mb-5 text-olive">{pricing.howItWorks.label}</p>
+            <ol className="flex flex-col gap-4">
+              {pricing.howItWorks.points.map((point, i) => (
+                <li key={point} className="flex gap-4">
+                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-olive/45 text-olive">
+                    <span className="eyebrow !tracking-normal">{i + 1}</span>
+                  </span>
+                  <p className="body-copy pt-1 text-ink-soft">{point}</p>
+                </li>
+              ))}
+            </ol>
+          </div>
+          <div className="rounded-[2px] bg-shell p-7">
+            <p className="eyebrow mb-4 text-olive">{pricing.membershipNote.label}</p>
+            <p className="body-copy text-ink-soft">{pricing.membershipNote.body}</p>
+          </div>
+        </div>
       </Section>
 
       {/* ---------- Reserve your family's place ---------- */}
