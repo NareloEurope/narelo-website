@@ -27,11 +27,14 @@ export default function DossierJourney({
   whatToExpectLabel,
   includedLabel,
   includedItems,
+  notes,
 }: {
   stages: readonly Stage[];
   whatToExpectLabel: string;
   includedLabel: string;
   includedItems: readonly { readonly title: string }[];
+  /** Per-stage extras written for this page, keyed by stage name. Optional per stage. */
+  notes?: Record<string, { readonly label: string; readonly body: string }>;
 }) {
   const [open, setOpen] = useState(-1);
 
@@ -76,6 +79,17 @@ export default function DossierJourney({
                 <div className="mb-4 ml-[4.25rem] rounded-[2px] bg-shell p-5">
                   {stage.motto && <p className="mb-2 text-sm italic leading-snug text-olive">{stage.motto}</p>}
                   <p className="body-copy text-sm text-ink-soft">{stage.shortSummary ?? stage.summary}</p>
+                  {/* A stage's own note, where one is written for it: for
+                      Nurture, the different prepared theme every week, which
+                      is what parents of babies actually ask about (Vivien,
+                      2026-09-21). Sits above "what to expect", since it
+                      frames the list rather than adding to it. */}
+                  {notes?.[stage.name] && (
+                    <div className="mt-4 rounded-[2px] bg-linen p-4">
+                      <p className="eyebrow mb-2 text-olive">{notes[stage.name].label}</p>
+                      <p className="body-copy text-sm text-ink-soft">{notes[stage.name].body}</p>
+                    </div>
+                  )}
                   {stage.whatToExpect && (
                     <div className="mt-4 border-t border-ink/12 pt-4">
                       <p className="eyebrow mb-2 text-olive">{whatToExpectLabel}</p>

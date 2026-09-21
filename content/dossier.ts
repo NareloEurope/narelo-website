@@ -98,6 +98,12 @@ export const membershipChapter = {
  * Wording is the price list's, with its spaced dashes turned into commas
  * or colons (house style: no em dashes). Prices are written "50 €" with a
  * space, as the list writes them.
+ *
+ * The two tier cards carry a `tone` each rather than one being "the dark
+ * one" (Vivien, 2026-09-21): Explore on the page's own linen was nearly
+ * invisible against the linen background, so it takes the palette's sand
+ * now, the one warm mid tone the brand already has. Forest and sand read
+ * as two real choices side by side; linen and linen did not.
  */
 export type PricingTier = {
   readonly name: string;
@@ -105,7 +111,8 @@ export type PricingTier = {
   readonly who: string;
   readonly perWeek: string;
   readonly total: string;
-  readonly dark?: boolean;
+  /** Which of the two card treatments this tier gets. Never both the same: the pair has to read as two choices at a glance. */
+  readonly tone: 'forest' | 'sand';
 };
 
 export type HowStep = { readonly title: string; readonly body: string };
@@ -130,7 +137,7 @@ export const pricing = {
       who: 'With you · up to 3 years',
       perWeek: '50 €',
       total: '600 €',
-      dark: true,
+      tone: 'forest',
     },
     {
       name: 'Narelo Explore',
@@ -138,6 +145,7 @@ export const pricing = {
       who: 'On their own · 3 to 8 years',
       perWeek: '60 €',
       total: '720 €',
+      tone: 'sand',
     },
   ] as readonly PricingTier[],
   finePrint:
@@ -172,6 +180,25 @@ export const pricing = {
       'Founding Families: 10% off the weekly price for as long as the membership continues without interruption, 45 € or 54 € per week, so 540 € or 648 € per season. The first 50 families keep that price for good.',
   },
 } as const;
+
+/**
+ * A per-stage extra for the age-group cards, keyed by the stage name in
+ * content/stages.ts. It lives here, not in content/stages.ts, because it
+ * is written for this page alone: content/stages.ts is shared with the
+ * Experiences page and with the Spanish, German and Hungarian stage lists,
+ * and a required field there fails their build.
+ *
+ * Nurture first (Vivien, 2026-09-21): parents of babies ask what actually
+ * happens each week, and the answer, a different prepared theme every
+ * time, is the strongest thing Narelo has to say at this age. The three
+ * named themes are Vivien's own examples. Any stage can take an entry.
+ */
+export const journeyNotes: Record<string, { readonly label: string; readonly body: string }> = {
+  Nurture: {
+    label: 'A new theme every week',
+    body: 'Every Experience has its own world, prepared for this age: a baby spa, a sensory journey through space, a morning with farm animals. Something new to discover each week, with the same familiar faces.',
+  },
+};
 
 export const reserve = {
   eyebrow: 'Founding memberships are limited to 50 families',

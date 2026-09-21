@@ -222,6 +222,7 @@ export default function DossierPage() {
           whatToExpectLabel={ui.whatToExpect}
           includedLabel={included.groups[0].label}
           includedItems={included.groups[0].items}
+          notes={dossier.journeyNotes}
         />
 
         <p className="body-copy mx-auto mt-10 max-w-2xl text-center text-ink-soft">
@@ -310,27 +311,34 @@ export default function DossierPage() {
         <div className="mx-auto mt-12 max-w-3xl">
           <div className="grid gap-6 md:grid-cols-2">
             {pricing.tiers.map((tier) => {
-              const dark = !!tier.dark;
-              const muted = dark ? 'text-linen/70' : 'text-ink-soft';
+              const forest = tier.tone === 'forest';
+              // Two treatments, never two of the same: deep forest beside
+              // warm sand. Text colours are picked per tone so both stay
+              // readable, ink on sand rather than the page's ink-soft,
+              // which washes out on it.
+              const card = forest
+                ? 'bg-forest text-linen'
+                : 'bg-sand text-ink shadow-[0_18px_40px_-30px_rgba(43,32,24,0.45)]';
+              const heading = forest ? 'text-linen' : 'text-ink';
+              const soft = forest ? 'text-linen/90' : 'text-ink/80';
+              const muted = forest ? 'text-linen/70' : 'text-ink/70';
+              const accent = forest ? 'text-linen/70' : 'text-forest';
+              const price = forest ? 'text-linen' : 'text-forest';
+              const rule = forest ? 'border-linen/20' : 'border-ink/20';
               return (
-                <div
-                  key={tier.name}
-                  className={`flex flex-col items-center rounded-[2px] p-7 text-center md:p-9 ${
-                    dark ? 'bg-forest text-linen' : 'bg-linen text-ink shadow-[0_18px_40px_-30px_rgba(43,32,24,0.45)] ring-1 ring-forest/15'
-                  }`}
-                >
-                  <h3 className="display display-md leading-snug">{tier.name}</h3>
-                  <p className={`body-copy mt-2 text-sm ${dark ? 'text-linen/90' : 'text-ink-soft'}`}>{tier.groups}</p>
-                  <p className={`eyebrow mt-3 ${dark ? 'text-linen/70' : 'text-olive'}`}>{tier.who}</p>
+                <div key={tier.name} className={`flex flex-col items-center rounded-[2px] p-7 text-center md:p-9 ${card}`}>
+                  <h3 className={`display display-md leading-snug ${heading}`}>{tier.name}</h3>
+                  <p className={`body-copy mt-2 text-sm ${soft}`}>{tier.groups}</p>
+                  <p className={`eyebrow mt-3 ${accent}`}>{tier.who}</p>
 
-                  <div className={`mt-7 w-full border-t pt-7 ${dark ? 'border-linen/20' : 'border-ink/12'}`}>
+                  <div className={`mt-7 w-full border-t pt-7 ${rule}`}>
                     <p className={`eyebrow ${muted}`}>{pricing.seasonLabel}</p>
-                    <p className={`display display-lg mt-2 ${dark ? 'text-linen' : 'text-olive'}`}>{tier.perWeek}</p>
+                    <p className={`display display-lg mt-2 ${price}`}>{tier.perWeek}</p>
                     <p className={`body-copy -mt-1 text-sm ${muted}`}>{pricing.perWeekSuffix}</p>
                   </div>
 
-                  <div className={`mt-6 w-full border-t pt-6 ${dark ? 'border-linen/20' : 'border-ink/12'}`}>
-                    <p className={`display display-md ${dark ? 'text-linen' : 'text-ink'}`}>
+                  <div className={`mt-6 w-full border-t pt-6 ${rule}`}>
+                    <p className={`display display-md ${heading}`}>
                       {tier.total} <span className={`body-copy ${muted}`}>{pricing.totalSuffix}</span>
                     </p>
                     <p className={`body-copy mt-1 text-sm ${muted}`}>{pricing.totalNote}</p>
