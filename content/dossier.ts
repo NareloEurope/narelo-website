@@ -153,7 +153,11 @@ export const pricing = {
   howItWorks: {
     label: 'How it works',
     steps: [
-      { title: 'Choose the group and the day', body: 'We give your child a fixed weekday in the group that matches their age.' },
+      /* The price list's step read "Choose the group and the day". Narelo
+       * assigns the day, not the family (Vivien, 2026-09-21), so the title
+       * promises only what a family actually chooses; the body already said
+       * who gives the weekday and is unchanged. */
+      { title: 'Choose the group', body: 'We give your child a fixed weekday in the group that matches their age.' },
       { title: 'Pay for the season', body: '600 € or 720 €, once at the start. After that nothing follows for three months.' },
       { title: 'Carry on, or not', body: 'The season renews automatically for another three months. To stop, just tell us up to 14 days before the last Experience.' },
     ] as readonly HowStep[],
