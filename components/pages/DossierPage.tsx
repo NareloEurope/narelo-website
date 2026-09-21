@@ -1,6 +1,5 @@
 import Section from '@/components/Section';
 import PromiseCards from '@/components/PromiseCards';
-import IncludedPanels from '@/components/IncludedPanels';
 import DossierJourney from '@/components/DossierJourney';
 import WhatsAppIcon from '@/components/WhatsAppIcon';
 import Link from 'next/link';
@@ -265,20 +264,12 @@ export default function DossierPage() {
           </p>
         </div>
 
-        {/* What is actually included in membership, kept apart from what is
-            bookable on top at a member rate: the dossier's "members also
-            enjoy" list ran both together under one "book first" line, which
-            reads as though Community Mornings and the included Expert
-            Insights sessions cost extra too (Vivien, 2026-09-18). These are
-            the same two groups the Membership page already keeps distinct.
-            The second group's "what each of these is" link to /experiences/
-            is dropped here: this page keeps a reader on it until the one
-            link at its close, rather than sending them off mid-read. */}
-        <div className="mx-auto mt-12 max-w-2xl">
-          <IncludedPanels
-            groups={included.groups.map((group) => ({ label: group.label, items: group.items }))}
-          />
-        </div>
+        {/* The two-panel "what is included / what is bookable on top" list
+            that used to sit here is gone (2026-09-21): the price list's own
+            "Included in every membership" now states all of it, more fully,
+            directly beside the price where it does the work. Saying the
+            same list twice, two screens apart, only weakened both. The
+            Membership page's own panels are untouched. */}
 
         <p className="body-copy mx-auto mt-12 max-w-2xl text-center text-ink-soft">
           {regular.note}
@@ -291,63 +282,115 @@ export default function DossierPage() {
 
         <div className="mx-auto max-w-2xl text-center">
           <p className="eyebrow mb-4 text-olive">{pricing.eyebrow}</p>
-          <p className="lede text-ink-soft">{pricing.lede}</p>
-          <p className="body-copy mt-6 text-ink-soft">{pricing.intro}</p>
+          <p className="display display-md">{pricing.lede}</p>
+          <p className="lede mt-6 text-ink-soft">{pricing.intro}</p>
         </div>
 
-        {/* The 12-Experience model (Vivien, 2026-09-20): two tiers side by
-            side, each one price for a cycle of 12 Experiences and the
-            per-Experience figure under it, then how the cycle works and
-            what stays part of every membership. No per-month figures, no
-            tap to reveal a total, no discounts: the price is the price.
-            Every word is content/dossier.ts. */}
-        <div className="mx-auto mt-14 max-w-3xl">
-          <p className="eyebrow mb-5 text-olive">{pricing.tiersLabel}</p>
+        {/* Value before price (Vivien, 2026-09-21, "think as a sales
+            expert"): one quiet line of what the membership gives the
+            parent, from her Key notes sheet, sits between the headline and
+            the two price cards. */}
+        <div className="mx-auto mt-10 max-w-3xl text-center">
+          <p className="eyebrow mb-4 text-olive">{pricing.forParents.label}</p>
+          <ul className="flex flex-wrap justify-center gap-x-8 gap-y-2">
+            {pricing.forParents.items.map((item) => (
+              <li key={item} className="body-copy text-ink">
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* The price list of 2026-09-21, laid out as the one-page PDF lays
+            it out: two tier cards (Early in forest, Explore in linen), the
+            weekly price large and the season total under it, the fine
+            print, three "How it works" steps, what is included, and three
+            "Good to know" facts with the Founding Families note. Every
+            word is content/dossier.ts. */}
+        <div className="mx-auto mt-12 max-w-3xl">
           <div className="grid gap-6 md:grid-cols-2">
-            {pricing.tiers.map((tier, i) => {
-              const dark = i === 1;
+            {pricing.tiers.map((tier) => {
+              const dark = !!tier.dark;
               const muted = dark ? 'text-linen/70' : 'text-ink-soft';
               return (
                 <div
                   key={tier.name}
-                  className={`flex flex-col rounded-[2px] p-7 md:p-9 ${
+                  className={`flex flex-col items-center rounded-[2px] p-7 text-center md:p-9 ${
                     dark ? 'bg-forest text-linen' : 'bg-linen text-ink shadow-[0_18px_40px_-30px_rgba(43,32,24,0.45)] ring-1 ring-forest/15'
                   }`}
                 >
                   <h3 className="display display-md leading-snug">{tier.name}</h3>
-                  <p className={`body-copy mt-2 ${dark ? 'text-linen/90' : 'text-ink-soft'}`}>{tier.groups}</p>
-                  <p className={`body-copy mt-1 text-sm ${muted}`}>{tier.ages}</p>
+                  <p className={`body-copy mt-2 text-sm ${dark ? 'text-linen/90' : 'text-ink-soft'}`}>{tier.groups}</p>
+                  <p className={`eyebrow mt-3 ${dark ? 'text-linen/70' : 'text-olive'}`}>{tier.who}</p>
 
-                  <div className={`mt-8 border-t pt-8 ${dark ? 'border-linen/20' : 'border-ink/12'}`}>
-                    <p className={`eyebrow ${dark ? 'text-linen/80' : 'text-olive'}`}>{pricing.cycleLabel}</p>
-                    <p className={`display display-lg mt-2 ${dark ? 'text-linen' : 'text-olive'}`}>{tier.price}</p>
-                    <p className={`body-copy mt-1 text-sm ${muted}`}>{pricing.priceNote}</p>
-                    <p className={`body-copy mt-4 ${dark ? 'text-linen/90' : 'text-ink'}`}>{tier.perExperience}</p>
+                  <div className={`mt-7 w-full border-t pt-7 ${dark ? 'border-linen/20' : 'border-ink/12'}`}>
+                    <p className={`eyebrow ${muted}`}>{pricing.seasonLabel}</p>
+                    <p className={`display display-lg mt-2 ${dark ? 'text-linen' : 'text-olive'}`}>{tier.perWeek}</p>
+                    <p className={`body-copy -mt-1 text-sm ${muted}`}>{pricing.perWeekSuffix}</p>
+                  </div>
+
+                  <div className={`mt-6 w-full border-t pt-6 ${dark ? 'border-linen/20' : 'border-ink/12'}`}>
+                    <p className={`display display-md ${dark ? 'text-linen' : 'text-ink'}`}>
+                      {tier.total} <span className={`body-copy ${muted}`}>{pricing.totalSuffix}</span>
+                    </p>
+                    <p className={`body-copy mt-1 text-sm ${muted}`}>{pricing.totalNote}</p>
                   </div>
                 </div>
               );
             })}
           </div>
+          <p className="body-copy mt-6 text-sm text-ink-soft">{pricing.finePrint}</p>
         </div>
 
-        <div className="mx-auto mt-16 grid max-w-3xl gap-10 md:grid-cols-[1.2fr_1fr]">
-          <div>
-            <p className="eyebrow mb-5 text-olive">{pricing.howItWorks.label}</p>
-            <ol className="flex flex-col gap-4">
-              {pricing.howItWorks.points.map((point, i) => (
-                <li key={point} className="flex gap-4">
-                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-olive/45 text-olive">
-                    <span className="eyebrow !tracking-normal">{i + 1}</span>
-                  </span>
-                  <p className="body-copy pt-1 text-ink-soft">{point}</p>
+        <div className="mx-auto mt-16 max-w-3xl">
+          <p className="eyebrow mb-6 text-olive">{pricing.howItWorks.label}</p>
+          <ol className="grid gap-8 md:grid-cols-3">
+            {pricing.howItWorks.steps.map((step, i) => (
+              <li key={step.title} className="flex gap-4">
+                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-olive/45 text-olive">
+                  <span className="eyebrow !tracking-normal">{i + 1}</span>
+                </span>
+                <div>
+                  <p className="body-copy text-ink">{step.title}</p>
+                  <p className="body-copy mt-1 text-sm text-ink-soft">{step.body}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
+        </div>
+
+        <div className="mx-auto mt-16 max-w-3xl">
+          <p className="eyebrow mb-6 text-olive">{pricing.included.label}</p>
+          <ul className="grid gap-x-10 gap-y-3 md:grid-cols-2">
+            {pricing.included.items.map((item) => (
+              <li key={item} className="body-copy flex gap-3 text-ink-soft">
+                <span className="mt-[0.6em] h-1 w-1 shrink-0 rounded-full bg-olive" aria-hidden="true" />
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="mx-auto mt-16 max-w-3xl">
+          <p className="eyebrow mb-6 text-olive">{pricing.goodToKnow.label}</p>
+          <ul className="grid gap-4 sm:grid-cols-3">
+            {pricing.goodToKnow.facts.map((fact) => {
+              const dark = 'dark' in fact && fact.dark;
+              return (
+                <li
+                  key={fact.title}
+                  className={`flex flex-col items-center rounded-[2px] p-6 text-center ${
+                    dark ? 'bg-forest text-linen' : 'bg-linen text-ink ring-1 ring-forest/15'
+                  }`}
+                >
+                  <span className={`display display-md ${dark ? 'text-linen' : 'text-olive'}`}>{fact.value}</span>
+                  <p className={`body-copy mt-2 ${dark ? 'text-linen' : 'text-ink'}`}>{fact.title}</p>
+                  <p className={`body-copy mt-1 text-sm ${dark ? 'text-linen/70' : 'text-ink-soft'}`}>{fact.label}</p>
                 </li>
-              ))}
-            </ol>
-          </div>
-          <div className="rounded-[2px] bg-shell p-7">
-            <p className="eyebrow mb-4 text-olive">{pricing.membershipNote.label}</p>
-            <p className="body-copy text-ink-soft">{pricing.membershipNote.body}</p>
-          </div>
+              );
+            })}
+          </ul>
+          <p className="body-copy mt-6 text-sm text-ink-soft">{pricing.goodToKnow.foundingNote}</p>
         </div>
       </Section>
 
@@ -402,6 +445,11 @@ export default function DossierPage() {
               only here at the very end: a quiet line, not a button, so
               nothing along the way pulls a reader off the guide before they
               have read it (Vivien, 2026-09-18). */}
+          {/* The manifesto and sign-off from the Key notes sheet close the
+              guide (Vivien, 2026-09-21), before the one link off the page. */}
+          <p className="display display-md mt-16 text-ink">{reserve.manifesto}</p>
+          <p className="eyebrow mt-5 text-olive">{reserve.tagline}</p>
+
           <p className="body-copy mt-14 text-ink-soft">
             <Link href="/" className="link-line text-ink">
               Visit the Narelo website
