@@ -10,7 +10,8 @@ import { localePath, type Lang } from '@/content/locales';
 export default function HomePage({ lang }: { lang: Lang }) {
   const c = content(lang);
   const { contact } = c.site;
-  const { hero, belief, statement, shape, worlds, journey, promise, home, closing } = c.home;
+  const { hero, belief, statement, parents, gain, different, approach, worlds, journey, ways, home, ourBelief, closing } =
+    c.home;
   const t = (path: string) => localePath(lang, path);
   return (
     <>
@@ -38,7 +39,12 @@ export default function HomePage({ lang }: { lang: Lang }) {
             ))}
           </h1>
           <div className="mt-10 flex flex-col gap-10 md:flex-row md:items-end md:justify-between">
-            <p className="lede max-w-xl text-linen/85">{hero.lede}</p>
+            <div className="max-w-xl">
+              <p className="lede text-linen/85">{hero.lede}</p>
+              {/* The second paragraph is the longer of the two, so it sits a
+                  size down and the first line stays the one that carries. */}
+              <p className="body-copy mt-6 text-linen/80">{hero.lede2}</p>
+            </div>
             <span className="eyebrow hidden shrink-0 text-linen/60 md:block">{hero.scrollHint}</span>
           </div>
         </div>
@@ -91,38 +97,99 @@ export default function HomePage({ lang }: { lang: Lang }) {
         </div>
       </section>
 
-      {/* ---------- The shape of a day ---------- */}
+      {/*
+       * ---------- For parents ----------
+       *
+       * Website Core §3, and new to the page. The parent's own time is the
+       * thing the home page had never said out loud, so it comes early,
+       * straight after the statement band.
+       *
+       * Same shape as the belief section above it: words left, photograph
+       * right, the line that lands sitting under the picture. The photograph
+       * is the one the shape-of-a-day section used before this rewrite.
+       */}
       <Section>
-        <div className="mb-12 max-w-2xl fade" data-reveal>
-          <p className="eyebrow mb-8 text-olive">{shape.eyebrow}</p>
-          <h2 className="display display-lg mb-8">{shape.heading}</h2>
-          <p className="lede text-ink-soft">{shape.body}</p>
+        <div className="grid items-start gap-14 md:grid-cols-2 md:gap-20">
+          <div className="fade" data-reveal>
+            <p className="eyebrow mb-8 text-olive">{parents.eyebrow}</p>
+            <h2 className="display display-lg mb-8 max-w-lg">{parents.heading}</h2>
+            <p className="lede mb-6 max-w-md text-ink-soft">{parents.body}</p>
+            <p className="body-copy mb-6 max-w-md text-ink-soft">{parents.body2}</p>
+            <p className="body-copy max-w-md text-ink-soft">{parents.body3}</p>
+          </div>
+          <div className="fade" data-reveal>
+            <div className="img-settle overflow-hidden rounded-[2px]">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={parents.image}
+                alt={parents.imageAlt}
+                width={1080}
+                height={1350}
+                loading="lazy"
+                className="aspect-[4/5] w-full object-cover"
+              />
+            </div>
+            <p className="body-copy mt-6 italic text-olive">{parents.pull}</p>
+          </div>
         </div>
-
-        <div className="img-settle mb-14 overflow-hidden rounded-[2px]" data-reveal>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={shape.image}
-            alt={shape.imageAlt}
-            width={1080}
-            height={1350}
-            loading="lazy"
-            className="aspect-[16/9] w-full object-cover"
-          />
-        </div>
-
-        {/* Soft tinted tiles so the numbers read as cards, not loose text
-            (Vivien, 2026-08-31). */}
-        <ul className="reveal grid gap-6 md:grid-cols-2" data-reveal>
-          {shape.facts.map((fact) => (
-            <li key={fact.label} className="rounded-[3px] bg-sand/25 p-8 md:p-10">
-              <p className="display text-[clamp(3rem,2rem+4vw,5rem)] leading-none text-olive">{fact.value}</p>
-              <p className="eyebrow mt-4 text-ink">{fact.label}</p>
-              <p className="body-copy mt-4 text-ink-soft">{fact.note}</p>
-            </li>
-          ))}
-        </ul>
       </Section>
+
+      {/* ---------- What children gain ---------- */}
+      <Section bg="bg-shell">
+        <div className="grid gap-10 md:grid-cols-[1fr_1.15fr] md:gap-20">
+          <div className="fade" data-reveal>
+            <p className="eyebrow mb-8 text-olive">{gain.eyebrow}</p>
+            <h2 className="display display-lg">{gain.heading}</h2>
+          </div>
+          <div className="fade" data-reveal>
+            <p className="lede mb-6 text-ink-soft">{gain.body}</p>
+            <p className="body-copy text-ink-soft">{gain.body2}</p>
+          </div>
+        </div>
+      </Section>
+
+      {/* ---------- What makes Narelo different ---------- */}
+      <Section>
+        <div className="mb-14 max-w-2xl fade" data-reveal>
+          <p className="eyebrow mb-8 text-olive">{different.eyebrow}</p>
+          <h2 className="display display-lg mb-8">{different.heading}</h2>
+          <p className="lede text-ink-soft">{different.body}</p>
+        </div>
+
+        {/* The pair is the whole point of the section: the question we do not
+            lead with, then the one we do. Two tiles rather than two more
+            paragraphs, so the second reads as the answer to the first, and
+            the dark one is the one that matters. */}
+        <div className="reveal grid gap-6 md:grid-cols-2" data-reveal>
+          <div className="rounded-[3px] bg-sand/25 p-8 md:p-10">
+            <p className="eyebrow mb-5 text-ink-soft">{different.notLabel}</p>
+            <p className="display display-md text-ink-soft">{different.notQuestion}</p>
+          </div>
+          <div className="rounded-[3px] bg-forest p-8 md:p-10">
+            <p className="eyebrow mb-5 text-linen/80">{different.askLabel}</p>
+            <p className="display display-md text-linen">{different.askQuestion}</p>
+          </div>
+        </div>
+      </Section>
+
+      {/*
+       * ---------- Our approach ----------
+       *
+       * The one dark band between the hero and Marbella. It breaks a long run
+       * of light sections, and the closing line is the kind that wants air
+       * around it. linen on forest is 7.43 and linen/80 is 5.50, both above
+       * AA (globals.css).
+       */}
+      <section className="bg-forest px-6 py-[var(--spacing-section)] md:px-10">
+        <div className="mx-auto max-w-[1280px]">
+          <div className="max-w-3xl fade" data-reveal>
+            <p className="eyebrow mb-8 text-linen/80">{approach.eyebrow}</p>
+            <h2 className="display display-lg mb-8 text-linen">{approach.heading}</h2>
+            <p className="lede mb-10 text-linen/80">{approach.body}</p>
+            <p className="display display-md italic text-linen">{approach.pull}</p>
+          </div>
+        </div>
+      </section>
 
       {/*
        * ---------- The Five Worlds ----------
@@ -147,7 +214,7 @@ export default function HomePage({ lang }: { lang: Lang }) {
           </div>
 
           <div className="mt-12 border-t border-ink/15 pt-9 fade" data-reveal>
-            <Link href={worlds.linkHref} className="link-line eyebrow text-forest">
+            <Link href={t(worlds.linkHref)} className="link-line eyebrow text-forest">
               {worlds.linkLab}
             </Link>
           </div>
@@ -170,52 +237,39 @@ export default function HomePage({ lang }: { lang: Lang }) {
 
         <div className="mt-12 flex flex-col gap-6 fade md:flex-row md:items-center md:justify-between" data-reveal>
           <p className="body-copy max-w-md text-ink-soft">{journey.note}</p>
-          <Link href={journey.linkHref} className="link-line eyebrow shrink-0 text-ink">
+          <Link href={t(journey.linkHref)} className="link-line eyebrow shrink-0 text-ink">
             {journey.linkLabel}
           </Link>
         </div>
       </Section>
 
       {/*
-       * ---------- The promise ----------
+       * ---------- How families can experience Narelo ----------
        *
-       * The Narelo Promise, canonical, on a soft photograph washed back under
-       * linen so the band has depth without turning dark (2026-09-04). The
-       * dossier's three cards briefly sat here and now live once, on the
-       * Membership page.
+       * Website Core §7. A summary: the Experiences page describes the same
+       * five in full, so this links there rather than writing them out twice.
+       *
+       * An eyebrow and no heading, on purpose. The Website Core gives this
+       * block no heading and one was not invented to fill the slot.
        */}
-      <section className="relative isolate overflow-hidden px-6 py-[var(--spacing-section)] md:px-10">
-        <div className="absolute inset-0 -z-10">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={promise.image}
-            alt=""
-            width={1800}
-            height={820}
-            loading="lazy"
-            className="h-full w-full object-cover"
-          />
-          {/* Washed almost out: texture and warmth, not a picture to look at. */}
-          <div className="absolute inset-0 bg-shell/90" aria-hidden="true" />
+      <Section bg="bg-shell">
+        <p className="eyebrow mb-12 text-olive fade" data-reveal>
+          {ways.eyebrow}
+        </p>
+        <ul className="reveal grid gap-x-16 gap-y-10 md:grid-cols-2" data-reveal>
+          {ways.items.map((item) => (
+            <li key={item.name} className="border-t border-ink/15 pt-7">
+              <h3 className="display display-md mb-4">{item.name}</h3>
+              <p className="body-copy max-w-lg text-ink-soft">{item.body}</p>
+            </li>
+          ))}
+        </ul>
+        <div className="mt-12 border-t border-ink/15 pt-9 fade" data-reveal>
+          <Link href={t(ways.linkHref)} className="link-line eyebrow text-forest">
+            {ways.linkLabel}
+          </Link>
         </div>
-
-        <div className="mx-auto max-w-[1280px]">
-          <div className="mb-14 max-w-2xl fade" data-reveal>
-            <p className="eyebrow mb-8 text-olive">{promise.eyebrow}</p>
-            <h2 className="display display-lg">{promise.heading}</h2>
-          </div>
-
-          {/* The four canonical Promise lines, two up. */}
-          <ul className="reveal grid gap-10 md:grid-cols-2 md:gap-x-16 md:gap-y-12" data-reveal>
-            {promise.items.map((item) => (
-              <li key={item.title}>
-                <h3 className="display display-md mb-4">{item.title}</h3>
-                <p className="body-copy max-w-lg text-ink-soft">{item.body}</p>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
+      </Section>
 
       {/*
        * ---------- Marbella ----------
@@ -254,6 +308,25 @@ export default function HomePage({ lang }: { lang: Lang }) {
           </div>
         </div>
       </section>
+
+      {/*
+       * ---------- Our belief ----------
+       *
+       * Website Core §8. Centred and narrow: it is the page saying what it
+       * believes, not another section of information, and it is the last
+       * thing read before the invitation.
+       */}
+      <Section>
+        <div className="mx-auto max-w-3xl text-center fade" data-reveal>
+          <p className="eyebrow mb-8 text-olive">{ourBelief.eyebrow}</p>
+          <h2 className="display display-lg mb-10">{ourBelief.heading}</h2>
+          <p className="lede mb-6 text-ink-soft">{ourBelief.body}</p>
+          <p className="lede mb-10 text-ink-soft">{ourBelief.body2}</p>
+          <p className="body-copy text-ink-soft">{ourBelief.body3}</p>
+          <p className="body-copy mb-10 text-ink-soft">{ourBelief.body4}</p>
+          <p className="display display-md italic text-olive">{ourBelief.pull}</p>
+        </div>
+      </Section>
 
       {/* ---------- Closing ---------- */}
       <Section bg="bg-shell" className="text-center">
