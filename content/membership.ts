@@ -203,6 +203,32 @@ export const howItWorks = {
  * describing it as "exclusive". Confirm the term reflection is committed to
  * before launch.
  */
+/**
+ * framework/mission-vision-promise.md — The Narelo Promise, canonical.
+ *
+ * It lived on the home page until 2026-09-22, when the Website Core rewrite
+ * took it off that page. These four lines were the only copy of the Promise
+ * on the site, so it moved here rather than being deleted: canonical wording
+ * is not ours to drop. Do not re-title the four lines.
+ *
+ * ⚠️ It sits directly after `different`, which the Family Guide wrote on the
+ * same subject in different words, and after `included`'s three cards. Three
+ * passes at "what you get" in a row is more than the page needs. Which one
+ * owns the subject is the team's call, not an editorial one.
+ */
+export const promise = {
+  eyebrow: 'The Narelo promise',
+  heading: 'What every family can expect',
+  /** Background photograph for the band. Soft and light, not a hero. */
+  image: '/images/membership-beach-background.webp',
+  items: [
+    { title: 'Every child is known', body: 'Not a name on a register. The educators know what your child is working on, what they find hard, and what they love.' },
+    { title: 'Continuity', body: 'The same faces, the same community, year after year. Children build on what came before instead of starting over each term.' },
+    { title: 'A protected environment', body: 'We keep groups small and the community carefully held. That is what makes the rest of it possible.' },
+    { title: 'Belonging, not attendance', body: 'Membership is closer to a second family than a place you drop your child off. Families are part of it too.' },
+  ],
+} as const;
+
 export const included = {
   eyebrow: 'Membership includes',
   heading: 'What does your family actually receive?',
