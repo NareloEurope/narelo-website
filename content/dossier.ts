@@ -118,9 +118,10 @@ export type PricingTier = {
   readonly name: string;
   readonly groups: string;
   readonly who: string;
-  readonly total: string;
-  /** Written out in full, so the card needs no arithmetic to read. */
-  readonly perExperienceLine: string;
+  /** What one Experience costs. The largest thing on the card. */
+  readonly unitPrice: string;
+  /** What the family actually pays for a whole season. */
+  readonly seasonPrice: string;
   /** Which of the two card treatments this tier gets. Never both the same: the pair has to read as two choices at a glance. */
   readonly tone: 'forest' | 'sand';
 };
@@ -136,23 +137,26 @@ export const pricing = {
     label: 'And for you',
     items: ['Peace of mind', 'Guidance and support', 'A trusted community', 'The tools your child needs for the future'],
   },
+  unitLabel: 'One Experience',
+  unitNote: '90 minutes, once a week',
   payLabel: 'You pay once',
-  seasonLine: 'for one season of 12 Experiences',
+  paySuffix: 'for the season',
+  payNote: '12 Experiences, one a week over 3 months',
   tiers: [
     {
       name: 'Narelo Early',
       groups: 'Bloom · Nurture · The Nest · Little Beginnings',
       who: 'With you · up to 3 years',
-      total: '600 €',
-      perExperienceLine: 'That is 50 € for each Experience',
+      unitPrice: '50 €',
+      seasonPrice: '600 €',
       tone: 'forest',
     },
     {
       name: 'Narelo Explore',
       groups: 'Builders I · Builders II · Navigators',
       who: 'On their own · 3 to 8 years',
-      total: '720 €',
-      perExperienceLine: 'That is 60 € for each Experience',
+      unitPrice: '60 €',
+      seasonPrice: '720 €',
       tone: 'sand',
     },
   ] as readonly PricingTier[],

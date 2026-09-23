@@ -331,19 +331,29 @@ export default function DossierPage() {
                   <p className={`body-copy mt-2 text-sm ${soft}`}>{tier.groups}</p>
                   <p className={`eyebrow mt-3 ${accent}`}>{tier.who}</p>
 
-                  {/* The amount a family pays is the large figure, and the
-                      per-Experience figure a small line under it. The other
-                      way round, a big "50 €" under the words "12
-                      Experiences" read as the price of all twelve (Vivien,
-                      2026-09-23). */}
+                  {/* The price of one Experience is the hook and so the
+                      largest thing here, but its unit is named above it and
+                      its rhythm below it, and a count never sits next to it
+                      (Vivien, 2026-09-23): "12 Experiences" above a big
+                      "50 €" reads as the price of all twelve. What the
+                      family actually pays gets its own panel underneath,
+                      second-largest, so it cannot be skimmed past. */}
                   <div className={`mt-7 w-full border-t pt-7 ${rule}`}>
-                    <p className={`eyebrow ${accent}`}>{pricing.payLabel}</p>
-                    <p className={`display display-lg mt-2 ${price}`}>{tier.total}</p>
-                    <p className={`body-copy mt-1 ${soft}`}>{pricing.seasonLine}</p>
+                    <p className={`eyebrow ${accent}`}>{pricing.unitLabel}</p>
+                    <p className={`display display-xl mt-1 leading-none ${price}`}>{tier.unitPrice}</p>
+                    <p className={`body-copy mt-2 text-sm ${muted}`}>{pricing.unitNote}</p>
                   </div>
 
-                  <div className={`mt-6 w-full border-t pt-6 ${rule}`}>
-                    <p className={`body-copy text-sm ${muted}`}>{tier.perExperienceLine}</p>
+                  <div
+                    className={`mt-7 w-full rounded-[2px] px-5 py-5 ${
+                      forest ? 'bg-linen/10' : 'bg-linen/70'
+                    }`}
+                  >
+                    <p className={`eyebrow ${muted}`}>{pricing.payLabel}</p>
+                    <p className={`display display-md mt-1 ${heading}`}>
+                      {tier.seasonPrice} <span className={`body-copy ${soft}`}>{pricing.paySuffix}</span>
+                    </p>
+                    <p className={`body-copy mt-1 text-sm ${soft}`}>{pricing.payNote}</p>
                   </div>
                 </div>
               );
