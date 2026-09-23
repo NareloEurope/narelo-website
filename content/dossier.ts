@@ -59,6 +59,29 @@ export const membershipChapter = {
   heartEyebrow: 'The heart of the membership',
   heartHeading: 'Weekly Experiences, all year round',
   heartFacts: ['Pregnancy to age eight', 'Small groups of eight', '90 minutes'],
+  /**
+   * What the membership gives the parent, from Vivien's "Key notes & ideas"
+   * sheet (2026-09-21), and what it includes, in the price list's own words.
+   * Both sat in the pricing section until 2026-09-23, when Vivien drew that
+   * section as price cards, three short promises and three facts, with no
+   * room for a list. They belong under "what does your family actually
+   * receive?" anyway, which is this chapter.
+   */
+  forParents: {
+    label: 'And for you',
+    items: ['Peace of mind', 'Guidance and support', 'A trusted community', 'The tools your child needs for the future'],
+  },
+  included: {
+    label: 'Included in every membership',
+    items: [
+      'The weekly Experience in your group, twelve per season',
+      'Community Mornings: time with other families, with no programme',
+      'Expert Insights: monthly sessions with our own experts',
+      'One conversation per season with the Senior Educator about your child’s development',
+      'A digital summary of your child’s development, also once per season',
+      'Advance booking and member rates for Signature Saturdays, Holiday, Birthday and Private Experiences',
+    ],
+  },
 } as const;
 
 /**
@@ -137,17 +160,13 @@ export type PricingTier = {
   readonly tone: 'forest' | 'sand';
 };
 
-export type HowStep = { readonly title: string; readonly body: string };
+export type Promise = { readonly title: string; readonly body: string };
 
 export const pricing = {
   heading: 'Your membership',
   eyebrow: 'Membership · 2026',
   lede: 'One price. One payment. Twelve Experiences.',
   intro: 'Every week an afternoon your child will remember, from pregnancy to the age of eight',
-  forParents: {
-    label: 'And for you',
-    items: ['Peace of mind', 'Guidance and support', 'A trusted community', 'The tools your child needs for the future'],
-  },
   perWeekLabel: 'Per week',
   tiers: [
     {
@@ -167,41 +186,29 @@ export const pricing = {
       tone: 'sand',
     },
   ] as readonly PricingTier[],
-  finePrint:
-    'Per child, including 21% IVA. A season is three months with twelve Experiences; holiday and closure weeks are already accounted for. There are no monthly fees, no direct debit and no annual commitment: one amount, once, in advance.',
-  howItWorks: {
-    label: 'How it works',
-    steps: [
-      /* The price list's step read "Choose the group and the day". Narelo
-       * assigns the day, not the family (Vivien, 2026-09-21), and on
-       * 2026-09-23 the step became "We find the right fit", which says the
-       * same thing warmly and makes no promise about choosing. */
-      { title: 'We find the right fit', body: 'We give your child a fixed weekday in the group that matches their age.' },
-      { title: 'Pay for the season', body: '600 € or 720 €, once at the start. After that nothing follows until your twelve Experiences are done.' },
-      { title: 'Carry on, or not', body: 'The season renews automatically for another three months. To stop, just tell us up to 14 days before the last Experience.' },
-    ] as readonly HowStep[],
+  /**
+   * Under the prices, as Vivien drew it (2026-09-23): three short promises
+   * under "Simple, by design", then three facts in a row, then one
+   * footnote. It replaces the numbered "How it works" steps, the "Good to
+   * know" cards and the two paragraphs of small print, which together were
+   * saying the same few things three times. The six inclusions and the
+   * parent-value line moved up to `membershipChapter`.
+   */
+  simple: {
+    label: 'Simple, by design',
+    promises: [
+      { title: 'A fixed weekday', body: 'in the group that matches your child’s age' },
+      { title: 'One payment per season', body: '600 € or 720 €, nothing more until it is done' },
+      { title: 'Stay as long as it feels right', body: 'renews automatically, stop up to 14 days before the last Experience' },
+    ] as readonly Promise[],
   },
-  included: {
-    label: 'Included in every membership',
-    items: [
-      'The weekly Experience in your group, twelve per season',
-      'Community Mornings: time with other families, with no programme',
-      'Expert Insights: monthly sessions with our own experts',
-      'One conversation per season with the Senior Educator about your child’s development',
-      'A digital summary of your child’s development, also once per season',
-      'Advance booking and member rates for Signature Saturdays, Holiday, Birthday and Private Experiences',
-    ],
-  },
-  goodToKnow: {
-    label: 'Good to know',
-    facts: [
-      { value: '10 %', title: 'Founding Families', label: 'for life · the first 50 families', dark: true },
-      { value: '99 €', title: 'Joining fee', label: 'once per family' },
-      { value: '0 €', title: 'Expert Insights', label: 'monthly, included in the membership' },
-    ],
-    foundingNote:
-      'Founding Families: 10% off the price of every Experience for as long as the membership continues without interruption, 45 € or 54 € each, so 540 € or 648 € per season. The first 50 families keep that price for good.',
-  },
+  facts: [
+    { label: 'Founding families', value: '10 % for life' },
+    { label: 'Joining fee', value: '99 €' },
+    { label: 'Expert Insights', value: 'Included' },
+  ],
+  footnote:
+    'Founding price for the first 50 families: 45 € / 54 € per week, for as long as the membership continues. Per child, incl. 21 % IVA. No monthly fees, no direct debit, no annual commitment.',
 } as const;
 
 /**

@@ -265,12 +265,35 @@ export default function DossierPage() {
           </p>
         </div>
 
-        {/* The two-panel "what is included / what is bookable on top" list
-            that used to sit here is gone (2026-09-21): the price list's own
-            "Included in every membership" now states all of it, more fully,
-            directly beside the price where it does the work. Saying the
-            same list twice, two screens apart, only weakened both. The
-            Membership page's own panels are untouched. */}
+        {/* What a family receives, in words rather than panels: the four
+            things the membership gives the parent, then the six things
+            every membership includes. Both sat beside the price until
+            2026-09-23, when Vivien drew that section as price cards, three
+            promises and three facts, with no room for a list. This chapter
+            is "what does your family actually receive?", so they belong
+            here. The Membership page's own panels are untouched. */}
+        <div className="mx-auto mt-16 max-w-2xl border-t border-ink/12 pt-12 text-center">
+          <p className="eyebrow mb-4 text-olive">{membershipChapter.forParents.label}</p>
+          <ul className="flex flex-wrap justify-center gap-x-8 gap-y-2">
+            {membershipChapter.forParents.items.map((item) => (
+              <li key={item} className="body-copy text-ink">
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="mx-auto mt-14 max-w-2xl">
+          <p className="eyebrow mb-6 text-center text-olive">{membershipChapter.included.label}</p>
+          <ul className="flex flex-col gap-3">
+            {membershipChapter.included.items.map((item) => (
+              <li key={item} className="body-copy flex gap-3 text-ink-soft">
+                <span className="mt-[0.6em] h-1 w-1 shrink-0 rounded-full bg-olive" aria-hidden="true" />
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
 
         <p className="body-copy mx-auto mt-12 max-w-2xl text-center text-ink-soft">
           {regular.note}
@@ -324,71 +347,35 @@ export default function DossierPage() {
 
         <p className="lede mx-auto mt-10 max-w-2xl text-center italic text-ink-soft">{pricing.intro}</p>
 
-        <p className="body-copy mx-auto mt-8 max-w-3xl text-sm text-ink-soft">{pricing.finePrint}</p>
+        {/* Under the prices, as Vivien drew it (2026-09-23): three short
+            promises, three facts in a row, one footnote. It replaced the
+            numbered steps, the "Good to know" cards and two paragraphs of
+            small print, which between them said the same few things three
+            times over. */}
+        <div className="mx-auto mt-12 max-w-2xl border-t border-ink/12 pt-12 text-center">
+          <p className="lede italic text-ink-soft">{pricing.simple.label}</p>
 
-        {/* Value beside price (Vivien, 2026-09-21, "think as a sales
-            expert"): what the membership gives the parent, from her Key
-            notes sheet. It sits under the cards now that the drawing puts
-            the price directly beneath the headline. */}
-        <div className="mx-auto mt-14 max-w-3xl text-center">
-          <p className="eyebrow mb-4 text-olive">{pricing.forParents.label}</p>
-          <ul className="flex flex-wrap justify-center gap-x-8 gap-y-2">
-            {pricing.forParents.items.map((item) => (
-              <li key={item} className="body-copy text-ink">
-                {item}
-              </li>
+          <div className="mt-8 flex flex-col items-center">
+            {pricing.simple.promises.map((promise, i) => (
+              <div key={promise.title} className="contents">
+                {i > 0 && <span className="my-6 block h-px w-10 bg-olive/35" aria-hidden="true" />}
+                <p className="display display-md text-ink">{promise.title}</p>
+                <p className="body-copy mt-1 text-ink-soft">{promise.body}</p>
+              </div>
             ))}
-          </ul>
+          </div>
         </div>
 
-        <div className="mx-auto mt-16 max-w-3xl">
-          <p className="eyebrow mb-6 text-olive">{pricing.howItWorks.label}</p>
-          <ol className="grid gap-8 md:grid-cols-3">
-            {pricing.howItWorks.steps.map((step, i) => (
-              <li key={step.title} className="flex gap-4">
-                <span className="eyebrow w-6 shrink-0 pt-1 text-olive">{['i', 'ii', 'iii'][i]}</span>
-                <div>
-                  <p className="body-copy text-ink">{step.title}</p>
-                  <p className="body-copy mt-1 text-sm text-ink-soft">{step.body}</p>
-                </div>
-              </li>
-            ))}
-          </ol>
-        </div>
+        <ul className="mx-auto mt-12 grid max-w-3xl border-y border-ink/12 py-8 sm:grid-cols-3 sm:divide-x sm:divide-ink/12">
+          {pricing.facts.map((fact) => (
+            <li key={fact.label} className="px-4 py-3 text-center sm:py-0">
+              <p className="eyebrow text-ink-soft">{fact.label}</p>
+              <p className="display display-md mt-2 text-olive">{fact.value}</p>
+            </li>
+          ))}
+        </ul>
 
-        <div className="mx-auto mt-16 max-w-3xl">
-          <p className="eyebrow mb-6 text-olive">{pricing.included.label}</p>
-          <ul className="grid gap-x-10 gap-y-3 md:grid-cols-2">
-            {pricing.included.items.map((item) => (
-              <li key={item} className="body-copy flex gap-3 text-ink-soft">
-                <span className="mt-[0.6em] h-1 w-1 shrink-0 rounded-full bg-olive" aria-hidden="true" />
-                <span>{item}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        <div className="mx-auto mt-16 max-w-3xl">
-          <p className="eyebrow mb-6 text-olive">{pricing.goodToKnow.label}</p>
-          <ul className="grid gap-4 sm:grid-cols-3">
-            {pricing.goodToKnow.facts.map((fact) => {
-              const dark = 'dark' in fact && fact.dark;
-              return (
-                <li
-                  key={fact.title}
-                  className={`flex flex-col items-center rounded-[2px] p-6 text-center ${
-                    dark ? 'bg-forest text-linen' : 'bg-linen text-ink ring-1 ring-forest/15'
-                  }`}
-                >
-                  <span className={`display display-md ${dark ? 'text-linen' : 'text-olive'}`}>{fact.value}</span>
-                  <p className={`body-copy mt-2 ${dark ? 'text-linen' : 'text-ink'}`}>{fact.title}</p>
-                  <p className={`body-copy mt-1 text-sm ${dark ? 'text-linen/70' : 'text-ink-soft'}`}>{fact.label}</p>
-                </li>
-              );
-            })}
-          </ul>
-          <p className="body-copy mt-6 text-sm text-ink-soft">{pricing.goodToKnow.foundingNote}</p>
-        </div>
+        <p className="body-copy mx-auto mt-8 max-w-3xl text-sm text-ink-soft">{pricing.footnote}</p>
       </Section>
 
       {/* ---------- Reserve your family's place ---------- */}
