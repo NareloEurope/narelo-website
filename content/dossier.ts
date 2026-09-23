@@ -99,14 +99,25 @@ export const membershipChapter = {
  * or colons (house style: no em dashes). Prices are written "50 €" with a
  * space, as the list writes them.
  *
- * The card no longer says "3 months" above "50 € per week" (Vivien,
- * 2026-09-23): read in that order it promises a weekly payment, which is
- * the one thing this membership is not. The figure is what a single
- * Experience costs, so it says "per Experience", the label above it names
- * what the season is ("One season · 12 Experiences"), and the total spells
- * out that it is paid once at the start. The Founding Families note lost
- * its "per week" for the same reason. The season's length is still stated,
- * in the fine print under the cards, where it belongs.
+ * The card is laid out as Vivien drew it on 2026-09-23, after four
+ * attempts here missed it. The two tiers stack full width rather than
+ * sitting side by side, each centred: who it is for above the tier name,
+ * the age groups in italic under it, a short rule, then the weekly figure
+ * large, "Per week" beneath it, and one line carrying everything a family
+ * needs to know about paying, "600 € per season · twelve Experiences · one
+ * payment in advance".
+ *
+ * The order matters and was arrived at the hard way. The weekly figure
+ * leads because it is the number a parent recognises and weighs, and
+ * burying it under the season total lost the one number that sells. But
+ * nothing that looks like a count may sit above it: "12 Experiences" over
+ * a large "50 €" reads as the price of all twelve. So the line above names
+ * only who the tier is for, and the single line below does the honest
+ * work, in one sentence rather than a second panel.
+ *
+ * The tagline moved below the cards, as in the drawing, so the price is
+ * the first thing under the headline. The colours are ours, not the
+ * drawing's, which was black on white.
  *
  * The two tier cards carry a `tone` each rather than one being "the dark
  * one" (Vivien, 2026-09-21): Explore on the page's own linen was nearly
@@ -118,10 +129,10 @@ export type PricingTier = {
   readonly name: string;
   readonly groups: string;
   readonly who: string;
-  /** What one Experience costs. The largest thing on the card. */
-  readonly unitPrice: string;
-  /** What the family actually pays for a whole season. */
-  readonly seasonPrice: string;
+  /** The weekly figure, the largest thing on the card. */
+  readonly price: string;
+  /** The one line under it that says what is actually paid, and when. */
+  readonly summary: string;
   /** Which of the two card treatments this tier gets. Never both the same: the pair has to read as two choices at a glance. */
   readonly tone: 'forest' | 'sand';
 };
@@ -130,33 +141,29 @@ export type HowStep = { readonly title: string; readonly body: string };
 
 export const pricing = {
   heading: 'Your membership',
-  eyebrow: 'Membership · Prices 2026',
+  eyebrow: 'Membership · 2026',
   lede: 'One price. One payment. Twelve Experiences.',
-  intro: 'Every week an afternoon your child will remember, from pregnancy to the age of eight.',
+  intro: 'Every week an afternoon your child will remember, from pregnancy to the age of eight',
   forParents: {
     label: 'And for you',
     items: ['Peace of mind', 'Guidance and support', 'A trusted community', 'The tools your child needs for the future'],
   },
-  unitLabel: 'One Experience',
-  unitNote: '90 minutes, once a week',
-  payLabel: 'You pay once',
-  paySuffix: 'for the season',
-  payNote: '12 Experiences, one a week over 3 months',
+  perWeekLabel: 'Per week',
   tiers: [
     {
       name: 'Narelo Early',
       groups: 'Bloom · Nurture · The Nest · Little Beginnings',
       who: 'With you · up to 3 years',
-      unitPrice: '50 €',
-      seasonPrice: '600 €',
+      price: '50 €',
+      summary: '600 € per season · twelve Experiences · one payment in advance',
       tone: 'forest',
     },
     {
       name: 'Narelo Explore',
       groups: 'Builders I · Builders II · Navigators',
-      who: 'On their own · 3 to 8 years',
-      unitPrice: '60 €',
-      seasonPrice: '720 €',
+      who: 'Their own adventure · 3 to 8 years',
+      price: '60 €',
+      summary: '720 € per season · twelve Experiences · one payment in advance',
       tone: 'sand',
     },
   ] as readonly PricingTier[],
@@ -166,11 +173,11 @@ export const pricing = {
     label: 'How it works',
     steps: [
       /* The price list's step read "Choose the group and the day". Narelo
-       * assigns the day, not the family (Vivien, 2026-09-21), so the title
-       * promises only what a family actually chooses; the body already said
-       * who gives the weekday and is unchanged. */
-      { title: 'Choose the group', body: 'We give your child a fixed weekday in the group that matches their age.' },
-      { title: 'Pay for the season', body: '600 € or 720 €, once at the start. After that nothing follows for three months.' },
+       * assigns the day, not the family (Vivien, 2026-09-21), and on
+       * 2026-09-23 the step became "We find the right fit", which says the
+       * same thing warmly and makes no promise about choosing. */
+      { title: 'We find the right fit', body: 'We give your child a fixed weekday in the group that matches their age.' },
+      { title: 'Pay for the season', body: '600 € or 720 €, once at the start. After that nothing follows until your twelve Experiences are done.' },
       { title: 'Carry on, or not', body: 'The season renews automatically for another three months. To stop, just tell us up to 14 days before the last Experience.' },
     ] as readonly HowStep[],
   },

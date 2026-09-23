@@ -284,14 +284,53 @@ export default function DossierPage() {
         <div className="mx-auto max-w-2xl text-center">
           <p className="eyebrow mb-4 text-olive">{pricing.eyebrow}</p>
           <p className="display display-md">{pricing.lede}</p>
-          <p className="lede mt-6 text-ink-soft">{pricing.intro}</p>
         </div>
 
-        {/* Value before price (Vivien, 2026-09-21, "think as a sales
-            expert"): one quiet line of what the membership gives the
-            parent, from her Key notes sheet, sits between the headline and
-            the two price cards. */}
-        <div className="mx-auto mt-10 max-w-3xl text-center">
+        {/* Laid out as Vivien drew it (2026-09-23): the two tiers stacked
+            full width, each centred, with who it is for above the name, the
+            groups in italic, a short rule, the weekly figure large, "Per
+            week" under it, and one line carrying the whole payment truth.
+            Nothing resembling a count sits above the big figure: a count
+            there is read as the price of that count. Colours are ours,
+            forest and sand, not the drawing's black on white. */}
+        <div className="mx-auto mt-12 flex max-w-3xl flex-col gap-6">
+          {pricing.tiers.map((tier) => {
+            const forest = tier.tone === 'forest';
+            const card = forest
+              ? 'bg-forest text-linen'
+              : 'bg-sand text-ink shadow-[0_18px_40px_-30px_rgba(43,32,24,0.45)]';
+            const heading = forest ? 'text-linen' : 'text-ink';
+            const soft = forest ? 'text-linen/90' : 'text-ink/80';
+            const muted = forest ? 'text-linen/70' : 'text-ink/70';
+            const accent = forest ? 'text-linen/70' : 'text-forest';
+            const price = forest ? 'text-linen' : 'text-forest';
+            const rule = forest ? 'bg-linen/40' : 'bg-ink/30';
+            return (
+              <div key={tier.name} className={`rounded-[2px] px-7 py-12 text-center md:px-12 md:py-14 ${card}`}>
+                <p className={`eyebrow ${accent}`}>{tier.who}</p>
+                <h3 className={`display display-lg mt-3 leading-tight ${heading}`}>{tier.name}</h3>
+                <p className={`body-copy mt-2 italic ${soft}`}>{tier.groups}</p>
+
+                <span className={`mx-auto mt-8 block h-px w-12 ${rule}`} aria-hidden="true" />
+
+                <p className={`display display-xl mt-8 leading-none ${price}`}>{tier.price}</p>
+                <p className={`eyebrow mt-4 ${muted}`}>{pricing.perWeekLabel}</p>
+
+                <p className={`body-copy mt-7 text-sm ${soft}`}>{tier.summary}</p>
+              </div>
+            );
+          })}
+        </div>
+
+        <p className="lede mx-auto mt-10 max-w-2xl text-center italic text-ink-soft">{pricing.intro}</p>
+
+        <p className="body-copy mx-auto mt-8 max-w-3xl text-sm text-ink-soft">{pricing.finePrint}</p>
+
+        {/* Value beside price (Vivien, 2026-09-21, "think as a sales
+            expert"): what the membership gives the parent, from her Key
+            notes sheet. It sits under the cards now that the drawing puts
+            the price directly beneath the headline. */}
+        <div className="mx-auto mt-14 max-w-3xl text-center">
           <p className="eyebrow mb-4 text-olive">{pricing.forParents.label}</p>
           <ul className="flex flex-wrap justify-center gap-x-8 gap-y-2">
             {pricing.forParents.items.map((item) => (
@@ -302,74 +341,12 @@ export default function DossierPage() {
           </ul>
         </div>
 
-        {/* The price list of 2026-09-21, laid out as the one-page PDF lays
-            it out: two tier cards (Early in forest, Explore in linen), the
-            weekly price large and the season total under it, the fine
-            print, three "How it works" steps, what is included, and three
-            "Good to know" facts with the Founding Families note. Every
-            word is content/dossier.ts. */}
-        <div className="mx-auto mt-12 max-w-3xl">
-          <div className="grid gap-6 md:grid-cols-2">
-            {pricing.tiers.map((tier) => {
-              const forest = tier.tone === 'forest';
-              // Two treatments, never two of the same: deep forest beside
-              // warm sand. Text colours are picked per tone so both stay
-              // readable, ink on sand rather than the page's ink-soft,
-              // which washes out on it.
-              const card = forest
-                ? 'bg-forest text-linen'
-                : 'bg-sand text-ink shadow-[0_18px_40px_-30px_rgba(43,32,24,0.45)]';
-              const heading = forest ? 'text-linen' : 'text-ink';
-              const soft = forest ? 'text-linen/90' : 'text-ink/80';
-              const muted = forest ? 'text-linen/70' : 'text-ink/70';
-              const accent = forest ? 'text-linen/70' : 'text-forest';
-              const price = forest ? 'text-linen' : 'text-forest';
-              const rule = forest ? 'border-linen/20' : 'border-ink/20';
-              return (
-                <div key={tier.name} className={`flex flex-col items-center rounded-[2px] p-7 text-center md:p-9 ${card}`}>
-                  <h3 className={`display display-md leading-snug ${heading}`}>{tier.name}</h3>
-                  <p className={`body-copy mt-2 text-sm ${soft}`}>{tier.groups}</p>
-                  <p className={`eyebrow mt-3 ${accent}`}>{tier.who}</p>
-
-                  {/* The price of one Experience is the hook and so the
-                      largest thing here, but its unit is named above it and
-                      its rhythm below it, and a count never sits next to it
-                      (Vivien, 2026-09-23): "12 Experiences" above a big
-                      "50 €" reads as the price of all twelve. What the
-                      family actually pays gets its own panel underneath,
-                      second-largest, so it cannot be skimmed past. */}
-                  <div className={`mt-7 w-full border-t pt-7 ${rule}`}>
-                    <p className={`eyebrow ${accent}`}>{pricing.unitLabel}</p>
-                    <p className={`display display-xl mt-1 leading-none ${price}`}>{tier.unitPrice}</p>
-                    <p className={`body-copy mt-2 text-sm ${muted}`}>{pricing.unitNote}</p>
-                  </div>
-
-                  <div
-                    className={`mt-7 w-full rounded-[2px] px-5 py-5 ${
-                      forest ? 'bg-linen/10' : 'bg-linen/70'
-                    }`}
-                  >
-                    <p className={`eyebrow ${muted}`}>{pricing.payLabel}</p>
-                    <p className={`display display-md mt-1 ${heading}`}>
-                      {tier.seasonPrice} <span className={`body-copy ${soft}`}>{pricing.paySuffix}</span>
-                    </p>
-                    <p className={`body-copy mt-1 text-sm ${soft}`}>{pricing.payNote}</p>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-          <p className="body-copy mt-6 text-sm text-ink-soft">{pricing.finePrint}</p>
-        </div>
-
         <div className="mx-auto mt-16 max-w-3xl">
           <p className="eyebrow mb-6 text-olive">{pricing.howItWorks.label}</p>
           <ol className="grid gap-8 md:grid-cols-3">
             {pricing.howItWorks.steps.map((step, i) => (
               <li key={step.title} className="flex gap-4">
-                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-olive/45 text-olive">
-                  <span className="eyebrow !tracking-normal">{i + 1}</span>
-                </span>
+                <span className="eyebrow w-6 shrink-0 pt-1 text-olive">{['i', 'ii', 'iii'][i]}</span>
                 <div>
                   <p className="body-copy text-ink">{step.title}</p>
                   <p className="body-copy mt-1 text-sm text-ink-soft">{step.body}</p>
