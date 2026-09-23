@@ -243,6 +243,12 @@ export const included = {
    * ⚠️ The term-end digital reflection is a dossier fact with no document in
    * the repo behind it, and "exclusive" is the one word left that reads as
    * status rather than invitation. Both still need confirming.
+   *
+   * The third card follows the updated dossier (Vivien, 2026-09-23): "The
+   * whole of Narelo" where it said "The wider Narelo world", and a
+   * "like-minded community" rather than a "like-minded member community".
+   * ⚠️ The Spanish in content/es/ still carries the older wording and needs
+   * a native-speaker sentence, not a literal rendering (AGENTS.md).
    */
   cards: [
     {
@@ -256,9 +262,9 @@ export const included = {
       body: 'A beautifully curated, modern digital reflection at the end of each term, capturing meaningful experiences and discoveries to revisit.',
     },
     {
-      title: 'The wider Narelo world, growing with you',
+      title: 'The whole of Narelo, growing with you',
       meta: 'Experiences, guidance and community',
-      body: 'A like-minded member community where children and parents can build meaningful connections over time.',
+      body: 'A like-minded community where children and parents can build meaningful connections over time.',
     },
   ],
   /**

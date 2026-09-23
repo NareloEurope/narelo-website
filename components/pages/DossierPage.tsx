@@ -38,7 +38,7 @@ function ChapterTitle({ children }: { children: React.ReactNode }) {
 export default function DossierPage() {
   const { whatItIs, isNot, different, proof, included } = membership;
   const { spark, worlds, format, regular } = experiences;
-  const { hero, research, worldChapter, experienceChapter, membershipChapter, pricing, reserve } = dossier;
+  const { hero, research, worldChapter, differentChapter, experienceChapter, membershipChapter, pricing, reserve } = dossier;
   const instagram = socialIcons.find((icon) => icon.label === 'Instagram');
 
   return (
@@ -85,27 +85,36 @@ export default function DossierPage() {
       </section>
 
       {/* ---------- Our view on childhood ---------- */}
+      {/* The updated dossier's own chapter (Vivien, 2026-09-23): the
+          headline, then "Why Narelo" with its two-line lede, the paragraph,
+          the capability line, "That is where Narelo comes in", and the
+          citations as what Narelo is informed by rather than as a claim. */}
       <Section className="text-center">
         <div className="mx-auto max-w-2xl">
           <p className="eyebrow mb-8 text-olive">{research.eyebrow}</p>
-          <p className="display display-md text-ink-soft">
-            We don’t create a<br className="hidden sm:block" /> world for children.
-          </p>
-          <p className="display display-md mt-2 text-olive">We open the real world to them.</p>
+          <p className="display display-md text-ink-soft">{research.headline[0]}</p>
+          <p className="display display-md mt-2 text-olive">{research.headline[1]}</p>
         </div>
 
         <div className="mx-auto mt-16 max-w-2xl border-t border-ink/12 pt-12">
           <p className="eyebrow mb-6 text-ink-soft">{research.label}</p>
-          <p className="lede text-ink-soft">{research.body}</p>
+          <p className="display display-md text-ink">{research.lede[0]}</p>
+          <p className="display display-md text-ink">{research.lede[1]}</p>
+          <p className="body-copy mt-8 text-ink-soft">{research.body}</p>
+          <p className="lede mt-8 italic text-olive">{research.capability}</p>
+          <p className="eyebrow mt-10 text-ink">{research.close}</p>
         </div>
 
-        <ul className="mx-auto mt-10 flex max-w-2xl flex-wrap items-center justify-center gap-x-8 gap-y-3 border-t border-ink/12 pt-10">
-          {research.citations.map((c) => (
-            <li key={c} className="eyebrow text-ink-soft">
-              {c}
-            </li>
-          ))}
-        </ul>
+        <div className="mx-auto mt-14 max-w-2xl border-t border-ink/12 pt-10">
+          <p className="eyebrow mb-5 text-olive">{research.citationsLabel}</p>
+          <ul className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3">
+            {research.citations.map((c) => (
+              <li key={c} className="eyebrow text-ink-soft">
+                {c}
+              </li>
+            ))}
+          </ul>
+        </div>
       </Section>
 
       {/* ---------- The world of Narelo ---------- */}
@@ -114,12 +123,16 @@ export default function DossierPage() {
 
         <div className="mx-auto max-w-2xl">
           <h3 className="display display-md mb-6">{worldChapter.whatIsLabel}</h3>
-          <p className="lede mb-6 text-ink-soft">{whatItIs.body}</p>
-          <p className="body-copy text-ink-soft">{whatItIs.body2}</p>
+          <p className="lede text-ink-soft">{worldChapter.whatIs}</p>
         </div>
 
+        {/* The document's pull quote for this chapter, in its own words. */}
         <div className="mx-auto mt-14 max-w-2xl rounded-[2px] bg-linen p-8 text-center shadow-[0_18px_40px_-30px_rgba(43,32,24,0.45)] ring-1 ring-forest/15 md:p-11">
-          <p className="lede italic text-ink">“{home.belief.pull}”</p>
+          <p className="lede italic text-ink">{worldChapter.pull}</p>
+        </div>
+
+        <div className="mx-auto mt-14 max-w-2xl">
+          <p className="body-copy text-ink-soft">{worldChapter.more}</p>
         </div>
 
         <div className="mx-auto mt-16 max-w-2xl">
@@ -149,18 +162,75 @@ export default function DossierPage() {
           </div>
         </div>
 
-        <div className="mx-auto mt-16 max-w-2xl border-t border-ink/12 pt-12">
-          <p className="eyebrow mb-10 text-olive">{different.eyebrow}</p>
-          <ul className="flex flex-col gap-10">
-            {different.items.map((item) => (
-              <li key={item.n}>
-                <span className="eyebrow text-olive">{item.n}</span>
-                <h4 className="display display-md mt-3">{item.title}</h4>
-                <p className="body-copy mt-4 text-ink-soft">{item.body}</p>
-              </li>
-            ))}
-          </ul>
+      </Section>
+
+      {/* ---------- What makes Narelo different ---------- */}
+      {/* Its own chapter now, in the updated dossier's wording (Vivien,
+          2026-09-23). The page used to show the three numbered lines from
+          content/membership.ts here; the document replaced them with this,
+          and the Membership page keeps its own three untouched. */}
+      <Section>
+        <ChapterTitle>{differentChapter.heading}</ChapterTitle>
+
+        <div className="mx-auto max-w-2xl text-center">
+          <p className="display display-md">{differentChapter.lede}</p>
         </div>
+
+        <div className="mx-auto mt-14 grid max-w-3xl gap-10 md:grid-cols-2">
+          {differentChapter.columns.map((column, i) => (
+            <div key={i} className="flex flex-col gap-5">
+              {column.map((paragraph) => (
+                <p key={paragraph} className="body-copy text-ink-soft">
+                  {paragraph}
+                </p>
+              ))}
+            </div>
+          ))}
+        </div>
+
+        {/* The question Narelo does not ask, beside the one it does. */}
+        <div className="mx-auto mt-16 grid max-w-3xl items-center gap-6 rounded-[2px] bg-shell p-8 md:grid-cols-[1fr_auto_1.35fr] md:p-11">
+          <div>
+            <p className="eyebrow mb-3 text-ink-soft">{differentChapter.contrast.fromLabel}</p>
+            <p className="body-copy text-ink-soft line-through decoration-olive/50">{differentChapter.contrast.from}</p>
+          </div>
+          <span className="display display-md text-olive" aria-hidden="true">
+            →
+          </span>
+          <div>
+            <p className="eyebrow mb-3 text-olive">{differentChapter.contrast.toLabel}</p>
+            <p className="display display-md leading-snug text-ink">{differentChapter.contrast.to}</p>
+          </div>
+        </div>
+
+        <div className="mx-auto mt-16 max-w-2xl">
+          <p className="eyebrow mb-6 text-olive">{differentChapter.why.label}</p>
+          <div className="flex flex-col gap-5">
+            {differentChapter.why.body.map((paragraph) => (
+              <p key={paragraph} className="body-copy text-ink-soft">
+                {paragraph}
+              </p>
+            ))}
+          </div>
+          <p className="display display-md mt-10 leading-snug text-ink">{differentChapter.why.pull}</p>
+        </div>
+
+        <div className="mx-auto mt-16 grid max-w-3xl gap-8 border-t border-ink/12 pt-12 md:grid-cols-[auto_1fr] md:gap-14">
+          <div>
+            <p className="eyebrow mb-4 text-olive">{differentChapter.families.label}</p>
+            <p className="display display-md leading-snug">{differentChapter.families.heading[0]}</p>
+            <p className="display display-md leading-snug">{differentChapter.families.heading[1]}</p>
+          </div>
+          <div className="flex flex-col gap-5">
+            {differentChapter.families.body.map((paragraph) => (
+              <p key={paragraph} className="body-copy text-ink-soft">
+                {paragraph}
+              </p>
+            ))}
+          </div>
+        </div>
+
+        <p className="lede mx-auto mt-12 max-w-2xl text-center italic text-olive">{differentChapter.families.pull}</p>
       </Section>
 
       {/* ---------- The Narelo experience ---------- */}
@@ -169,6 +239,7 @@ export default function DossierPage() {
 
         <div className="mx-auto max-w-2xl">
           <h3 className="display display-md mb-6">{experienceChapter.whatLabel}</h3>
+          <p className="body-copy mb-6 text-ink-soft">{experienceChapter.intro}</p>
           <p className="body-copy mb-6 text-ink-soft">{format.body2}</p>
           <p className="body-copy text-ink-soft">{format.body3}</p>
         </div>
@@ -181,7 +252,8 @@ export default function DossierPage() {
           </p>
 
           <div className="mt-14 rounded-[2px] bg-linen/10 p-8 ring-1 ring-linen/20 md:p-11">
-            <p className="eyebrow mb-8 text-center text-linen/70">{spark.eyebrow}</p>
+            <p className="eyebrow mb-3 text-center text-linen/70">{spark.eyebrow}</p>
+            <p className="display display-md mb-8 text-center leading-snug">{spark.heading}</p>
             <ol className="flex flex-col gap-5">
               {spark.steps.map((step, i) => (
                 <li key={step} className="flex items-center gap-4">
@@ -248,6 +320,7 @@ export default function DossierPage() {
         <div className="mx-auto max-w-2xl">
           <h3 className="display display-md mb-10 text-center">{membershipChapter.receiveLabel}</h3>
         </div>
+        <p className="eyebrow mb-8 text-center text-olive">{membershipChapter.includesLabel}</p>
         <PromiseCards cards={included.cards} />
 
         <div className="mx-auto mt-16 max-w-2xl border-t border-ink/12 pt-12 text-center">
@@ -265,38 +338,25 @@ export default function DossierPage() {
           </p>
         </div>
 
-        {/* What a family receives, in words rather than panels: the four
-            things the membership gives the parent, then the six things
-            every membership includes. Both sat beside the price until
-            2026-09-23, when Vivien drew that section as price cards, three
-            promises and three facts, with no room for a list. This chapter
-            is "what does your family actually receive?", so they belong
-            here. The Membership page's own panels are untouched. */}
-        <div className="mx-auto mt-16 max-w-2xl border-t border-ink/12 pt-12 text-center">
-          <p className="eyebrow mb-4 text-olive">{membershipChapter.forParents.label}</p>
-          <ul className="flex flex-wrap justify-center gap-x-8 gap-y-2">
-            {membershipChapter.forParents.items.map((item) => (
-              <li key={item} className="body-copy text-ink">
+        {/* "Members also enjoy", in the updated dossier's own names and
+            wording (Vivien, 2026-09-23). It replaces the "And for you" line
+            and the six-item inclusions list that stood here for two days:
+            the document carries neither, and says the same things in fewer
+            words. */}
+        <div className="mx-auto mt-14 max-w-2xl border-t border-ink/12 pt-12 text-center">
+          <p className="eyebrow mb-6 text-olive">{membershipChapter.alsoEnjoy.label}</p>
+          <ul className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3">
+            {membershipChapter.alsoEnjoy.items.map((item) => (
+              <li key={item} className="display display-md">
                 {item}
               </li>
             ))}
           </ul>
+          <p className="body-copy mt-8 text-ink-soft">{membershipChapter.alsoEnjoy.note}</p>
         </div>
 
-        <div className="mx-auto mt-14 max-w-2xl">
-          <p className="eyebrow mb-6 text-center text-olive">{membershipChapter.included.label}</p>
-          <ul className="flex flex-col gap-3">
-            {membershipChapter.included.items.map((item) => (
-              <li key={item} className="body-copy flex gap-3 text-ink-soft">
-                <span className="mt-[0.6em] h-1 w-1 shrink-0 rounded-full bg-olive" aria-hidden="true" />
-                <span>{item}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        <p className="body-copy mx-auto mt-12 max-w-2xl text-center text-ink-soft">
-          {regular.note}
+        <p className="body-copy mx-auto mt-8 max-w-2xl text-center text-ink-soft">
+          {membershipChapter.alsoEnjoy.experts}
         </p>
       </Section>
 

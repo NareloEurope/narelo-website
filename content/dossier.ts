@@ -33,22 +33,101 @@ export const hero = {
   imageAlt: 'Three children on a dune at sunset, looking out over the sea.',
 } as const;
 
+/**
+ * "Our view on childhood", transcribed from the Premium Family Membership
+ * Dossier (updated, Vivien, 2026-09-23). It replaces the older "What the
+ * research confirms" paragraph the page carried, which the updated document
+ * no longer has: the citations are now framed as what Narelo is informed by,
+ * not as a claim about competencies. "That is where Narelo comes in" moves
+ * here too, from the world chapter, where the document puts it.
+ */
 export const research = {
   eyebrow: 'Our view on childhood',
-  label: 'What the research confirms',
-  body: 'Critical thinking, emotional intelligence, self-regulation and cross-cultural adaptability are the competencies that will matter for Generation Beta, and they are built through real-life experience, nature, movement and community.',
+  headline: ['We don’t create a world for children.', 'We open the real world to them.'],
+  label: 'Why Narelo',
+  lede: ['Some things are learned.', 'Others have to be lived.'],
+  body: 'Children are growing into a world we cannot fully predict. Alongside everything they learn at school, through hobbies and from the people around them, they also need opportunities to experience things for themselves.',
+  capability:
+    'To move, create, explore, make decisions, solve problems, collaborate, adapt and discover what they are capable of.',
+  close: 'That is where Narelo comes in.',
+  citationsLabel: 'Informed by',
   citations: ['MIT & Stanford', 'Harvard', 'OECD', 'Generation Beta research'],
 } as const;
 
+/**
+ * "The world of Narelo", from the updated dossier (2026-09-23). The two
+ * paragraphs and the pull quote are the document's, kept here rather than in
+ * content/membership.ts because that file feeds the Membership page and the
+ * translated dictionary; this page is the document, the Membership page is
+ * not.
+ */
 export const worldChapter = {
   heading: 'The world of Narelo',
   whatIsLabel: 'What is Narelo?',
+  whatIs:
+    'A private members’ club built around extraordinary childhood experiences that help children grow through nature, creativity, movement and real-life adventures.',
+  pull: 'We believe the greatest gift we can give children is a childhood that prepares them not just for school, but for a future we cannot yet imagine.',
+  more:
+    'More than a children’s programme, Narelo is a membership community where children build confidence, independence and meaningful connections, parents continue learning through expert insights, and like-minded families grow together, preparing children to flourish in a world that is constantly changing.',
   whoLabel: 'Who is behind it?',
+} as const;
+
+/**
+ * "What makes Narelo different", from the updated dossier (2026-09-23). The
+ * page used to show `different` from content/membership.ts here, three
+ * numbered lines that the document has replaced entirely. That file is
+ * untouched: the Membership page still shows its own three.
+ *
+ * The document's contrast is the heart of it: not "what activity should we
+ * do?" but "what can this experience give the child?". Its spaced hyphens
+ * are commas here (house style: no em dashes).
+ */
+export const differentChapter = {
+  heading: 'What makes Narelo different',
+  lede: 'Not another activity. A broader way for children to grow.',
+  columns: [
+    [
+      'Narelo is not built around one subject, sport or skill.',
+      'Through a wide variety of real-life experiences, children are challenged physically, creatively, socially and personally.',
+      'Children return week after week, in small groups and with familiar educators, allowing experiences, relationships and capabilities to build over time.',
+    ],
+    [
+      'Behind every experience is an intention. We think about what the experience can give the child, whether that is confidence, independence, creativity, resilience, collaboration, problem-solving or simply the courage to try something new.',
+    ],
+  ],
+  contrast: {
+    fromLabel: 'We don’t just ask',
+    from: 'What activity should we do?',
+    toLabel: 'We ask',
+    to: 'What can this experience give the child?',
+  },
+  why: {
+    label: 'Why it matters',
+    body: [
+      'We cannot prepare children for every situation they will face in the future.',
+      'But we can give them repeated opportunities to think for themselves, navigate something unfamiliar, try, adjust and find their own way forward.',
+    ],
+    pull: 'Because knowing something is one thing. Knowing what to do when there is no obvious answer is another.',
+  },
+  families: {
+    label: 'For families',
+    heading: ['Time for them.', 'Time for you.'],
+    body: [
+      'Narelo creates experiences children genuinely look forward to, while giving parents trusted time they can count on.',
+      'From weekly experiences to Saturdays, school holidays, birthdays, private events and individual Private Experiences, families can turn to Narelo whenever they want their child’s time to be more than simply filled.',
+    ],
+    pull: 'You get time back. They get experiences that give something back to them.',
+  },
 } as const;
 
 export const experienceChapter = {
   heading: 'The Narelo experience',
   whatLabel: 'What will my child actually experience?',
+  /* The document's opening paragraph for this chapter (2026-09-23). It is
+     not in content/experiences.ts, which the rest of this chapter draws on,
+     because the Experiences page tells the same thing its own way. */
+  intro:
+    'Narelo Experiences are 90-minute sessions in small, age-based groups of around eight children, twelve experiences a season, one for every week of term. Each experience is different, but they all follow the same Narelo principle.',
   journeyEyebrow: 'Where does your family’s journey begin?',
   worldsLabel: 'Five worlds to explore',
 } as const;
@@ -59,28 +138,33 @@ export const membershipChapter = {
   heartEyebrow: 'The heart of the membership',
   heartHeading: 'Weekly Experiences, all year round',
   heartFacts: ['Pregnancy to age eight', 'Small groups of eight', '90 minutes'],
+  includesLabel: 'Membership includes',
   /**
-   * What the membership gives the parent, from Vivien's "Key notes & ideas"
-   * sheet (2026-09-21), and what it includes, in the price list's own words.
-   * Both sat in the pricing section until 2026-09-23, when Vivien drew that
-   * section as price cards, three short promises and three facts, with no
-   * room for a list. They belong under "what does your family actually
-   * receive?" anyway, which is this chapter.
+   * "Members also enjoy", in the updated dossier's own names and wording
+   * (2026-09-23). It replaces two blocks that stood here for two days: the
+   * "And for you" line from Vivien's Key notes sheet and a six-item
+   * "Included in every membership" list taken from the September price list.
+   * The document carries neither, and what it does carry says the same
+   * things in fewer words.
+   *
+   * ⚠️ The document names these "Celebration Experiences" and "Private
+   * Experiences" where the rest of the site says "Birthday Experiences" and
+   * "Bespoke Private Experiences" (content/membership.ts). The document wins
+   * on this page, because this page is the document; flagged to Vivien
+   * rather than quietly reconciled.
    */
-  forParents: {
-    label: 'And for you',
-    items: ['Peace of mind', 'Guidance and support', 'A trusted community', 'The tools your child needs for the future'],
-  },
-  included: {
-    label: 'Included in every membership',
+  alsoEnjoy: {
+    label: 'Members also enjoy',
     items: [
-      'The weekly Experience in your group, twelve per season',
-      'Community Mornings: time with other families, with no programme',
-      'Expert Insights: monthly sessions with our own experts',
-      'One conversation per season with the Senior Educator about your child’s development',
-      'A digital summary of your child’s development, also once per season',
-      'Advance booking and member rates for Signature Saturdays, Holiday, Birthday and Private Experiences',
+      'Signature Saturdays',
+      'Expert Insights',
+      'Celebration Experiences',
+      'Holiday Experiences',
+      'Private Experiences',
     ],
+    note: 'Members book first, at special rates, ahead of anyone outside the club.',
+    experts:
+      'Every month, our own experts open a session to you, yours, as part of the membership. When we invite specialists from outside, members always receive preferred rates.',
   },
 } as const;
 
