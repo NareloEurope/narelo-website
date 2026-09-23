@@ -10,8 +10,7 @@ import { localePath, type Lang } from '@/content/locales';
 export default function HomePage({ lang }: { lang: Lang }) {
   const c = content(lang);
   const { contact } = c.site;
-  const { hero, belief, statement, parents, gain, different, approach, worlds, journey, ways, home, ourBelief, closing } =
-    c.home;
+  const { hero, belief, parents, different, worlds, journey, ways, home, closing } = c.home;
   const t = (path: string) => localePath(lang, path);
   return (
     <>
@@ -51,14 +50,11 @@ export default function HomePage({ lang }: { lang: Lang }) {
       </section>
 
       {/*
-       * ---------- Belief ----------
+       * ---------- Block 1: why Narelo ----------
        *
-       * Three paragraphs stacked beside the photograph was one too many
-       * (Vivien, 2026-09-07). The heading and the paragraph stay on the left,
-       * now aligned with the top of the photograph rather than centred
-       * against it, and the dossier's belief line moved under the photograph
-       * in a smaller size. It reads as a caption to the picture, which is
-       * what it is.
+       * First of the four. Words left, photograph right, and the line that
+       * lands ("That is where Narelo comes in.") under the picture rather
+       * than as a third paragraph beside it (Vivien, 2026-09-07).
        */}
       <Section>
         <div className="grid items-start gap-14 md:grid-cols-2 md:gap-20">
@@ -84,29 +80,47 @@ export default function HomePage({ lang }: { lang: Lang }) {
         </div>
       </Section>
 
-      {/* ---------- Statement ---------- */}
-      <section className="bg-shell px-6 py-[var(--spacing-section)] md:px-10">
-        <div className="mx-auto max-w-[1280px]">
-          <h2 className="display display-lg is-in max-w-4xl" data-reveal>
-            {statement.lines.map((line, i) => (
-              <span className="mask-line" key={line}>
-                <span className={i === 1 ? 'italic text-olive' : ''}>{line}</span>
-              </span>
-            ))}
+      {/*
+       * ---------- Block 2: what makes Narelo different ----------
+       *
+       * Second of the four, straight after "why". The heading is two beats,
+       * set as two lines that each wrap on their own rather than one
+       * paragraph-shaped heading.
+       */}
+      <Section bg="bg-shell">
+        <div className="mb-14 max-w-3xl fade" data-reveal>
+          <p className="eyebrow mb-8 text-olive">{different.eyebrow}</p>
+          <h2 className="display display-lg mb-8">
+            <span className="block">{different.heading}</span>
+            <span className="block">{different.heading2}</span>
           </h2>
+          <p className="lede mb-6 text-ink-soft">{different.body}</p>
+          <p className="body-copy mb-6 max-w-2xl text-ink-soft">{different.body2}</p>
+          <p className="body-copy mb-6 max-w-2xl text-ink-soft">{different.body3}</p>
+          <p className="body-copy max-w-2xl text-ink-soft">{different.body4}</p>
         </div>
-      </section>
+
+        {/* The pair is the point of the block: the question we do not lead
+            with, then the one we do. Two tiles rather than two more
+            paragraphs, and the dark one is the one that matters. */}
+        <div className="reveal grid gap-6 md:grid-cols-2" data-reveal>
+          <div className="rounded-[3px] bg-sand/25 p-8 md:p-10">
+            <p className="eyebrow mb-5 text-ink-soft">{different.notLabel}</p>
+            <p className="display display-md text-ink-soft">{different.notQuestion}</p>
+          </div>
+          <div className="rounded-[3px] bg-forest p-8 md:p-10">
+            <p className="eyebrow mb-5 text-linen/80">{different.askLabel}</p>
+            <p className="display display-md text-linen">{different.askQuestion}</p>
+          </div>
+        </div>
+      </Section>
 
       {/*
-       * ---------- For parents ----------
+       * ---------- Block 3: what this means for families ----------
        *
-       * Website Core §3, and new to the page. The parent's own time is the
-       * thing the home page had never said out loud, so it comes early,
-       * straight after the statement band.
-       *
-       * Same shape as the belief section above it: words left, photograph
-       * right, the line that lands sitting under the picture. The photograph
-       * is the one the shape-of-a-day section used before this rewrite.
+       * Same shape as "why" above it: words left, photograph right, the line
+       * that lands sitting under the picture. That closing line is what the
+       * old statement band used to do, said once rather than twice.
        */}
       <Section>
         <div className="grid items-start gap-14 md:grid-cols-2 md:gap-20">
@@ -114,8 +128,7 @@ export default function HomePage({ lang }: { lang: Lang }) {
             <p className="eyebrow mb-8 text-olive">{parents.eyebrow}</p>
             <h2 className="display display-lg mb-8 max-w-lg">{parents.heading}</h2>
             <p className="lede mb-6 max-w-md text-ink-soft">{parents.body}</p>
-            <p className="body-copy mb-6 max-w-md text-ink-soft">{parents.body2}</p>
-            <p className="body-copy max-w-md text-ink-soft">{parents.body3}</p>
+            <p className="body-copy max-w-md text-ink-soft">{parents.body2}</p>
           </div>
           <div className="fade" data-reveal>
             <div className="img-settle overflow-hidden rounded-[2px]">
@@ -133,63 +146,6 @@ export default function HomePage({ lang }: { lang: Lang }) {
           </div>
         </div>
       </Section>
-
-      {/* ---------- What children gain ---------- */}
-      <Section bg="bg-shell">
-        <div className="grid gap-10 md:grid-cols-[1fr_1.15fr] md:gap-20">
-          <div className="fade" data-reveal>
-            <p className="eyebrow mb-8 text-olive">{gain.eyebrow}</p>
-            <h2 className="display display-lg">{gain.heading}</h2>
-          </div>
-          <div className="fade" data-reveal>
-            <p className="lede mb-6 text-ink-soft">{gain.body}</p>
-            <p className="body-copy text-ink-soft">{gain.body2}</p>
-          </div>
-        </div>
-      </Section>
-
-      {/* ---------- What makes Narelo different ---------- */}
-      <Section>
-        <div className="mb-14 max-w-2xl fade" data-reveal>
-          <p className="eyebrow mb-8 text-olive">{different.eyebrow}</p>
-          <h2 className="display display-lg mb-8">{different.heading}</h2>
-          <p className="lede text-ink-soft">{different.body}</p>
-        </div>
-
-        {/* The pair is the whole point of the section: the question we do not
-            lead with, then the one we do. Two tiles rather than two more
-            paragraphs, so the second reads as the answer to the first, and
-            the dark one is the one that matters. */}
-        <div className="reveal grid gap-6 md:grid-cols-2" data-reveal>
-          <div className="rounded-[3px] bg-sand/25 p-8 md:p-10">
-            <p className="eyebrow mb-5 text-ink-soft">{different.notLabel}</p>
-            <p className="display display-md text-ink-soft">{different.notQuestion}</p>
-          </div>
-          <div className="rounded-[3px] bg-forest p-8 md:p-10">
-            <p className="eyebrow mb-5 text-linen/80">{different.askLabel}</p>
-            <p className="display display-md text-linen">{different.askQuestion}</p>
-          </div>
-        </div>
-      </Section>
-
-      {/*
-       * ---------- Our approach ----------
-       *
-       * The one dark band between the hero and Marbella. It breaks a long run
-       * of light sections, and the closing line is the kind that wants air
-       * around it. linen on forest is 7.43 and linen/80 is 5.50, both above
-       * AA (globals.css).
-       */}
-      <section className="bg-forest px-6 py-[var(--spacing-section)] md:px-10">
-        <div className="mx-auto max-w-[1280px]">
-          <div className="max-w-3xl fade" data-reveal>
-            <p className="eyebrow mb-8 text-linen/80">{approach.eyebrow}</p>
-            <h2 className="display display-lg mb-8 text-linen">{approach.heading}</h2>
-            <p className="lede mb-10 text-linen/80">{approach.body}</p>
-            <p className="display display-md italic text-linen">{approach.pull}</p>
-          </div>
-        </div>
-      </section>
 
       {/*
        * ---------- The Five Worlds ----------
@@ -308,25 +264,6 @@ export default function HomePage({ lang }: { lang: Lang }) {
           </div>
         </div>
       </section>
-
-      {/*
-       * ---------- Our belief ----------
-       *
-       * Website Core §8. Centred and narrow: it is the page saying what it
-       * believes, not another section of information, and it is the last
-       * thing read before the invitation.
-       */}
-      <Section>
-        <div className="mx-auto max-w-3xl text-center fade" data-reveal>
-          <p className="eyebrow mb-8 text-olive">{ourBelief.eyebrow}</p>
-          <h2 className="display display-lg mb-10">{ourBelief.heading}</h2>
-          <p className="lede mb-6 text-ink-soft">{ourBelief.body}</p>
-          <p className="lede mb-10 text-ink-soft">{ourBelief.body2}</p>
-          <p className="body-copy text-ink-soft">{ourBelief.body3}</p>
-          <p className="body-copy mb-10 text-ink-soft">{ourBelief.body4}</p>
-          <p className="display display-md italic text-olive">{ourBelief.pull}</p>
-        </div>
-      </Section>
 
       {/* ---------- Closing ---------- */}
       <Section bg="bg-shell" className="text-center">

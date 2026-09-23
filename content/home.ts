@@ -2,28 +2,39 @@
  * Home page copy.
  *
  * Sources (nothing here is invented):
- *  - NARELO — WEBSITE CORE (Vivien, 2026-09-22) — the eight blocks this page
- *    is now built around: hero, why, for parents, what children gain, what
- *    makes Narelo different, our approach, how families can experience
- *    Narelo, our belief. Supplied verbatim and used verbatim.
+ *  - Website Structure (Vivien, 2026-09-23) — the four message blocks this
+ *    page now runs on, supplied verbatim: why Narelo, what makes Narelo
+ *    different, what this means for families, the invitation. They answer,
+ *    in order: why does this matter, what makes Narelo different, what does
+ *    my family get from it, I want to know more.
+ *  - NARELO — WEBSITE CORE (Vivien, 2026-09-22) — the rewrite before it,
+ *    eight blocks. The hero is still its wording.
  *  - framework/the-narelo-framework.md Part IV — the Five Worlds, canonical
  *    names and descriptions ("Ocean. Mountain. The World Around Us.
  *    Expression. The Future.")
  *  - framework/age-groups.md — canonical group names and ages
  *  - offers/membership/Strategy/positioning.md — "first Narelo home"
  *
- * What the Website Core rewrite changed (2026-09-22), so it is not quietly
- * undone:
- *  - The shape of a day (8 children, 90 minutes) came off this page. Both
- *    figures still live on the Experiences page, in `format`, so nothing was
- *    lost from the site.
- *  - The Narelo Promise came off this page and moved to the Membership page,
- *    where its four canonical lines now live. It was the only copy of them on
- *    the site, so it was moved rather than deleted.
- *  - The Five Worlds teaser, the age journey and Marbella stayed.
+ * What came off the page, so none of it is quietly put back:
+ *  - The shape of a day (8 children, 90 minutes), 2026-09-22. Both figures
+ *    still live on the Experiences page in `format`, so the site kept them.
+ *  - The Narelo Promise, 2026-09-22. Moved to the Membership page, where its
+ *    four canonical lines now live. It was the only copy of them on the site,
+ *    so it was moved rather than deleted.
+ *  - "What children gain" and "Our approach", 2026-09-23. Both said what the
+ *    two surviving blocks say, in slightly different words. Their work is
+ *    carried by `different` now.
+ *  - The statement band, "Children join for the experiences. Families stay
+ *    for the community.", 2026-09-23. `parents.pull` closes on the same
+ *    thought, so the page says it once instead of twice. ⚠️ This was the only
+ *    copy of that line on the site. If it is wanted back it belongs here.
+ *  - "Our belief", 2026-09-23. It repeated `belief` almost word for word,
+ *    which was the repetition the structure pass set out to remove.
  *
- * House style: no em dashes in published copy (Rui, 2026-08-26). The Website
- * Core document used spaced hyphens in "For parents"; those are commas here.
+ * The Five Worlds teaser, the age journey and Marbella stayed throughout.
+ *
+ * House style: no em dashes in published copy (Rui, 2026-08-26). The supplied
+ * copy used them; they are colons and commas here.
  */
 
 export const hero = {
@@ -43,85 +54,68 @@ export const hero = {
 } as const;
 
 /**
- * Website Core §2, "Why Narelo" (Vivien, 2026-09-22).
+ * Block 1 of four, "Why Narelo" (Website Structure, Vivien, 2026-09-23).
  *
- * This replaced brand/brand-essence.md §8 and the Family Guide line that used
- * to sit under the photograph. The eyebrow moved from "Our belief" to "Why
- * Narelo", because the belief itself now closes the page under that name.
+ * The structure pass cut the page from seven message blocks to four, because
+ * several were saying the same thing: real-life experience, intention,
+ * capabilities, problem solving, guidance, readiness for the future. Each of
+ * the four now does one job. This one answers "why does this matter?".
  */
 export const belief = {
   eyebrow: 'Why Narelo',
-  heading: 'Children need more than knowledge and activities. They need meaningful, real-life experiences.',
-  body: 'While knowledge and education matter, children also need real experiences in which the capabilities they will need for life can be practised.',
-  pull: 'We cannot know exactly what the future will ask of our children. But we can give them experiences that help prepare them for it.',
+  heading: 'Some things are learned. Others have to be lived.',
+  body: 'Children will grow into a world we cannot fully predict. We can give them opportunities to think for themselves, move, create, decide, adapt and discover what they are capable of.',
+  pull: 'That is where Narelo comes in.',
   image: '/images/home-moment-to-pause.webp',
   imageAlt: 'A child pausing outdoors, taking something in.',
 } as const;
 
-/** The central message from Strategy/positioning.md, given its own moment. */
-export const statement = {
-  lines: ['Children join for the experiences.', 'Families stay for the community.'],
-} as const;
-
 /**
- * Website Core §3, "For parents" (Vivien, 2026-09-22). New to the site: the
- * parent's own time had never been addressed on the home page.
+ * Block 3 of four, "What this means for families" (Website Structure, Vivien,
+ * 2026-09-23). Answers "what does my family get from it?".
  *
- * The photograph is the one the shape-of-a-day section used before this
- * rewrite, so no new picture was invented for it and its alt text is
- * unchanged and still accurate.
+ * It was "For parents" until the structure pass, and it now speaks for the
+ * child and the parent in one block rather than two. Its closing line is what
+ * the statement band ("Children join for the experiences. Families stay for
+ * the community.") used to do, said once instead of twice.
+ *
+ * The photograph is the one the shape-of-a-day section used before the
+ * Website Core rewrite, so no new picture was invented for it.
  */
 export const parents = {
-  eyebrow: 'For parents',
-  heading: 'Your time matters too.',
-  body: 'With Narelo’s weekly experiences, parents gain regular, trusted time while their children take part in meaningful experiences designed with intention.',
-  body2: 'And whenever families need additional support, on Saturdays, during school holidays, at birthdays, private events or through individual Private Experiences, Narelo can take over the children’s experience there too.',
-  body3: 'Parents can hand over responsibility knowing their child is professionally cared for, meaningfully engaged and spending their time in a valuable way.',
-  pull: 'Time for you. Experiences that matter for them.',
+  eyebrow: 'What this means for families',
+  heading: 'Time for them. Time for you.',
+  body: 'Narelo creates meaningful experiences children look forward to, while giving parents trusted time they can count on.',
+  body2: 'From weekly experiences to Saturdays, school holidays, birthdays, private events and individual Private Experiences, families can turn to Narelo whenever they want their child’s time to be more than simply filled.',
+  pull: 'You get time back. They get experiences that give something back to them.',
   image: '/images/home-not-to-be-rushed.webp',
   imageAlt: 'A small group of children exploring together, unhurried.',
 } as const;
 
 /**
- * Website Core §4, "What children gain" (Vivien, 2026-09-22).
+ * Block 2 of four, "What makes Narelo different" (Website Structure, Vivien,
+ * 2026-09-23). Answers "what makes Narelo different?", and carries the weight
+ * the removed "What children gain" and "Our approach" blocks used to share.
  *
- * ⚠️ The first paragraph is very close to the hero's second paragraph: both
- * open "children are given opportunities to explore, make decisions, solve
- * problems, collaborate". Flagged to Vivien on 2026-09-22 and kept as
- * supplied, because it is her wording to cut, not ours.
- */
-export const gain = {
-  eyebrow: 'What children gain',
-  heading: 'Capabilities can be practised.',
-  body: 'Through real-life experiences, children are given opportunities to explore, make decisions, solve problems, collaborate, communicate, create and discover what they are capable of.',
-  body2: 'Development does not come from one activity alone. Repeated experiences give children opportunities to practise capabilities over time.',
-} as const;
-
-/**
- * Website Core §5, "What makes Narelo different" (Vivien, 2026-09-22).
+ * The heading is two beats and is set as two lines, each wrapping on its own.
+ * The pair of questions is the point of the block and is set as two tiles,
+ * the second answering the first.
  *
- * The two questions are the point of the section and are set as a pair, the
- * second answering the first, rather than run into the paragraph.
- *
- * Note the overlap with `different` in content/membership.ts, which is the
- * Family Guide's numbered version of the same subject in different words.
+ * House style: the supplied copy used an em dash before "to strengthen
+ * something physical". It is a colon here (Rui, 2026-08-26).
  */
 export const different = {
   eyebrow: 'What makes Narelo different',
-  heading: 'The activities are not the differentiator. The thinking behind them is.',
-  body: 'What matters is the intention behind each experience, how educators interact with children, how much guidance is given, how experiences connect over time and the consistency of our philosophy.',
-  notLabel: 'We do not simply ask',
+  heading: 'Not another activity.',
+  heading2: 'A broader way for children to grow.',
+  body: 'Narelo isn’t built around one subject, sport or skill.',
+  body2: 'Children move, explore, build, create, solve problems, collaborate and take on challenges through a wide variety of real-life experiences.',
+  body3: 'Behind every experience is an intention: to strengthen something physical, creative, social or personal.',
+  body4: 'And because children return week after week, with familiar educators and a small group, experiences build on one another over time.',
+  notLabel: 'We don’t just ask',
   notQuestion: 'What activity should we do?',
   askLabel: 'We ask',
-  askQuestion: 'What do we want the child to experience?',
-} as const;
-
-/** Website Core §6, "Our approach" (Vivien, 2026-09-22). */
-export const approach = {
-  eyebrow: 'Our approach',
-  heading: 'We believe in real-life experience, human connection and meaningful guidance.',
-  body: 'Children are given opportunities to try, decide, solve, collaborate and experience challenges with the support of trusted educators.',
-  pull: 'Guidance, without taking their way away.',
+  askQuestion: 'What can this experience give the child?',
 } as const;
 
 /**
@@ -271,30 +265,9 @@ export const home = {
  * company/team.md — Natalie and Vivien only. Christian is never a public face.
  */
 
-/**
- * Website Core §8, "Our belief" (Vivien, 2026-09-22).
- *
- * ⚠️ The heading replaces the Core Belief title "Children don't need more
- * activities. They need a richer childhood.", which AGENTS.md lists as never
- * to be reworded. Vivien changed it herself on 2026-09-22 and was told
- * plainly that it was one of those lines. It is her call; do not change it
- * back, and do not reword it again.
- *
- * ⚠️ `body3` and `body4` repeat `belief.pull` at the top of the page almost
- * word for word. Flagged to Vivien on 2026-09-22 and kept as supplied.
- */
-export const ourBelief = {
-  eyebrow: 'Our belief',
-  heading: 'Children need more than activities. They need experiences that matter.',
-  body: 'We believe capabilities can be practised.',
-  body2: 'We believe children benefit from real-life experiences, human connection, repeated opportunities and meaningful guidance.',
-  body3: 'We cannot know exactly what the future will require from them.',
-  body4: 'But we can give them experiences that help prepare them for life.',
-  pull: 'Parents gain time. Children gain meaningful experience.',
-} as const;
-
+/** Block 4 of four, the invitation (Website Structure, Vivien, 2026-09-23). */
 export const closing = {
   headingLines: ['A childhood', 'happens once.'],
-  body: 'Membership opens in small numbers ahead of our first home. If it sounds like your family, we would love to talk.',
+  body: 'Membership is opening to a small number of families. If Narelo feels like something your family has been looking for, we would love to meet you.',
   ctaLabel: 'Start a conversation',
 } as const;
