@@ -334,7 +334,7 @@ export default function DossierPage() {
                   <div className={`mt-7 w-full border-t pt-7 ${rule}`}>
                     <p className={`eyebrow ${muted}`}>{pricing.seasonLabel}</p>
                     <p className={`display display-lg mt-2 ${price}`}>{tier.perWeek}</p>
-                    <p className={`body-copy -mt-1 text-sm ${muted}`}>{pricing.perWeekSuffix}</p>
+                    <p className={`body-copy -mt-1 text-sm ${muted}`}>{pricing.perExperienceSuffix}</p>
                   </div>
 
                   <div className={`mt-6 w-full border-t pt-6 ${rule}`}>

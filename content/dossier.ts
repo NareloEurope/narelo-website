@@ -99,6 +99,15 @@ export const membershipChapter = {
  * or colons (house style: no em dashes). Prices are written "50 €" with a
  * space, as the list writes them.
  *
+ * The card no longer says "3 months" above "50 € per week" (Vivien,
+ * 2026-09-23): read in that order it promises a weekly payment, which is
+ * the one thing this membership is not. The figure is what a single
+ * Experience costs, so it says "per Experience", the label above it names
+ * what the season is ("One season · 12 Experiences"), and the total spells
+ * out that it is paid once at the start. The Founding Families note lost
+ * its "per week" for the same reason. The season's length is still stated,
+ * in the fine print under the cards, where it belongs.
+ *
  * The two tier cards carry a `tone` each rather than one being "the dark
  * one" (Vivien, 2026-09-21): Explore on the page's own linen was nearly
  * invisible against the linen background, so it takes the palette's sand
@@ -126,10 +135,10 @@ export const pricing = {
     label: 'And for you',
     items: ['Peace of mind', 'Guidance and support', 'A trusted community', 'The tools your child needs for the future'],
   },
-  seasonLabel: '3 months',
-  perWeekSuffix: 'per week',
+  seasonLabel: 'One season · 12 Experiences',
+  perExperienceSuffix: 'per Experience',
   totalSuffix: 'in total',
-  totalNote: '12 Experiences · one payment in advance',
+  totalNote: 'One payment, at the start of the season',
   tiers: [
     {
       name: 'Narelo Early',
@@ -181,7 +190,7 @@ export const pricing = {
       { value: '0 €', title: 'Expert Insights', label: 'monthly, included in the membership' },
     ],
     foundingNote:
-      'Founding Families: 10% off the weekly price for as long as the membership continues without interruption, 45 € or 54 € per week, so 540 € or 648 € per season. The first 50 families keep that price for good.',
+      'Founding Families: 10% off the price of every Experience for as long as the membership continues without interruption, 45 € or 54 € each, so 540 € or 648 € per season. The first 50 families keep that price for good.',
   },
 } as const;
 
