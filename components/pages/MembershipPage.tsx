@@ -15,7 +15,8 @@ export default function MembershipPage({ lang }: { lang: Lang }) {
   const { contact } = c.site;
   const { stageDetails } = c.stages;
   const CHAPTERS = c.membership.chapters;
-  const { hero, whatItIs, isNot, childExperience, ageGroups, howItWorks, included, different, joining, closing } = c.membership;
+  const { hero, whatItIs, isNot, childExperience, ageGroups, howItWorks, included, different, promise, joining, closing } =
+    c.membership;
   const t = (path: string) => localePath(lang, path);
   return (
     <>
@@ -180,7 +181,7 @@ export default function MembershipPage({ lang }: { lang: Lang }) {
        * Same single action in the same place, just findable. No new call to
        * action was added: the page still has its one at the close.
        */}
-      <Section id="join" bg="bg-shell" outerClassName="md:order-6">
+      <Section id="join" bg="bg-shell" outerClassName="md:order-7">
         <div className="mb-12 max-w-2xl fade" data-reveal>
           <p className="eyebrow mb-8 text-olive">{joining.eyebrow}</p>
           <h2 className="display display-lg">{joining.heading}</h2>
@@ -342,8 +343,53 @@ export default function MembershipPage({ lang }: { lang: Lang }) {
         </div>
       </section>
 
+      {/*
+       * ---------- The Narelo Promise ----------
+       *
+       * Canonical, and it lived on the home page until the Website Core
+       * rewrite took it off there (Vivien, 2026-09-22). These four lines were
+       * the only copy of the Promise on the site, so it moved here rather
+       * than being deleted.
+       *
+       * Desktop slot 6, between what a family receives and how to join, so it
+       * reads as the assurance under the list rather than a seventh thing on
+       * the list. Same washed-back photograph it carried on the home page:
+       * texture and warmth, not a picture to look at.
+       */}
+      <section className="md:order-6 relative isolate overflow-hidden px-6 py-[var(--spacing-section)] md:px-10">
+        <div className="absolute inset-0 -z-10">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={promise.image}
+            alt=""
+            width={1800}
+            height={820}
+            loading="lazy"
+            className="h-full w-full object-cover"
+          />
+          <div className="absolute inset-0 bg-shell/90" aria-hidden="true" />
+        </div>
+
+        <div className="mx-auto max-w-[1280px]">
+          <div className="mb-14 max-w-2xl fade" data-reveal>
+            <p className="eyebrow mb-8 text-olive">{promise.eyebrow}</p>
+            <h2 className="display display-lg">{promise.heading}</h2>
+          </div>
+
+          {/* The four canonical Promise lines, two up. */}
+          <ul className="reveal grid gap-10 md:grid-cols-2 md:gap-x-16 md:gap-y-12" data-reveal>
+            {promise.items.map((item) => (
+              <li key={item.title}>
+                <h3 className="display display-md mb-4">{item.title}</h3>
+                <p className="body-copy max-w-lg text-ink-soft">{item.body}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
       {/* ---------- Closing ---------- */}
-      <section className="md:order-7 relative isolate flex min-h-[75svh] items-center overflow-hidden">
+      <section className="md:order-8 relative isolate flex min-h-[75svh] items-center overflow-hidden">
         <LazyVideo src={closing.video} poster={closing.poster} className="absolute inset-0 -z-10 h-full w-full object-cover" />
         <div className="absolute inset-0 -z-10 bg-ink/70" aria-hidden="true" />
 

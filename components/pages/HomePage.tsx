@@ -10,7 +10,7 @@ import { localePath, type Lang } from '@/content/locales';
 export default function HomePage({ lang }: { lang: Lang }) {
   const c = content(lang);
   const { contact } = c.site;
-  const { hero, belief, statement, shape, worlds, journey, promise, home, closing } = c.home;
+  const { hero, belief, parents, different, worlds, journey, ways, home, closing } = c.home;
   const t = (path: string) => localePath(lang, path);
   return (
     <>
@@ -38,21 +38,23 @@ export default function HomePage({ lang }: { lang: Lang }) {
             ))}
           </h1>
           <div className="mt-10 flex flex-col gap-10 md:flex-row md:items-end md:justify-between">
-            <p className="lede max-w-xl text-linen/85">{hero.lede}</p>
+            <div className="max-w-xl">
+              <p className="lede text-linen/85">{hero.lede}</p>
+              {/* The second paragraph is the longer of the two, so it sits a
+                  size down and the first line stays the one that carries. */}
+              <p className="body-copy mt-6 text-linen/80">{hero.lede2}</p>
+            </div>
             <span className="eyebrow hidden shrink-0 text-linen/60 md:block">{hero.scrollHint}</span>
           </div>
         </div>
       </section>
 
       {/*
-       * ---------- Belief ----------
+       * ---------- Block 1: why Narelo ----------
        *
-       * Three paragraphs stacked beside the photograph was one too many
-       * (Vivien, 2026-09-07). The heading and the paragraph stay on the left,
-       * now aligned with the top of the photograph rather than centred
-       * against it, and the dossier's belief line moved under the photograph
-       * in a smaller size. It reads as a caption to the picture, which is
-       * what it is.
+       * First of the four. Words left, photograph right, and the line that
+       * lands ("That is where Narelo comes in.") under the picture rather
+       * than as a third paragraph beside it (Vivien, 2026-09-07).
        */}
       <Section>
         <div className="grid items-start gap-14 md:grid-cols-2 md:gap-20">
@@ -78,50 +80,71 @@ export default function HomePage({ lang }: { lang: Lang }) {
         </div>
       </Section>
 
-      {/* ---------- Statement ---------- */}
-      <section className="bg-shell px-6 py-[var(--spacing-section)] md:px-10">
-        <div className="mx-auto max-w-[1280px]">
-          <h2 className="display display-lg is-in max-w-4xl" data-reveal>
-            {statement.lines.map((line, i) => (
-              <span className="mask-line" key={line}>
-                <span className={i === 1 ? 'italic text-olive' : ''}>{line}</span>
-              </span>
-            ))}
+      {/*
+       * ---------- Block 2: what makes Narelo different ----------
+       *
+       * Second of the four, straight after "why". The heading is two beats,
+       * set as two lines that each wrap on their own rather than one
+       * paragraph-shaped heading.
+       */}
+      <Section bg="bg-shell">
+        <div className="mb-14 max-w-3xl fade" data-reveal>
+          <p className="eyebrow mb-8 text-olive">{different.eyebrow}</p>
+          <h2 className="display display-lg mb-8">
+            <span className="block">{different.heading}</span>
+            <span className="block">{different.heading2}</span>
           </h2>
+          <p className="lede mb-6 text-ink-soft">{different.body}</p>
+          <p className="body-copy mb-6 max-w-2xl text-ink-soft">{different.body2}</p>
+          <p className="body-copy mb-6 max-w-2xl text-ink-soft">{different.body3}</p>
+          <p className="body-copy max-w-2xl text-ink-soft">{different.body4}</p>
         </div>
-      </section>
 
-      {/* ---------- The shape of a day ---------- */}
+        {/* The pair is the point of the block: the question we do not lead
+            with, then the one we do. Two tiles rather than two more
+            paragraphs, and the dark one is the one that matters. */}
+        <div className="reveal grid gap-6 md:grid-cols-2" data-reveal>
+          <div className="rounded-[3px] bg-sand/25 p-8 md:p-10">
+            <p className="eyebrow mb-5 text-ink-soft">{different.notLabel}</p>
+            <p className="display display-md text-ink-soft">{different.notQuestion}</p>
+          </div>
+          <div className="rounded-[3px] bg-forest p-8 md:p-10">
+            <p className="eyebrow mb-5 text-linen/80">{different.askLabel}</p>
+            <p className="display display-md text-linen">{different.askQuestion}</p>
+          </div>
+        </div>
+      </Section>
+
+      {/*
+       * ---------- Block 3: what this means for families ----------
+       *
+       * Same shape as "why" above it: words left, photograph right, the line
+       * that lands sitting under the picture. That closing line is what the
+       * old statement band used to do, said once rather than twice.
+       */}
       <Section>
-        <div className="mb-12 max-w-2xl fade" data-reveal>
-          <p className="eyebrow mb-8 text-olive">{shape.eyebrow}</p>
-          <h2 className="display display-lg mb-8">{shape.heading}</h2>
-          <p className="lede text-ink-soft">{shape.body}</p>
+        <div className="grid items-start gap-14 md:grid-cols-2 md:gap-20">
+          <div className="fade" data-reveal>
+            <p className="eyebrow mb-8 text-olive">{parents.eyebrow}</p>
+            <h2 className="display display-lg mb-8 max-w-lg">{parents.heading}</h2>
+            <p className="lede mb-6 max-w-md text-ink-soft">{parents.body}</p>
+            <p className="body-copy max-w-md text-ink-soft">{parents.body2}</p>
+          </div>
+          <div className="fade" data-reveal>
+            <div className="img-settle overflow-hidden rounded-[2px]">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={parents.image}
+                alt={parents.imageAlt}
+                width={1080}
+                height={1350}
+                loading="lazy"
+                className="aspect-[4/5] w-full object-cover"
+              />
+            </div>
+            <p className="body-copy mt-6 italic text-olive">{parents.pull}</p>
+          </div>
         </div>
-
-        <div className="img-settle mb-14 overflow-hidden rounded-[2px]" data-reveal>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={shape.image}
-            alt={shape.imageAlt}
-            width={1080}
-            height={1350}
-            loading="lazy"
-            className="aspect-[16/9] w-full object-cover"
-          />
-        </div>
-
-        {/* Soft tinted tiles so the numbers read as cards, not loose text
-            (Vivien, 2026-08-31). */}
-        <ul className="reveal grid gap-6 md:grid-cols-2" data-reveal>
-          {shape.facts.map((fact) => (
-            <li key={fact.label} className="rounded-[3px] bg-sand/25 p-8 md:p-10">
-              <p className="display text-[clamp(3rem,2rem+4vw,5rem)] leading-none text-olive">{fact.value}</p>
-              <p className="eyebrow mt-4 text-ink">{fact.label}</p>
-              <p className="body-copy mt-4 text-ink-soft">{fact.note}</p>
-            </li>
-          ))}
-        </ul>
       </Section>
 
       {/*
@@ -147,7 +170,7 @@ export default function HomePage({ lang }: { lang: Lang }) {
           </div>
 
           <div className="mt-12 border-t border-ink/15 pt-9 fade" data-reveal>
-            <Link href={worlds.linkHref} className="link-line eyebrow text-forest">
+            <Link href={t(worlds.linkHref)} className="link-line eyebrow text-forest">
               {worlds.linkLab}
             </Link>
           </div>
@@ -170,52 +193,39 @@ export default function HomePage({ lang }: { lang: Lang }) {
 
         <div className="mt-12 flex flex-col gap-6 fade md:flex-row md:items-center md:justify-between" data-reveal>
           <p className="body-copy max-w-md text-ink-soft">{journey.note}</p>
-          <Link href={journey.linkHref} className="link-line eyebrow shrink-0 text-ink">
+          <Link href={t(journey.linkHref)} className="link-line eyebrow shrink-0 text-ink">
             {journey.linkLabel}
           </Link>
         </div>
       </Section>
 
       {/*
-       * ---------- The promise ----------
+       * ---------- How families can experience Narelo ----------
        *
-       * The Narelo Promise, canonical, on a soft photograph washed back under
-       * linen so the band has depth without turning dark (2026-09-04). The
-       * dossier's three cards briefly sat here and now live once, on the
-       * Membership page.
+       * Website Core §7. A summary: the Experiences page describes the same
+       * five in full, so this links there rather than writing them out twice.
+       *
+       * An eyebrow and no heading, on purpose. The Website Core gives this
+       * block no heading and one was not invented to fill the slot.
        */}
-      <section className="relative isolate overflow-hidden px-6 py-[var(--spacing-section)] md:px-10">
-        <div className="absolute inset-0 -z-10">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={promise.image}
-            alt=""
-            width={1800}
-            height={820}
-            loading="lazy"
-            className="h-full w-full object-cover"
-          />
-          {/* Washed almost out: texture and warmth, not a picture to look at. */}
-          <div className="absolute inset-0 bg-shell/90" aria-hidden="true" />
+      <Section bg="bg-shell">
+        <p className="eyebrow mb-12 text-olive fade" data-reveal>
+          {ways.eyebrow}
+        </p>
+        <ul className="reveal grid gap-x-16 gap-y-10 md:grid-cols-2" data-reveal>
+          {ways.items.map((item) => (
+            <li key={item.name} className="border-t border-ink/15 pt-7">
+              <h3 className="display display-md mb-4">{item.name}</h3>
+              <p className="body-copy max-w-lg text-ink-soft">{item.body}</p>
+            </li>
+          ))}
+        </ul>
+        <div className="mt-12 border-t border-ink/15 pt-9 fade" data-reveal>
+          <Link href={t(ways.linkHref)} className="link-line eyebrow text-forest">
+            {ways.linkLabel}
+          </Link>
         </div>
-
-        <div className="mx-auto max-w-[1280px]">
-          <div className="mb-14 max-w-2xl fade" data-reveal>
-            <p className="eyebrow mb-8 text-olive">{promise.eyebrow}</p>
-            <h2 className="display display-lg">{promise.heading}</h2>
-          </div>
-
-          {/* The four canonical Promise lines, two up. */}
-          <ul className="reveal grid gap-10 md:grid-cols-2 md:gap-x-16 md:gap-y-12" data-reveal>
-            {promise.items.map((item) => (
-              <li key={item.title}>
-                <h3 className="display display-md mb-4">{item.title}</h3>
-                <p className="body-copy max-w-lg text-ink-soft">{item.body}</p>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
+      </Section>
 
       {/*
        * ---------- Marbella ----------
