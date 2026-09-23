@@ -331,17 +331,19 @@ export default function DossierPage() {
                   <p className={`body-copy mt-2 text-sm ${soft}`}>{tier.groups}</p>
                   <p className={`eyebrow mt-3 ${accent}`}>{tier.who}</p>
 
+                  {/* The amount a family pays is the large figure, and the
+                      per-Experience figure a small line under it. The other
+                      way round, a big "50 €" under the words "12
+                      Experiences" read as the price of all twelve (Vivien,
+                      2026-09-23). */}
                   <div className={`mt-7 w-full border-t pt-7 ${rule}`}>
-                    <p className={`eyebrow ${muted}`}>{pricing.seasonLabel}</p>
-                    <p className={`display display-lg mt-2 ${price}`}>{tier.perWeek}</p>
-                    <p className={`body-copy -mt-1 text-sm ${muted}`}>{pricing.perExperienceSuffix}</p>
+                    <p className={`eyebrow ${accent}`}>{pricing.payLabel}</p>
+                    <p className={`display display-lg mt-2 ${price}`}>{tier.total}</p>
+                    <p className={`body-copy mt-1 ${soft}`}>{pricing.seasonLine}</p>
                   </div>
 
                   <div className={`mt-6 w-full border-t pt-6 ${rule}`}>
-                    <p className={`display display-md ${heading}`}>
-                      {tier.total} <span className={`body-copy ${muted}`}>{pricing.totalSuffix}</span>
-                    </p>
-                    <p className={`body-copy mt-1 text-sm ${muted}`}>{pricing.totalNote}</p>
+                    <p className={`body-copy text-sm ${muted}`}>{tier.perExperienceLine}</p>
                   </div>
                 </div>
               );
