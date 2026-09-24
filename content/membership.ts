@@ -243,6 +243,12 @@ export const included = {
    * ⚠️ The term-end digital reflection is a dossier fact with no document in
    * the repo behind it, and "exclusive" is the one word left that reads as
    * status rather than invitation. Both still need confirming.
+   *
+   * The third card follows the updated dossier (Vivien, 2026-09-23): "The
+   * whole of Narelo" where it said "The wider Narelo world", and a
+   * "like-minded community" rather than a "like-minded member community".
+   * ⚠️ The Spanish in content/es/ still carries the older wording and needs
+   * a native-speaker sentence, not a literal rendering (AGENTS.md).
    */
   cards: [
     {
@@ -256,9 +262,9 @@ export const included = {
       body: 'A beautifully curated, modern digital reflection at the end of each term, capturing meaningful experiences and discoveries to revisit.',
     },
     {
-      title: 'The wider Narelo world, growing with you',
+      title: 'The whole of Narelo, growing with you',
       meta: 'Experiences, guidance and community',
-      body: 'A like-minded member community where children and parents can build meaningful connections over time.',
+      body: 'A like-minded community where children and parents can build meaningful connections over time.',
     },
   ],
   /**
@@ -280,11 +286,14 @@ export const included = {
   groups: [
     {
       label: 'Also included in your membership',
+      /* Priority booking last (Vivien, 2026-09-19): the weekly place and the
+         community/expert benefits are what a family pictures first, and
+         priority booking reads better as a bonus on top of those. */
       items: [
         { title: 'Weekly experiences', body: 'Your child’s regular place in their age group, every week of term.' },
-        { title: 'Priority booking', body: 'First access to experiences, events and limited places before they open more widely.' },
         { title: 'Community Mornings', body: 'Time for families to meet, connect and grow together.' },
         { title: 'Narelo Expert Insights', body: 'Conversations with our own experts around childhood, development and family life, yours as part of the membership.' },
+        { title: 'Priority booking', body: 'First access to experiences, events and limited places before they open more widely.' },
       ],
     },
     {
