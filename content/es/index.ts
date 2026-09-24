@@ -8,6 +8,34 @@
  * pass AGENTS.md had been asking for, not a proofread: sentences were rebuilt,
  * not corrected.
  *
+ * ✅ SECOND NATIVE-SPEAKER PASS (Suggested Replacement Phrases, 2026-09-24,
+ * brought in by Vivien). Twenty-one phrases replaced, all supplied by the
+ * reviewer and applied verbatim. The brief was that the Spanish should read as
+ * though it was written in Spanish rather than translated: warm, clear,
+ * confident, neither literal nor over-poetic. This covers the Website Core and
+ * four-block rewrites of 22 and 23 September, which had not been read by her.
+ *
+ * Three of the twenty-one needed a small adjustment to sit in their sentence,
+ * and only that:
+ * - "experiencias extraordinarias para vivir la infancia" appears three times.
+ *   In the long Membership sentence a comma goes before "que ayudan", or the
+ *   relative clause reads as attaching to "la infancia" rather than to the
+ *   experiences.
+ * - "Experiencias semanales pensadas para acompañar su desarrollo" replaces a
+ *   phrase that ended "para los niños". That tail is dropped: "su desarrollo"
+ *   already says whose.
+ * - "cada experiencia da continuidad a la anterior" drops the "con el tiempo"
+ *   that followed the phrase it replaced, which the new wording carries.
+ *
+ * Two general notes from the same review are NOT applied, because they ask for
+ * judgement across strings she did not rewrite:
+ * - "Avoid overusing 'con sentido'." Only two remain site-wide, which reads as
+ *   within bounds. Nothing changed.
+ * - "Use 'mundo real' selectively." Twelve remain. One of them, "No creamos un
+ *   mundo para los niños. Les abrimos las puertas al mundo real.", is a
+ *   deliberate pairing and should stay. The rest are the team's call, flagged
+ *   on 2026-09-24 and awaiting a decision.
+ *
  * Where the review and the current English disagreed, the English won, because
  * the English changed after the review was written:
  * - "Sin prisas. Sin relleno." is only "Sin prisas." now.
@@ -102,8 +130,8 @@ export const es: Dict = {
   home: {
     hero: {
       eyebrow: 'Una comunidad privada en torno a la infancia · Marbella',
-      headingLines: ['Una infancia que', 'de verdad se vive.'],
-      lede: 'Narelo es una comunidad privada para familias, creada en torno a experiencias extraordinarias de infancia.',
+      headingLines: ['Una infancia', 'para vivirla de verdad.'],
+      lede: 'Narelo es una comunidad privada para familias, creada en torno a experiencias extraordinarias para vivir la infancia.',
       lede2: 'A través de la naturaleza, la creatividad, el movimiento y las aventuras en el mundo real, los niños tienen la oportunidad de explorar, tomar decisiones, resolver problemas, colaborar, crear vínculos y descubrir de lo que son capaces.',
       video: '/video/home-hero.mp4',
       poster: '/images/home-hero-poster.webp',
@@ -120,24 +148,24 @@ export const es: Dict = {
     parents: {
       eyebrow: 'Qué significa esto para las familias',
       heading: 'Tiempo para ellos. Tiempo para ti.',
-      body: 'Narelo crea experiencias que los niños esperan con ganas y, al mismo tiempo, da a los padres un tiempo propio con el que pueden contar.',
+      body: 'Narelo crea experiencias que los niños esperan con ganas y, al mismo tiempo, ofrece a los padres un tiempo para ellos, con la tranquilidad de saber que sus hijos están bien acompañados.',
       body2: 'Desde las experiencias semanales hasta los sábados, las vacaciones escolares, los cumpleaños, los eventos privados y las experiencias privadas individuales, las familias pueden contar con Narelo siempre que quieran que el tiempo de su hijo sea algo más que tiempo ocupado.',
-      pull: 'Tú recuperas tiempo. Ellos ganan experiencias que les devuelven algo.',
+      pull: 'Tú recuperas tiempo. Ellos ganan experiencias que realmente les aportan algo.',
       image: '/images/home-not-to-be-rushed.webp',
       imageAlt: 'Un grupo pequeño de niños explorando juntos, sin prisa.',
     },
     different: {
       eyebrow: 'Qué hace diferente a Narelo',
       heading: 'No es otra actividad más.',
-      heading2: 'Es una forma más amplia de crecer.',
+      heading2: 'Es una forma diferente de crecer.',
       body: 'Narelo no se construye en torno a una materia, un deporte o una habilidad.',
       body2: 'Los niños se mueven, exploran, construyen, crean, resuelven problemas, colaboran y se enfrentan a retos a través de una gran variedad de experiencias reales.',
-      body3: 'Detrás de cada experiencia hay una intención: fortalecer algo físico, creativo, social o personal.',
-      body4: 'Y como los niños vuelven semana tras semana, con las mismas educadoras y un grupo reducido, unas experiencias se van construyendo sobre otras con el tiempo.',
+      body3: 'Detrás de cada experiencia hay una intención: favorecer su desarrollo físico, creativo, social o personal.',
+      body4: 'Y como los niños vuelven semana tras semana, con las mismas educadoras y un grupo reducido, cada experiencia da continuidad a la anterior.',
       notLabel: 'No nos preguntamos solo',
       notQuestion: '¿Qué actividad hacemos?',
       askLabel: 'Nos preguntamos',
-      askQuestion: '¿Qué le puede aportar esta experiencia al niño?',
+      askQuestion: '¿Qué puede aportar esta experiencia a cada niño?',
     },
     worlds: {
       eyebrow: 'Los Cinco Mundos',
@@ -145,10 +173,10 @@ export const es: Dict = {
       body: 'Nuestras experiencias recorren cinco mundos inspirados en el mundo real que nos rodea. Cada día, nuevas formas de explorar, moverse, crear y descubrir. Diferentes mundos. Diferentes experiencias. Siempre algo nuevo por descubrir.',
       items: [
         { name: 'Ocean', short: 'El mar como entorno', image: '/images/world-ocean.webp' },
-        { name: 'Mountain', short: 'Naturaleza en sí misma', image: '/images/stage-photo-navigators.webp' },
-        { name: 'World Around Us', short: 'Puertas que los niños rara vez tienen la oportunidad de abrir', image: '/images/home-world-built-around-childhood.webp' },
+        { name: 'Mountain', short: 'La naturaleza tal y como es', image: '/images/stage-photo-navigators.webp' },
+        { name: 'World Around Us', short: 'Descubrir el mundo que nos rodea', image: '/images/home-world-built-around-childhood.webp' },
         { name: 'Expression', short: 'Dar forma a las ideas', image: '/images/gallery-02.webp' },
-        { name: 'Future', short: 'Curiosidad por lo que está por venir', image: '/images/contact-hero.webp' },
+        { name: 'Future', short: 'Imaginar, crear y explorar el mundo que viene', image: '/images/contact-hero.webp' },
       ],
       linkLab: 'Los cinco mundos en detalle',
       linkHref: '/experiences/#worlds',
@@ -156,7 +184,7 @@ export const es: Dict = {
     journey: {
       eyebrow: 'Desde el principio',
       heading: 'Un lugar que crece con tu hijo',
-      body: 'Donde toda la familia pueda disfrutar. Muchas de las experiencias empiezan incluso antes de que nazca y continúan a lo largo de los años.',
+      body: 'Un espacio para disfrutar en familia. Muchas de las experiencias empiezan incluso antes de que nazca y continúan a lo largo de los años.',
       stages: [
         { name: 'Bloom', age: 'Embarazo' },
         { name: 'Nurture', age: '0–1' },
@@ -173,11 +201,11 @@ export const es: Dict = {
     ways: {
       eyebrow: 'Cómo puede vivir Narelo una familia',
       items: [
-        { name: 'Experiencias semanales de la membresía', body: 'Experiencias regulares y con sentido para los niños, y un tiempo de confianza para los padres.' },
+        { name: 'Experiencias semanales de la membresía', body: 'Experiencias semanales pensadas para acompañar su desarrollo, y un tiempo de confianza para los padres.' },
         { name: 'Signature Saturdays', body: 'Experiencias adicionales el fin de semana.' },
         { name: 'Holiday Experiences', body: 'Experiencias con sentido durante las vacaciones escolares.' },
         { name: 'Cumpleaños', body: 'Narelo crea y dirige la experiencia de los niños.' },
-        { name: 'Experiencias y eventos privados', body: 'Las familias pueden contar con Narelo para ocasiones privadas: los niños viven una experiencia que importa mientras los padres disfrutan de la suya.' },
+        { name: 'Experiencias y eventos privados', body: 'Las familias pueden contar con Narelo para ocasiones privadas: los niños viven una experiencia que deja huella mientras los padres disfrutan de la suya.' },
       ],
       linkLabel: 'Las experiencias en detalle',
       linkHref: '/experiences/',
@@ -206,14 +234,14 @@ export const es: Dict = {
     ],
     hero: {
       eyebrow: 'Membresía',
-      headingLines: ['Pertenencia,', 'desde el primer contacto.'],
+      headingLines: ['Sentirse parte', 'desde el primer momento.'],
       lede: 'Una comunidad privada para familias que quieren que la infancia sea algo que sus hijos realmente recuerden.',
       image: '/images/membership-hero.webp',
     },
     whatItIs: {
       eyebrow: 'Qué es Narelo',
-      heading: 'Una comunidad privada para familias, creada en torno a experiencias extraordinarias de infancia',
-      body: 'Narelo es una comunidad privada para familias, creada en torno a experiencias extraordinarias de infancia que ayudan a los niños a crecer a través de la naturaleza, la creatividad, el movimiento y las aventuras en el mundo real, dentro de un grupo de familias con valores afines que crecen juntas.',
+      heading: 'Una comunidad privada para familias, creada en torno a experiencias extraordinarias para vivir la infancia',
+      body: 'Narelo es una comunidad privada para familias, creada en torno a experiencias extraordinarias para vivir la infancia, que ayudan a los niños a crecer a través de la naturaleza, la creatividad, el movimiento y las aventuras en el mundo real, dentro de un grupo de familias con valores afines que crecen juntas.',
       body2: 'Más que un programa infantil, Narelo es una comunidad donde los niños desarrollan confianza, independencia y vínculos significativos; los padres siguen aprendiendo gracias al conocimiento de expertos; y las familias con valores afines crecen juntas, preparando a los niños para desenvolverse en un mundo en constante cambio.',
       image: '/images/img-1667.webp',
       imageAlt: 'Niños en el mundo real durante una experiencia Narelo.',
@@ -221,7 +249,7 @@ export const es: Dict = {
     isNot: {
       eyebrow: 'Qué no es Narelo',
       items: ['Una clase', 'Una guardería', 'Un centro de juegos', 'Una actividad más'],
-      line: 'Narelo es una comunidad a la que pertenece tu familia.',
+      line: 'Narelo es una comunidad de la que tu familia forma parte.',
       pull: 'No creamos un mundo para los niños. Les abrimos las puertas al mundo real.',
     },
     different: {
@@ -239,7 +267,7 @@ export const es: Dict = {
         },
         {
           n: '03',
-          title: 'Ser conocido, no simplemente asistir',
+          title: 'Conocer de verdad a cada niño',
           body: 'En grupos pequeños y estables, cada niño es reconocido como individuo, no como uno más.',
         },
       ],
@@ -453,7 +481,7 @@ export const es: Dict = {
             { name: 'Community Mornings', body: 'Para toda la familia: tiempo para conocer a otras familias Narelo, conectar y crecer juntos.' },
             { name: 'Narelo Expert Insights', body: 'Para los padres: conversaciones con nuestros propios expertos sobre infancia, desarrollo y vida familiar.' },
             { name: 'Conversaciones individuales con la educadora', body: 'Para los padres: una vez por trimestre o temporada, tiempo con la educadora de tu hijo para hablar sobre cómo está creciendo.' },
-            { name: 'Vídeos que reflejan el final de cada temporada', body: 'Para tu familia: un vídeo personal al cierre de cada temporada que recoge los descubrimientos de tu hijo para conservarlos como recuerdo.' },
+            { name: 'Un recuerdo en vídeo al final de cada etapa', body: 'Para tu familia: un vídeo personal al cierre de cada temporada que recoge los descubrimientos de tu hijo para conservarlos como recuerdo.' },
           ],
         },
         {
@@ -577,9 +605,9 @@ export const es: Dict = {
         summary:
           'Investigaciones más profundas y experiencias en el mundo real que desarrollan el pensamiento, la colaboración y una autonomía cada vez mayor.',
         whatToExpect: [
-          'Investigaciones a fondo sobre la naturaleza y el territorio',
+          'Exploraciones más profundas sobre la naturaleza y el territorio',
           'Pequeños proyectos, experimentos y creaciones',
-          'Movimiento exigente y actividades al aire libre',
+          'Retos de movimiento y actividades al aire libre',
           'Encuentros con expertos, visitas a lugares que inspiran',
           'Planificar, reflexionar y compartir ideas',
         ],
