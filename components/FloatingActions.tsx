@@ -4,7 +4,7 @@ import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import WhatsAppIcon from '@/components/WhatsAppIcon';
 import { content } from '@/content/dictionary';
-import { langFromPath, STANDALONE_PATHS } from '@/content/locales';
+import { langFromPath, isStandalonePath } from '@/content/locales';
 
 /**
  * A quiet pair of controls pinned to the bottom right: start a conversation,
@@ -64,7 +64,7 @@ export default function FloatingActions() {
   // The dossier's own "Start a conversation" button and contact rows are
   // enough; this persistent control is site chrome the page is meant to sit
   // apart from (Vivien, 2026-09-18).
-  if (STANDALONE_PATHS.includes(pathname)) return null;
+  if (isStandalonePath(pathname)) return null;
 
   return (
     <div
