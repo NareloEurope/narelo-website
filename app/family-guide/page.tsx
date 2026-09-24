@@ -9,20 +9,26 @@ import { site } from '@/content/site';
  * content/dossier.ts for why this page exists and where its content comes
  * from.
  *
+ * The route is /family-guide/ (Vivien, 2026-09-24), the name printed on the
+ * document's own cover and the one that reads plainly to a parent who is
+ * sent the link. It was /dossier/ while the page was being built;
+ * public/dossier/index.html forwards that older address so any link already
+ * shared keeps working.
+ *
  * English only, unlike the rest of the site: the source PDF has no Spanish
  * version, so this route is not mirrored under app/[lang]/.
  */
 export const metadata: Metadata = {
   title: 'Family Guide',
   description: 'The Narelo Family Guide.',
-  alternates: { canonical: '/dossier/' },
+  alternates: { canonical: '/family-guide/' },
   robots: { index: false, follow: false },
   openGraph: {
     title: `Family Guide | ${site.name}`,
     description: 'The Narelo Family Guide.',
     siteName: site.name,
     type: 'website',
-    url: '/dossier/',
+    url: '/family-guide/',
     images: [{ url: '/images/share-card.jpg', width: 1200, height: 630, type: 'image/jpeg', alt: site.name }],
   },
 };

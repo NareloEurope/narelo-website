@@ -24,15 +24,15 @@ export const DEFAULT_LANG: Lang = 'en';
 
 /**
  * Pages that exist only in English, with no translated counterpart: today
- * just /dossier/, whose source PDF has no Spanish version. Header and Footer
+ * just /family-guide/, whose source PDF has no Spanish version. Header and Footer
  * hide the language selector on these rather than link to a route that does
  * not exist.
  */
-export const UNLOCALIZED_PATHS: readonly string[] = ['/dossier/'];
+export const UNLOCALIZED_PATHS: readonly string[] = ['/family-guide/'];
 
 /**
  * Pages that render with none of the site's shared chrome, Header, Footer or
- * the floating WhatsApp action: today just /dossier/ (Vivien, 2026-09-18). It
+ * the floating WhatsApp action: today just /family-guide/ (Vivien, 2026-09-18). It
  * is meant to feel like its own document, reachable only by link, rather than
  * a page stitched into the rest of the site, so it carries its own contact
  * details and its own single link back to the site at its close instead.
@@ -41,7 +41,7 @@ export const UNLOCALIZED_PATHS: readonly string[] = ['/dossier/'];
  * dictionary, where every key needs a translation in `content/es/` (and the
  * switched-off `content/de/` and `content/hu/`), and this is routing, not copy.
  */
-export const STANDALONE_PATHS: readonly string[] = ['/dossier/'];
+export const STANDALONE_PATHS: readonly string[] = ['/family-guide/'];
 
 /** The language trees that get built under a prefix. */
 export const PREFIXED_LANGS = LANGS.filter((l) => l !== DEFAULT_LANG);

@@ -99,13 +99,13 @@ export default function robots(): MetadataRoute.Robots {
     allow: '/',
   }));
   /*
-   * /dossier/ is a link-only page (Vivien, 2026-09-17): not in the sitemap,
+   * /family-guide/ is a link-only page (Vivien, 2026-09-17): not in the sitemap,
    * marked noindex on the page itself, and disallowed here too so a
    * well-behaved crawler does not even fetch it to index it. The share-card
    * and AI-assistant crawlers above are left out of this disallow, so a link
    * shared in WhatsApp or asked about directly still renders normally.
    */
   return live
-    ? { rules: [...welcome, { userAgent: '*', allow: '/', disallow: '/dossier/' }], sitemap: `${SITE_URL}/sitemap.xml` }
+    ? { rules: [...welcome, { userAgent: '*', allow: '/', disallow: ['/family-guide/', '/dossier/'] }], sitemap: `${SITE_URL}/sitemap.xml` }
     : { rules: [...welcome, { userAgent: '*', disallow: '/' }] };
 }

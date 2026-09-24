@@ -11,7 +11,7 @@ import * as dossier from '@/content/dossier';
 import { contact, socialIcons, ui } from '@/content/site';
 
 /**
- * The Narelo Family Guide as a page: /dossier/.
+ * The Narelo Family Guide as a page: /family-guide/.
  *
  * Reproduces the PDF section for section (see content/dossier.ts for the
  * source note). Copy that already lives elsewhere on the site, what Narelo
@@ -21,7 +21,7 @@ import { contact, socialIcons, ui } from '@/content/site';
  * none of which exist anywhere else on the site, live in content/dossier.ts.
  *
  * Deliberately not in `site.nav`, not linked from the footer, and not in
- * sitemap.xml (see app/dossier/page.tsx): reachable only by whoever has the
+ * sitemap.xml (see app/family-guide/page.tsx): reachable only by whoever has the
  * link, same as the mini dossier membership.joining already describes.
  */
 
