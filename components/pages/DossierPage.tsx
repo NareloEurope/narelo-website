@@ -376,7 +376,7 @@ export default function DossierPage() {
             Nothing resembling a count sits above the big figure: a count
             there is read as the price of that count. Colours are ours,
             forest and sand, not the drawing's black on white. */}
-        <div className="mx-auto mt-12 flex max-w-3xl flex-col gap-6">
+        <div className="mx-auto mt-10 flex max-w-3xl flex-col gap-4 md:mt-12 md:gap-6">
           {pricing.tiers.map((tier) => {
             const forest = tier.tone === 'forest';
             const card = forest
@@ -389,17 +389,17 @@ export default function DossierPage() {
             const price = forest ? 'text-linen' : 'text-forest';
             const rule = forest ? 'bg-linen/40' : 'bg-ink/30';
             return (
-              <div key={tier.name} className={`rounded-[2px] px-7 py-12 text-center md:px-12 md:py-14 ${card}`}>
+              <div key={tier.name} className={`rounded-[2px] px-5 py-8 text-center md:px-12 md:py-14 ${card}`}>
                 <p className={`eyebrow ${accent}`}>{tier.who}</p>
-                <h3 className={`display display-lg mt-3 leading-tight ${heading}`}>{tier.name}</h3>
-                <p className={`body-copy mt-2 italic ${soft}`}>{tier.groups}</p>
+                <h3 className={`display display-lg mt-2 leading-tight max-md:text-[1.9rem] md:mt-3 ${heading}`}>{tier.name}</h3>
+                <p className={`body-copy mt-1.5 italic max-md:text-sm ${soft}`}>{tier.groups}</p>
 
-                <span className={`mx-auto mt-8 block h-px w-12 ${rule}`} aria-hidden="true" />
+                <span className={`mx-auto mt-5 block h-px w-12 md:mt-8 ${rule}`} aria-hidden="true" />
 
-                <p className={`display display-xl mt-8 leading-none ${price}`}>{tier.price}</p>
-                <p className={`eyebrow mt-4 ${muted}`}>{pricing.perWeekLabel}</p>
+                <p className={`display display-xl mt-5 leading-none md:mt-8 ${price}`}>{tier.price}</p>
+                <p className={`eyebrow mt-3 md:mt-4 ${muted}`}>{pricing.perWeekLabel}</p>
 
-                <p className={`body-copy mt-7 text-sm ${soft}`}>{tier.summary}</p>
+                <p className={`body-copy mt-4 text-sm max-md:text-xs md:mt-7 ${soft}`}>{tier.summary}</p>
               </div>
             );
           })}
