@@ -3,12 +3,10 @@ import PromiseCards from '@/components/PromiseCards';
 import DossierJourney from '@/components/DossierJourney';
 import WhatsAppIcon from '@/components/WhatsAppIcon';
 import Link from 'next/link';
-import * as home from '@/content/home';
-import * as membership from '@/content/membership';
-import * as experiences from '@/content/experiences';
-import * as stages from '@/content/stages';
-import * as dossier from '@/content/dossier';
-import { contact, socialIcons, ui } from '@/content/site';
+import GuideLanguage from '@/components/GuideLanguage';
+import { content } from '@/content/dictionary';
+import { familyGuide } from '@/content/family-guide';
+import { DEFAULT_LANG, localePath, type Lang } from '@/content/locales';
 
 /**
  * The Narelo Family Guide as a page: /family-guide/.
@@ -23,6 +21,14 @@ import { contact, socialIcons, ui } from '@/content/site';
  * Deliberately not in `site.nav`, not linked from the footer, and not in
  * sitemap.xml (see app/family-guide/page.tsx): reachable only by whoever has the
  * link, same as the mini dossier membership.joining already describes.
+ *
+ * Published in English and Spanish (Vivien, 2026-09-24). Everything the
+ * guide shares with the rest of the site is read from the dictionary for
+ * the language being rendered, so the Spanish page carries the copy a
+ * native speaker already rewrote for the main pages; only the guide's own
+ * words come from content/family-guide.ts. The switch between the two is
+ * the page's own, since a standalone page has no Header to carry the
+ * site's LanguageSelector.
  */
 
 /** A centred chapter title, olive on linen, the way the PDF marks each part. */
@@ -35,10 +41,13 @@ function ChapterTitle({ children }: { children: React.ReactNode }) {
   );
 }
 
-export default function DossierPage() {
-  const { whatItIs, isNot, different, proof, included } = membership;
+export default function DossierPage({ lang = DEFAULT_LANG }: { lang?: Lang }) {
+  const { home, membership, experiences, stages, site } = content(lang);
+  const { contact, socialIcons, ui } = site;
+  const { whatItIs, proof, included } = membership;
   const { spark, worlds, format, regular } = experiences;
-  const { hero, research, worldChapter, differentChapter, experienceChapter, membershipChapter, pricing, reserve } = dossier;
+  const guide = familyGuide(lang);
+  const { hero, research, worldChapter, differentChapter, experienceChapter, membershipChapter, pricing, reserve } = guide;
   const instagram = socialIcons.find((icon) => icon.label === 'Instagram');
 
   return (
@@ -76,7 +85,12 @@ export default function DossierPage() {
         />
 
         <div className="mx-auto w-full max-w-2xl px-6 pt-14 pb-24 text-center md:px-10 md:pt-20">
-          <p className="eyebrow inline-block border-y border-olive/30 px-8 py-3 text-olive">· {hero.eyebrow} ·</p>
+          {/* The guide's own language switch, above everything: a family who
+              needs Spanish should find it before reading a word, and one who
+              does not should barely notice it. */}
+          <GuideLanguage current={lang} />
+
+          <p className="eyebrow mt-10 inline-block border-y border-olive/30 px-8 py-3 text-olive">· {hero.eyebrow} ·</p>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/images/narelo-logo.webp" alt="Narelo" width={796} height={341} className="mx-auto mt-10 h-20 w-auto md:h-24" />
           <div className="mx-auto mt-8 h-px w-16 bg-olive/40" aria-hidden="true" />
@@ -294,7 +308,7 @@ export default function DossierPage() {
           whatToExpectLabel={ui.whatToExpect}
           includedLabel={included.groups[0].label}
           includedItems={included.groups[0].items}
-          notes={dossier.journeyNotes}
+          notes={guide.journeyNotes}
         />
 
         <p className="body-copy mx-auto mt-10 max-w-2xl text-center text-ink-soft">
@@ -499,7 +513,7 @@ export default function DossierPage() {
           <p className="eyebrow mt-5 text-olive">{reserve.tagline}</p>
 
           <p className="body-copy mt-14 text-ink-soft">
-            <Link href="/" className="link-line text-ink">
+            <Link href={localePath(lang, '/')} className="link-line text-ink">
               Visit the Narelo website
             </Link>
           </p>

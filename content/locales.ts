@@ -23,12 +23,12 @@ export type Lang = (typeof LANGS)[number];
 export const DEFAULT_LANG: Lang = 'en';
 
 /**
- * Pages that exist only in English, with no translated counterpart: today
- * just /family-guide/, whose source PDF has no Spanish version. Header and Footer
- * hide the language selector on these rather than link to a route that does
- * not exist.
+ * Pages that exist only in English, with no translated counterpart. Empty
+ * since 2026-09-24, when the Family Guide gained its Spanish version; kept
+ * because the next English-only page will need it, and because Header and
+ * Footer already know to consult it.
  */
-export const UNLOCALIZED_PATHS: readonly string[] = ['/family-guide/'];
+export const UNLOCALIZED_PATHS: readonly string[] = [];
 
 /**
  * Pages that render with none of the site's shared chrome, Header, Footer or
@@ -42,6 +42,7 @@ export const UNLOCALIZED_PATHS: readonly string[] = ['/family-guide/'];
  * switched-off `content/de/` and `content/hu/`), and this is routing, not copy.
  */
 export const STANDALONE_PATHS: readonly string[] = ['/family-guide/'];
+
 
 /** The language trees that get built under a prefix. */
 export const PREFIXED_LANGS = LANGS.filter((l) => l !== DEFAULT_LANG);
@@ -94,3 +95,13 @@ export type Translated<T> = T extends string
     : T extends readonly (infer U)[]
       ? readonly Translated<U>[]
       : { -readonly [K in keyof T]: Translated<T[K]> };
+
+/**
+ * Whether a pathname is one of those, in any language. Compared on the
+ * language-neutral path, so /es/family-guide/ is just as standalone as
+ * /family-guide/ (Vivien, 2026-09-24). A plain `includes` would have let the
+ * site's header and footer render on the Spanish guide.
+ */
+export function isStandalonePath(pathname: string): boolean {
+  return STANDALONE_PATHS.includes(neutralPath(pathname));
+}

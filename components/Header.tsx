@@ -5,7 +5,7 @@ import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import LanguageSelector from '@/components/LanguageSelector';
 import { content } from '@/content/dictionary';
-import { langFromPath, localePath, UNLOCALIZED_PATHS, STANDALONE_PATHS } from '@/content/locales';
+import { langFromPath, localePath, UNLOCALIZED_PATHS, isStandalonePath } from '@/content/locales';
 
 /**
  * Sits transparently over a page's hero and resolves into a solid bar once you
@@ -63,7 +63,7 @@ export default function Header() {
 
   // Standalone pages (the dossier) render with no site chrome at all, so a
   // reader stays on the one page until they choose the link at its foot.
-  if (STANDALONE_PATHS.includes(pathname)) return null;
+  if (isStandalonePath(pathname)) return null;
 
   // Anchor links never take the active underline: they point into a page
   // rather than at one, and would otherwise double up with that page's item.
