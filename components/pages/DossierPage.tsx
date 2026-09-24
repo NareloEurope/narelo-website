@@ -430,7 +430,11 @@ export default function DossierPage() {
           {pricing.facts.map((fact) => (
             <li key={fact.label} className="px-4 py-3 text-center sm:py-0">
               <p className="eyebrow text-ink-soft">{fact.label}</p>
-              <p className="display display-md mt-2 text-olive">{fact.value}</p>
+              {/* Deliberately below display-md (Vivien, 2026-09-24): at
+                  heading size these three pulled the eye away from the
+                  three promises above them, which are the point of the
+                  block. They are footnotes to the price, not headlines. */}
+              <p className="display mt-2 text-[1.35rem] leading-snug text-olive md:text-[1.6rem]">{fact.value}</p>
             </li>
           ))}
         </ul>
