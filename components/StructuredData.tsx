@@ -8,8 +8,10 @@ import { SITE_URL } from '@/lib/site-url';
  * Everything here is already public on the site: the name, the description,
  * Marbella, the email, the phone number and the Instagram account. Nothing is
  * invented, and the two social links with no URL yet are left out rather than
- * guessed at. No opening hours or address detail: visits are by appointment
- * and the address is not published, so claiming either would be wrong.
+ * guessed at. Still no opening hours: visits are by appointment, so claiming
+ * any would be wrong. The street address IS published now (Vivien,
+ * 2026-10-07), on the Contact page and in the legal notice, so it is given in
+ * full here: this is what a maps or local search result reads.
  */
 export default function StructuredData() {
   const instagram = socialIcons.find((i) => i.label === 'Instagram')?.href;
@@ -41,7 +43,14 @@ export default function StructuredData() {
         description: site.tagline,
         email: contact.email,
         telephone: contact.phone,
-        address: { '@type': 'PostalAddress', addressLocality: 'Marbella', addressCountry: 'ES' },
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: 'Urb. El Rosario, Edificio Yellow Car, Local B',
+          postalCode: '29604',
+          addressLocality: 'Marbella',
+          addressRegion: 'Málaga',
+          addressCountry: 'ES',
+        },
         areaServed: 'Marbella, Spain',
       },
     ],

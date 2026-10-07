@@ -61,7 +61,7 @@ export const legalPage = {
   rows: [
     { label: 'Company name', value: 'Narelo Europe S.L.', href: null },
     { label: 'NIF', value: 'B93933273', href: null },
-    { label: 'Registered office', value: 'C. Valentuñana, 2, 29601 Marbella, Málaga, Spain', href: null },
+    { label: 'Registered office', value: 'Urb. El Rosario, Edificio Yellow Car, Local B, 29604 Marbella, Málaga, Spain', href: null },
     { label: 'Email', value: 'hello@narelo.es', href: 'mailto:hello@narelo.es' },
     { label: 'Telephone', value: '+34 655 366 888', href: 'tel:+34655366888' },
     { label: 'Managing directors', value: 'Natalie Curavic and Vivien Vörös', href: null },
