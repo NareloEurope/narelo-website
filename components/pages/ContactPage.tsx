@@ -29,6 +29,7 @@ export default function ContactPage({ lang }: { lang: Lang }) {
             <h2 className="eyebrow mb-5 text-ink">{contact.visitLabel}</h2>
             <p className="display text-lg leading-relaxed">
               {contact.visitName}
+              <span className="block">{contact.visitAddress}</span>
               <span className="block">{contact.visitNote}</span>
             </p>
           </li>

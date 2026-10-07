@@ -60,6 +60,7 @@ export const de: Dict = {
     contact: {
       visitLabel: 'Besuchen Sie uns',
       visitName: 'Narelo, Marbella',
+      visitAddress: 'Urb. El Rosario, Edificio Yellow Car, Local B, 29604 Marbella, Málaga, Spanien',
       visitNote: 'Nur nach Vereinbarung. Wir würden Sie sehr gern empfangen.',
       emailLabel: 'E-Mail',
       email: 'hello@narelo.es',
@@ -654,7 +655,7 @@ export const de: Dict = {
       rows: [
         { label: 'Firma', value: 'Narelo Europe S.L.', href: null },
         { label: 'NIF', value: 'B93933273', href: null },
-        { label: 'Sitz der Gesellschaft', value: 'C. Valentuñana, 2, 29601 Marbella, Málaga, Spanien', href: null },
+        { label: 'Sitz der Gesellschaft', value: 'Urb. El Rosario, Edificio Yellow Car, Local B, 29604 Marbella, Málaga, Spanien', href: null },
         { label: 'E-Mail', value: 'hello@narelo.es', href: 'mailto:hello@narelo.es' },
         { label: 'Telefon', value: '+34 655 366 888', href: 'tel:+34655366888' },
         { label: 'Geschäftsführerinnen', value: 'Natalie Curavic und Vivien Vörös', href: null },
