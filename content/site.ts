@@ -97,7 +97,7 @@ export const contact = {
   visitName: 'Narelo, Marbella',
   /* The address became public on 2026-10-07 (Vivien): El Rosario is both the
      registered office and the home families come to. */
-  visitAddress: 'Urb. El Rosario, Edificio Yellow Car, Local B, 29604 Marbella, Málaga, Spain',
+  visitAddress: 'Urb. el Rosario, C. los Limoneros, Local B, 29604 Marbella, Málaga, Spain',
   visitNote: 'By appointment only. We would love to welcome you.',
   emailLabel: 'Email',
   email: 'hello@narelo.es',

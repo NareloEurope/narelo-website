@@ -45,7 +45,7 @@ export default function StructuredData() {
         telephone: contact.phone,
         address: {
           '@type': 'PostalAddress',
-          streetAddress: 'Urb. El Rosario, Edificio Yellow Car, Local B',
+          streetAddress: 'Urb. el Rosario, C. los Limoneros, Local B',
           postalCode: '29604',
           addressLocality: 'Marbella',
           addressRegion: 'Málaga',
