@@ -29,7 +29,7 @@ export const hu: Dict = {
   site: {
     site: {
       name: 'Narelo',
-      tagline: 'Privát gyermekkor-tagság',
+      tagline: 'Privát klub családoknak',
       locale: 'hu',
       location: 'Marbella, Spanyolország',
       copyright: '© 2026 Narelo. Minden jog fenntartva.',
@@ -84,7 +84,7 @@ export const hu: Dict = {
 
   home: {
     hero: {
-      eyebrow: 'Privát gyermekkor-tagság · Marbella',
+      eyebrow: 'Privát klub családoknak · Marbella',
       headingLines: ['Gyermekkor,', 'mélyen megélve.'],
       lede: 'A Narelo családoknak szóló privát klub, amely rendkívüli gyermekkori élmények köré épül.',
       lede2: 'A természeten, a kreativitáson, a mozgáson és a valódi kalandokon keresztül a gyerekek lehetőséget kapnak arra, hogy felfedezzenek, döntsenek, problémákat oldjanak meg, együttműködjenek, kapcsolatokat építsenek, és rájöjjenek, mire képesek.',
