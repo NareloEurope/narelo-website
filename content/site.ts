@@ -12,7 +12,11 @@
 
 export const site = {
   name: 'Narelo',
-  tagline: 'A private childhood membership',
+  /* "A private childhood membership" until 2026-10-15 (Vivien), who saw
+     the old wording still printed as the Google result title. The club
+     descriptor the rest of the site settled on in September reaches the
+     search result and the browser tab now too. */
+  tagline: 'A private members’ club',
   locale: 'en',
   location: 'Marbella, Spain',
   copyright: '© 2026 Narelo. All rights reserved.',

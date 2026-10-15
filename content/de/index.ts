@@ -26,7 +26,7 @@ export const de: Dict = {
   site: {
     site: {
       name: 'Narelo',
-      tagline: 'Eine private Mitgliedschaft für die Kindheit',
+      tagline: 'Ein privater Members Club',
       locale: 'de',
       location: 'Marbella, Spanien',
       copyright: '© 2026 Narelo. Alle Rechte vorbehalten.',
@@ -81,7 +81,7 @@ export const de: Dict = {
 
   home: {
     hero: {
-      eyebrow: 'Eine private Mitgliedschaft für die Kindheit · Marbella',
+      eyebrow: 'Ein privater Members Club · Marbella',
       headingLines: ['Kindheit,', 'wirklich gelebt.'],
       lede: 'Narelo ist ein privater Members Club für Familien, rund um außergewöhnliche Kindheitserlebnisse.',
       lede2: 'Durch Natur, Kreativität, Bewegung und echte Abenteuer bekommen Kinder Gelegenheiten, zu erkunden, zu entscheiden, Probleme zu lösen, zusammenzuarbeiten, Beziehungen aufzubauen und zu entdecken, wozu sie fähig sind.',

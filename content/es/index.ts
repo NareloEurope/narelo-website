@@ -75,7 +75,7 @@ export const es: Dict = {
   site: {
     site: {
       name: 'Narelo',
-      tagline: 'Una comunidad privada en torno a la infancia',
+      tagline: 'Una comunidad privada para familias',
       locale: 'es',
       location: 'Marbella, España',
       copyright: '© 2026 Narelo. Todos los derechos reservados.',
@@ -130,7 +130,7 @@ export const es: Dict = {
 
   home: {
     hero: {
-      eyebrow: 'Una comunidad privada en torno a la infancia · Marbella',
+      eyebrow: 'Una comunidad privada para familias · Marbella',
       headingLines: ['Una infancia', 'para vivirla de verdad.'],
       lede: 'Narelo es una comunidad privada para familias, creada en torno a experiencias extraordinarias para vivir la infancia.',
       lede2: 'A través de la naturaleza, la creatividad, el movimiento y las aventuras en el mundo real, los niños tienen la oportunidad de explorar, tomar decisiones, resolver problemas, colaborar, crear vínculos y descubrir de lo que son capaces.',

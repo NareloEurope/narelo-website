@@ -38,7 +38,7 @@
  */
 
 export const hero = {
-  eyebrow: 'A private childhood membership · Marbella',
+  eyebrow: 'A private members’ club · Marbella',
   /** Split across lines so each can rise independently out of its mask. */
   headingLines: ['Childhood,', 'deeply lived.'],
   /*
